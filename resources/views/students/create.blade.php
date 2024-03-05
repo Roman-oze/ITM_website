@@ -7,9 +7,11 @@
 
 <h2 class="text-danger mt-3">Create Student</h2>
     <div class="container mt-5 ">
-        <form action="<?php echo url('students/create')?>" method="post" enctype="multipart/form-data">
-            <?php echo @csrf_field()?>
-           
+
+
+        <form action="{{route('create')}}" method="post" >
+        @csrf       
+            
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
                 <input type="text" name="name" class="form-control" required>

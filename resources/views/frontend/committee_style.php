@@ -43,12 +43,12 @@
             overflow: hidden;
             max-width: 250px;
             width: 100%;
-            background-color: #fcfcfcf8;
             transition: transform 0.3s;
             display: block;
             margin: auto;
             padding: 10px;
             border:2px double #3498db;
+            height: auto;
         }
    
         .faculty-card:hover {
@@ -108,7 +108,7 @@
         }
   /* Add styles for other sections as needed */
   .photo{
-  height: 100%;
+  height: auto;
   width: 100%;
   border-radius: 24px;
   }
@@ -116,5 +116,15 @@
   height: 50px;
     width: 50px;
     border-radius: 100%;
+  }
+  .icon1{
+    color: #000000;
+    font-size:x-large;
+    font-size: larger;
+
+  }
+  .icon1:hover{
+    color: blue;
+    font-size:x-large;
   }
 </style>

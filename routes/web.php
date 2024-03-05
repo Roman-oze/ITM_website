@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use Faker\Guesser\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,9 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-// Route::get('/',function(){
-//     return view('welcome');
-// });
+Route::get('/',function(){
+    return view('welcome');
+});
 
 Route::view('/home','frontend.home')->name('homepage');
 Route::view('/program','frontend/program')->name('program');
@@ -27,11 +28,19 @@ Route::view('/club','frontend/club')->name('club');
 Route::view('/membership','frontend/membership')->name('membership');
 Route::view('/committee','frontend/committee')->name('committee');
 Route::view('/upcoming','frontend/upcoming')->name('upcoming');
-// Route::view('/create','frontend/create')->name('create');
 
 
+// Route::controller(StudentController::class)->group(function(){
 
-Route::get('/index',[StudentController::class,'index'])->name('Homepage');
-Route::get('/create', [StudentController::class, 'create']);
-Route::get('/show',[StudentController::class,'show']);
-Route::get('s/edit',[StudentController::class,'edit']);
+// Route::get('/index','index')->name('Homepage');
+// Route::get('/create','create')->name('create');
+// Route::post('/store','store')->name('store');
+// Route::get('/show','show')->name('show');
+// Route::get('/edit','edit')->name('edit');
+// Route::get('/delete','destroy')->name('delete');
+
+// });
+
+Route::get('/index',['StudentController'],'index')->name('Homepage');
+Route::get('/create',['StudentController'],'create')->name('create');
+Route::post('/store',['StudentController'],'store')->name('store');

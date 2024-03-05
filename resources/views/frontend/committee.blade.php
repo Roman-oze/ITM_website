@@ -25,7 +25,7 @@
               <!-- Content for the second card in the second line -->
               <h4>Ms.Nusrat Jahan</h4>
             <h5 class="text-warning">Convener</h5>
-            <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon"></i></a>
+            <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon1"></i></a>
             <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>
             <a href="nusrat.swe@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
             <a href="+8801847334996"><i class="fa-solid fa-square-phone icon1"></i></a>
