@@ -66,5 +66,21 @@ class StudentController extends Controller
 
 
     }
+    public function destroy($id){
+    
+        DB::table('students')->where('id',$id)->delete();
+
+        // dd(DB::table('students')->get());
+        return redirect('students');
+
+
+    }
+    public function membership()
+    {
+        $data['students'] = DB::table('students')->get(); 
+   
+         return view('frontend.membership', $data);
+
+    }
 
 }

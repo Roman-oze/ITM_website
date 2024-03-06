@@ -19,32 +19,7 @@ use Faker\Guesser\Name;
 //     return view('welcome');
 // });
 
-Route::get('students', [StudentController::class, 'index'])->name('index');
-Route::get('/create', [StudentController::class, 'create'])->name('create');
-Route::post('/store', [StudentController::class, 'store'])->name('store');
-Route::get('/show/{id}', [StudentController::class, 'show'])->name('show');
-Route::get('/edit/{id}', [StudentController::class, 'edit'])->name('edit');
-Route::put('/update/{id}', [StudentController::class, 'update'])->name('update');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ Route::controller(StudentController::class)->group(function(){
 
 
 Route::view('/home','frontend.home')->name('homepage');
@@ -53,11 +28,20 @@ Route::view('/faculty','frontend/faculty')->name('faculty');
 Route::view('/event','frontend/event')->name('events');
 Route::view('/about','frontend/about')->name('about');
 Route::view('/club','frontend/club')->name('club');
-Route::view('/membership','frontend/membership')->name('membership');
 Route::view('/committee','frontend/committee')->name('committee');
 Route::view('/upcoming','frontend/upcoming')->name('upcoming');
+Route::get('/membership','membership')->name('membership');
+
+Route::get('students', 'index')->name('index');
+Route::get('/create', 'create')->name('create');
+Route::post('/store', 'store')->name('store');
+Route::get('/show/{id}', 'show')->name('show');
+Route::get('/edit/{id}', 'edit')->name('edit');
+Route::put('/update/{id}','update')->name('update');
+Route::delete('/delete/{id}',  'destroy')->name('delete');
 
 
+ });
 // Route::controller(StudentController::class)->group(function(){
 
 // Route::get('/index','index')->name('Homepage');

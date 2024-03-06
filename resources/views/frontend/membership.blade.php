@@ -38,85 +38,20 @@
     </div>
     <div class="row mt-5">
         <!-- Member Card 1 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title text-danger">Member ID: 001</h4>
-                    <h5 class="card-text text-muted bg-info p-2 rounded">Name: John Doe</h5>
-                    <p class="card-text">Department: Computer Science</p>
-                    <p class="card-text">Mobile: +88017*******</p>
-                    <p class="card-text">Address: Mohammadpur ,Dhaka </p>
+        @foreach ($students as $student)
+            <div class="col-md-4 mb-4">
+                <div class="card p-2 rounded">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted">Member ID: <span class="text-dark">{{ $student->id }}</span></h5>
+                        <h4 class="card-text text-white bg-info rounded p-2">{{ $student->name }}</h4>
+                        <p class="card-text">Department: {{ $student->department }}</p>
+                        <p class="card-text">Mobile: {{ $student->mobile }}</p>
+                        <p class="card-text">Address: {{ $student->address }}</p>
+                    </div>
                 </div>
+                
             </div>
-        </div>
-
-        <!-- Member Card 2 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title text-danger">Member ID: 002</h4>
-                    <h5 class="card-text text-muted bg-info p-2 rounded">Name: John Doe</h5>
-                    <p class="card-text">Department: Computer Science</p>
-                    <p class="card-text">Mobile: +88017*******</p>
-                    <p class="card-text">Address: Mohammadpur ,Dhaka </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title text-danger">Member ID: 003</h4>
-                    <h5 class="card-text text-muted bg-info p-2 rounded">Name: John Doe</h5>
-                    <p class="card-text">Department: Computer Science</p>
-                    <p class="card-text">Mobile: +88017*******</p>
-                    <p class="card-text">Address: Mohammadpur ,Dhaka </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Add more member cards as needed -->
-    </div>
-    <div class="row mt-5">
-        <!-- Member Card 1 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title text-danger">Member ID: 004</h4>
-                    <h5 class="card-text text-muted bg-info p-2 rounded">Name: John Doe</h5>
-                    <p class="card-text">Department: Computer Science</p>
-                    <p class="card-text">Mobile: +88017*******</p>
-                    <p class="card-text">Address: Mohammadpur ,Dhaka </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Member Card 2 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title text-danger">Member ID: 005</h4>
-                    <h5 class="card-text text-muted bg-info p-2 rounded">Name: John Doe</h5>
-                    <p class="card-text">Department: Computer Science</p>
-                    <p class="card-text">Mobile: +88017*******</p>
-                    <p class="card-text">Address: Mohammadpur ,Dhaka </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title text-danger">Member ID: 006</h4>
-                    <h5 class="card-text text-muted bg-info p-2 rounded">Name: John Doe</h5>
-                    <p class="card-text">Department: Computer Science</p>
-                    <p class="card-text">Mobile: +88017*******</p>
-                    <p class="card-text">Address: Mohammadpur ,Dhaka </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Add more member cards as needed -->
+        @endforeach
     </div>
 </div>
 

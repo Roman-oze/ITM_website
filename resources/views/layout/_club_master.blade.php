@@ -37,7 +37,7 @@
                     <a class="" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item p-2">
-                  <li><a href="" class="link">Registration</a></li>
+                  <li><a href="{{route('create')}}" class="link">Registration</a></li>
     
                 </li>
             </ul>
