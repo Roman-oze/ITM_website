@@ -8,68 +8,63 @@ use PhpParser\Node\Stmt\Echo_;
 
 class StudentController extends Controller
 {
- 
+    public function create()
+    {
+        return view('student.create');
+    }
 
- 
-        
-    public function create(){
-        return view('students.create');
-     }
+    public function index(){
 
-     public function store(Request $request){
-        $data['name'] = $request->name;
-        $data['department'] = $request->department;
-        $data['address'] = $request->address;
-        $data['mobile'] = $request->mobile;
-        DB::table('students')->insert($data);
+      $data['students'] = DB::table('students')->get();
 
+    //   dd($data);
+    return view('student.index',$data);
 
-        dd(DB::table('students')->get());
-        // return view('students.create')
-
-
-     }
-    
- 
-   public function index(){
-    $data['student'] = (DB::table('students')->get());
-        //   dd($data);
-        return view('students.index',$data);
-     }
-
-     
-
-
-
-public function show($id){
-    $data['students'] = DB::table('students')->where('id',$id)->first();
-    return view('students/show',$data);
     }
 
 
-     public function edit(){
-         return view('students.edit');
-     }
- 
+
+    public function store(Request $request){
+              
+        $data['name']=$request->name;
+        $data['department']=$request->department;
+        $data['address']=$request->address;
+        $data['mobile']=$request->mobile;
+
+        DB::table('students')->insert($data);
+
+        // dd(DB::table('students')->get());
+        return redirect('students');
+
+
+    }
+    public function show($id)
+    {
+        $data['student'] =DB::table('students')->where('id',$id)->first(); 
+        return view('student.show',$data);
+    }
+    
+
+    public function edit($id)
+    {
+        $data['student'] = DB::table('students')->where('id',$id)->first();
+                return view('student.edit',$data);
+    }
+
+
+    public function update(Request $request,$id){
+              
+        $data['name']=$request->name;
+        $data['department']=$request->department;
+        $data['address']=$request->address;
+        $data['mobile']=$request->mobile;
+
+        DB::table('students')->where('id',$id)->update($data);
+
+        // dd(DB::table('students')->get());
+        return redirect('students');
+
+
+    }
+
 }
-
-
-
-
-
-// public function store(Request $request)
-//      {
-//          // Validate the incoming request data
-//          $validatedData = $request->validate([
-//              'name' => 'required|string|max:255',
-//              'department' => 'required|string|max:255',
-//              'address' => 'required|string|max:255',
-//              'mobile' => 'required|string|max:20',
-//          ]);
- 
-//          // Create a new student record
-//          $student = Student::create($validatedData);
- 
-//          return redirect()->route('students.index')->with('success', 'Student created successfully');
-//      }
- 

@@ -15,9 +15,37 @@ use Faker\Guesser\Name;
 |
 */
 
-Route::get('/',function(){
-    return view('welcome');
-});
+// Route::get('/',function(){
+//     return view('welcome');
+// });
+
+Route::get('students', [StudentController::class, 'index'])->name('index');
+Route::get('/create', [StudentController::class, 'create'])->name('create');
+Route::post('/store', [StudentController::class, 'store'])->name('store');
+Route::get('/show/{id}', [StudentController::class, 'show'])->name('show');
+Route::get('/edit/{id}', [StudentController::class, 'edit'])->name('edit');
+Route::put('/update/{id}', [StudentController::class, 'update'])->name('update');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::view('/home','frontend.home')->name('homepage');
 Route::view('/program','frontend/program')->name('program');
@@ -41,6 +69,8 @@ Route::view('/upcoming','frontend/upcoming')->name('upcoming');
 
 // });
 
-Route::get('/index',['StudentController'],'index')->name('Homepage');
-Route::get('/create',['StudentController'],'create')->name('create');
-Route::post('/store',['StudentController'],'store')->name('store');
+// Route::get('/create', [StudentController::class, 'create']);
+// Route::post('/store', [StudentController::class, 'store']);
+// Route::post('/create',[StudentController::class,'create'])->name('create');
+// Route::post('/store',[StudentController::class,'store'])->name('store');
+// Route::post('/show',[StudentController::class,'show'])->name('show');

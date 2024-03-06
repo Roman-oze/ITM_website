@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>edit</title>
-</head>
-<body>
+@extends('layout._club_master')
 
-    <h1>Edit Data file</h1>
 
-    {{-- <table class="table">
+@section('main_content')
+    
+
+    <div class="container mt-5">
+        <h1 class="text-danger mt-5">Single Show Data </h1>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -24,20 +18,26 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($students as $student)
+         
             <tr>
                 <td>{{ $student->id }}</td>
                 <td>{{ $student->name }}</td>
                 <td>{{ $student->department }}</td>
                 <td>{{ $student->address }}</td>
                 <td>{{ $student->mobile }}</td>
+
+                <td>
+                        <a href="{{route('index')}}" class="btn btn-primary">Back</a>
+
+                </td>
                    
                 </tr>
-            @endforeach
+
         </tbody>
-    </table> --}}
-
-
+    </table>
 </div>
-</body>
-</html>
+<br>
+<br>
+<br>
+<br>
+@endsection
