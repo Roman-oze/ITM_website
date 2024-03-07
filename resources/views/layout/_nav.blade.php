@@ -21,7 +21,7 @@
             </li>
             <li class="nav-item p-1"><a href="{{route('about')}}">About Us</a></li>
             <li > <div class="p-1">
-                <a class="bn50 p-3 text-warning " href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply</a>
+                <a target="_blank" class="bn50 p-3 text-warning " href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply</a>
             </div></li>
             <li class="nav-item p-1"> <div class=" col-md-1 text-center apply">
                 <button id="mode-toggle">

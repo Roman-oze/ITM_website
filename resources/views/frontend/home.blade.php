@@ -173,15 +173,19 @@
 
         <br>
         <br>
-    
- <div class="container-fluid">
-    <div class="row text-center itmcard">
-        <div class=" heading" >               
-           <h1 class="font-family heading_text"><i class="fa-brands fa-elementor "></i>Department of ITM<h1>
-        </div>   
-
         <br>                
-        <div class="col-md-5 itright">
+    
+ <div class="container-fluid mt-5">
+    <div class="mt-5 ">
+        <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of ITM</h1>
+    </div>      
+    <br>                
+    <br> 
+    <div class="row text-center itmcard">
+        {{-- <div class=" heading" >               
+           <h1 class="font-family heading_text"><i class="fa-brands fa-elementor "></i>Department of ITM<h1>
+        </div> --}}           
+        <div class="col-md-5 itright mt-5">
             <img src="{{asset('frontend/image/IT3.png')}}" class="imagess" >
         </div>
 
@@ -191,13 +195,13 @@
                     <p style=" font-size: larger; color: rgb(255, 255, 255);">Department of Information Technology and Management (ITM) provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
                        <br>
                       <br>
-                       <button class="read "><a class="menucard" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Program List<i class="fa-solid fa-download"></i></a></i></button> 
+                       <button class="read "><a target="_blank" class="menucard" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Program List<i class="fa-solid fa-download"></i></a></i></button> 
                        <br>
                   <div class="fb">
-                     <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
+                     <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
                       <br>
                       <br>
-                     <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
+                     <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
 
                   </div>
            
@@ -206,8 +210,8 @@
   </div>
                 <br>
                 <br>
-                <div class="facilty">
-                    <h1 class="fac_text text-center">Study Aboard </h1>
+                <div class="">
+                    <h1 class="about_itm text-center text-info">Study Aboard </h1>
                 </div>             
                 <br>
                 <br>
@@ -222,7 +226,7 @@
                             <p class="item1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Scholarship</p><br>
                             <p class="item2  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Exchange Program</p><br>
                             <p class="item3  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</p><br><br>
-                            <a href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="bn5 ">Apply</i> </a>
+                            <a target="_blank" href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="bn5 ">Apply</i> </a>
     
                             
                         </div>
@@ -314,7 +318,7 @@
                 <br>
                 <br>
                 <br>
-               <div class="container-fluid ">
+               <div class="container mt-5 ">
                 <div class="text-dark text-center  service_text">
                     <h1 class="text-dark text-center ">Service <i class="fa-solid fa-universal-access"></i></h1>
                     <div class="divider-custom">
@@ -328,28 +332,28 @@
             <div class="row text-center facilty mt-5">                         
                <div class="col-md-3 border ">
                      <img src="{{asset('frontend/image/blc.png')}}" class="img-decorate">    
-                     <a href="https://elearn.daffodilvarsity.edu.bd/" class="view">BLC</a>
+                     <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="view">BLC</a>
 
                     <p class="p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates perspiciatis velit fuga voluptatem quos amet!</p>
                </div>
                
                    <div class="col-md-3  border ">
                         <img src="{{asset('frontend/image/portal.png')}}"class=" img-decorate">  
-                        <a href="http://studentportal.diu.edu.bd/" class="view ">Student Portal</a>
+                        <a target="_blank" href="http://studentportal.diu.edu.bd/" class="view ">Student Portal</a>
                         <p class="p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates perspiciatis velit fuga voluptatem quos amet!</p>
 
                    </div>
                
                    <div class="col-md-3 border ">
                        <img src="{{asset('frontend/image/diubus.png')}}" class=" img-decorate">
-                       <a href="https://daffodilvarsity.edu.bd/article/transport" class="view  ">Transport</a>
+                       <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="view  ">Transport</a>
                        <p class="p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates perspiciatis velit fuga voluptatem quos amet!</p>
 
                        </div>
                  
                        <div class="col-md-3 border ">
                         <img src="{{asset('frontend/image/1card.png')}}"  class=" img-decorate">  
-                         <a href="https://1card.com.bd/ " class="view ">1Card</a>
+                         <a target="_blank" href="https://1card.com.bd/ " class="view ">1Card</a>
                         <p class="p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates perspiciatis velit fuga voluptatem quos amet!</p>
 
                    </div>
@@ -412,9 +416,9 @@
                  </div>
                </div>
                </div> -->
-               <section id="skill" class="section-p2 backgorund-color">
+               <section id="skill" class="section-p2 ">
 
-                <div class="fe-box img-fluid bg-light">
+                <div class="fe-box img-fluid backgorund-color">
                     <img src="{{asset('frontend/image/skill.png')}}" alt="" class="iconslide">
                     <h3 class="btn4 text-dark p-3">Skill</h3>
                     <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
@@ -422,13 +426,13 @@
                      </p>
                </div>
 
-                <div class="fe-box img-fluid  bg-light">
+                <div class="fe-box img-fluid  backgorund-color">
                     <img src="{{asset('frontend/image/job.png')}}" alt=""class="iconslide">
                     <h4 class="btn2 text-dark p-3">Job Opportunity</h4>
                     <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                </div>
 
-                <div class="fe-box img-fluid bg-light">
+                <div class="fe-box img-fluid backgorund-color">
                     <img src="{{asset('frontend/image/career.png')}}" alt="" class="iconslide"><br>
                     <h3 class="btn1 text-dark p-3">Career</h3>
                      <p  class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
@@ -436,7 +440,7 @@
                       </p>
                 </div>
                 
-                <div class="fe-box img-fluid bg-light">
+                <div class="fe-box img-fluid backgorund-color">
                      <img src="{{asset('frontend/image/inter00.png')}}" alt=""class="iconslide">
                      <h3 class="btn3 text-dark p-3">Internship</h3>
                      <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
@@ -498,7 +502,7 @@
               </div>
         </div>
         <div class="col-md-6 text-center">
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29187.16159450864!2d90.320302!3d23.875601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23dd12bbc75%3A0x313d214552eabe56!2sDaffodil%20Smart%20City!5e0!3m2!1sen!2sbd!4v1702204472544!5m2!1sen!2sbd" width="100%" height="450px" style="border: 1px;"></iframe>
+            <iframe class="map"  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29187.16159450864!2d90.320302!3d23.875601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23dd12bbc75%3A0x313d214552eabe56!2sDaffodil%20Smart%20City!5e0!3m2!1sen!2sbd!4v1702204472544!5m2!1sen!2sbd" width="100%" height="450px" style="border: 1px;"></iframe>
         </div>
     </div>
 

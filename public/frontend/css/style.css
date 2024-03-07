@@ -472,7 +472,6 @@ color: #ffffff;
 }
 .facilty{
  background-image:linear-gradient(rgb(240, 240, 240),#1dd3dad3);
-  background-color: #02556e;
   background-size: cover;
   background-position: center;
 
@@ -483,14 +482,21 @@ color: #ffffff;
   object-fit: contain;
  }
  .fac_text{
-  background-color: white;
   color: #000;
   border: 3px solid #02556e;
-  border-radius: 24px;
+  border-radius: 50px;
   width: 40%;
   display: block;
   margin: auto;
+  padding: 5px;
  }
+ .about_itm{
+  border-bottom: 3px solid #e48314;
+  width: 40%;
+  display: block;
+  margin: auto;
+  padding-bottom: 15px;
+ }itm
  .prah{
   font-weight:bold;
   font-family: 'Times New Roman', Times, serif;
