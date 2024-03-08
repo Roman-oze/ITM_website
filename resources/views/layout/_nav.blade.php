@@ -15,8 +15,8 @@
                 <a href="#">Routine</a>
                     <div class="dropdown-content bg-info rounded">
                         
-                        <a target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link">Spring-2023</a>
-                        <a target="_blank" href="#" >Fall-2023</a>
+                        <a target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link">Spring-2024</a>
+                        <a target="_blank" href="#" >Fall-2024</a>
                     </div>
             </li>
             <li class="nav-item p-1"><a href="{{route('about')}}">About Us</a></li>
