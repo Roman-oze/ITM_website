@@ -8,6 +8,9 @@
 
 @section('headerpage')
 
+<br>
+<br>
+<br>
 <div class="container-fluid covepage">
     <div class="row ">
       <div class="col-md-7   text-center">
@@ -23,8 +26,8 @@
     
 
 
-  <div class="club">
-    <a target="_blank" href="{{route('club')}}" class="bn5 "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
+  <div class="club ">
+    <a target="_blank" href="{{route('club')}}" class="bn5   "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
 </div>
 <br>
 <br>
@@ -318,7 +321,7 @@
                 <br>
                 <br>
                 <br>
-               <div class="container mt-5 ">
+               <div class="container-fluid mt-5 ">
                 <div class="text-dark text-center  service_text">
                     <h1 class="text-dark text-center ">Service <i class="fa-solid fa-universal-access"></i></h1>
                     <div class="divider-custom">
@@ -417,37 +420,45 @@
                </div>
                </div> -->
                <section id="skill" class="section-p2 ">
-
-                <div class="fe-box img-fluid backgorund-color">
-                    <img src="{{asset('frontend/image/skill.png')}}" alt="" class="iconslide">
-                    <h3 class="btn4 text-dark p-3">Skill</h3>
-                    <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                       
-                     </p>
-               </div>
-
-                <div class="fe-box img-fluid  backgorund-color">
-                    <img src="{{asset('frontend/image/job.png')}}" alt=""class="iconslide">
-                    <h4 class="btn2 text-dark p-3">Job Opportunity</h4>
-                    <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-               </div>
-
-                <div class="fe-box img-fluid backgorund-color">
-                    <img src="{{asset('frontend/image/career.png')}}" alt="" class="iconslide"><br>
-                    <h3 class="btn1 text-dark p-3">Career</h3>
-                     <p  class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        
-                      </p>
-                </div>
-                
-                <div class="fe-box img-fluid backgorund-color">
-                     <img src="{{asset('frontend/image/inter00.png')}}" alt=""class="iconslide">
-                     <h3 class="btn3 text-dark p-3">Internship</h3>
-                     <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                       
-                      </p>
-                </div>
-               
+                  <div class="container-fluid mt-5">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="fe-box img-fluid backgorund-color">
+                                <img src="{{asset('frontend/image/skill.png')}}" alt="" class="iconslide">
+                                <h3 class="btn4 text-dark p-3">Skill</h3>
+                                <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                   
+                                 </p>
+                           </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="fe-box img-fluid  backgorund-color">
+                                <img src="{{asset('frontend/image/job.png')}}" alt=""class="iconslide">
+                                <h4 class="btn2 text-dark p-3">Job Opportunity</h4>
+                                <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                           </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="fe-box img-fluid backgorund-color">
+                                <img src="{{asset('frontend/image/career.png')}}" alt="" class="iconslide"><br>
+                                <h3 class="btn1 text-dark p-3">Career</h3>
+                                 <p  class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                    
+                                  </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 ">
+                            <div class="fe-box img-fluid backgorund-color">
+                                <img src="{{asset('frontend/image/inter00.png')}}" alt=""class="iconslide">
+                                <h3 class="btn3 text-dark p-3">Internship</h3>
+                                <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                  
+                                 </p>
+                           </div>
+                        </div>
+            
+            </div>
+            </div>
                </section>
         
 
