@@ -1,5 +1,6 @@
-@include('frontend.program_style')
 @extends('layout.master')
+@include('frontend.program_style')
+
 
 @section('headerpage')
 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
@@ -21,19 +22,21 @@
     <a href="#4thsemester" class="btn4">4th Semester</a>
     <a href="#5thsemester" class="btn5">5th Semester</a>
     <a href="#6thsemester" class="btn6">6th Semester</a>
-    <a href="#7thsemester"n class="btn7">7th Semester</a>
+    <a href="#7thsemester" class="btn7">7th Semester</a>
     <a href="#8thsemester" class="btn8">8th Semester</a>
   
   </div>
 </div>
-
 @endsection
-@section('content')
-<div class="dee1 bg-info text-white">
-  <h2>Category of Courses</h2></h1>
-</div>
 
-<div class="container mt-4">
+@section('content')
+<div class="container-fluid mt-5">
+  <br>
+  <br>
+  <br>
+
+  <h2 class="dee1 bg-info text-white">Category of Courses</h2>
+
 <table>
 <thead>
   <tr>

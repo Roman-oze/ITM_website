@@ -27,22 +27,22 @@
     
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" value="{{$student->name}}" name="name" required>
+                    <input type="text" class="form-control" value="{{ $student->name }}" name="name" required>
                 </div>
     
                 <div class="form-group">
                     <label for="department">Department:</label>
-                    <input type="text" class="form-control" value="{{$student->department}}" name="department" required>
+                    <input type="text" class="form-control" value="{{ $student->department }}" name="department" required>
                 </div>
     
                 <div class="form-group">
                     <label for="address">Address:</label>
-                    <input type="text" class="form-control" value="{{$student->address}}" name="address" required>
+                    <input type="text" class="form-control" value="{{ $student->address }}" name="address" required>
                 </div>
     
                 <div class="form-group">
                     <label for="mobile">Mobile:</label>
-                    <input type="text" class="form-control" value="{{$student->mobile}}" name="mobile" required>
+                    <input type="text" class="form-control" value="{{ $student->mobile }}" name="mobile" required>
                 </div>
     
                 <button type="submit" class="btn btn-primary">update</button>

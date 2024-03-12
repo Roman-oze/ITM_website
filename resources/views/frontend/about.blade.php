@@ -5,6 +5,15 @@
 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
     <div class="col-lg-8 align-self-end">
         <h1 class="text-muted  font-weight-bold">Our Campus</h1>
+       
+    
+
+<x-slot :message>
+    <p>this line from about slot change name.</p>
+</x-slot>
+  
+      
+
     </div>
     <div class="divider-custom">
         <div class="divider-custom-line"></div>
@@ -19,17 +28,28 @@
 
    
 </div>
-
 @endsection
+
+
+
+
+
+{{-- <x-header>
+    <h1>header compoent</h1>
+</x-header> --}}
+
+
+
 @section('content')
 <section id="about">
-      
+    
     <br>
     <br>
     <br>
     <br>
     <div class="gy-4">
     <h1 class="header1">Our Location <i class="fa-solid fa-location-dot icon1 text-danger"></i></h1>
+  
 </div>
 
 <div class="main">

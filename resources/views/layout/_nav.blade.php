@@ -5,11 +5,11 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-            <li class="nav-item p-1"></i><a href="{{route('homepage')}}"><i class="fa-solid fa-house s-4"></i></a></li>
-            <li class="nav-item p-1"> <a href="{{route('program')}}">Programs</a></li>
-            <li class="nav-item p-1"><a href="{{route('faculty')}}">Faculty</a></li>
-            <li class="nav-item p-1"><a href="{{route('events')}}">Upcoming Events</a></li>
-            <li class="nav-item p-1"><div class="dropdown">
+            <li class="nav-item p-1"></i><a href="{{route('homepage')}}"><i class="fa-solid fa-house s-4 homeicon"></i></a></li>
+            <li class="nav-item p-1 navbar_text"> <a href="{{route('program')}}">Programs</a></li>
+            <li class="nav-item p-1  navbar_text"><a href="{{route('faculty')}}">Faculty</a></li>
+            <li class="nav-item p-1 navbar_text"><a href="{{route('events')}}">Upcoming Events</a></li>
+            <li class="nav-item p-1 navbar_text"><div class="dropdown">
                 <a href="#">Routine</a>
                     <div class="dropdown-content bg-info rounded">
                         
@@ -17,13 +17,13 @@
                         <a target="_blank" href="#" >Fall-2024</a>
                     </div>
             </li>
-            <li class="nav-item p-1"><a href="{{route('about')}}">About Us</a></li>
+            <li class="nav-item p-1 navbar_text"><a href="{{route('about')}}">About Us</a></li>
             <li > <div class="p-1">
                 <a target="_blank" class="bn50 p-3 text-warning " href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply</a>
             </div></li>
             <li class="nav-item p-1"> <div class=" col-md-1 text-center apply">
                 <button id="mode-toggle">
-                    <i id="mode-icon" class="fas fa-sun"></i>
+                    <i id="mode-icon" class="fas fa-sun icon1"></i>
                 </button>
                 </div></li>
 

@@ -145,5 +145,18 @@ cursor: pointer;
   object-fit: contain;
   mix-blend-mode: color-burn;
 }
+.course {
+            text-align: center;
+        }
+
+       
+        /* Media queries for responsiveness */
+        @media only screen and (max-width: 600px) {
+            .course a {
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
 
   </style>

@@ -7,10 +7,6 @@
 
 
 @section('headerpage')
-
-<br>
-<br>
-<br>
 <div class="container-fluid covepage">
     <div class="row ">
       <div class="col-md-7   text-center">
@@ -348,7 +344,7 @@
                    </div>
                
                    <div class="col-md-3 border ">
-                       <img src="{{asset('frontend/image/diubus.png')}}" class=" img-decorate">
+                       <img src="{{asset('frontend/image/diubus.png')}}" class=" img-decorate ">
                        <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="view  ">Transport</a>
                        <p class="p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates perspiciatis velit fuga voluptatem quos amet!</p>
 

@@ -7,8 +7,8 @@
 body {
   background-color: #f5f5f5;
   color: #333;
-  /* font-family:'Times New Roman', Times, serif; */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:'Times New Roman', Times, serif;
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 
 }
 .pf{
@@ -85,18 +85,24 @@ color: rgb(0, 0, 0);
     height:auto;
 
 } */
+.homeicon{
+  font-size:x-large;
 
-.navbar a {
-  font-weight: bold;
+}
+.homeicon:hover{
+  color: #dd9715;
+}
+.navbar_text a {
+  font-size:larger;
   color: #000000e1;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
 
 }
-.navbar a:hover {
+.navbar_text a:hover {
   font-size:larger;
-  color: rgb(243, 8, 86);
+  color: #dd9715;
   border-bottom:3px solid rgb(0, 0, 0);
   border-width: auto;
 }  */ 
@@ -132,8 +138,8 @@ p{
 
 .btnn{
 
-    background-color: rgba(231, 15, 44, 0.918);
-    color:rgb(255, 255, 255);
+  background-color: rgb(27, 103, 190);
+  color:rgb(255, 255, 255);
     border-radius: 24px;
     padding: 10px 20px;
     font-weight: bold;
@@ -142,7 +148,7 @@ p{
 }
 .btnn:hover{
 
-background-color: black;
+background-color: #f1b25f;
 color: rgb(255, 255, 255);
 border-radius: 24px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -845,10 +851,9 @@ width:60%;
 background-image:linear-gradient(rgb(150, 153, 158),#050505d3);
 color:  #fbfeff;
 }
- .img-decorate{
-  width: 100%;
-  aspect-ratio: 3/2;
-  object-fit: contain;
+.img-decorate{
+  height: 250px;
+  width: 250px;
   transition: transform 0.4s;
 }
 .img-decorate:hover{
