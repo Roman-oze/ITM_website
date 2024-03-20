@@ -36,6 +36,26 @@
         <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
         <div class="divider-custom-line"></div>
     </div>
+    <div class="row mt-5 p-5">
+      
+        
+        <div class="col-lg-4 col-6 text-center p-5">
+            <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="0" class="purecounter"></span>
+            <p class="text-color">Committee</p>
+          </div>  
+
+        <div class="col-lg-4 col-6 text-center  p-5">
+          <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="0" class="purecounter"></span>
+          <p class="text-color">Memebers</p>
+        </div>
+      
+      
+        <div class="col-lg-4 col-6 text-center p-5">
+          <span data-purecounter-start="0" data-purecounter-end="10000" data-purecounter-duration="0" class="purecounter"></span>
+          <p class="text-color">Budget</p>
+        </div>
+      
+      </div>
     <div class="row mt-5">
         <!-- Member Card 1 -->
         @foreach ($students as $student)

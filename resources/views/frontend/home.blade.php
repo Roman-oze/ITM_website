@@ -168,6 +168,7 @@
                                          </div>   
                                      </div>
                                  </div>
+                                 
                          </div>
 
         <br>
@@ -206,6 +207,29 @@
            
         </div>
      </div>
+     <div class="row mt-5 p-5">
+
+        <div class="col-lg-3 col-6 text-center p-5">
+          <span data-purecounter-start="0" data-purecounter-end="349" data-purecounter-duration="0" class="purecounter">232</span>
+          <p class="text-color">Students</p>
+        </div>
+      
+        <div class="col-lg-3 col-6 text-center  p-5">
+          <span data-purecounter-start="0" data-purecounter-end="156" data-purecounter-duration="0" class="purecounter">421</span>
+          <p class="text-color">Teachers</p>
+        </div>
+      
+        <div class="col-lg-3 col-6 text-center p-5">
+          <span data-purecounter-start="0" data-purecounter-end="490" data-purecounter-duration="0" class="purecounter">1364</span>
+          <p class="text-color">Alumni</p>
+        </div>
+      
+        <div class="col-lg-3 col-6 text-center p-5">
+          <span data-purecounter-start="0" data-purecounter-end="311" data-purecounter-duration="0" class="purecounter">42</span>
+          <p class="text-color">Scholarship</p>
+        </div>
+      
+      </div>
   </div>
                 <br>
                 <br>

@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', function () {
+  var counters = document.querySelectorAll('.purecounter');
+  var speed = 200; // The speed of counting in milliseconds
+
+  counters.forEach(function (counter) {
+      var start = parseInt(counter.getAttribute('data-purecounter-start'));
+      var end = parseInt(counter.getAttribute('data-purecounter-end'));
+      var duration = parseInt(counter.getAttribute('data-purecounter-duration'));
+      var range = end - start;
+      var current = start;
+      var increment = end > start ? 1 : -1;
+      var stepTime = Math.abs(Math.floor(duration / range));
+
+      function updateCounter() {
+          counter.innerText = current;
+          if (current !== end) {
+              current += increment;
+              setTimeout(updateCounter, stepTime);
+          }
+      }
+
+      updateCounter();
+  });
+});
+
+
 const modeToggle = document.getElementById('mode-toggle');
         const body = document.body;
         const modeIcon = document.getElementById('mode-icon');
