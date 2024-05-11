@@ -8,6 +8,14 @@ use PhpParser\Node\Stmt\Echo_;
 
 class StudentController extends Controller
 {
+    public function register()
+    {
+        return view('frontend.register');
+    }
+    public function login()
+    {
+        return view('frontend.login');
+    }
     public function create()
     {
         return view('student.create');
@@ -25,7 +33,7 @@ class StudentController extends Controller
 
 
     public function store(Request $request){
-              
+
         $data['name']=$request->name;
         $data['department']=$request->department;
         $data['address']=$request->address;
@@ -40,10 +48,10 @@ class StudentController extends Controller
     }
     public function show($id)
     {
-        $data['student'] =DB::table('students')->where('id',$id)->first(); 
+        $data['student'] =DB::table('students')->where('id',$id)->first();
         return view('student.show',$data);
     }
-    
+
 
     public function edit($id)
     {
@@ -53,7 +61,7 @@ class StudentController extends Controller
 
 
     public function update(Request $request,$id){
-              
+
         $data['name']=$request->name;
         $data['department']=$request->department;
         $data['address']=$request->address;
@@ -67,7 +75,7 @@ class StudentController extends Controller
 
     }
     public function destroy($id){
-    
+
         DB::table('students')->where('id',$id)->delete();
 
         // dd(DB::table('students')->get());
@@ -77,8 +85,8 @@ class StudentController extends Controller
     }
     public function membership()
     {
-        $data['students'] = DB::table('students')->get(); 
-   
+        $data['students'] = DB::table('students')->get();
+
          return view('frontend.membership', $data);
 
     }

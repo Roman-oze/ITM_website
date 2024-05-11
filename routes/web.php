@@ -14,10 +14,20 @@ Route::view('/program','frontend/program')->name('program');
 Route::view('/faculty','frontend/faculty')->name('faculty');
 Route::view('/event','frontend/event')->name('events');
 Route::view('/about','frontend/about')->name('about');
+
+
+Route::get('/registration', 'register')->name('registration');
+Route::get('/login', 'login')->name('login');
+
+
+
+
 Route::view('/club','frontend/club')->name('club');
 Route::view('/committee','frontend/committee')->name('committee');
 Route::view('/upcoming','frontend/upcoming')->name('upcoming');
 Route::get('/membership','membership')->name('membership');
+
+
 
 Route::get('students', 'index')->name('index');
 Route::get('/create', 'create')->name('create');

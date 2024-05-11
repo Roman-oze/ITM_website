@@ -6,16 +6,14 @@
 <body>
 
     {{-- <nav class="navbar navbar-expand-lg navbar-light  fixed-top facilty p-2 t-center"> --}}
-    <nav class="navbar navbar-expand-lg navbar-light facilty fixed-top p-2 ">
+    <nav class="navbar navbar-expand-lg navbar-light facilty  p-2 ">
 
         @include('layout._nav')
       </nav>
 
       <header>
-        <br>
-            <div class="container-fluid mt-4">
-                <br>
 
+            <div class="container-fluid ">
                  @yield('headerpage')
              </div>
       </header>

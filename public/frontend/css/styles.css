@@ -18,7 +18,7 @@ body {
   color: rgb(255, 255, 255);
   font-weight: bolder;
   padding: 10px;
- 
+
 }
  ul li a:hover{
   text-decoration: none;
@@ -53,21 +53,21 @@ body {
   border: 3px solid rgb(233, 174, 10);
   color: #f8f9fa;
   border-radius: 24px;
-  background-image:linear-gradient(rgba(13, 148, 153, 0.589),#0f2469fd)     ;   
+  background-image:linear-gradient(rgba(13, 148, 153, 0.589),#0f2469fd)     ;
   padding: 10px;
   font-weight: bold;
 
   }
   .link:hover{
-    
+
   border: 3px solid rgb(253, 253, 253);
   border-radius: 24px;
-  background-image:linear-gradient(rgba(13, 148, 153, 0.589),#0f2469fd)     ;   
+  background-image:linear-gradient(rgba(13, 148, 153, 0.589),#0f2469fd)     ;
   color: rgb(0, 0, 0);
   font-weight: bold;
   color: #f8f9fa;
   padding: 10px;
-  
+
   }
 
   .bgphoto{
@@ -80,7 +80,7 @@ body {
     background-image:linear-gradient(rgba(5, 20, 107, 0.329),#145ee78e),url('../image/orient.jpg');
   background-size: cover;
   background-position: center;
- 
+
     height: 70vh;
   }
   .bgcolor{
@@ -95,7 +95,7 @@ body {
   }
   .welcomept{
     width: 350px;
-  
+
   }
    .btnn{
   border:1px solid black;
@@ -106,18 +106,18 @@ body {
   margin: auto;
   font-weight:bold;
   }
-  
+
   .paragh{
   padding: 50px;
   text-align: center;
   }
-  
+
   .fa-download{
   font-size: 20px;
   padding: 10px;
   color: #0658d3;
   }
-  
+
   .face{
   text-decoration: none;
   border-radius: 24px;
@@ -129,7 +129,7 @@ body {
   margin-right: 5px;
 
   }
- 
+
   .face:hover{
     text-decoration: none;
   color: rgb(0, 0, 0);
@@ -152,7 +152,7 @@ body {
   font-weight: bold;
   transform: scale(1.05);
   }
- 
+
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -160,11 +160,11 @@ body {
     background-color: #f4f4f4;
   }
   .container {
-  
+
     margin: 20px auto;
     padding: 0 20px;
   }
-  
+
   .heading{
   color: #2c3e50;
     width: 40%;
@@ -223,10 +223,10 @@ body {
     background-color: #0056b3;
   }
   .carousel-img {
-    width: 80%; 
+    width: 80%;
     height: auto;
-    margin: auto; 
-    position: relative; 
+    margin: auto;
+    position: relative;
   } */
   .event-card {
     margin-bottom: 20px;
@@ -246,7 +246,7 @@ body {
     text-align: center;
     text-decoration: none;
 }
-  
+
 .h1border{
   width: 60%;
   display: block;
@@ -269,7 +269,7 @@ body {
   width: 100%;
 }
 .img00{
-  height: 250px;
+  height: 275px;
   width: 350px;
 }
 .images{

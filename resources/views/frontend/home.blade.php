@@ -27,11 +27,16 @@
 </div>
 <br>
 <br>
-</div>
-</div>
-   <br>
-   <br>
+<br>
 
+</div>
+</div>
+
+
+
+<br>
+<br>
+<br>
 @endsection
 @section('content')
 
