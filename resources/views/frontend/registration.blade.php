@@ -21,27 +21,31 @@
                 </div>
             @endif
 
-            <form method="post" action="{{route('store')}}">
+            <form method="post" action="{{route('register')}}">
                 @csrf
 
+
                 <div class="form-group">
-                    <label for="name">Name:</label>
+                    <label for="name">Name</label>
                     <input type="text" class="form-control" name="name" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="department">Department:</label>
-                    <input type="text" class="form-control" name="department" required>
+                    <label for="name">Email</label>
+                    <input type="email" class="form-control" name="email" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" class="form-control" name="address" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mobile">Mobile:</label>
+                    <label for="name">Mobile</label>
                     <input type="text" class="form-control" name="mobile" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="">password_confirm</label>
+                    <input type="password" class="form-control" name="password_confirm" required>
                 </div>
                 <br>
                 <br>

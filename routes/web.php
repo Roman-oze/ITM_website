@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AdminController;
 use Faker\Guesser\Name;
 
 
@@ -16,8 +17,14 @@ Route::view('/event','frontend/event')->name('events');
 Route::view('/about','frontend/about')->name('about');
 
 
-Route::get('/registration', 'register')->name('registration');
-Route::get('/login', 'login')->name('login');
+
+Route::get('admin/login', 'login')->name('login');
+Route::get('/registration', 'registration')->name('registration');
+Route::post('/register', 'register')->name('register');
+Route::get('admin/dashboard', 'admin')->name('admin');
+Route::get('admin_user', 'admin_user')->name('admin_user');
+
+
 
 
 

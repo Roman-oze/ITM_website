@@ -6,12 +6,18 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Student;
 use PhpParser\Node\Stmt\Echo_;
 
+
 class StudentController extends Controller
 {
-    public function register()
-    {
-        return view('frontend.register');
-    }
+
+
+
+   public function admin()
+        {
+            return view('frontend.dashboard');
+        }
+
+
     public function login()
     {
         return view('frontend.login');
