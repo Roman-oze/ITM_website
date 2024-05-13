@@ -3,6 +3,21 @@
 <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
 @endpush --}}
 
+@section('topmost')
+
+            <div class="row  p-2 ">
+        <div class="col-md-5  ">
+            <a href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
+            <a href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
+            <a href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope icontop"></i></a>
+            <a href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
+        </div>
+        <div class="col-md-7 text-end">
+        <a class="btn btn-outline btn-dark text-white" href="{{route('registration')}}">Sign Up</a>
+        <a class="btn btn-outline btn-dark text-white" href="{{route('login')}}">Login</a>
+        </div>
+
+@endsection
 @extends('layout.master')
 
 

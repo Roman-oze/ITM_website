@@ -13,10 +13,10 @@
       background-color: #f8f9fa;
     }
     .container-fluid {
-      padding: 20px;
+      padding: 10px;
     }
     .card {
-      margin-bottom: 20px;
+      margin-bottom:10px;
     }
   </style>
 </head>
@@ -24,7 +24,7 @@
 
   <!-- Navigation -->
 
-  <nav class="navbar navbar-dark bg-success">
+  <nav class="navbar navbar-dark bg-secondary">
     <div class="container-fluid text-center">
       <span class="navbar-brand mb-0 h1 text-center">Admin Dashboard</span>
     </div>
@@ -34,7 +34,7 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar -->
-      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar  text-muted">
         <div class="position-sticky">
           <ul class="nav flex-column ">
             <li class="nav-item">
@@ -43,7 +43,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="https://d2908q01vomqb2.cloudfront.net/c5b76da3e608d34edb07244cd9b875ee86906328/2020/02/13/Screen-Shot-2020-02-13-at-3.54.08-PM.png">
+              <a class="nav-link active" href="">
                 User<i class="fa fa-user"></i>
               </a>
             </li>
@@ -58,13 +58,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://img.freepik.com/free-vector/horizontal-format-digital-restaurant-menu_52683-45248.jpg?w=2000">
-
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://cdn.dribbble.com/users/1192538/screenshots/15188503/media/5a58687671fa825cf5f080cb3130fdee.png?resize=400x0">
-                Publication
+                <a class="nav-link" href="#">
+                 Publication
               </a>
             </li>
           </ul>
@@ -79,7 +74,7 @@
 
         <!-- Cards -->
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="card  bg-danger">
               <div class="card-body">
                 <h5 class="card-title">Total Student</h5>
@@ -87,36 +82,37 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="card bg-info">
               <div class="card-body">
-                <h5 class="card-title">Total; Teacher</h5>
+                <h5 class="card-title">Total Teacher</h5>
                 <b><p class="card-text ">100</p></b>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="card bg-warning">
               <div class="card-body">
-                <h5 class="card-title">Alumni</h5>
+                <h5 class="card-title">Total Alumni</h5>
                 <b><p class="card-text">50</p></b>
               </div>
             </div>
-          <div class="col-md-4">
-            <div class="card bg-warning">
+        </div>
+          <div class="col-md-3">
+            <div class="card bg-primary">
               <div class="card-body">
-                <h5 class="card-title">scholarship</h5>
-                <b><p class="card-text">50</p></b>
+                <h5 class="card-title">Total Scholaship</h5>
+                <b><p class="card-text">40</p></b>
               </div>
             </div>
-          </div>
+        </div>
+
         </div>
       </main>
     </div>
   </div>
 
-  <div style="text-align: center;">
-  <img class="img-fluid"  src="../Model/analaytics.png">
+
   </div>
 
 

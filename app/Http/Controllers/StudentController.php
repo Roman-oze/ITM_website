@@ -18,10 +18,7 @@ class StudentController extends Controller
         }
 
 
-    public function login()
-    {
-        return view('frontend.login');
-    }
+
     public function create()
     {
         return view('student.create');
@@ -44,6 +41,7 @@ class StudentController extends Controller
         $data['department']=$request->department;
         $data['address']=$request->address;
         $data['mobile']=$request->mobile;
+
 
         DB::table('students')->insert($data);
 

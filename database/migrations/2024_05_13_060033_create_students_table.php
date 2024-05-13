@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,12 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->id('admin_id');
+        Schema::create('students', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
-            $table->string('email',50)->unique();
-            $table->string('mobile',30);
-            $table->string('password');
+            $table->string('department');
+            $table->string('address');
+            $table->string('mobile');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('students');
     }
 };

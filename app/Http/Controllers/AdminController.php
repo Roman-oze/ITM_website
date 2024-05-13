@@ -17,6 +17,10 @@ class AdminController extends Controller
         {
             return view('frontend.registration');
         }
+        public function login()
+        {
+            return view('frontend.login');
+        }
 
         public function register(Request $request)
     {
@@ -34,8 +38,15 @@ class AdminController extends Controller
                 $data['password']=$request->password;
                 $data['password_confirm']=$request->password_confirm;
 
-                  Admin::get()->insert($data);
-                  return redirect('admin_user')->back()->with('message','Registration Successfull');
+                //   Admin::get()->insert($data);
+                //   return redirect('admin_user')->back()->with('message','Registration Successfull');
+                DB::table('admins')->insert($data);
+                dd(DB::table('students')->get());
+                // return redirect ('');
+
+                // $admins = admin::all();
+                // echo "<pre>";
+                // print_r($admins->toArray());
                 }
 
     public function admin_user(){

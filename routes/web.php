@@ -5,6 +5,17 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AdminController;
 use Faker\Guesser\Name;
 
+Route::controller(AdminController::class)->group(function(){
+
+
+    Route::get('admin/login', 'login')->name('login');
+    Route::get('/registration', 'registration')->name('registration');
+    Route::post('/register', 'register')->name('register');
+    Route::get('admin/dashboard', 'admin')->name('admin');
+    Route::get(' /admin_user', 'admin_user')->name('admin_user');
+
+});
+
 
 
  Route::controller(StudentController::class)->group(function(){
@@ -15,17 +26,6 @@ Route::view('/program','frontend/program')->name('program');
 Route::view('/faculty','frontend/faculty')->name('faculty');
 Route::view('/event','frontend/event')->name('events');
 Route::view('/about','frontend/about')->name('about');
-
-
-
-Route::get('admin/login', 'login')->name('login');
-Route::get('/registration', 'registration')->name('registration');
-Route::post('/register', 'register')->name('register');
-Route::get('admin/dashboard', 'admin')->name('admin');
-Route::get('admin_user', 'admin_user')->name('admin_user');
-
-
-
 
 
 

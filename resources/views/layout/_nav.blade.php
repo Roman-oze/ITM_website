@@ -1,4 +1,5 @@
 
+
 <img src="{{asset('frontend/image/IT3.PNG')}}" class="pf ">
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -22,25 +23,6 @@
                 <a target="_blank" class="bn50 p-3 text-warning " href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply</a>
             </div>
         </li>
-
-            <div class="auth">
-            <a  class="btn btn-outline btn-info" href="{{route('registration')}}" >Sign Up</a>
-            <a class="btn btn-outline btn-danger" href="{{route('login')}}">Login</a>
-            </div>
-
-
         </ul>
-{{--
-        <div class="container-fluid ">
-            <div class="row  p-2">
-        <div class="col-md-6 "> <a href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook "></i></a>
-        <a href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin "></i></a>
-        <a href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope"></i></a>
-        <a href="01847-140039"><i class="fa-solid fa-square-phone "></i></a>
-        </div>
-        <div class="col-md-6 text-end">
-        <button class="btn btn-outline btn-info">Sign Up</button>
-        <button class="btn btn-outline btn-success">Login</button>
-        </div>
-            </div> --}}
+
 
