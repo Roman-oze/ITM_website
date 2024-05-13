@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Student;
+use Illuminate\Auth\Events\Validated;
 use PhpParser\Node\Stmt\Echo_;
 
 
@@ -12,10 +13,6 @@ class StudentController extends Controller
 
 
 
-   public function admin()
-        {
-            return view('frontend.dashboard');
-        }
 
 
 
@@ -37,10 +34,24 @@ class StudentController extends Controller
 
     public function store(Request $request){
 
-        $data['name']=$request->name;
-        $data['department']=$request->department;
-        $data['address']=$request->address;
-        $data['mobile']=$request->mobile;
+        // $request->validate([
+
+        //     'name'=>'required',
+        //     'email'=>'required|unique',
+        //     'address'=>'required',
+        //     'mobile'=>'required|unique',
+        //     'password'=>'required|confirmed',
+        //     'password_confirm'=>'required | same:password',
+        //     ]);
+
+         $data['name']=$request->name;
+         $data['email']=$request->email;
+         $data['department']=$request->department;
+         $data['address']=$request->mobile;
+         $data['mobile']=$request->mobile;
+         $data['password']=$request->password;
+         $data['password_confirm']=$request->password_confirm;
+         $data['role']=$request->role;
 
 
         DB::table('students')->insert($data);

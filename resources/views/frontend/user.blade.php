@@ -1,39 +1,45 @@
-<div class="container">
 
-    <div class="table-responsive">
-      <table
-          class="table table-primary">
-          <thead>
-              <tr>
-                  <th>Admin ID</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>mobile</th>
-                  <th>Password</th>
-              </tr>
-          </thead>
-          <tbody>
-   @foreach ($admins as $admin)
 
-   @endforeach
-              <tr>
-                  <td>{{$admin->admin_id}}</td>
-                  <td>{{$admin->name}}</td>
-                  <td>{{$admin->eamil}}</td>
-                  <td>{{$admin->mobile}}</td>
-                  <td>{{$admin->password}}</td>
+    @extends('layout._club_master')
 
-                  <td>
 
-                      <a href="{{route('data')}}" class="btn btn-info">Edit</a>
-                      <a href="{{route('data')}}" class="btn btn-danger">Delet</a>
-                      <a href="{{route('data')}}" class="btn btn-success">Show</a>
-                  </td>
+    @section('main_content')
 
-              </tr>
 
-          </tbody>
+        <div class="container mt-5">
+            <h1 class="text-danger mt-5">Single Show Data </h1>
+        <table class="table table-striped">
+            <thead>
+                @foreach ($students as $student)
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
 
-      </table>
+                <tr>
+                    <td>{{$student->id}}</td>
+                  <td>{{$student->name}}</td>
+                  <td>{{$student->email}}</td>
+                  <td>{{$student->password}}</td>
+
+                    <td>
+                            <a href="" class="btn btn-primary">Edit</a>
+                            <a href="" class="btn btn-primary">Delet</a>
+                            <a href="{{route('show',$student->id)}}" class="btn btn-primary">Show</a>
+
+                    </td>
+
+                    </tr>
+                    @endforeach
+            </tbody>
+        </table>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    @endsection

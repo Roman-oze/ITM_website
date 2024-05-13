@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -15,9 +14,13 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('email');
             $table->string('department');
             $table->string('address');
             $table->string('mobile');
+            $table->string('password')->after('password_confirm');
+            $table->string( 'password_confirm');
+            $table->string('role')->default('user');
             $table->timestamps();
         });
     }

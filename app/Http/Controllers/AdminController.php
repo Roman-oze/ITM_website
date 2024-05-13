@@ -9,107 +9,105 @@ use App\Models\Admin;
 class AdminController extends Controller
 {
 
-        public function admin()
-        {
-            return view('frontend.dashboard');
-        }
-        public function registration()
-        {
-            return view('frontend.registration');
-        }
-        public function login()
-        {
-            return view('frontend.login');
-        }
 
-        public function register(Request $request)
+    public function admin()
     {
-        $request->validate([
-                   'name'=>'required',
-                   'email'=>'required|unique:admin',
-                   'mobile'=>'required|',
-                   'password'=>'required|min:8|confirmed',
-                   'password_confirm'=>'required | same:password'
-                   ]);
-
-                $data['name']=$request->name;
-                $data['email']=$request->email;
-                $data['mobile']=$request->mobile;
-                $data['password']=$request->password;
-                $data['password_confirm']=$request->password_confirm;
-
-                //   Admin::get()->insert($data);
-                //   return redirect('admin_user')->back()->with('message','Registration Successfull');
-                DB::table('admins')->insert($data);
-                dd(DB::table('students')->get());
-                // return redirect ('');
-
-                // $admins = admin::all();
-                // echo "<pre>";
-                // print_r($admins->toArray());
-                }
-
-    public function admin_user(){
-
-         $data['admins']=Admin::get();
-
-
-            return view('frontend.user',$data);
-                }
-
-
-    public function index()
-    {
-        //
+        return view('frontend.dashboard');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function registration()
+    {
+        return view('frontend.registration');
+    }
     public function create()
     {
-        //
+        return view('student.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function index(){
+
+      $data['students'] = DB::table('students')->get();
+
+    //   dd($data);
+    return view('student.index',$data);
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+
+
+    public function store(Request $request){
+
+        // $request->validate([
+
+        //     'name'=>'required',
+        //     'email'=>'required|unique',
+        //     'address'=>'required',
+        //     'mobile'=>'required|unique',
+        //     'password'=>'required|confirmed',
+        //     'password_confirm'=>'required | same:password',
+        //     ]);
+
+         $data['name']=$request->name;
+         $data['email']=$request->email;
+         $data['department']=$request->department;
+         $data['address']=$request->mobile;
+         $data['mobile']=$request->mobile;
+         $data['password']=$request->password;
+         $data['password_confirm']=$request->password_confirm;
+         $data['role']=$request->role;
+
+
+        DB::table('students')->insert($data);
+
+        // dd(DB::table('students')->get());
+        return redirect('students');
+
+
+    }
+    public function show($id)
     {
-        //
+        $data['student'] =DB::table('students')->where('id',$id)->first();
+        return view('student.show',$data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+
+    public function edit($id)
     {
-        //
+        $data['student'] = DB::table('students')->where('id',$id)->first();
+                return view('student.edit',$data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+
+    public function update(Request $request,$id){
+
+        $data['name']=$request->name;
+        $data['department']=$request->department;
+        $data['address']=$request->address;
+        $data['mobile']=$request->mobile;
+
+        DB::table('students')->where('id',$id)->update($data);
+
+        // dd(DB::table('students')->get());
+        return redirect('students');
+
+
+    }
+    public function destroy($id){
+
+        DB::table('students')->where('id',$id)->delete();
+
+        // dd(DB::table('students')->get());
+        return redirect('students');
+
+
+    }
+    public function membership()
     {
-        //
+        $data['students'] = DB::table('students')->get();
+
+         return view('frontend.membership', $data);
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
 
 

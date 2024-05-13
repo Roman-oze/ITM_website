@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use App\Models\Student;
+// use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-
     public function admin()
     {
         return view('frontend.dashboard');
@@ -17,116 +16,77 @@ class UserController extends Controller
     {
         return view('frontend.registration');
     }
-    public function login()
+    public function create()
     {
-        return view('frontend.login');
+        return view('student.create');
     }
 
-    public function register(Request $request)
-{
-    $request->validate([
-        'name' => 'required',
-        'email' => 'required|email',
-        'password' => 'required',
-        'password_confirm' => 'required|same:password',
-         'role'=>'1'
+    public function index(){
 
-        ]);
+      $data['students'] = DB::table('users')->get();
 
-        dd($request->all());
+    //   dd($data);
+    return view('frontend.user',$data);
 
-            $data['name']=$request->name;
-            $data['email']=$request->email;
-            $data['mobile']=$request->mobile;
-            $data['password']=$request->password;
-            $data['password_confirm']=$request->password_confirm;
-
-            //   Admin::get()->insert($data);
-            //   return redirect('admin_user')->back()->with('message','Registration Successfull');
-            DB::table('users')->insert($data);
-            dd(DB::table('students')->get());
-            // return redirect ('');
-
-            // $admins = admin::all();
-            // echo "<pre>";
-            // print_r($admins->toArray());
-            }
-
-public function admin_user(){
-
-     $data['admins']=User::get();
-
-
-        return view('frontend.user',$data);
-            }
-
-
-            public function create()
-            {
-                return view('student.create');
-            }
-
-            public function index(){
-
-              $data['students'] = DB::table('users')->get();
-
-            //   dd($data);
-            return view('student.index',$data);
-
-            }
+    }
 
 
 
-            public function store(Request $request){
+    public function register(Request $request){
 
-                $data['name']=$request->name;
-                $data['department']=$request->department;
-                $data['address']=$request->address;
-                $data['mobile']=$request->mobile;
+        $request->validate([
 
+            'name'=>'required',
+            'email'=>'required|unique',
+            'password'=>'required|confirmed',
+            ]);
 
-                DB::table('users')->insert($data);
-
-                // dd(DB::table('students')->get());
-                return redirect('students');
-
-
-            }
-            public function show($id)
-            {
-                $data['student'] =DB::table('users')->where('id',$id)->first();
-                return view('student.show',$data);
-            }
+         $data['name']=$request->name;
+         $data['email']=$request->email;
+         $data['password']=$request->password;
 
 
-            public function edit($id)
-            {
-                $data['student'] = DB::table('users')->where('id',$id)->first();
-                        return view('student.edit',$data);
-            }
+        DB::table('users')->insert($data);
+
+        // dd(DB::table('students')->get());
+        return redirect('admin_user');
 
 
-            public function update(Request $request,$id){
-
-                $data['name']=$request->name;
-                $data['department']=$request->department;
-                $data['address']=$request->address;
-                $data['mobile']=$request->mobile;
-
-                DB::table('users')->where('id',$id)->update($data);
-
-                // dd(DB::table('students')->get());
-                return redirect('students');
+    }
+    public function show($id)
+    {
+        $data['students'] =DB::table('users')->where('id',$id)->first();
+        return view('student.show',$data);
+    }
 
 
-            }
-            public function destroy($id){
-
-                DB::table('users')->where('id',$id)->delete();
-
-                // dd(DB::table('students')->get());
-                return redirect('students');
+    public function edit($id)
+    {
+        $data['students'] = DB::table('users')->where('id',$id)->first();
+                return view('student.edit',$data);
+    }
 
 
-            }
+    public function update(Request $request,$id){
+
+        $data['name']=$request->name;
+        $data['email']=$request->email;
+        $data['password']=$request->password;
+
+        DB::table('users')->where('id',$id)->update($data);
+
+        // dd(DB::table('students')->get());
+        return redirect('admin_user');
+
+
+    }
+    public function destroy($id){
+
+        DB::table('students')->where('id',$id)->delete();
+
+        // dd(DB::table('students')->get());
+        return redirect('students');
+
+
+    }
         }
