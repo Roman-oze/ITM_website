@@ -16,7 +16,7 @@ class StudentController extends Controller
 
 
 
-    public function login()
+    public function sign_in()
     {
         return view('student.login');
     }

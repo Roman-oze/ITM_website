@@ -21,14 +21,11 @@ Route::controller(AdminController::class)->group(function(){
 
  Route::controller(UserController::class)->group(function(){
 
-
-
-Route::get('user/login', 'login')->name('login');
+// Route::get('user/profile', 'profile')->name('profile');
+Route::get('users/login', 'login')->name('login');
+Route::get('users/registration', 'registration')->name('registration');
 Route::get('admin/dashboard', 'admin')->name('admin');
 Route::get('users', 'index')->name('user');
-
-// Route::get('user/profile', 'profile')->name('profile');
-Route::get('registration', 'registration')->name('registration');
 Route::post('/register', 'register')->name('register');
 Route::get('/view/{id}', 'view')->name('view');
 Route::get('/edit/{id}', 'edit')->name('edit');
@@ -59,7 +56,8 @@ Route::get('/membership','membership')->name('membership');
 
 
 Route::get('students', 'index')->name('index');
-Route::get('/create', 'create')->name('create');
+Route::get('student/create', 'create')->name('create');
+Route::get('student/login', 'sign_in')->name('sign_in');
 Route::post('/store', 'store')->name('store');
 Route::get('/show/{id}', 'show')->name('show');
 Route::get('/edit/{id}', 'edit')->name('edit');
