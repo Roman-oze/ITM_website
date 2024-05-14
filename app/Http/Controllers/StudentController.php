@@ -23,7 +23,7 @@ class StudentController extends Controller
 
     public function index(){
 
-      $data['students'] = DB::table('students')->get();
+      $data['student'] = DB::table('students')->get();
 
     //   dd($data);
     return view('student.index',$data);
@@ -34,20 +34,20 @@ class StudentController extends Controller
 
     public function store(Request $request){
 
-        // $request->validate([
+        $rules = [
+            'name' => 'required',
+            'email' => 'required|unique:users,email', // Assuming 'users' is the table name and 'email' is the column name
+            'address' => 'required',
+            'mobile' => 'required|unique:users,mobile', // Assuming 'users' is the table name and 'mobile' is the column name
+            'password' => 'required|confirmed|min:8',
+            'password_confirmation' => 'required|same:password', // 'password_confirmation' is the default field name for password confirmation
+        ];
 
-        //     'name'=>'required',
-        //     'email'=>'required|unique',
-        //     'address'=>'required',
-        //     'mobile'=>'required|unique',
-        //     'password'=>'required|confirmed',
-        //     'password_confirm'=>'required | same:password',
-        //     ]);
 
          $data['name']=$request->name;
          $data['email']=$request->email;
          $data['department']=$request->department;
-         $data['address']=$request->mobile;
+         $data['address']=$request->address;
          $data['mobile']=$request->mobile;
          $data['password']=$request->password;
          $data['password_confirm']=$request->password_confirm;
@@ -100,9 +100,9 @@ class StudentController extends Controller
     }
     public function membership()
     {
-        $data['students'] = DB::table('students')->get();
+        $data['student'] = DB::table('students')->get();
 
-         return view('frontend.membership', $data);
+         return view('frontend.dashboard', $data);
 
     }
 

@@ -12,9 +12,6 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Department</th>
-                <th>Address</th>
-                <th>Mobile</th>
                 <th>password</th>
                 <th>Actions</th>
 
@@ -26,9 +23,6 @@
                 <td>{{ $student->id }}</td>
                 <td>{{ $student->name }}</td>
                 <td>{{ $student->email }}</td>
-                <td>{{ $student->department }}</td>
-                <td>{{ $student->address }}</td>
-                <td>{{ $student->mobile }}</td>
                 <td>{{ $student->password }}</td>
 
 

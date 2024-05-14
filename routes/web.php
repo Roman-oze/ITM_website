@@ -24,15 +24,13 @@ Route::controller(AdminController::class)->group(function(){
 
 
 Route::get('user/login', 'login')->name('login');
-Route::get('user/registration', 'registration')->name('registration');
-Route::post('/register', 'register')->name('register');
 Route::get('admin/dashboard', 'admin')->name('admin');
-Route::get('user', 'index')->name('user');
+Route::get('users', 'index')->name('user');
 
-Route::get('students', 'index')->name('index');
-Route::get('/create', 'create')->name('create');
-Route::post('/store', 'store')->name('store');
-Route::get('/show/{id}', 'show')->name('show');
+// Route::get('user/profile', 'profile')->name('profile');
+Route::get('registration', 'registration')->name('registration');
+Route::post('/register', 'register')->name('register');
+Route::get('/view/{id}', 'view')->name('view');
 Route::get('/edit/{id}', 'edit')->name('edit');
 Route::put('/update/{id}','update')->name('update');
 Route::delete('/delete/{id}', 'destroy')->name('delete');

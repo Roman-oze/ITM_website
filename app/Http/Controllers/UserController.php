@@ -14,11 +14,11 @@ class UserController extends Controller
     }
     public function registration()
     {
-        return view('frontend.registration');
+        return view('user.registration');
     }
     public function create()
     {
-        return view('student.create');
+        return view('user.create');
     }
 
     public function index(){
@@ -26,7 +26,7 @@ class UserController extends Controller
       $data['students'] = DB::table('users')->get();
 
     //   dd($data);
-    return view('frontend.user',$data);
+    return view('user.user',$data);
 
     }
 
@@ -34,36 +34,37 @@ class UserController extends Controller
 
     public function register(Request $request){
 
-        $request->validate([
+        $rule= [
 
             'name'=>'required',
             'email'=>'required|unique',
             'password'=>'required|confirmed',
-            ]);
+        ];
 
          $data['name']=$request->name;
          $data['email']=$request->email;
          $data['password']=$request->password;
+         $data['role']=$request->role;
 
 
         DB::table('users')->insert($data);
 
         // dd(DB::table('students')->get());
-        return redirect('admin_user');
+        return redirect('users');
 
 
     }
-    public function show($id)
+    public function view($id)
     {
-        $data['students'] =DB::table('users')->where('id',$id)->first();
-        return view('student.show',$data);
+        $data['student'] =DB::table('users')->where('id',$id)->first();
+        return view('user.view',$data);
     }
 
 
     public function edit($id)
     {
         $data['students'] = DB::table('users')->where('id',$id)->first();
-                return view('student.edit',$data);
+                return view('user.edit',$data);
     }
 
 

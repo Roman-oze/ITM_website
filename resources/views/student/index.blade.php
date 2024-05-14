@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($students as $student)
+        @foreach($student as $student)
                     <tr>
                 <td>{{ $student->id }}</td>
                 <td>{{ $student->name }}</td>
