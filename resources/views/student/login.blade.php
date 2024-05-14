@@ -20,7 +20,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="title text-danger">Login <i class="fa fa-user"></i></h3></div>
+                                    <div class="card-header"><h3 class="title text-success">Student Login <i class="fa fa-user text-black"></i></h3></div>
                                     <div class="card-body">
                                         <div class="container mt-5">
 
@@ -44,6 +44,7 @@
                                                     <br>
                                                     <br>
                                                     <button type="submit" class="btn btn-primary">Submit</button>
+                                                    <br>
 
                                                     @if(session('success'))
                                                     <div class="alert alert-success" role="alert">
@@ -53,7 +54,7 @@
                                                 </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="{{route('registration')}}">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="{{route('create')}}">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>

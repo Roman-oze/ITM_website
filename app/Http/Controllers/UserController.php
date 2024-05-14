@@ -12,9 +12,13 @@ class UserController extends Controller
     {
         return view('frontend.dashboard');
     }
-    public function registration()
+    public function sign_in()
     {
-        return view('user.registration');
+        return view('user.signin');
+    }
+    public function signup()
+    {
+        return view('user.signup');
     }
     public function create()
     {

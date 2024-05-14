@@ -13,8 +13,8 @@
             <a href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
         </div>
         <div class="col-md-7 text-end">
-        <a class="btn btn-outline btn-dark text-white" href="{{route('registration')}}">Sign Up</a>
-        <a class="btn btn-outline btn-dark text-white" href="{{route('login')}}">Login</a>
+        <a class="btn btn-outline btn-dark text-white" href="{{route('signup')}}">Sign Up</a>
+        <a class="btn btn-outline btn-dark text-white" href="{{route('sign_in')}}">Login</a>
         </div>
 
 @endsection
