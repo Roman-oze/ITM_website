@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function admin()
     {
-        return view('frontend.dashboard');
+        return view('admin.dashboard');
     }
     public function login()
     {

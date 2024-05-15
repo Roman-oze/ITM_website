@@ -106,7 +106,7 @@ class StudentController extends Controller
     {
         $data['student'] = DB::table('students')->get();
 
-         return view('frontend.dashboard', $data);
+         return view('frontend.membership', $data);
 
     }
 
