@@ -8,12 +8,12 @@ use Faker\Guesser\Name;
 
 Route::controller(AdminController::class)->group(function(){
 
-
-    // Route::get('admin/login', 'login')->name('login');
-    // Route::get('/registration', 'registration')->name('registration');
-    // Route::post('/register', 'register')->name('register');
-    // Route::get('admin/dashboard', 'admin')->name('admin');
-    // Route::get(' /admin_user', 'admin_user')->name('admin_user');
+    Route::get('dashboard', 'index')->name('dashboard');
+    Route::get('admin/login', 'admin_login')->name('admin_login');
+    Route::get('admin/registration', 'admin_registration')->name('admin_registration');
+    Route::get('admin/reset_password', 'password')->name('password');
+    Route::get('admin/static', 'static')->name('static');
+    Route::get('admin/chart', 'chart')->name('chart');
 
 });
 
@@ -24,7 +24,7 @@ Route::controller(AdminController::class)->group(function(){
 // Route::get('user/profile', 'profile')->name('profile');
 Route::get('users/login', 'login')->name('login');
 Route::get('users/registration', 'registration')->name('registration');
-Route::get('admin/dashboard', 'admin')->name('admin');
+// Route::get('admin/dashboard', 'admin')->name('admin');
 Route::get('users', 'index')->name('user');
 Route::post('/register', 'register')->name('register');
 Route::get('/view/{id}', 'view')->name('view');

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
   @include('layout._head')
 </head>
@@ -26,6 +25,7 @@
     @yield('content')
 </div>
 
+
     <footer>
         @include('layout._footer')
     </footer>
@@ -34,5 +34,3 @@
         @include('layout._script')
     </script>
 
-</body>
-</html>

@@ -5,14 +5,10 @@
 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
     <div class="col-lg-8 align-self-end">
         <h1 class="text-muted  font-weight-bold">Our Campus</h1>
-       
-    
 
-<x-slot :message>
-    <p>this line from about slot change name.</p>
-</x-slot>
-  
-      
+
+
+
 
     </div>
     <div class="divider-custom">
@@ -26,7 +22,7 @@
     {{-- <img src="{{asset('frontend/image/diu_admission.jpg')}}" class="w-50 h-50"> --}}
     <img src="{{asset('frontend/image/diuwinter.webp')}}" class="w-50 h-50">
 
-   
+
 </div>
 @endsection
 
@@ -42,23 +38,23 @@
 
 @section('content')
 <section id="about">
-    
+
     <br>
     <br>
     <br>
     <br>
     <div class="gy-4">
     <h1 class="header1">Our Location <i class="fa-solid fa-location-dot icon1 text-danger"></i></h1>
-  
+
 </div>
 
 <div class="main">
-   
+
     <div class="row">
         <div class="twopartbg">
             <img src="{{asset('frontend/image/printbg2.png')}}" class="twopartbg mt-1">
                </div>
-               
+
         <div class="col-md-6 ">
             <div class="item">
               <div class="imagee">
@@ -75,7 +71,7 @@
                 </div>
                 <div class="description">
                     <p class="pp">AB4 Building </p>
-                    <button class="baton p-2"><a href=""> </a> View</button>
+                    <button class="baton p-2">View</button>
                 </div>
               </div>
               <div class="item">

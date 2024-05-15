@@ -229,7 +229,8 @@
      </div>
      <br>
      <br>
-     <div class="row mt-5 p-1 bg-light text-muted">
+     <div class="container">
+     <div class="row mt-5 p-1 bg-info text-muted">
 
         <div class="col-lg-3 col-6 text-center ">
           <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">549</span>
@@ -252,7 +253,8 @@
         </div>
 
       </div>
-  </div> <br>
+  </div>
+   <br>
   <br>
                 <br>
                 <br>
