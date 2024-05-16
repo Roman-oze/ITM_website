@@ -2,8 +2,9 @@
 
  <!-- resources/views/students/create.blade.php -->
 
- @extends('layout.master')
- @section('content')
+ @extends('admin._master')
+
+ @section('admin_content')
 
 
 

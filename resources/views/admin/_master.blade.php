@@ -1,16 +1,30 @@
 <head>
     @include('admin._head')
 </head>
+
+
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     @include('admin._nav')
 </nav>
 
-<div>
-    @yield('admin_content')
+
+
+<div id="layoutSidenav">
+    @include('admin._sidenav')
+
+        <div id="layoutSidenav_content">
+        @yield('content')
+       </div>
 </div>
 
 
-<footer class="py-4 bg-light mt-auto">
+
+
+
+
+
+
+<footer>
     @include('admin._footer')
 </footer>
 
