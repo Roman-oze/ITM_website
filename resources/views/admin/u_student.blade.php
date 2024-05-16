@@ -1,10 +1,9 @@
-
-    @extends('admin._master')
+@extends('admin._master')
 
 @section('main')
 
 <div class="container mt-5 p-5">
-    <h1 class="text-danger ">Admin Details</h1>
+    <h1 class="text-danger">Student Details</h1>
 
     <table class="table table-striped">
         <thead>
@@ -29,15 +28,15 @@
                     <td>{{ $student->address }}</td>
                     <td>{{ $student->mobile }}</td>
                     <td>{{ $student->password }}</td>
-                            <td>
-                                <a href="{{route('show',$student->id)}}" class="btn btn-info">View</a>
-                                <a href="{{route('edit',$student->id)}}" class="btn btn-danger">edit</a>
+                                    <td>
+                                        <a href="{{route('show',$student->id)}}" class="btn btn-info">View</a>
+                                        <a href="{{route('edit',$student->id)}}" class="btn btn-danger">edit</a>
 
-                                <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure?')">Delete</button>
-                                </form>
+                                        <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure?')">Delete</button>
+                                        </form>
 
                             </td>
                         </tr>
