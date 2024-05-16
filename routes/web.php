@@ -14,6 +14,8 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('admin/reset_password', 'password')->name('password');
     Route::get('admin/static', 'static')->name('static');
     Route::get('admin/chart', 'chart')->name('chart');
+    Route::get('admin/users', 'u_admin')->name('user_admin');
+    Route::get('user/students', 'u_student')->name('user_student');
 
 });
 

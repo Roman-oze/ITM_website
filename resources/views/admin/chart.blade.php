@@ -1,6 +1,6 @@
 @extends('admin._master')
 
-@section('admin_content')
+@section('main')
 
     <div id="layoutSidenav_content">
         <main>

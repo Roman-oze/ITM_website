@@ -1,6 +1,5 @@
 @extends('admin._master')
-@section('admin_content')
-<div id="layoutSidenav">
+@section('main')
 
     <div id="layoutSidenav_content">
         <main>
@@ -8,7 +7,7 @@
                 <h1 class="mt-4">Sidenav Light</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Sidenav Light</li>
+                    <li class="breadcrumb-item active">Admin List </li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-body">

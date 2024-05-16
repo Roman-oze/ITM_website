@@ -6,7 +6,7 @@
     @section('main_content')
 
     <div class="container mt-5 p-5">
-        <h1 class="text-danger ">Student Details</h1>
+        <h1 class="text-danger ">Admin Details</h1>
 
         <table class="table table-striped">
             <thead>

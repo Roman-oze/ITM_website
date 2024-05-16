@@ -167,6 +167,23 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+.linked{
+    text-decoration: none;
+    color:rgba(255, 255, 255, 0.5);
+    font-weight: 30px;
+    margin-left:15px ;
+    padding: 5px;
+
+}
+.linked:hover{
+
+    color:rgb(255, 255, 255);
+    font-weight: 30px;
+    padding: 5px;
+
+
+
+}
 
 abbr[title] {
   -webkit-text-decoration: underline dotted;

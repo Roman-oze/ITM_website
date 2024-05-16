@@ -4,7 +4,7 @@
 
  @extends('admin._master')
 
- @section('admin_content')
+ @section('main')
 
 
 

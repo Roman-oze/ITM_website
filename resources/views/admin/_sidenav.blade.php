@@ -3,47 +3,74 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
 
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="{{route('dashboard')}}">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
                     <div class="sb-sidenav-menu-heading">Interface</div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Faculty
+
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-users text-white"></i></div>
+                        Users
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">Male</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Female</a>
+                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a  href="{{route('user_admin')}}" class="linked">Admins</a>
+                            <a  href="{{route('user_student')}}" class="linked">Students</a>
+
                         </nav>
                     </div>
+
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fa-regular fa-calendar-days text-white"></i></i></div>
                         Routine
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">Spring</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Female</a>
+                            <a  href="" class="linked">Spring</a>
+                            <a  href="" class="linked">Fall</a>
                         </nav>
                     </div>
+
+
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-book-open  5rem text-white"></i></i></div>
                         Publication
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="#">Student</a>
-                            <a class="nav-link" href="#">Title</a>
+                            <a  href="{{route('user_admin')}}" class="linked">Category</a>
                         </nav>
                     </div>
+
+
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate text-white"></i></i></div>
+                        Teachers
+                    </a>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-book-open  5rem text-white"></i></i></div>
+                        Students
+                    </a>
+
+
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-graduation-cap text-white"></i></i></i></div>
+                        Graducated
+
+                    </a>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-certificate text-white"></i></div>
+                        Scholarship
+                    </a>
+
+
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                        <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                        Pages
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-gear text-white"></i></div>
+                        Setting
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -72,6 +99,7 @@
                             </div>
                         </nav>
                     </div>
+
                     <div class="sb-sidenav-menu-heading">Addons</div>
                     <a class="nav-link" href="{{route('chart')}}">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>

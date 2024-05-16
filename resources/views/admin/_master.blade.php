@@ -13,7 +13,7 @@
     @include('admin._sidenav')
 
         <div id="layoutSidenav_content">
-        @yield('content')
+        @yield('main')
        </div>
 </div>
 
@@ -29,5 +29,5 @@
 </footer>
 
 <script>
-    @include('admin._script')
+    @include('admin.script')
 </script>

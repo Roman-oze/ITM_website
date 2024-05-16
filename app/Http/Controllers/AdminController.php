@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use Illuminate\Auth\Events\Validated;
+use PhpParser\Node\Stmt\Echo_;
 
 use Illuminate\Http\Request;
 
@@ -26,6 +30,23 @@ class AdminController extends Controller
     public function index()
     {
        return view('admin.index');
+    }
+
+
+
+    public function u_admin(){
+
+        $data['admins']=DB::table('users')->get();
+
+        return view('admin.u_admin',$data);
+
+    }
+    public function u_student(){
+
+        $data['students']=DB::table('students')->get();
+
+        return view('admin.u_student',$data);
+
     }
 
     /**
