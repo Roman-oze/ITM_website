@@ -3,7 +3,9 @@
 
 
 @extends('layout.master')
-@section('headerpage')
+
+@section('content')
+<br>
 <br>
 <div class="row gx-4 gx-lg-5 align-items-center bg-light justify-content-center text-center">
     <div class="col-lg-8 align-self-end">
@@ -20,12 +22,6 @@
  </p>
 </div>
 </div>
-@endsection
-
-
-@section('content')
-<br>
-<br>
 <div class="facilty ">
   <br>
   <br>
@@ -43,7 +39,7 @@
                 <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>
                 <a href="nusrat.swe@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
                 <a href="+8801847334996"><i class="fa-solid fa-square-phone icon1"></i></a>
-                
+
             </div>
         </div>
       </div>
@@ -56,8 +52,8 @@
 
       <div class="col-md-4 ">
         <div class="circular">
-            <img src="{{asset('frontend/image/teacher/ashik.jpg')}}" class="mx-auto rounded-circle" alt="Circular Image">
-            <br> 
+            <img src="{{asset('frontend/image/teacher/ashikh.jpg')}}" class="mx-auto rounded-circle" alt="Circular Image">
+            <br>
             <h4 class="p-2 text-muted">Ashik Rahman</h4>
             <p class="text-muted">Lecturer (Senior Scale) </p>
             <a href="https://www.facebook.com/ashik.rahman.370515"><i class="fa-brands fa-facebook icon1"></i></a>
@@ -66,10 +62,10 @@
             <a  href="01312075927"><i class="fa-solid fa-square-phone icon1"></i></a>
         </div>
         </div>
-        
+
         <div class="col-md-4 ">
           <div class="circular">
-              <img src="{{asset('frontend/image/teacher/nafees.png')}}" class="mx-auto rounded-circle" alt="Circular Image">
+              <img src="{{asset('frontend/image/teacher/imran.jpg')}}" class="mx-auto rounded-circle" alt="Circular Image">
               <h4 class="p-2 text-muted">Mr. Nafees Imran</h4>
               <p class="text-muted">Lecturer</p>
               <a href="https://www.facebook.com/nafees.imran.7"><i class="fa-brands fa-facebook icon1"></i></a>
@@ -80,7 +76,7 @@
           </div>
         <div class="col-md-4 ">
           <div class="circular">
-            <img src="{{asset('frontend/image/teacher/raisul.png')}}" class="mx-auto rounded-circle" alt="Circular Image">
+            <img src="{{asset('frontend/image/teacher/raisul.jpg')}}" class="mx-auto rounded-circle" alt="Circular Image">
               <h4 class="p-2 text-muted">Raisul Kabir News</h4>
               <p class="text-muted">Lecturer</p>
               <a href="https://www.facebook.com/raisul.kabir.31"><i class="fa-brands fa-facebook icon1"></i></a>
@@ -97,19 +93,19 @@
 
     <div class="container mt-5">
         <div class="row">
-    
+
             <div class="col-md-4 ">
                 <div class="circular">
-                    <img src="{{asset('frontend/image/teacher/female.jpg')}}" class="mx-auto rounded-circle" alt="Circular Image">       
+                    <img src="{{asset('frontend/image/teacher/female.jpg')}}" class="mx-auto rounded-circle" alt="Circular Image">
                     <h4 class="p-2 text-muted">Ms. Moni Akter</h4>
-                    <p class="text-muted">Lecturer</p>   
+                    <p class="text-muted">Lecturer</p>
                     <a href="#"><i class="fa-brands fa-facebook icon1"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin icon1"></i></a>
                     <a href="akter.itm@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
                     <a href="8801617378602"><i class="fa-solid fa-square-phone icon1"></i></a>
                 </div>
                 </div>
-            
+
                 <div class="col-md-4 ">
                     <div class="circular">
                         <img src="{{asset('frontend/image/teacher/male.png')}}" class="mx-auto rounded-circle" alt="Circular Image">
@@ -123,7 +119,7 @@
                     </div>
               <div class="col-md-4 ">
                 <div class="circular">
-                    <img src="{{asset('frontend/image/teacher/female.jpg')}}" class="mx-auto rounded-circle" alt="Circular Image">       
+                    <img src="{{asset('frontend/image/teacher/female.jpg')}}" class="mx-auto rounded-circle" alt="Circular Image">
                     <h4 class="p-2 text-muted">name :</h4>
                     <p class="text-muted">Designation</p>
                     <a href="#"><i class="fa-brands fa-facebook icon1"></i></a>
@@ -134,20 +130,20 @@
                 </div>
         </div>
         </div>
-    
+
 
 <br>
 <br>
-{{--  
+{{--
     <div class="row">
         <div class="col-md-4">
           <div class="faculty-card">
             <div class="circular-image">
-              <img src="{{asset('frontend/image/teacher/female.jpg')}}" class="card-img-top" alt="Circular Image">         
+              <img src="{{asset('frontend/image/teacher/female.jpg')}}" class="card-img-top" alt="Circular Image">
             <div class="card-body">
               <!-- Content for the first card in the second line -->
               <h3>Ms. Moni Akter</h3>
-                  <h4>Lecturer</h4>    
+                  <h4>Lecturer</h4>
                 <a href="#"><i class="fa-brands fa-facebook icon1"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin icon1"></i></a>
                 <a href="akter.itm@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
@@ -155,7 +151,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="col-md-4">
           <div class="faculty-card">
             <div class="circular-image">
@@ -165,7 +161,7 @@
               <!-- Content for the second card in the second line -->
               <h3>Name :</h3>
                   <h4>Designation</h4>
-                  
+
                 <a href="#"><i class="fa-brands fa-facebook icon1"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin icon1"></i></a>
                 <a href="#"><i class="fa-solid fa-envelope icon1"></i></a>
@@ -173,7 +169,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="col-md-4">
             <div class="faculty-card">
               <div class="circular-image">
@@ -183,7 +179,7 @@
                 <!-- Content for the second card in the second line -->
                 <h3>Name :</h3>
                     <h4>Designation</h4>
-                    
+
                   <a href="#"><i class="fa-brands fa-facebook icon1"></i></a>
                   <a href="#"><i class="fa-brands fa-linkedin icon1"></i></a>
                   <a href="#"><i class="fa-solid fa-envelope icon1"></i></a>

@@ -7,7 +7,7 @@
 
             <div class="row  p-2 topmost">
         <div class="col-md-5  ">
-            <a  class=" text-dark p-2" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
+            <a  class="  p-2 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
             <a  class=" text-dark p-2" href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope icontop"></i></a>
             <a  class=" text-dark p-2" href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
@@ -377,7 +377,10 @@
                     <p class="text-dark">Our service 24 hours open for our Student</p>
 
                 </div>
-            <div class="row text-center facilty">
+
+
+
+            {{-- <div class="row text-center facilty">
                <div class="col-md-3 border ">
                <div>
                 <img src="{{asset('frontend/image/blc.png')}}" class="img-decorate">
@@ -401,9 +404,11 @@
 
                </div>
                </div>
+
+
                <div class="col-md-3 border ">
                <div>
-                <img src="{{asset('frontend/image/diubus.png')}}" class=" img-decorate ">
+                <img src="{{asset('frontend/image/blue-bus-png.png')}}"class=" img-decorate">
             </div>
                <div>
                 <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="view  ">Transport</a>
@@ -413,6 +418,7 @@
 
                </div>
                </div>
+
                <div class="col-md-3 border ">
                <div>
                 <img src="{{asset('frontend/image/1card.png')}}"  class=" img-decorate">
@@ -425,8 +431,51 @@
 
                </div>
                </div>
+               </div> --}}
 
-               </div>
+               <section id="skill" class="section-p2 ">
+                <div class="container-fluid mt-5">
+                  <div class="row ">
+                      <div class="col-md-3">
+                          <div class="fe-box img-fluid facilty">
+                            <img src="{{asset('frontend/image/blc.png')}}"class=" img-decorate"><br>
+                            <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-primary">Blc</a>
+                            <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            </p>
+                         </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="fe-box img-fluid facilty">
+                            <img src="{{asset('frontend/image/portal.png')}}"class=" img-decorate">
+                            <a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-primary">Student Portal</a>
+                            <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            </p>
+                         </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="fe-box img-fluid facilty">
+                            <img src="{{asset('frontend/image/1card.png')}}"class=" img-decorate"><br>
+                            <a target="_blank" href="https://1card.com.bd/" class="btn btn-primary">1card</a>
+                            <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            </p>
+                         </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="fe-box img-fluid facilty">
+                            <img src="{{asset('frontend/image/blue-bus-png.png')}}"class=" img-decorate">
+                            <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-primary">Transport</a>
+                            <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            </p>
+                         </div>
+                      </div>
+
+
+          </div>
+          </div>
+             </section>
+
+
+
                </div>
 
                <div class="container-fluid fourbg ">

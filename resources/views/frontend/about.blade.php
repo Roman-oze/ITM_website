@@ -18,22 +18,40 @@
     {{-- <img src="{{asset('frontend/image/diu_admission.jpg')}}" class="w-50 h-50"> --}}
     <img src="{{asset('frontend/image/diuwinter.webp')}}" class="w-50 h-50">
 </div>
-
+<br>
+<br>
+<br>
 
 <div class="container">
     <div class="row justify-content-center mb-5">
       <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
-        <h2 class="line-bottom text-center mb-4">Departmental Facilities</h2>
+        <h2 class="line-bottom text-center mb-4">Why Choose ITM!</h2>
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
       </div>
     </div>
     <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="staff text-center">
+              <div class="mb-4"><img src="{{asset('frontend/image/jobfair.png')}}" alt="Image" class="img-fluid"></div>
+              <div class="staff-body">
+                <h3 class="staff-name">Job Fair</h3>
+                <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
+                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="social">
+                  <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
+                  <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="mx-2"><span class="icon-linkedin"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
       <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
         <div class="staff text-center">
-          <div class="mb-4"><img src="{{asset('frontend/image/event_photo/img4.jpg')}}" alt="Image" class="img-fluid"></div>
+          <div class="mb-4"><img src="{{asset('frontend/image/visit.png')}}" alt="Image" class="img-fluid"></div>
           <div class="staff-body">
-            <h3 class="staff-name">Mina Collins</h3>
-            <span class="d-block position mb-4">Teacher in Math</span>
+            <h3 class="staff-name">Industry Visits</h3>
+            <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             <div class="social">
               <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
@@ -43,27 +61,13 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-        <div class="staff text-center">
-          <div class="mb-4"><img src="{{asset('frontend/image/event_photo/img6.jpg')}}" alt="Image" class="img-fluid"></div>
-          <div class="staff-body">
-            <h3 class="staff-name">Anderson Matthew</h3>
-            <span class="d-block position mb-4">Teacher in Music</span>
-            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <div class="social">
-              <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
-              <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
-              <a href="#" class="mx-2"><span class="icon-linkedin"></span></a>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
         <div class="staff text-center">
-          <div class="mb-4"><img src="images/staff_3.jpg" alt="Image" class="img-fluid"></div>
+          <div class="mb-4"><img src="{{asset('frontend/image/internshipp.png')}}" alt="Image" class="img-fluid"></div>
           <div class="staff-body">
-            <h3 class="staff-name">Cynthia Misso</h3>
-            <span class="d-block position mb-4">Teacher English</span>
+            <h3 class="staff-name">Internship</h3>
+            <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             <div class="social">
               <a href="#" class="mx-2"><span class="icon-facebook"></span></a>

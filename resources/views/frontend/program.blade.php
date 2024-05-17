@@ -2,7 +2,9 @@
 @include('frontend.program_style')
 
 
-@section('headerpage')
+
+@section('content')
+
 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
     <div class="col-lg-8 align-self-end">
         <h1 class="text-danger font-weight-bold">Course  Details</h1>
@@ -13,7 +15,7 @@
 
     </div>
 <div class="course text-center">
-   
+
 
 
     <a href="#1stsemester" class="btn1">1st Semester</a>
@@ -24,12 +26,9 @@
     <a href="#6thsemester" class="btn6">6th Semester</a>
     <a href="#7thsemester" class="btn7">7th Semester</a>
     <a href="#8thsemester" class="btn8">8th Semester</a>
-  
+
   </div>
 </div>
-@endsection
-
-@section('content')
 <div class="container-fluid mt-5">
   <br>
   <br>
@@ -198,8 +197,8 @@
   <div class="dee1">
       <h2>Information Technology Core Courses: 45 credits
     </div>
-  
- 
+
+
   <table >
     <thead>
       <tr>
@@ -317,7 +316,7 @@
   </h2>
 </div>
 <div class="container mt-5">
-  
+
   <table>
     <thead>
       <tr>
@@ -342,7 +341,7 @@
         <td>Software Documentation</td>
         <td>3</td>
       </tr>
-      
+
       <!-- Second set of courses -->
       <tr>
         <td>16</td>
@@ -420,7 +419,7 @@
       </h2>
       </div>
 <div class="container mt-5">
- 
+
   </h2>
   <table>
     <thead>
@@ -530,11 +529,11 @@
 <div class="dee1">
   <h2>Elective courses from pool A/B: 6 credits</h2>
       <h3>Pool A: Information Technology (Any 2)</h3>
-     
+
       </div>
 
 <div class="container mt-5">
-  
+
   <table>
     <thead>
       <tr>
@@ -558,7 +557,7 @@
         <td>Digital Marketing</td>
         <td>3</td>
       </tr>
-      
+
       <!-- IT Security -->
       <tr>
         <td>2</td>
@@ -572,7 +571,7 @@
         <td>Digital Forensics</td>
         <td>3</td>
       </tr>
-      
+
       <!-- HCI -->
       <tr>
         <td>3</td>
@@ -586,7 +585,7 @@
         <td>Enterprise Resource Planning System</td>
         <td>3</td>
       </tr>
-      
+
       <!-- Database -->
       <tr>
         <td>4</td>
@@ -611,7 +610,7 @@
       </div>
 
 <div class="container mt-5">
-  
+
   <table>
     <thead>
       <tr>
@@ -635,7 +634,7 @@
         <td>Retail Management</td>
         <td>3</td>
       </tr>
-      
+
       <!-- Human resource -->
       <tr>
         <td>2</td>
@@ -649,7 +648,7 @@
         <td>Compensation Theory and Administration</td>
         <td>3</td>
       </tr>
-      
+
       <!-- Accounting -->
       <tr>
         <td>3</td>
@@ -663,7 +662,7 @@
         <td>Accounting Information System</td>
         <td>3</td>
       </tr>
-      
+
       <!-- Management -->
       <tr>
         <td>4</td>
@@ -681,7 +680,7 @@
   </h2>
       </div>
 <div class="container mt-5">
-  
+
   <table>
     <thead>
       <tr>
@@ -718,52 +717,52 @@
               <th>Course Code</th>
               <th>Course Title</th>
               <th>Total Credit</th>
-              
+
           </tr>
       </thead>
       <tbody>
           <tr>
-          
+
               <td>ENG 101</td>
               <td>Basic Functional English</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>MATH 101</td>
               <td>Mathematics</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>ITM 101</td>
               <td>Principles of Accounting</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>ITM 102</td>
               <td>Principles of Management</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 111</td>
               <td>Computer Fundamentals</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>ITM 112</td>
               <td>Computer Fundamentals Lab</td>
               <td>1</td>
-              
+
           </tr>
           <tr>
               <td>ITM 123</td>
               <td>Software Requirement Analysis and Design</td>
               <td>3</td>
-              
+
           </tr>
       </tbody>
       <tfoot>
@@ -777,7 +776,7 @@
 
 
 <section id="2ndsemester">
- 
+
 
   <h2 class="fst">1st Year</h2>
   <h4 class=" text-center text-muted">2nd Semester</h4>
@@ -787,52 +786,52 @@
               <th>Course Code</th>
               <th>Course Title</th>
               <th>Total Credit</th>
-             
+
           </tr>
       </thead>
       <tbody>
           <tr>
-          
+
               <td>ITM 211</td>
               <td>HCI and User Experience</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>ENG 102</td>
               <td>Business English</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>STA 101</td>
               <td>Introduction to Statistics</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 103</td>
               <td>Principles of Marketing</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 121</td>
               <td>Structurer Programming</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>ITM 122</td>
               <td>Structurer Programming Lab</td>
               <td>1</td>
-              
+
           </tr>
           <tr>
               <td>ITM 203</td>
               <td>Social Media Marketing</td>
               <td>3</td>
-             
+
           </tr>
       </tbody>
       <tfoot>
@@ -844,7 +843,7 @@
   </table>
 </section>
 <section id="3rdsemester">
-  
+
 
   <h2 class="fst">2nd Year</h2>
   <h4 class=" text-center text-muted">3rd Semester</h4>
@@ -855,52 +854,52 @@
               <th>Course Code</th>
               <th>Course Title</th>
               <th>Total Credit</th>
-             
+
           </tr>
       </thead>
       <tbody>
           <tr>
-          
+
               <td>ITM 201</td>
               <td>Managerial Accounting</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>ITM 202</td>
               <td>Business Communication</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>AOL 101</td>
               <td>Art Of Living</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 217</td>
               <td>Data Structure and Algorithm</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 218</td>
               <td>Data Structure and Algorithm Lab</td>
               <td>1</td>
-            
+
           </tr>
           <tr>
               <td>ITM 122</td>
               <td>Object Oriented Concepts</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 213</td>
               <td>Object Oriented Concepts Lab</td>
               <td>1</td>
-             
+
           </tr>
       </tbody>
       <tfoot>
@@ -912,7 +911,7 @@
   </table>
 </section>
 <section id="4thsemester">
-  
+
 
   <h2 class="fst">2nd Year</h2>
   <h4 class=" text-center text-muted">4th Semester</h4>
@@ -923,58 +922,58 @@
               <th>Course Code</th>
               <th>Course Title</th>
               <th>Total Credit</th>
-             
+
           </tr>
       </thead>
       <tbody>
           <tr>
-          
+
               <td>ITM 204</td>
               <td>Human Resource Management</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>GE 215</td>
               <td>Legal Environment in Business</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>ITM 206</td>
               <td>Entrepreneurship in IT</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 221</td>
               <td>Database Management System</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 222</td>
               <td>Database Management System Lab</td>
               <td>1</td>
-            
+
           </tr>
           <tr>
               <td>ITM 223</td>
               <td>Website Application Development </td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 224</td>
               <td>Website Application Development Lab</td>
               <td>1</td>
-             
+
           </tr>
           <tr>
               <td>GE 314</td>
               <td>Bangladesh Studies</td>
               <td>1</td>
-             
+
           </tr>
       </tbody>
       <tfoot>
@@ -995,60 +994,60 @@
               <th>Course Code</th>
               <th>Course Title</th>
               <th>Total Credit</th>
-             
+
           </tr>
       </thead>
       <tbody>
           <tr>
-          
+
               <td>GE 337</td>
               <td>Engineering Economics</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>ITM 301</td>
               <td>Management Information System</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>ITM 306</td>
               <td>Introduction To Finance</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>ITM 313</td>
               <td>Moblile Application Development</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 314</td>
               <td>Moblile Application Development Lab</td>
               <td>1</td>
-              
+
           </tr>
           <tr>
               <td>ITM 315</td>
               <td>Data Communication and Computer Networking</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>ITM 316</td>
               <td>Data Communication and Computer Networking Lab</td>
               <td>1</td>
-            
+
           </tr>
           <tr>
               <td>MATH 312</td>
               <td>Numerical Method</td>
               <td>3</td>
-              
+
           </tr>
-         
+
       </tbody>
       <tfoot>
           <tr>
@@ -1062,67 +1061,67 @@
   <h2 class="fst">3rd Year</h2>
   <h4 class=" text-center text-muted">6th Semester</h4>
 
-  
+
   <table>
       <thead>
           <tr>
               <th>Course Code</th>
               <th>Course Title</th>
               <th>Total Credit</th>
-             
+
           </tr>
       </thead>
       <tbody>
           <tr>
-          
+
               <td>ITM 302</td>
               <td>Business and Web Analytics</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>ITM 303</td>
               <td>Production and Operation Management</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>ITM 328</td>
               <td>Introduction To Machine Learning</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>ITM 329</td>
               <td>Introduction To Machine Learning Lab</td>
               <td>1</td>
-              
+
           </tr>
           <tr>
               <td>ITM 322</td>
               <td>Softoware and Web Security</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>ITM 323</td>
               <td>Software Quality Assurance and Testing</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>ITM 324</td>
               <td>Software Quality Assurance and Testing Lab</td>
               <td>1</td>
-            
+
           </tr>
           <tr>
               <td>MATH 309</td>
               <td>Banking and Insurance</td>
               <td>3</td>
-              
+
           </tr>
-         
+
       </tbody>
       <tfoot>
           <tr>
@@ -1136,55 +1135,55 @@
   <h2 class="fst">4th Year</h2>
   <h4 class=" text-center text-muted">7th Semester</h4>
 
-  
+
   <table>
       <thead>
           <tr>
               <th>Course Code</th>
               <th>Course Title</th>
               <th>Total Credit</th>
-             
+
           </tr>
       </thead>
       <tbody>
           <tr>
-          
+
               <td>ITM 451</td>
               <td>Industrial Placement / Professional Certification / Study Aboard</td>
               <td>6</td>
-            
+
           </tr>
           <tr>
               <td>ITM 421</td>
               <td>Open Source Software System</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>40X / 41X</td>
               <td>Elective-1</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>40X / 41X</td>
               <td>Elective-2</td>
               <td>3</td>
-             
+
           </tr>
           <tr>
               <td>FIN 101</td>
               <td>Blockchain And Crypto Currency in Financial Technology</td>
               <td>3</td>
-              
+
           </tr>
           <tr>
               <td>FIN 102</td>
               <td>Machine Learing and Artificial Intelligence in Finance</td>
               <td>3</td>
-              
+
           </tr>
-          
+
       </tbody>
       <tfoot>
           <tr>
@@ -1198,38 +1197,38 @@
   <h2 class="fst">4th Year</h2>
   <h4 class=" text-center text-muted">8th Semester</h4>
 
-  
+
   <table>
       <thead>
           <tr>
               <th>Course Code</th>
               <th>Course Title</th>
               <th>Total Credit</th>
-             
+
           </tr>
       </thead>
       <tbody>
           <tr>
-          
+
               <td>ITM 401</td>
               <td>Research Methodology</td>
               <td>3</td>
-            
+
           </tr>
           <tr>
               <td>ITM 452</td>
               <td>Thesis / Project</td>
               <td>6</td>
-             
+
           </tr>
           <tr>
               <td>ITM 321</td>
               <td>Software Documentation</td>
               <td>3</td>
-             
+
           </tr>
-          
-          
+
+
       </tbody>
       <tfoot>
           <tr>

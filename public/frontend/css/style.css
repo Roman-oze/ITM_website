@@ -862,8 +862,8 @@ background-image:linear-gradient(rgb(150, 153, 158),#050505d3);
 color:  #fbfeff;
 }
 .img-decorate{
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   transition: transform 0.4s;
 }
 .img-decorate:hover{
