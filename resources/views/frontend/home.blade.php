@@ -5,7 +5,7 @@
 
 @section('topmost')
 
-            <div class="row  p-2 ">
+            <div class="row  p-2 topmost">
         <div class="col-md-5  ">
             <a href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
@@ -13,8 +13,9 @@
             <a href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
         </div>
         <div class="col-md-7 text-end">
-        <a class="btn btn-outline btn-dark text-white" href="{{route('registration')}}">Sign Up</a>
-        <a class="btn btn-outline btn-dark text-white" href="{{route('login')}}">Login</a>
+
+        <a class=" text-dark p-2" href="{{route('login')}}"><i class="fa-solid fa-lock"></i> Login</a>
+        <a class="text-dark p-2" href="{{route('registration')}}"><i class="fa-solid fa-user"></i> Register</a>
         </div>
 
 @endsection
@@ -528,61 +529,4 @@
                </section>
 
 
-
-
-
-
-<section id="about">
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="gy-4">
-    <h1 class="header1">Our Location <i class="fa-solid fa-location-dot icon1 text-danger"></i></h1>
-</div>
-
-<div class="main">
-
-    <div class="row">
-        <div class="twopartbg">
-            <img src="{{asset('frontend/image/printbg2.png')}}" class="twopartbg">
-               </div>
-
-        <div class="col-md-6">
-            <div class="item">
-              <div class="imagee">
-                <img src="{{asset('frontend/image/campus.jpeg')}}" class="imgg">
-              </div>
-              <div class="description">
-                <p  class="pp">Daffodil International University Main Campus</p>
-                <button class="baton p-2">View</button>
-              </div>
-            </div>
-            <div class="item">
-                <div class="imagee">
-                   <img src="{{asset('frontend/image/ab4building.jpeg')}}" class="imgg">
-                </div>
-                <div class="description">
-                    <p class="pp">AB4 Building </p>
-                    <button class="baton p-2"><a href=""> </a> View</button>
-                </div>
-              </div>
-              <div class="item">
-                <div class="imagee">
-                    <img src="{{asset('frontend/image/old_building.jpg')}}" class="imgg">
-                </div>
-                <div class="description">
-                    <p class="pp">AB Building</p>
-                    <button class="baton p-2">View</button>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-6 text-center">
-            <iframe class="map"  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29187.16159450864!2d90.320302!3d23.875601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23dd12bbc75%3A0x313d214552eabe56!2sDaffodil%20Smart%20City!5e0!3m2!1sen!2sbd!4v1702204472544!5m2!1sen!2sbd" width="100%" height="450px" style="border: 1px;"></iframe>
-        </div>
-    </div>
-
-</div>
-    <br>
 @endsection
