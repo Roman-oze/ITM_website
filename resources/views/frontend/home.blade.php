@@ -7,10 +7,10 @@
 
             <div class="row  p-2 topmost">
         <div class="col-md-5  ">
-            <a href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
-            <a href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
-            <a href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope icontop"></i></a>
-            <a href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
+            <a  class=" text-dark p-2" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
+            <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
+            <a  class=" text-dark p-2" href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope icontop"></i></a>
+            <a  class=" text-dark p-2" href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
         </div>
         <div class="col-md-7 text-end">
 
@@ -23,8 +23,7 @@
 
 
 @section('headerpage')
-<div class="container-fluid covepage">
-    <div class="row ">
+    <div class="row covepage">
       <div class="col-md-7   text-center">
         <img src="{{asset('frontend/image/welcome.png')}}" class="images animate__animated animate__fadeInLeft">
         <h4 class="animate__animated animate__bounce animate__repeat-2">
@@ -38,7 +37,7 @@
 
 
 
-  <div class="club ">
+  <div class="club animate__animated animate__bounce animate__delay-2s">
     <a target="_blank" href="{{route('club')}}" class="bn5   "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
 </div>
 <br>
@@ -46,7 +45,7 @@
 <br>
 
 </div>
-</div>
+
 
 
 
@@ -231,7 +230,7 @@
      <br>
      <br>
      <div class="container">
-     <div class="row mt-5 p-1 bg-info text-muted">
+     <div class="row mt-5 p-1  text-muted">
 
         <div class="col-lg-3 col-6 text-center ">
           <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">549</span>
