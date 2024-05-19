@@ -12,10 +12,10 @@ class AdminController extends Controller
 {
 
     public function admin_login(){
-        return view('admin.login');
+        return view('user.login');
     }
     public function admin_registration(){
-        return view('admin.registration');
+        return view('user.registration');
     }
     public function password(){
         return view('admin.password');

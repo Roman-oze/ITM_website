@@ -1,6 +1,6 @@
 
-@extends('frontend.committee_style')
-@extends('layout._club_master')
+@extends('club.committee_style')
+@extends('club._club_master')
 
 <br>
 <br>
@@ -39,7 +39,7 @@
             <div class="circular-image">
               <img src="/model/teacher/ashik.jpg" class="card-img-top" alt="Circular Image">          </div>
             <div class="card-body">
-            
+
               <h4>Dr.Ashikur Rahman</h4>
                   <h5>Lecturer (Senior Scale) </h5>
                   <a href="https://www.facebook.com/ashik.rahman.370515"><i class="fa-brands fa-facebook icon"></i></a>
@@ -49,13 +49,13 @@
             </div>
           </div>
         </div>
-  
+
         <div class="col-md-4">
           <div class="faculty-card">
             <div class="circular-image">
               <img src="/model/teacher/nafees.png" class="card-img-top" alt="Circular Image">
             </div>
-            <div class="card-body">                 
+            <div class="card-body">
               <h4>Mr.Nafees Imran</h4>
                   <h5>Lecturer </h5>
                   <a href="https://www.facebook.com/nafees.imran.7"><i class="fa-brands fa-facebook icon"></i></a>
@@ -65,7 +65,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="col-md-4">
           <div class="faculty-card">
             <div class="circular-image">
@@ -99,7 +99,7 @@
 
           </div>
         </div>
-  
+
         <div class="col-md-4">
           <div class="student-card">
             <img src="{{asset('frontend/image/committee/roman.jpg')}}"class="photo">
@@ -108,8 +108,8 @@
         </div>
 
         <br>
-      
-        
+
+
 <div class="container-fluid">
    <div class="row p-3">
         <div class="col-md-3">
@@ -117,15 +117,15 @@
             <img src="{{asset('frontend/image/committee/maisha.jpg')}}"class="photo">
           </div>
         </div>
-         
-      
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="{{asset('frontend/image/committee/elias.jpg')}}"class="photo">
           </div>
         </div>
-        
-  
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="{{asset('frontend/image/committee/kawsar.jpg')}}"class="photo">
@@ -144,15 +144,15 @@
             <img src="frontend/image/committee/efti.jpg"class="photo">
           </div>
         </div>
-         
-      
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="frontend/image/committee/akash.jpg"class="photo">
           </div>
         </div>
-        
-  
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="frontend/image/committee/elahi.jpg"class="photo">
@@ -171,15 +171,15 @@
             <img src="frontend/image/committee/tonima.jpg"class="photo">
           </div>
         </div>
-         
-      
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="frontend/image/committee/tonne.jpg"class="photo">
           </div>
         </div>
-        
-  
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="frontend/image/committee/nahin.jpg"class="photo">
@@ -199,15 +199,15 @@
             <img src="frontend/image/committee/roshni.jpg"class="photo">
           </div>
         </div>
-         
-      
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="frontend/image/committee/kashfia.jpg"class="photo">
           </div>
         </div>
-        
-  
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="frontend/image/committee/bushra.jpg"class="photo">
@@ -226,15 +226,15 @@
             <img src="frontend/image/committee/athay.jpg"class="photo">
           </div>
         </div>
-         
-      
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="frontend/image/committee/ashraf.jpg"class="photo">
           </div>
         </div>
-        
-  
+
+
         <div class="col-md-3">
           <div class="student-card">
             <img src="frontend/image/committee/nafiz.jpg"class="photo">
@@ -258,7 +258,7 @@
                   <img src="frontend/image/committee/ovi.jpg"class="photo">
                 </div>
               </div>
-         
+
   </div>
   </div>
   <br>

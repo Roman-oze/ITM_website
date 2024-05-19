@@ -102,12 +102,6 @@ class StudentController extends Controller
 
 
     }
-    public function membership()
-    {
-        $data['student'] = DB::table('students')->get();
-
-         return view('frontend.membership', $data);
-
-    }
+   
 
 }

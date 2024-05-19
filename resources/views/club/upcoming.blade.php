@@ -1,5 +1,5 @@
 
-@extends('layout._club_master')
+@extends('club._club_master')
 
 @section('club_header')
  <div class="container-fluid ">

@@ -3,8 +3,8 @@
 
  <!-- resources/views/students/create.blade.php -->
 
- @extends('layout.master')
- @section('content')
+ @extends('club._club_master')
+ @section('main_content')
 
 
 

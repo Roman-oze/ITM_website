@@ -14,8 +14,8 @@
         </div>
         <div class="col-md-7 text-end">
 
-        <a class=" text-dark p-2" href="{{route('login')}}"><i class="fa-solid fa-lock"></i> Login</a>
-        <a class="text-dark p-2" href="{{route('registration')}}"><i class="fa-solid fa-user"></i> Register</a>
+        <a class=" text-dark p-2" href="{{route('admin_login')}}"><i class="fa-solid fa-lock"></i> Login</a>
+        <a class="text-dark p-2" href="{{route('admin_registration')}}"><i class="fa-solid fa-user"></i> Register</a>
         </div>
 
 @endsection

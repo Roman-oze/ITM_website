@@ -1,8 +1,6 @@
-@extends('layout._club_master')
-<!-- resources/views/students/index.blade.php -->
+@extends('club._club_master')
+ @section('main_content')
 
-<!-- resources/views/students/index.blade.php -->
-@section('main_content')
 <div class="container mt-5 p-5">
 <h1 class="text-danger ">Student Details</h1>
 

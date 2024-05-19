@@ -1,7 +1,6 @@
-@extends('layout._club_master')
+@extends('club._club_master')
+ @section('main_content')
 
-
-@section('main_content')
 
 
     <div class="container mt-5">

@@ -1,4 +1,4 @@
-@extends('layout._club_master')
+@extends('club._club_master')
 
 
 
@@ -28,7 +28,7 @@
     </button>
   </div>
    -->
-  
+
 <!-- Navigation -->
 @section('club_header')
  <div class="container-fluid ">
@@ -42,14 +42,14 @@
           </div>
           <div class="col-md-6 paragh col-sm-12  text-center">
            <h3 class="btnn animate__animated animate__bounce">Join Our Club</h3><br>
-        
-    
+
+
           <img src="{{asset('frontend/image/qr.png')}}" class="QR">
           <b><p class="p-3"> Department of Information Technology & Management and ITM Club Facebook page here do like follow and share </p></b>
           <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
           <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i><br>
-    
-    
+
+
         </div>
         </div>
       </div>
@@ -61,7 +61,7 @@
 <!-- Welcome Section -->
 <section class="welcome-section">
   <div class="container p-1">
-    
+
         <div class="jumbotron text-center bgcolorpic animate__animated animate__fadeInLeft">
           <br>
           <br>
@@ -84,8 +84,8 @@
           <h1 class="text-center text-primary p-3 ">About Our ITM Club</h1>
           <p class="lead ">The ITM Club is a vibrant community dedicated to fostering innovation, technology, and management skills among its members. Through workshops, seminars, and networking events, the club provides opportunities for students to explore cutting-edge trends, collaborate on projects, and develop leadership abilities. With a focus on empowering individuals in the rapidly evolving fields of information technology and management, the ITM Club serves as a catalyst for personal and professional growth, preparing its members for success in the digital age.
           </p>
-        
-        </div>  
+
+        </div>
       </div>
   </div>
 </section>
@@ -99,7 +99,7 @@
       </div>
       <br>
       <br>
-      
+
       {{-- <div class="container">
         <!-- First Line: Single Card at the Top -->
         <div class="row ">
@@ -122,7 +122,7 @@
         </div>
    --}}
   <br>
-  
+
       <div class="container mt-5">
         <div class="row">
           <div class="col-md-3">
@@ -141,7 +141,7 @@
             <div class="student-card">
               <h5 class="text-text-dark">Vice-President</h5>
               <img src="{{asset('frontend/image/committee/sakib.jpg')}}"class="img00 rounded">
-  
+
             </div>
           </div>
           <div class="col-md-3">
@@ -153,7 +153,7 @@
           </div>
         </div>
           <br>
-        
+
 
 
 <br>
@@ -184,7 +184,7 @@
                 <img src="{{asset('frontend/image/event_photo/img1.jpg')}}" class="img00  rounded">
 
             </div>
-          
+
           </div>
 
     <div class="row mt-5">
@@ -200,7 +200,7 @@
                 <img src="{{asset('frontend/image/event_photo/img4.jpg')}}" class="img00  rounded">
 
             </div>
-          
+
           </div>
     </div>
 
