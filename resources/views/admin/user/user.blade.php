@@ -1,9 +1,9 @@
 
 
-    @extends('layout._club_master')
+    @extends('admin._master')
 
 
-    @section('main_content')
+    @section('main')
 
     <div class="container mt-5 p-5">
         <h1 class="text-danger ">Admin Details</h1>
@@ -19,16 +19,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($students as $student)
+                @foreach ($admin as $admin)
                 <tr>
-                    <td>{{$student->id}}</td>
-                  <td>{{$student->name}}</td>
-                  <td>{{$student->email}}</td>
-                  <td>{{$student->password}}</td>
+                    <td>{{$admin->id}}</td>
+                  <td>{{$admin->name}}</td>
+                  <td>{{$admin->email}}</td>
+                  <td>{{$admin->password}}</td>
 
                     <td>
-                        <a href="{{route('view',$student->id)}}" class="btn btn-info">View</a>
-                        <a href="{{route('edit',$student->id)}}" class="btn btn-danger">edit</a>
+                        <a href="{{route('',$admin->id)}}" class="btn btn-info">View</a>
+                        <a href="{{route('edit',$admin->id)}}" class="btn btn-danger">edit</a>
 
                         <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
                             @csrf

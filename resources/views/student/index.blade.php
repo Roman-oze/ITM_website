@@ -1,6 +1,7 @@
-@extends('club._club_master')
- @section('main_content')
+@extends('admin._master')
 
+
+@section('main')
 <div class="container mt-5 p-5">
 <h1 class="text-danger ">Student Details</h1>
 

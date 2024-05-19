@@ -42,7 +42,7 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a  href="{{route('user_admin')}}" class="linked">Category</a>
+                            <a  href="" class="linked">Category</a>
                         </nav>
                     </div>
 
@@ -83,7 +83,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{route('admin_login')}}">Login</a>
                                     <a class="nav-link" href="{{route('admin_registration')}}">Register</a>
-                                    <a class="nav-link" href="{{route('password')}}">Forgot Password</a>
+                                    <a class="nav-link" href="{{route("reset_password")}}">Forgot Password</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">

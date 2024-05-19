@@ -10,21 +10,35 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public function user_admin(){
 
-    public function admin_login(){
-        return view('user.login');
+        $data['admins']=DB::table('users')->get();
+
+        return view('admin.user_admin',$data);
+
     }
-    public function admin_registration(){
-        return view('user.registration');
+      public function user_student(){
+
+        $data['students']=DB::table('students')->get();
+
+        return view('admin.user_student',$data);
+
     }
-    public function password(){
-        return view('admin.password');
+    public function login()
+    {
+        return view('admin.user.login');
     }
-    public function static(){
-        return view('admin.static');
+    public function registration()
+    {
+        return view('admin.user.registration');
     }
-    public function chart(){
-        return view('admin.chart');
+    public function password()
+    {
+        return view('admin.user.password');
+    }
+    public function create()
+    {
+        return view('user.create');
     }
 
     public function index()
@@ -34,66 +48,62 @@ class AdminController extends Controller
 
 
 
-    public function u_admin(){
+    public function register(Request $request){
 
-        $data['admins']=DB::table('users')->get();
+        $rule= [
 
-        return view('admin.u_admin',$data);
+            'name'=>'required',
+            'email'=>'required|unique',
+            'password'=>'required|confirmed',
+        ];
+
+         $data['name']=$request->name;
+         $data['email']=$request->email;
+         $data['password']=$request->password;
+         $data['role']=$request->role;
+
+
+        DB::table('users')->insert($data);
+
+        // dd(DB::table('students')->get());
+        return redirect('user_data');
+
 
     }
-    public function u_student(){
-
-        $data['students']=DB::table('students')->get();
-
-        return view('admin.u_student',$data);
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function show($id)
     {
-        //
+        $data['admin'] =DB::table('users')->where('id',$id)->first();
+        return view('admin.user.show',$data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+
+    public function edit($id)
     {
-        //
+        $data['admin'] = DB::table('users')->where('id',$id)->first();
+                return view('admin.user.edit',$data);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+    public function update(Request $request,$id){
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        $data['name']=$request->name;
+        $data['email']=$request->email;
+        $data['password']=$request->password;
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        DB::table('users')->where('id',$id)->update($data);
+
+        // dd(DB::table('students')->get());
+        return redirect('users');
+
+
+    }
+    public function destroy($id){
+
+        DB::table('users')->where('id',$id)->delete();
+
+        // dd(DB::table('students')->get());
+        return redirect('users');
+
+
     }
 }

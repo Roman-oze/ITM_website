@@ -16,18 +16,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($admins as $student)
+            @foreach ($admins as $admin)
             <tr>
-                <td>{{$student->id}}</td>
-              <td>{{$student->name}}</td>
-              <td>{{$student->email}}</td>
-              <td>{{$student->password}}</td>
+                <td>{{ $admin->id }}</td>
+                <td>{{ $admin->name }}</td>
+                <td>{{ $admin->email }}</td>
+                <td>{{ $admin->password }}</td>
 
                 <td>
-                    <a href="{{route('view',$student->id)}}" class="btn btn-info">View</a>
-                    <a href="{{route('edit',$student->id)}}" class="btn btn-danger">edit</a>
+                    <a href="{{route('show',$admin->id)}}" class="btn btn-info">View</a>
+                    <a href="{{route('edit',$admin->id)}}" class="btn btn-danger">edit</a>
 
-                    <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
+                    <form action="{{route('delete',$admin->id)}}" method="post" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure?')">Delete</button>
