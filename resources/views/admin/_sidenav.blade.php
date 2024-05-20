@@ -22,7 +22,7 @@
                         </nav>
                     </div>
 
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                    {{-- <a class="nav-link collapsed" href="{{route('routine')}}" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-calendar-days text-white"></i></i></div>
                         Routine
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -32,8 +32,7 @@
                             <a  href="" class="linked">Spring</a>
                             <a  href="" class="linked">Fall</a>
                         </nav>
-                    </div>
-
+                    </div> --}}
 
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-book-open  5rem text-white"></i></i></div>
@@ -46,7 +45,8 @@
                         </nav>
                     </div>
 
-
+                    <a  href="{{route('routine')}}" class="linked"><i class="fa-regular fa-calendar-days text-white"></i>  Routine</a>
+                    
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate text-white"></i></i></div>
                         Faculty

@@ -1,0 +1,49 @@
+/* styles.css */
+
+/* Reset default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#routineUpload {
+    margin-top: 20px;
+}
+
+#routineUpload h2 {
+    margin-bottom: 10px;
+}
+
+#routineUpload input[type="file"] {
+    margin-bottom: 10px;
+}
+
+#routineList {
+    list-style-type: none;
+}
+
+#routineList li {
+    margin-bottom: 5px;
+}

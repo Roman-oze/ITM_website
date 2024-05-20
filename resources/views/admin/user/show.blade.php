@@ -4,26 +4,27 @@
 @section('main')
 
 
-    <div class="container mt-5">
-        <h1 class="text-danger mt-5">Single Show Data </h1>
-    <table class="table table-striped">
+<div class="container p-5">
+    <div class="row justify-content-center p-5">
+        <h2 class="text-info mt-5 bg-dark p-2">Single Show Data </h2>
+    <table class="table table-striped bg-dark">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>password</th>
-                <th>Actions</th>
+                <th class="text-white">User ID</th>
+                <th class="text-white">Name</th>
+                <th class="text-white">Email</th>
+                <th class="text-white">Password</th>
+                <th class="text-white">Action</th>
 
             </tr>
         </thead>
         <tbody>
 
             <tr>
-                <td>{{ $admin->id }}</td>
-                <td>{{ $admin->name }}</td>
-                <td>{{ $admin->email }}</td>
-                <td>{{ $admin->password }}</td>
+                <td class="text-white-50">{{ $admin->id }}</td>
+                <td class="text-white-50">{{ $admin->name }}</td>
+                <td class="text-white-50">{{ $admin->email }}</td>
+                <td class="text-white-50">{{ $admin->password }}</td>
 
 
                 <td>
@@ -35,6 +36,7 @@
 
         </tbody>
     </table>
+</div>
 </div>
 <br>
 <br>

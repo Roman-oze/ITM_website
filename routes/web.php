@@ -17,6 +17,7 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('user/students', 'user_student')->name('user_student');
     Route::get('admin/static', 'static')->name('static');
     Route::get('admin/chart', 'chart')->name('chart');
+    Route::get('admin/routine', 'routine')->name('routine');
 
     // Route::get('user/profile', 'profile')->name('profile');
 

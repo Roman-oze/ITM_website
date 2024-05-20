@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Validated;
 use PhpParser\Node\Stmt\Echo_;
 
@@ -59,14 +60,20 @@ class AdminController extends Controller
 
          $data['name']=$request->name;
          $data['email']=$request->email;
-         $data['password']=$request->password;
+         $data['password']= md5($request->password);
          $data['role']=$request->role;
-
+         $data['status']=$request->status;
+         $data['created_at']=date('Y-m-d H:i:s');
+         $data['updated_at']=date('Y-m-d H:i:s');
+        //  $data['created_by']=Auth::user()->id;
+        //  $data['updated_by']=Auth::user()->id;
+        //  $data['created_ip']=request()->ip();
+        //  $data['updated_ip']=request()->ip();
 
         DB::table('users')->insert($data);
 
         // dd(DB::table('students')->get());
-        return redirect('user_data');
+        return redirect('users');
 
 
     }
@@ -104,6 +111,11 @@ class AdminController extends Controller
         // dd(DB::table('students')->get());
         return redirect('users');
 
+
+    }
+
+    public function routine(){
+        return view('admin.routine');
 
     }
 }
