@@ -16,8 +16,8 @@
 
         <div class="col-md-7 text-end">
 
-        <a class=" text-dark p-2" href="{{route('admin_login')}}"><i class="fa-solid fa-lock"></i> Login</a>
-        <a class="text-dark p-2" href="{{route('admin_registration')}}"><i class="fa-solid fa-user"></i> Register</a>
+        <a class=" text-dark p-2" href="{{route('admin_login')}}"><i class="fa-solid fa-lock  icontop"></i> Login</a>
+        <a class="text-dark p-2" href="{{route('admin_registration')}}"><i class="fa-solid fa-user icontop"></i> Register</a>
         </div>
         </div>
 
@@ -31,7 +31,6 @@
         <img src="{{asset('frontend/image/welcome.png')}}" class="images animate__animated animate__fadeInLeft">
         <h4 class="animate__animated animate__bounce animate__repeat-2">
             Department of Information Technology & Management <img src="{{asset('frontend/image/verify.png')}}" style="height: 28px;width: 30px;"></h4>
-
 
       </div>
       <div class="col-md-5 paragh   text-center p-2">
@@ -190,7 +189,7 @@
                                             <hr>
                                          </div>
                                      </div>
-                                     {{ $records->links('pagination::bootstrap-5') }}
+
 
                                  </div>
 
