@@ -5,7 +5,7 @@
 
 @section('topmost')
 
-            <div class="row  p-2 topmost">
+            <div class="row  p-2 covepage">
         <div class="col-md-5  ">
             <a  class="  p-2 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
