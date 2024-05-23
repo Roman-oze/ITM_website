@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClubController;
 use Faker\Guesser\Name;
+// use Illuminate\Support\Facades\Auth;
 
 Route::controller(AdminController::class)->group(function(){
 
@@ -18,6 +19,7 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('admin/static', 'static')->name('static');
     Route::get('admin/chart', 'chart')->name('chart');
     Route::get('admin/routine', 'routine')->name('routine');
+    Route::get('records', 'records')->name('records');
 
     // Route::get('user/profile', 'profile')->name('profile');
 

@@ -2,8 +2,18 @@
 
 @section('main')
 
+{{-- <form  action="records" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" >
+    <div class="input-group">
+        <input class="form-control" type="text" placeholder="Search for..." name="search" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+
+    </div>
+
+</form> --}}
+
+
 <div class="container p-5">
-    <h2 class="text-info mt-5 bg-dark p-2">Admin Details</h2>
+    <h2 class="text-info mt-5  p-2">Admin Details</h2>
 
     <table class="table table-striped bg-dark ">
         <thead>
@@ -16,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($admins as $admin)
+            @foreach ($record as $admin)
             <tr>
                 <td class="text-white-50 text-center">{{ $admin->id }}</td>
                 <td class="text-white-50">{{ $admin->name }}</td>
@@ -40,6 +50,13 @@
                 @endforeach
         </tbody>
     </table>
+
+
+    <div class="row">
+        {{ $record->links('pagination::bootstrap-5') }}
+    </div>
+
+</div>
 </div>
 
 

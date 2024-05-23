@@ -21,10 +21,10 @@
         <tbody>
 
             <tr>
-                <td class="text-white-50">{{ $admin->id }}</td>
-                <td class="text-white-50">{{ $admin->name }}</td>
-                <td class="text-white-50">{{ $admin->email }}</td>
-                <td class="text-white-50">{{ $admin->password }}</td>
+                <td class="text-white-50">{{ $record->id }}</td>
+                <td class="text-white-50">{{ $record->name }}</td>
+                <td class="text-white-50">{{ $record->email }}</td>
+                <td class="text-white-50">{{ $record->password }}</td>
 
 
                 <td>

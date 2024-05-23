@@ -17,7 +17,7 @@
        <div class="container mt-5">
         <div class="row justify-content-center" >
             <div class="col-md-6">
-                <div class="card bg-dark">
+                <div class="card ">
                     <div class="card-body">
                         <h2 class="text-info text-center mb-3">Edit Admin Information</h2>
 
@@ -27,7 +27,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('update', $admin->id) }}" method="post">
+                        <form action="{{ route('update', $record->id) }}" method="post">
                             @csrf
                             @method('PUT')
 

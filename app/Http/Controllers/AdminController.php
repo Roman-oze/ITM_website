@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Student;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -9,13 +11,13 @@ use PhpParser\Node\Stmt\Echo_;
 
 use Illuminate\Http\Request;
 
+
 class AdminController extends Controller
 {
     public function user_admin(){
 
-        $data['admins']=DB::table('users')->get();
-
-        return view('admin.user_admin',$data);
+        $record = User::paginate(10);
+        return view('admin.user_admin',compact('record'));
 
     }
       public function user_student(){
@@ -62,9 +64,9 @@ class AdminController extends Controller
          $data['email']=$request->email;
          $data['password']= md5($request->password);
          $data['role']=$request->role;
-         $data['status']=$request->status;
          $data['created_at']=date('Y-m-d H:i:s');
          $data['updated_at']=date('Y-m-d H:i:s');
+        //  $data['status']=$request->status;
         //  $data['created_by']=Auth::user()->id;
         //  $data['updated_by']=Auth::user()->id;
         //  $data['created_ip']=request()->ip();
@@ -79,14 +81,14 @@ class AdminController extends Controller
     }
     public function show($id)
     {
-        $data['admin'] =DB::table('users')->where('id',$id)->first();
+        $data['record'] =DB::table('users')->where('id',$id)->first();
         return view('admin.user.show',$data);
     }
 
 
     public function edit($id)
     {
-        $data['admin'] = DB::table('users')->where('id',$id)->first();
+        $data['record'] = DB::table('users')->where('id',$id)->first();
                 return view('admin.user.edit',$data);
     }
 
@@ -118,4 +120,13 @@ class AdminController extends Controller
         return view('admin.routine');
 
     }
+    public function records(Request $request){
+
+        $data = $request->input('search');
+        $record = DB::table('users')->where('name','like','%'.$data.'%')->get();
+        return view('admin.user_admin',compact('record'));
+
+    }
+
+
 }
