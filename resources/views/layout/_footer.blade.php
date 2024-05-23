@@ -44,5 +44,5 @@
      </section>
 
 <div class="bg-primary  text-center">
-<a href="https://www.facebook.com/islamfull.5" class="text-dark">copyright by design @RomanOze</a>
+    <a href="https://github.com/Roman-oze/resume" class="text-white">copyright by design @RomanOze</a>
  </div>

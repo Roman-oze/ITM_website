@@ -5,17 +5,20 @@
 
 @section('topmost')
 
-            <div class="row  p-2 covepage">
+
+         <div class="row  p-2 covepage">
         <div class="col-md-5  ">
             <a  class="  p-2 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
             <a  class=" text-dark p-2" href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope icontop"></i></a>
             <a  class=" text-dark p-2" href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
         </div>
+
         <div class="col-md-7 text-end">
 
         <a class=" text-dark p-2" href="{{route('admin_login')}}"><i class="fa-solid fa-lock"></i> Login</a>
         <a class="text-dark p-2" href="{{route('admin_registration')}}"><i class="fa-solid fa-user"></i> Register</a>
+        </div>
         </div>
 
 @endsection
@@ -187,6 +190,8 @@
                                             <hr>
                                          </div>
                                      </div>
+                                     {{ $records->links('pagination::bootstrap-5') }}
+
                                  </div>
 
                          </div>

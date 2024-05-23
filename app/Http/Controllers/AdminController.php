@@ -123,7 +123,7 @@ class AdminController extends Controller
     public function records(Request $request){
 
         $data = $request->input('search');
-        $record = DB::table('users')->where('name','like','%'.$data.'%')->get();
+        $record = DB::table('users')->where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);
         return view('admin.user_admin',compact('record'));
 
     }
