@@ -14,7 +14,6 @@
             <th>Department</th>
             <th>Address</th>
             <th>Mobile</th>
-            <th>password</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -27,7 +26,6 @@
                 <td>{{ $student->department }}</td>
                 <td>{{ $student->address }}</td>
                 <td>{{ $student->mobile }}</td>
-                <td>{{ $student->password }}</td>
                         <td>
                             <a href="{{route('show',$student->id)}}" class="btn btn-info">View</a>
                             <a href="{{route('edit',$student->id)}}" class="btn btn-danger">edit</a>

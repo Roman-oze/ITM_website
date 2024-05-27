@@ -41,10 +41,10 @@ class StudentController extends Controller
         $rules = [
             'name' => 'required',
             'email' => 'required|unique:users,email', // Assuming 'users' is the table name and 'email' is the column name
+            'department' => 'required', // Assuming 'users' is the table name and 'email' is the column name
             'address' => 'required',
             'mobile' => 'required|unique:users,mobile', // Assuming 'users' is the table name and 'mobile' is the column name
-            'password' => 'required|confirmed|min:8',
-            'password_confirmation' => 'required|same:password', // 'password_confirmation' is the default field name for password confirmation
+           // 'password_confirmation' is the default field name for password confirmation
         ];
 
 
@@ -53,9 +53,7 @@ class StudentController extends Controller
          $data['department']=$request->department;
          $data['address']=$request->address;
          $data['mobile']=$request->mobile;
-         $data['password']=$request->password;
-         $data['password_confirm']=$request->password_confirm;
-         $data['role']=$request->role;
+
 
 
         DB::table('students')->insert($data);
@@ -82,6 +80,7 @@ class StudentController extends Controller
     public function update(Request $request,$id){
 
         $data['name']=$request->name;
+        $data['email']=$request->name;
         $data['department']=$request->department;
         $data['address']=$request->address;
         $data['mobile']=$request->mobile;
@@ -102,6 +101,6 @@ class StudentController extends Controller
 
 
     }
-   
+
 
 }

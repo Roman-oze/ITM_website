@@ -63,7 +63,6 @@ class AdminController extends Controller
          $data['name']=$request->name;
          $data['email']=$request->email;
          $data['password']= md5($request->password);
-         $data['role']=$request->role;
          $data['created_at']=date('Y-m-d H:i:s');
          $data['updated_at']=date('Y-m-d H:i:s');
         //  $data['status']=$request->status;

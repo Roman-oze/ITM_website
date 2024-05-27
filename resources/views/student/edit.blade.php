@@ -60,18 +60,7 @@
                     <input type="hidden" class="form-control" value="user" name="role" required>
 
                 </div>
-                <div class="form-group">
-                    <label for="">Password</label>
-                    <input type="password" class="form-control" name="password" required>
-                    <input type="hidden" class="form-control" value="user" name="role" required>
-
-                </div>
-                <div class="form-group">
-                    <label for="">password confirm</label>
-                    <input type="password" class="form-control" name="password_confirm" required>
-                    <input type="hidden" class="form-control" value="user" name="role" required>
-
-                </div>
+                
 
                 <button type="submit" class="btn btn-primary">update</button>
             </form>
