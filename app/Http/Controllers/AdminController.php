@@ -20,6 +20,9 @@ class AdminController extends Controller
         return view('admin.user_admin',compact('record'));
 
     }
+
+    
+
       public function user_student(){
 
         $data['students']=DB::table('students')->get();

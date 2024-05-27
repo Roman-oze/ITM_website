@@ -27,10 +27,13 @@ class StudentController extends Controller
 
     public function index(){
 
-      $data['student'] = DB::table('students')->get();
+    //   $data['student'] = DB::table('students')->get();
 
-    //   dd($data);
-    return view('student.index',$data);
+    // //   dd($data);
+    // return view('student.index',$data);
+
+     $student = Student::paginate(10);
+     return view('student.index',compact('student'));
 
     }
 
@@ -80,7 +83,7 @@ class StudentController extends Controller
     public function update(Request $request,$id){
 
         $data['name']=$request->name;
-        $data['email']=$request->name;
+        $data['email']=$request->email;
         $data['department']=$request->department;
         $data['address']=$request->address;
         $data['mobile']=$request->mobile;
