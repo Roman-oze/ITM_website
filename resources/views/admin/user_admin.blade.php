@@ -12,8 +12,15 @@
 </form> --}}
 
 
-<div class="container p-5">
-    <h2 class="text-info mt-5  p-2">Admin Details</h2>
+<div class="container">
+    <h2 class="text-dark mt-5  p-2">Admin Details</h2>
+
+    <div class="row  p-4">
+        <div class=" text-left">
+          <a href="{{ route('admin_registration') }}" class="btn btn-dark text-white">New Add</a>
+
+        </div>
+      </div>
 
     <table class="table table-striped bg-dark ">
         <thead>

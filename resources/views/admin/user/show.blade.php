@@ -4,40 +4,46 @@
 @section('main')
 
 
-<div class="container p-5">
-    <div class="row justify-content-center p-5">
-        <h2 class="text-info mt-5 bg-dark p-2">Single Show Data </h2>
-    <table class="table table-striped bg-dark">
+
+
+<div class="container">
+    <h2 class="text-dark mt-5  p-2">Single Data Show</h2>
+
+    <div class="row  p-4">
+        <div class=" text-left">
+          <a href="{{ route('admin_registration') }}" class="btn btn-dark text-white">New Add</a>
+
+        </div>
+      </div>
+
+    <table class="table table-striped bg-dark ">
         <thead>
-            <tr>
-                <th class="text-white">User ID</th>
+            <tr >
+                <th class="text-white text-center">User ID</th>
                 <th class="text-white">Name</th>
                 <th class="text-white">Email</th>
                 <th class="text-white">Password</th>
-                <th class="text-white">Action</th>
-
+                <th class="text-white text-center">Action</th>
             </tr>
         </thead>
         <tbody>
-
             <tr>
-                <td class="text-white-50">{{ $record->id }}</td>
-                <td class="text-white-50">{{ $record->name }}</td>
-                <td class="text-white-50">{{ $record->email }}</td>
-                <td class="text-white-50">{{ $record->password }}</td>
-
-
+                <td class="text-white-50 text-center">{{ $admin->id }}</td>
+                <td class="text-white-50">{{ $admin->name }}</td>
+                <td class="text-white-50">{{ $admin->email }}</td>
+                <td class="text-white-50">{{ $admin->password }}</td>
                 <td>
-                        <a href="{{route('user_admin')}}" class="btn btn-primary">Back</a>
+                    <a href="{{route('user_admin')}}" class="btn btn-primary">Back</a>
 
-                </td>
+            </td>
+
 
                 </tr>
-
         </tbody>
     </table>
 </div>
-</div>
+
+
 <br>
 <br>
 <br>

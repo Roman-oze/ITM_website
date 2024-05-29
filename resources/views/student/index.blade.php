@@ -2,7 +2,25 @@
 
 
 @section('main')
-<div class="container mt-5 p-5">
+<div class="container p-5">
+    <div class="row p-3">
+        <div class="col-md-6 ">
+            <form action="search">
+                <div class="input-group">
+                    <input type="search" name="search" class="form-control" placeholder="Search">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-outline-info">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class=" text-left">
+            <a href="{{ route('create') }}" class="btn btn-info">New Add</a>
+
+          </div>
+        </div>
+    </div>
 <h1 class="text-danger ">Student Details</h1>
 
 <table class="table table-striped">
@@ -18,7 +36,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($student as $student)
+        @foreach($students as $student)
                     <tr>
                 <td>{{ $student->id }}</td>
                 <td>{{ $student->name }}</td>
@@ -42,7 +60,7 @@
     </tbody>
 </table>
 
-
+{{ $students->links('pagination::bootstrap-5') }}
 </div>
 
     <!-- Your existing form fields --

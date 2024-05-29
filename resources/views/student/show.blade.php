@@ -16,7 +16,6 @@
                 <th>Department</th>
                 <th>Address</th>
                 <th>Mobile</th>
-                <th>password</th>
                 <th>Actions</th>
 
             </tr>
@@ -30,7 +29,7 @@
                 <td>{{ $student->department }}</td>
                 <td>{{ $student->address }}</td>
                 <td>{{ $student->mobile }}</td>
-                <td>{{ $student->password }}</td>
+
 
 
                 <td>

@@ -17,7 +17,7 @@
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                             <a  href="{{route('user_admin')}}" class="linked">Admins</a>
-                            <a  href="{{route('user_student')}}" class="linked">Students</a>
+                            <a  href="{{route('index')}}" class="linked">Students</a>
 
                         </nav>
                     </div>
@@ -46,7 +46,7 @@
                     </div>
 
                     <a  href="{{route('routine')}}" class="linked"><i class="fa-regular fa-calendar-days text-white"></i>  Routine</a>
-                    
+
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate text-white"></i></i></div>
                         Faculty

@@ -32,8 +32,8 @@ class StudentController extends Controller
     // //   dd($data);
     // return view('student.index',$data);
 
-     $student = Student::paginate(10);
-     return view('student.index',compact('student'));
+     $students = Student::paginate(10);
+     return view('student.index',compact('students'));
 
     }
 
@@ -102,6 +102,13 @@ class StudentController extends Controller
         // dd(DB::table('students')->get());
         return redirect('students');
 
+    }
+
+    public function search(Request $request){
+
+        $data = $request->input('search');
+        $students =DB::table('students')->where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);
+        return view('student.index',compact('students'));
 
     }
 

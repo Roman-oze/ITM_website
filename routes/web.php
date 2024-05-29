@@ -15,7 +15,6 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('admin/registration', 'registration')->name('admin_registration');
     Route::get('admin/reset_password', 'password')->name('reset_password');
     Route::get('users', 'user_admin')->name('user_admin');
-    Route::get('user/students', 'user_student')->name('user_student');
     Route::get('admin/static', 'static')->name('static');
     Route::get('admin/chart', 'chart')->name('chart');
     Route::get('admin/routine', 'routine')->name('routine');
@@ -40,10 +39,11 @@ Route::get('students', 'index')->name('index');
 Route::get('student/create', 'create')->name('create');
 Route::get('student/login', 'sign_in')->name('sign_in');
 Route::post('/store', 'store')->name('store');
-// Route::get('/show/{id}', 'show')->name('show');
-// Route::get('/edit/{id}', 'edit')->name('edit');
-// Route::put('/update/{id}','update')->name('update');
-// Route::delete('/delete/{id}', 'destroy')->name('delete');
+Route::get('/show/{id}', 'show')->name('show');
+Route::get('/edit/{id}', 'edit')->name('edit');
+Route::put('/update/{id}','update')->name('update');
+Route::delete('/delete/{id}', 'destroy')->name('delete');
+Route::get('search','search')->name('search');
 
 
 
