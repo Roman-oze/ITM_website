@@ -6,10 +6,12 @@
 
 <div class="container-fluid">
     <br>
-<form action="{{route('faculty_store',$teacher->teacher_id)}}" method="POST">
-    @csrf
-    @method('PUT')
-    
+
+    <form  action="{{route('faculty_update',$teacher->teacher_id)}}"  method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+
+
     <div class="row p-4 col-6 d-block m-auto card">
         <a href="{{route('showing')}}" class="btn btn-dark">Add</a>
  <div class="mb-3">

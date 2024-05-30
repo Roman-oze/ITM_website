@@ -92,7 +92,7 @@ class FacultyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function faculty_update(Request $request, string $id)
     {
         $request->validate([
             'image' => 'required|mimes:png,jpg,jpeg,webp',
@@ -118,8 +118,8 @@ class FacultyController extends Controller
             $data['phone']=$request->phone;
 
 
-    DB::table('teachers')->update($data);
-    return redirect('showing');
+            DB::table('teachers')->where('teacher_id',$id)->update($data);
+            return redirect('showing');
     }
 
     /**

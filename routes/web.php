@@ -46,7 +46,7 @@ Route::controller(AdminController::class)->group(function(){
   Route::get('/teacher_create','create')->name('teacher_create');
   Route::post('/faculty_store', 'faculty_store')->name('faculty_store');
   Route::get('/faculty_edit/{id}', 'edit')->name('faculty_edit');
-  Route::put('/faculty_update/{id}', 'faculty_update')->name('faculty_update');
+  Route::post('/faculty_update/{id}', 'faculty_update')->name('faculty_update');
   Route::delete('/faculty_delete/{id}', 'destroy')->name('faculty_delete');
 
 
