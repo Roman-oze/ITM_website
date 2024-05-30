@@ -12,9 +12,9 @@
 <div id="layoutSidenav">
     @include('admin._sidenav')
 
-    <div id="layoutSidenav_content">
+
         @yield('main')
-       </div>
+       
 </div>
 
 

@@ -47,10 +47,12 @@
 
                     <a  href="{{route('routine')}}" class="linked"><i class="fa-regular fa-calendar-days text-white"></i>  Routine</a>
 
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate text-white"></i></i></div>
-                        Faculty
-                    </a>
+
+
+                    <a  href="{{route('showing')}}" class="linked"><i class="fa-solid fa-user-graduate text-white"></i> Faculty</a>
+
+
+
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-book-open  5rem text-white"></i></i></div>
                         Students
