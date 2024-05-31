@@ -6,7 +6,7 @@
 @section('topmost')
 
 
-         <div class="row  p-2 covepage">
+         <div class="row  p-2 covepage border-bottom">
         <div class="col-md-5  ">
             <a  class="  p-2 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
@@ -27,7 +27,7 @@
 
 @section('headerpage')
     <div class="row covepage">
-      <div class="col-md-7   text-center">
+      <div class="col-md-7   text-center ">
         <img src="{{asset('frontend/image/welcome.png')}}" class="images animate__animated animate__fadeInLeft">
         <h4 class="animate__animated animate__bounce animate__repeat-2">
             Department of Information Technology & Management <img src="{{asset('frontend/image/verify.png')}}" style="height: 28px;width: 30px;"></h4>
