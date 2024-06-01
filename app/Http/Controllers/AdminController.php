@@ -2,18 +2,117 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
-use Illuminate\Support\Facades\DB;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Auth\Events\Validated;
-use PhpParser\Node\Stmt\Echo_;
-
+use App\Models\Student;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Echo_;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Facades\Session;
 
 
 class AdminController extends Controller
 {
+
+    public function dashboard()
+    {
+        $data = array();
+        if(Session::has('id')){
+            $data = User::where('id','=',Session::get('id'))->first();
+        }
+
+       return view('admin.dashboard');
+    }
+
+    public function login()
+    {
+        return view('admin.user.login');
+    }
+
+    public function loginUser(Request $request)
+    {
+        $request->validate([
+
+            'email'=>'required|email',
+            'password' => 'required|string|min:8|max:16',
+
+            ]);
+
+
+            $user = User::where('email','=',$request->email)->first();
+            if($user){
+                if(Hash::check($request->password,$user->password)){
+                    $request->Session::put('id',$user)->id;
+                    return redirect('dashboard');
+                    }
+                    else{
+                        return back()->with('fail','Password not match');
+                        }
+                        }else{
+                            return back()->with('fail','Email not found');
+                            }
+
+
+    }
+
+    public function registration()
+    {
+        return view('admin.user.registration');
+    }
+
+
+    public function register(Request $request){
+
+       $request -> validate ([
+
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password' => 'required|string|min:8|max:16',
+        ]);
+
+         $data['name']=$request->name;
+         $data['email']=$request->email;
+         $data['password']= md5($request->password);
+         $data['created_at']=date('Y-m-d H:i:s');
+         $data['updated_at']=date('Y-m-d H:i:s');
+        //  $data['status']=$request->status;
+
+        // if($data){
+        //     return back()->with('success','You have registered Successfully');
+        //     }
+        //     else{
+        //         return back()->with('error','Something went wrong');
+        //     }
+
+
+
+        DB::table('users')->insert($data);
+
+        // dd(DB::table('students')->get());
+        return redirect()->back();
+
+
+    }
+
+     public function logout(){
+        if(Session::has('id')){
+            Session::pull('id');
+            return redirect()->route('login');
+
+        }
+     }
+
+
+
+    public function password()
+    {
+        return view('admin.user.password');
+    }
+
+
     public function user_admin(){
 
         $record = User::paginate(10);
@@ -21,7 +120,7 @@ class AdminController extends Controller
 
     }
 
-    
+
 
       public function user_student(){
 
@@ -30,57 +129,14 @@ class AdminController extends Controller
         return view('admin.user_student',$data);
 
     }
-    public function login()
-    {
-        return view('admin.user.login');
-    }
-    public function registration()
-    {
-        return view('admin.user.registration');
-    }
-    public function password()
-    {
-        return view('admin.user.password');
-    }
+
     public function create()
     {
         return view('user.create');
     }
 
-    public function index()
-    {
-       return view('admin.index');
-    }
 
 
-
-    public function register(Request $request){
-
-        $rule= [
-
-            'name'=>'required',
-            'email'=>'required|unique',
-            'password'=>'required|confirmed',
-        ];
-
-         $data['name']=$request->name;
-         $data['email']=$request->email;
-         $data['password']= md5($request->password);
-         $data['created_at']=date('Y-m-d H:i:s');
-         $data['updated_at']=date('Y-m-d H:i:s');
-        //  $data['status']=$request->status;
-        //  $data['created_by']=Auth::user()->id;
-        //  $data['updated_by']=Auth::user()->id;
-        //  $data['created_ip']=request()->ip();
-        //  $data['updated_ip']=request()->ip();
-
-        DB::table('users')->insert($data);
-
-        // dd(DB::table('students')->get());
-        return redirect('users');
-
-
-    }
     public function show($id)
     {
         $data['record'] =DB::table('users')->where('id',$id)->first();

@@ -24,6 +24,25 @@
             <div class="card-body">
               <!-- Content for the second card in the second line -->
               <h4>Ms.Nusrat Jahan</h4>
+            <h5 class="text-info">Head of ITM </h5>
+            <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon1"></i></a>
+            <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>
+            <a href="nusrat.swe@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
+            <a href="+8801847334996"><i class="fa-solid fa-square-phone icon1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row ">
+        <div class="col-md-12">
+          <div class="faculty-card">
+            <div class="circular-image">
+              <img src="{{asset('frontend/image/teacher/imran.png')}}" class="card-img-top" alt="Circular Image">
+            </div>
+            <div class="card-body">
+              <!-- Content for the second card in the second line -->
+              <h4>Nafees Imran</h4>
             <h5 class="text-warning">Convener</h5>
             <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon1"></i></a>
             <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>

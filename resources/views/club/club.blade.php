@@ -127,8 +127,8 @@
         <div class="row">
           <div class="col-md-3">
             <div class="student-card">
-              <h5 class="text-warning">Convener</h5>
-              <img src="{{asset('frontend/image/teacher/nusratjahan.png')}}" class="img00 " alt="Circular Image">
+              <h5 class="text-warning text-bold">Convener</h5>
+              <img src="{{asset('frontend/image/teacher/imran.png')}}" class="img00 rounded">
             </div>
           </div>
           <div class="col-md-3">

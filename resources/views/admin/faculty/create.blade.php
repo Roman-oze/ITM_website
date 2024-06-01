@@ -55,31 +55,47 @@
       <div class="mb-3">
         <label for="image" class="form-label">Image URL</label>
         <input type="file" class="form-control" id="imageInput" name="image" >
+       <span>@error('image'){{$message}}@enderror</span>
       </div>
+
       <div class="mb-3">
         <label for="nameInput" class="form-label">Name</label>
         <input type="text" class="form-control" id="nameInput" name="name" >
+        <span>@error('name'){{$message}}@enderror</span>
       </div>
+
+
       <div class="mb-3">
         <label for="designationInput" class="form-label">Designation</label>
         <input type="text" class="form-control" id="designationInput" name="designation">
+        <span>@error('designation'){{$message}}@enderror</span>
       </div>
+
       <div class="mb-3">
         <label for="facebookInput" class="form-label">Facebook URL</label>
         <input type="text" class="form-control" id="facebookInput" name="fb" >
+        <span>@error('fb'){{$message}}@enderror</span>
+
       </div>
+
       <div class="mb-3">
         <label for="linkedinInput" class="form-label">LinkedIn URL</label>
         <input type="text" class="form-control" id="linkedinInput" name="linked" >
+        <span>@error('linked'){{$message}}@enderror</span>
       </div>
+
       <div class="mb-3">
         <label for="emailInput" class="form-label">Email</label>
         <input type="email" class="form-control" id="emailInput" name="email" >
+        <span>@error('email'){{$message}}@enderror</span>
       </div>
+
       <div class="mb-3">
         <label for="phoneInput" class="form-label">Phone</label>
         <input type="text" class="form-control"  name="phone" >
+        <span>@error('phone'){{$message}}@enderror</span>
       </div>
+
       <button type="submit" class="btn btn-primary">Save</button>
     </form>
   </div>

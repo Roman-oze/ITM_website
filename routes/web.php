@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\FacultyController;
 use Faker\Guesser\Name;
@@ -11,9 +10,12 @@ use Faker\Guesser\Name;
 
 Route::controller(AdminController::class)->group(function(){
 
-    Route::get('dashboard', 'index')->name('dashboard');
+    Route::get('dashboard', 'dashboard')->name('dashboard');
     Route::get('admin/login', 'login')->name('admin_login');
+    Route::post('loginUser', 'loginUser')->name('loginUser');
+    Route::post('/register', 'register')->name('register');
     Route::get('admin/registration', 'registration')->name('admin_registration');
+    Route::get('/logout', 'logout')->name('logout');
     Route::get('admin/reset_password', 'password')->name('reset_password');
     Route::get('users', 'user_admin')->name('user_admin');
     Route::get('admin/static', 'static')->name('static');
@@ -22,10 +24,9 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('records', 'records')->name('records');
 
     // Route::get('user/profile', 'profile')->name('profile');
-    Route::post('/register', 'register')->name('register');
-    Route::get('/show/{id}', 'show')->name('show');
-    Route::get('/edit/{id}', 'edit')->name('edit');
-    Route::put('/update/{id}','update')->name('update');
+    Route::get('admin/show/{id}', 'show')->name('show');
+    Route::get('admin/edit/{id}', 'edit')->name('edit');
+    Route::put('admin/update/{id}','update')->name('update');
     Route::delete('/delete/{id}', 'destroy')->name('delete');
 
     Route::view('/home','frontend.home')->name('homepage');
@@ -61,9 +62,9 @@ Route::get('students', 'index')->name('index');
 Route::get('student/create', 'create')->name('create');
 Route::get('student/login', 'sign_in')->name('sign_in');
 Route::post('/store', 'store')->name('store');
-Route::get('/show/{id}', 'show')->name('show');
-Route::get('/edit/{id}', 'edit')->name('edit');
-Route::put('/update/{id}','update')->name('update');
+Route::get('/show/{id}', 'show')->name('student_show');
+Route::get('/edit/{id}', 'edit')->name('student_edit');
+Route::put('/update/{id}','update')->name('student_update');
 Route::delete('/delete/{id}', 'destroy')->name('delete');
 Route::get('search','search')->name('search');
 

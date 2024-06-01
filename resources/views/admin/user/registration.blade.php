@@ -25,25 +25,39 @@
                                      <div class="card-body">
                                          <div class="container mt-5">
                                             <form method="post" action="{{route('register')}}">
+{{--
+                                                @if(session::has('success'))
+                                                <div class="alert alert-success">
+                                                    {{session::get('success')}}
+                                                </div>
+                                                @endif
+                                                @if(session::has('error'))
+                                                <div class="alert alert-danger">
+                                                    {{session::get('error')}}
+                                                    </div>
+                                                    @endif --}}
+
                                                 @csrf
                                                 <div class="form-group">
                                                     <label for="name">Name</label>
                                                     <input type="text" class="form-control" name="name" required>
-                                                    <input type="hidden" class="form-control" value="user" name="role" required>
+                                                    <span class="text-danger">@error('name'){{$message}}@enderror</span>
                                                 </div>
+                                                <br>
 
                                                 <div class="form-group">
                                                     <label for="name">Email</label>
                                                     <input type="email" class="form-control" name="email"  required>
-                                                    <input type="hidden" class="form-control" value="user" name="role" required>
-
+                                                    <span class="text-danger">@error('email'){{$message}}@enderror</span>
                                                 </div>
+
+                                                <br>
 
                                                 <div class="form-group">
                                                     <label for="">Password</label>
                                                     <input type="password" class="form-control" name="password" required>
                                                     <input type="hidden" class="form-control" value="user" name="role" required>
-
+                                                    <span class="text-danger">@error('password'){{$message}}@enderror</span>
                                                 </div>
                                                 <br>
                                                 <br>

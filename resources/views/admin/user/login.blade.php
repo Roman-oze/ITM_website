@@ -24,19 +24,23 @@
                                      <div class="card-body">
                                          <div class="container mt-5">
 
-
-                                                 <form method="post" action="{{route('register')}}">
+                                                 <form action="{{route('loginUser')}}" method="post">
                                                      @csrf
 
                                                      <div class="form-group">
-                                                         <label for="name">User name</label>
-                                                         <input type="text" class="form-control" name="name" required>
+                                                         <label for="name">Eamil</label>
+                                                         <input type="text" class="form-control" name="name" placeholder="Enter Email" value="{{old('email')}}">
+                                                         <span class="text-danger">@error('name'){{$message}}@enderror</span>
                                                      </div>
 
+                                                     <br>
+
                                                      <div class="form-group">
-                                                         <label for="department">Password</label>
-                                                         <input type="text" class="form-control" name="department" required>
+                                                         <label for="">Password</label>
+                                                         <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{old('email')}}">
+                                                         <span class="text-danger">@error('password'){{$message}}@enderror</span>
                                                      </div>
+                                                     <br>
                                                      <span>
                                                          <a href="{{route('reset_password')}}" class="text-danger text-bold">Forget password</a>
                                                      </span>
