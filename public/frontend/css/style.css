@@ -565,6 +565,8 @@ color: #000000;
 border-radius: 24px;
 font-weight: bold;
 transition: transform 0.2s;
+padding: 10px;
+border: solid 1px black;
 }
 .read,a{
   color: #000;
@@ -1075,7 +1077,7 @@ border: 0.5rem solid rgba(0, 0, 0, 0.1);
    .purecounter {
             text-align: center;
             margin-top: 50px;
-            font-size: 24px;
+            font-size: 44px;
             font-weight: bold;
         }
 

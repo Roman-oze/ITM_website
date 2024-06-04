@@ -104,8 +104,9 @@ class FacultyController extends Controller
             'phone' => 'required',
         ]);
 
-            $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
-            $request->file('image')->storeAs('upload/teachers',$fileName);
+           
+           $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
+           $request->file('image')->storeAs('upload/teachers',$fileName);
 
 
 
@@ -121,6 +122,11 @@ class FacultyController extends Controller
             DB::table('teachers')->where('teacher_id',$id)->update($data);
             return redirect('showing');
     }
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.

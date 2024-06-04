@@ -198,66 +198,86 @@
         <br>
         <br>
         <br>
+        <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of </h1>
+        <br>
+    <br>
 
- <div class="container-fluid mt-5">
-    <div class="mt-5 ">
-        <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of ITM</h1>
+ <div class="container-fluid mt-5 covepage">
+        <div class="row justify-content-center mb-5 p-4  ">
+            <div class="col-md-6 align-items-stretch d-flex">
+                <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg);">
+                    <div class="video justify-content-center">
+                        {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
+                        {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
+                            <image src="{{asset('frontend/image/diu_admission.jpg')}}" class="imagess" >
+                                {{-- <iframe width="640" height="450" src="#">
+                                </iframe> --}}
+
+                            <span class="ion-ios-play"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 heading_section p-4 ">
+
+                <h2 class="mb-4 text-black">Information Technology and Management (ITM)</h4>
+
+                    <p class="text-muted"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
+
+
+                        <a target="_blank" class="read" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Program List<i class="fa-solid fa-download text-dark"></i></a>
+                        <br>
+                   <div class="fb">
+                      <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
+                       <br>
+                       <br>
+                      <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
+                    </div>
+
+        </div>
+        <div class="row d-md-flex align-items-center justify-content-center">
+            <div class="col-lg-12">
+                <div class="row d-md-flex align-items-center text-center">
+                    <div class="col-md d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                        <div class="block-18">
+                            <div class="icon"><span class="flaticon-doctor"></span></div>
+                            <div class="text">
+                                <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter" ></span>
+                                 <h2 class="text-color">Students</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                        <div class="block-18">
+                            <div class="icon"><span class="flaticon-doctor"></span></div>
+                            <div class="text">
+                                <span data-purecounter-start="0" data-purecounter-end="90" data-purecounter-duration="0" class="purecounter">90</span>
+                                <h2 class="text-color">Alumni</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
+                        <div class="block-18">
+                            <div class="icon"><span class="flaticon-doctor"></span></div>
+                            <div class="text">
+                                <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="0" class="purecounter">42</span>
+                                  <h2 class="text-color">Research</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <p align="center"><a class="btn btn-outline-light text-black" href="/virtual-tour">Visit Our Campus Virtually</a></p>
+            </div>
+        </div>
     </div>
-    <br>
-    <br>
-    <div class="row text-center itmcard">
-        {{-- <div class=" heading" >
-           <h1 class="font-family heading_text"><i class="fa-brands fa-elementor "></i>Department of ITM<h1>
-        </div> --}}
-        <div class="col-md-5 itright mt-5">
-            <img src="{{asset('frontend/image/IT3.png')}}" class="imagess" >
-        </div>
+    </div>
 
-        <div class="col-md-7 p-5 itleft text-center " >
-                   <img src="{{asset('frontend/image/qr.png')}}" class="qr">
-                   <br>
-                    <p style=" font-size: larger; color: rgb(255, 255, 255);">Department of Information Technology and Management (ITM) provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
-                       <br>
-                      <br>
-                       <button class="read "><a target="_blank" class="menucard" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Program List<i class="fa-solid fa-download"></i></a></i></button>
-                       <br>
-                  <div class="fb">
-                     <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
-                      <br>
-                      <br>
-                     <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
 
-                  </div>
 
-        </div>
-     </div>
-     <br>
-     <br>
-     <div class="container">
-     <div class="row mt-5 p-1  text-muted">
-
-        <div class="col-lg-3 col-6 text-center ">
-          <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">549</span>
-          <p class="text-color">Students</p>
-        </div>
-
-        <div class="col-lg-3 col-6 text-center  ">
-          <span data-purecounter-start="0" data-purecounter-end="156" data-purecounter-duration="0" class="purecounter">156</span>
-          <p class="text-color">Teachers</p>
-        </div>
-
-        <div class="col-lg-3 col-6 text-center">
-          <span data-purecounter-start="0" data-purecounter-end="90" data-purecounter-duration="0" class="purecounter">90</span>
-          <p class="text-color">Alumni</p>
-        </div>
-
-        <div class="col-lg-3 col-6 text-center ">
-          <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="0" class="purecounter">42</span>
-          <p class="text-color">Scholarship</p>
-        </div>
-
-      </div>
-  </div>
    <br>
   <br>
                 <br>
