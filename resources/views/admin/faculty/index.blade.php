@@ -35,7 +35,7 @@
 
       <tr>
           <td>{{$teacher->teacher_id}}</td>
-        <td><img src="{{asset($teacher->image)}}" style="width: 50px; height:50px; border-radius:100% " ></td>
+        <td><img src="{{asset('public/teachers'.$teacher->image) }}" style="width: 25px; height:25px; border-radius:100% " ></td>
         <td class="text-white-50">{{$teacher->name}}</td>
         <td class="text-white-50">{{$teacher->designation}}</td>
         <td class="text-white-50">{{$teacher->fb}}</td>

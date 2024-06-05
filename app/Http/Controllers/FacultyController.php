@@ -49,7 +49,7 @@ class FacultyController extends Controller
         ]);
 
             $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
-            $request->file('image')->storeAs('upload/teachers',$fileName);
+            $request->file('image')->storeAs('public/teachers',$fileName);
 
 
 
@@ -104,7 +104,7 @@ class FacultyController extends Controller
             'phone' => 'required',
         ]);
 
-           
+
            $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
            $request->file('image')->storeAs('upload/teachers',$fileName);
 

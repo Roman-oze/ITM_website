@@ -12,7 +12,7 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::get('dashboard', 'dashboard')->name('dashboard');
     Route::get('admin/login', 'login')->name('admin_login');
-    Route::post('loginUser', 'loginUser')->name('loginUser');
+    Route::post('/loginUser', 'loginUser')->name('loginUser');
     Route::post('/register', 'register')->name('register');
     Route::get('admin/registration', 'registration')->name('admin_registration');
     Route::get('/logout', 'logout')->name('logout');

@@ -19,44 +19,15 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $data = array();
-        if(Session::has('id')){
-            $data = User::where('id','=',Session::get('id'))->first();
-        }
+        // $data = array();
+        // if(Session::has('id')){
+        //     $data = User::where('id','=',Session::get('id'))->first();
+        // }
 
-       return view('admin.dashboard');
+       return view('admin.index');
     }
 
-    public function login()
-    {
-        return view('admin.user.login');
-    }
 
-    public function loginUser(Request $request)
-    {
-        $request->validate([
-
-            'email'=>'required|email',
-            'password' => 'required|string|min:8|max:16',
-
-            ]);
-
-
-            $user = User::where('email','=',$request->email)->first();
-            if($user){
-                if(Hash::check($request->password,$user->password)){
-                    $request->Session::put('id',$user)->id;
-                    return redirect('dashboard');
-                    }
-                    else{
-                        return back()->with('fail','Password not match');
-                        }
-                        }else{
-                            return back()->with('fail','Email not found');
-                            }
-
-
-    }
 
     public function registration()
     {
@@ -70,12 +41,12 @@ class AdminController extends Controller
 
             'name'=>'required',
             'email'=>'required|email|unique:users',
-            'password' => 'required|string|min:8|max:16',
+            'password' => 'required|string|min:5|max:16',
         ]);
 
          $data['name']=$request->name;
          $data['email']=$request->email;
-         $data['password']= md5($request->password);
+         $data['password']= $request->password;
          $data['created_at']=date('Y-m-d H:i:s');
          $data['updated_at']=date('Y-m-d H:i:s');
         //  $data['status']=$request->status;
@@ -99,14 +70,29 @@ class AdminController extends Controller
 
     }
 
-     public function logout(){
-        if(Session::has('id')){
-            Session::pull('id');
-            return redirect()->route('login');
+    public function login()
+    {
+        return view('admin.user.login');
+    }
 
+    public function loginUser(Request $request)
+    {
+        $user = DB::table('users')->where('email',$request->input('email'))->where('password',$request->input('password'))->first();
+        if($user){
+            session()->put('id',$user->id);
+                return redirect('dashboard');
         }
-     }
+        else{
+            return redirect()->back()->with('error','Email/Password Incorrect');
+        }
 
+    }
+
+    public function logout(){
+        session()->forget('id');
+        return redirect('login');
+
+      }
 
 
     public function password()
