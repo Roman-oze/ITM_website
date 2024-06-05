@@ -92,7 +92,9 @@ class AdminController extends Controller
         DB::table('users')->insert($data);
 
         // dd(DB::table('students')->get());
-        return redirect()->back();
+     return redirect('admin/login')->with('success','Congratulations! You Profile is Ready');
+
+        // return redirect()->back();
 
 
     }

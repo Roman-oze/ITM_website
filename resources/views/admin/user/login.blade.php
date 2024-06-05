@@ -24,6 +24,15 @@
                                      <div class="card-body">
                                          <div class="container mt-5">
 
+
+                                            @if (session()->has('success'))
+
+                                            <div class="alert alert-success">
+                                                {{ session()->get('success') }}
+                                                </div>
+
+                                            @endif
+
                                                  <form action="{{route('loginUser')}}" method="post">
                                                      @csrf
 
@@ -49,11 +58,7 @@
                                                      <br>
                                                      <button type="submit" class="btn btn-primary">Submit</button>
 
-                                                     @if(session('success'))
-                                                     <div class="alert alert-success" role="alert">
-                                                         {{ session('success') }}
-                                                     </div>
-                                                 @endif
+
                                                  </form>
                                      </div>
                                      <div class="card-footer text-center py-3">
