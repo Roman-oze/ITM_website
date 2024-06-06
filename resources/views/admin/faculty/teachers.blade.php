@@ -1,6 +1,6 @@
 
 
-@include('frontend.faculty_style')
+@include('admin.faculty.faculty_style')
 
 
 @extends('layout.master')
@@ -75,16 +75,19 @@
         @foreach ($teachers as $teacher)
 
         <div class="col-md-4 ">
-           <div class="circular">
-                <img src="{{asset($teacher->image)}}"  class="mx-auto rounded-circle" alt="Circular Image">
-                <h4 class="p-2 text-muted">{{($teacher->name)}}</h4>
-                <p class="text-muted">{{($teacher->designation)}}</p>
-                <a href="{{($teacher->fb)}}"><i class="fa-brands fa-facebook icon1"></i></a>
-                <a href="{{($teacher->linked)}}"><i class="fa-brands fa-linkedin icon1"></i></a>
-                <a href="{{($teacher->email)}}"><i class="fa-solid fa-envelope icon1"></i></a>
-                <a href="{{($teacher->phone)}}"><i class="fa-solid fa-square-phone icon1"></i></a>
+            <div class="circular">
+                <img src="{{ asset($teacher->image) }}" class="mx-auto rounded-circle" alt="Circular Image">
+                <br>
+                <h4 class="p-2 text-muted">{{$teacher->name}}</h4>
+                <p class="text-muted">{{$teacher->designation}}</p>
+                    <a href="{{$teacher->fb}}"><i class="fa-brands fa-facebook icon1"></i></a>
+                    <a href="{{$teacher->linked}}"><i class="fa-brands fa-linkedin icon1"></i></a>
+                    <a href="{{$teacher->email}}"><i class="fa-solid fa-envelope icon1"></i></a>
+                    <a href="{{$teacher->phone}}"><i class="fa-solid fa-square-phone icon1"></i></a>
             </div>
-          </div>
+
+
+        </div>
       @endforeach
 
     </div>

@@ -14,8 +14,9 @@
 
 
         @yield('main')
-       
+
 </div>
+
 
 
 

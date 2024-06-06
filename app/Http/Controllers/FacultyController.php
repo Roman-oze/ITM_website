@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,12 +11,16 @@ class FacultyController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+
     public function main()
     {
         $teachers = DB::table('teachers')->get();
 
-        return view('admin.faculty.main',compact('teachers'));
+        return view('admin.faculty.teachers',compact('teachers'));
     }
+
+
     public function showing()
     {
         $teachers = DB::table('teachers')->get();
@@ -31,6 +36,7 @@ class FacultyController extends Controller
         return view('admin.faculty.create');
 
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -49,11 +55,11 @@ class FacultyController extends Controller
         ]);
 
             $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
-            $request->file('image')->storeAs('public/teachers',$fileName);
+            $request->file('image')->move('faculty',$fileName);
 
 
 
-            $data ['image'] = $fileName;
+            $data ['image'] =  'faculty/'.$fileName;
             $data['name']=$request->name;
             $data['designation']=$request->designation;
             $data['fb']=$request->fb;
@@ -94,23 +100,23 @@ class FacultyController extends Controller
      */
     public function faculty_update(Request $request, string $id)
     {
-        $request->validate([
-            'image' => 'required|mimes:png,jpg,jpeg,webp',
-            'name' => 'required',
-            'designation' => 'required',
-            'fb' => 'required',
-            'linked' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-        ]);
+        // $request->validate([
+        //     'image' => 'required|mimes:png,jpg,jpeg,webp',
+        //     'name' => 'required',
+        //     'designation' => 'required',
+        //     'fb' => 'required',
+        //     'linked' => 'required',
+        //     'email' => 'required',
+        //     'phone' => 'required',
+        // ]);
 
 
-           $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
-           $request->file('image')->storeAs('upload/teachers',$fileName);
+        $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move('faculty',$fileName);
 
 
 
-            $data ['image'] = $fileName;
+            $data ['image'] =  'faculty/'.$fileName;
             $data['name']=$request->name;
             $data['designation']=$request->designation;
             $data['fb']=$request->fb;

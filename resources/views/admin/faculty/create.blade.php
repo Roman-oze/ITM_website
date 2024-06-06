@@ -43,11 +43,13 @@
 
 </div>
 </div> --}}
-<div class="container p-5">
+<div class="container p-3">
     <h2 class="text-danger">Create Profile</h2>
-
+    <br>
+    <br>
     <a href="{{route('teacher_create')}}" class="btn btn-dark text-white">Back</a>
     <br>
+
 
     <form action="{{url('faculty_store')}}" enctype="multipart/form-data" method="POST">
         @csrf

@@ -31,7 +31,6 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::view('/home','frontend.home')->name('homepage');
     Route::view('/program','frontend/program')->name('program');
-    Route::view('/faculty','frontend/faculty')->name('faculty');
     Route::view('/event','frontend/event')->name('events');
     Route::view('/about','frontend/about')->name('about');
 
@@ -49,6 +48,8 @@ Route::controller(AdminController::class)->group(function(){
   Route::get('/faculty_edit/{id}', 'edit')->name('faculty_edit');
   Route::post('/faculty_update/{id}', 'faculty_update')->name('faculty_update');
   Route::delete('/faculty_delete/{id}', 'destroy')->name('faculty_delete');
+//   Route::get('teachers','teachers')->name('teachers');
+
 
 
 

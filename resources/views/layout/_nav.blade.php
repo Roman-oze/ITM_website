@@ -8,7 +8,7 @@
     <ul class="navbar-nav ms-auto">
             <li class="nav-item p-1"></i><a href="{{route('homepage')}}"><i class="fa-solid fa-house s-4 homeicon"></i></a></li>
             <li class="nav-item p-1 navbar_text"> <a href="{{route('program')}}">Programs</a></li>
-            <li class="nav-item p-1  navbar_text"><a href="{{route('faculty')}}">Faculty</a></li>
+            <li class="nav-item p-1  navbar_text"><a href="{{route('main')}}">Faculty</a></li>
             <li class="nav-item p-1 navbar_text"><a href="{{route('events')}}">Upcoming Events</a></li>
             <li class="nav-item p-1 navbar_text"><div class="dropdown">
                 <a href="#">Routine</a>
