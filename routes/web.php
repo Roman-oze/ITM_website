@@ -5,13 +5,43 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\FacultyController;
+use App\Http\Middleware\Itm;
+
 use Faker\Guesser\Name;
 // use Illuminate\Support\Facades\Auth;
 
+
+Route::controller(AdminController::class)->middleware('guard')->group(function(){
+
+     Route::get('dashboard', 'dashboard')->name('dashboard');
+    Route::get('admin/login', 'login')->name('admin_login');
+});
+
+
+Route::get('/admin_login',function(){
+    session()->put('id',1);
+    return redirect()->route('dashboard');
+
+});
+
+Route::get('/logout',function(){
+    session()->forget('id');
+    return redirect('/');
+
+});
+
+ Route::get('/no-access',function(){
+    echo"you're not to access this page";
+    die;
+
+ });
+
+
+
 Route::controller(AdminController::class)->group(function(){
 
-    Route::get('dashboard', 'dashboard')->name('dashboard');
-    Route::get('admin/login', 'login')->name('admin_login');
+    // Route::get('dashboard', 'dashboard')->name('dashboard');
+    // Route::get('admin/login', 'login')->name('admin_login');
     Route::post('/loginUser', 'loginUser')->name('loginUser');
     Route::post('/register', 'register')->name('register');
     Route::get('admin/registration', 'registration')->name('admin_registration');
