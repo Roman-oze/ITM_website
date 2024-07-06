@@ -54,7 +54,7 @@
         <div class="cover-border text-center ">
         <!-- <img src="black-jacket.png" class="dp"> -->
         <!-- <img src="diu-3.png" class="dp"> -->
-        <img src="{{asset('frontend/image/student3.png')}}" class="img-fluid">
+        <img src="{{asset('frontend/image/student3.png')}}" class="image1 img-fluid ">
       </div>
       </div>
     </div>

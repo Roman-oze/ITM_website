@@ -126,6 +126,19 @@ body {
     width: 55px;
     border-radius: 50%;
   }
+  .image1{
+    /* filter:drop-shadow(5px 5px 5px  rgba(235, 151, 5, 0.936) ); */
+    /* filter:drop-shadow(5px 5px 5px  rgb(4, 176, 99) ); */
+    filter:drop-shadow(5px 5px 5px  rgb(5, 206, 202) );
+
+}
+  /* .student3{
+    filter:drop-shadow ( rgb(7, 185, 126));
+    }
+
+  .student3{
+    filter:drop-shadow ( rgb(7, 185, 126));
+    } */
 
 /* end */
 
