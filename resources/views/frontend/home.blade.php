@@ -33,7 +33,7 @@
       <div class="col-md-6 intro">
         <div class="top">
           <h1 class="text-white-50">Welcome!</h1>
-         <h3 class="text-animation">Department of <img src="{{asset('frontend/image/verifi.png')}}" class="verify"></h3>
+         <h3 class="department">Department of <img src="{{asset('frontend/image/verifi.png')}}" class="verify"></h3>
          <!-- <h1>Web Developer</h1>    -->
 
           <h2><div id="typewrite" class=" web_developer text-white">
@@ -47,7 +47,7 @@
 
         </div>
         <div class="club animate__animated animate__bounce animate__delay-2s">
-            <a target="_blank" href="{{route('club')}}" class="bn5   "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
+            <a target="_blank" href="{{route('club')}}" class="bn5  "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
         </div>
       </div>
       <div class="col-md-6  ">

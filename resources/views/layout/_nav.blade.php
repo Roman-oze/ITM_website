@@ -65,7 +65,7 @@
                 </div>
                 <div class="right-padd animate__animated animate__bounce animate__repeat-2 ">
                     <li > <div class="p-1">
-                        <a target="_blank" class="bn50 p-3 text-warning " href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply</a>
+                        <a target="_blank" class="bn50 p-3 " href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply</a>
                     </div>
                 </li>
                 </div>
