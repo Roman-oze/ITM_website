@@ -88,6 +88,8 @@ class AdminController extends Controller
 
     }
 
+
+
     public function logout(){
         session()->forget('id');
         return redirect('login');

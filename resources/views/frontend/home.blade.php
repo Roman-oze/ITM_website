@@ -6,7 +6,7 @@
 @section('topmost')
 
 
-         <div class="row  p-2 covepage border-bottom">
+         <div class="row  p-2  bg-black">
         <div class="col-md-5  ">
             <a  class="  p-2 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
@@ -16,44 +16,49 @@
 
         <div class="col-md-7 text-end">
 
-        <a class=" text-dark p-2" href="{{route('admin_login')}}"><i class="fa-solid fa-lock  icontop"></i> Login</a>
-        <a class="text-dark p-2" href="{{route('admin_registration')}}"><i class="fa-solid fa-user icontop"></i> Register</a>
+        <a class=" text-white p-2" href="{{route('admin_login')}}"><i class="fa-solid fa-lock "></i> Login</a>
+        <a class="text-white p-2" href="{{route('admin_registration')}}"><i class="fa-solid fa-user "></i> Register</a>
         </div>
         </div>
 
 @endsection
+
 @extends('layout.master')
 
 
 @section('headerpage')
-    <div class="row covepage">
-      <div class="col-md-7   text-center ">
-        <img src="{{asset('frontend/image/welcome.png')}}" class="images animate__animated animate__fadeInLeft">
-        <h4 class="animate__animated animate__bounce animate__repeat-2">
-            Department of Information Technology & Management <img src="{{asset('frontend/image/verify.png')}}" style="height: 28px;width: 30px;"></h4>
 
+
+    <div class="row ">
+      <div class="col-md-6 intro">
+        <div class="top">
+          <h1 class="text-white-50">Welcome!</h1>
+         <h3 class="text-animation">Department of <img src="{{asset('frontend/image/verifi.png')}}" class="verify"></h3>
+         <!-- <h1>Web Developer</h1>    -->
+
+          <h2><div id="typewrite" class=" web_developer text-white">
+            Information Technology & Management
+          </div>
+        </h2>
+
+        <br>
+        <br>
+        <br>
+
+        </div>
+        <div class="club animate__animated animate__bounce animate__delay-2s">
+            <a target="_blank" href="{{route('club')}}" class="bn5   "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
+        </div>
       </div>
-      <div class="col-md-5 paragh   text-center p-2">
-        <img src="{{asset('frontend/image/logo.png')}}" class="images2 animate__animated animate__fadeInRight">
+      <div class="col-md-6  ">
+        <div class="cover-border text-center ">
+        <!-- <img src="black-jacket.png" class="dp"> -->
+        <!-- <img src="diu-3.png" class="dp"> -->
+        <img src="{{asset('frontend/image/student3.png')}}" class="img-fluid">
+      </div>
+      </div>
     </div>
 
-
-
-  <div class="club animate__animated animate__bounce animate__delay-2s">
-    <a target="_blank" href="{{route('club')}}" class="bn5   "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
-</div>
-<br>
-<br>
-<br>
-
-</div>
-
-
-
-
-<br>
-<br>
-<br>
 @endsection
 @section('content')
 
