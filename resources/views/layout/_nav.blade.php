@@ -33,7 +33,7 @@
               <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a class="nav-link " href="#" active >Home</a>
+                    <a class="nav-link " href="{{route('homepage')}}" active ><i class="fa-solid fa-house s-4 homeicon"></i></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('program')}}">Programs</a>
