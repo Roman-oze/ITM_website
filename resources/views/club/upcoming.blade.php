@@ -73,50 +73,8 @@
             <a href="#" class="btn btn-info">View Event</a>
           </div>
         </div>
-      </div>    <div class="row">
-        <!-- Card 1 -->
-        <div class="col-md-4">
-          <div class="card">
-            <h2 class="card-title  text-white bg-info p-2">Iftar Party</h2>
-            <img src="{{asset('frontend/image/roja.avif')}}" class="card-img-top" alt="Event Image 1">
-            <div class="card-body bg-light">
-              <p>Date: <span class="card-text"> March 25th, 2024</span></p>
-              <p>Location: <span class="card-text">Food Court</span></p>
-              <p>Description: <span class="card-text">Departmental Ramadan Iftar Party for all current students. Must participate.</span></p>
-              <a href="#" class="btn btn-info">Registration</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="col-md-4">
-          <div class="card">
-            <h2 class="card-title  text-white bg-info p-2">Empty</h2>
-            <img src="{{asset('frontend/image/upcoming.avif')}}" class="card-img-top" alt="Event Image 3">
-            <div class="card-body">
-              <p>Date: <span class="card-text">..........</span></p>
-              <p>Location: <span class="card-text">.........</span></p>
-              <p>Description: <span class="card-text">............</span></p>
-              <a href="#" class="btn btn-info">View Event</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-4">
-          <div class="card">
-            <h2 class="card-title text-white bg-info p-2">Empty</h2>
-            <img src="{{asset('frontend/image/upcoming.avif')}}" class="card-img-top" alt="Event Image 3">
-            <div class="card-body">
-              <p>Date: <span class="card-text">.........</span></p>
-              <p>Location: <span class="card-text"> ..........</span></p>
-              <p>Description: <span class="card-text">............</span></p>
-              <a href="#" class="btn btn-info">View Event</a>
-            </div>
-          </div>
-        </div>
-
       </div>
+      
       <br>
       <br>
       <br>

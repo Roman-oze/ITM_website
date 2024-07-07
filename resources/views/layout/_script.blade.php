@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   var counters = document.querySelectorAll('.purecounter');
   var speed = 200; // The speed of counting in milliseconds

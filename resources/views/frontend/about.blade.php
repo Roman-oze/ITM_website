@@ -21,16 +21,12 @@
 <br>
 <br>
 <br>
+{{-- <div class="row justify-content-center mb-5">
 
+  </div>
 <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-lg-7 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
-        <h2 class="line-bottom text-center mb-4">Why Choose ITM!</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-      </div>
-    </div>
     <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-4 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
             <div class="staff text-center">
               <div class="mb-4"><img src="{{asset('frontend/image/jobfair.png')}}" alt="Image" class="img-fluid"></div>
               <div class="staff-body">
@@ -46,9 +42,9 @@
             </div>
           </div>
 
-      <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+      <div class="col-4 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
         <div class="staff text-center">
-          <div class="mb-4"><img src="{{asset('frontend/image/visit.png')}}" alt="Image" class="img-fluid"></div>
+          <div class="mb-4"><img src="{{asset('frontend/image/visite.jpg')}}" alt="Image" class="img-fluid"></div>
           <div class="staff-body">
             <h3 class="staff-name">Industry Visits</h3>
             <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
@@ -62,9 +58,9 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-4 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
         <div class="staff text-center">
-          <div class="mb-4"><img src="{{asset('frontend/image/internshipp.png')}}" alt="Image" class="img-fluid"></div>
+          <div class="mb-4"><img src="{{asset('frontend/image/internship3.png')}}" alt="Image" class="img-fluid"></div>
           <div class="staff-body">
             <h3 class="staff-name">Internship</h3>
             <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
@@ -78,8 +74,76 @@
         </div>
       </div>
     </div>
-  </div>
-<br>
+  </div> --}}
+
+  {{-- <div class="container"> --}}
+    <div class="text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+        <h2 class="line-bottom text-center mb-4">Why Choose ITM!</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+      </div>
+      <br>
+      <br>
+      <br>
+    <div class="container">
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card mb-4  p-3">
+          <div class="mb-4">
+            <div class="mb-4"><img src="{{asset('frontend/image/jobfair2.png')}}" alt="Image" class="img-fluid"></div>
+        </div>
+          <div class="staff-body">
+            <h3 class="staff-name">Job Fair</h3>
+            <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
+            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <div class="social">
+              <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
+              <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
+              <a href="#" class="mx-2"><span class="icon-linkedin"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card mb-4  p-3">
+          <div class="mb-4">
+            <div class="mb-4"><img src="{{asset('frontend/image/visite.jpg')}}" alt="Image" class="img-fluid"></div>
+        </div>
+          <div class="staff-body">
+            <h3 class="staff-name">Industry Visits</h3>
+            <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
+            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <div class="social">
+              <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
+              <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
+              <a href="#" class="mx-2"><span class="icon-linkedin"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card mb-4 p-3">
+          <div class="mb-4">
+            <div class="mb-4"><img src="{{asset('frontend/image/internship3.png')}}" alt="Image" class="img-fluid"></div>
+        </div>
+          <div class="staff-body">
+            <h3 class="staff-name">Internship</h3>
+            <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
+            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <div class="social">
+              <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
+              <a href="#" class="mx-2"></a>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+
+  <br>
 <br>
 <br>
 <br>
@@ -92,7 +156,8 @@
 <br>
 <br>
 
-<div class="container">
+
+<div class ="container-fluid">
     <div class="gy-4">
         <h1 class="header1 ">Our Location <i class="fa-solid fa-location-dot icon1 text-danger"></i></h1>
         </div>

@@ -55,6 +55,7 @@
         <!-- <img src="black-jacket.png" class="dp"> -->
         <!-- <img src="diu-3.png" class="dp"> -->
         <img src="{{asset('frontend/image/student3.png')}}" class="image1 img-fluid ">
+        {{-- <img src="{{asset('frontend/image/student4.png')}}" class="image1 img-fluid "> --}}
       </div>
       </div>
     </div>
@@ -214,7 +215,7 @@
                     <div class="video justify-content-center">
                         {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
                         {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
-                            <image src="{{asset('frontend/image/diu_admission.jpg')}}" class="imagess" >
+                            <image src="{{asset('frontend/image/student4.png')}}" class="imagess" >
                                 {{-- <iframe width="640" height="450" src="#">
                                 </iframe> --}}
 
