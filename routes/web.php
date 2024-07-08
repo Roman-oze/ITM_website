@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\FacultyController;
@@ -11,11 +12,11 @@ use Faker\Guesser\Name;
 // use Illuminate\Support\Facades\Auth;
 
 
-Route::controller(AdminController::class)->middleware('guard')->group(function(){
+// Route::controller(AdminController::class)->middleware('guard')->group(function(){
 
-     Route::get('dashboard', 'dashboard')->name('dashboard');
-    Route::get('admin/login', 'login')->name('admin_login');
-});
+//      Route::get('dashboard', 'dashboard')->name('dashboard');
+//     Route::get('admin/login', 'login')->name('admin_login');
+// });
 
 
 Route::get('/admin_login',function(){
@@ -38,10 +39,25 @@ Route::get('/logout',function(){
 
 
 
+Route::controller(EventController::class)->group(function(){
+
+    Route::get('event_up', 'event_up')->name('event_up');
+    Route::get('event/create', 'create')->name('event/create');
+    route::post('event_store','event_store')->name('event_store');
+    route::get('event/show','show')->name('show');
+    Route::get('/events','events')->name('events');
+
+
+
+});
+
+
+
+
 Route::controller(AdminController::class)->group(function(){
 
-    // Route::get('dashboard', 'dashboard')->name('dashboard');
-    // Route::get('admin/login', 'login')->name('admin_login');
+    Route::get('dashboard', 'dashboard')->name('dashboard');
+    Route::get('admin/login', 'login')->name('admin_login');
     Route::post('/loginUser', 'loginUser')->name('loginUser');
     Route::post('/register', 'register')->name('register');
     Route::get('admin/registration', 'registration')->name('admin_registration');
@@ -52,7 +68,7 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('admin/chart', 'chart')->name('chart');
     Route::get('admin/routine', 'routine')->name('routine');
     Route::get('records', 'records')->name('records');
-
+    // Route::get('event_up', 'event_up')->name('event_up');
     // Route::get('user/profile', 'profile')->name('profile');
     Route::get('admin/show/{id}', 'show')->name('show');
     Route::get('admin/edit/{id}', 'edit')->name('edit');
@@ -61,7 +77,6 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::view('/home','frontend.home')->name('homepage');
     Route::view('/program','frontend/program')->name('program');
-    Route::view('/event','frontend/event')->name('events');
     Route::view('/about','frontend/about')->name('about');
 
 
@@ -73,7 +88,7 @@ Route::controller(AdminController::class)->group(function(){
  Route::controller(FacultyController::class)->group(function(){
   Route::get('main','main')->name('main');
   Route::get('/showing','showing')->name('showing');
-  Route::get('/teacher_create','create')->name('teacher_create');
+  Route::get('/faculty/create','create')->name('faculty/create');
   Route::post('/faculty_store', 'faculty_store')->name('faculty_store');
   Route::get('/faculty_edit/{id}', 'edit')->name('faculty_edit');
   Route::post('/faculty_update/{id}', 'faculty_update')->name('faculty_update');

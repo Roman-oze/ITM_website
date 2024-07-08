@@ -215,7 +215,7 @@
                     <div class="video justify-content-center">
                         {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
                         {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
-                            <image src="{{asset('frontend/image/student4.png')}}" class="imagess" >
+                            <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid" >
                                 {{-- <iframe width="640" height="450" src="#">
                                 </iframe> --}}
 
@@ -241,59 +241,50 @@
                     </div>
 
         </div>
-        <div class="row d-md-flex align-items-center justify-content-center">
-            <div class="col-lg-12">
-                <div class="row d-md-flex align-items-center text-center">
-                    <div class="col-md d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
-                        <div class="block-18">
-                            <div class="icon"><span class="flaticon-doctor"></span></div>
-                            <div class="text">
-                                <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter" ></span>
-                                 <h2 class="text-color">Students</h2>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-md d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
-                        <div class="block-18">
-                            <div class="icon"><span class="flaticon-doctor"></span></div>
-                            <div class="text">
-                                <span data-purecounter-start="0" data-purecounter-end="90" data-purecounter-duration="0" class="purecounter">90</span>
-                                <h2 class="text-color">Alumni</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md d-flex justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
-                        <div class="block-18">
-                            <div class="icon"><span class="flaticon-doctor"></span></div>
-                            <div class="text">
-                                <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="0" class="purecounter">42</span>
-                                  <h2 class="text-color">Research</h2>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-                <br>
-                <br>
-                <p align="center"><a class="btn btn-outline-info text-black" href="/virtual-tour">Visit Our Campus Virtually</a></p>
-            </div>
+    <div class="container ">
+        <div class="row mt-5  d-flex justify-space-bewteen">
+          <div class="col-md-3 col-6 text-center ">
+            <div class="border rounded-3  container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">549</span>
+            <p class="text-color">Student</p>
+          </div>
+          </div>
+          <div class="col-md-3 col-6 text-center ">
+            <div class="border rounded-3  container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="0" class="purecounter">520</span>
+            <p class="text-color">Faculty</p>
+          </div>
+          </div>
+          <div class="col-md-3 col-6 text-center">
+            <div class="border rounded-3  container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="0" class="purecounter">30</span>
+            <p class="text-color">Alumni</p>
+          </div>
+          </div>
+
+          <div class="col-md-3 col-6 text-center ">
+          <div class="border rounded-3 container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="29" data-purecounter-duration="0" class="purecounter">29</span>
+            <p class="text-color">Research</p>
+          </div>
+          </div>
+
         </div>
-    </div>
-    </div>
 
-
-
+        </div>
+   <br>
+  <br>
    <br>
   <br>
                 <br>
                 <br>
-                <div class="">
-                    <h1 class="about_itm text-center text-info">Study Aboard </h1>
+                <div class="mt-5">
+                    <h1 class="about_itm text-center text-white mt-3">Study Aboard </h1>
                 </div>
-                <br>
-                <br>
-                <div class="container-fluid ">
+
+                <div class="container-fluid mt-5">
                     <div class="row text-center">
 
                     <div class="col-md-8 text-center">
@@ -508,8 +499,9 @@
 
                </div>
 
-               <div class="container-fluid fourbg ">
+               <div class="container-fluid fourbg markquee">
                 <div class="row text-center">
+
                      <div class="col-md-3 ">
                          <img src="{{asset('frontend/image/java.png')}}" class="imgslide transition">
                      </div>

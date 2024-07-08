@@ -19,7 +19,7 @@
                  <main>
                      <div class="container">
                          <div class="row justify-content-center">
-                             <div class="col-lg-5">
+                             <div class="">
                                  <div class="card shadow-lg border-0 rounded-lg mt-5">
                                      <div class="card-header"><h3 class="title text-danger">Create Admin Registration  <i class="fa fa-user text-black"></i></h3></div>
                                      <div class="card-body">
@@ -37,7 +37,7 @@
                                                     </div>
                                                     @endif --}}
 
-                                                   
+
 
                                                 @csrf
                                                 <div class="form-group">

@@ -41,12 +41,13 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a  href="" class="linked">Category</a>
+                            <a  href="#" class="linked">Category</a>
                         </nav>
                     </div>
 
                     <a  href="{{route('routine')}}" class="linked"><i class="fa-regular fa-calendar-days text-white"></i>  Routine</a>
 
+                    <a  href="{{route('event_up')}}" class="linked"><i class="fa-solid fa-calendar-days text-white"></i> Events</a>
 
 
                     <a  href="{{route('showing')}}" class="linked"><i class="fa-solid fa-user-graduate text-white"></i> Faculty</a>
@@ -58,12 +59,6 @@
                         Students
                     </a>
 
-
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-graduation-cap text-white"></i></i></i></div>
-                        Graducated
-
-                    </a>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-certificate text-white"></i></div>
                         Scholarship

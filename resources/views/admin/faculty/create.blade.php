@@ -44,10 +44,10 @@
 </div>
 </div> --}}
 <div class="container p-3">
-    <h2 class="text-danger">Create Profile</h2>
+    <h2 class="text-danger">Create Faculty Profile</h2>
     <br>
     <br>
-    <a href="{{route('teacher_create')}}" class="btn btn-dark text-white">Back</a>
+    <a href="{{route('showing')}}" class="btn btn-dark text-white">Back</a>
     <br>
 
 

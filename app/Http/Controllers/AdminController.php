@@ -168,6 +168,8 @@ class AdminController extends Controller
         return view('admin.routine');
 
     }
+    
+
     public function records(Request $request){
 
         $data = $request->input('search');

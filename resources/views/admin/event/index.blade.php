@@ -20,7 +20,7 @@
 
     <div class="row  p-4">
         <div class=" text-left">
-          <a href="{{ route('faculty/create') }}" class="btn btn-dark text-white">Add Profile</a>
+          <a href="{{ route('event/create') }}" class="btn btn-dark text-white">Add Profile</a>
 
         </div>
       </div>
@@ -29,32 +29,32 @@
         <thead>
             <tr >
                 <th class="text-white">ID</th>
-                <th class="text-white">Image</th>
                 <th class="text-white">Name</th>
-                <th class="text-white">Designation</th>
-                <th class="text-white">Facebook</th>
+                <th class="text-white">Image</th>
+                <th class="text-white">Date</th>
+                <th class="text-white">Time</th>
                 {{-- <th class="text-white">LinkedIn</th> --}}
-                <th class="text-white">Email</th>
-                <th class="text-white">Phone</th>
+                <th class="text-white">location</th>
+                <th class="text-white">description</th>
                 <th class="text-white">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($teachers as $teacher)
+            @foreach ($events as $event)
 
-        <td class="text-white-50">{{$teacher->teacher_id}}</td>
-        <td><img src="{{ asset($teacher->image) }}"  width="70" height="70" class="rounded-circle" ></td>
-        <td class="text-white-50">{{$teacher->name}}</td>
-        <td class="text-white-50">{{$teacher->designation}}</td>
-        <td class="text-white-50">{{$teacher->fb}}</td>
+        <td class="text-white-50">{{$event->id}}</td>
+        <td class="text-white-50">{{$event->name}}</td>
+        <td><img src="{{asset($event->image) }}"  width="50" height="50" class="rounded-circle" ></td>
+        <td class="text-white-50">{{$event->date}}</td>
+        <td class="text-white-50">{{$event->time}}</td>
         {{-- <td class="text-white-50">{{$teacher->linked}}</td> --}}
-        <td class="text-white-50">{{$teacher->email}}</td>
-        <td class="text-white-50">{{$teacher->phone}}</td>
+        <td class="text-white-50">{{$event->location}}</td>
+        <td class="text-white-50">{{$event->description}}</td>
         <td class="d-flex">
 
           {{-- <a href="{{ route('faculty_edit',$teacher->teacher_id) }}"  class=" btn btn-info">Edit</a> --}}
 
-           <form  action="{{route('faculty_delete',$teacher->teacher_id)}}" method="POST" >
+           <form  action="{{route('faculty_delete',$event->id)}}" method="POST" >
                @csrf
                @method('DELETE')
                <button class=" btn btn-danger p-2" type="submit" > Delete </button>
