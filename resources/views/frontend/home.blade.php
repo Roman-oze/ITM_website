@@ -276,7 +276,7 @@
                 </div>
                 <br>
                 <br>
-                <p align="center"><a class="btn btn-outline-light text-black" href="/virtual-tour">Visit Our Campus Virtually</a></p>
+                <p align="center"><a class="btn btn-outline-info text-black" href="/virtual-tour">Visit Our Campus Virtually</a></p>
             </div>
         </div>
     </div>
@@ -293,7 +293,7 @@
                 </div>
                 <br>
                 <br>
-                <div class="container ">
+                <div class="container-fluid ">
                     <div class="row text-center">
 
                     <div class="col-md-8 text-center">

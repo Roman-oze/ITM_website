@@ -16,7 +16,7 @@
         <p class="text-white-75 mb-5">""Daffodil International University, situated in the vibrant heart of Dhaka, Bangladesh, offers a dynamic learning environment. Nestled in the midst of cultural richness and urban energy, our campus provides students with an inspiring backdrop to pursue their academic endeavors. Explore the fusion of education and culture as you navigate your learning journey at Daffodil International University."</p>
     </div>
     {{-- <img src="{{asset('frontend/image/diu_admission.jpg')}}" class="w-50 h-50"> --}}
-    <img src="{{asset('frontend/image/diuwinter.webp')}}" class="w-50 h-50">
+    <img src="{{asset('frontend/image/ab-four-building.png')}}" class="w-50 h-60">
 </div>
 <br>
 <br>
@@ -88,14 +88,14 @@
     <div class="row">
       <!-- Card 1 -->
       <div class="col-md-4">
-        <div class="card mb-4  p-3">
+        <div class="card mb-4  p-3 jobfair_bg">
           <div class="mb-4">
             <div class="mb-4"><img src="{{asset('frontend/image/jobfair2.png')}}" alt="Image" class="img-fluid"></div>
         </div>
-          <div class="staff-body">
-            <h3 class="staff-name">Job Fair</h3>
-            <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
-            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <div class="staff-body ">
+            <h3 class="staff-name text-info">Job Fair</h3>
+            <span class="text-white-50 d-block position mb-4">FOR ALL OF STUDENTS</span>
+            <p class="mb-4 text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             <div class="social">
               <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
               <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
@@ -106,14 +106,14 @@
       </div>
       <!-- Card 2 -->
       <div class="col-md-4">
-        <div class="card mb-4  p-3">
+        <div class="card mb-4  p-3 bg-dark">
           <div class="mb-4">
             <div class="mb-4"><img src="{{asset('frontend/image/visite.jpg')}}" alt="Image" class="img-fluid"></div>
         </div>
           <div class="staff-body">
-            <h3 class="staff-name">Industry Visits</h3>
-            <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
-            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <h3 class="staff-name text-info">Industry Visits</h3>
+            <span class="d-block position mb-4 text-white-50">FOR ALL OF STUDENTS</span>
+            <p class="mb-4 text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             <div class="social">
               <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
               <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
@@ -124,14 +124,14 @@
       </div>
       <!-- Card 3 -->
       <div class="col-md-4">
-        <div class="card mb-4 p-3">
+        <div class="card mb-4 p-3 bg-black">
           <div class="mb-4">
             <div class="mb-4"><img src="{{asset('frontend/image/internship3.png')}}" alt="Image" class="img-fluid"></div>
         </div>
           <div class="staff-body">
-            <h3 class="staff-name">Internship</h3>
-            <span class="d-block position mb-4">FOR ALL OF STUDENTS</span>
-            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <h3 class="staff-name text-info">Internship</h3>
+            <span class="d-block position mb-4 text-white-50">FOR ALL OF STUDENTS</span>
+            <p class="mb-4 text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             <div class="social">
               <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
               <a href="#" class="mx-2"></a>

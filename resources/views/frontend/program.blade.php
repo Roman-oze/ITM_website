@@ -5,9 +5,9 @@
 
 @section('content')
 
-<div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+<div class="row gx-4 gx-lg-3 h-100 align-items-center justify-content-center text-center">
     <div class="col-lg-8 align-self-end">
-        <h1 class="text-danger font-weight-bold">Course  Details</h1>
+        <h1 class="text-info font-weight-bold">Course  Details</h1>
         <hr class="divider" />
     </div>
     <div class="col-lg-8 align-self-baseline d-flex">
@@ -78,7 +78,7 @@
 
 
 
-      <div class="container">
+      {{-- <div class="container">
         <h2>Dynamic Tabs</h2>
         <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
 
@@ -108,7 +108,7 @@
           </div>
         </div>
       </div>
-
+ --}}
 
 
 
