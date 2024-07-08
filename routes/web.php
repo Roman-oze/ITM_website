@@ -37,7 +37,20 @@ Route::get('/logout',function(){
 
  });
 
+ Route::controller(FacultyController::class)->group(function(){
+    Route::get('/faculty_member','faculty_member')->name('faculty_member');
+    Route::get('/showing','showing')->name('showing');
+    Route::get('/faculty/create','create')->name('faculty/create');
+    Route::post('/faculty_store', 'faculty_store')->name('faculty_store');
+    Route::get('/faculty_edit/{id}', 'edit')->name('faculty_edit');
+    Route::post('/faculty_update/{id}', 'faculty_update')->name('faculty_update');
+    Route::delete('/faculty_delete/{id}', 'destroy')->name('faculty_delete');
+  //   Route::get('teachers','teachers')->name('teachers');
 
+
+
+
+   });
 
 Route::controller(EventController::class)->group(function(){
 
@@ -84,21 +97,6 @@ Route::controller(AdminController::class)->group(function(){
 });
 
 
-
- Route::controller(FacultyController::class)->group(function(){
-  Route::get('main','main')->name('main');
-  Route::get('/showing','showing')->name('showing');
-  Route::get('/faculty/create','create')->name('faculty/create');
-  Route::post('/faculty_store', 'faculty_store')->name('faculty_store');
-  Route::get('/faculty_edit/{id}', 'edit')->name('faculty_edit');
-  Route::post('/faculty_update/{id}', 'faculty_update')->name('faculty_update');
-  Route::delete('/faculty_delete/{id}', 'destroy')->name('faculty_delete');
-//   Route::get('teachers','teachers')->name('teachers');
-
-
-
-
- });
 
 
 

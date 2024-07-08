@@ -23,7 +23,7 @@
  </p>
 </div>
 </div>
-<div class="facilty ">
+
 
     <!-- First Line: Single Card at the Top -->
     {{-- <div class="row ">
@@ -46,6 +46,29 @@
 {{--  --}}
     <br>
 
+    <div class="container">
+
+        <div class="row ">
+            <div class="col-md-12">
+              <div class="faculty-card1">
+                  <img src="{{asset('frontend/image/teacher/male.png')}}" class="card-img-top" alt="Circular Image">
+                  <div class="faculty-card-content">
+                      <div class="head"><p> Dean of ITM  Department</p></div>
+                      <h2>Bimul chandra Das</h2>
+                      <h5>Assistant Professor </h5>
+                      <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon1"></i></a>
+                      <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>
+                      <a href="nusrat.swe@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
+                      <a href="+8801847334996"><i class="fa-solid fa-square-phone icon1"></i></a>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <br>
+    <br>
+    <br>
     <div class="container">
 
         <div class="row ">
@@ -92,7 +115,7 @@
 
     </div>
     </div>
-    </div>
+
 
 
 

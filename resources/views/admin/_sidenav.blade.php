@@ -45,7 +45,7 @@
                         </nav>
                     </div>
 
-                    <a  href="{{route('routine')}}" class="linked"><i class="fa-regular fa-calendar-days text-white"></i>  Routine</a>
+                    <a  href="{{route('routine')}}" class="linked "><i class="fa-regular fa-calendar-check text-white" ></i> Routine</a>
 
                     <a  href="{{route('event_up')}}" class="linked"><i class="fa-solid fa-calendar-days text-white"></i> Events</a>
 

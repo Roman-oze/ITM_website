@@ -2,7 +2,7 @@
     /* Add your custom styles here */
     body {
             font-family:Verdana, Geneva, Tahoma, sans-serif;
-        
+
         }
    .facilty{
  background-image:linear-gradient(rgb(75, 234, 245),#1dd3dad3);
@@ -24,7 +24,7 @@
       height: 130px; /* Adjust the size as needed */
     }
 
-   
+
 
     .card:hover {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,9 +33,9 @@
     .img{
         height: 100px;
         width: 100px;
-    
+
     }
-    
+
     .faculty-card {
             border-top-right-radius: 15px;
             border-bottom-left-radius: 15px;
@@ -148,6 +148,6 @@ border: 3px solid black;
        }
        .circular:hover {
             transform: scale(1.05);
-        }     
-      
+        }
+
   </style>

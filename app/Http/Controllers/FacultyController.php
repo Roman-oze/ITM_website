@@ -13,11 +13,11 @@ class FacultyController extends Controller
      */
 
 
-    public function main()
+    public function faculty_member()
     {
         $teachers = DB::table('teachers')->get();
 
-        return view('admin.faculty.teachers',compact('teachers'));
+        return view('admin.faculty.faculty',compact('teachers'));
     }
 
 

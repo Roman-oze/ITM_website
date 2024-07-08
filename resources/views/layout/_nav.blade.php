@@ -39,7 +39,7 @@
                     <a class="nav-link" href="{{route('program')}}">Programs</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{route('main')}}">Faculty</a>
+                    <a class="nav-link" href="{{route('faculty_member')}}">Faculty</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('events')}}">Events</a>

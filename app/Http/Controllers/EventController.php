@@ -20,9 +20,10 @@ class EventController extends Controller
         $events = DB::table('events')->get();
         return view('admin.event.index',compact('events'));
     }
+
     public function events(){
         $event = DB::table('events')->get();
-        return view('admin.event.events',compact('events'));
+        return view('admin.event.events',compact('event'));
     }
 
 
@@ -78,7 +79,8 @@ class EventController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $event = DB::table('events')->where('id',$id)->first();
+        return view('admin.event.edit',compact('event'));
     }
 
     /**
