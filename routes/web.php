@@ -57,8 +57,11 @@ Route::controller(EventController::class)->group(function(){
     Route::get('event_up', 'event_up')->name('event_up');
     Route::get('event/create', 'create')->name('event/create');
     route::post('event_store','event_store')->name('event_store');
-    route::get('event/show','show')->name('show');
     Route::get('/events','events')->name('events');
+    route::get('event_show/{id}','show')->name('event_show');
+    route::get('/event_edit/{id}','edit')->name('event_edit');
+    route::put('event_update/{id}','event_update')->name('event_update');
+    route::delete('event_delete/{id}','destroy')->name('event_delete');
 
 
 

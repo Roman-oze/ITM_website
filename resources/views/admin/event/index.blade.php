@@ -16,7 +16,7 @@
 
 
 <div class="container">
-    <h2 class="text-dark mt-5  p-2">Faculty Profile</h2>
+    <h2 class="text-dark mt-5  p-2">Event Profile</h2>
 
     <div class="row  p-4">
         <div class=" text-left">
@@ -52,12 +52,14 @@
         <td class="text-white-50">{{$event->description}}</td>
         <td class="d-flex">
 
-          {{-- <a href="{{ route('faculty_edit',$teacher->teacher_id) }}"  class=" btn btn-info">Edit</a> --}}
+          <a href="{{ route('event_show',$event->id) }}"  class=" btn btn-outline-success">show</a>
 
-           <form  action="{{route('faculty_delete',$event->id)}}" method="POST" >
+          <a href="{{ route('event_edit',$event->id) }}"  class=" btn btn-outline-info">Edit</a>
+
+           <form  action="{{route('event_delete',$event->id)}}" method="POST" >
                @csrf
                @method('DELETE')
-               <button class=" btn btn-danger p-2" type="submit" > Delete </button>
+               <button class=" btn btn-outline-danger p-2" type="submit" > Delete </button>
            </form>
         </td>
       </tr>

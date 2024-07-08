@@ -18,13 +18,13 @@
        @foreach ($event as $event)
        <div class="col-md-4 ">
         <div class="card">
-            <h2 class="card-title text-white bg-dark p-2">{{$event->name}}</h2>
+            <h2 class="card-title text-white bg-dark p-2">{{$event->id}} . {{$event->name}}</h2>
             <img src="{{$event->image}}" class="img-fluid" alt="ITM EVENT">
             <div class="card-body">
-              <p>Date: <span class="card-text">{{$event->date}}</span></p>
-              <p>Time: <span class="card-text">{{$event->time}}</span></p>
-              <p>Location: <span class="card-text">{{$event->location}}</span></p>
-              <p>Description: <span class="card-text">{{$event->description}}</span></p>
+              <p class="card-text"> <strong> Date: </strong><span class="card-text">{{$event->date}}</span></p>
+              <p class="card-text"> <strong> Time: </strong><span class="card-text">{{$event->time}}</span></p>
+              <p class="card-text"> <strong> Location: </strong><span class="card-text">{{$event->location}}</span></p>
+              <p class="card-text"> <strong> Description: </strong><span class="card-text">{{$event->description}}</span></p>
               <a href="#" class="btn btn-dark text-white">View Event</a>
             </div>
           </div>

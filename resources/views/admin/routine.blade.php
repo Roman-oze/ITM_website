@@ -1,22 +1,24 @@
 @extends('admin._master')
 
+
+
 @section('main')
-<nav>
-    <ul>
-        <li><a href="#" onclick="showRoutine('spring')">Spring</a></li>
-        <li><a href="#" onclick="showRoutine('fall')">Fall</a></li>
-    </ul>
-</nav>
 
-<div id="routineUpload" style="display: none;">
-    <h2>Routine Upload</h2>
-    <input type="file" id="fileUpload">
-    <button onclick="uploadRoutine()">Upload</button>
+
+
+
+<div class="container-fluid">
+    <div class="row justify-content-between">
+        <nav class="nav navbar">
+        <li class="nav-item"><a href="#" class="nav-link" onclick="showRoutine('spring')">Spring</a></li>
+        <li class="nav-item"><a href="#" class="nav-link " onclick="showRoutine('fall')">Fall</a></li>
+    </nav>
+</div>
 </div>
 
-<div id="uploadedRoutine" style="display: none;">
-    <h2>Uploaded Routine</h2>
-    <ul id="routineList"></ul>
-</div>
+
+
+
+
 
 @endsection

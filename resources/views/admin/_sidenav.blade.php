@@ -4,11 +4,9 @@
                 <div class="nav">
 
                     <a class="nav-link" href="{{route('dashboard')}}">
-                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <div class="sb-nav-link-icon text-white 5rem"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
-                    <div class="sb-sidenav-menu-heading">Interface</div>
-
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-users text-white"></i></div>
                         Users
@@ -21,6 +19,7 @@
 
                         </nav>
                     </div>
+                    <br>
 
                     {{-- <a class="nav-link collapsed" href="{{route('routine')}}" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-calendar-days text-white"></i></i></div>
@@ -43,14 +42,14 @@
                         <nav class="sb-sidenav-menu-nested nav">
                             <a  href="#" class="linked">Category</a>
                         </nav>
-                    </div>
+                    </div><br>
 
-                    <a  href="{{route('routine')}}" class="linked "><i class="fa-regular fa-calendar-check text-white" ></i> Routine</a>
+                    <a  href="{{route('routine')}}" class="linked "><i class="fa-regular fa-calendar-check text-white" ></i> Routine</a><br>
 
-                    <a  href="{{route('event_up')}}" class="linked"><i class="fa-solid fa-calendar-days text-white"></i> Events</a>
+                    <a  href="{{route('event_up')}}" class="linked"><i class="fa-solid fa-calendar-days text-white"></i> Events</a><br>
 
 
-                    <a  href="{{route('showing')}}" class="linked"><i class="fa-solid fa-user-graduate text-white"></i> Faculty</a>
+                    <a  href="{{route('showing')}}" class="linked"><i class="fa-solid fa-user-graduate text-white"></i> Faculty</a><br>
 
 
 

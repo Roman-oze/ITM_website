@@ -1,35 +1,66 @@
+
+
+
 @extends('admin._master')
 
 @section('main')
 
-<div class="container mt-5">
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><h1 class=" bg-dark text-white p-2 rounded">Academic Events</h1></div>
-        {{-- <div class="divider-custom-icon"><h1 class="text-danger">Upcoming Event</h1></div> --}}
-        <div class="divider-custom-line"></div>
-      </div>
+{{-- <form  action="records" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" >
+    <div class="input-group">
+        <input class="form-control" type="text" placeholder="Search for..." name="search" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+
+    </div>
+
+</form> --}}
+
+
+<div class="container">
+    <h2 class="text-dark mt-5  p-2">show event</h2>
+
+    <table class="table table-striped bg-dark ">
+        <thead>
+            <tr >
+                <th class="text-white">ID</th>
+                <th class="text-white">Name</th>
+                <th class="text-white">Image</th>
+                <th class="text-white">Date</th>
+                <th class="text-white">Time</th>
+                {{-- <th class="text-white">LinkedIn</th> --}}
+                <th class="text-white">location</th>
+                <th class="text-white">description</th>
+                <th class="text-white">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+        <td class="text-white-50">{{$events->id}}</td>
+        <td class="text-white-50">{{$events->name}}</td>
+        <td><img src="{{asset($events->image) }}"  width="50" height="50" class="rounded-circle" ></td>
+        <td class="text-white-50">{{$events->date}}</td>
+        <td class="text-white-50">{{$events->time}}</td>
+        {{-- <td class="text-white-50">{{$teacher->linked}}</td> --}}
+        <td class="text-white-50">{{$events->location}}</td>
+        <td class="text-white-50">{{$events->description}}</td>
+        <td class="d-flex">
+
+          <a href="{{ route('event_up',$events->id) }}"  class=" btn btn-outline-info text-white">Back</a>
+
+        </td>
+      </tr>
+
+
+        </tbody>
+    </table>
+
+
     <div class="row">
-        <!-- Card 1 -->
-       @foreach ($events as $event)
+        {{-- {{ $record->links('pagination::bootstrap-5') }} --}}
+    </div>
 
-
-
-        <div class="col-md-4">
-          <div class="card">
-            <h2 class="card-title text-white bg-info p-2">{{$event->name}}</h2>
-            <img src="{{$event->image}}" class="card-img-top" alt="Event Image 1">
-            <div class="card-body">
-              <p>Date: <span class="card-text">{{$event->date}}</span></p>
-              <p>Date: <span class="card-text">{{$event->time}}</span></p>
-              <p>Location: <span class="card-text">{{$event->location}}</span></p>
-              <p>Description: <span class="card-text">{{$event->description}}</span></p>
-              <a href="#" class="btn btn-info">View Event</a>
-            </div>
-          </div>
-        </div>
-        @endforeach
-        </div>
+</div>
+</div>
 
 
 @endsection

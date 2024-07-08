@@ -26,7 +26,7 @@
 @section('main_content')
 <div class="divider-custom">
     <div class="divider-custom-line"></div>
-    <div class="divider-custom-icon"><h1 class=" bg-dark text-white p-2 rounded">Academic Events</h1></div>
+    <div class="divider-custom-icon"><h1 class=" bg-outline-info text-dark p-2 rounded">Academic Events</h1></div>
     {{-- <div class="divider-custom-icon"><h1 class="text-danger">Upcoming Event</h1></div> --}}
     <div class="divider-custom-line"></div>
   </div>
@@ -74,7 +74,7 @@
           </div>
         </div>
       </div>
-      
+
       <br>
       <br>
       <br>

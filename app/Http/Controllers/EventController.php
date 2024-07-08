@@ -21,17 +21,7 @@ class EventController extends Controller
         return view('admin.event.index',compact('events'));
     }
 
-    public function events(){
-        $event = DB::table('events')->get();
-        return view('admin.event.events',compact('event'));
-    }
 
-
-     public function show()
-    {
-        $events = DB::table('events')->get();
-        return view('admin.event.show',compact('events'));
-     }
 
     public function create()
     {
@@ -39,6 +29,14 @@ class EventController extends Controller
 
 
     }
+
+
+     public function show($id)
+    {
+        $events = DB::table('events')->where('id',$id)->first();
+        return view('admin.event.show',compact('events'));
+
+     }
 
     /**
      * Store a newly created resource in storage.
@@ -59,7 +57,7 @@ class EventController extends Controller
 
       DB::table('events')->insert($data);
 
-      return redirect()->route('show')->with('success','Event Added Successfully');
+      return redirect()->route('event_up')->with('success','Event Added Successfully');
 
     // dd(DB::table('events')->get());
 
@@ -77,7 +75,7 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit( $id)
     {
         $event = DB::table('events')->where('id',$id)->first();
         return view('admin.event.edit',compact('event'));
@@ -86,9 +84,22 @@ class EventController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function event_update(Request $request, string $id)
     {
-        //
+        $fileName = time().'-itm'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move('event', $fileName);
+
+
+       $data ['name']=$request->name;
+       $data ['image']= 'event/'.$fileName;
+       $data ['date']=$request->date;
+       $data ['time']=$request->time;
+       $data ['location']=$request->location;
+       $data ['description']=$request->description;
+
+      DB::table('events')->where('id',$id)->update($data);
+
+      return redirect()->route('event_up')->with('success','Event update Successfully');
     }
 
     /**
@@ -96,6 +107,14 @@ class EventController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $event = DB::table('events')->where('id',$id)->delete();
+        return redirect()->route('event_up')->with('success','Event delete Successfully');
+    }
+
+
+
+    public function events(){
+        $event = DB::table('events')->get();
+        return view('admin.event.events',compact('event'));
     }
 }
