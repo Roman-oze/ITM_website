@@ -29,7 +29,7 @@ class RoutineController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function routine_store(Request $request)
+    public function store(Request $request)
     {
 
         $fileName = time().'-itm-routine'.$request->file('file')->getClientOriginalExtension();
@@ -60,7 +60,8 @@ class RoutineController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $routine = DB::table('routines')->where('id',$id)->first();
+        return view('routine.edit',compact('routine'));
     }
 
     /**
@@ -68,7 +69,18 @@ class RoutineController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $fileName = time().'-itm-routine'.$request->file('file')->getClientOriginalExtension();
+        $request->file('file')->move('routine',$fileName);
+
+        $data ['file'] = 'routine/'.$fileName;
+        $data ['type'] = $request->type;
+        $data ['date'] = $request->date;
+
+
+
+        DB::table('events')->where('id',$id)->update($data);
+
+        return redirect()->route('routine.create')->with('success','routine update Successfully');
     }
 
     /**
@@ -76,6 +88,9 @@ class RoutineController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       DB::table('routines')->where('id',$id)->delete();
+       return redirect()->route('routine.create')->with('success','routine delete Successfully');
+
+
     }
 }

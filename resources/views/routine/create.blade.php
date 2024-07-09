@@ -21,22 +21,7 @@
                         </div>
                         <p class="mt-2 btn btn-outline-info ">Drag and Drop files here</p>
                     </div>
-                    {{-- <div class="mb-3">
-                        <label for="type" class="form-label">Type</label>
-                        <select class="form-control" id="type" name="type">
-                            <option value="spring">Spring</option>
-                            <option value="fall">Fall</option>
-                        </select>
-                    </div> --}}
                     <br>
-                    {{-- <div class="mb-3">
-                        <label for="radio" class="form-label text-bold text-info">Spring</label>
-                        <input type="radio" value="spring" name="type" class="">
-                    </div>
-                    <div class="mb-3">
-                        <label for="radio" class="form-label">Fall</label>
-                        <input type="radio" value="fall" name="type">
-                    </div> --}}
                     <div class="mb-3 btn btn-outline-info text-white">
                     <input type="radio" id="" name="type"  value="spring">
                       <label for="" class="text-dark"><strong>Spring</strong></label>
@@ -91,13 +76,18 @@
 
         <td class="d-flex justify-content-evenly">
 
-            <a href="" class="p-3"><i class="fa-solid fa-eye text-success  fa-lg "></i></a>
-            <a href="" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+            <a href="{{route('routine.create',$routine->id)}}" class="p-3"><i class="fa-solid fa-eye text-success  fa-lg "></i></a>
+            <a href="{{route('routine.edit',$routine->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
 
-            <form action="" method="post" style="display:inline;">
+            <form action="{{route('routine.delete',$routine->id)}}" method="POST" style="display:inline;">
                 @csrf
                 @method('DELETE')
-                <a href="" type="submit"  class="p-3" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></a>
+                <button type="submit" onclick="return confirm('Are you sure?')" class="p-2"><i class="fa-solid fa-trash"></i>
+                    @if (session('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
             </form>
 
 

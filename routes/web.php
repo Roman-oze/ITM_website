@@ -72,7 +72,10 @@ Route::controller(RoutineController::class)->group(function(){
 
     route::get('/routine/index','index')->name('routine.index');
     route::get('/routine/create','create')->name('routine.create');
-    route::post('/routine/store','routine_store')->name('routine.store');
+    route::post('/routine/store','store')->name('routine.store');
+    route::get('/routine/edit/{id}','edit')->name('routine.edit');
+    route::put('/routine/update/{id}','update')->name('routine.update');
+    route::delete('/routine/delete/{id}','destroy')->name('routine.delete');
 
 });
 
@@ -92,7 +95,7 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('admin/static', 'static')->name('static');
     Route::get('admin/chart', 'chart')->name('chart');
     Route::get('records', 'records')->name('records');
-    
+
     Route::get('admin/show/{id}', 'show')->name('show');
     Route::get('admin/edit/{id}', 'edit')->name('edit');
     Route::put('admin/update/{id}','update')->name('update');
