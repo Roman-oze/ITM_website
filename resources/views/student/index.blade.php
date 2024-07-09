@@ -50,7 +50,7 @@
                 <td >
 
                     @if($student->type == 'active')
-                        <h3 class="badge badge-success text-success"><i class="fa-solid fa-circle text-success fa-lg"></i> Active</h3>
+                        <h3 class="badge badge-success  text-success btn "><i class="fa-solid fa-circle text-success fa-lg"></i> Active</h3>
                     @else
                         <h3 class="badge badge-danger text-danger btn "><i class="fa-solid fa-ban text-danger fa-lg"></i> Inactive</h3>
                     @endif

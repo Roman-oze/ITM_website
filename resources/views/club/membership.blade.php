@@ -60,13 +60,22 @@
         <!-- Member Card 1 -->
         @foreach ($student as $student)
             <div class="col-md-4 mb-4">
-                <div class="card p-2 rounded">
-                    <div class="card-body">
-                        <h5 class="card-title text-muted">Member ID: <span class="text-dark">{{ $student->id }}</span></h5>
-                        <h4 class="card-text text-white bg-info rounded p-2">{{ $student->name }}</h4>
-                        <p class="card-text">Department: {{ $student->department }}</p>
+                <div class="card  rounded shadow">
+                    <div class="card-body ">
+                        <h5 class="card-title text-muted">ID: <span class="text-dark"><strong>{{ $student->roll }}</strong></span></h5>
+                        <h4 class="card-text text-white bg-dark rounded p-2">{{ $student->name }}</h4>
+                        <p class="card-text">Batch: {{ $student->batch }}</p>
+                        <p class="card-text">Email: {{ $student->email }}</p>
                         <p class="card-text">Mobile: {{ $student->mobile }}</p>
                         <p class="card-text">Address: {{ $student->address }}</p>
+                        <p>
+                            @if($student->type == 'active')
+                            <h3 class="badge badge-success text-success btn"><i class="fa-solid fa-circle text-success fa-lg"></i> Active</h3>
+                            @else
+                            <h3 class="badge badge-danger text-danger btn "><i class="fa-solid fa-ban text-danger fa-lg"></i> Inactive</h3>
+                           @endif
+                       </p>
+
                     </div>
                 </div>
 
