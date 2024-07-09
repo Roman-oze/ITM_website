@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\RoutineController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClubController;
@@ -67,6 +68,14 @@ Route::controller(EventController::class)->group(function(){
 
 });
 
+Route::controller(RoutineController::class)->group(function(){
+
+    route::get('/routine/index','index')->name('routine.index');
+    route::get('/routine/create','create')->name('routine.create');
+    route::post('/routine/store','routine_store')->name('routine.store');
+
+});
+
 
 
 
@@ -82,10 +91,8 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('users', 'user_admin')->name('user_admin');
     Route::get('admin/static', 'static')->name('static');
     Route::get('admin/chart', 'chart')->name('chart');
-    Route::get('admin/routine', 'routine')->name('routine');
     Route::get('records', 'records')->name('records');
-    // Route::get('event_up', 'event_up')->name('event_up');
-    // Route::get('user/profile', 'profile')->name('profile');
+    
     Route::get('admin/show/{id}', 'show')->name('show');
     Route::get('admin/edit/{id}', 'edit')->name('edit');
     Route::put('admin/update/{id}','update')->name('update');

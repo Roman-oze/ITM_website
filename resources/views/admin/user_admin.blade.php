@@ -40,14 +40,14 @@
                 <td class="text-white-50">{{ $admin->email }}</td>
                 <td class="text-white-50">{{ $admin->password }}</td>
 
-                <td class="text-center">
-                    <a href="{{route('show',$admin->id)}}" class="btn btn-info">View</a>
-                    <a href="{{route('edit',$admin->id)}}" class="btn btn-danger">edit</a>
+                <td class="text-center justify-content-evenly">
+                    <a href="{{route('show',$admin->id)}}" class="p-3"><i class="fa-solid fa-eye text-white  fa-lg "></i></a>
+                    <a href="{{route('edit',$admin->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
 
                     <form action="{{route('delete',$admin->id)}}" method="post" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure?')">Delete</button>
+                        <a href="" type="submit"  class="p-3" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></a>
                     </form>
 
 

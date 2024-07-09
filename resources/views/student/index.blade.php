@@ -44,15 +44,17 @@
                 <td>{{ $student->department }}</td>
                 <td>{{ $student->address }}</td>
                 <td>{{ $student->mobile }}</td>
-                        <td>
-                            <a href="{{route('show',$student->id)}}" class="btn btn-info">View</a>
-                            <a href="{{route('edit',$student->id)}}" class="btn btn-danger">edit</a>
+                        <td class="text-center justify-content-evenly">
+
+                            <a href="{{route('show',$student->id)}}" class="p-3"><i class="fa-solid fa-eye text-success  fa-lg "></i></a>
+                            <a href="{{route('edit',$student->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
 
                             <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure?')">Delete</button>
+                                <a href="" type="submit"  class="p-3" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></a>
                             </form>
+
 
                         </td>
                     </tr>

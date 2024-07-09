@@ -44,24 +44,32 @@
 
         <td class="text-white-50">{{$event->id}}</td>
         <td class="text-white-50">{{$event->name}}</td>
-        <td><img src="{{asset($event->image) }}"  width="50" height="50" class="rounded-circle" ></td>
+        <td><img src="{{asset($event->image) }}"  width="48" height="48" class="rounded-circle" ></td>
         <td class="text-white-50">{{$event->date}}</td>
         <td class="text-white-50">{{$event->time}}</td>
         {{-- <td class="text-white-50">{{$teacher->linked}}</td> --}}
         <td class="text-white-50">{{$event->location}}</td>
         <td class="text-white-50">{{$event->description}}</td>
-        <td class="d-flex">
 
-          <a href="{{ route('event_show',$event->id) }}"  class=" btn btn-outline-success">show</a>
 
-          <a href="{{ route('event_edit',$event->id) }}"  class=" btn btn-outline-info">Edit</a>
 
-           <form  action="{{route('event_delete',$event->id)}}" method="POST" >
+
+        <td class="d-flex justify-content-evenly">
+
+
+           <a href="{{ route('event_show',$event->id) }}" class="p-3"><i class="fa-solid fa-eye text-white  fa-lg "></i></a>
+           <a href="{{ route('event_edit',$event->id) }}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+
+           <form action="{{route('event_delete',$event->id)}}" method="post" style="display:inline;">
                @csrf
                @method('DELETE')
-               <button class=" btn btn-outline-danger p-2" type="submit" > Delete </button>
+               <a href="" type="submit"  class="p-3" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></a>
            </form>
+
+
         </td>
+
+
       </tr>
 
       @endforeach

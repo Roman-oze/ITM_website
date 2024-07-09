@@ -50,6 +50,7 @@
         {{-- <td class="text-white-50">{{$teacher->linked}}</td> --}}
         <td class="text-white-50">{{$teacher->email}}</td>
         <td class="text-white-50">{{$teacher->phone}}</td>
+
         <td class="d-flex">
 
           {{-- <a href="{{ route('faculty_edit',$teacher->teacher_id) }}"  class=" btn btn-info">Edit</a> --}}
@@ -61,6 +62,10 @@
            </form>
         </td>
       </tr>
+      
+
+
+
 
       @endforeach
         </tbody>
