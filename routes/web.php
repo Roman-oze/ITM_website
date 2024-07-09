@@ -97,7 +97,7 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::get('/admin/user', 'user')->name('admin.user');
     Route::post('/register', 'register')->name('register');
-    Route::get('admin/show/{id}', 'show')->name('admin.show');
+    Route::get('admin/show/{id}', 'show')->name('show');
     Route::get('admin/edit/{id}', 'edit')->name('admin.edit');
     Route::put('admin/update/{id}','update')->name('admin.update');
     Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');

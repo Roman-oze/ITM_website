@@ -42,7 +42,7 @@
                 <td class="text-white-50">{{ $admin->password }}</td>
 
                 <td class="text-center justify-content-evenly">
-                    <a href="{{route('admin.show',$admin->id)}}" class="p-3"><i class="fa-solid fa-eye text-white  fa-lg "></i></a>
+                    <a href="{{route('show',$admin->id)}}" class="p-3"><i class="fa-solid fa-eye text-white  fa-lg "></i></a>
                     <a href="{{route('admin.edit',$admin->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
 
                     <form action="{{route('admin.delete',$admin->id)}}" method="POST" style="display:inline;">

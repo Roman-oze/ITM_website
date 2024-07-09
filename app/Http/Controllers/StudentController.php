@@ -27,13 +27,13 @@ class StudentController extends Controller
 
     public function index(){
 
-    //   $data['student'] = DB::table('students')->get();
+      $students = DB::table('students')->get();
 
-    // //   dd($data);
-    // return view('student.index',$data);
 
-     $students = Student::paginate(10);
-     return view('student.index',compact('students'));
+    return view('student.index',compact('students'));
+
+    //  $students = Student::paginate(10);
+    //  return view('student.index',compact('students'));
 
     }
 
@@ -41,28 +41,35 @@ class StudentController extends Controller
 
     public function store(Request $request){
 
-        $rules = [
+        $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:users,email', // Assuming 'users' is the table name and 'email' is the column name
-            'department' => 'required', // Assuming 'users' is the table name and 'email' is the column name
+            'roll' => 'required',
+            'batch' => 'required',
+            'email' => 'required', // Assuming 'users' is the table name and 'email' is the column name
+            'blood' => 'required', // Assuming 'users' is the table name and 'email' is the column name
             'address' => 'required',
-            'mobile' => 'required|unique:users,mobile', // Assuming 'users' is the table name and 'mobile' is the column name
+            'mobile' => 'required', // Assuming 'users' is the table name and 'mobile' is the column name
+            'type' => 'required', // Assuming 'users' is the table name and 'mobile' is the column name
            // 'password_confirmation' is the default field name for password confirmation
-        ];
+           ]) ;
 
 
          $data['name']=$request->name;
+         $data['roll']=$request->roll;
+         $data['batch']=$request->batch;
          $data['email']=$request->email;
-         $data['department']=$request->department;
+         $data['blood']=$request->blood;
          $data['address']=$request->address;
          $data['mobile']=$request->mobile;
+         $data['type']=$request->type;
 
 
 
-        DB::table('students')->insert($data);
+         DB::table('students')->insert($data);
+        return redirect('students');
 
         // dd(DB::table('students')->get());
-        return redirect('students');
+
 
 
     }

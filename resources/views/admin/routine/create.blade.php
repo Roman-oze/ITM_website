@@ -22,10 +22,10 @@
                         <p class="mt-2 btn btn-outline-info ">Drag and Drop files here</p>
                     </div>
                     <br>
+                    
                     <div class="mb-3 btn btn-outline-info text-white">
                     <input type="radio" id="" name="type"  value="spring">
                       <label for="" class="text-dark"><strong>Spring</strong></label>
-
                   </div>
 
 
@@ -40,6 +40,7 @@
                             <input type="date" id="fileElem" name="date" class="form-control">
                         </label>
                     </div>
+
                     <div id="gallery" class="mt-4">
                     <button type="submit" class="btn btn-success mt-3">
                         <i class="fas fa-paper-plane"></i> Submit

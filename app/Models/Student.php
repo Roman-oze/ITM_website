@@ -11,7 +11,6 @@ class Student extends Model
     protected $table=['students'];
     protected $PrimaryKey=['id'];
 
-protected $fillable = ['name','email','department', 'address', 'mobile'];
-
+protected $fillable = ['name','roll','batch','email','blood', 'address', 'mobile','type'];
 
 }
