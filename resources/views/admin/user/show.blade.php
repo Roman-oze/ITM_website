@@ -1,4 +1,5 @@
-@extends('admin._master')
+@extends('admin.Admin layout._master')
+
 
 
 @section('main')
@@ -28,12 +29,12 @@
         </thead>
         <tbody>
             <tr>
-                <td class="text-white-50 text-center">{{ $admin->id }}</td>
-                <td class="text-white-50">{{ $admin->name }}</td>
-                <td class="text-white-50">{{ $admin->email }}</td>
-                <td class="text-white-50">{{ $admin->password }}</td>
+                <td class="text-white-50 text-center">{{ $users->id }}</td>
+                <td class="text-white-50">{{ $users->name }}</td>
+                <td class="text-white-50">{{ $users->email }}</td>
+                <td class="text-white-50">{{ $users->password }}</td>
                 <td>
-                    <a href="{{route('user_admin')}}" class="btn btn-primary">Back</a>
+                    <a href="{{route('admin.user')}}" class="btn btn-primary">Back</a>
 
             </td>
 

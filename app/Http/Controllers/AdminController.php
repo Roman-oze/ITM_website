@@ -103,10 +103,10 @@ class AdminController extends Controller
     }
 
 
-    public function user_admin(){
+    public function user(){
 
         $record = User::paginate(10);
-        return view('admin.user_admin',compact('record'));
+        return view('admin.user.user',compact('record'));
 
     }
 
@@ -129,15 +129,15 @@ class AdminController extends Controller
 
     public function show($id)
     {
-        $data['record'] =DB::table('users')->where('id',$id)->first();
-        return view('admin.user.show',$data);
+        $users =DB::table('users')->where('id',$id)->first();
+        return view('admin.user.show',compact('users'));
     }
 
 
     public function edit($id)
     {
-        $data['record'] = DB::table('users')->where('id',$id)->first();
-                return view('admin.user.edit',$data);
+        $users = DB::table('users')->where('id',$id)->first();
+                return view('admin.user.edit',compact('users'));
     }
 
 
@@ -148,9 +148,8 @@ class AdminController extends Controller
         $data['password']=$request->password;
 
         DB::table('users')->where('id',$id)->update($data);
+        return redirect()->route('admin.user')->with('success','User Updated Successfully');
 
-        // dd(DB::table('students')->get());
-        return redirect('users');
 
 
     }
@@ -159,7 +158,7 @@ class AdminController extends Controller
         DB::table('users')->where('id',$id)->delete();
 
         // dd(DB::table('students')->get());
-        return redirect('users');
+        return redirect()->route('admin.user')->with('success','User delete Successfully');
 
 
     }
@@ -168,13 +167,13 @@ class AdminController extends Controller
         return view('admin.routine');
 
     }
-    
+
 
     public function records(Request $request){
 
         $data = $request->input('search');
         $record = DB::table('users')->where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);
-        return view('admin.user_admin',compact('record'));
+        return view('admin.user.user_admin',compact('record'));
 
     }
 

@@ -3,7 +3,7 @@
 
 <!-- resources/views/students/create.blade.php -->
 
-@extends('admin._master')
+@extends('admin.Admin layout._master')
 
 
 @section('main')
@@ -27,26 +27,26 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('update', $record->id) }}" method="post">
+                        <form action="{{ route('admin.update', $users->id) }}" method="post">
                             @csrf
                             @method('PUT')
 
                             <div class="form-group">
                                 <label for="name" class="text-white">Name</label>
                                 <input type="text" class="form-control" name="name" required>
-                                <input type="hidden" class="form-control" value="user" name="role" required>
+                                <input type="hidden" class="form-control" value="{{$users->name}}" name="role" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="name"class="text-white">Email</label>
                                 <input type="email" class="form-control" name="email" required>
-                                <input type="hidden" class="form-control" value="user" name="role" required>
+                                <input type="hidden" class="form-control" value="{{$users->email}}" name="role" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="" class="text-white">Password</label>
                                 <input type="password" class="form-control" name="password" required>
-                                <input type="hidden" class="form-control" value="user" name="role" required>
+                                <input type="hidden" class="form-control" value="{{$users->password}}" name="role" required>
                             </div>
                             <br>
                             <br>

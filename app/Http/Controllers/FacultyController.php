@@ -13,7 +13,7 @@ class FacultyController extends Controller
      */
 
 
-    public function faculty_member()
+    public function member()
     {
         $teachers = DB::table('teachers')->get();
 
@@ -21,7 +21,7 @@ class FacultyController extends Controller
     }
 
 
-    public function showing()
+    public function index()
     {
         $teachers = DB::table('teachers')->get();
 
@@ -41,7 +41,7 @@ class FacultyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function faculty_store(Request $request)
+    public function store(Request $request)
     {
 
         $request->validate([
@@ -69,7 +69,8 @@ class FacultyController extends Controller
 
 
     DB::table('teachers')->insert($data);
-    return redirect('showing');
+    return redirect()->route('faculty.index')->with('success','Faculty Added Successfully');
+
 
 
 
@@ -140,6 +141,6 @@ class FacultyController extends Controller
     public function destroy(string $id)
     {
         DB::table('teachers')->where('teacher_id',$id)->delete();
-        return redirect('showing');
+        return redirect('faculty.index');
     }
 }

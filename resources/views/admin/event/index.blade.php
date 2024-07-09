@@ -1,7 +1,7 @@
 
 
 
-@extends('admin._master')
+@extends('admin.Admin layout._master')
 
 @section('main')
 
@@ -63,7 +63,7 @@
            <form action="{{route('event_delete',$event->id)}}" method="post" style="display:inline;">
                @csrf
                @method('DELETE')
-               <a href="" type="submit"  class="p-3" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></a>
+               <button type="submit"  class="p-3 bg-dark" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></button>
            </form>
 
 

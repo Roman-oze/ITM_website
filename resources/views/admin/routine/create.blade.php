@@ -1,4 +1,4 @@
-@extends('admin._master')
+@extends('admin.Admin layout._master')
 
 
 

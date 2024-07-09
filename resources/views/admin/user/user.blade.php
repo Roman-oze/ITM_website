@@ -1,89 +1,73 @@
+@extends('admin.Admin layout._master')
 
 
-    @extends('admin._master')
+@section('main')
 
+{{-- <form  action="records" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" >
+    <div class="input-group">
+        <input class="form-control" type="text" placeholder="Search for..." name="search" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
 
-    @section('main')
-
-    <div class="container mt-5 p-5">
-        <h1 class="text-white-50 mt-5 bg-dark p-2 ">Admin Details</h1>
-
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($admin as $admin)
-                <tr>
-                    <td>{{$admin->id}}</td>
-                  <td>{{$admin->name}}</td>
-                  <td>{{$admin->email}}</td>
-                  <td>{{$admin->password}}</td>
-
-                    <td>
-                        <a href="{{route('',$admin->id)}}" class="btn btn-info">View</a>
-                        <a href="{{route('edit',$admin->id)}}" class="btn btn-danger">edit</a>
-
-                        <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure?')">Delete</button>
-                        </form>
-
-
-                    </td>
-
-                    </tr>
-                    @endforeach
-            </tbody>
-        </table>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    @endsection
+
+</form> --}}
 
 
+<div class="container">
+    <h2 class="text-dark mt-5  p-2">Admin Details</h2>
 
-{{--
-      this show code
-    <div class="container mt-5">
-        <h1 class="text-danger mt-5">Single Show Data </h1>
-    <table class="table table-striped">
+    <div class="row  p-4">
+        <div class=" text-left">
+          <a href="{{ route('admin_registration') }}" class="btn btn-dark text-white">New Add</a>
+
+        </div>
+      </div>
+
+    <table class="table table-striped bg-dark ">
         <thead>
-            <tr>
-                <th>User ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
+            <tr >
+                <th class="text-white text-center">User ID</th>
+                <th class="text-white">Name</th>
+                <th class="text-white">Email</th>
+                <th class="text-white">Password</th>
+                <th class="text-white text-center">Action</th>
             </tr>
         </thead>
         <tbody>
-
+            @foreach ($record as $admin)
             <tr>
-                <td>{{$student->id}}</td>
-                <td>{{$student->name}}</td>
-                <td>{{$student->email}}</td>
-                <td>{{$student->password}}</td>
+                <td class="text-white-50 text-center">{{ $admin->id }}</td>
+                <td class="text-white-50">{{ $admin->name }}</td>
+                <td class="text-white-50">{{ $admin->email }}</td>
+                <td class="text-white-50">{{ $admin->password }}</td>
 
-                <td>
-                        <a href="{{route('user')}}" class="btn btn-primary">Back</a>
+                <td class="text-center justify-content-evenly">
+                    <a href="{{route('admin.show',$admin->id)}}" class="p-3"><i class="fa-solid fa-eye text-white  fa-lg "></i></a>
+                    <a href="{{route('admin.edit',$admin->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+
+                    <form action="{{route('admin.delete',$admin->id)}}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Are you sure?')" class="p-2 bg-dark"><i class="fa-regular fa-trash-can text-danger"></i>
+                        </form>
+
+
+
 
                 </td>
 
                 </tr>
-
+                @endforeach
         </tbody>
     </table>
+
+
+    <div class="row">
+        {{ $record->links('pagination::bootstrap-5') }}
+    </div>
+
 </div>
-<br>
-<br>
-<br>
-<br> --}}
+</div>
+
+
+@endsection

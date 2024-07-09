@@ -2,7 +2,7 @@
  <!-- resources/views/students/create.blade.php -->
 
 <!-- resources/views/students/create.blade.php -->
-@extends('admin._master')
+@extends('admin.Admin layout._master')
 
 
 @section('main')

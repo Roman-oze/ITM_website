@@ -1,5 +1,5 @@
 
-@extends('layout.master')
+@extends('admin.Admin layout._master')
 
 @section('content')
 <br>

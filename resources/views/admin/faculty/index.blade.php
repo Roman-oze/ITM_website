@@ -1,7 +1,7 @@
 
 
 
-@extends('admin._master')
+@extends('admin.Admin layout._master')
 
 @section('main')
 
@@ -43,7 +43,7 @@
             @foreach($teachers as $teacher)
 
         <td class="text-white-50">{{$teacher->teacher_id}}</td>
-        <td><img src="{{ asset($teacher->image) }}"  width="70" height="70" class="rounded-circle" ></td>
+        <td><img src="{{ asset($teacher->image) }}"  width="50" height="50" class="rounded-circle" ></td>
         <td class="text-white-50">{{$teacher->name}}</td>
         <td class="text-white-50">{{$teacher->designation}}</td>
         <td class="text-white-50">{{$teacher->fb}}</td>
@@ -58,11 +58,13 @@
            <form  action="{{route('faculty_delete',$teacher->teacher_id)}}" method="POST" >
                @csrf
                @method('DELETE')
-               <button class=" btn btn-danger p-2" type="submit" > Delete </button>
+               <button type="submit" onclick="return confirm('Are you sure?')" class="p-2 bg-dark"><i class="fa-regular fa-trash-can text-danger"></i>
+               </button>
+
            </form>
         </td>
       </tr>
-      
+
 
 
 

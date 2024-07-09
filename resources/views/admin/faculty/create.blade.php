@@ -1,4 +1,4 @@
-@extends('admin._master')
+@extends('admin.Admin layout._master')
 
 @section('main')
 
@@ -47,11 +47,11 @@
     <h2 class="text-danger">Create Faculty Profile</h2>
     <br>
     <br>
-    <a href="{{route('showing')}}" class="btn btn-dark text-white">Back</a>
+    <a href="" class="btn btn-dark text-white">Back</a>
     <br>
 
 
-    <form action="{{url('faculty_store')}}" enctype="multipart/form-data" method="POST">
+    <form action="{{route('faculty.store')}}" enctype="multipart/form-data" method="POST">
         @csrf
 
       <div class="mb-3">

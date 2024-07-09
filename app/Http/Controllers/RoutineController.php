@@ -23,7 +23,7 @@ class RoutineController extends Controller
     public function create()
     {
         $routines = DB::table('routines')->get();
-        return view('routine.create',compact('routines'));
+        return view('admin.routine.create',compact('routines'));
     }
 
     /**
@@ -40,7 +40,7 @@ class RoutineController extends Controller
         $data ['date'] = $request->date;
 
         DB::table('routines')->insert($data);
-        return redirect()->route('routine.create');
+        return redirect()->route('admin.routine.create');
 
         // dd(DB::table('routines')->get());
         //
@@ -52,7 +52,7 @@ class RoutineController extends Controller
     public function show(string $id)
     {
        $routine =DB::table('routines')->where('id',$id)->first();
-       return view('routine.show',compact('routine'));
+       return view('admin.routine.show',compact('routine'));
     }
 
     /**
@@ -61,7 +61,7 @@ class RoutineController extends Controller
     public function edit(string $id)
     {
         $routine = DB::table('routines')->where('id',$id)->first();
-        return view('routine.edit',compact('routine'));
+        return view('admin.routine.edit',compact('routine'));
     }
 
     /**
@@ -80,7 +80,7 @@ class RoutineController extends Controller
 
         DB::table('events')->where('id',$id)->update($data);
 
-        return redirect()->route('routine.create')->with('success','routine update Successfully');
+        return redirect()->route('admin.routine.create')->with('success','routine update Successfully');
     }
 
     /**
