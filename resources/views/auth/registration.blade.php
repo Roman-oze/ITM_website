@@ -20,13 +20,13 @@
                      <div class="container">
                          <div class="row justify-content-center">
                              <div class="">
-                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                     <div class="card-header"><h3 class="title text-danger">Create Admin Registration  <i class="fa fa-user text-black"></i></h3></div>
+                                 <div class="card shadow border-0 rounded-lg mt-5">
+                                     <div class="card-header"><h3 class=" text-info">Create Admin Registration  <i class="fa fa-user text-info fa-lg "></i></h3></div>
                                      <div class="card-body">
-                                         <div class="container mt-5">
+
                                             <form method="post" action="{{route('register')}}">
-{{--
-                                                @if(session::has('success'))
+
+                                                {{-- @if(session::has('success'))
                                                 <div class="alert alert-success">
                                                     {{session::get('success')}}
                                                 </div>
@@ -72,9 +72,9 @@
 
 
 
-                                     </div>
+
                                      <div class="card-footer text-center py-3">
-                                         <div class="small"><a href="{{route('admin_login')}}">Need an account? Sign up!</a></div>
+                                         <div class="small"><a href="{{route('login')}}">Need an account? Sign up!</a></div>
                                      </div>
                                  </div>
                              </div>

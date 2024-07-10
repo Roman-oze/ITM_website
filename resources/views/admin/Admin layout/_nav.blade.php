@@ -21,8 +21,8 @@
                 @if (session()->has('id'))
                 <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                 @else
-                <li><a class="dropdown-item" href="{{route('admin_login')}}">Login</a></li>
-                <li><a class="dropdown-item" href="{{route('admin_registration')}}">Registration</a></li>
+                <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
+                <li><a class="dropdown-item" href="{{route('registration')}}">Registration</a></li>
                 @endif
 
 

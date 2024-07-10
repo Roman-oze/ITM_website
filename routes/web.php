@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RoutineController;
 use App\Http\Controllers\EventController;
@@ -20,23 +21,23 @@ use Faker\Guesser\Name;
 // });
 
 
-Route::get('/admin_login',function(){
-    session()->put('id',1);
-    return redirect()->route('dashboard');
+// Route::get('/admin_login',function(){
+//     session()->put('id',1);
+//     return redirect()->route('dashboard');
 
-});
+// });
 
-Route::get('/logout',function(){
-    session()->forget('id');
-    return redirect('/');
+// Route::get('/logout',function(){
+//     session()->forget('id');
+//     return redirect('/');
 
-});
+// });
 
- Route::get('/no-access',function(){
-    echo"you're not to access this page";
-    die;
+//  Route::get('/no-access',function(){
+//     echo"you're not to access this page";
+//     die;
 
- });
+//  });
 
  Route::controller(FacultyController::class)->group(function(){
     Route::get('/faculty/create','create')->name('faculty.create');
@@ -83,20 +84,29 @@ Route::controller(RoutineController::class)->group(function(){
 
 
 
-Route::controller(AdminController::class)->group(function(){
+Route::controller(AuthController::class)->group(function(){
 
     Route::get('dashboard', 'dashboard')->name('dashboard');
-    Route::get('admin/login', 'login')->name('admin_login');
-    Route::post('/loginUser', 'loginUser')->name('loginUser');
-    Route::get('admin/registration', 'registration')->name('admin_registration');
-    Route::get('/logout', 'logout')->name('logout');
-    Route::get('admin/reset_password', 'password')->name('reset_password');
+    Route::get('user/login', 'login')->name('login');
+    Route::post('loginUser', 'loginUser')->name('loginUser');
+    Route::get('user/registration', 'registration')->name('registration');
+    Route::post('register', 'register')->name('register');
+    Route::get('logout', 'logout')->name('logout');
+    Route::get('user/reset_password', 'password')->name('reset_password');
+
+});
+
+
+
+
+
+Route::controller(AdminController::class)->group(function(){
+
     Route::get('admin/static', 'static')->name('static');
     Route::get('admin/chart', 'chart')->name('chart');
     Route::get('records', 'records')->name('records');
 
-    Route::get('/admin/user', 'user')->name('admin.user');
-    Route::post('/register', 'register')->name('register');
+    Route::get('user', 'user')->name('admin.user');
     Route::get('admin/show/{id}', 'show')->name('show');
     Route::get('admin/edit/{id}', 'edit')->name('admin.edit');
     Route::put('admin/update/{id}','update')->name('admin.update');

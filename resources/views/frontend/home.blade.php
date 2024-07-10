@@ -16,8 +16,8 @@
 
         <div class="col-md-7 text-end">
 
-        <a class=" text-white p-2" href="{{route('admin_login')}}"><i class="fa-solid fa-lock "></i> Login</a>
-        <a class="text-white p-2" href="{{route('admin_registration')}}"><i class="fa-solid fa-user "></i> Register</a>
+        <a class=" text-white p-2" href="{{route('login')}}"><i class="fa-solid fa-lock "></i> Login</a>
+        <a class="text-white p-2" href="{{route('registration')}}"><i class="fa-solid fa-user "></i> Register</a>
         </div>
         </div>
 
@@ -63,50 +63,41 @@
 @endsection
 @section('content')
 
-<section id="Feature" class="section-p1  ">
-    <div class="fe-box img-fluid  ">
-        <img src="{{asset('frontend/image/hunderd.png')}}" alt=""class="imgslide">
+<section id="Feature" class="section-p1">
+    <div class="fe-box img-fluid">
+        <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
         <h6 class="btn2">Waiver</h6>
-
-   </div>
-    <div class="fe-box img-fluid ">
-         <img src="{{asset('frontend/image/laptop.png')}}" alt=""class="imgslide">
-         <h6 class="btn1">Free Laptop</h6>
-
     </div>
-
-    <div class="fe-box img-fluid ">
-         <img src="{{asset('frontend/image/hall.png')}}" alt=""class="imgslide ">
-         <h6 class="btn3">Hall</h6>
-
+    <div class="fe-box img-fluid">
+        <img src="{{asset('frontend/image/laptop.png')}}" alt="" class="imgslide">
+        <h6 class="btn1">Free Laptop</h6>
     </div>
-    <div class="fe-box img-fluid ">
-         <img src="{{asset('frontend/image/latest.png')}}" alt=""class="imgslide">
-         <h6 class="btn4">Latest Curriculum</h6>
-
+    <div class="fe-box img-fluid">
+        <img src="{{asset('frontend/image/hall.png')}}" alt="" class="imgslide">
+        <h6 class="btn3">Hall</h6>
     </div>
-    <div class="fe-box img-fluid ">
-         <img src="{{asset('frontend/image/innovation.png')}}" alt=""class="imgslide">
-         <h6 class="btn6">Innovation</h6>
-
+    <div class="fe-box img-fluid">
+        <img src="{{asset('frontend/image/latest.png')}}" alt="" class="imgslide">
+        <h6 class="btn4">Latest Curriculum</h6>
     </div>
-    <div class="fe-box img-fluid ">
-         <img src="{{asset('frontend/image/clubicon.png')}}" alt=""class="imgslide">
-         <h6 class="btn1">35+ Club</h6>
-
+    <div class="fe-box img-fluid">
+        <img src="{{asset('frontend/image/innovation.png')}}" alt="" class="imgslide">
+        <h6 class="btn6">Innovation</h6>
     </div>
-    <div class="fe-box img-fluid ">
-         <img src="{{asset('frontend/image/life_insurance.png')}}" alt=""class="imgslide">
-         <h6 class="btn2">Life-Insurance</h6>
-
+    <div class="fe-box img-fluid">
+        <img src="{{asset('frontend/image/clubicon.png')}}" alt="" class="imgslide">
+        <h6 class="btn1">35+ Club</h6>
     </div>
-        <div class="fe-box  img-fluid ">
-            <img src="{{asset('frontend/image/diubus.png')}}" alt=""class="imgslide">
-            <h6 class="btn3">Transport</h6>
-
-       </div>
-
+    <div class="fe-box img-fluid">
+        <img src="{{asset('frontend/image/life_insurance.png')}}" alt="" class="imgslide">
+        <h6 class="btn2">Life-Insurance</h6>
+    </div>
+    <div class="fe-box img-fluid">
+        <img src="{{asset('frontend/image/diubus.png')}}" alt="" class="imgslide">
+        <h6 class="btn3">Transport</h6>
+    </div>
 </section>
+
 <br>
 <br>
 <br>
@@ -268,40 +259,41 @@
           <div class="border rounded-3 container_design text-center p-5 ">
             <span data-purecounter-start="0" data-purecounter-end="29" data-purecounter-duration="0" class="purecounter">29</span>
             <p class="text-color">Research</p>
-          </div>
-          </div>
-
-        </div>
-
-        </div>
-   <br>
-  <br>
-   <br>
-  <br>
-                <br>
-                <br>
-                <div class="mt-5">
-                    <h1 class="about_itm text-center text-white mt-3">Study Aboard </h1>
-                </div>
-
-                <div class="container-fluid mt-5">
-                    <div class="row text-center">
-
-                    <div class="col-md-8 text-center">
-                           <img src="{{asset('frontend/image/student2.png')}}" class="scholarpic animate__animated animate__fadeInLeft">
-                        </div>
-                        <div class="col-md-4  scholar text-center p-2">
-                            <h4 class="aboard  animate__animated animate__fadeInRight">Study Aboard</h4><br>
-                            <p class="item1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Scholarship</p><br>
-                            <p class="item2  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Exchange Program</p><br>
-                            <p class="item3  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</p><br><br>
-                            <a target="_blank" href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="bn5 ">Apply</i> </a>
-
-
-                        </div>
-                    </div>
-                </div>
             </div>
+            </div>
+            </div>
+            </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+<div class="mt-5">
+    <h1 class="about_itm text-center text-white mt-3">Study Abroad</h1>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="row text-center">
+        <div class="col-md-8 text-center mb-4">
+            <img src="{{asset('frontend/image/student2.png')}}" class="scholarpic animate__animated animate__fadeInLeft" alt="Student">
+            </div>
+            <div class="col-md-4 text-center p-2 scholar">
+            <h4 class="aboard animate__animated animate__fadeInRight">Study Abroad</h4><br>
+            <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Scholarship</a><br>
+            <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item2 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</a><br>
+            <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item3 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Exchange Program</a><br>
+            <a target="_blank" href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="bn5">Apply</a>
+        </div>
+    </div>
+</div>
+
+
+            <br>
+             <br>
+                <br>
+                <br>
             <br>
              <br>
                 <br>
@@ -456,43 +448,45 @@
 
                <section id="skill" class="section-p2 ">
                 <div class="container-fluid mt-5">
-                  <div class="row ">
-                      <div class="col-md-3">
-                          <div class="fe-box img-fluid facilty">
-                            <img src="{{asset('frontend/image/blc.png')}}"class=" img-decorate"><br>
-                            <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-primary">Blc</a>
-                            <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            </p>
-                         </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="fe-box img-fluid facilty">
-                            <img src="{{asset('frontend/image/portal.png')}}"class=" img-decorate">
-                            <a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-primary">Student Portal</a>
-                            <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            </p>
-                         </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="fe-box img-fluid facilty">
-                            <img src="{{asset('frontend/image/1card.png')}}"class=" img-decorate"><br>
-                            <a target="_blank" href="https://1card.com.bd/" class="btn btn-primary">1card</a>
-                            <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            </p>
-                         </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="fe-box img-fluid facilty">
-                            <img src="{{asset('frontend/image/blue-bus-png.png')}}"class=" img-decorate">
-                            <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-primary">Transport</a>
-                            <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            </p>
-                         </div>
-                      </div>
-
-
-          </div>
-          </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card img-fluid bg-light shadow">
+                                <img src="{{asset('frontend/image/blc.png')}}" class="card-img-top img-decorate" alt="Blc">
+                                <div class="card-body">
+                                    <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-outline-primary btn-block">Blc</a>
+                                    <p class="card-text text-dark mt-2">course enrollment get feature  study roadmap with quiz assignments presentations, and PDF</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card img-fluid  bg-light shadow">
+                                <img src="{{asset('frontend/image/portal.png')}}" class="card-img-top img-decorate" alt="Student Portal">
+                                <div class="card-body">
+                                    <a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-outline-primary btn-block">Student Portal</a>
+                                    <p class="card-text text-dark mt-2">Payment, result, transport, clearance, and all services are provided by the student portal.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card  img-fluid bg-light shadow">
+                                <img src="{{asset('frontend/image/1card.png')}}" class="card-img-top img-decorate" alt="1card">
+                                <div class="card-body">
+                                    <a target="_blank" href="https://1card.com.bd/" class="btn btn-outline-primary btn-block">1card</a>
+                                    <p class="card-text text-dark mt-2">Download the 1card Android app and iOS app. All services are available within this app.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card  img-fluid  shadow">
+                                <img src="{{asset('frontend/image/blue-bus-png.png')}}" class="card-img-top img-decorate" alt="Transport">
+                                <div class="card-body">
+                                    <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-outline-primary btn-block">Transport</a>
+                                    <p class="card-text text-dark mt-2">Firstly apply for transport card then use transport service for several card for eachsemester </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
              </section>
 
 

@@ -8,7 +8,7 @@
                 <main>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-5">
+                            <div class="col-lg-12">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center text-danger font-weight-light my-4">Password Recovery</h3></div>
                                     <div class="card-body">
@@ -19,13 +19,13 @@
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="text-info" href="{{route('admin_login')}}">Return to login</a>
+                                                <a class="text-info" href="{{route('login')}}">Return to login</a>
                                                 <a class="btn btn-primary" href="login.html">Reset Password</a>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="{{route('registration')}}">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>

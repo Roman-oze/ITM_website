@@ -18,7 +18,7 @@
 
     <div class="row  p-4">
         <div class=" text-left">
-          <a href="{{ route('admin_registration') }}" class="btn btn-dark text-white">New Add</a>
+          <a href="{{ route('registration') }}" class="btn btn-dark text-white">New Add</a>
 
         </div>
       </div>

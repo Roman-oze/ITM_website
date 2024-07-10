@@ -14,9 +14,7 @@
                     </a>
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a  href="{{route('admin.user')}}" class="linked">Admins</a>
-                            <a  href="{{route('index')}}" class="linked">Students</a>
-
+                            <a  href="{{route('admin.user')}}" class="linked"> Admins</a>
                         </nav>
                     </div>
                     <br>
@@ -33,6 +31,17 @@
                         </nav>
                     </div> --}}
 
+                    <a  href="{{route('routine.create')}}" class="linked "><i class="fa-regular fa-calendar-check text-white" ></i> Routine</a><br>
+
+                    <a  href="{{route('event_up')}}" class="linked"><i class="fa-solid fa-calendar-days text-white"></i> Events</a><br>
+
+                    <a  href="{{route('faculty.index')}}" class="linked"><i class="fa-solid fa-user-graduate text-white"></i> Faculty</a><br>
+
+                    <a  href="{{route('index')}}" class="linked"><i class="fa-solid fa-book-open  5rem text-white"></i> Students</a> <br>
+
+                    <a  href="{{route('faculty.index')}}" class="linked"><i class="fa-solid fa-certificate text-white"></i> Scholarship</a><br>
+
+
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-book-open  5rem text-white"></i></i></div>
                         Publication
@@ -43,26 +52,6 @@
                             <a  href="#" class="linked">Category</a>
                         </nav>
                     </div><br>
-
-                    <a  href="{{route('routine.create')}}" class="linked "><i class="fa-regular fa-calendar-check text-white" ></i> Routine</a><br>
-
-                    <a  href="{{route('event_up')}}" class="linked"><i class="fa-solid fa-calendar-days text-white"></i> Events</a><br>
-
-
-                    <a  href="{{route('faculty.index')}}" class="linked"><i class="fa-solid fa-user-graduate text-white"></i> Faculty</a><br>
-
-
-
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-book-open  5rem text-white"></i></i></div>
-                        Students
-                    </a>
-
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-certificate text-white"></i></div>
-                        Scholarship
-                    </a>
-
 
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-gear text-white"></i></div>
@@ -77,8 +66,8 @@
                             </a>
                             <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{route('admin_login')}}">Login</a>
-                                    <a class="nav-link" href="{{route('admin_registration')}}">Register</a>
+                                    <a class="nav-link" href="{{route('login')}}">Login</a>
+                                    <a class="nav-link" href="{{route('registration')}}">Register</a>
                                     <a class="nav-link" href="{{route("reset_password")}}">Forgot Password</a>
                                 </nav>
                             </div>
