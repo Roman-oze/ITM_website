@@ -63,7 +63,7 @@
 @endsection
 @section('content')
 
-<section id="Feature" class="section-p1">
+<section id="Feature" class="section-p1 bg-info">
     <div class="container d-flex justify-content-evenly">
     <div class="fe-box img-fluid">
         <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
@@ -300,7 +300,7 @@
         <div class=" mt-5">
             <h1 class="fac_text text-center">Our Facilities</h1>
         </div>
-                <section id="Feature" class="section-p1 mt-5">
+                <section id="Feature" class="section-p1 mt-5 bg-info">
                     <div class="fe-box ">
                         <img src="{{asset('frontend/image/hunderd.png')}}" alt=""class="imgslide">
                         <h6 class="btn2">Waiver</h6>
@@ -336,7 +336,7 @@
 
                </section>
 
-                <section id="Feature" class="section-p1 ">
+                <section id="Feature" class="section-p1 bg-info ">
 
                     <div class="fe-box  ">
                         <img src="{{asset('frontend/image/diubus.png')}}" alt=""class="imgslide">
@@ -714,7 +714,7 @@
                   <div class="container-fluid mt-5 justify-content-evenly">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="fe-box img-fluid bg-light">
+                            <div class="fe-box img-fluid bg-info">
                                 <img src="{{asset('frontend/image/skill.png')}}" alt="" class="iconslide">
                                 <h3 class="btn4 text-dark p-3">Skill</h3>
                                 <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -723,14 +723,14 @@
                            </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="fe-box img-fluid  bg-light">
+                            <div class="fe-box img-fluid  bg-info">
                                 <img src="{{asset('frontend/image/job.png')}}" alt=""class="iconslide">
                                 <h4 class="btn2 text-dark p-3">Job Opportunity</h4>
                                 <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                            </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="fe-box img-fluid bg-light">
+                            <div class="fe-box img-fluid bg-info">
                                 <img src="{{asset('frontend/image/career.png')}}" alt="" class="iconslide"><br>
                                 <h3 class="btn1 text-dark p-3">Career</h3>
                                  <p  class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -739,7 +739,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 ">
-                            <div class="fe-box img-fluid bg-light">
+                            <div class="fe-box img-fluid bg-info">
                                 <img src="{{asset('frontend/image/inter00.png')}}" alt=""class="iconslide">
                                 <h3 class="btn3 text-dark p-3">Internship</h3>
                                 <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
