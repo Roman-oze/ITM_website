@@ -240,9 +240,10 @@
         </div>
     </div>
 </div>
-
-
-    <div class="container ">
+<br>
+<br>
+<br>
+    <div class="container mt-5">
         <div class="row mt-5  d-flex justify-space-bewteen">
           <div class="col-md-3 col-6 text-center ">
             <div class="border rounded-3  container_design text-center p-5 ">
@@ -271,8 +272,6 @@
             </div>
             </div>
             </div>
-                <br>
-                <br>
                 <br>
                 <br>
                 <br>
