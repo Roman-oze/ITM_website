@@ -308,3 +308,21 @@ font-size: 2rem
   font-size: 24px;
   font-weight: bold;
 }
+.bg-image {
+    background-image: url('../image/bg-image-02.png');
+    background-size: contain; /* Adjusted for responsive covering */
+    background-position:  right; /* Adjusted for position */
+    background-repeat: no-repeat;
+}
+
+/* Media query for smaller devices */
+@media (max-width: 768px) {
+    .bg-image {
+        background-size: contain; /* Adjust as needed for smaller screens */
+    }
+}
+
+.club-bg-color{
+background-color: rgb(8, 36, 121);
+background-image: linear-gradient(to right, rgba(205, 213, 205, 0.621) , rgba(8, 36, 121));
+}

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
+use function Laravel\Prompts\table;
+
 class AuthController extends Controller
 {
 
@@ -83,10 +85,11 @@ class AuthController extends Controller
                 return redirect('dashboard');
         }
         else{
-            return redirect()->back()->with('error','Email/Password Incorrect');
+            return redirect()->back()->with('error','Email/Password Incorrect please try again');
         }
 
     }
+
 
 
     public function logout(){

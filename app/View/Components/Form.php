@@ -6,14 +6,17 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class header extends Component
+class Form extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public $type;
+    public $name;
+    public $label;
+
+    public function __construct($type,$name,$label)
     {
-        //
+        $this->type =$type;
+        $this->name =$name;
+        $this->label = $label;
     }
 
     /**
@@ -21,6 +24,6 @@ class header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.header');
+        return view('components.form');
     }
 }

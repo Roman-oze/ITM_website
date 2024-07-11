@@ -1382,8 +1382,6 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 5px;
-  background-color: rgb(11, 195, 246);
-  background-image: linear-gradient(to right, rgba(40, 43, 43, 0.621) , rgb(15, 194, 176));
 
 }
 

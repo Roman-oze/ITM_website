@@ -2,89 +2,102 @@
 
  <!-- resources/views/students/create.blade.php -->
 
+
  @extends('layout.master')
  @section('content')
 
+     <div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt " data-tilt>
+					<img src="{{asset('frontend/image/Itmfullogo.png')}}" alt="IMG"  class="loginimage">
+				</div>
 
+                <form action="{{route('register')}}"  method="POST" enctype="multipart/form-data" class="login100-form validate-form">
 
+                    @csrf
 
-        <!-- resources/views/students/create.blade.php -->
+					<span class="login100-form-title">
+						Admin Registration
+					</span>
+                    @if (session()->has('success'))
 
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                        </div>
 
+                    @endif
 
+                    @if (session()->has('error'))
 
-         </div>
-         <div id="layoutAuthentication">
-             <div id="layoutAuthentication_content">
-                 <main>
-                     <div class="container">
-                         <div class="row justify-content-center">
-                             <div class="">
-                                 <div class="card shadow border-0 rounded-lg mt-5">
-                                     <div class="card-header"><h3 class=" text-info">Create Admin Registration  <i class="fa fa-user text-info fa-lg "></i></h3></div>
-                                     <div class="card-body">
+                    <div class="alert alert-danger">
+                        {{ session()->get('error') }}
+                        </div>
 
-                                            <form method="post" action="{{route('register')}}">
-
-                                                {{-- @if(session::has('success'))
-                                                <div class="alert alert-success">
-                                                    {{session::get('success')}}
-                                                </div>
-                                                @endif
-                                                @if(session::has('error'))
-                                                <div class="alert alert-danger">
-                                                    {{session::get('error')}}
-                                                    </div>
-                                                    @endif --}}
-
-
-
-                                                @csrf
-                                                <div class="form-group">
-                                                    <label for="name">Name</label>
-                                                    <input type="text" class="form-control" name="name" required>
-                                                    <span class="text-danger">@error('name'){{$message}}@enderror</span>
-                                                </div>
-                                                <br>
-
-                                                <div class="form-group">
-                                                    <label for="name">Email</label>
-                                                    <input type="email" class="form-control" name="email"  required>
-                                                    <span class="text-danger">@error('email'){{$message}}@enderror</span>
-                                                </div>
-
-                                                <br>
-
-                                                <div class="form-group">
-                                                    <label for="">Password</label>
-                                                    <input type="password" class="form-control" name="password" required>
-                                                    <input type="hidden" class="form-control" value="user" name="role" required>
-                                                    <span class="text-danger">@error('password'){{$message}}@enderror</span>
-                                                </div>
-                                                <br>
-                                                <br>
-
-
-
-                                                <button type="submit" class="btn btn-primary">Submit</button>
-                                            </form>
+                    @endif
 
 
 
 
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="name" name="name" placeholder="Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+                        <i class="fa-solid fa-user " aria-hidden="true"></i>
+						</span>
+                        <span class="text-danger">
+                            @error('name')
+                         {{$message}}
+                        @enderror
+                      </span>
+					</div>
 
-                                     <div class="card-footer text-center py-3">
-                                         <div class="small"><a href="{{route('login')}}">Need an account? Sign up!</a></div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </main>
-             </div>
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="email" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+                        <span class="text-danger">
+                            @error('email')
+                         {{$message}}
+                        @enderror
+                      </span>
+					</div>
 
-     <br>
-     <br>
-     <br>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="password" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+                        <span class="text-danger">
+                            @error('password')
+                            {{$message}}
+                           @enderror
+                       </span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Login
+						</button>
+					</div>
+
+                    <div class="text-center p-t-136 mt-2">
+						<a class="txt3 text-muted" href="{{route('login')}}">
+							Need an account? Sign in!
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
  @endsection
+
+
+
 

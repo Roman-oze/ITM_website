@@ -64,6 +64,7 @@
 @section('content')
 
 <section id="Feature" class="section-p1">
+    <div class="container d-flex justify-content-evenly">
     <div class="fe-box img-fluid">
         <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
         <h6 class="btn2">Waiver</h6>
@@ -95,6 +96,7 @@
     <div class="fe-box img-fluid">
         <img src="{{asset('frontend/image/diubus.png')}}" alt="" class="imgslide">
         <h6 class="btn3">Transport</h6>
+    </div>
     </div>
 </section>
 
@@ -551,7 +553,7 @@
                </div>
                </div> -->
                <section id="skill" class="section-p2 ">
-                  <div class="container-fluid mt-5">
+                  <div class="container-fluid mt-5 justify-content-evenly">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="fe-box img-fluid backgorund-color">
