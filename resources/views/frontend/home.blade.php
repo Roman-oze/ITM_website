@@ -107,108 +107,111 @@
 
 <div class="container-fluid text-center ">
     <div  class="">
-    <h3 class="text-danger">Features</h3>
-        <h1 class=""> Why Choose ITM</h1>
+    <h3 class="text-warning">Features</h3>
+        <h1 class="text-white"> Why Choose ITM</h1>
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        <h2 class=" text-dark">Special Course </h2>
+        <h2 class=" text-white">Special Course </h2>
 </div>
 
 
 </div>
 <div class="container-fluid text-center mt-5 ">
     <div class="row ">
-        <hr>
-        <div class="col-md-3">
-            <img src="{{asset('frontend/image/web.png')}}" class="img-fluid">
-            <div class="t-center m-5">
-            <h3 style="text-align: center;color: rgb(0, 0, 0);">Web Developer</h3>
-                <button class=" btnn ">View</a></button>                   <hr>
+
+            {{-- <div class="col-md-3 ">
+            <div class="custom-box img-fluid">
+                <img src="{{asset('frontend/image/web.png')}}" alt="" class="img-fluid"><br>
+                <h4 style="text-white">Web Developer</h4>
+                <p class="text-white-50 p-2">Web developer for success future</p>
             </div>
-                </div>
+              </div> --}}
 
-        <div class="col-md-3">
-            <img src="{{asset('frontend/image/app.png')}}" class="img-fluid ">
-            <div class="t-center m-5">
-            <h3 style="text-align: center;color: rgb(0, 0, 0);">App Developer</h3>
-            <button class=" btnn ">View</a></button>
-            <hr>
+
+            <div class="col-md-3 ">
+            <div class="custom-box img-fluid">
+                <img src="{{asset('frontend/image/web.png')}}" alt="" class="img-fluid"><br>
+                <h4 style="text-white">Web Developer</h4>
+                    <a href="#" class="btn btn-outline-light">view</a>
+              </div>
+              </div>
+
+            <div class="col-md-3 ">
+            <div class="custom-box img-fluid">
+                <img src="{{asset('frontend/image/app.png')}}" alt="" class="img-fluid"><br>
+                <h4 style="text-white">Mobile App Developer</h4>
+                    <a href="#" class="btn btn-outline-light">view</a>
+              </div>
+              </div>
+
+            <div class="col-md-3 ">
+            <div class="custom-box">
+                <img src="{{asset('frontend/image/owner.png')}}" alt="" class="img-fluid"><br>
+                <h4 style="text-white">Entrepreneur</h4>
+                    <a href="#" class="btn btn-outline-light">view</a>
+              </div>
+              </div>
+
+            <div class="col-md-3 ">
+            <div class="custom-box">
+                <img src="{{asset('frontend/image/cybersec.png')}}" alt="" class="img-fluid"><br>
+                <h4 style="text-white">Cyber Security</h4>
+                    <a href="#" class="btn btn-outline-light">view</a>
+              </div>
             </div>
-                </div>
 
-                        <div class="col-md-3">
-                          <img src="{{asset('frontend/image/owner.png')}}" class="img-fluid">
-                          <div class="t-center m-5">
-                          <h3 style="text-align: center;color: rgb(0, 0, 0);">Entrepreneur</h3>
-                          <button class=" btnn ">View</a></button>
-                          <hr>
-                          </div>
-                              </div>
-
-                        <div class="col-md-3">
-                            <img src="{{asset('frontend/image/cybersec.png')}}" class="img-fluid">
-                            <div class="t-center m-5">
-                            <h3 style="text-align: center;color: rgb(0, 0, 0);">Cyber Security</h3>
-                            <button class=" btnn ">View</a></button>
-                            <hr>
-                            </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <img src="{{asset('frontend/image/HR.png')}}" class="img-fluid">
-                                    <div class="t-center m-5">
-                                    <h3 style="text-align: center;color: rgb(0, 0, 0);">Human Resource</h3>
-                                    <button class=" btnn ">View</a></button>
-                                    <hr>
-                                     </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <img src="{{asset('frontend/image/MIS.png')}}" class="img-fluid">
-                                            <div class="t-center m-5">
-                                            <h3 style="text-align: center;color: rgb(0, 0, 0);">Management Information </h3>
-                                            <button class=" btnn ">View</a></button>
-                                            <hr>
-                                             </div>
-                                                </div>
-                                        <div class="col-md-3">
-                                            <img src="{{asset('frontend/image/database.png')}}" class="img-fluid">
-                                            <div class="t-center m-5">
-                                                <h3 style="text-align: center;color: rgb(0, 0, 0);">Database Management</h3>
-                                                <button class=" btnn ">View</a></button>
-                                                 <hr>
-                                            </div>
-                                       </div>
-                                        <div class="col-md-3">
-                                            <img src="{{asset('frontend/image/sqa.png')}}" class="img-fluid">
-                                          <div class="t-center m-5">
-                                            <h3 style="text-align: center;color: rgb(0, 0, 0);">Software Quality Testing</h3>
-                                            <button class=" btnn ">View</a></button>
-                                            <hr>
-                                         </div>
-                                     </div>
+        </div>
 
 
-                                 </div>
-
-                         </div>
+              <div class="row mt-5">
+                <div class="col-md-3 ">
+                    <div class="custom-box">
+                        <img src="{{asset('frontend/image/HR.png')}}" alt="" class="img-fluid"><br>
+                        <h4 style="text-white">Human Resource</h4>
+                            <a href="#" class="btn btn-outline-light">view</a>
+                      </div>
+                    </div>
+                <div class="col-md-3 ">
+                    <div class="custom-box">
+                        <img src="{{asset('frontend/image/MIS.png')}}" alt="" class="img-fluid"><br>
+                        <h4 style="text-white">Management Information</h4>
+                            <a href="#" class="btn btn-outline-light">view</a>
+                      </div>
+                    </div>
+                <div class="col-md-3 ">
+                    <div class="custom-box">
+                        <img src="{{asset('frontend/image/database.png')}}" alt="" class="img-fluid"><br>
+                        <h4 style="text-white">Database Management</h4>
+                            <a href="#" class="btn btn-outline-light">view</a>
+                      </div>
+                    </div>
+                <div class="col-md-3 ">
+                    <div class="custom-box">
+                        <img src="{{asset('frontend/image/sqa.png')}}" alt="" class="img-fluid"><br>
+                        <h4 style="text-white">Software Quality Testing</h4>
+                            <a href="#" class="btn btn-outline-light">view</a>
+                      </div>
+                    </div>
+              </div>
+          </div>
 
         <br>
         <br>
         <br>
-        <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of </h1>
-        <br>
-    <br>
-
- <div class="container-fluid mt-5 covepage">
-        <div class="row justify-content-center mb-5 p-4  ">
+        <div class="mt-5">
+            <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of </h1>
+        </div>
+ <div class="container-fluid mt-5 covepage ">
+        <div class="row justify-content-center mt-5">
             <div class="col-md-6 align-items-stretch d-flex">
                 <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg);">
                     <div class="video justify-content-center">
                         {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
                         {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
-                            <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid" >
+                            <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid"  >
                                 {{-- <iframe width="640" height="450" src="#">
                                 </iframe> --}}
 
@@ -217,14 +220,15 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 heading_section p-4 ">
 
-                <h2 class="mb-4 text-black">Information Technology and Management (ITM)</h4>
+                <h2 class="mb-4 text-info">Information Technology and Management (ITM)</h4>
 
-                    <p class="text-muted"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
+                    <p class="text-white-50"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
 
 
-                        <a target="_blank" class="read" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Program List<i class="fa-solid fa-download text-dark"></i></a>
+                        <a target="_blank" class="read" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List<i class="fa-solid fa-download iconic fa-lg"></i></a>
                         <br>
                    <div class="fb">
                       <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
@@ -234,6 +238,8 @@
                     </div>
 
         </div>
+    </div>
+</div>
 
 
     <div class="container ">
@@ -273,16 +279,16 @@
                 <br>
 
 <div class="mt-5">
-    <h1 class="about_itm text-center text-white mt-3">Study Abroad</h1>
+    <h1 class="about_itm text-center text-white">Study Abroad</h1>
 </div>
 
 <div class="container-fluid mt-5">
-    <div class="row text-center">
+    <div class="row text-center aboardpage">
         <div class="col-md-8 text-center mb-4">
             <img src="{{asset('frontend/image/student2.png')}}" class="scholarpic animate__animated animate__fadeInLeft" alt="Student">
             </div>
             <div class="col-md-4 text-center p-2 scholar">
-            <h4 class="aboard animate__animated animate__fadeInRight">Study Abroad</h4><br>
+            <h4 class="aboard animate__animated animate__fadeInRight">Facilities List</h4><br>
             <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Scholarship</a><br>
             <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item2 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</a><br>
             <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item3 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Exchange Program</a><br>
@@ -291,24 +297,10 @@
     </div>
 </div>
 
-
-            <br>
-             <br>
-                <br>
-                <br>
-            <br>
-             <br>
-                <br>
-                <br>
-
-
-
-        <div class="facilty mt-5">
+        <div class=" mt-5">
             <h1 class="fac_text text-center">Our Facilities</h1>
         </div>
-        <br>
-
-                <section id="Feature" class="section-p1 ">
+                <section id="Feature" class="section-p1 mt-5">
                     <div class="fe-box ">
                         <img src="{{asset('frontend/image/hunderd.png')}}" alt=""class="imgslide">
                         <h6 class="btn2">Waiver</h6>
@@ -345,6 +337,7 @@
                </section>
 
                 <section id="Feature" class="section-p1 ">
+
                     <div class="fe-box  ">
                         <img src="{{asset('frontend/image/diubus.png')}}" alt=""class="imgslide">
                         <h6 class="btn2">Transport</h6>
@@ -383,13 +376,13 @@
                 <br>
                <div class="container-fluid mt-5 ">
                 <div class="text-dark text-center  service_text">
-                    <h1 class="text-dark text-center ">Service <i class="fa-solid fa-universal-access"></i></h1>
+                    <h1 class="text-white ">Service <i class="fa-solid fa-universal-access"></i></h1>
                     <div class="divider-custom">
                         <div class="divider-custom-line"></div>
                         <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
                         <div class="divider-custom-line"></div>
                     </div>
-                    <p class="text-dark">Our service 24 hours open for our Student</p>
+                    <p class="text-info m-3">Our service 24 hours open for our Student</p>
 
                 </div>
 
@@ -452,38 +445,46 @@
                 <div class="container-fluid mt-5">
                     <div class="row">
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card img-fluid bg-light shadow">
+                            <div class="card img-fluid bg-black shadow">
+                                <div class="bg-light rounded">
                                 <img src="{{asset('frontend/image/blc.png')}}" class="card-img-top img-decorate" alt="Blc">
+                                </div>
                                 <div class="card-body">
-                                    <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-outline-primary btn-block">Blc</a>
-                                    <p class="card-text text-dark mt-2">course enrollment get feature  study roadmap with quiz assignments presentations, and PDF</p>
+                                    <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-outline-info btn-block">Blc</a>
+                                    <p class="text-white-50 mt-2">course enrollment get feature  study roadmap with quiz assignments presentations, and PDF</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card img-fluid  bg-light shadow">
+                            <div class="card img-fluid  bg-black shadow">
+                                <div class="bg-light rounded">
                                 <img src="{{asset('frontend/image/portal.png')}}" class="card-img-top img-decorate" alt="Student Portal">
+                                </div>
                                 <div class="card-body">
-                                    <a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-outline-primary btn-block">Student Portal</a>
-                                    <p class="card-text text-dark mt-2">Payment, result, transport, clearance, and all services are provided by the student portal.</p>
+                                    <a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-outline-info btn-block">Student Portal</a>
+                                    <p class="text-white-50 mt-2">Payment, result, transport, clearance, and all services are provided by the student portal.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card  img-fluid bg-light shadow">
+                            <div class="card  img-fluid bg-black shadow">
+                                <div class="bg-light rounded">
                                 <img src="{{asset('frontend/image/1card.png')}}" class="card-img-top img-decorate" alt="1card">
+                               </div>
                                 <div class="card-body">
-                                    <a target="_blank" href="https://1card.com.bd/" class="btn btn-outline-primary btn-block">1card</a>
-                                    <p class="card-text text-dark mt-2">Download the 1card Android app and iOS app. All services are available within this app.</p>
+                                    <a target="_blank" href="https://1card.com.bd/" class="btn btn-outline-info btn-block">1card</a>
+                                    <p class="text-white-50 mt-2">Download the 1card Android app and iOS app. All services are available within this app.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card  img-fluid  shadow">
+                            <div class="card  img-fluid bg-black shadow">
+                                <div class="bg-light rounded">
                                 <img src="{{asset('frontend/image/blue-bus-png.png')}}" class="card-img-top img-decorate" alt="Transport">
+                                </div>
                                 <div class="card-body">
-                                    <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-outline-primary btn-block">Transport</a>
-                                    <p class="card-text text-dark mt-2">Firstly apply for transport card then use transport service for several card for eachsemester </p>
+                                    <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-outline-info btn-block">Transport</a>
+                                    <p class="text-white-50 mt-2">Firstly apply for transport card then use transport service for several card for eachsemester </p>
                                 </div>
                             </div>
                         </div>
@@ -495,8 +496,8 @@
 
                </div>
 
-               <div class="container-fluid fourbg markquee">
-                <div class="row text-center">
+               {{-- <div class="container-fluid fourbg ">
+                <div class="row text-center bg-light">
 
                      <div class="col-md-3 ">
                          <img src="{{asset('frontend/image/java.png')}}" class="imgslide transition">
@@ -512,9 +513,65 @@
                            </div>
 
                  </div>
-             </div>
+             </div> --}}
+
+             <section id="academic">
+                <div class="text-center mt-5">
+                  <h2 class="text-warning p-1">Experience</h2>
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+
+                </div>
+                <p class="text-center text-light ">Gather practical experiences from each course</p>
+
+                </div>
+              <div class="container-fluid mt-5">
+                <div class="row mt-5 d-flex justify-content-center ">
+
+               <div class="col-md-3 text-center  ">
+                <div class="card p-2 bg-black custom-box img-fluid">
+                  <i class="fa-solid fa-book-open-reader iconic"></i>
+                  <div class="card-content">
+                    <h4 class="p-2 text-white"><strong>Leadership</strong></h4>
+                    <p class="text-white-50 p-2">I know how lead in the  organizational</p>
+                  </div>
+                </div>
+               </div>
 
 
+               <div class="col-md-3 text-center ">
+                <div class="card p-2 bg-black custom-box img-fluid">
+                  <i class="fa-solid fa-lightbulb iconic"></i>
+                  <div class="card-content">
+                    <h4 class="p-2">Creativity</h4>
+                    <p class="text-white-50 p-2">When Suddenly need to innovation something </p>
+                  </div>
+                </div>
+               </div>
+               <div class="col-md-3 text-center ">
+                <div class="card p-2 bg-black custom-box img-fluid">
+                  <i class="fa-solid fa-circle-info iconic"></i>
+                  <div class="card-content">
+                    <h4 class="p-2">IT Support</h4>
+                    <p class="text-white-50 p-2">Technical tool and technique thats i do daily basis</p>
+                  </div>
+                </div>
+               </div>
+               <div class="col-md-3 text-center ">
+                <div class="card p-2 bg-black custom-box img-fluid ">
+                  <i class="fa-solid fa-person-rays iconic "></i>
+                  <div class="card-content">
+                    <h4 class="p-2">Human Resource</h4>
+                    <p class="text-white-50 p-2 ">Talent,performance.innovation for each organizational</p>
+                  </div>
+                </div>
+               </div>
+
+              </div>
+              </div>
+              </section>
                <!-- <div class="container-fluid ">
                    <div class="row  text-center d-flex justify-content-center">
 
@@ -552,11 +609,112 @@
                  </div>
                </div>
                </div> -->
+
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <div class="text-center mt-5">
+                <h2 class="text-center text-light">Specialist</h2>
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
+                  <div class="divider-custom-line"></div>
+              </div>
+              </div>
+                <div class="container mt-3">
+                  <div class="row text-center">
+
+                  <div class="col-md-12 text-center ">
+                        <div class=" rounded-3 p-3 shadow-lg border-900 box">
+                          <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Web Aplication</p><br>
+                          <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Mobile Application</p><br>
+                          <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Business & Management</p><br>
+
+                        </div>
+                      </div>
+                      <div class=" text-box">
+                        <p class="smooth-text text-white-50 text-200">
+                          As a web developer, I excel in creating user-friendly interfaces and efficient code. I specialize in crafting responsive designs, optimizing performance, and leveraging emerging technologies. With a dedication to innovation and ongoing learning, I deliver impactful solutions that enhance online experiences and propel business growth.
+                        </p>
+                      </div>
+
+              </div>
+              </div>
+              <div class="container-fluid mt-5">
+                <div class="row mt-5 d-flex justify-content-center ">
+
+               <div class="col-md-3 text-center  ">
+                <div class="card p-2 bg-black custom-box img-fluid">
+                    <i class="fa-solid fa-laptop iconic fa-4x"></i>
+                  <div class="card-content">
+                    <h4 class="p-2 text-white"><strong>Web application</strong></h4>
+                    <p class="text-white-50 p-2">I know how lead in the  organizational</p>
+                  </div>
+                </div>
+               </div>
+               <div class="col-md-3 text-center ">
+                <div class="card p-2 bg-black custom-box img-fluid">
+                  <i class="fa-solid fa-mobile-screen-button iconic fa-4x"></i>
+                  <div class="card-content">
+                    <h4 class="p-2">mobile application</h4>
+                    <p class="text-white-50 p-2">When Suddenly need to innovation something </p>
+                  </div>
+                </div>
+               </div>
+               <div class="col-md-3 text-center ">
+                <div class="card p-2 bg-black custom-box img-fluid">
+                  <i class="fa-solid fa-circle-info iconic fa-4x"></i>
+                  <div class="card-content">
+                    <h4 class="p-2">Management</h4>
+                    <p class="text-white-50 p-2">Technical tool and technique thats i do daily basis</p>
+                  </div>
+                </div>
+               </div>
+               <div class="col-md-3 text-center ">
+                <div class="card p-2 bg-black custom-box img-fluid ">
+
+                  <i class="fa-solid fa-business-time iconic fa-4x"></i>
+                  <div class="card-content">
+                    <h4 class="p-2">Business</h4>
+                    <p class="text-white-50 p-2 ">Talent,performance.innovation for each organizational</p>
+                  </div>
+                </div>
+               </div>
+
+              </div>
+              </div>
+
+
+
+              <div class="container-fluid mt-5">
+                <div class="row ">
+                   <marquee class=" logos text-center mt-5 ">
+                    <img src="{{asset('frontend/image/Flutter-App.png')}}" alt="">
+                   <img src="{{asset('frontend/image/java.png')}}" alt="">
+                   <img src="{{asset('frontend/image/fire.png')}}" alt="">
+                   <img src="{{asset('frontend/image/html.png')}}" alt="">
+                   <img src="{{asset('frontend/image/css.png')}}" alt="">
+                   <img src="{{asset('frontend/image/bootstrap.png')}}" alt="">
+                   <img src="{{asset('frontend/image/js0.png')}}" alt="">
+                   <img src="{{asset('frontend/image/node.png')}}" alt="">
+                   <img src="{{asset('frontend/image/php.png')}}" alt="">
+                   <img src="{{asset('frontend/image/laravel.png')}}" alt="">
+                   <img src="{{asset('frontend/image/database.png')}}" alt="">
+                   <img src="{{asset('frontend/image/powerpoint.png')}}" alt="">
+                   <img src="{{asset('frontend/image/bigml.png')}}" alt="">
+                   <img src="{{asset('frontend/image/powerbi.png')}}" alt="">
+                   <img src="{{asset('frontend/image/excel.png')}}" alt="">
+                  </marquee>
+                  </div>
+               </div>
+
                <section id="skill" class="section-p2 ">
                   <div class="container-fluid mt-5 justify-content-evenly">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="fe-box img-fluid backgorund-color">
+                            <div class="fe-box img-fluid bg-light">
                                 <img src="{{asset('frontend/image/skill.png')}}" alt="" class="iconslide">
                                 <h3 class="btn4 text-dark p-3">Skill</h3>
                                 <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -565,14 +723,14 @@
                            </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="fe-box img-fluid  backgorund-color">
+                            <div class="fe-box img-fluid  bg-light">
                                 <img src="{{asset('frontend/image/job.png')}}" alt=""class="iconslide">
                                 <h4 class="btn2 text-dark p-3">Job Opportunity</h4>
                                 <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                            </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="fe-box img-fluid backgorund-color">
+                            <div class="fe-box img-fluid bg-light">
                                 <img src="{{asset('frontend/image/career.png')}}" alt="" class="iconslide"><br>
                                 <h3 class="btn1 text-dark p-3">Career</h3>
                                  <p  class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -581,7 +739,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 ">
-                            <div class="fe-box img-fluid backgorund-color">
+                            <div class="fe-box img-fluid bg-light">
                                 <img src="{{asset('frontend/image/inter00.png')}}" alt=""class="iconslide">
                                 <h3 class="btn3 text-dark p-3">Internship</h3>
                                 <p class="text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
