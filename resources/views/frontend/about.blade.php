@@ -5,7 +5,7 @@
 <br>
 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
     <div class="col-lg-8 align-self-end">
-        <h1 class="text-muted  font-weight-bold">Our Campus</h1>
+        <h1 class="text-success  font-weight-bold">Our Campus</h1>
     </div>
     <div class="divider-custom">
         <div class="divider-custom-line"></div>
@@ -13,7 +13,7 @@
         <div class="divider-custom-line"></div>
     </div>
     <div class="col-lg-8 align-self-baseline d-flex">
-        <p class="text-white-75 mb-5">""Daffodil International University, situated in the vibrant heart of Dhaka, Bangladesh, offers a dynamic learning environment. Nestled in the midst of cultural richness and urban energy, our campus provides students with an inspiring backdrop to pursue their academic endeavors. Explore the fusion of education and culture as you navigate your learning journey at Daffodil International University."</p>
+        <p class="text-white-50 mb-5">""Daffodil International University, situated in the vibrant heart of Dhaka, Bangladesh, offers a dynamic learning environment. Nestled in the midst of cultural richness and urban energy, our campus provides students with an inspiring backdrop to pursue their academic endeavors. Explore the fusion of education and culture as you navigate your learning journey at Daffodil International University."</p>
     </div>
     {{-- <img src="{{asset('frontend/image/diu_admission.jpg')}}" class="w-50 h-50"> --}}
     <img src="{{asset('frontend/image/ab-four-building.png')}}" class="w-50 h-60">
@@ -78,7 +78,7 @@
 
   {{-- <div class="container"> --}}
     <div class="text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
-        <h2 class="line-bottom text-center mb-4">Why Choose ITM!</h2>
+        <h2 class="line-bottom text-warning text-center mb-4">Why Choose ITM!</h2>
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
       </div>
       <br>

@@ -710,7 +710,7 @@
                   </div>
                </div>
 
-               <section id="skill" class="section-p2 ">
+               {{-- <section id="skill" class="section-p2 ">
                   <div class="container-fluid mt-5 justify-content-evenly">
                     <div class="row">
                         <div class="col-md-3">
@@ -751,90 +751,77 @@
             </div>
             </div>
 
-               </section>
+               </section> --}}
 
+               <br>
+               <br>
+               <br>
 
-
-               <div class="container">
+               <div class="container mt-5">
                 <div class="row">
-                    <div class="col-md-12">
-                        <!--<h4 class="mb-5 text-center">Information Technology &amp; Management</h4>-->
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item mb-2">
-                                <h2 class="accordion-header" id="heading1">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                        B.Sc. in Information Technology and Management (ITM)
-                                    </button>
-                                </h2>
-                                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <div class="row pt-2 pb-2 bg-light">
-                                            <div class="col-md-5">Credit Hours</div>
-                                            <div class="col-md-7">142</div>
-                                        </div>
-                                        <div class="row pt-2 pb-2 mt-2 bg-light">
-                                            <div class="col-md-5">Program Duration</div>
-                                            <div class="col-md-7">4 Years</div>
-                                        </div>
-                                        <div class="row pt-2 pb-2 mt-2 bg-light">
-                                            <div class="col-md-5">Admission Fees (Tk)</div>
-                                            <div class="col-md-7">54500</div>
-                                        </div>
-                                        <div class="row pt-2 pb-2 mt-2 bg-light">
-                                            <div class="col-md-5">Semester Cost (Tk)</div>
-                                            <div class="col-md-7">85,000</div>
-                                        </div>
-                                        <div class="row pt-2 pb-2 mt-2 bg-light">
-                                            <div class="col-md-5">Total Tuition Fees (Tk)</div>
-                                            <div class="col-md-7">509,900</div>
-                                        </div>
-                                        <div class="row pt-2 pb-2 mt-2 bg-light">
-                                            <div class="col-md-5">Total Fees (Tk)</div>
-                                            <div class="col-md-7">727,100</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Additional accordion items can be added here -->
+                  <!-- Card 1 -->
+                  <div class="col-md-4">
+                    <div class="card mb-4  p-3 bg-dark shadow">
+                      <div class="mb-4">
+                        <div class="mb-4"><img src="{{asset('frontend/image/jobfair2.png')}}" alt="Image" class="img-fluid"></div>
+                    </div>
+                      <div class="staff-body ">
+                        <h2 class="staff-name text-white">Job Fair</h2>
+                        <span class="d-block position mb-4 text-info">For all of students</span>
+                        <p class="mb-4 text-white-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+
+
+                        <div class="social">
+                          <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
+                          <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
+                          <a href="#" class="mx-2"><span class="icon-linkedin"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 2 -->
+                  <div class="col-md-4">
+                    <div class="card mb-4  p-3 bg-dark shadow" >
+                      <div class="mb-4">
+                        <div class="mb-4"><img src="{{asset('frontend/image/visite.jpg')}}" alt="Image" class="img-fluid"></div>
+                    </div>
+                      <div class="staff-body">
+                        <h2 class="staff-name text-white">Industry Visits</h2>
+                        <span class="d-block position mb-4 text-info">For all of students</span>
+                        <p class="mb-4 text-white-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <div class="social">
+                          <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
+                          <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
+                          <a href="#" class="mx-2"><span class="icon-linkedin"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card 3 -->
+                  <div class="col-md-4">
+                    <div class="card mb-4 p-3 bg-dark shadow">
+                      <div class="mb-4">
+                        <div class="mb-4"><img src="{{asset('frontend/image/internship3.png')}}" alt="Image" class="img-fluid"></div>
+                    </div>
+                      <div class="staff-body">
+                        <h2 class="staff-name text-white">Internship</h2>
+                        <span class="d-block position mb-4 text-info">For all of students</span>
+                        <p class="mb-4 text-white-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <div class="social">
+                          <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
+                          <a href="#" class="mx-2"></a>
+                          </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="container mt-5">
-                <!-- Dropdown Button -->
-                <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" id="tuitionFeesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Tuition Fees
-                  </button>
-                  <div class="dropdown-menu p-3" aria-labelledby="tuitionFeesDropdown">
-                    <div class="row pt-2 pb-2 bg-light">
-                      <div class="col-md-5">Credit Hours</div>
-                      <div class="col-md-7">142</div>
-                    </div>
-                    <div class="row pt-2 pb-2 mt-2 bg-light">
-                      <div class="col-md-5">Program Duration</div>
-                      <div class="col-md-7">4 Years</div>
-                    </div>
-                    <div class="row pt-2 pb-2 mt-2 bg-light">
-                      <div class="col-md-5">Admission Fees (Tk)</div>
-                      <div class="col-md-7">54500</div>
-                    </div>
-                    <div class="row pt-2 pb-2 mt-2 bg-light">
-                      <div class="col-md-5">Semester Cost (Tk)</div>
-                      <div class="col-md-7">85,000</div>
-                    </div>
-                    <div class="row pt-2 pb-2 mt-2 bg-light">
-                      <div class="col-md-5">Total Tuition Fees (Tk)</div>
-                      <div class="col-md-7">509,900</div>
-                    </div>
-                    <div class="row pt-2 pb-2 mt-2 bg-light">
-                      <div class="col-md-5">Total Fees (Tk)</div>
-                      <div class="col-md-7">727,100</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+
+
+
+
 
 
 @endsection

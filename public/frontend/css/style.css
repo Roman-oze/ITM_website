@@ -1221,11 +1221,10 @@ color: #ffffff;
 
 
   .footer_page{
-    /* background-image:linear-gradient(rgb(227, 214, 214),#1dd3dad3);
+    background-image:linear-gradient(rgb(227, 214, 214),#1dd3dad3);
     background-size: cover;
     background-position: center;
-    padding: 10px; */
-    background-color: #555454;
+    padding: 10px;
   }
   .club{
     padding-top: 100px;
@@ -1734,4 +1733,10 @@ border: none;
         box-shadow: rgba(57, 59, 60, 0.929) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
       }
 
+      .ftco-heading-2 {
+        font-weight: normal;
+        color: #131212;
+        margin-bottom: 40px;
+
+    }
 
