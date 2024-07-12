@@ -41,7 +41,7 @@ use Faker\Guesser\Name;
 
  Route::controller(FacultyController::class)->group(function(){
     Route::get('/faculty/create','create')->name('faculty.create');
-    Route::get('/faculty/index','index')->name('faculty.index');
+    Route::get('/admin/index','index')->name('faculty.index');
     Route::get('/faculty/member','member')->name('faculty.member');
     Route::get('/faculty/create','create')->name('faculty/create');
     Route::post('/faculty_store', 'store')->name('faculty.store');
@@ -57,10 +57,10 @@ use Faker\Guesser\Name;
 
 Route::controller(EventController::class)->group(function(){
 
-    Route::get('event_up', 'event_up')->name('event_up');
+    Route::get('/events','events')->name('events');
+    Route::get('admin/event', 'index')->name('admin.event');
     Route::get('event/create', 'create')->name('event/create');
     route::post('event_store','event_store')->name('event_store');
-    Route::get('/events','events')->name('events');
     route::get('event_show/{id}','show')->name('event_show');
     route::get('/event_edit/{id}','edit')->name('event_edit');
     route::put('event_update/{id}','event_update')->name('event_update');
@@ -72,7 +72,7 @@ Route::controller(EventController::class)->group(function(){
 
 Route::controller(RoutineController::class)->group(function(){
 
-    route::get('/routine/index','index')->name('routine.index');
+    route::get('/admin/index','index')->name('routine.index');
     route::get('/routine/create','create')->name('routine.create');
     route::post('/routine/store','store')->name('routine.store');
     route::get('/routine/edit/{id}','edit')->name('routine.edit');

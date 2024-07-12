@@ -8,10 +8,10 @@
 <div class="row gx-4 gx-lg-3 h-100 align-items-center justify-content-center text-center">
     <div class="col-lg-8 align-self-end">
         <h1 class="text-info font-weight-bold">Course  Details</h1>
-        <hr class="divider" />
+        <hr class="divider text-white" />
     </div>
-    <div class="col-lg-8 align-self-baseline d-flex">
-        <p class="text-white-75 mb-5">"Embrace your course as a journey of growth. Every lesson is a step toward unlocking your potential. Stay committed, embrace challenges, and let curiosity drive your success. Transform knowledge into expertise and let the pursuit of learning be your motivation."</p>
+    <div class="col-lg-8 align-self-baseline d-flex ">
+        <p class="text-white mb-5">"Embrace your course as a journey of growth. Every lesson is a step toward unlocking your potential. Stay committed, embrace challenges, and let curiosity drive your success. Transform knowledge into expertise and let the pursuit of learning be your motivation."</p>
 
     </div>
 
@@ -113,6 +113,7 @@
 
 
 <div class="course text-center">
+    <a href="#catagory" class="btn0">Course Catagory</a>
     <a href="#1stsemester" class="btn1">1st Semester</a>
     <a href="#2ndsemester" class="btn2">2nd Semester</a>
     <a href="#3rdsemester" class="btn3">3rd Semester</a>
@@ -129,14 +130,14 @@
 
 
 
-
+<section id="catagory"></section>
 
 <div class="container-fluid mt-5">
   <br>
   <br>
   <br>
 
-  <h2 class="dee1 bg-info text-white">Category of Courses</h2>
+  <h2 class="dee1  text-white">Category of Courses</h2>
 
 <table>
 <thead>
@@ -620,7 +621,7 @@
     </tbody>
     <tfoot>
       <tr>
-        <th colspan="3">Total Credits</th>
+        <th>Total Credits</th>
         <td>42</td>
       </tr>
     </tfoot>
@@ -808,10 +809,12 @@
 <br>
 <br>
 
+</section>
+
 
 <section id="1stsemester">
     <h2 class="fst">1st Year</h2>
-    <h4 class=" text-center text-muted">1st Semester</h4>
+    <h4 class=" text-center ">1st Semester</h4>
 
   <table>
       <thead>
@@ -868,7 +871,7 @@
           </tr>
       </tbody>
       <tfoot>
-          <tr>
+          <tr class="text-white">
               <td colspan="2">Total Credits</td>
               <td colspan="1">19</td>
           </tr>
@@ -881,7 +884,7 @@
 
 
   <h2 class="fst">1st Year</h2>
-  <h4 class=" text-center text-muted">2nd Semester</h4>
+  <h4 class=" text-center">2nd Semester</h4>
   <table>
       <thead>
           <tr>
@@ -937,7 +940,7 @@
           </tr>
       </tbody>
       <tfoot>
-          <tr>
+          <tr class="text-white">
               <td colspan="2">Total Credits</td>
               <td colspan="1">19</td>
           </tr>
@@ -948,7 +951,7 @@
 
 
   <h2 class="fst">2nd Year</h2>
-  <h4 class=" text-center text-muted">3rd Semester</h4>
+  <h4 class=" text-center ">3rd Semester</h4>
 
   <table>
       <thead>
@@ -1005,7 +1008,7 @@
           </tr>
       </tbody>
       <tfoot>
-          <tr>
+          <tr class="text-white">
               <td colspan="2">Total Credits</td>
               <td colspan="1">17</td>
           </tr>
@@ -1016,7 +1019,7 @@
 
 
   <h2 class="fst">2nd Year</h2>
-  <h4 class=" text-center text-muted">4th Semester</h4>
+  <h4 class=" text-center ">4th Semester</h4>
 
   <table>
       <thead>
@@ -1079,7 +1082,7 @@
           </tr>
       </tbody>
       <tfoot>
-          <tr>
+          <tr class="text-white">
               <td colspan="2">Total Credits</td>
               <td colspan="1">20</td>
           </tr>
@@ -1088,7 +1091,7 @@
 </section>
 <section id="5thsemester">
   <h2 class="fst">3rd Year</h2>
-  <h4 class=" text-center text-muted">5th Semester</h4>
+  <h4 class=" text-center ">5th Semester</h4>
 
   <table>
       <thead>
@@ -1152,7 +1155,7 @@
 
       </tbody>
       <tfoot>
-          <tr>
+          <tr class="text-white">
               <td colspan="2">Total Credits</td>
               <td colspan="1">20</td>
           </tr>
@@ -1161,7 +1164,7 @@
 </section>
 <section id="6thsemester">
   <h2 class="fst">3rd Year</h2>
-  <h4 class=" text-center text-muted">6th Semester</h4>
+  <h4 class=" text-center ">6th Semester</h4>
 
 
   <table>
@@ -1226,7 +1229,7 @@
 
       </tbody>
       <tfoot>
-          <tr>
+          <tr class="text-white">
               <td colspan="2">Total Credits</td>
               <td colspan="1">20</td>
           </tr>
@@ -1235,7 +1238,7 @@
 </section>
 <section id="7thsemester">
   <h2 class="fst">4th Year</h2>
-  <h4 class=" text-center text-muted">7th Semester</h4>
+  <h4 class=" text-center ">7th Semester</h4>
 
 
   <table>
@@ -1288,7 +1291,7 @@
 
       </tbody>
       <tfoot>
-          <tr>
+          <tr class="text-white">
               <td colspan="2">Total Credits</td>
               <td colspan="1">15</td>
           </tr>
@@ -1297,7 +1300,7 @@
 </section>
 <section id="8thsemester">
   <h2 class="fst">4th Year</h2>
-  <h4 class=" text-center text-muted">8th Semester</h4>
+  <h4 class=" text-center ">8th Semester</h4>
 
 
   <table>
@@ -1333,7 +1336,7 @@
 
       </tbody>
       <tfoot>
-          <tr>
+          <tr class="text-white">
               <td colspan="2">Total Credits</td>
               <td colspan="1">12</td>
           </tr>

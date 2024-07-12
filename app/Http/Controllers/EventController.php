@@ -16,12 +16,17 @@ class EventController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function event_up(){
+//  frontend view file
+    public function events(){
+        $event = DB::table('events')->get();
+        return view('admin.event.events',compact('event'));
+    }
+
+    // admin dashvboard event file
+    public function index(){
         $events = DB::table('events')->get();
         return view('admin.event.index',compact('events'));
     }
-
-
 
     public function create()
     {
@@ -113,8 +118,5 @@ class EventController extends Controller
 
 
 
-    public function events(){
-        $event = DB::table('events')->get();
-        return view('admin.event.events',compact('event'));
-    }
+
 }

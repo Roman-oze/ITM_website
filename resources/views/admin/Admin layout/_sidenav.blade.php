@@ -33,7 +33,7 @@
 
                     <a  href="{{route('routine.create')}}" class="linked "><i class="fa-regular fa-calendar-check text-white" ></i> Routine</a><br>
 
-                    <a  href="{{route('event_up')}}" class="linked"><i class="fa-solid fa-calendar-days text-white"></i> Events</a><br>
+                    <a  href="{{route('admin.event')}}" class="linked"><i class="fa-solid fa-calendar-days text-white"></i> Events</a><br>
 
                     <a  href="{{route('faculty.index')}}" class="linked"><i class="fa-solid fa-user-graduate text-white"></i> Faculty</a><br>
 

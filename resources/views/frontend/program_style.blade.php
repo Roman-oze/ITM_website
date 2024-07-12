@@ -1,4 +1,21 @@
 <style>
+
+    p{
+        color: white;
+    }
+    h1{
+        color: white;
+    }
+    h2{
+        color: white;
+    }
+    h3{
+        color: white;
+    }
+    additive-symbols:
+    h5{
+        color: white;
+    }
     .fst{
       text-align: center;
       border-radius:50px;
@@ -57,9 +74,10 @@ table{
 }
 .dee1{
     text-align: center;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(232, 229, 229);
     width: 50%;
     display: block;
+    color: #ffffff;
     margin: auto;
 }
 .course{
@@ -69,6 +87,10 @@ table{
 }
 a{
   text-decoration: none;
+
+}
+tr{
+    color: rgb(0, 0, 0);
 }
 
 .btn1{
@@ -76,6 +98,13 @@ padding:10px;
 border-radius: 24px;
 border: none;
 background-color: rgb(79, 218, 218);
+color: rgb(0, 0, 0);
+cursor: pointer;
+}
+.btn0{
+padding:10px;
+border-radius: 24px;
+border: 1px rgb(252, 253, 253) solid ;
 color: rgb(255, 254, 254);
 cursor: pointer;
 }
@@ -84,7 +113,7 @@ padding:10px;
 border-radius: 24px;
 border: none;
 background-color: #81ee8a;
-color: rgb(255, 254, 254);
+color: rgb(0, 0, 0);
 cursor: pointer;
 }
 .btn3{
@@ -92,7 +121,7 @@ padding:10px;
 border-radius: 24px;
 border: none;
 background-color: #f1b25f;
-color: rgb(255, 254, 254);
+color: rgb(0, 0, 0);
 cursor: pointer;
 }
 .btn4{
@@ -100,7 +129,7 @@ padding:10px;
 border-radius: 24px;
 border: none;
 background-color: rgb(79, 218, 218);
-color: rgb(255, 254, 254);
+color: rgb(0, 0, 0);
 
 cursor: pointer;
 }
@@ -109,7 +138,7 @@ padding:10px;
 border-radius: 24px;
 border: none;
 background-color: #81ee8a;
-color: rgb(255, 254, 254);
+color: rgb(0, 0, 0);
 cursor: pointer;
 }
 .btn6{
@@ -117,7 +146,7 @@ padding:10px;
 border-radius: 24px;
 border: none;
 background-color: #f1b25f;
-color: rgb(255, 254, 254);
+color: rgb(0, 0, 0);
 
 cursor: pointer;
 }
@@ -126,7 +155,7 @@ padding:10px;
 border-radius: 24px;
 border: none;
 background-color: rgb(79, 218, 218);
-color: rgb(255, 254, 254);
+color: rgb(0, 0, 0);
 cursor: pointer;
 }
 .btn8{
@@ -134,7 +163,7 @@ padding:10px;
 border-radius: 24px;
 border: none;
 background-color: #81ee8a;
-color: rgb(255, 254, 254);
+color: rgb(0, 0, 0);
 
 cursor: pointer;
 
@@ -149,7 +178,7 @@ cursor: pointer;
             text-align: center;
         }
 
-       
+
         /* Media queries for responsiveness */
         @media only screen and (max-width: 600px) {
             .course a {
@@ -158,5 +187,7 @@ cursor: pointer;
                 margin: 5px 0;
             }
         }
-
+h2{
+    color: white;
+}
   </style>

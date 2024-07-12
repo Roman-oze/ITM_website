@@ -826,8 +826,7 @@ object-position: center;
   margin:  auto;
   padding: 10px;
   color: white;
-  border-top-right-radius:24px ;
-  border-bottom-right-radius: 24px;
+  border-radius: 24px;
  text-align: start;
  background-color:#42cfeb;
 
@@ -839,8 +838,7 @@ object-position: center;
   padding: 10px;
   font-size: medium;
   color: white;
-  border-top-right-radius:24px ;
-  border-bottom-right-radius: 24px;
+  border-radius: 24px;
  text-align: start;
  background-color: #e69410;
 
@@ -851,8 +849,7 @@ object-position: center;
   margin: auto;
   padding: 10px;
   color: white;
-  border-top-right-radius:24px ;
-  border-bottom-right-radius: 24px;
+  border-radius: 24px;
  text-align: start;
  background-color: #ed1b36;
 }
@@ -1224,11 +1221,11 @@ color: #ffffff;
 
 
   .footer_page{
-    background-image:linear-gradient(rgb(240, 240, 240),#1dd3dad3);
+    /* background-image:linear-gradient(rgb(227, 214, 214),#1dd3dad3);
     background-size: cover;
     background-position: center;
-    height: 75vh;
-    padding: 10px;
+    padding: 10px; */
+    background-color: #555454;
   }
   .club{
     padding-top: 100px;
@@ -1690,17 +1687,17 @@ border: none;
     padding: 20px;
  }
  .covepage{
-        border-radius: 40% 0% 40% ;
+          border-radius: 40% 0% 40% ;
           background-color:#191b1b;
-          box-shadow:  rgb(7, 185, 126) 0px 3px 8px;
+          box-shadow:  rgb(7, 185, 179) 0px 3px 8px;
 
 
       }
  .aboardpage{
         border-radius: 50px ;
-    padding: 20px;
-          background-color:#1a1d1d;
-          box-shadow:  rgb(7, 185, 126) 0px 3px 8px;
+        padding: 20px;
+        background-color:#1a1d1d;
+        box-shadow:  rgb(7, 185, 126) 0px 3px 8px;
 
 
       }
@@ -1734,7 +1731,7 @@ border: none;
       }
       .logos{
         background-color:#161414f3;
-        box-shadow: rgba(11, 145, 211, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        box-shadow: rgba(57, 59, 60, 0.929) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
       }
 
 

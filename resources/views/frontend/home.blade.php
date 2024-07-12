@@ -225,6 +225,7 @@
 
                 <h2 class="mb-4 text-info">Information Technology and Management (ITM)</h4>
 
+
                     <p class="text-white-50"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
 
 
@@ -749,7 +750,91 @@
 
             </div>
             </div>
+
                </section>
+
+
+
+               <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--<h4 class="mb-5 text-center">Information Technology &amp; Management</h4>-->
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item mb-2">
+                                <h2 class="accordion-header" id="heading1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        B.Sc. in Information Technology and Management (ITM)
+                                    </button>
+                                </h2>
+                                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="row pt-2 pb-2 bg-light">
+                                            <div class="col-md-5">Credit Hours</div>
+                                            <div class="col-md-7">142</div>
+                                        </div>
+                                        <div class="row pt-2 pb-2 mt-2 bg-light">
+                                            <div class="col-md-5">Program Duration</div>
+                                            <div class="col-md-7">4 Years</div>
+                                        </div>
+                                        <div class="row pt-2 pb-2 mt-2 bg-light">
+                                            <div class="col-md-5">Admission Fees (Tk)</div>
+                                            <div class="col-md-7">54500</div>
+                                        </div>
+                                        <div class="row pt-2 pb-2 mt-2 bg-light">
+                                            <div class="col-md-5">Semester Cost (Tk)</div>
+                                            <div class="col-md-7">85,000</div>
+                                        </div>
+                                        <div class="row pt-2 pb-2 mt-2 bg-light">
+                                            <div class="col-md-5">Total Tuition Fees (Tk)</div>
+                                            <div class="col-md-7">509,900</div>
+                                        </div>
+                                        <div class="row pt-2 pb-2 mt-2 bg-light">
+                                            <div class="col-md-5">Total Fees (Tk)</div>
+                                            <div class="col-md-7">727,100</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Additional accordion items can be added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <!-- Dropdown Button -->
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" id="tuitionFeesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tuition Fees
+                  </button>
+                  <div class="dropdown-menu p-3" aria-labelledby="tuitionFeesDropdown">
+                    <div class="row pt-2 pb-2 bg-light">
+                      <div class="col-md-5">Credit Hours</div>
+                      <div class="col-md-7">142</div>
+                    </div>
+                    <div class="row pt-2 pb-2 mt-2 bg-light">
+                      <div class="col-md-5">Program Duration</div>
+                      <div class="col-md-7">4 Years</div>
+                    </div>
+                    <div class="row pt-2 pb-2 mt-2 bg-light">
+                      <div class="col-md-5">Admission Fees (Tk)</div>
+                      <div class="col-md-7">54500</div>
+                    </div>
+                    <div class="row pt-2 pb-2 mt-2 bg-light">
+                      <div class="col-md-5">Semester Cost (Tk)</div>
+                      <div class="col-md-7">85,000</div>
+                    </div>
+                    <div class="row pt-2 pb-2 mt-2 bg-light">
+                      <div class="col-md-5">Total Tuition Fees (Tk)</div>
+                      <div class="col-md-7">509,900</div>
+                    </div>
+                    <div class="row pt-2 pb-2 mt-2 bg-light">
+                      <div class="col-md-5">Total Fees (Tk)</div>
+                      <div class="col-md-7">727,100</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 
 @endsection

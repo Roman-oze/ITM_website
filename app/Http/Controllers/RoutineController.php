@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Routine;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class RoutineController extends Controller
 {
@@ -93,4 +94,20 @@ class RoutineController extends Controller
 
 
     }
+
+
+
+    // Mail::send('emails.routineCreate',$routine->toArray(),
+    // function($message){
+    //     $message->to('rumuislam202@gmail.com','routine')->subject('New Routine Created');
+    // });
+
+
+
+
+
+
+
+
+
 }
