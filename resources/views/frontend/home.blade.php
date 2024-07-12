@@ -149,7 +149,7 @@
 
             <div class="col-md-3 ">
             <div class="custom-box">
-                <img src="{{asset('frontend/image/owner.png')}}" alt="" class="img-fluid"><br>
+                <img src="{{asset('frontend/image/business.png')}}" alt="" class="img-fluid"><br>
                 <h4 style="text-white">Entrepreneur</h4>
                     <a href="#" class="btn btn-outline-light">view</a>
               </div>
