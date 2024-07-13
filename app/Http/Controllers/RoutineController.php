@@ -14,11 +14,12 @@ class RoutineController extends Controller
     /**
      * Display a listing of the resource.
      */
-    // public function index()
-    // {
+    public function routine()
+    {
     //    $routines = DB::table('routines')->get();
     //    return view('routine.index',compact('routines'));
-    // }
+    return "this is routine page";
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -26,7 +27,7 @@ class RoutineController extends Controller
     public function create()
     {
         $routines = DB::table('routines')->get();
-        return view('admin.routine.create',compact('routines'));
+        return view('routine.create',compact('routines'));
     }
 
     /**
@@ -65,7 +66,7 @@ class RoutineController extends Controller
     public function show(string $id)
     {
        $routine =DB::table('routines')->where('id',$id)->first();
-       return view('admin.routine.show',compact('routine'));
+       return view('routine.show',compact('routine'));
     }
 
     /**
@@ -74,7 +75,7 @@ class RoutineController extends Controller
     public function edit(string $id)
     {
         $routine = DB::table('routines')->where('id',$id)->first();
-        return view('admin.routine.edit',compact('routine'));
+        return view('routine.edit',compact('routine'));
     }
 
     /**

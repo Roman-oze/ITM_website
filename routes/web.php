@@ -40,9 +40,10 @@ use Faker\Guesser\Name;
 //  });
 
  Route::controller(FacultyController::class)->group(function(){
+
+    Route::get('/faculty/member','member')->name('faculty.member');
     Route::get('/faculty/create','create')->name('faculty.create');
     Route::get('/faculty/index','index')->name('faculty.index');
-    Route::get('/faculty/member','member')->name('faculty.member');
     Route::get('/faculty/create','create')->name('faculty/create');
     Route::post('/faculty_store', 'store')->name('faculty.store');
     Route::get('/faculty_edit/{id}', 'edit')->name('faculty_edit');
@@ -72,7 +73,7 @@ Route::controller(EventController::class)->group(function(){
 
 Route::controller(RoutineController::class)->group(function(){
 
-    route::get('/admin/index','index')->name('routine.index');
+    route::get('/semester/routine','routine')->name('routine');
     route::get('/routine/create','create')->name('routine.create');
     route::post('/routine/store','store')->name('routine.store');
     route::get('/routine/edit/{id}','edit')->name('routine.edit');
