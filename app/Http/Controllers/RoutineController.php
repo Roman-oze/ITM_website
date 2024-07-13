@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Routine;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
+
 
 class RoutineController extends Controller
 {
@@ -33,7 +35,7 @@ class RoutineController extends Controller
     public function store(Request $request)
     {
 
-        $fileName = time().'-itm-routine'.$request->file('file')->getClientOriginalExtension();
+        $fileName = time().'.'.$request->file('file')->getClientOriginalExtension();
         $request->file('file')->move('routine',$fileName);
 
         $data ['file'] = 'routine/'.$fileName;
@@ -41,7 +43,7 @@ class RoutineController extends Controller
         $data ['date'] = $request->date;
 
         DB::table('routines')->insert($data);
-        return redirect()->route('admin.routine.create');
+        return redirect()->route('routine.create');
 
         // dd(DB::table('routines')->get());
         //
@@ -70,7 +72,7 @@ class RoutineController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $fileName = time().'-itm-routine'.$request->file('file')->getClientOriginalExtension();
+        $fileName = time().'.'.$request->file('file')->getClientOriginalExtension();
         $request->file('file')->move('routine',$fileName);
 
         $data ['file'] = 'routine/'.$fileName;
@@ -81,7 +83,7 @@ class RoutineController extends Controller
 
         DB::table('events')->where('id',$id)->update($data);
 
-        return redirect()->route('admin.routine.create')->with('success','routine update Successfully');
+        return redirect()->route('routine.create')->with('success','routine update Successfully');
     }
 
     /**
@@ -103,7 +105,9 @@ class RoutineController extends Controller
     // });
 
 
-
+public function download(Request $request,$file){
+   return response()->download(('routine/'.$file));
+}
 
 
 

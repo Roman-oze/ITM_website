@@ -78,6 +78,7 @@ Route::controller(RoutineController::class)->group(function(){
     route::get('/routine/edit/{id}','edit')->name('routine.edit');
     route::put('/routine/update/{id}','update')->name('routine.update');
     route::delete('/routine/delete/{id}','destroy')->name('routine.delete');
+    route::get('/download{file}','download')->name('download');
 
 });
 

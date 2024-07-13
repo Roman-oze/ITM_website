@@ -22,7 +22,7 @@
                         <p class="mt-2 btn btn-outline-info ">Drag and Drop files here</p>
                     </div>
                     <br>
-                    
+
                     <div class="mb-3 btn btn-outline-info text-white">
                     <input type="radio" id="" name="type"  value="spring">
                       <label for="" class="text-dark"><strong>Spring</strong></label>
@@ -61,9 +61,9 @@
         <tbody class="text-center">
             <thead class="text-center">
             <tr >
-                <th class="text-dark">File</th>
-                <th class="text-dark">Type</th>
+                <th class="text-dark">Semester</th>
                 <th class="text-dark">Date</th>
+                <th class="text-dark">Details</th>
                 <th class="text-dark">Action</th>
             </tr>
         </thead>
@@ -71,9 +71,12 @@
 
             @foreach($routines as $routine)
 
-        <td><img src="{{ asset($routine->file) }}" class="text-dark"  width="50" height="50" ></td>
+        {{-- <td class="text-dark">{{($routine->file) }}</td> --}}
         <td class="text-dark">{{$routine->type}}</td>
         <td class="text-dark">{{$routine->date}}</td>
+        <td class="text-dark">{{$routine->file}}</td>
+        <td class="text-dark"><a href="" class="btn btn-outline-dark">View</a></td>
+        <td class="text-dark"><a href="{{url('/download',$routine->file)}}" class="btn btn-outline-success">download</a>
 
         <td class="d-flex justify-content-evenly">
 

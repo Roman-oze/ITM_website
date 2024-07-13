@@ -54,10 +54,11 @@
             border-bottom-left-radius: 24px;
             border-top-left-radius:50px;
             border-bottom-right-radius: 24px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(234, 222, 222, 0.1);
+            background-color: #71abd1
             overflow: hidden;
-            max-width: 300px;
-            width: 100%;
+
+            max-width: 330px;
             transition: transform 0.3s;
             display: block;
             margin: auto;
@@ -106,9 +107,9 @@
         background-color: #3498db;
      text-align: center;
         color: #fff;
-        font-size: larger;
         font-family: Georgia, 'Times New Roman', Times, serif;
         border-radius: 10px;
+
         }
         .icon{
           height: 2.5rem;
@@ -126,12 +127,12 @@
         }
         .icon1{
           font-size:x-large;
-          color: rgb(0, 0, 0);
+          color: rgb(218, 213, 213);
 
         }
         .icon1:hover{
           font-size:x-large;
-          color: rgb(51, 38, 233);
+          color: rgb(12, 171, 177);
         }
   .circular{
     margin-bottom: 3rem;
@@ -149,5 +150,14 @@ border: 3px solid black;
        .circular:hover {
             transform: scale(1.05);
         }
+
+
+        .imgslide{
+
+            height: 400px;
+            width: 300px;
+            border-radius: 24px;
+
+}
 
   </style>

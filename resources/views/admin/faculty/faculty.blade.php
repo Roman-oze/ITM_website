@@ -43,13 +43,28 @@
         </div>
       </div>
     </div> --}}
-{{--  --}}
+
     <br>
 
-    <div class="container">
+    {{-- <div class="container">
 
         <div class="row ">
-            <div class="col-md-12">
+            <div class="col-md-6">
+              <div class="faculty-card1">
+                  <img src="{{asset('frontend/image/teacher/male.png')}}" class="card-img-top" alt="Circular Image">
+                  <div class="faculty-card-content">
+                      <div class="head"><p> Dean of ITM  Department</p></div>
+                      <h2>Bimul chandra Das</h2>
+                      <h5>Assistant Professor </h5>
+                      <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon1"></i></a>
+                      <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>
+                      <a href="nusrat.swe@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
+                      <a href="+8801847334996"><i class="fa-solid fa-square-phone icon1"></i></a>
+
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-6">
               <div class="faculty-card1">
                   <img src="{{asset('frontend/image/teacher/male.png')}}" class="card-img-top" alt="Circular Image">
                   <div class="faculty-card-content">
@@ -65,20 +80,35 @@
               </div>
             </div>
           </div>
-    </div>
+    </div> --}}
     <br>
     <br>
     <br>
-    <div class="container">
+    <div class="container mt-5">
 
-        <div class="row ">
-            <div class="col-md-12">
-              <div class="faculty-card1">
+        <div class="row d-flex justify-content-evenly">
+            <div class="col-md-6 ">
+                <div class="faculty-card1 custom-box ">
+                    <img src="{{asset('frontend/image/teacher/bimul1.png')}}" class="card-img-top " alt="Circular Image">
+                    <div class="faculty-card-content">
+                        <div class="head"><p> Dean of ITM  Department</p></div>
+                        <h4 class="text-white">Dr Bimul chandra Das</h4>
+                        <h5 class="text-white-50">Associate Dean</h5>
+                        <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon1"></i></a>
+                        <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>
+                        <a href="nusrat.swe@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
+                        <a href="+8801847334996"><i class="fa-solid fa-square-phone icon1"></i></a>
+
+                    </div>
+                </div>
+              </div>
+            <div class="col-md-6">
+              <div class="faculty-card1 custom-box ">
                   <img src="{{asset('frontend/image/teacher/nusratjahan.png')}}" class="card-img-top" alt="Circular Image">
                   <div class="faculty-card-content">
                       <div class="head"><p> Head of ITM  Department</p></div>
-                      <h2>Ms. Nusrat Jahan</h2>
-                      <h5>Assistant Professor </h5>
+                      <h4 class="text-white">Ms. Nusrat Jahan</h4>
+                      <h5 class="text-white-50">Assistant Professor </h5>
                       <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon1"></i></a>
                       <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>
                       <a href="nusrat.swe@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
@@ -87,10 +117,14 @@
                   </div>
               </div>
             </div>
+
           </div>
     </div>
 
-
+<br>
+<br>
+<br>
+<br>
     <!-- Second Line: Three Cards -->
     <div class="container mt-5">
     <div class="row">
@@ -101,12 +135,14 @@
             <div class="circular">
                 <img src="{{ asset($teacher->image) }}" class="mx-auto rounded-circle" alt="Circular Image">
                 <br>
-                <h4 class="p-2 text-muted">{{$teacher->name}}</h4>
-                <p class="text-muted">{{$teacher->designation}}</p>
-                    <a href="{{$teacher->fb}}"><i class="fa-brands fa-facebook icon1"></i></a>
-                    <a href="{{$teacher->linked}}"><i class="fa-brands fa-linkedin icon1"></i></a>
-                    <a href="{{$teacher->email}}"><i class="fa-solid fa-envelope icon1"></i></a>
-                    <a href="{{$teacher->phone}}"><i class="fa-solid fa-square-phone icon1"></i></a>
+                <h4 class="p-2 text-info">{{$teacher->name}}</h4>
+                <p class="text-white">{{$teacher->designation}}</p>
+                <div class="">
+                    <a href="{{$teacher->fb}}" class="p-2"><i class="fa-brands fa-facebook icon1"></i></a>
+                    <a href="{{$teacher->linked}}" class="p-2"><i class="fa-brands fa-linkedin icon1"></i></a>
+                    <a href="mailto:{{$teacher->email}}" class="p-2"><i class="fa-solid fa-envelope icon1"></i></a>
+                    <a href="{{$teacher->phone}}" class="p-2"><i class="fa-solid fa-square-phone icon1"></i></a>
+            </div>
             </div>
 
 
@@ -179,6 +215,33 @@
       </div>
   </div>
   <br> --}}
+
+
+<div class="mt-5 text-center">
+    <h1 class="text-center border-1 p-2 bg-white text-dark">Offices of the Department</h1>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body bg-dark">
+            <img src="{{ asset($teacher->image) }}" class="mx-auto img-fluid mb-3" alt="Circular Image">
+            <h4 class="text-white">{{$teacher->name}}</h4>
+            <p class="text-white">{{$teacher->designation}}</p>
+            <div class="mt-2">
+              <a href="{{$teacher->fb}}" class="text-white"><i class="fa-brands fa-facebook icon1"></i></a>
+              <a href="{{$teacher->linked}}" class="text-white"><i class="fa-brands fa-linkedin icon1"></i></a>
+              <a href="mailto:{{$teacher->email}}" class="text-white"><i class="fa-solid fa-envelope icon1"></i></a>
+              <a href="tel:{{$teacher->phone}}" class="text-white"><i class="fa-solid fa-square-phone icon1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <br>
   <br>
 

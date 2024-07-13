@@ -141,6 +141,6 @@ class FacultyController extends Controller
     public function destroy(string $id)
     {
         DB::table('teachers')->where('teacher_id',$id)->delete();
-        return redirect('faculty.index');
+        return redirect()->back();
     }
 }
