@@ -133,7 +133,9 @@
 
         <div class="col-md-4 ">
             <div class="circular">
+                <div class="img-bg">
                 <img src="{{ asset($teacher->image) }}" class="mx-auto rounded-circle" alt="Circular Image">
+                </div>
                 <br>
                 <h4 class="p-2 text-info">{{$teacher->name}}</h4>
                 <p class="text-white">{{$teacher->designation}}</p>
@@ -218,7 +220,47 @@
 
 
 <div class="mt-5 text-center">
-    <h1 class="text-center border-1 p-2 bg-white text-dark">Offices of the Department</h1>
+    <h1 class="text-center border-1 p-2 bg-white text-info">Contractual Faculty</h1>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body bg-dark">
+
+            <img src="{{asset('frontend/image/teacher/female.jpg')}}" class="mx-auto img-fluid mb-3" alt="Circular Image">
+            <h4 class="text-white">name:</h4>
+            <p class="text-white">{{$teacher->designation}}</p>
+            <div class="mt-2">
+              <a href="{{$teacher->fb}}" class="text-white"><i class="fa-brands fa-facebook icon1"></i></a>
+              <a href="{{$teacher->linked}}" class="text-white"><i class="fa-brands fa-linkedin icon1"></i></a>
+              <a href="mailto:{{$teacher->email}}" class="text-white"><i class="fa-solid fa-envelope icon1"></i></a>
+              <a href="tel:{{$teacher->phone}}" class="text-white"><i class="fa-solid fa-square-phone icon1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body bg-dark">
+
+            <img src="{{asset('frontend/image/teacher/female.jpg')}}" class="mx-auto img-fluid mb-3" alt="Circular Image">
+            <h4 class="text-white">name:</h4>
+            <p class="text-white">{{$teacher->designation}}</p>
+            <div class="mt-2">
+              <a href="{{$teacher->fb}}" class="text-white"><i class="fa-brands fa-facebook icon1"></i></a>
+              <a href="{{$teacher->linked}}" class="text-white"><i class="fa-brands fa-linkedin icon1"></i></a>
+              <a href="mailto:{{$teacher->email}}" class="text-white"><i class="fa-solid fa-envelope icon1"></i></a>
+              <a href="tel:{{$teacher->phone}}" class="text-white"><i class="fa-solid fa-square-phone icon1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="mt-5 text-center">
+    <h1 class="text-center border-1 p-2 bg-white text-dark">Offices Stafft</h1>
 </div>
 
 <div class="container mt-5">

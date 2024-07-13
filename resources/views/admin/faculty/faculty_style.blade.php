@@ -138,19 +138,11 @@
     margin-bottom: 3rem;
     text-align: center;
     transition: transform 0.3s;
-
        }
-  .circular img{
-    width: 14rem;
-    height: 14rem;
-    /* border: 0.5rem solid rgba(0, 0, 0, 0.1); */
-border: 3px solid black;
 
-       }
        .circular:hover {
             transform: scale(1.05);
         }
-
 
         .imgslide{
 

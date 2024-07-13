@@ -39,7 +39,7 @@
 
                     <a  href="{{route('index')}}" class="linked"><i class="fa-solid fa-book-open  5rem text-white"></i> Students</a> <br>
 
-                    <a  href="{{route('faculty.index')}}" class="linked"><i class="fa-solid fa-certificate text-white"></i> Scholarship</a><br>
+                    <a  href="" class="linked"><i class="fa-solid fa-certificate text-white"></i> Scholarship</a><br>
 
 
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

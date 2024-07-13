@@ -34,19 +34,29 @@ class RoutineController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate the file input
+        $request->validate([
+            'file' => 'required|mimes:pdf|max:2048',
+            'type' => 'required|string',
+            'date' => 'required|date',
+        ]);
 
-        $fileName = time().'.'.$request->file('file')->getClientOriginalExtension();
-        $request->file('file')->move('routine',$fileName);
+        // Generate a new file name
+        $fileName = time() . '.' . $request->file('file')->getClientOriginalExtension();
 
-        $data ['file'] = 'routine/'.$fileName;
-        $data ['type'] = $request->type;
-        $data ['date'] = $request->date;
+        // Move the file to the 'routine' directory
+        $request->file('file')->move(public_path('routine'), $fileName);
 
+        // Prepare data for insertion
+        $data['file'] = 'routine/' . $fileName;
+        $data['type'] = $request->type;
+        $data['date'] = $request->date;
+
+        // Insert data into the database
         DB::table('routines')->insert($data);
-        return redirect()->route('routine.create');
 
-        // dd(DB::table('routines')->get());
-        //
+        // Redirect to the create routine route
+        return redirect()->route('routine.create');
     }
 
     /**
@@ -105,10 +115,11 @@ class RoutineController extends Controller
     // });
 
 
-public function download(Request $request,$file){
-   return response()->download(('routine/'.$file));
-}
-
+    public function download(Request $request, $file)
+    {
+        $path = storage_path('routine/'.$file);
+        return response()->download($path);
+    }
 
 
 

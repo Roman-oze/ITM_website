@@ -65,6 +65,7 @@
                 <th class="text-dark">Date</th>
                 <th class="text-dark">Details</th>
                 <th class="text-dark">Action</th>
+                
             </tr>
         </thead>
         <tbody class="text-center">
@@ -76,7 +77,7 @@
         <td class="text-dark">{{$routine->date}}</td>
         <td class="text-dark">{{$routine->file}}</td>
         <td class="text-dark"><a href="" class="btn btn-outline-dark">View</a></td>
-        <td class="text-dark"><a href="{{url('/download',$routine->file)}}" class="btn btn-outline-success">download</a>
+        <td class="text-dark"><a href="{{url('/download',$routine->file)}}" ><i class="fa-solid fa-circle-down conic fa-3x"></i></a>
 
         <td class="d-flex justify-content-evenly">
 

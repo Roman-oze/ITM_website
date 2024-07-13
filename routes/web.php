@@ -41,7 +41,7 @@ use Faker\Guesser\Name;
 
  Route::controller(FacultyController::class)->group(function(){
     Route::get('/faculty/create','create')->name('faculty.create');
-    Route::get('/admin/index','index')->name('faculty.index');
+    Route::get('/faculty/index','index')->name('faculty.index');
     Route::get('/faculty/member','member')->name('faculty.member');
     Route::get('/faculty/create','create')->name('faculty/create');
     Route::post('/faculty_store', 'store')->name('faculty.store');
@@ -78,7 +78,7 @@ Route::controller(RoutineController::class)->group(function(){
     route::get('/routine/edit/{id}','edit')->name('routine.edit');
     route::put('/routine/update/{id}','update')->name('routine.update');
     route::delete('/routine/delete/{id}','destroy')->name('routine.delete');
-    route::get('/download{file}','download')->name('download');
+    route::get('routine/download/{id}','download')->name('download');
 
 });
 

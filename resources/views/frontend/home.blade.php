@@ -229,7 +229,7 @@
                     <p class="text-white-50"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
 
 
-                        <a target="_blank" class="read" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List<i class="fa-solid fa-download iconic fa-lg"></i></a>
+                        <a target="_blank" class="read" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List<i class="fa-solid fa-circle-down conic fa-lg"></i></a>
                         <br>
                    <div class="fb">
                       <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
@@ -761,7 +761,7 @@
                 <div class="row">
                   <!-- Card 1 -->
                   <div class="col-md-4">
-                    <div class="card mb-4  p-3 bg-dark shadow">
+                    <div class="card mb-4  p-3 bg-black shadow">
                       <div class="mb-4">
                         <div class="mb-4"><img src="{{asset('frontend/image/jobfair2.png')}}" alt="Image" class="img-fluid"></div>
                     </div>
@@ -781,7 +781,7 @@
                   </div>
                   <!-- Card 2 -->
                   <div class="col-md-4">
-                    <div class="card mb-4  p-3 bg-dark shadow" >
+                    <div class="card mb-4  p-3 bg-black shadow" >
                       <div class="mb-4">
                         <div class="mb-4"><img src="{{asset('frontend/image/visite.jpg')}}" alt="Image" class="img-fluid"></div>
                     </div>
@@ -799,7 +799,7 @@
                   </div>
                   <!-- Card 3 -->
                   <div class="col-md-4">
-                    <div class="card mb-4 p-3 bg-dark shadow">
+                    <div class="card mb-4 p-3 bg-black shadow">
                       <div class="mb-4">
                         <div class="mb-4"><img src="{{asset('frontend/image/internship3.png')}}" alt="Image" class="img-fluid"></div>
                     </div>
@@ -816,9 +816,46 @@
                 </div>
             </div>
         </div>
+        <div class="container d-flex justify-content-center mt-5">
+            <!-- Dropdown Button -->
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="tuitionFeesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tuition Fees
+              </button>
+              <div class="dropdown-menu p-3" aria-labelledby="tuitionFeesDropdown">
+                <div class="row pt-2 pb-2 bg-light">
+                  <div class="col-md-5">Credit Hours</div>
+                  <div class="col-md-7">142</div>
+                </div>
+                <div class="row pt-2 pb-2 mt-2 bg-light">
+                  <div class="col-md-5">Program Duration</div>
+                  <div class="col-md-7">4 Years</div>
+                </div>
+                <div class="row pt-2 pb-2 mt-2 bg-light">
+                  <div class="col-md-5">Admission Fees (Tk)</div>
+                  <div class="col-md-7">54500</div>
+                </div>
+                <div class="row pt-2 pb-2 mt-2 bg-light">
+                  <div class="col-md-5">Semester Cost (Tk)</div>
+                  <div class="col-md-7">85,000</div>
+                </div>
+                <div class="row pt-2 pb-2 mt-2 bg-light">
+                  <div class="col-md-5">Total Tuition Fees (Tk)</div>
+                  <div class="col-md-7">509,900</div>
+                </div>
+                <div class="row pt-2 pb-2 mt-2 bg-light">
+                  <div class="col-md-5">Total Fees (Tk)</div>
+                  <div class="col-md-7">727,100</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
