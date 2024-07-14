@@ -58,8 +58,28 @@
         {{-- <img src="{{asset('frontend/image/student4.png')}}" class="image1 img-fluid "> --}}
       </div>
       </div>
+
     </div>
 
+   {{-- <button class="open-button" onclick="openForm()"><img src="{{asset('frontend/image/logo.png')}}" alt="" class="pop-img "></button> --}}
+
+    <button type="submit" ><img class="pop-img open-button" src="{{asset('frontend/image/ITM.jpg')}}" alt="" onclick="openForm()" ></button>
+
+  
+   {{-- <button class="" onclick="openForm()"> <i class="fa-regular fa-comment-dots text-success fa-4x open-button"></i></button> --}}
+
+
+<div class="chat-popup p-2" id="myForm">
+<form action="/action_page.php" class="form-container">
+  <h1>Chat</h1>
+
+  <label for="msg"><b>Message</b></label>
+  <textarea placeholder="Type message.." name="msg" required></textarea>
+
+  <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane"></i></button>
+  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</form>
+</div>
 @endsection
 @section('content')
 
@@ -756,6 +776,13 @@
                <br>
                <br>
                <br>
+
+               <div class="highlight mt-5">
+                <h2 class="text-white highlight">Hightlights</h2>
+                <div class=" ">
+                    <span class="elementor-divider-separator"></span>
+                </div>
+               </div>
 
                <div class="container mt-5">
                 <div class="row">
