@@ -61,11 +61,10 @@
         <tbody class="text-center">
             <thead class="text-center">
             <tr >
-                <th class="text-dark">Semester</th>
+                <th class="text-dark ">Semester</th>
                 <th class="text-dark">Date</th>
-                <th class="text-dark">Details</th>
                 <th class="text-dark">Action</th>
-                
+
             </tr>
         </thead>
         <tbody class="text-center">
@@ -75,10 +74,6 @@
         {{-- <td class="text-dark">{{($routine->file) }}</td> --}}
         <td class="text-dark">{{$routine->type}}</td>
         <td class="text-dark">{{$routine->date}}</td>
-        <td class="text-dark">{{$routine->file}}</td>
-        <td class="text-dark"><a href="" class="btn btn-outline-dark">View</a></td>
-        <td class="text-dark"><a href="{{url('/download',$routine->file)}}" ><i class="fa-solid fa-circle-down conic fa-3x"></i></a>
-
         <td class="d-flex justify-content-evenly">
 
             <a href="{{route('routine.create',$routine->id)}}" class="p-3"><i class="fa-solid fa-eye text-success  fa-lg "></i></a>

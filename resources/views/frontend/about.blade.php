@@ -79,7 +79,7 @@
   {{-- <div class="container"> --}}
     <div class="text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
         <h2 class="line-bottom text-warning text-center mb-4">Why Choose ITM!</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <p class="text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
       </div>
       <br>
       <br>
@@ -159,7 +159,7 @@
 
 <div class ="container-fluid">
     <div class="gy-4">
-        <h1 class="header1 ">Our Location <i class="fa-solid fa-location-dot icon1 text-danger"></i></h1>
+        <h1 class="header1 text-white">Our Location <i class="fa-solid fa-location-dot icon1 text-danger"></i></h1>
         </div>
         <br>
         <br>
@@ -170,7 +170,7 @@
                 <img src="{{asset('frontend/image/campus.jpeg')}}" class="imgg">
               </div>
               <div class="description">
-                <p  class="pp">Main Campus</p>
+                <p  class="pp text-white">Main Campus</p>
                 <button class="baton p-2">View</button>
               </div>
             </div>
@@ -179,7 +179,7 @@
                    <img src="{{asset('frontend/image/ab4building.jpeg')}}" class="imgg">
                 </div>
                 <div class="description">
-                    <p class="pp">AB4 Building </p>
+                    <p class="pp text-white">AB4 Building </p>
                     <button class="baton p-2">View</button>
                 </div>
               </div>
@@ -188,7 +188,7 @@
                     <img src="{{asset('frontend/image/old_building.jpg')}}" class="imgg">
                 </div>
                 <div class="description">
-                    <p class="pp">AB Building</p>
+                    <p class="pp text-white">AB Building</p>
                     <button class="baton p-2">View</button>
                 </div>
               </div>

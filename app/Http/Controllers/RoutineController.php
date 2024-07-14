@@ -14,11 +14,11 @@ class RoutineController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function routine()
+    public function index()
     {
-    //    $routines = DB::table('routines')->get();
-    //    return view('routine.index',compact('routines'));
-    return "this is routine page";
+       $routines = DB::table('routines')->get();
+       return view('routine.index',compact('routines'));
+
     }
 
     /**

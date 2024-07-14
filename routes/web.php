@@ -73,7 +73,7 @@ Route::controller(EventController::class)->group(function(){
 
 Route::controller(RoutineController::class)->group(function(){
 
-    route::get('/semester/routine','routine')->name('routine');
+    route::get('/sem/routine','index')->name('sem.routines');
     route::get('/routine/create','create')->name('routine.create');
     route::post('/routine/store','store')->name('routine.store');
     route::get('/routine/edit/{id}','edit')->name('routine.edit');
@@ -116,7 +116,7 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::view('/home','frontend.home')->name('homepage');
     Route::view('/program','frontend/program')->name('program');
-    Route::view('/about','frontend/about')->name('about');
+    Route::get('/about','frontend/about')->name('about');
 
 
 

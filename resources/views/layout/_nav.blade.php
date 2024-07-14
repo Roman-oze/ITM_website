@@ -44,12 +44,13 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('events')}}">Events</a>
                   </li>
+
                   <li class="nav-item">
                     <div class="dropdown">
                         <a class="nav-link" href="#">Routine</a>
                             <div class="dropdown-content bg-success rounded">
                                 <a target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link">Spring-2024</a>
-                                <a target="_blank" href="{{route('routine')}}"  class="nav-link">Fall-2024</a>
+                                <a target="_blank" href="{{route('sem.routines')}}"  class="nav-link">Fall-2024</a>
                             </div>
                          </li>
                   <li class="nav-item">
