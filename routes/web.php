@@ -8,6 +8,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\RelationalController;
 use App\Http\Middleware\Itm;
 
 use Faker\Guesser\Name;
@@ -38,6 +39,14 @@ use Faker\Guesser\Name;
 //     die;
 
 //  });
+
+
+route::controller(RelationalController::class)->group(function(){
+    route::get('/relation', 'index')->name('index');
+    route::get('/member', 'member')->name('member');
+    route::get('/group', 'group')->name('group');
+
+});
 
  Route::controller(FacultyController::class)->group(function(){
 

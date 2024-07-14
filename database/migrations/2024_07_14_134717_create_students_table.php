@@ -17,12 +17,11 @@ return new class extends Migration
             $table->string('roll');
             $table->string('batch');
             $table->string('email')->unique();
-            $table->string('blood')->nullable()->after('mobile');
-            $table->string('address');
+            $table->string('blood');
             $table->string('mobile');
+            $table->string('address');
             $table->string('type')->default('active');
             $table->timestamps();
-
         });
     }
 
