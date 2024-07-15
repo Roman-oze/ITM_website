@@ -71,20 +71,21 @@
 
 
 <div class="chat-popup p-2" id="myForm">
-<form action="/action_page.php" class="form-container">
+<form action="{{route('viwer.store')}}" method="POST" class="form-container">
+    @csrf
   <h1>Chat</h1>
 
   <label for="msg"><b>Message</b></label>
-  <textarea placeholder="Type message.." name="msg" required></textarea>
+  <textarea placeholder="Type message.." name="message" required></textarea>
 
-  <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane"></i></button>
-  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
+  <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
 </form>
 </div>
 @endsection
 @section('content')
 
-<section id="Feature" class="section-p1 bg-info">
+<section id="Feature" class="section-p1 bg-info ">
     <div class="container d-flex justify-content-evenly">
     <div class="fe-box img-fluid">
         <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
@@ -98,16 +99,13 @@
         <img src="{{asset('frontend/image/hall.png')}}" alt="" class="imgslide">
         <h6 class="btn3">Hall</h6>
     </div>
-    <div class="fe-box img-fluid">
-        <img src="{{asset('frontend/image/latest.png')}}" alt="" class="imgslide">
-        <h6 class="btn4">Latest Curriculum</h6>
-    </div>
+
     <div class="fe-box img-fluid">
         <img src="{{asset('frontend/image/innovation.png')}}" alt="" class="imgslide">
         <h6 class="btn6">Innovation</h6>
     </div>
     <div class="fe-box img-fluid">
-        <img src="{{asset('frontend/image/clubicon.png')}}" alt="" class="imgslide">
+        <img src="{{asset('frontend/image/clubimage.png')}}" alt="" class="imgslide">
         <h6 class="btn1">35+ Club</h6>
     </div>
     <div class="fe-box img-fluid">
@@ -115,7 +113,7 @@
         <h6 class="btn2">Life-Insurance</h6>
     </div>
     <div class="fe-box img-fluid">
-        <img src="{{asset('frontend/image/diubus.png')}}" alt="" class="imgslide">
+        <img src="{{asset('frontend/image/buss.png')}}" alt="" class="imgslide">
         <h6 class="btn3">Transport</h6>
     </div>
     </div>
@@ -123,10 +121,8 @@
 
 <br>
 <br>
-<br>
 
-
-<div class="container-fluid text-center ">
+<div class="container-fluid text-center mt-5 ">
     <div  class="">
     <h3 class="text-warning">Features</h3>
         <h1 class="text-white"> Why Choose ITM</h1>
@@ -321,76 +317,57 @@
         <div class=" mt-5">
             <h1 class="fac_text text-center">Our Facilities</h1>
         </div>
-                <section id="Feature" class="section-p1 mt-5 bg-info">
-                    <div class="fe-box ">
-                        <img src="{{asset('frontend/image/hunderd.png')}}" alt=""class="imgslide">
-                        <h6 class="btn2">Waiver</h6>
 
-                   </div>
-                    <div class="fe-box">
-                        <img src="{{asset('frontend/image/laptop.png')}}" alt=""class="imgslide">
-                        <h6 class="btn1">Free Laptop</h6>
-
-                    </div>
-
-                    <div class="fe-box">
-                        <img src="{{asset('frontend/image/hall.png')}}" alt=""class="imgslide ">
-                        <h6 class="btn3">Hall</h6>
-
-                    </div>
-                    <div class="fe-box">
-                        <img src="{{asset('frontend/image/latest.png')}}" alt=""class="imgslide">
-                         <h6 class="btn4">Latest Curriculum</h6>
-
-                    </div>
-                    <div class="fe-box">
-                        <img src="{{asset('frontend/image/innovation.png')}}" alt=""class="imgslide">
-                        <h6 class="btn6">Innovation</h6>
-
-                    </div>
-                    <div class="fe-box">
-                        <img src="{{asset('frontend/image/clubicon.png')}}" alt=""class="imgslide">
-                        <h6 class="btn5">35+ Club</h6>
-
-                    </div>
-
-
-               </section>
-
-                <section id="Feature" class="section-p1 bg-info ">
-
-                    <div class="fe-box  ">
-                        <img src="{{asset('frontend/image/diubus.png')}}" alt=""class="imgslide">
-                        <h6 class="btn2">Transport</h6>
-
-                   </div>
-                    <div class="fe-box">
-                         <img src="{{asset('frontend/image/oncampus.png')}}" alt=""class="imgslide">
-                         <h6 class="btn1">DIU Recruitment</h6>
-
-                    </div>
-
-                    <div class="fe-box">
-                         <img src="{{asset('frontend/image/e-library.png')}}" alt=""class="imgslide">
-                         <h6 class="btn3">E-Library</h6>
-
-                    </div>
-                    <div class="fe-box">
-                         <img src="{{asset('frontend/image/Rover Scout.png')}}" alt=""class="imgslide">
-                         <h6 class="btn4">Rover Scout</h6>
-
-                    </div>
-                    <div class="fe-box">
-                        <img src="{{asset('frontend/image/global network.png')}}" alt=""class="imgslide">
-                         <h6 class="btn5">Global Networking</h6>
-
-                    </div>
-                    <div class="fe-box">
-                        <img src="{{asset('frontend/image/life_insurance.png')}}" alt=""class="imgslide">
-                        <h6 class="btn1">Life- Insurance</h6>
-
-                    </div>
-               </section>
+               <div class="grid-container grid-bg mt-5" >
+                <div class="grid-item ">
+                    <img src="{{asset('frontend/image/hunderd.png')}}" alt="Waiver">
+                    <span>Waiver</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/laptop.png')}}" alt="Free Laptop">
+                    <span>Free Laptop</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/hall.png')}}" alt="Hall">
+                    <span>Hall</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/latest.png')}}" alt="Latest Curriculum">
+                    <span>Latest Curriculum</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/innovation.png')}}" alt="Innovation">
+                    <span>Innovation</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/clubimage.png')}}" alt="35+ Club">
+                    <span>35+ Club</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/diubus.png')}}" alt="Transport">
+                    <span>Transport</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/oncampus.png')}}" alt="DIU Recruitment">
+                    <span>DIU Recruitment</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/e-library.png')}}" alt="E-Library">
+                    <span>E-Library</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/Rover Scout.png')}}" alt="Rover Scout">
+                    <span>Rover Scout</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/global network.png')}}" alt="Global Networking">
+                    <span>Global Networking</span>
+                </div>
+                <div class="grid-item">
+                    <img src="{{asset('frontend/image/life_insurance.png')}}" alt="Life Insurance">
+                    <span>Life Insurance</span>
+                </div>
+            </div>
                 <br>
                 <br>
                 <br>

@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\RelationalController;
+use App\Http\Controllers\MessageController;
 use App\Http\Middleware\Itm;
 
 use Faker\Guesser\Name;
@@ -40,6 +41,11 @@ use Faker\Guesser\Name;
 
 //  });
 
+
+route::controller(RelationalController::class)->group(function(){
+   route::get('/message','inbox')->name('viwer.message');
+   route::post('/viewer/message','store')->name('viwer.store');
+});
 
 route::controller(RelationalController::class)->group(function(){
     route::get('/relation', 'index')->name('index');

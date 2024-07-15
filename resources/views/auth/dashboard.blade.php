@@ -44,11 +44,9 @@
           </div>
 
           </div>
-         <br>
-         <br>
-         <br>
 
-        <div class="row">
+
+        <div class="row mt-3">
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header">
@@ -71,8 +69,27 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Student Admission
+                Message List
             </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>View</th>
+                        <th>Message</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($messages as $msg)
+                    <tr>
+                        <td scope="row">{{$msg->id}}</td>
+                        <td>{{$msg->message}}</td>
+
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
 
         </div>
     </div>

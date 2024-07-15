@@ -1,6 +1,6 @@
 
 
-    <div class="row footer_page mt-5">
+
 
         {{-- <div class="col-md-8  contact-body-left ">
 
@@ -47,6 +47,7 @@
                             <img  src="{{ asset('frontend/image/itmclub.png')}}" class="img-fluid mt-5">
                            </div>
                   </div> --}}
+            <div class="row footer_page mt-5">
                   <div class="container-fluid ">
                     <div class="row justify-content-center text-align">
 
