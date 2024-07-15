@@ -9,7 +9,9 @@ class Member extends Model
 {
     use HasFactory;
 
-    protected $primaryKey ='member_id';
+    protected $fillable = [
+        'name', 'roll', 'batch', 'depart', 'email',
+    ];
 
     public function group(){
 

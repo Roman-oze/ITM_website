@@ -13,15 +13,13 @@ class RelationalController extends Controller
      */
     public function index()
     {
-        // $members =Member::all();
-        // $groups = Group::all();
-        // return view('relational.index', compact('members', 'groups'));
-
-        return  Member::with('group')->get();
+        //  $members = Member::with('groups')->get();
+        // return view('members.index', compact('members'));
     }
     public function member()
     {
-        return "relational member";
+        $members = Member::with('groups')->get();
+        return view('members.index', compact('members'));
     }
     public function group()
     {

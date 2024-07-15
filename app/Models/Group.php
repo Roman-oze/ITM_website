@@ -8,5 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     use HasFactory;
-    protected $primaryKey ='group_id';
+    protected $primaryKey ='groups';
+
+    protected $fillable = [
+        'member_id', 'blood', 'mobile', 'address', 'status',
+    ];
+
+
+    public function member(){
+        return $this->belongsTo(Member::class);
+    }
 }
