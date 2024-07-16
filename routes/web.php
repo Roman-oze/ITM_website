@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RoutineController;
@@ -129,9 +132,6 @@ Route::controller(AdminController::class)->group(function(){
     Route::put('admin/update/{id}','update')->name('admin.update');
     Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');
 
-    Route::view('/home','frontend.home')->name('homepage');
-    Route::view('/program','frontend/program')->name('program');
-    Route::get('/about','frontend/about')->name('about');
 
 
 
@@ -170,7 +170,13 @@ Route::controller(ClubController::class)->group(function(){
 });
 
 
+route::get('/',[HomeController::class,'home'])->name('home');
+route::get('/program',[ProgramController::class,'program'])->name('program');
+route::get('/about',[AboutController::class,'about'])->name('about');
 
+// Route::view('/home','frontend.home')->name('homepage');
+// Route::view('/program','frontend/program')->name('program');
+// Route::get('/about','frontend/about')->name('about');
 
 
 
