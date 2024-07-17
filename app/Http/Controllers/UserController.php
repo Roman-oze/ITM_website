@@ -20,52 +20,52 @@ class UserController extends Controller
      }
 
 
-     public function store( Request $request ){
+    //  public function store( Request $request ){
 
 
 
-        $this->validate($request, [
+    //     $this->validate($request, [
 
-            'name'          => 'required|string|max:255|unique:users,username',
-            'email'             => 'required|string|email|max:255|unique:users,email',
-            'password'          => 'required',
+    //         'name'          => 'required|string|max:255|unique:users,username',
+    //         'email'             => 'required|string|email|max:255|unique:users,email',
+    //         'password'          => 'required',
 
-        ]);
-
-
-
-            $user = new User();
-            $user->name = $request['username'];
-            $user->email = $request['email'];
-            $user->password = Hash::make( $request['password'] );
-            $user->save();
-
-             return redirect( route('login') )->with(['success' => 'User Successfully Created!']);
-    }
-
-    // public function store(Request $request){
-
-    //    $request -> validate ([
-
-    //         'name'=>'required',
-    //         'email'=>'required|email|unique:users',
-    //         'password' => 'required|string|min:5|max:16',
     //     ]);
 
-    //      $data['name']=$request->name;
-    //      $data['email']=$request->email;
-    //      $data['password']= $request->password;
-    //      $data['created_at']=date('Y-m-d H:i:s');
-    //      $data['updated_at']=date('Y-m-d H:i:s');
 
 
-    //     DB::table('users')->insert($data);
-    //  return redirect('user/login')->with('success','Congratulations! You Profile is Ready');
+    //         $user = new User();
+    //         $user->name = $request['username'];
+    //         $user->email = $request['email'];
+    //         $user->password = Hash::make( $request['password'] );
+    //         $user->save();
 
-
-
-
+    //          return redirect( route('login') )->with(['success' => 'User Successfully Created!']);
     // }
+
+    public function store(Request $request){
+
+       $request -> validate ([
+
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password' => 'required|string|min:5|max:16',
+        ]);
+
+         $data['name']=$request->name;
+         $data['email']=$request->email;
+         $data['password']= $request->password;
+         $data['created_at']=date('Y-m-d H:i:s');
+         $data['updated_at']=date('Y-m-d H:i:s');
+
+
+        DB::table('users')->insert($data);
+     return redirect('user/login')->with('success','Congratulations! You Profile is Ready');
+
+
+
+
+    }
 
     public function show($id)
     {

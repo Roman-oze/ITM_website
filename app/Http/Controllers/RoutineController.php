@@ -37,7 +37,7 @@ class RoutineController extends Controller
     {
         // Validate the file input
         $request->validate([
-            'file' => 'required|mimes:pdf|max:2048',
+            'file' => 'required|max:2048',
             'type' => 'required|string',
             'date' => 'required|date',
         ]);
@@ -46,7 +46,7 @@ class RoutineController extends Controller
         $fileName = time() . '.' . $request->file('file')->getClientOriginalExtension();
 
         // Move the file to the 'routine' directory
-        $request->file('file')->move(public_path('routine'), $fileName);
+        $request->file('file')->move(('routine'), $fileName);
 
         // Prepare data for insertion
         $data['file'] = 'routine/' . $fileName;
