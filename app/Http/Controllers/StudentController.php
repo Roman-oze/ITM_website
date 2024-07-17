@@ -66,7 +66,8 @@ class StudentController extends Controller
 
 
          DB::table('students')->insert($data);
-        return redirect('students');
+         return redirect()->back()->with('success','Congratulations! for join Us');
+
 
         // dd(DB::table('students')->get());
 

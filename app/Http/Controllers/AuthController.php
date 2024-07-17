@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\auth;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -23,8 +24,9 @@ class AuthController extends Controller
         // if(Session::has('id')){
         //     $data = User::where('id','=',Session::get('id'))->first();
         // }
+        $messages = Message::all();
 
-       return view('auth.dashboard');
+       return view('auth.dashboard',compact('messages'));
     }
 
 

@@ -44,10 +44,11 @@ use Faker\Guesser\Name;
 
 //  });
 
+route::controller(MessageController::class)->group(function(){
+    route::post('/viewer/message','store')->name('viwer.store');
+    route::delete('/inbox/{id}','destroy')->name('inbox.delete');
 
-route::controller(RelationalController::class)->group(function(){
-   route::get('/message','inbox')->name('viwer.message');
-   route::post('/viewer/message','store')->name('viwer.store');
+
 });
 
 route::controller(RelationalController::class)->group(function(){
@@ -168,7 +169,6 @@ Route::controller(ClubController::class)->group(function(){
     Route::view('/upcoming','club/upcoming')->name('upcoming');
     Route::get('/membership','membership')->name('membership');
 });
-
 
 route::get('/',[HomeController::class,'home'])->name('home');
 route::get('/program',[ProgramController::class,'program'])->name('program');

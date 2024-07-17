@@ -1,20 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class MasseageController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function inbox()
-    {
-       $messages = Message::all();
-       return view('auth.dashboard',compact('messages'));
-    }
+    // public function inbox()
+    // {
+    //    $messages = Message::all();
+    //    return view('auth.dashboard',compact('messages'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -31,11 +32,14 @@ class MasseageController extends Controller
     {
        $data['message']=$request->message;
 
+
+
         DB::table('messages')->insert($data);
         return redirect()->back()->with('successfully send message!');
 
 
     }
+
 
     /**
      * Display the specified resource.
@@ -66,6 +70,8 @@ class MasseageController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       DB::table('messages')->where('id',$id)->delete();
+       return redirect()->back()->with('successfully delete message!');
+
     }
 }

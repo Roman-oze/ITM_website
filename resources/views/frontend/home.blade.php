@@ -76,7 +76,7 @@
   <h1>Chat</h1>
 
   <label for="msg"><b>Message</b></label>
-  <textarea placeholder="Type message.." name="message" required></textarea>
+  <textarea  placeholder="Type message.." name="message" required></textarea>
 
   <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
   <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>

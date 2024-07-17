@@ -1860,3 +1860,7 @@ border: none;
         background-attachment: fixed;
 
     }
+    .dashboard-delet-btn{
+        border-radius: 50%;
+        background-color: darkgoldenrod;
+    }

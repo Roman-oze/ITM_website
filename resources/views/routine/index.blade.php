@@ -4,78 +4,61 @@
 
 @section('content')
 
-    <div class="row">
-        <!-- Image Column -->
-        <div class="col-12 col-lg-8 mb-4 mb-lg-0">
-            <iframe src="path_to_your_pdf.pdf" class="w-100" style="height: 600px;" frameborder="0"></iframe>
 
-        </div>
-        <!-- Table Column -->
-        <div class="col-12 col-lg-4">
 
-            @foreach($routines as $routine)
 
-            <div class="mb-3 p-3 border">
-                <h1>Semester</h1>
-                <h5>{{$routine->type}}</h5>
-            </div>
-
-            <div class="mb-3 p-3 border">
-                <h1>Date</h1>
-                <h5>{{$routine->date}}</h5>
-            </div>
-
-            <div class="mb-3 p-3 border">
-                <h1>View</h1>
-                <a href="{{route('routine.create',$routine->id)}}" class="p-2 text-dark">
-                    <i class="fa-solid fa-eye text-success fa-lg"></i> View
-                </a>
-            </div>
-
-            <div class="mb-3 p-3 border">
-                <h1>Details</h1>
-                <a href="{{url('/download',$routine->file)}}" class="p-2 text-dark">
-                    <i class="fa-solid fa-circle-down text-info fa-lg"></i> Download
-                </a>
-            </div>
-
-            @endforeach
-
-            {{-- <table class="table table-striped rounded">
-                <thead class="text-center">
-                    <tr>
-                        <th><h4 class="text-dark">Semester</h4></th>
-                        <th><h4 class="text-dark">Date</h4></th>
-                        <th><h4 class="text-dark">Details</h4></th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    @foreach($routines as $routine)
-                    <tr>
-                        <td class="text-dark text-capitalize"><h5>{{$routine->type}}</h5></td>
-                        <td class="text-dark text-capitalize"><h5>{{$routine->date}}</h5></td>
-                        <td class="d-flex justify-content-center">
-                            <a href="{{route('routine.create',$routine->id)}}" class="p-2 text-dark">
-                                <i class="fa-solid fa-eye text-success fa-lg"></i> View
-                            </a>
-                            <a href="{{url('/download',$routine->file)}}" class="p-2 text-dark">
-                                <i class="fa-solid fa-circle-down text-info fa-lg"></i> Download
-                            </a>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table> --}}
-        </div>
+<div class="row mt-5">
+    <div class="col-md-12 bg-black text-center">
+        <a href="">
+            <h1 class="text-light btn btn-outline-info">Click here for get routine by email </h1>
+        </a>
     </div>
+</div>
+
+<div class="row">
+<div class="col-6 mt-5  bg-danger">
+    <img src="{{asset('frontend/image/bubbles.png')}}" alt="" class="img-fluid">
+
+</div>
+
+<div class="col-6 mt-5  bg-light">
+
+<table class="table table-striped  rounded">
+    <tbody class="text-center">
+        <thead class="text-center">
+        <tr >
+            <th><h4 class="text-dark">Semester</h4></th>
+            <th><h4 class="text-dark">Date</h4></th>
+            <th><h4 class="text-dark">Details</h4></th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+
+        @foreach($routines as $routine)
+
+    {{-- <td class="text-dark">{{($routine->file) }}</td> --}}
+    <td class="text-dark text-capitalize"><h5>{{$routine->type}}</h5></td>
+    <td class="text-dark text-capitalize"><h5>{{$routine->date}}</h5></td>
+
+
+    <td class="d-flex justify-content-evenly">
+
+        <a href="" class="p-3 text-dark h5"><i class="fa-solid fa-eye text-success  fa-lg "></i> view</a>
+        <a href="{{url('/download',$routine->file)}}" class="p-3 text-dark h5"><i class="fa-solid fa-circle-down text-info  fa-lg"></i> Download</a>
 
 
 
+  </tr>
 
+  @endforeach
+    </tbody>
+</table>
 
-
-{{-- <div class="row">
+{{--
+<div class="row">
     {{ $record->links('pagination::bootstrap-5') }}
 </div> --}}
 
+</div>
+</div>
 @endsection
