@@ -14,7 +14,7 @@
                     </a>
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a  href="{{route('admin.user')}}" class="linked"> Admins</a>
+                            <a  href="{{route('users')}}" class="linked"> Admins</a>
                         </nav>
                     </div>
                     <br>
@@ -67,7 +67,7 @@
                             <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{route('login')}}">Login</a>
-                                    <a class="nav-link" href="{{route('registration')}}">Register</a>
+                                    <a class="nav-link" href="{{route('register')}}">Register</a>
                                     <a class="nav-link" href="{{route("reset_password")}}">Forgot Password</a>
                                 </nav>
                             </div>

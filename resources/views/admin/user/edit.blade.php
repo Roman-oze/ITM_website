@@ -21,32 +21,36 @@
                     <div class="card-body">
                         <h2 class="text-info text-center mb-3">Edit Admin Information</h2>
 
-                        @if(session('success'))
+
+
+                        <form action="{{ route('update.user', $users->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+
+                            @if(session('success'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('success') }}
                             </div>
                         @endif
-
-                        <form action="{{ route('admin.update', $users->id) }}" method="post">
-                            @csrf
-                            @method('PUT')
+                        @if(session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                            </div>
+                            @endif
 
                             <div class="form-group">
                                 <label for="name" class="text-white">Name</label>
-                                <input type="text" class="form-control" name="name" required>
-                                <input type="hidden" class="form-control" value="{{$users->name}}" name="role" required>
+                                <input type="text" class="form-control" name="name" value="{{$users->name}}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="name"class="text-white">Email</label>
-                                <input type="email" class="form-control" name="email" required>
-                                <input type="hidden" class="form-control" value="{{$users->email}}" name="role" required>
+                                <input type="email" class="form-control" name="email"  value="{{$users->email}}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="" class="text-white">Password</label>
-                                <input type="password" class="form-control" name="password" required>
-                                <input type="hidden" class="form-control" value="{{$users->password}}" name="role" required>
+                                <input type="password" class="form-control" name="password" value="{{$users->password}}" required>
                             </div>
                             <br>
                             <br>

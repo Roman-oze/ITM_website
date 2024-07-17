@@ -112,7 +112,7 @@ class StudentController extends Controller
 
     }
 
-    public function search(Request $request){
+    public function find(Request $request){
 
         $data = $request->input('search');
         $students =DB::table('students')->where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);

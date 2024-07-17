@@ -5,7 +5,7 @@
 <div class="container p-5">
     <div class="row p-3">
         <div class="col-md-6 ">
-            <form action="search">
+            <form action="find">
                 <div class="input-group">
                     <input type="search" name="search" class="form-control" placeholder="Search">
                     <div class="input-group-append">

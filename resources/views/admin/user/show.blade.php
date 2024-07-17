@@ -34,7 +34,7 @@
                 <td class="text-white-50">{{ $users->email }}</td>
                 <td class="text-white-50">{{ $users->password }}</td>
                 <td>
-                    <a href="{{route('admin.user')}}" class="btn btn-primary">Back</a>
+                    <a href="{{route('users')}}" class="btn btn-primary">Back</a>
 
             </td>
 

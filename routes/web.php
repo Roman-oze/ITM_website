@@ -13,6 +13,7 @@ use App\Http\Controllers\ClubController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\RelationalController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\Itm;
 
 use Faker\Guesser\Name;
@@ -43,6 +44,33 @@ use Faker\Guesser\Name;
 //     die;
 
 //  });
+
+route::controller(UserController::class)->group(function(){
+
+    Route::get('/users', 'index')->name('users');
+    Route::post('/users', 'store');
+    Route::get('/users/create', 'create')->name('create.user');
+    Route::get('/users/show/{id}', 'show')->name('show.user');
+    Route::get('/users/edit/{id}', 'edit')->name('edit.user');
+    Route::put('/users/update/{id}', 'update')->name('update.user');
+    Route::delete('user/delete/{id}', 'destroy')->name('user.delete');
+    Route::get('search','search')->name('search');
+
+    // Route::get('user', 'user')->name('admin.user');
+    // Route::get('admin/show/{id}', 'show')->name('show');
+    // Route::get('admin/edit/{id}', 'edit')->name('admin.edit');
+    // Route::put('admin/update/{id}','update')->name('admin.update');
+    // Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');
+
+});
+
+
+
+
+
+
+
+
 
 route::controller(MessageController::class)->group(function(){
     route::post('/viewer/message','store')->name('viwer.store');
@@ -110,8 +138,7 @@ Route::controller(AuthController::class)->group(function(){
     Route::get('dashboard', 'dashboard')->name('dashboard');
     Route::get('user/login', 'login')->name('login');
     Route::post('loginUser', 'loginUser')->name('loginUser');
-    Route::get('user/registration', 'registration')->name('registration');
-    Route::post('register', 'register')->name('register');
+    Route::get('user/register', 'register')->name('register');
     Route::get('logout', 'logout')->name('logout');
     Route::get('user/reset_password', 'password')->name('reset_password');
 
@@ -125,7 +152,6 @@ Route::controller(AdminController::class)->group(function(){
 
     Route::get('admin/static', 'static')->name('static');
     Route::get('admin/chart', 'chart')->name('chart');
-    Route::get('records', 'records')->name('records');
 
     Route::get('user', 'user')->name('admin.user');
     Route::get('admin/show/{id}', 'show')->name('show');
@@ -152,7 +178,7 @@ Route::get('/show/{id}', 'show')->name('student_show');
 Route::get('/edit/{id}', 'edit')->name('student_edit');
 Route::put('/update/{id}','update')->name('student_update');
 Route::delete('/delete/{id}', 'destroy')->name('delete');
-Route::get('search','search')->name('search');
+Route::get('/find','find')->name('find');
 
 
 

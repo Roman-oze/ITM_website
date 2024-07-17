@@ -62,7 +62,8 @@ class EventController extends Controller
 
       DB::table('events')->insert($data);
 
-      return redirect()->route('event_up')->with('success','Event Added Successfully');
+    //   return redirect()->route->back()->with('success','Event Added Successfully');
+    return redirect()->route('admin.event')->with('success','Event Added Successfully');
 
     // dd(DB::table('events')->get());
 
@@ -104,7 +105,7 @@ class EventController extends Controller
 
       DB::table('events')->where('id',$id)->update($data);
 
-      return redirect()->route('event_up')->with('success','Event update Successfully');
+      return redirect()->route('admin.event')->with('success','Event update Successfully');
     }
 
     /**
@@ -113,7 +114,7 @@ class EventController extends Controller
     public function destroy(string $id)
     {
         $event = DB::table('events')->where('id',$id)->delete();
-        return redirect()->route('event_up')->with('success','Event delete Successfully');
+        return redirect()->route('admin.event')->with('success','Event delete Successfully');
     }
 
 

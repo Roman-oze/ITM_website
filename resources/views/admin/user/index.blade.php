@@ -18,7 +18,7 @@
 
     <div class="row  p-4">
         <div class=" text-left">
-          <a href="{{ route('registration') }}" class="btn btn-dark text-white">New Add</a>
+          <a href="{{ route('register') }}" class="btn btn-dark text-white">New Add</a>
 
         </div>
       </div>
@@ -34,18 +34,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($record as $admin)
+            @foreach ( $users as $user)
             <tr>
-                <td class="text-white-50 text-center">{{ $admin->id }}</td>
-                <td class="text-white-50">{{ $admin->name }}</td>
-                <td class="text-white-50">{{ $admin->email }}</td>
-                <td class="text-white-50">{{ $admin->password }}</td>
+                <td class="text-white-50 text-center">{{ $user->id }}</td>
+                <td class="text-white-50">{{$user->name }}</td>
+                <td class="text-white-50">{{ $user->email }}</td>
+                <td class="text-white-50">{{$user->password }}</td>
 
                 <td class="text-center justify-content-evenly">
-                    <a href="{{route('show',$admin->id)}}" class="p-3"><i class="fa-solid fa-eye text-white  fa-lg "></i></a>
-                    <a href="{{route('admin.edit',$admin->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+                    <a href="{{route('show.user',$user->id)}}" class="p-3"><i class="fa-solid fa-eye text-white  fa-lg "></i></a>
+                    <a href="{{route('edit.user',$user->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
 
-                    <form action="{{route('admin.delete',$admin->id)}}" method="POST" style="display:inline;">
+                    <form action="{{route('user.delete',$user->id)}}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" onclick="return confirm('Are you sure?')" class="p-2 bg-dark"><i class="fa-regular fa-trash-can text-danger"></i>
@@ -63,7 +63,7 @@
 
 
     <div class="row">
-        {{ $record->links('pagination::bootstrap-5') }}
+        {{ $users->links('pagination::bootstrap-5') }}
     </div>
 
 </div>

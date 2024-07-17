@@ -7,7 +7,7 @@
     <h2 class="text-danger">Edit Event</h2>
     <br>
     <br>
-    <a href="{{route('event_up')}}" class="btn btn-dark text-white">Back</a>
+    <a href="{{route('admin.event')}}" class="btn btn-dark text-white">Back</a>
     <br>
 
 
