@@ -14,6 +14,8 @@ use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\RelationalController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Middleware\Itm;
 
 use Faker\Guesser\Name;
@@ -69,6 +71,17 @@ route::controller(UserController::class)->group(function(){
 
 
 
+
+
+
+route::controller(LoginController::class)->group(function(){
+    Route::get('user/login', 'login')->name('login');
+    Route::post('loginUser', 'loginUser')->name('loginUser');
+});
+
+route::controller(RegisterController::class)->group(function(){
+    Route::get('user/register', 'register')->name('register');
+});
 
 
 
@@ -136,9 +149,9 @@ Route::controller(RoutineController::class)->group(function(){
 Route::controller(AuthController::class)->group(function(){
 
     Route::get('dashboard', 'dashboard')->name('dashboard');
-    Route::get('user/login', 'login')->name('login');
-    Route::post('loginUser', 'loginUser')->name('loginUser');
-    Route::get('user/register', 'register')->name('register');
+    // Route::get('user/login', 'login')->name('login');
+    // Route::post('loginUser', 'loginUser')->name('loginUser');
+
     Route::get('logout', 'logout')->name('logout');
     Route::get('user/reset_password', 'password')->name('reset_password');
 

@@ -1,10 +1,10 @@
 
 
  <!-- resources/views/students/create.blade.php -->
+ @extends('admin.Admin layout._master')
 
 
- @extends('layout.master')
- @section('content')
+@section('main')
 
      <div class="limiter">
 		<div class="container-login100">
@@ -15,26 +15,6 @@
 
                 <form action="{{route('store')}}"  method="POST" enctype="multipart/form-data" class="login100-form validate-form">
 
-                    @csrf
-
-					<span class="login100-form-title">
-						Admin Registration
-					</span>
-                    @if (session()->has('success'))
-
-                    <div class="alert alert-success">
-                        {{ session()->get('success') }}
-                        </div>
-
-                    @endif
-
-                    @if (session()->has('error'))
-
-                    <div class="alert alert-danger">
-                        {{ session()->get('error') }}
-                        </div>
-
-                    @endif
 
 
 
@@ -45,11 +25,6 @@
 						<span class="symbol-input100">
                         <i class="fa-solid fa-user " aria-hidden="true"></i>
 						</span>
-                        <span class="text-danger">
-                            @error('name')
-                         {{$message}}
-                        @enderror
-                      </span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -58,11 +33,7 @@
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
-                        <span class="text-danger">
-                            @error('email')
-                         {{$message}}
-                        @enderror
-                      </span>
+
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
@@ -71,25 +42,15 @@
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
-                        <span class="text-danger">
-                            @error('password')
-                            {{$message}}
-                           @enderror
-                       </span>
+
 					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit">
-							Login
+							create user
 						</button>
 					</div>
 
-                    <div class="text-center p-t-136 mt-2">
-						<a class="txt3 text-muted" href="{{route('login')}}">
-							Need an account? Sign in!
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
 
 
 				</form>

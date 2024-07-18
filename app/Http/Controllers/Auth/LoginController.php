@@ -1,11 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
 
-use App\Models\User;
+namespace App\Http\Controllers\Auth;
 
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+
+use App\Providers\RouteServiceProvider;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+
 
 class LoginController extends Controller
 {
@@ -37,6 +44,6 @@ class LoginController extends Controller
         return redirect('login');
 
       }
-      
+
 
 }

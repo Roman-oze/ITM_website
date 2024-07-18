@@ -63,11 +63,28 @@
                        </span>
 					</div>
 
+
+
+
+
+
+
+                    <div class="row mb-5">
+                        <div class="col">
+                            <input class="form-check-input me-2" type="checkbox" name="remember" id="remember-check" {{ old('remember') ? 'checked' : '' }}>
+                            <label class="form-check-label" for="remember-check">
+                                Remember me
+                            </label>
+                        </div>
+
+                    </div>
+
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit">
 							Login
 						</button>
 					</div>
+
                     <div class="card-footer text-center py-3">
                         <div class="small"><a href="{{route('reset_password')}}" class="txt2 text-muted">Username / Password?</a></div>
                     </div>
