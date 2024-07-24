@@ -58,7 +58,7 @@
       </div>
     <div class="row mt-5">
         <!-- Member Card 1 -->
-        @foreach ($student as $student)
+        @foreach ($students as $student)
             <div class="col-md-4 mb-4">
                 <div class="card  rounded shadow">
                     <div class="card-body ">

@@ -1,7 +1,7 @@
 
  <!-- resources/views/students/create.blade.php -->
 
- @extends('layout.master')
+ @extends('layout.app')
  @section('content')
 
      <div class="limiter">
@@ -18,6 +18,7 @@
 					<span class="login100-form-title">
 						Admin Login
 					</span>
+
                     @if (session()->has('success'))
 
                     <div class="alert alert-success">
@@ -33,8 +34,6 @@
                         </div>
 
                     @endif
-
-
 
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">

@@ -190,4 +190,10 @@ cursor: pointer;
 h2{
     color: white;
 }
+
+.accordion{
+
+    height: auto;
+    widows: auto;
+}
   </style>

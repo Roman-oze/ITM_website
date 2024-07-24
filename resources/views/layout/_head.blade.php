@@ -9,5 +9,9 @@
 
 
 <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/app.min.css')}}">
 {{-- <link rel="stylesheet" href="{{asset('z')}}"> --}}
 {{-- @stack('head') --}}
+
+

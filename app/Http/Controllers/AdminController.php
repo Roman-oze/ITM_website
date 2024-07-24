@@ -16,16 +16,16 @@ use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
-    public function dashboard()
-    {
-        // $data = array();
-        // if(Session::has('id')){
-        //     $data = User::where('id','=',Session::get('id'))->first();
-        // }
-        $messages = Message::all();
+    // public function dashboard()
+    // {
+    //     $data = array();
+    //     if(Session::has('id')){
+    //         $data = User::where('id','=',Session::get('id'))->first();
+    //     }
+    //     $messages = Message::all();
 
-       return view('auth.dashboard',compact('messages'));
-    }
+    //    return view('auth.dashboard',compact('messages'));
+    // }
 
 
 }

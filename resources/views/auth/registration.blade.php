@@ -3,7 +3,7 @@
  <!-- resources/views/students/create.blade.php -->
 
 
- @extends('layout.master')
+ @extends('layout.app')
  @section('content')
 
      <div class="limiter">
@@ -13,7 +13,7 @@
 					<img src="{{asset('frontend/image/Itmfullogo.png')}}" alt="IMG"  class="loginimage">
 				</div>
 
-                <form action="{{route('store')}}"  method="POST" enctype="multipart/form-data" class="login100-form validate-form">
+                <form action="{{route('store.user')}}"  method="POST" enctype="multipart/form-data" class="login100-form validate-form">
 
                     @csrf
 

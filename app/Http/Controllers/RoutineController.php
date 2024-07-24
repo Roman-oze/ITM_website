@@ -14,6 +14,12 @@ class RoutineController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function routine()
+    {
+       $routines = DB::table('routines')->get();
+       return view('routine.routine',compact('routines'));
+
+    }
     public function index()
     {
        $routines = DB::table('routines')->get();
@@ -57,7 +63,7 @@ class RoutineController extends Controller
         DB::table('routines')->insert($data);
 
         // Redirect to the create routine route
-        return redirect()->route('routine.create');
+        return redirect()->route('dashboard.routines');
     }
 
     /**
@@ -94,7 +100,7 @@ class RoutineController extends Controller
 
         DB::table('events')->where('id',$id)->update($data);
 
-        return redirect()->route('routine.create')->with('success','routine update Successfully');
+        return redirect()->route('dashboard.routines')->with('success','routine update Successfully');
     }
 
     /**
@@ -103,7 +109,7 @@ class RoutineController extends Controller
     public function destroy(string $id)
     {
        DB::table('routines')->where('id',$id)->delete();
-       return redirect()->route('routine.create')->with('success','routine delete Successfully');
+       return redirect()->route('dashboard.routines')->with('success','routine delete Successfully');
 
 
     }

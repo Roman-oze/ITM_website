@@ -1,15 +1,44 @@
+{{-- <div id="top-bar">
+    <div class="container-fluid small">
+      <div class="row text-light text-center ">
+        <div class="col-sm-6 py-1 text-sm-left">
+            Information Technology & Management (I T M)
+        </div>
+        <div class="col-sm-6 py-1 text-sm-right">
 
+            <a href="https://ee-eu.kobotoolbox.org/x/IIk80qMC" class="mr-1 text-white" target="_blank" data-toggle="tooltip" title="" data-original-title="Click here to go to the Survey Link">
+                <i class="icon-coins mr-1" aria-hidden="true"></i> Survey Link
+            </a>
+                <a href="http://103.69.149.45:9305" class="text-reset" target="_blank" data-toggle="tooltip" title="" data-original-title="Click here to go to the LGCRRP test server">
+                <i class="icon-database-remove mr-1" aria-hidden="true"></i> Test Server
+                </a>
 
-<div class="container-fluid topbar">
-         <div class="row  p-2  bg-black">
-        <div class="col-md-5  ">
+            <span class="m-2" data-toggle="modal" data-target="#exampleModalCenter">
+                <i class="icon-help mr-1" aria-hidden="true" title="Help"></i>Helpline </span>
+
+                <a href="https://play.google.com/store/apps/details?id=com.lged.ulgi.mis.com.lged.lgcrrp.misulgi" class="text-reset" target="_blank" data-toggle="tooltip" title="" data-original-title="LGCRRP মোবাইল অ্যাপ্লিকেশনটি Google Play Store-থেকে ডাউনলোড করুন। ">
+                    <img alt="Play Store" src="https://lgcrrpmis.lged.gov.bd/images/google-play-store-icon.png" width="16" class="mr-1">
+                </a>
+
+                <a href="https://lgcrrpmis.lged.gov.bd/images/lgcrrp-mis-ulgi.apk" download="lgcrrp-mis-ulgi.apk" class="text-reset mr-2" target="_blank" data-toggle="tooltip" title="" data-original-title="LGCRRP মোবাইল অ্যাপ্লিকেশনটি ডাউনলোড করুন">
+                LGCRRP (Apk)</a>
+
+                <a href="https://lgcrrpmis.lged.gov.bd/bn//admin" class="text-reset"><i class="icon-reload-alt mr-1" aria-hidden="true"></i> বাংলা</a>
+                 </div>
+      </div>
+    </div>
+</div> --}}
+
+<div class="container-fluid ">
+         <div class="row text-light bg-black">
+        <div class="col-md-6  col-sm-6 py-1 text-left">
             <a  class="  p-2 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
             <a  class=" text-dark p-2" href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope icontop"></i></a>
             <a  class=" text-dark p-2" href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
         </div>
 
-        <div class="col-md-7 text-end">
+        <div class="col-md-6  col-sm-6 py-1 text-right">
 
         <a class=" text-white p-2" href="{{route('login')}}"><i class="fa-solid fa-lock "></i> Login</a>
         <a class="text-white p-2" href="{{route('register')}}"><i class="fa-solid fa-user "></i> Register</a>
@@ -17,16 +46,17 @@
         </div>
     </div>
 
-        <nav class="navbar navbar-expand-lg navbar-black  bg-dark p-2">
+        <nav class="navbar navbar-expand-lg p-2 navbar-black  bg-dark  text-center">
               <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/IT3.png')}}" alt="" class="pf "></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon fa-1x bg-info rounded-circle p-1"></span>
               </button>
+
 
               <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a class="nav-link " href="{{route('home')}}" active ><i class="fa-solid fa-house s-4 homeicon"></i></a>
+                    <a class="nav-link " href="{{route('home')}}" ><i class="fa-solid fa-house s-4 homeicon text-white"></i></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('program')}}">Programs</a>
@@ -37,35 +67,109 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('events')}}">Events</a>
                   </li>
+                  {{-- <li class="nav-item">
+                    <a class="nav-link" href="{{route('semester.routines')}}">Routine</a>
+                  </li> --}}
 
                   <li class="nav-item">
-                    <div class="dropdown">
+                    <div class="dropdown rounded">
                         <a class="nav-link" href="#">Routine</a>
-                            <div class="dropdown-content bg-success rounded">
+                            <div class="dropdown-content rounded">
                                 <a target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link">Spring-2024</a>
-                                <a target="_blank" href="{{route('sem.routines')}}"  class="nav-link">Fall-2024</a>
+                                <a target="_blank" href="{{route('semester.routines')}}"  class="nav-link">Fall-2024</a>
                             </div>
                          </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('about')}}">Contact</a>
                   </li>
 
-                <div class="right-padd animate__animated animate__bounce animate__repeat-2 ">
-                    <li > <div class="p-1">
+
+                    <li >
+                        <div class="right-padd animate__animated animate__bounce animate__repeat-2 admission-btn ">
+                        <a target="_blank" class="bn50 p-3 " href="https://pd.daffodilvarsity.edu.bd/admission/online">Admission</a>
                     </div>
                 </li>
-                </div>
-                <div class="right-padd animate__animated animate__bounce animate__repeat-2 ">
-                    <li > <div class="p-1">
-                        <a target="_blank" class="bn50 p-3 " href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply</a>
-                    </div>
-                </li>
-                </div>
               </div>
             </ul>
 
         </nav>
+        {{-- <div id="hero">
+            <div id="top-bar">
+                <div class="container-fluid small">
+                  <div class="row text-light text-center ">
+                    <div class="col-sm-6 py-1 text-sm-left">
+                        General Accounting and Reporting System(G A R S)
+                    </div>
+                    <div class="col-sm-6 py-1 text-sm-right">
 
+                        <a href="https://ee-eu.kobotoolbox.org/x/IIk80qMC" class="mr-1 text-white" target="_blank" data-toggle="tooltip" title="" data-original-title="Click here to go to the Survey Link">
+                            <i class="icon-coins mr-1" aria-hidden="true"></i> Survey Link
+                        </a>
+                            <a href="http://103.69.149.45:9305" class="text-reset" target="_blank" data-toggle="tooltip" title="" data-original-title="Click here to go to the LGCRRP test server">
+                            <i class="icon-database-remove mr-1" aria-hidden="true"></i> Test Server
+                            </a>
+
+                        <span class="m-2" data-toggle="modal" data-target="#exampleModalCenter">
+                            <i class="icon-help mr-1" aria-hidden="true" title="Help"></i>Helpline </span>
+
+                            <a href="https://play.google.com/store/apps/details?id=com.lged.ulgi.mis.com.lged.lgcrrp.misulgi" class="text-reset" target="_blank" data-toggle="tooltip" title="" data-original-title="LGCRRP মোবাইল অ্যাপ্লিকেশনটি Google Play Store-থেকে ডাউনলোড করুন। ">
+                                <img alt="Play Store" src="https://lgcrrpmis.lged.gov.bd/images/google-play-store-icon.png" width="16" class="mr-1">
+                            </a>
+
+                            <a href="https://lgcrrpmis.lged.gov.bd/images/lgcrrp-mis-ulgi.apk" download="lgcrrp-mis-ulgi.apk" class="text-reset mr-2" target="_blank" data-toggle="tooltip" title="" data-original-title="LGCRRP মোবাইল অ্যাপ্লিকেশনটি ডাউনলোড করুন">
+                            LGCRRP (Apk)</a>
+
+                            <a href="https://lgcrrpmis.lged.gov.bd/bn//admin" class="text-reset"><i class="icon-reload-alt mr-1" aria-hidden="true"></i> বাংলা</a>
+                             </div>
+                  </div>
+                </div>
+            </div>
+            <!-- /#top-bar -->
+
+            <header class="site-header text-white position-relative">
+              <nav class="navbar navbar-expand-lg navbar-light p-2 ">
+                <img src="{{url('/images/logo.png')}}" class="pf ">
+
+                <div class="d-inline-block mt-1">
+                    <div class="h4 d-none font-weight-bold d-sm-block my-0 text-white">G A R S
+                    </div>
+
+                    <h5 class="site-subtitle my-0  ">
+                        <span class="d-none d-sm-block text-white">General Accounting and Reporting System </span> <span class="d-block d-sm-none" aria-hidden="true"><abbr title="Local Government Engineering Department (LGED)">LGED</abbr></span>
+                    </h2>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse p-2" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" rel="home">
+                                <i class="fa-solid fa-house"></i> Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50" href="">
+                                <i class="fa-solid fa-globe"></i> Complaint (GRS)
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50" href="">
+                                <i class="fa-solid fa-user-plus"></i> Registration
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50" href="{{route('login')}}">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+                            </a>
+                        </li>
+
+                        </ul>
+                    </nav>
+
+            </header>
+        </div>
+ --}}
 
 {{-- <img src="{{asset('frontend/image/IT3.PNG')}}" class="pf ">
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

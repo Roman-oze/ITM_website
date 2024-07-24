@@ -13,7 +13,7 @@
 
 
 
-        <div class="container bg-image">
+        <div class="container bg-image ">
             <div id="layoutAuthentication">
                 <div id="layoutAuthentication_content">
                     <main class="">
@@ -25,7 +25,7 @@
                                             <h4 class=" text-white">Student Registration <i class="fa fa-user text-dangers"></i></h4>
                                         </div>
                                         <div class="card-body">
-                                            <form method="post" action="{{ route('store') }}">
+                                            <form action="{{ route('student.store') }}"  method="POSt">
                                                 @csrf
 
                                                 @if (session()->has('success'))
@@ -102,4 +102,10 @@
                 </div>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 @endsection

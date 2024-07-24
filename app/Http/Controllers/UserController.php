@@ -15,7 +15,13 @@ class UserController extends Controller
 
      public function index(){
         $users = User::paginate(10);
-        return view('admin.user.index', compact('users'));
+        return view('user.index', compact('users'));
+
+     }
+
+     public function create(){
+
+       return view('user.create');
 
      }
 
@@ -70,13 +76,13 @@ class UserController extends Controller
     public function show($id)
     {
         $users =DB::table('users')->where('id',$id)->first();
-        return view('admin.user.show',compact('users'));
+        return view('user.show',compact('users'));
     }
 
     public function edit($id)
     {
         $users = DB::table('users')->where('id',$id)->first();
-         return view('admin.user.edit',compact('users'));
+         return view('user.edit',compact('users'));
     }
 
 
@@ -112,7 +118,7 @@ class UserController extends Controller
 
         $data = $request->input('search');
         $users =DB::table('users')->where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);
-        return view('admin.user.index',compact('users'));
+        return view('user.index',compact('users'));
 
     }
 

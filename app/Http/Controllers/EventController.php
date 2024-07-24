@@ -19,18 +19,18 @@ class EventController extends Controller
 //  frontend view file
     public function events(){
         $event = DB::table('events')->get();
-        return view('admin.event.events',compact('event'));
+        return view('event.events',compact('event'));
     }
 
     // admin dashvboard event file
     public function index(){
         $events = DB::table('events')->get();
-        return view('admin.event.index',compact('events'));
+        return view('event.index',compact('events'));
     }
 
     public function create()
     {
-        return view('admin.event.create');
+        return view('event.create');
 
 
     }
@@ -39,7 +39,7 @@ class EventController extends Controller
      public function show($id)
     {
         $events = DB::table('events')->where('id',$id)->first();
-        return view('admin.event.show',compact('events'));
+        return view('event.show',compact('events'));
 
      }
 
@@ -63,7 +63,7 @@ class EventController extends Controller
       DB::table('events')->insert($data);
 
     //   return redirect()->route->back()->with('success','Event Added Successfully');
-    return redirect()->route('admin.event')->with('success','Event Added Successfully');
+    return redirect()->route('event')->with('success','Event Added Successfully');
 
     // dd(DB::table('events')->get());
 
@@ -84,7 +84,7 @@ class EventController extends Controller
     public function edit( $id)
     {
         $event = DB::table('events')->where('id',$id)->first();
-        return view('admin.event.edit',compact('event'));
+        return view('event.edit',compact('event'));
     }
 
     /**
@@ -105,7 +105,7 @@ class EventController extends Controller
 
       DB::table('events')->where('id',$id)->update($data);
 
-      return redirect()->route('admin.event')->with('success','Event update Successfully');
+      return redirect()->route('event')->with('success','Event update Successfully');
     }
 
     /**
@@ -114,7 +114,7 @@ class EventController extends Controller
     public function destroy(string $id)
     {
         $event = DB::table('events')->where('id',$id)->delete();
-        return redirect()->route('admin.event')->with('success','Event delete Successfully');
+        return redirect()->route('event')->with('success','Event delete Successfully');
     }
 
 

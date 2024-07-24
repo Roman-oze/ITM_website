@@ -51,20 +51,20 @@
                   <div class="container-fluid ">
                     <div class="row justify-content-center text-align">
 
-                        <div class="col-3 text-center">
+                        <div class="col-5 col-md-5 col-sm-5 text-center">
                             {{-- <h2 class="ftco-heading-2">Digital Contact</h2> --}}
-                            <img src="{{ asset('frontend/image/itmclub.png')}}" class="img-fluid">
+                            <img src="{{ asset('frontend/image/itmclub.png')}}" class="img-fluid-custom">
 
-                            <div class=" d-flex justify-content-evenly">
+                            {{-- <div class=" d-flex justify-content-evenly">
                                 <a href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icon"></i></a>
                                 <a href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icon"></i></a>
                                 <a href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope icon"></i></a>
                                 <a href="01847-140039"><i class="fa-solid fa-square-phone icon"></i></a>
 
-                    </div>
+                    </div> --}}
                             </div>
 
-                        <div class="col-3 ">
+                        <div class="col-2 col-md-2 col-sm-2">
                             <h2 class="ftco-heading-2">Get in Touch</h2>
                                <p><a target="_blank" class="text-dark " href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Home</a></p>
                                <p><a target="_blank" class="text-dark " href="https://daffodilvarsity.edu.bd/department/itm/local-tuition">Tuition Fee</a></p>
@@ -73,7 +73,7 @@
                                <p><a target="_blank" class="text-dark " href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Service</a></p>
 
                         </div>
-                        <div class="col-3 ">
+                        <div class="col-2 col-md-2 col-sm-2">
 
                            <h2 class="ftco-heading-2">Support</h2>
                             <p>FAQ</p>
@@ -82,7 +82,7 @@
                             <p>Contact</p>
                             <p>Reporting</p><br>
                         </div>
-                        <div class="col-3 ">
+                        <div class="col-3 col-md-3 col-sm-3">
                             <h2 class="ftco-heading-2">Contact</h2>
                             <span><h4 class="text-dark">Address</h4></span>
                             <a href="#address"><p class="text-dark">Ashulia,Savar,Dhaka</p></a>

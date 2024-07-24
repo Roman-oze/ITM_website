@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Staff;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AboutController extends Controller
 {
@@ -11,8 +12,11 @@ class AboutController extends Controller
      */
     public function about()
     {
-        return view('frontend.about');
+         $staffs = DB::table('staffs')->get();
+
+        return view('frontend.about',compact('staffs'));
     }
+
 
     /**
      * Show the form for creating a new resource.

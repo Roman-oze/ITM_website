@@ -8,13 +8,20 @@ use Illuminate\Support\Facades\DB;
 
 class ClubController extends Controller
 {
-   public function membership(){
+        public function membership(){
 
-$data['student'] = DB::table('students')->get();
+        $students = DB::table('students')->get();
 
-return view('club.membership',$data);
+        return view('club.membership',compact('students'));
 
    }
+//         public function staff(){
+
+//         $staffs = DB::table('staffs')->get();
+
+//         return view('frontend.about',compact('staffs'));
+
+//    }
 
 
 }

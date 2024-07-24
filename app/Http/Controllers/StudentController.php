@@ -27,7 +27,7 @@ class StudentController extends Controller
 
     public function index(){
 
-      $students = DB::table('students')->get();
+      $students = DB::table('students')->paginate(10);
 
 
     return view('student.index',compact('students'));
@@ -83,23 +83,27 @@ class StudentController extends Controller
 
     public function edit($id)
     {
-        $students = DB::table('students')->where('id',$id)->first();
-                return view('student.edit',compact('students'));
+        $student = DB::table('students')->where('id',$id)->first();
+                return view('student.edit',compact('student'));
     }
 
 
     public function update(Request $request,$id){
 
         $data['name']=$request->name;
+        $data['roll']=$request->roll;
+        $data['batch']=$request->batch;
         $data['email']=$request->email;
-        $data['department']=$request->department;
+        $data['blood']=$request->blood;
         $data['address']=$request->address;
         $data['mobile']=$request->mobile;
+        $data['type']=$request->type;
+
 
         DB::table('students')->where('id',$id)->update($data);
 
         // dd(DB::table('students')->get());
-        return redirect('students');
+        return redirect()->back()->with('update','Successfully done!');
 
 
     }
@@ -108,17 +112,23 @@ class StudentController extends Controller
         DB::table('students')->where('id',$id)->delete();
 
         // dd(DB::table('students')->get());
-        return redirect('students');
+        return redirect()->back();
 
     }
 
-    public function find(Request $request){
+    public function search(Request $request){
 
         $data = $request->input('search');
         $students =DB::table('students')->where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);
         return view('student.index',compact('students'));
 
     }
+
+
+
+
+
+
 
 
 }

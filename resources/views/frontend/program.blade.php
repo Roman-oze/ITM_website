@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.app')
 @include('frontend.program_style')
 
 
@@ -126,20 +126,63 @@
   </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!--<h4 class="mb-5 text-center">Information Technology &amp; Management</h4>-->
+            <div class="accordion " id="accordionExample">
+                <div class="accordion-item mb-2">
+                    <h2 class="accordion-header" id="heading1">
+                        <button class="accordion-button btn btn-outline-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            B.Sc. in Information Technology and Management (ITM)
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row pt-2 pb-2 bg-light">
+                                <div class="col-md-5">Credit Hours</div>
+                                <div class="col-md-7">142</div>
+                            </div>
+                            <div class="row pt-2 pb-2 mt-2 bg-light">
+                                <div class="col-md-5">Program Duration</div>
+                                <div class="col-md-7">4 Years</div>
+                            </div>
+                            <div class="row pt-2 pb-2 mt-2 bg-light">
+                                <div class="col-md-5">Admission Fees (Tk)</div>
+                                <div class="col-md-7">54500</div>
+                            </div>
+                            <div class="row pt-2 pb-2 mt-2 bg-light">
+                                <div class="col-md-5">Semester Cost (Tk)</div>
+                                <div class="col-md-7">85,000</div>
+                            </div>
+                            <div class="row pt-2 pb-2 mt-2 bg-light">
+                                <div class="col-md-5">Total Tuition Fees (Tk)</div>
+                                <div class="col-md-7">509,900</div>
+                            </div>
+                            <div class="row pt-2 pb-2 mt-2 bg-light">
+                                <div class="col-md-5">Total Fees (Tk)</div>
+                                <div class="col-md-7">727,100</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional accordion items can be added here -->
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
 
 <section id="catagory"></section>
 
-<div class="container-fluid mt-5">
-  <br>
-  <br>
-  <br>
+<div class="container mt-5">
+ <div class="row p-1 text-center">
+  <h2 class="dee1  text-white p-3">Category of Courses</h2>
 
-  <h2 class="dee1  text-white">Category of Courses</h2>
-
-<table>
+<table class="table-striped">
 <thead>
   <tr>
     <th>Category of Courses</th>
@@ -209,6 +252,7 @@
 </tbody>
 </table>
 
+</div>
 </div>
 
   <div class="dee1">
@@ -287,7 +331,7 @@
   <tfoot>
     <tr>
       <td colspan="3" class="text-right">Total Credits</td>
-      <td>27</td>
+      <td colspan="2">27</td>
     </tr>
   </tfoot>
 </table>
@@ -406,7 +450,7 @@
     <tfoot>
       <tr>
         <th colspan="3">Total Credits</th>
-        <td>45</td>
+        <td colspan="3">45</td>
       </tr>
     </tfoot>
   </table>
@@ -510,7 +554,7 @@
     <tfoot>
       <tr>
         <th colspan="3">Total Credits</th>
-        <td>16</td>
+        <td colspan="3">16</td>
       </tr>
     </tfoot>
   </table>

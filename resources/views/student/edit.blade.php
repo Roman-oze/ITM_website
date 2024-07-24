@@ -2,7 +2,7 @@
  <!-- resources/views/students/create.blade.php -->
 
 <!-- resources/views/students/create.blade.php -->
-@extends('admin.Admin layout._master')
+@extends('layout.dashboard')
 
 
 @section('main')
@@ -24,41 +24,64 @@
                 </div>
                 <br>
                 <br>
-                <form action="{{ route('update', $student->id) }}" method="post">
+                <form action="{{ route('student.update', $student->id) }}" method="post">
                     @csrf
                     @method('PUT')
 
+                    @if (session()->has('sucess'))
+                    <div class="alert alert-success">
+                        {{session()->get('success')}}
+                    </div>
+                    @endif
+
+                    @if (session()->has('error'))
+                    <div class="alert alert-danger">
+                        {{session()->get('error')}}
+                    </div>
+                    @endif
+
+
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" required>
-                        <input type="hidden" class="form-control" value="user" name="role" required>
+                        <label for="name">Name: </label>
+                        <input type="text" class="form-control" name="name" value="{{ $student->name }}" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="name">Email</label>
-                        <input type="email" class="form-control" name="email" required>
-                        <input type="hidden" class="form-control" value="user" name="role" required>
+                        <label for="name">ID: </label>
+                        <input type="text" class="form-control" name="roll" value="{{ $student->roll }}" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="department">Department:</label>
-                        <input type="text" class="form-control" name="department" required>
-                        <input type="hidden" class="form-control" value="user" name="role" required>
+                        <label for="department">Batch: </label>
+                        <input type="text" class="form-control" name="batch"  value="{{ $student->batch }}"required>
                     </div>
 
                     <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" name="address" required>
-                        <input type="hidden" class="form-control" value="user" name="role" required>
+                        <label for="address">Email: </label>
+                        <input type="text" class="form-control" name="email" value="{{ $student->email }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Blood: </label>
+                        <input type="text" class="form-control" name="blood" value="{{ $student->blood }}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="mobile">Mobile:</label>
-                        <input type="text" class="form-control" name="mobile" required>
-                        <input type="hidden" class="form-control" value="user" name="role" required>
+                        <input type="text" class="form-control" name="mobile" value="{{ $student->mobile }}" required>
                     </div>
-                          <br>
-                          <br>
+                    <div class="form-group">
+                        <label for="mobile">Mobile:</label>
+                        <input type="text" class="form-control" name="address" value="{{ $student->address }}" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="type" class="text-white" >Status</label>
+                        <select name="type"  class="form-select">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                        <span class="text-danger">@error('type'){{ $message }}@enderror</span>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>

@@ -17,15 +17,18 @@ class FacultyController extends Controller
     {
         $teachers = DB::table('teachers')->get();
 
-        return view('admin.faculty.faculty',compact('teachers'));
+        return view('faculty.faculty',compact('teachers'));
     }
+
+
+
 
 
     public function index()
     {
-        $teachers = DB::table('teachers')->get();
+        $teachers = DB::table('teachers')->paginate(10);
 
-        return view('admin.faculty.index',compact('teachers'));
+        return view('faculty.index',compact('teachers'));
     }
 
     /**
@@ -33,7 +36,7 @@ class FacultyController extends Controller
      */
     public function create()
     {
-        return view('admin.faculty.create');
+        return view('faculty.create');
 
     }
 
@@ -69,12 +72,7 @@ class FacultyController extends Controller
 
 
     DB::table('teachers')->insert($data);
-    return redirect()->route('faculty.index')->with('success','Faculty Added Successfully');
-
-
-
-
-
+    return redirect()->route('dashboard.faculty')->with('success','Faculty Added Successfully');
 
 
     }
@@ -93,13 +91,13 @@ class FacultyController extends Controller
     public function edit($id)
     {
        $teacher = DB::table('teachers')->where('teacher_id',$id)->first();
-       return view('admin.faculty.edit',compact('teacher'));
+       return view('faculty.edit',compact('teacher'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function faculty_update(Request $request, string $id)
+    public function update(Request $request, string $id)
     {
         // $request->validate([
         //     'image' => 'required|mimes:png,jpg,jpeg,webp',
@@ -127,7 +125,9 @@ class FacultyController extends Controller
 
 
             DB::table('teachers')->where('teacher_id',$id)->update($data);
-            return redirect('showing');
+
+            return redirect()->route('dashboard.faculty')->with('success','Faculty update Successfully');
+
     }
 
 
@@ -143,4 +143,26 @@ class FacultyController extends Controller
         DB::table('teachers')->where('teacher_id',$id)->delete();
         return redirect()->back();
     }
+
+
+
+
+
+
+
+
+
+
+
+    public function search (Request $request){
+
+
+        $data = $request->input('search');
+        $teachers = DB::table('teachers')->where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);
+        return view('faculty.index',compact('teachers'));
+
+
+
+    }
+
 }

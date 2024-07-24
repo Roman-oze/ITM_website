@@ -1,4 +1,4 @@
-@extends('admin.Admin layout._master')
+@extends('layout.dashboard')
 
 
 
@@ -6,6 +6,12 @@
 
 
 <div class="container mt-5">
+    <h1 class="mt-4">Routine</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+        <li class="breadcrumb-item active">create routine </li>
+    </ol>
+    <br>
     <div class="card shadow p-4">
         <div class="card-body">
             <h3 class="card-title text-center p-2">Upload Files</h3>

@@ -1,9 +1,9 @@
 <?php
 
 namespace Database\Seeders;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class UserTableSeeder extends Seeder
@@ -14,9 +14,11 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         return User::create([
-            'username'      => 'admin',
-            'email'         => 'admin@example.com',
-            'password'      => Hash::make('admin123'),
+            'name'      => 'admin',
+            'email'         => 'admin@itm.com',
+            'password'      => Hash::make('admin211'),
         ]);
     }
+
+
 }

@@ -1,29 +1,31 @@
-@extends('admin.Admin layout._master')
+@extends('layout.dashboard')
 
 
 @section('main')
-<div class="container p-5">
-    <div class="row p-3">
-        <div class="col-md-6 ">
-            <form action="find">
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Students</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Students List </li>
+        </ol>
+
+       <div class="row">
+        <div class="col-md-10 text-left">
+            <form action="{{route('student.search')}}" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input type="search" name="search" class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-outline-info">Search</button>
-                    </div>
+                    <input class="form-control" type="text" name="search" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </form>
-        </div>
-        <div class="col-md-6 text-right">
-          <div class=" text-left">
-            <a href="{{ route('create') }}" class="btn btn-info">New Add</a>
+            <a href="{{ route('create') }}" class="btn btn-outline-dark ">New Add</a>
 
-          </div>
         </div>
+
+
     </div>
-<h1 class="text-danger ">Student Details</h1>
 
-<table class="table table-striped">
+<table class="table table-striped mt-5">
     <thead>
         <tr class="">
             <th>Name</th>
@@ -59,10 +61,9 @@
 
 
                 <td class="text-center justify-content-evenly">
-                        <a href="" class="p-3"><i class="fa-solid fa-eye text-success  fa-lg "></i></a>
-                         <a href="" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+                         <a href="{{route('student.edit',$student->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
 
-                        <form action="" method="post" style="display:inline;">
+                        <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button  type="submit"  class="p-3 bg-none" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></button>
@@ -75,11 +76,14 @@
     </tbody>
 </table>
 
-{{-- {{ $students->links('pagination::bootstrap-5') }} --}}
+</main>
+
+{{ $students->links('pagination::bootstrap-5') }}
+
 </div>
 
-    <!-- Your existing form fields --
-</form>
+
+
 @endsection
 
 

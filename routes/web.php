@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\StatsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RoutineController;
@@ -16,6 +17,8 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\StaffController;
+
 use App\Http\Middleware\Itm;
 
 use Faker\Guesser\Name;
@@ -50,19 +53,13 @@ use Faker\Guesser\Name;
 route::controller(UserController::class)->group(function(){
 
     Route::get('/users', 'index')->name('users');
-    Route::post('/users', 'store');
+    Route::post('/users', 'store')->name('store.user');
     Route::get('/users/create', 'create')->name('create.user');
     Route::get('/users/show/{id}', 'show')->name('show.user');
     Route::get('/users/edit/{id}', 'edit')->name('edit.user');
     Route::put('/users/update/{id}', 'update')->name('update.user');
-    Route::delete('user/delete/{id}', 'destroy')->name('user.delete');
-    Route::get('search','search')->name('search');
-
-    // Route::get('user', 'user')->name('admin.user');
-    // Route::get('admin/show/{id}', 'show')->name('show');
-    // Route::get('admin/edit/{id}', 'edit')->name('admin.edit');
-    // Route::put('admin/update/{id}','update')->name('admin.update');
-    // Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');
+    Route::delete('users/delete/{id}', 'destroy')->name('user.delete');
+    Route::get('/users/search','search')->name('search.user');
 
 });
 
@@ -102,13 +99,15 @@ route::controller(RelationalController::class)->group(function(){
  Route::controller(FacultyController::class)->group(function(){
 
     Route::get('/faculty/member','member')->name('faculty.member');
-    Route::get('/faculty/create','create')->name('faculty.create');
-    Route::get('/faculty/index','index')->name('faculty.index');
-    Route::get('/faculty/create','create')->name('faculty/create');
-    Route::post('/faculty_store', 'store')->name('faculty.store');
-    Route::get('/faculty_edit/{id}', 'edit')->name('faculty_edit');
-    Route::post('/faculty_update/{id}', 'faculty_update')->name('faculty_update');
-    Route::delete('/faculty_delete/{id}', 'destroy')->name('faculty_delete');
+    Route::get('/faculty/create','create')->name('create.faculty');
+    Route::get('/dashboard/faculty','index')->name('dashboard.faculty');
+    Route::post('/faculty/store', 'store')->name('faculty.store');
+    Route::get('/faculty/edit/{id}', 'edit')->name('edit.faculty');
+    Route::put('/faculty/update/{id}', 'update')->name('update.faculty');
+    Route::delete('/faculty/delete/{id}', 'destroy')->name('delete.faculty');
+    route::get('/faculty/searching','search')->name('faculty.search');
+
+
   //   Route::get('teachers','teachers')->name('teachers');
 
 
@@ -119,7 +118,7 @@ route::controller(RelationalController::class)->group(function(){
 Route::controller(EventController::class)->group(function(){
 
     Route::get('/events','events')->name('events');
-    Route::get('admin/event', 'index')->name('admin.event');
+    Route::get('dashboard/event', 'index')->name('dashboard.event');
     Route::get('event/create', 'create')->name('event/create');
     route::post('event_store','event_store')->name('event_store');
     route::get('event_show/{id}','show')->name('event_show');
@@ -133,7 +132,8 @@ Route::controller(EventController::class)->group(function(){
 
 Route::controller(RoutineController::class)->group(function(){
 
-    route::get('/sem/routine','index')->name('sem.routines');
+    route::get('/semester/routine','routine')->name('semester.routines');
+    route::get('dashboard/routine','index')->name('dashboard.routines');
     route::get('/routine/create','create')->name('routine.create');
     route::post('/routine/store','store')->name('routine.store');
     route::get('/routine/edit/{id}','edit')->name('routine.edit');
@@ -163,9 +163,6 @@ Route::controller(AuthController::class)->group(function(){
 
 Route::controller(AdminController::class)->group(function(){
 
-    Route::get('admin/static', 'static')->name('static');
-    Route::get('admin/chart', 'chart')->name('chart');
-
     Route::get('user', 'user')->name('admin.user');
     Route::get('admin/show/{id}', 'show')->name('show');
     Route::get('admin/edit/{id}', 'edit')->name('admin.edit');
@@ -185,19 +182,40 @@ Route::controller(AdminController::class)->group(function(){
 
 Route::get('students', 'index')->name('index');
 Route::get('student/create', 'create')->name('create');
+Route::post('/student', 'store')->name('student.store');
+Route::get('/student/edit/{id}', 'edit')->name('student.edit');
+Route::put('/student/update/{id}','update')->name('student.update');
+Route::delete('student/delete/{id}', 'destroy')->name('delete');
+Route::get('/student/search','search')->name('student.search');
 Route::get('student/login', 'sign_in')->name('sign_in');
-Route::post('/store', 'store')->name('store');
-Route::get('/show/{id}', 'show')->name('student_show');
-Route::get('/edit/{id}', 'edit')->name('student_edit');
-Route::put('/update/{id}','update')->name('student_update');
-Route::delete('/delete/{id}', 'destroy')->name('delete');
-Route::get('/find','find')->name('find');
+
 
 
 
 
 
  });
+
+ Route::controller(StatsController::class)->group(function(){
+
+    Route::get('/chart','chart')->name('chart');
+    Route::get('/static','static')->name('static');
+
+});
+
+
+Route::controller(StaffController::class)->group(function(){
+
+    route::get('/staff/index','index')->name('staff.index');
+    // Route::get('/faculty/member','staff')->name('faculty.member');
+    route::get('/staff/create','create')->name('staff.create');
+    route::post('store','store')->name('staff.store');
+    route::get('staff/edit/{id}','edit')->name('staff.edit');
+    route::put('staff/update/{id}','update')->name('staff.update');
+    route::delete('staff/delete/{id}','destroy')->name('staff.delete');
+
+});
+
 
 
 
@@ -213,25 +231,4 @@ route::get('/',[HomeController::class,'home'])->name('home');
 route::get('/program',[ProgramController::class,'program'])->name('program');
 route::get('/about',[AboutController::class,'about'])->name('about');
 
-// Route::view('/home','frontend.home')->name('homepage');
-// Route::view('/program','frontend/program')->name('program');
-// Route::get('/about','frontend/about')->name('about');
 
-
-
-
-//Route::controller(UserController::class)->group(function(){
-
-    // // Route::get('user/profile', 'profile')->name('profile');
-    // Route::get('users/login', 'login')->name('login');
-    // Route::get('users/registration', 'registration')->name('registration');
-    // // Route::get('admin/dashboard', 'admin')->name('admin');
-    // Route::get('users', 'index')->name('user');
-    // Route::post('/register', 'register')->name('register');
-    // Route::get('/view/{id}', 'view')->name('view');
-    // Route::get('/edit/{id}', 'edit')->name('edit');
-    // Route::put('/update/{id}','update')->name('update');
-    // Route::delete('/delete/{id}', 'destroy')->name('delete');
-
-
-    //  });
