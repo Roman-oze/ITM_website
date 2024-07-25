@@ -4,11 +4,13 @@
 
 <main>
     <div class="container p-3">
-        <h2 class="text-danger">Staff Create </h2>
+        <h2 class="mt-4">Staff Create</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">staff List </li>
+        </ol>
         <br>
-        <br>
-        <a href="{{route('staff.index')}}" class="btn btn-dark text-white">Back</a>
-        <br>
+
 
 
         <form action="{{route('staff.update',$staff->id)}}" enctype="multipart/form-data"  method="POST">

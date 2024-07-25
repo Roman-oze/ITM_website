@@ -18,7 +18,7 @@
          <h3 class="department">Department of <img src="{{asset('frontend/image/verifi.png')}}" class="verify"></h3>
          <!-- <h1>Web Developer</h1>    -->
 
-          <h2><div id="typewrite" class=" web_developer text-white">
+          <h2><div id="typewrite" class=" web_developer text-white animate__animated animate__fadeInLeft">
             Information Technology & Management
           </div>
         </h2>
@@ -36,7 +36,7 @@
         <div class="cover-border text-center ">
         <!-- <img src="black-jacket.png" class="dp"> -->
         <!-- <img src="diu-3.png" class="dp"> -->
-        <img src="{{asset('frontend/image/student3.png')}}" class="image1 img-fluid-custom ">
+        <img src="{{asset('frontend/image/student3.png')}}" class="image1 img-fluid-custom  animate__animated animate__fadeInU">
         {{-- <img src="{{asset('frontend/image/student4.png')}}" class="image1 img-fluid "> --}}
       </div>
       </div>
@@ -308,72 +308,178 @@
 <br>
 
 <div class="highlight mt-5">
- <h2 class="text-white highlight">Recently</h2>
+ <h2 class="text-white highlight">Alumni</h2>
  <div class=" ">
      <span class="elementor-divider-separator"></span>
  </div>
 </div>
 
+
+
 <div class="container mt-5 ">
- <div class="row">
-   <!-- Card 1 -->
-   <div class="col-md-3">
-     <div class="card mb-3  p-3">
-       <div class="mb-4">
-        <h2 class="staff-name text-black">Schoolarship</h2>
-         <div class="mb-4"><img src="{{asset('frontend/image/jobfair2.png')}}" alt="Image" class="img-fluid-custom"></div>
-     </div>
-       <div class="staff-body ">
-         <span class="d-block position mb-4 text-black">Name :</span>
-         <p class="mb-4 text-black">Batch :</p>
+    <div class="row">
 
+
+      <div class="col-md-3 p-2">
+      <div class="flip-card box-shadow ">
+       <div class="flip-card-inner">
+         <div class="flip-card-front flip-custom">
+   <div class="child-div">
+           <div class="mb-4 "><img src="{{asset('frontend/image/dp - Copy.jpg')}}" alt="Image" class="alumni-custom"></div>
+           <div class="text p-3">
+           <h2 style="font-style: italic;">Roman oze</h2>
+           <p class="text-muted">Web developer</p>
+       </div>
+       </div>
+       </div>
+         <div class="flip-card-back p-3 text-left" style="line-height:22px;">
+               <h4>Roman oze</h4>
+               <hr>
+               Student Id: 201-51-002<br>
+
+                   Batch: 1st Batch<br>
+
+                   Passing Year: 2024<br>
+
+                   Organization: FourBit<br>
+
+                   Designation: SEO Maestro Front-end Developer<br>
+
+                   Phone No: 01707778388<br>
+
+                   Email: sksojolkhan444@gmail.com<br>
+
+                   Office Address:
+                   <p>69/2, Swamibag,Dhaka,1203</p>
+
+                   <div class="social-links text-center">
+
+                   </div>
+         </div>
        </div>
      </div>
-   </div>
-   <div class="col-md-3">
-     <div class="card mb-3  p-3">
-       <div class="mb-4">
-        <h2 class="staff-name text-black">Schoolarship</h2>
-         <div class="mb-4"><img src="{{asset('frontend/image/student5.png')}}" alt="Image" class="img-fluid-custom"></div>
      </div>
-       <div class="staff-body ">
-         <span class="d-block position mb-4 text-black">Name :</span>
-         <p class="mb-4 text-black">Batch :</p>
+      <div class="col-md-3 p-2">
+      <div class="flip-card  ">
+       <div class="flip-card-inner">
+         <div class="flip-card-front flip-custom">
+   <div class="child-div">
+           <div class="mb-4 "><img src="{{asset('frontend/image/dp - Copy.jpg')}}" alt="Image" class="alumni-custom"></div>
+           <div class="text p-3">
+           <h2>Roman oze</h2>
+           <p>Web developer</p>
+       </div>
+       </div>
+       </div>
+         <div class="flip-card-back p-3 text-left" style="line-height:22px;">
+               <h4>Roman oze</h4>
+               <hr>
+               Student Id: 201-51-002<br>
 
+                   Batch: 1st Batch<br>
+
+                   Passing Year: 2024<br>
+
+                   Organization: FourBit<br>
+
+                   Designation: SEO Maestro Front-end Developer<br>
+
+                   Phone No: 01707778388<br>
+
+                   Email: sksojolkhan444@gmail.com<br>
+
+                   Office Address:
+                   <p>69/2, Swamibag,Dhaka,1203</p>
+
+                   <div class="social-links text-center">
+
+                   </div>
+         </div>
        </div>
      </div>
-   </div>
-   <div class="col-md-3">
-     <div class="card mb-3  p-3">
-       <div class="mb-4">
-        <h2 class="staff-name text-black">Schoolarship</h2>
-         <div class="mb-4"><img src="{{asset('frontend/image/student4.png')}}" alt="Image" class="img-fluid-custom"></div>
      </div>
-       <div class="staff-body ">
-         <span class="d-block position mb-4 text-black">Name :</span>
-         <p class="mb-4 text-black">Batch :</p>
+      <div class="col-md-3 p-2">
+      <div class="flip-card  ">
+       <div class="flip-card-inner">
+         <div class="flip-card-front flip-custom">
+   <div class="child-div">
+           <div class="mb-4 "><img src="{{asset('frontend/image/dp - Copy.jpg')}}" alt="Image" class="alumni-custom"></div>
+           <div class="text p-3">
+           <h2>Roman oze</h2>
+           <p>Web developer</p>
+       </div>
+       </div>
+       </div>
+         <div class="flip-card-back p-3 text-left" style="line-height:22px;">
+               <h4>Roman oze</h4>
+               <hr>
+               Student Id: 201-51-002<br>
 
+                   Batch: 1st Batch<br>
+
+                   Passing Year: 2024<br>
+
+                   Organization: FourBit<br>
+
+                   Designation: SEO Maestro Front-end Developer<br>
+
+                   Phone No: 01707778388<br>
+
+                   Email: sksojolkhan444@gmail.com<br>
+
+                   Office Address:
+                   <p>69/2, Swamibag,Dhaka,1203</p>
+
+                   <div class="social-links text-center">
+
+                   </div>
+         </div>
        </div>
      </div>
-   </div>
-   <div class="col-md-3">
-     <div class="card mb-3  p-3">
-       <div class="mb-4">
-        <h2 class="staff-name text-black">Schoolarship</h2>
-         <div class="mb-4"><img src="{{asset('frontend/image/student.png')}}" alt="Image" class="img-fluid-custom"></div>
      </div>
-       <div class="staff-body ">
-         <span class="d-block position mb-4 text-black">Name :</span>
-         <p class="mb-4 text-black">Batch :</p>
+      <div class="col-md-3 p-2">
+      <div class="flip-card  ">
+       <div class="flip-card-inner">
+         <div class="flip-card-front flip-custom">
+   <div class="child-div">
+           <div class="mb-4 "><img src="{{asset('frontend/image/dp - Copy.jpg')}}" alt="Image" class="alumni-custom"></div>
+           <div class="text p-3">
+           <h2>Roman oze</h2>
+           <p>Web developer</p>
+       </div>
+       </div>
+       </div>
+         <div class="flip-card-back p-3 text-left" style="line-height:22px;">
+               <h4>Roman oze</h4>
+               <hr>
+               Student Id: 201-51-002<br>
 
+                   Batch: 1st Batch<br>
+
+                   Passing Year: 2024<br>
+
+                   Organization: FourBit<br>
+
+                   Designation: SEO Maestro Front-end Developer<br>
+
+                   Phone No: 01707778388<br>
+
+                   Email: sksojolkhan444@gmail.com<br>
+
+                   Office Address:
+                   <p>69/2, Swamibag,Dhaka,1203</p>
+
+                   <div class="social-links text-center">
+
+                   </div>
+         </div>
        </div>
      </div>
+     </div>
+
+
    </div>
-
-
-</div>
-</div>
-
+   </div>
 
 
 

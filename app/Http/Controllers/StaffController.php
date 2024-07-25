@@ -113,8 +113,9 @@ class StaffController extends Controller
 
 
 
-        DB::table('staffs')->update($data);
-        return redirect('/staff/index');
+        DB::table('staffs')->where('id',$id)->update($data);
+        return redirect('/staff/index')->with('success','Update profile');
+
     }
 
     /**
@@ -135,6 +136,6 @@ class StaffController extends Controller
 
         return view('faculty.member',compact('staffs'));
     }
-    
-    
+
+
 }

@@ -53,7 +53,7 @@
       </div>
       {{-- @endforeach --}}
     </div>
-</div> 
+</div>
 {{-- <div class="row justify-content-center mb-5">
 
   </div>
@@ -168,22 +168,24 @@
             <div class="social">
               <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
               <a href="#" class="mx-2"></a> --}}
-           
+
 <br>
 <br>
 <br>
 <br>
 <br>
-              <div class="mt-5 text-center">
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fa-solid fa-circle"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <h2 class="p-2 text-white">Offices Staff</h2>
-            </div>
-       
-              
+
+
+    <h2 class="p-2 text-white text-center">Faculty of Science and Information Technology</h2>
+<div class="text-center">
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fa-solid fa-circle"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+</div>
+
+
               <div class="container mt-5 ">
                 <div class="row text-left ">
                   <!-- Card 1 -->
@@ -198,26 +200,69 @@
                         <span class="d-block position mb-4 text-white-50">{{$staff->position}}</span>
                         <a href="{{$staff->email}}" class="text-white"><i class="fa-solid fa-envelope text-white fa-lg p-2"></i></a>
                         <a href="{{$staff->mobile}}" class="text-white"><i class="fa-solid fa-square-phone text-white fa-lg p-2"></i></a>
-               
+
                       </div>
                     </div>
                   </div>
                   @endforeach
                 </div>
-            </div> 
+            </div>
+
+            <div class="container-fluid bg-light p-5 mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-12 col-sm-12">
+                        <h5 class="heading_30 mb_50 h1 " data-bs-aos="fade-up" data-bs-aos-delay="100">Department of Information Technology &amp; Management</h5>
+                    </div>
+                </div>
+                        {{-- <div class="row mt-2">
+                        <div class="col-md-12 col-sm-12 col-sm-12">
+                            <h5 class="text_blue text_bold mb_30 h2 text-success" data-bs-aos="fade-up" data-bs-aos-delay="200">Head of the Department</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                              <div class="contact_box mb_85 col-md-6 col-sm-12" data-bs-aos="fade-up" data-bs-aos-delay="400">
+                                 <p class="text_bold mb_12"><strong>Ms. Nusrat Jahan</strong></p>                                                                                            <p class="mb_30">Assistant Professor</p>
+                                       <div class="contact_wrap">
+                                        <i class="fas fa-phone-alt "></i>
+                                        <a class="text-muted" href="tel:+8801713493250">01847334996</a>
+                                    </div>
+                                        <div class="contact_wrap">
+                                        <i class="fas fa-envelope"></i>
+                                        <a   class="text-muted" href="mailto:deanfsit@daffodilvarsity.edu.bd">headitm@daffodilvarsity.edu.bd</a>
+                                    </div>
+                                     <div class="contact_wrap">
+                                    </div>
+                                         </div>
+                                      </div> --}}
+
+                       <div class="row mt-5">
+                        <div class="col-md-12 col-sm-12 ">
+                            <h5 class="text_blue text_bold mb_30 h2 text-success" data-bs-aos="fade-up" data-bs-aos-delay="200">Offices of the Department</h5>
+                        </div>
+                    </div>
+                    <div class="row ">
+                                   <div class="contact_box mb_85 col-md-6 col-sm-12" data-bs-aos="fade-up" data-bs-aos-delay="500">
+                                 <p class="text_bold mb_12"><strong>Ms. Mahmuda Khatun</strong></p>                                                                                            <p class="mb_30">Assistant Coordination Officer</p>
+                                         <div class="contact_wrap">
+                                        <i class="fas fa-phone-alt"></i>
+                                        <a class="text-muted" href="tel:+8801713493250">01847140039</a>
+                                    </div>
+                                        <div class="contact_wrap">
+                                        <i class="fas fa-envelope"></i>
+                                        <a  class="text-muted" href="mailto:deanfsit@daffodilvarsity.edu.bd">itmoffice@daffodilvarsity.edu.bd</a>
+                                    </div>
+                                     <div class="contact_wrap">
+                                    </div>
+                                            </div>
+                                              </div>
+                                        </div>
+
+
 
   <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 
 
 <div class ="container-fluid">
@@ -228,7 +273,7 @@
         <br>
     <div class="row p-2">
         <div class="col-md-5  ">
-            
+
             <div class="item img-fluid-custom ">
               <div class="imagee">
                 <img src="{{asset('frontend/image/campus.jpeg')}}" class="imgg">

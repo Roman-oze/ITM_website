@@ -46,7 +46,7 @@
         </div>
     </div>
 
-        <nav class="navbar navbar-expand-lg p-2 navbar-black  bg-dark  text-center">
+        <nav class="navbar navbar-expand-lg p-2   bg-dark  text-center">
               <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/IT3.png')}}" alt="" class="pf "></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon fa-1x bg-info rounded-circle p-1"></span>
@@ -56,16 +56,28 @@
               <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a class="nav-link " href="{{route('home')}}" ><i class="fa-solid fa-house s-4 homeicon text-white"></i></a>
+                    <a class="nav-link link-hover" href="{{route('home')}}" ><i class="fa-solid fa-house s-4 homeicon text-white"></i></a>
+                  </li>
+                  <li class="nav-item "><div class="dropdown">
+                    <a class="nav-link link-hover" href="#">Admission</a>
+                        <div class="dropdown-content ms-auto rounded">
+
+                            <a target="_blank" href="{{route('admission_eligibility')}}" class="nav-link text-dark">Admission Eligibility</a>
+                            <a target="_blank" href="{{route('Local_tuition')}}" class="nav-link text-dark">Local Tuition</a>
+                            <a target="_blank" href="{{route('international_tuition')}}" class="nav-link text-dark">International Tuition</a>
+                            <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-dark">Admission Test result</a>
+                            <a target="_blank" href="" class="nav-link">Admission Notice</a>
+                        </div>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-hover" href="{{route('program')}}">Programs</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{route('program')}}">Programs</a>
+                    <a class="nav-link link-hover" href="{{route('faculty.member')}}">Faculty Members</a>
                   </li>
+
                   <li class="nav-item">
-                    <a class="nav-link" href="{{route('faculty.member')}}">Faculty Members</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{route('events')}}">Events</a>
+                    <a class="nav-link link-hover" href="{{route('events')}}">Events</a>
                   </li>
                   {{-- <li class="nav-item">
                     <a class="nav-link" href="{{route('semester.routines')}}">Routine</a>
@@ -73,14 +85,14 @@
 
                   <li class="nav-item">
                     <div class="dropdown rounded">
-                        <a class="nav-link" href="#">Routine</a>
+                        <a class="nav-link link-hover" href="#">Routine</a>
                             <div class="dropdown-content rounded">
-                                <a target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link">Spring-2024</a>
-                                <a target="_blank" href="{{route('semester.routines')}}"  class="nav-link">Fall-2024</a>
+                                <a class="text-dark h5" target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link">Spring-2024</a>
+                                <a class="text-dark h5" target="_blank" href="{{route('semester.routines')}}"  class="nav-link">Fall-2024</a>
                             </div>
                          </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{route('about')}}">Contact</a>
+                    <a class="nav-link link-hover" href="{{route('about')}}">Contact</a>
                   </li>
 
 

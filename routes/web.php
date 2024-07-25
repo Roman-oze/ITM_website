@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\AboutController;
@@ -217,6 +218,17 @@ Route::controller(StaffController::class)->group(function(){
 });
 
 
+route::controller(AdmissionController::class)->group(function(){
+    route::get('/local_tuition','Local_tuition')->name('Local_tuition');
+    route::get('/international_tuition','international_tuition')->name('international_tuition');
+    route::get('/admission_eligibility','admission_eligibility')->name('admission_eligibility');
+});
+
+
+
+route::get('/',[HomeController::class,'home'])->name('home');
+route::get('/program',[ProgramController::class,'program'])->name('program');
+route::get('/about',[AboutController::class,'about'])->name('about');
 
 
 Route::controller(ClubController::class)->group(function(){
@@ -226,9 +238,3 @@ Route::controller(ClubController::class)->group(function(){
     Route::view('/upcoming','club/upcoming')->name('upcoming');
     Route::get('/membership','membership')->name('membership');
 });
-
-route::get('/',[HomeController::class,'home'])->name('home');
-route::get('/program',[ProgramController::class,'program'])->name('program');
-route::get('/about',[AboutController::class,'about'])->name('about');
-
-
