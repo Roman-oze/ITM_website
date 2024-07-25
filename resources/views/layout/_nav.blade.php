@@ -29,16 +29,16 @@
     </div>
 </div> --}}
 
-<div class="container-fluid ">
-         <div class="row text-light bg-black">
-        <div class="col-md-6  col-sm-6 py-1 text-left">
+<div class="container-fluid  ">
+         <div class="row text-light ">
+        <div class="col-md-10  col-sm-10 py-1 text-left">
             <a  class="  p-2 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
             <a  class=" text-dark p-2" href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope icontop"></i></a>
             <a  class=" text-dark p-2" href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
         </div>
 
-        <div class="col-md-6  col-sm-6 py-1 text-right">
+        <div class="col-md-2  col-sm-2 py-1 text-right">
 
         <a class=" text-white p-2" href="{{route('login')}}"><i class="fa-solid fa-lock "></i> Login</a>
         <a class="text-white p-2" href="{{route('register')}}"><i class="fa-solid fa-user "></i> Register</a>
@@ -62,7 +62,7 @@
                     <a class="nav-link" href="{{route('program')}}">Programs</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{route('faculty.member')}}">Faculty</a>
+                    <a class="nav-link" href="{{route('faculty.member')}}">Faculty Members</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('events')}}">Events</a>
@@ -86,7 +86,7 @@
 
                     <li >
                         <div class="right-padd animate__animated animate__bounce animate__repeat-2 admission-btn ">
-                        <a target="_blank" class="bn50 p-3 " href="https://pd.daffodilvarsity.edu.bd/admission/online">Admission</a>
+                        <a target="_blank" class="bn50 p-3 " href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply Online</a>
                     </div>
                 </li>
               </div>
