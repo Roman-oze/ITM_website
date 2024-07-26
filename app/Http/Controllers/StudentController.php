@@ -13,7 +13,9 @@ class StudentController extends Controller
 
 
 
-
+public function alumni(){
+    return view('student.alumni');
+}
 
 
     public function sign_in()

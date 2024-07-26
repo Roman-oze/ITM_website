@@ -5,8 +5,7 @@
 
 <body>
     {{-- <nav class="navbar navbar-expand-lg navbar-light  fixed-top facilty p-2 t-center"> --}}
-
-     @include('layout._nav')
+        @include('layout._nav')
 
 
       <header>

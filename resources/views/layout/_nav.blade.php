@@ -30,7 +30,7 @@
 </div> --}}
 
 <div class="container-fluid  ">
-         <div class="row text-light ">
+         <div class="row text-light  ">
         <div class="col-md-10  col-sm-10 py-1 text-left">
             <a  class="  p-2 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
@@ -46,8 +46,8 @@
         </div>
     </div>
 
-        <nav class="navbar navbar-expand-lg p-2   bg-dark  text-center">
-              <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/IT3.png')}}" alt="" class="pf "></a>
+        <nav class="navbar navbar-expand-lg p-2   text-center" style="    background-color: rgb(7, 40, 47); ">
+              <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/portal.png')}}" alt="" class="brand-logo "></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon fa-1x bg-info rounded-circle p-1"></span>
               </button>
@@ -69,6 +69,16 @@
                             <a target="_blank" href="" class="nav-link">Admission Notice</a>
                         </div>
                 </li>
+                  <li class="nav-item "><div class="dropdown">
+                    <a class="nav-link link-hover" href="#">Students</a>
+                        <div class="dropdown-content ms-auto rounded">
+                            <a target="_blank" href="{{route('events')}}" class="nav-link text-dark">Events</a>
+                            <a target="_blank" href="{{route('alumni')}}" class="nav-link text-dark">Alumni</a>
+                            <a target="_blank" href="{{route('Local_tuition')}}" class="nav-link text-dark">Research</a>
+                            <a target="_blank" href="{{route('international_tuition')}}" class="nav-link text-dark">Scholarship</a>
+                            <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-dark">Notice Board</a>
+                        </div>
+                </li>
                   <li class="nav-item">
                     <a class="nav-link link-hover" href="{{route('program')}}">Programs</a>
                   </li>
@@ -76,9 +86,6 @@
                     <a class="nav-link link-hover" href="{{route('faculty.member')}}">Faculty Members</a>
                   </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link link-hover" href="{{route('events')}}">Events</a>
-                  </li>
                   {{-- <li class="nav-item">
                     <a class="nav-link" href="{{route('semester.routines')}}">Routine</a>
                   </li> --}}

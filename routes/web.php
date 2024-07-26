@@ -189,6 +189,7 @@ Route::put('/student/update/{id}','update')->name('student.update');
 Route::delete('student/delete/{id}', 'destroy')->name('delete');
 Route::get('/student/search','search')->name('student.search');
 Route::get('student/login', 'sign_in')->name('sign_in');
+Route::get('student/alumni', 'alumni')->name('alumni');
 
 
 

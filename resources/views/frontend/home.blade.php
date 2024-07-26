@@ -73,7 +73,7 @@
 
 @section('content')
 
-<section id="Feature" class="section-p1 bg-info ">
+<section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="container d-flex justify-content-evenly">
     <div class="fe-box img-fluid-custom">
         <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
@@ -125,34 +125,119 @@
 
 </div>
 <div class="container-fluid text-center mt-5 ">
+
     <div class="row p-3">
-
-            {{-- <div class="col-md-3 ">
-            <div class="custom-box img-fluid">
-                <img src="{{asset('frontend/image/web.png')}}" alt="" class="img-fluid"><br>
-                <h4 style="text-white">Web Developer</h4>
-                <p class="text-white-50 p-2">Web developer for success future</p>
-            </div>
-              </div> --}}
-
-
-            <div class="col-md-3 p-2">
-            <div class="custom-box img-fluid-custom">
+              <div class="col-md-3 p-3 ">
+                <div class="flip-card flip-shadow ">
+                 <div class="flip-card-inner ">
+                   <div class="flip-card-front flip-custom-2">
+             <div class="child-div-2">
                 <img src="{{asset('frontend/image/web.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white">Web Developer</h4>
-                    <a href="#" class="btn btn-outline-light">view</a>
-              </div>
-              </div>
 
+                 </div>
+                 </div>
+                   <div class="flip-card-back p-3 text-left " style="line-height:22px;">
+                         <h4>web development</h4>
+                         <hr>
+                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
+                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
+                             quae molestias velit quasi, impedit beatae commodi.</p>
+
+                             <div class="social-links text-center">
+
+                             </div>
+                   </div>
+                 </div>
+               </div>
+               </div>
+              <div class="col-md-3 p-3 ">
+                <div class="flip-card  flip-shadow">
+                 <div class="flip-card-inner">
+                   <div class="flip-card-front flip-custom-2">
+             <div class="child-div-2">
+                <img src="{{asset('frontend/image/app.png')}}" alt="" class="img-fluid-custom"><br>
+                <h4 style="text-white">Mobile App Developer</h4>
+
+                 </div>
+                 </div>
+                   <div class="flip-card-back p-3 text-left " style="line-height:22px;">
+                         <h4>Mobile App Developer</h4>
+                         <hr>
+                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
+                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
+                             quae molestias velit quasi, impedit beatae commodi.</p>
+
+                             <div class="social-links text-center">
+
+                             </div>
+                   </div>
+                 </div>
+               </div>
+               </div>
+              <div class="col-md-3 p-3 ">
+                <div class="flip-card  flip-shadow">
+                 <div class="flip-card-inner">
+                   <div class="flip-card-front flip-custom-2">
+             <div class="child-div-2">
+                <img src="{{asset('frontend/image/business.png')}}" alt="" class="img-fluid-custom"><br>
+                <h4 style="text-white">Entrepreneur</h4>
+
+                 </div>
+                 </div>
+                   <div class="flip-card-back p-3 text-left " style="line-height:22px;">
+                         <h4>Entrepreneur</h4>
+                         <hr>
+                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
+                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
+                             quae molestias velit quasi, impedit beatae commodi.</p>
+
+                             <div class="social-links text-center">
+
+                             </div>
+                   </div>
+                 </div>
+               </div>
+               </div>
+              <div class="col-md-3 p-3">
+                <div class="flip-card  flip-shadow">
+                 <div class="flip-card-inner">
+                   <div class="flip-card-front flip-custom-2">
+             <div class="child-div-2">
+                <img src="{{asset('frontend/image/cybersec.png')}}" alt="" class="img-fluid-custom"><br>
+                <h4 style="text-white ">Cyber Security</h4>
+
+                 </div>
+                 </div>
+                   <div class="flip-card-back p- text-left " style="line-height:22px;">
+                         <h4>Cyber Security</h4>
+                         <hr>
+                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
+                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
+                             quae molestias velit quasi, impedit beatae commodi.</p>
+
+                             <div class="social-links text-center">
+
+                             </div>
+                   </div>
+                 </div>
+               </div>
+               </div>
+               </div>
+
+
+
+
+{{--
             <div class="col-md-3 p-2">
             <div class="custom-box img-fluid-custom">
                 <img src="{{asset('frontend/image/app.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white">Mobile App Developer</h4>
                     <a href="#" class="btn btn-outline-light">view</a>
               </div>
-              </div>
+              </div> --}}
 
-            <div class="col-md-3 p-2">
+            {{-- <div class="col-md-3 p-2">
             <div class="custom-box img-fluid-custom">
                 <img src="{{asset('frontend/image/business.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white">Entrepreneur</h4>
@@ -166,42 +251,110 @@
                 <h4 style="text-white">Cyber Security</h4>
                     <a href="#" class="btn btn-outline-light">view</a>
               </div>
-            </div>
+            </div> --}}
 
         </div>
+    <div class="row p-3">
+              <div class="col-md-3 p-3 ">
+                <div class="flip-card flip-shadow ">
+                 <div class="flip-card-inner ">
+                   <div class="flip-card-front flip-custom-2">
+             <div class="child-div-2">
+                <img src="{{asset('frontend/image/HR.png')}}" alt="" class="img-fluid-custom"><br>
+                <h4 style="text-white">Human Resource</h4>
+
+                 </div>
+                 </div>
+                   <div class="flip-card-back p-3 text-left " style="line-height:22px;">
+                    <h4 style="text-white">Human Resource</h4>
+                    <hr>
+                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
+                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
+                             quae molestias velit quasi, impedit beatae commodi.</p>
+
+                             <div class="social-links text-center">
+
+                             </div>
+                   </div>
+                 </div>
+               </div>
+               </div>
+              <div class="col-md-3 p-3 ">
+                <div class="flip-card  flip-shadow">
+                 <div class="flip-card-inner">
+                   <div class="flip-card-front flip-custom-2">
+             <div class="child-div-2">
+                <img src="{{asset('frontend/image/MIS.png')}}" alt="" class="img-fluid-custom"><br>
+                <h4 style="text-white">Management Information</h4>
+
+                 </div>
+                 </div>
+                   <div class="flip-card-back p-3 text-left " style="line-height:22px;">
+                    <h4 style="text-white">Management Information</h4>
+                    <hr>
+                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
+                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
+                             quae molestias velit quasi, impedit beatae commodi.</p>
+
+                             <div class="social-links text-center">
+
+                             </div>
+                   </div>
+                 </div>
+               </div>
+               </div>
+              <div class="col-md-3 p-3 ">
+                <div class="flip-card  flip-shadow">
+                 <div class="flip-card-inner">
+                   <div class="flip-card-front flip-custom-2">
+             <div class="child-div-2">
+                <img src="{{asset('frontend/image/database.png')}}" alt="" class="img-fluid-custom"><br>
+                <h4 style="text-white">Database Management</h4>
+
+                 </div>
+                 </div>
+                   <div class="flip-card-back p-3 text-left " style="line-height:22px;">
+                    <h4 style="text-white">Database Management</h4>
+                    <hr>
+                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
+                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
+                             quae molestias velit quasi, impedit beatae commodi.</p>
+
+                             <div class="social-links text-center">
+
+                             </div>
+                   </div>
+                 </div>
+               </div>
+               </div>
+              <div class="col-md-3 p-3">
+                <div class="flip-card  flip-shadow">
+                 <div class="flip-card-inner">
+                   <div class="flip-card-front flip-custom-2">
+             <div class="child-div-2">
+                <img src="{{asset('frontend/image/sqa.png')}}" alt="" class="img-fluid-custom"><br>
+                <h4 style="text-white">Software Quality Testing</h4>
+
+                 </div>
+                 </div>
+                   <div class="flip-card-back p- text-left " style="line-height:22px;">
+                    <h4 style="text-white p-3">Software Quality Testing</h4>
+                    <hr>
+                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
+                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
+                             quae molestias velit quasi, impedit beatae commodi.</p>
+
+                             <div class="social-links text-center">
+
+                             </div>
+                   </div>
+                 </div>
+               </div>
+               </div>
+               </div>
 
 
-              <div class="row mt-1 p-3">
-                <div class="col-md-3 p-2">
-                    <div class="custom-box img-fluid-custom">
-                        <img src="{{asset('frontend/image/HR.png')}}" alt="" class="img-fluid-custom"><br>
-                        <h4 style="text-white">Human Resource</h4>
-                            <a href="#" class="btn btn-outline-light">view</a>
-                      </div>
-                    </div>
-                <div class="col-md-3 p-2">
-                    <div class="custom-box img-fluid-custom">
-                        <img src="{{asset('frontend/image/MIS.png')}}" alt="" class="img-fluid-custom"><br>
-                        <h4 style="text-white">Management Information</h4>
-                            <a href="#" class="btn btn-outline-light">view</a>
-                      </div>
-                    </div>
-                <div class="col-md-3 p-2">
-                    <div class="custom-box img-fluid-custom">
-                        <img src="{{asset('frontend/image/database.png')}}" alt="" class="img-fluid-custom"><br>
-                        <h4 style="text-white">Database Management</h4>
-                            <a href="#" class="btn btn-outline-light">view</a>
-                      </div>
-                    </div>
-                <div class="col-md-3 p-2 ">
-                    <div class="custom-box img-fluid-custom">
-                        <img src="{{asset('frontend/image/sqa.png')}}" alt="" class="img-fluid-custom"><br>
-                        <h4 style="text-white">Software Quality Testing</h4>
-                            <a href="#" class="btn btn-outline-light">view</a>
-                      </div>
-                    </div>
-              </div>
-          </div>
+
 
         <br>
         <br>

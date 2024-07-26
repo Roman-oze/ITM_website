@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use App\Models\Staff;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,9 +16,14 @@ class FacultyController extends Controller
 
     public function member()
     {
-        $teachers = DB::table('teachers')->get();
+        $teachers = Teacher::get();
 
-        return view('faculty.faculty',compact('teachers'));
+        $teachers_new = Teacher::whereIn('designation', ['Dean of ITM Department','Head of ITM Department'])->get();
+
+
+        $staffs = Staff::whereIn('position', ['Assistant Coordination Officer'])->get();
+
+        return view('faculty.faculty',compact('teachers', 'staffs', 'teachers_new'));
     }
 
 
