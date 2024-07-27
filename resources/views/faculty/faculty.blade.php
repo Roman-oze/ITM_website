@@ -34,15 +34,15 @@
     <div class="container">
     <div class="row d-flex justify-content-evenly">
        @foreach ($teachers_new as $teacher)
-        <div class="col-md-4 p-3">
+        <div class="col-md-4 p-3 animate__animated animate__fadeInDown">
         <div class="faculty-card1">
 
             <img src="{{asset($teacher->image)}}" class="card-img-top  " alt="Circular Image">
-     
+
             <div class="faculty-card-content">
-                <div class="head"><p> Head of ITM  Department</p></div>
+                <div class="head"><p> {{($teacher->designation)}}</p></div>
                 <h2 class="text-white">{{($teacher->name)}}</h2>
-                <h5 class="text-white-50">{{($teacher->designation)}}</h5>
+                {{-- <h5 class="text-white-50">{{($teacher->designation)}}</h5> --}}
                 <a href="{{($teacher->fb)}}"><i class="fa-brands fa-facebook icon1 p-2"></i></a>
                 <a href="{{($teacher->linked)}}"><i class="fa-brands fa-linkedin icon1 p-2" ></i></a>
                 <a href="{{($teacher->email)}}"><i class="fa-solid fa-envelope icon1 p-2"></i></a>
@@ -57,7 +57,7 @@
 
     <br>
 
-    <div class="container mt-5">
+    {{-- <div class="container mt-5">
 
         <div class="row d-flex justify-content-evenly ">
                 @foreach ($teachers_new as $teacher)
@@ -65,13 +65,12 @@
                 <div class="flip-card  ">
                  <div class="flip-card-inner">
                    <div class="flip-card-front ">
-             <div class="child-div ">
+
                      <div class="mb-4 "><img src="{{asset($teacher->image)}}" alt="Image" class="faculty-custom"></div>
-                     <div class="text">
+
                         <h3 class="text-dark">{{($teacher->name)}}</h3>
                      <p class="text-muted">{{($teacher->designation)}}</p>
-                 </div>
-                 </div>
+
                  </div>
                    <div class="flip-card-back p-3 text-left" style="line-height:22px;">
                          <h2>{{($teacher->name)}}</h2>
@@ -92,7 +91,48 @@
                </div>
                @endforeach
                </div>
+               </div> --}}
+
+
+{{--
+               <div class="container mt-5 ">
+                <div class="row d-flex justify-content-evenly">
+
+                    @foreach ($teachers_new as $teacher)
+                  <div class="col-md-3 ">
+                  <div class="flip-card  ">
+                   <div class="flip-card-inner">
+                     <div class="flip-card-front flip-custom">
+               <div class="child-div">
+                       <div class="mb-4 "><img src="{{asset($teacher->image)}}" alt="Image" class="faculty-custom"></div>
+                       <div class="text p-3">
+                       <h2>{{$teacher->name}}</h2>
+                       <p class="text-muted">{{$teacher->designation}}</p>
+                   </div>
+                   </div>
+                   </div>
+                     <div class="flip-card-back text-left" style="line-height:22px;">
+                        <h2>{{($teacher->name)}}</h2>
+                        <hr>
+                        <p class="text-white">{{($teacher->designation)}}</p>
+                        <div class="social-links text-center ">
+                            <a href="{{($teacher->fb)}}"><i class="fa-brands fa-facebook icon1 p-2"></i></a>
+                            <a href="{{($teacher->linked)}}"><i class="fa-brands fa-linkedin icon1 p-2"></i></a>
+                            <a href="{{($teacher->email)}}"><i class="fa-solid fa-envelope icon1  p-2"></i></a>
+                            <a href="{{($teacher->phone)}}"><i class="fa-solid fa-square-phone icon1  p-2"></i></a>
+                         </div>
+                     </div>
+                   </div>
+                 </div>
+                 </div>
+                 @endforeach
+
+
                </div>
+               </div> --}}
+
+
+
 
 
 
@@ -102,7 +142,7 @@
 
         @foreach ($teachers as $teacher)
 
-        <div class="col-md-4 ">
+        <div class="col-md-4 p-2 animate__animated animate__fadeInUp">
             <div class="circular">
                 <div class="img-bg">
                 <img src="{{ asset($teacher->image) }}" class="mx-auto rounded-circle" alt="Circular Image">

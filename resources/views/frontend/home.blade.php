@@ -36,7 +36,7 @@
         <div class="cover-border text-center ">
         <!-- <img src="black-jacket.png" class="dp"> -->
         <!-- <img src="diu-3.png" class="dp"> -->
-        <img src="{{asset('frontend/image/student3.png')}}" class="image1 img-fluid-custom  animate__animated animate__fadeInU">
+        <img src="{{asset('frontend/image/student3.png')}}" class="image1 img-fluid-custom  animate__animated animate__fadeInDown">
         {{-- <img src="{{asset('frontend/image/student4.png')}}" class="image1 img-fluid "> --}}
       </div>
       </div>
