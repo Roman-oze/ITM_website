@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdmissionController;
+use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\AboutController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\StaffController;
 
 use App\Http\Middleware\Itm;
@@ -179,17 +181,40 @@ Route::controller(AdminController::class)->group(function(){
 
 
 
+ Route::controller(AlumniController::class)->group(function(){
+    Route::get('Admission/alumni', 'alumni')->name('alumni');
+
+    Route::get('/dashboard/alumni', 'index')->name('dashboard.alumni');
+    Route::get('/alumni/create', 'create')->name('create.alumni');
+    Route::post('/alumni/store', 'store')->name('alumni.store');
+    Route::get('/alumni/edit/{id}', 'edit')->name('edit.alumni');
+    Route::put('/alumni/update/{id}', 'update')->name('update.alumni');
+    Route::delete('/alumni/delete/{id}', 'destroy')->name('delete.alumni');
+
+ });
+
+
+ Route::controller(ScholarshipController::class)->group(function(){
+
+    Route::get('/dashboard/scholarship', 'index')->name('dashboard.scholarship');
+    Route::get('/scholarship/create', 'create')->name('create.scholarship');
+    Route::post('/scholarship/store', 'store')->name('store.scholarship');
+    Route::get('/scholarship/edit/{id}', 'edit')->name('edit.scholarship');
+    Route::put('/scholarship/update/{id}', 'update')->name('update.scholarship');
+    Route::delete('/scholarship/delete/{id}', 'destroy')->name('delete.scholarship');
+
+ });
+
  Route::controller(StudentController::class)->group(function(){
 
-Route::get('students', 'index')->name('index');
-Route::get('student/create', 'create')->name('create');
+Route::get('/dashboard/students', 'index')->name('dashboard.index');
+Route::get('/student/create', 'create')->name('create');
 Route::post('/student', 'store')->name('student.store');
 Route::get('/student/edit/{id}', 'edit')->name('student.edit');
 Route::put('/student/update/{id}','update')->name('student.update');
 Route::delete('student/delete/{id}', 'destroy')->name('delete');
 Route::get('/student/search','search')->name('student.search');
 Route::get('student/login', 'sign_in')->name('sign_in');
-Route::get('student/alumni', 'alumni')->name('alumni');
 
 
 

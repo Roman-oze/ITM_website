@@ -36,15 +36,17 @@
        @foreach ($teachers_new as $teacher)
         <div class="col-md-4 p-3">
         <div class="faculty-card1">
-            <img src="{{asset($teacher->image)}}" class="card-img-top" alt="Circular Image">
+
+            <img src="{{asset($teacher->image)}}" class="card-img-top  " alt="Circular Image">
+     
             <div class="faculty-card-content">
                 <div class="head"><p> Head of ITM  Department</p></div>
-                <h2>{{($teacher->name)}}</h2>
-                <h5>{{($teacher->designation)}}</h5>
-                <a href="{{($teacher->fb)}}"><i class="fa-brands fa-facebook icon1"></i></a>
-                <a href="{{($teacher->linked)}}"><i class="fa-brands fa-linkedin icon1"></i></a>
-                <a href="{{($teacher->email)}}"><i class="fa-solid fa-envelope icon1"></i></a>
-                <a href="{{($teacher->phone)}}"><i class="fa-solid fa-square-phone icon1"></i></a>
+                <h2 class="text-white">{{($teacher->name)}}</h2>
+                <h5 class="text-white-50">{{($teacher->designation)}}</h5>
+                <a href="{{($teacher->fb)}}"><i class="fa-brands fa-facebook icon1 p-2"></i></a>
+                <a href="{{($teacher->linked)}}"><i class="fa-brands fa-linkedin icon1 p-2" ></i></a>
+                <a href="{{($teacher->email)}}"><i class="fa-solid fa-envelope icon1 p-2"></i></a>
+                <a href="{{($teacher->phone)}}"><i class="fa-solid fa-square-phone icon1 p-2"></i></a>
 
             </div>
         </div>

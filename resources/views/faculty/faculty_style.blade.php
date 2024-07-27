@@ -54,7 +54,7 @@
             border-bottom-left-radius: 24px;
             border-top-left-radius:50px;
             border-bottom-right-radius: 24px;
-            box-shadow: 0 4px 8px rgba(234, 222, 222, 0.1);
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
             background-color: #138ad8
             overflow: hidden;
             max-width: 330px;
@@ -70,11 +70,11 @@
             transform: scale(1.05);
         }
 
-        .faculty-card img {
+        /* .faculty-card img {
          width: 100%;
         height: 100%;
         object-fit: contain;
-        }
+        } */
 
         .faculty-card-content {
             padding: 20px;
@@ -104,7 +104,7 @@
         }
         .head{
         background-color: #3498db;
-     text-align: center;
+        text-align: center;
         color: #fff;
         font-family: Georgia, 'Times New Roman', Times, serif;
         border-radius: 10px;
@@ -218,6 +218,11 @@ box-shadow: 5px 5px 10px #07b9b3;
   aspect-ratio: 3/2;
   object-fit: contain;
   transition: transform 0.4s;
+}
+img.card-img-top  {
+    background-color: rgb(210, 208, 208)
+
+
 }
 
   </style>

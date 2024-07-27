@@ -49,6 +49,27 @@ background-position: center;
     border-bottom: 1px solid white;
 
 }
+.topbar-btn{
+    border: 1px solid pink;
+    border-radius: 40px 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.topbar-btn:hover{
+    border: 1px solid pink;
+    border-radius: 40px 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: rgb(5, 54, 69)
+
+}
+.topbar-icon{
+
+}
 .brand-logo{
   height: 50px;
   width: auto;
@@ -95,14 +116,7 @@ background-position: center;
 
   }
 
-  h3{
-        color:#198754;
-        font-style: italic;
-    }
 
-    h4{
-      color: antiquewhite;
-    }
     .name{
       color: #8a5f10;
     }
@@ -1993,7 +2007,7 @@ border: none;
   }
   .alumni-custom{
     height: 160px;
-    width: 160px;
+    width: 155px;
 
     border-radius: 50%;
 

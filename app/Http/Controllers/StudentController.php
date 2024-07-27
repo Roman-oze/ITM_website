@@ -13,9 +13,7 @@ class StudentController extends Controller
 
 
 
-public function alumni(){
-    return view('student.alumni');
-}
+
 
 
     public function sign_in()
@@ -105,7 +103,7 @@ public function alumni(){
         DB::table('students')->where('id',$id)->update($data);
 
         // dd(DB::table('students')->get());
-        return redirect()->back()->with('update','Successfully done!');
+        return redirect('/dashboard/students')->with('update','Successfully done!');
 
 
     }

@@ -31,17 +31,17 @@
 
 <div class="container-fluid  ">
          <div class="row text-light  ">
-        <div class="col-md-10  col-sm-10 py-1 text-left">
+        <div class="col-md-10  col-sm-10 py-1 text-left topbar-icon">
             <a  class="  p-2 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook icontop"></i></a>
             <a  class=" text-dark p-2" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin icontop"></i></a>
             <a  class=" text-dark p-2" href="itmoffice@daffodilvarsity.edu.bd"><i class="fa-solid fa-envelope icontop"></i></a>
             <a  class=" text-dark p-2" href="01847-140039"><i class="fa-solid fa-square-phone  icontop"></i></a>
         </div>
 
-        <div class="col-md-2  col-sm-2 py-1 text-right">
+        <div class="col-md-2  col-sm-2 py-1 ">
 
-        <a class=" text-white p-2" href="{{route('login')}}"><i class="fa-solid fa-lock "></i> Login</a>
-        <a class="text-white p-2" href="{{route('register')}}"><i class="fa-solid fa-user "></i> Register</a>
+        <a class="topbar-btn" href="{{route('login')}}"><i class="fa-solid fa-lock "></i> Login</a>
+        <a class="topbar-btn" href="{{route('register')}}"><i class="fa-solid fa-user "></i> Register</a>
         </div>
         </div>
     </div>

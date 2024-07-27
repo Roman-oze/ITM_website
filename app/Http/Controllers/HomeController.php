@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Scholarship;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class HomeController extends Controller
      */
     public function home()
     {
-       return view('frontend.home');
+        $scholars = Scholarship::all();
+       return view('frontend.home',compact('scholars'));
     }
 
     /**
