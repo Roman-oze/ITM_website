@@ -10,18 +10,18 @@
 
 @section('headerpage')
 
-
+<div class="container-fluid mt-5">
     <div class="row ">
       <div class="col-md-6 intro">
         <div class="top">
           <h1 class="text-white-50">Welcome!</h1>
-         <h3 class="department">Department of <img src="{{asset('frontend/image/verifi.png')}}" class="verify"></h3>
+         <h3 class="department">Department of</h3>
          <!-- <h1>Web Developer</h1>    -->
 
-          <h2><div id="typewrite" class=" web_developer text-white animate__animated animate__fadeInLeft">
-            Information Technology & Management
+         <div  class="  text-white animate__animated animate__fadeInLeft h2">
+            Information Technology & Management<img src="{{asset('frontend/image/verifi.png')}}" class="verify">
           </div>
-        </h2>
+
 
         <br>
         <br>
@@ -42,6 +42,7 @@
       </div>
 
     </div>
+</div>
 
    {{-- <button class="open-button" onclick="openForm()"><img src="{{asset('frontend/image/logo.png')}}" alt="" class="pop-img "></button> --}}
 
@@ -741,7 +742,7 @@
                 <div class="card p-2 bg-black custom-box img-fluid-custom">
                   <i class="fa-solid fa-lightbulb iconic fa-3x"></i>
                   <div class="card-content">
-                    <h4 class="p-2">Creativity</h4>
+                    <h4 class="p-2 text-white">Creativity</h4>
                     <p class="text-white-50 p-2">When Suddenly need to innovation something </p>
                   </div>
                 </div>
@@ -750,7 +751,7 @@
                 <div class="card p-2 bg-black custom-box img-fluid-custom">
                   <i class="fa-solid fa-circle-info iconic fa-3x"></i>
                   <div class="card-content">
-                    <h4 class="p-2">IT Support</h4>
+                    <h4 class="p-2 text-white">IT Support</h4>
                     <p class="text-white-50 p-2">Technical tool and technique thats i do daily basis</p>
                   </div>
                 </div>
@@ -759,7 +760,7 @@
                 <div class="card p-2 bg-black custom-box img-fluid-custom ">
                   <i class="fa-solid fa-person-rays iconic fa-3x"></i>
                   <div class="card-content">
-                    <h4 class="p-2">Human Resource</h4>
+                    <h4 class="p-2 text-white">Human Resource</h4>
                     <p class="text-white-50 p-2 ">Talent,performance.innovation for each organizational</p>
                   </div>
                 </div>
@@ -854,7 +855,9 @@
                 <div class="card p-2 bg-black custom-box img-fluid-custom">
                   <i class="fa-solid fa-mobile-screen-button iconic fa-3x"></i>
                   <div class="card-content">
-                    <h4 class="p-2">mobile application</h4>
+
+                    <h4 class="p-2 text-white"><strong>Mobile application</strong></h4>
+
                     <p class="text-white-50 p-2">When Suddenly need to innovation something </p>
                   </div>
                 </div>
@@ -863,7 +866,9 @@
                 <div class="card p-2 bg-black custom-box img-fluid-custom">
                   <i class="fa-solid fa-circle-info iconic fa-3x"></i>
                   <div class="card-content">
-                    <h4 class="p-2">Management</h4>
+
+                    <h4 class="p-2 text-white"><strong>Management</strong></h4>
+
                     <p class="text-white-50 p-2">Technical tool and technique thats i do daily basis</p>
                   </div>
                 </div>
@@ -873,7 +878,9 @@
 
                   <i class="fa-solid fa-business-time iconic fa-3x"></i>
                   <div class="card-content">
-                    <h4 class="p-2">Business</h4>
+
+                    <h4 class="p-2 text-white"><strong>Business</strong></h4>
+
                     <p class="text-white-50 p-2 ">Talent,performance.innovation for each organizational</p>
                   </div>
                 </div>

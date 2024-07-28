@@ -30,6 +30,7 @@
 @endsection
 
 @section('content')
+
     <!-- First Line: Single Card at the Top -->
     <div class="container">
     <div class="row d-flex justify-content-evenly">

@@ -98,8 +98,6 @@
             </div>
 
 
-
-
-<div class="bg-primary  text-center">
-    <a href="https://github.com/Roman-oze/resume" class="text-white">copyright by design @RomanOze</a>
- </div>
+ <div class="text-center small p-2 text-light footer-dark">
+    Designed &amp; Developed by <a href="https://github.com/Roman-oze/resume" class="text-reset font-weight-bold" target="_blank" rel="noopener">RomanOze</a>
+</div>

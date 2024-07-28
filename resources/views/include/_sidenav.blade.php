@@ -47,6 +47,11 @@
                         </nav>
                     </div>
 
+                    <a class="nav-link" href="{{route('staff.index')}}">
+                        <div class="sb-nav-link-icon"><i class="fa-regular fa-message fa-fw text-white fa-lg"></i></div>
+                        Messages
+                    </a>
+
                     <a class="nav-link" href="{{route('dashboard.faculty')}}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate text-white fa-lg"></i></div>
                         Faculty

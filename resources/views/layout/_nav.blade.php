@@ -46,10 +46,66 @@
         </div>
     </div>
 
+    {{-- <div id="top-bar">
+        <div class="container small">
+          <div class="row text-light text-center ">
+            <div class="col-sm-6 py-1 text-sm-left">
+                Information Technology & Management(I T M)
+            </div>
+            <div class="col-sm-6 py-1 text-sm-right">
+
+                <a class="topbar-btn" href="{{route('login')}}"><i class="fa-solid fa-lock "></i> Login</a>
+                <a class="topbar-btn" href="{{route('register')}}"><i class="fa-solid fa-user "></i> Register</a>
+                     </div>
+          </div>
+        </div>
+    </div> --}}
+
+{{--
+    <div id="top-bar">
+        <div class="container-fluid small">
+          <div class="row text-light text-center ">
+            <div class="col-sm-6 py-1 text-sm-left">
+                Information Technology & Management(I T M)
+            </div>
+            <div class="col-sm-6 py-1 text-sm-right">
+
+                <a href="https://ee-eu.kobotoolbox.org/x/IIk80qMC" class="mr-1 text-white" target="_blank" data-toggle="tooltip" title="" data-original-title="Click here to go to the Survey Link">
+                    <i class="icon-coins mr-1" aria-hidden="true"></i> Survey Link
+                </a>
+                    <a href="http://103.69.149.45:9305" class="text-reset" target="_blank" data-toggle="tooltip" title="" data-original-title="Click here to go to the LGCRRP test server">
+                    <i class="icon-database-remove mr-1" aria-hidden="true"></i> Test Server
+                    </a>
+
+                <span class="m-2" data-toggle="modal" data-target="#exampleModalCenter">
+                    <i class="icon-help mr-1" aria-hidden="true" title="Help"></i>Helpline </span>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.lged.ulgi.mis.com.lged.lgcrrp.misulgi" class="text-reset" target="_blank" data-toggle="tooltip" title="" data-original-title="LGCRRP মোবাইল অ্যাপ্লিকেশনটি Google Play Store-থেকে ডাউনলোড করুন। ">
+                        <img alt="Play Store" src="https://lgcrrpmis.lged.gov.bd/images/google-play-store-icon.png" width="16" class="mr-1">
+                    </a>
+
+                    <a href="https://lgcrrpmis.lged.gov.bd/images/lgcrrp-mis-ulgi.apk" download="lgcrrp-mis-ulgi.apk" class="text-reset mr-2" target="_blank" data-toggle="tooltip" title="" data-original-title="LGCRRP মোবাইল অ্যাপ্লিকেশনটি ডাউনলোড করুন">
+                    LGCRRP (Apk)</a>
+
+                    <a href="https://lgcrrpmis.lged.gov.bd/bn//admin" class="text-reset"><i class="icon-reload-alt mr-1" aria-hidden="true"></i> বাংলা</a>
+
+                    <a class="topbar-btn" href="{{route('login')}}"><i class="fa-solid fa-lock "></i> Login</a>
+                    <a class="topbar-btn" href="{{route('register')}}"><i class="fa-solid fa-user "></i> Register</a>
+
+                </div>
+          </div>
+        </div>
+    </div> --}}
+
+
+
+
+
+
         <nav class="navbar navbar-expand-lg p-2   text-center" style="    background-color: rgb(7, 40, 47); ">
               <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/portal.png')}}" alt="" class="brand-logo "></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon fa-1x bg-info rounded-circle p-1"></span>
+              <button class="navbar-toggler fa-1x bg-info rounded-circle p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
               </button>
 
 
