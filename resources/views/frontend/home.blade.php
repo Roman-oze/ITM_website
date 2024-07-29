@@ -74,7 +74,7 @@
 
 @section('content')
 
-{{-- <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
+<section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="container d-flex justify-content-evenly">
     <div class="fe-box img-fluid-custom">
         <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
@@ -106,7 +106,9 @@
         <h6 class="btn3">Transport</h6>
     </div>
     </div>
-</section> --}}
+</section>
+
+
 <div class="container">
     <div class="row">
         <div class="col-"></div>
@@ -138,12 +140,12 @@
                    <div class="flip-card-front flip-custom-2">
              <div class="child-div-2">
                 <img src="{{asset('frontend/image/web.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white">Web Developer</h4>
+                <h4 style="text-white p-2">Web Developer</h4>
 
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                         <h4>web development</h4>
+                         <h4 class="p-2">web development</h4>
                          <hr>
                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
                              Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
@@ -162,7 +164,7 @@
                    <div class="flip-card-front flip-custom-2">
              <div class="child-div-2">
                 <img src="{{asset('frontend/image/app.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white">Mobile App Developer</h4>
+                <h4 style="text-white p-2">Mobile App Developer</h4>
 
                  </div>
                  </div>
@@ -186,7 +188,7 @@
                    <div class="flip-card-front flip-custom-2">
              <div class="child-div-2">
                 <img src="{{asset('frontend/image/business.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white feature_title">Entrepreneur</h4>
+                <h4 style="text-white feature_title p-2">Entrepreneur</h4>
 
                  </div>
                  </div>
@@ -210,7 +212,7 @@
                    <div class="flip-card-front flip-custom-2">
              <div class="child-div-2">
                 <img src="{{asset('frontend/image/cybersec.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white ">Cyber Security</h4>
+                <h4 style="text-white p-2">Cyber Security</h4>
 
                  </div>
                  </div>
@@ -266,12 +268,12 @@
                    <div class="flip-card-front flip-custom-2">
              <div class="child-div-2">
                 <img src="{{asset('frontend/image/HR.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white">Human Resource</h4>
+                <h4 style="text-white p-2">Human Resource</h4>
 
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                    <h4 style="text-white">Human Resource</h4>
+                    <h4 style="text-white p-2">Human Resource</h4>
                     <hr>
                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
                              Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
@@ -290,12 +292,12 @@
                    <div class="flip-card-front flip-custom-2">
              <div class="child-div-2">
                 <img src="{{asset('frontend/image/MIS.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white">Management Information</h4>
+                <h4 style="text-white p-2">Management Information</h4>
 
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                    <h4 style="text-white">Management Information</h4>
+                    <h4 style="text-white p-2">Management Information</h4>
                     <hr>
                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
                              Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
@@ -314,12 +316,12 @@
                    <div class="flip-card-front flip-custom-2">
              <div class="child-div-2">
                 <img src="{{asset('frontend/image/database.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white">Database Management</h4>
+                <h4 style="text-white p-2">Database Management</h4>
 
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                    <h4 style="text-white">Database Management</h4>
+                    <h4 style="text-white p-2">Database Management</h4>
                     <hr>
                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
                              Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
@@ -338,7 +340,7 @@
                    <div class="flip-card-front flip-custom-2">
              <div class="child-div-2">
                 <img src="{{asset('frontend/image/sqa.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white">Software Quality Testing</h4>
+                <h4 style="text-white p-2">Software Quality Testing</h4>
 
                  </div>
                  </div>
@@ -384,12 +386,12 @@
                 </div>
             </div>
 
-            <div class="col-md-6 heading_section p-5 ">
+            <div class="col-md-6  p-2 ">
 
-                <h2 class="mb-4 text-warning">Information Technology and Management (ITM)</h4>
+                <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4>
 
 
-                    <p class="text-white-50 h5 "> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
+                    <p class="text-white-50 heading_section"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
 
 <br>
 <br>
@@ -575,17 +577,8 @@
                 <br>
                 <br>
                 <br>
-               <div class="container-fluid mt-5 ">
-                <div class="text-dark text-center  service_text">
-                    <h1 class="text-white ">Service <i class="fa-solid fa-universal-access"></i></h1>
-                    <div class="divider-custom">
-                        <div class="divider-custom-line"></div>
-                        <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
-                        <div class="divider-custom-line"></div>
-                    </div>
-                    <p class="text-info m-3">Our service 24 hours open for our Student</p>
 
-                </div>
+
 
 
 
@@ -642,60 +635,73 @@
                </div>
                </div> --}}
 
-               <section id="skill" class="section-p2 ">
-                <div class="container-fluid mt-5">
+
+<div class="row text-center">
+                <div class="text-dark text-center  service_text">
+                    <h1 class="text-white ">Service <i class="fa-solid fa-universal-access"></i></h1>
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <p class="text-info m-3">Our service 24 hours open for our Student</p>
+
+                </div>
+            </div>
+
+                <div class="container-fluid mt-5 ">
                     <div class="row p-5">
-                        <div class="col-md-3  p-2">
-                            <div class="card img-fluid-custom bg-black shadow">
-                                <div class="item-bg rounded">
-                                <img src="{{asset('frontend/image/blc.png')}}" class="card-img-top img-decorate" alt="Blc">
-                                </div>
-                                <div class="card-body ">
-                                    <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-outline-info btn-block">Blc</a>
-                                    <p class="text-white-50 p-2">course enrollment get feature  study roadmap with quiz assignments presentations, and PDF</p>
-                                </div>
+                        <div class="col-md-3  p-2 ">
+                            <div class="card bg-black custom-box img-fluid-custom">
+                                <div class="item-bg">
+                                <img src="{{asset('frontend/image/blc.png')}}" class="card-img-top img-decorate " alt="Blc">
                             </div>
-                        </div>
-                        <div class="col-md-3  p-2">
-                            <div class="card img-fluid-custom  bg-black shadow">
-                                <div class="item-bg rounded">
+                              <div class="card-content p-2">
+                                <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-outline-info btn-block mt-3">Blc</a>
+                                    <p class="text-white-50 p-2">course enrollment get feature  study roadmap with quiz assignments presentations</p>
+                              </div>
+                            </div>
+                           </div>
+                        <div class="col-md-3  p-2 ">
+                            <div class="card bg-black custom-box img-fluid-custom">
+                                <div class="item-bg">
                                 <img src="{{asset('frontend/image/portal.png')}}" class="card-img-top img-decorate" alt="Student Portal">
-                                </div>
-                                <div class="card-body">
-                                    <a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-outline-info btn-block">Student Portal</a>
-                                    <p class="text-white-50 mt-2">Payment, result, transport, clearance, and all services are provided by the student portal.</p>
-                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3  p-2">
-                            <div class="card  img-fluid-custom bg-black shadow">
-                                <div class="item-bg rounded">
+                              <div class="card-content p-2">
+                                <a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-outline-info btn-block mt-3 ">Student Portal</a>
+                                <p class="text-white-50 mt-2">Payment, result, transport, clearance, and all services are provided by the student portal.</p>
+                              </div>
+                            </div>
+                           </div>
+                        <div class="col-md-3  p-2 ">
+                            <div class="card bg-black custom-box img-fluid-custom">
+                                <div class="item-bg">
                                 <img src="{{asset('frontend/image/1card.png')}}" class="card-img-top img-decorate" alt="1card">
-                               </div>
-                                <div class="card-body">
-                                    <a target="_blank" href="https://1card.com.bd/" class="btn btn-outline-info btn-block">1card</a>
-                                    <p class="text-white-50 mt-2">Download the 1card Android app and iOS app. All services are available within this app.</p>
-                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3  p-2">
-                            <div class="card  img-fluid-custom bg-black shadow">
-                                <div class="item-bg rounded">
-                                <img src="{{asset('frontend/image/blue-bus-png.png')}}" class="card-img-top img-decorate" alt="Transport">
-                                </div>
-                                <div class="card-body">
-                                    <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-outline-info btn-block">Transport</a>
-                                    <p class="text-white-50 mt-2">Firstly apply for transport card then use transport service for several card for eachsemester </p>
-                                </div>
+                              <div class="card-content p-2">
+                                <a target="_blank" href="https://1card.com.bd/" class="btn btn-outline-info btn-block mt-3">1card</a>
+                                <p class="text-white-50 mt-2">Download the 1card Android app and iOS app. All services are available within this app.</p>
+                              </div>
                             </div>
-                        </div>
+                           </div>
+                        <div class="col-md-3  p-2 ">
+                            <div class="card bg-black custom-box img-fluid-custom">
+                                <div class="item-bg">
+                                <img src="{{asset('frontend/image/blue-bus-png.png')}}" class="card-img-top img-decorate " alt="Transport">
+                                </div>
+                                <div class="card-content p-2">
+                                <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-outline-info btn-block  mt-3">Transport</a>
+                                <p class="text-white-50 mt-2">Firstly apply for transport card then use transport service for several card for eachsemester </p>
+                              </div>
+                            </div>
+                           </div>
                     </div>
                 </div>
-             </section>
 
 
 
-               </div>
+
+
 
                {{-- <div class="container-fluid fourbg ">
                 <div class="row text-center bg-light">
@@ -732,7 +738,7 @@
                 <div class="row mt-5 d-flex justify-content-center p-5">
 
                <div class="col-md-3 text-center p-2 ">
-                <div class="card p-2 bg-black custom-box img-fluid-custom">
+                <div class="card bg-black custom-box img-fluid-custom">
                   <i class="fa-solid fa-book-open-reader iconic fa-3x"></i>
                   <div class="card-content">
                     <h4 class="p-2 text-white"><strong>Leadership</strong></h4>
@@ -743,7 +749,7 @@
 
 
                <div class="col-md-3 text-center p-2">
-                <div class="card p-2 bg-black custom-box img-fluid-custom">
+                <div class="card bg-black custom-box img-fluid-custom">
                   <i class="fa-solid fa-lightbulb iconic fa-3x"></i>
                   <div class="card-content">
                     <h4 class="p-2 text-white">Creativity</h4>
@@ -752,7 +758,7 @@
                 </div>
                </div>
                <div class="col-md-3 text-center p-2">
-                <div class="card p-2 bg-black custom-box img-fluid-custom">
+                <div class="card bg-black custom-box img-fluid-custom">
                   <i class="fa-solid fa-circle-info iconic fa-3x"></i>
                   <div class="card-content">
                     <h4 class="p-2 text-white">IT Support</h4>
@@ -761,7 +767,7 @@
                 </div>
                </div>
                <div class="col-md-3 text-center p-2">
-                <div class="card p-2 bg-black custom-box img-fluid-custom ">
+                <div class="card bg-black custom-box img-fluid-custom ">
                   <i class="fa-solid fa-person-rays iconic fa-3x"></i>
                   <div class="card-content">
                     <h4 class="p-2 text-white">Human Resource</h4>
@@ -825,9 +831,9 @@
               </div>
               </div>
                 <div class="container mt-3">
-                  <div class="row text-center p-5">
+                  <div class="row text-center">
 
-                  <div class="col-md-12 text-center rounded">
+                  <div class="col-md-12 col-sm-12 text-center rounded">
                         <div class=" rounded-3 p-3 shadow-lg manual-shadow2 border-900 box">
                           <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Web Aplication</p><br>
                           <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Mobile Application</p><br>
@@ -835,7 +841,9 @@
 
                         </div>
                       </div>
-                      <div class=" text-box mt-5">
+                      </div>
+                      <div class="row p-2">
+                      <div class="col-md-12 col-sm-12 text-center rounded text-box mt-5">
                         <p class="smooth-text text-white text-200">
                           As a web developer, I excel in creating user-friendly interfaces and efficient code. I specialize in crafting responsive designs, optimizing performance, and leveraging emerging technologies. With a dedication to innovation and ongoing learning, I deliver impactful solutions that enhance online experiences and propel business growth.
                         </p>

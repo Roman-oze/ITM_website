@@ -14,7 +14,7 @@
         <div class="divider-custom-line"></div>
     </div>
     <div class="col-lg-8 align-self-baseline d-flex">
-        <p class="text-white-50 mb-5">""Daffodil International University, situated in the vibrant heart of Dhaka, Bangladesh, offers a dynamic learning environment. Nestled in the midst of cultural richness and urban energy, our campus provides students with an inspiring backdrop to pursue their academic endeavors. Explore the fusion of education and culture as you navigate your learning journey at Daffodil International University."</p>
+        <p class="text-white-50 mb-5 heading_section ">""Daffodil International University, situated in the vibrant heart of Dhaka, Bangladesh, offers a dynamic learning environment. Nestled in the midst of cultural richness and urban energy, our campus provides students with an inspiring backdrop to pursue their academic endeavors. Explore the fusion of education and culture as you navigate your learning journey at Daffodil International University."</p>
     </div>
     {{-- <img src="{{asset('frontend/image/diu_admission.jpg')}}" class="w-50 h-50"> --}}
     <img src="{{asset('frontend/image/event_photo/fin.jpg')}}" class="department-group-image">
