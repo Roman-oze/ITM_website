@@ -1,3 +1,7 @@
+
+
+
+
 {{-- <div id="top-bar">
     <div class="container-fluid small">
       <div class="row text-light text-center ">
@@ -101,73 +105,67 @@
 
 
 
+    <nav class="navbar navbar-expand-lg p-2 text-center" style="background-color: rgb(7, 40, 47);">
+        <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/portal.png')}}" alt="" class="brand-logo"></a>
+        <button class="navbar-toggler fa-1x bg-info rounded-circle p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <nav class="navbar navbar-expand-lg p-2   text-center" style="    background-color: rgb(7, 40, 47); ">
-              <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/portal.png')}}" alt="" class="brand-logo "></a>
-              <button class="navbar-toggler fa-1x bg-info rounded-circle p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon "></span>
-              </button>
-
-
-              <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                    <a class="nav-link link-hover" href="{{route('home')}}" ><i class="fa-solid fa-house s-4 homeicon text-white"></i></a>
-                  </li>
-                  <li class="nav-item "><div class="dropdown">
-                    <a class="nav-link link-hover" href="#">Admission</a>
-                        <div class="dropdown-content ms-auto rounded">
-
-                            <a target="_blank" href="{{route('admission_eligibility')}}" class="nav-link text-dark">Admission Eligibility</a>
-                            <a target="_blank" href="{{route('Local_tuition')}}" class="nav-link text-dark">Local Tuition</a>
-                            <a target="_blank" href="{{route('international_tuition')}}" class="nav-link text-dark">International Tuition</a>
-                            <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-dark">Admission Test result</a>
-                            <a target="_blank" href="" class="nav-link">Admission Notice</a>
-                        </div>
-                </li>
-                  <li class="nav-item "><div class="dropdown">
-                    <a class="nav-link link-hover" href="#">Students</a>
-                        <div class="dropdown-content ms-auto rounded">
-                            <a target="_blank" href="{{route('events')}}" class="nav-link text-dark">Events</a>
-                            <a target="_blank" href="{{route('alumni')}}" class="nav-link text-dark">Alumni</a>
-                            <a target="_blank" href="{{route('Local_tuition')}}" class="nav-link text-dark">Research</a>
-                            <a target="_blank" href="{{route('international_tuition')}}" class="nav-link text-dark">Scholarship</a>
-                            <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-dark">Notice Board</a>
-                        </div>
-                </li>
-                  <li class="nav-item">
-                    <a class="nav-link link-hover" href="{{route('program')}}">Programs</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link link-hover" href="{{route('faculty.member')}}">Faculty Members</a>
-                  </li>
-
-                  {{-- <li class="nav-item">
-                    <a class="nav-link" href="{{route('semester.routines')}}">Routine</a>
-                  </li> --}}
-
-                  <li class="nav-item">
-                    <div class="dropdown rounded">
-                        <a class="nav-link link-hover" href="#">Routine</a>
-                            <div class="dropdown-content rounded">
-                                <a class="text-dark h5" target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link">Spring-2024</a>
-                                <a class="text-dark h5" target="_blank" href="{{route('semester.routines')}}"  class="nav-link">Fall-2024</a>
-                            </div>
-                         </li>
-                  <li class="nav-item">
-                    <a class="nav-link link-hover" href="{{route('about')}}">Contact</a>
-                  </li>
-
-
-                    <li >
-                        <div class="right-padd animate__animated animate__bounce animate__repeat-2 admission-btn ">
-                        <a target="_blank" class="bn50 p-3 " href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply Online</a>
-                    </div>
-                </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link link-hover" href="{{route('home')}}"><i class="fa-solid fa-house s-4 homeicon text-white"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link link-hover dropdown-toggle" href="#" id="admissionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Admission
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
+                <li><a class="dropdown-item" href="{{route('admission_eligibility')}}">Admission Eligibility</a></li>
+                <li><a class="dropdown-item" href="{{route('Local_tuition')}}">Local Tuition</a></li>
+                <li><a class="dropdown-item" href="{{route('international_tuition')}}">International Tuition</a></li>
+                <li><a class="dropdown-item" href="https://daffodilvarsity.edu.bd/admission-test">Admission Test result</a></li>
+                <li><a class="dropdown-item" href="#">Admission Notice</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link link-hover dropdown-toggle" href="#" id="studentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Students
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="studentsDropdown">
+                <li><a class="dropdown-item" href="{{route('events')}}">Events</a></li>
+                <li><a class="dropdown-item" href="{{route('alumni')}}">Alumni</a></li>
+                <li><a class="dropdown-item" href="{{route('Local_tuition')}}">Research</a></li>
+                <li><a class="dropdown-item" href="{{route('international_tuition')}}">Scholarship</a></li>
+                <li><a class="dropdown-item" href="https://daffodilvarsity.edu.bd/admission-test">Notice Board</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-hover" href="{{route('program')}}">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-hover" href="{{route('faculty.member')}}">Faculty Members</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link link-hover dropdown-toggle" href="#" id="routineDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Routine
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="routineDropdown">
+                <li><a class="dropdown-item" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}">Spring-2024</a></li>
+                <li><a class="dropdown-item" href="{{route('semester.routines')}}">Fall-2024</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-hover" href="{{route('about')}}">Contact</a>
+            </li>
+            <li class="nav-item">
+              <div class="right-padd animate__animated animate__bounce animate__repeat-2 admission-btn">
+                <a target="_blank" class="bn50 p-3" href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply Online</a>
               </div>
-            </ul>
-
-        </nav>
+            </li>
+          </ul>
+        </div>
+      </nav>
         {{-- <div id="hero">
             <div id="top-bar">
                 <div class="container-fluid small">

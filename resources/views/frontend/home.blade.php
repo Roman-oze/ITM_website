@@ -10,12 +10,12 @@
 
 @section('headerpage')
 
-<div class="container-fluid mt-5">
+<div class="container-fluid  mt-5">
     <div class="row ">
       <div class="col-md-6 intro">
         <div class="top">
           <h1 class="text-white-50">Welcome!</h1>
-         <h3 class="department">Department of</h3>
+         <h3 class="department right aos-init aos-animate">Department of</h3>
          <!-- <h1>Web Developer</h1>    -->
 
          <div  class="  text-white animate__animated animate__fadeInLeft h2">
@@ -74,7 +74,7 @@
 
 @section('content')
 
-<section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
+{{-- <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="container d-flex justify-content-evenly">
     <div class="fe-box img-fluid-custom">
         <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
@@ -106,8 +106,12 @@
         <h6 class="btn3">Transport</h6>
     </div>
     </div>
-</section>
-
+</section> --}}
+<div class="container">
+    <div class="row">
+        <div class="col-"></div>
+    </div>
+</div>
 <br>
 <br>
 
@@ -182,7 +186,7 @@
                    <div class="flip-card-front flip-custom-2">
              <div class="child-div-2">
                 <img src="{{asset('frontend/image/business.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white">Entrepreneur</h4>
+                <h4 style="text-white feature_title">Entrepreneur</h4>
 
                  </div>
                  </div>
@@ -641,18 +645,18 @@
                <section id="skill" class="section-p2 ">
                 <div class="container-fluid mt-5">
                     <div class="row p-5">
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="col-md-3  p-2">
                             <div class="card img-fluid-custom bg-black shadow">
                                 <div class="item-bg rounded">
                                 <img src="{{asset('frontend/image/blc.png')}}" class="card-img-top img-decorate" alt="Blc">
                                 </div>
                                 <div class="card-body ">
                                     <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-outline-info btn-block">Blc</a>
-                                    <p class="text-white-50 mt-2">course enrollment get feature  study roadmap with quiz assignments presentations, and PDF</p>
+                                    <p class="text-white-50 p-2">course enrollment get feature  study roadmap with quiz assignments presentations, and PDF</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="col-md-3  p-2">
                             <div class="card img-fluid-custom  bg-black shadow">
                                 <div class="item-bg rounded">
                                 <img src="{{asset('frontend/image/portal.png')}}" class="card-img-top img-decorate" alt="Student Portal">
@@ -663,7 +667,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="col-md-3  p-2">
                             <div class="card  img-fluid-custom bg-black shadow">
                                 <div class="item-bg rounded">
                                 <img src="{{asset('frontend/image/1card.png')}}" class="card-img-top img-decorate" alt="1card">
@@ -674,7 +678,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="col-md-3  p-2">
                             <div class="card  img-fluid-custom bg-black shadow">
                                 <div class="item-bg rounded">
                                 <img src="{{asset('frontend/image/blue-bus-png.png')}}" class="card-img-top img-decorate" alt="Transport">
@@ -721,7 +725,7 @@
                     <div class="divider-custom-line"></div>
 
                 </div>
-                <p class="text-center text-light ">Gather practical experiences from each course</p>
+                <p class="text-center text-light " >Gather practical experiences from each course</p>
 
                 </div>
               <div class="container-fluid mt-5">

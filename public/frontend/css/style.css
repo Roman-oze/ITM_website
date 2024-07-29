@@ -20,12 +20,13 @@ body {
 
 }
 .hero-section-bg{
-/* background-image: url('../image/hero-section-bg.svg');
+background-image: url('../image/hero-section-bg.svg');
 background-position: center;
-background-repeat: no-repeat; */
-background-image: linear-gradient(rgba(24, 54, 146), #080334d3), url('../image/hero-section-bg.svg');
+background-repeat: no-repeat;
+
+/* background-image: linear-gradient(rgba(24, 54, 146), #080334d3), url('../image/hero-section-bg.svg');
 background-size: cover;
-background-position: left;
+background-position: left; */
 
 
 
@@ -125,7 +126,7 @@ background-position: center;
 
   .intro{
       padding-top: 120px;
-      padding-left: 150px;
+      padding-left: 100px;
 
 
   }
@@ -2044,4 +2045,9 @@ border: none;
     border-top-right-radius:14px ;
     color: #efdede;
 
+}
+.aos-animate {
+    -webkit-transition-delay: .1s;
+    -o-transition-delay: .1s;
+    transition-delay: .1s;
 }
