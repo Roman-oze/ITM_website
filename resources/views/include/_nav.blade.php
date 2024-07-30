@@ -15,8 +15,8 @@
     <!-- Navbar-->
     <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <a class="nav-link dropdown-toggle " id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw fa-2x text-white p-2"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
                 @if (session()->has('id'))
                 <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                 @else

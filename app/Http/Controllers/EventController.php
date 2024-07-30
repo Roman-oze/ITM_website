@@ -18,8 +18,10 @@ class EventController extends Controller
      */
 //  frontend view file
     public function events(){
-        $event = DB::table('events')->get();
-        return view('event.events',compact('event'));
+
+        $upcoming =Event::whereIN('name',['empty'])->get();
+        $event = Event::whereNotIn('name',['empty'])->get();;
+        return view('event.events',compact('event','upcoming'));
     }
 
     // admin dashvboard event file

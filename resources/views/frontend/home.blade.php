@@ -32,6 +32,7 @@
             <a target="_blank" href="{{route('club')}}" class="bn5  "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
         </div>
       </div>
+
       <div class="col-md-6  ">
         <div class="cover-border text-center ">
         <!-- <img src="black-jacket.png" class="dp"> -->
@@ -74,7 +75,7 @@
 
 @section('content')
 
-<section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
+{{-- <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="container d-flex justify-content-evenly">
     <div class="fe-box img-fluid-custom">
         <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
@@ -106,7 +107,7 @@
         <h6 class="btn3">Transport</h6>
     </div>
     </div>
-</section>
+</section> --}}
 
 
 <div class="container">
@@ -412,7 +413,7 @@
 <br>
     <div class="container mt-5">
         <div class="row mt-5  d-flex justify-space-bewteen">
-          <div class="col-md-3 col-6 text-center p-2 ">
+          <div class="col-md-3 col-6  text-center p-2 ">
             <div class="border rounded-3  container_design text-center p-5 ">
             <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">549</span>
             <p class="text-color">Student</p>
@@ -453,16 +454,49 @@
         <div class="col-md-8 text-center mb-4 ">
             <img src="{{asset('frontend/image/student2.png')}}" class="scholarpic animate__animated animate__fadeInLeft " alt="Student">
             </div>
-            <div class="col-md-4 text-center p-2 scholar">
-            <h4 class="aboard animate__animated animate__fadeInRight">Facilities List</h4><br>
+            <div class="col-md-4 text-center p-4 scholar">
+                <h4 class="aboard animate__animated animate__fadeInRight mt-1">Facilities List</h4><br>
+
+                <div class="mt-5 ">
             <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Scholarship</a><br>
             <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item2 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</a><br>
-            <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item3 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Exchange Program</a><br>
+            <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item3 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Job</a><br>
             <a target="_blank" href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="bn5">Apply</a>
+        </div>
         </div>
     </div>
 </div>
 
+{{-- <div class="container feature-section ">
+    <div class="row align-items-center aboardpage">
+      <div class="col-md-6 text-center p-3">
+        <img src="{{asset('frontend/image/student2.png')}}" class="scholarpic animate__animated animate__fadeInLeft " alt="Student">
+    </div>
+      <div class="col-md-6 feature-content p-3 scholar">
+        <h4 class="aboard animate__animated animate__fadeInRight">Facilities List</h4><br>
+        <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-1 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Scholarship</a><br>
+        <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item2 d-block p-1 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</a><br>
+        <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item3 d-block p-1 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Job</a><br>
+        <a target="_blank" href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="apply-btn p-1">Apply</a>
+      </div>
+    </div>
+  </div> --}}
+
+
+{{-- <div class="container feature-section">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center">
+        <img src="{{asset('frontend/image/student2.png')}}" class="scholarpic animate__animated animate__fadeInLeft " alt="Student">
+      </div>
+      <div class="col-md-6 feature-content">
+        <h2 class="aboard">Facilities List</h2>
+        <button class="btn btn-primary btn-lg">Scholarship</button>
+        <button class="btn btn-warning btn-lg">Internship</button>
+        <button class="btn btn-danger btn-lg">Job</button>
+        <button class="bn5">Apply</button>
+      </div>
+    </div>
+  </div> --}}
 <br>
 <br>
 <br>
@@ -486,7 +520,7 @@
          <div class="flip-card-front flip-custom">
    <div class="child-div">
            <div class="mb-4 "><img src="{{asset($scholar->image)}}" alt="Image" class="alumni-custom"></div>
-           <div class="text p-3">
+           <div class="text p-1">
            <h2>{{$scholar->name}}</h2>
            <p class="h5 text-muted">{{$scholar->country}}</p>
            <h4 class="text-warning">Contratulations!</h4>
@@ -658,7 +692,7 @@
                             </div>
                               <div class="card-content p-2">
                                 <a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-outline-info btn-block mt-3">Blc</a>
-                                    <p class="text-white-50 p-2">course enrollment get feature  study roadmap with quiz assignments presentations</p>
+                                    <p class="text-white-50 p-2 service_text">course enrollment get feature  study roadmap with quiz assignments presentations</p>
                               </div>
                             </div>
                            </div>
@@ -980,7 +1014,7 @@
                </div>
 
                <div class="container mt-5">
-                <div class="row">
+                <div class="row d-flex  align-items-center  ">
                   <!-- Card 1 -->
                   <div class="col-md-3">
                     <div class="card mb-4  p-3 bg-black shadow">

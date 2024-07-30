@@ -16,7 +16,7 @@ class FacultyController extends Controller
 
     public function member()
     {
-        $teachers = Teacher::get();
+        $teachers = Teacher::whereNotIn('designation', ['Dean of ITM Department','Head of ITM Department'])->get();
 
         $teachers_new = Teacher::whereIn('designation', ['Dean of ITM Department','Head of ITM Department'])->get();
 
