@@ -415,26 +415,26 @@
         <div class="row mt-5  d-flex justify-space-bewteen">
           <div class="col-md-3 col-6  text-center p-2 ">
             <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">{{$students}}</span>
+            <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">{{$studentCount}}</span>
             <p class="text-color">Student</p>
           </div>
           </div>
           <div class="col-md-3 col-6 text-center p-2">
             <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="0" class="purecounter">50</span>
+            <span data-purecounter-start="0" data-purecounter-end="{{$facultyCount}}" data-purecounter-duration="0" class="purecounter">50</span>
             <p class="text-color">Faculty</p>
           </div>
           </div>
           <div class="col-md-3 col-6 text-center p-2">
             <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="0" class="purecounter">40</span>
+            <span data-purecounter-start="0" data-purecounter-end="{{$alumniCount}}" data-purecounter-duration="0" class="purecounter">40</span>
             <p class="text-color">Alumni</p>
           </div>
           </div>
 
           <div class="col-md-3 col-6 text-center p-2">
           <div class="border rounded-3 container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="29" data-purecounter-duration="0" class="purecounter">29</span>
+            <span data-purecounter-start="0" data-purecounter-end="{{$scholarshipCount}}" data-purecounter-duration="0" class="purecounter">29</span>
             <p class="text-color">Research</p>
             </div>
             </div>

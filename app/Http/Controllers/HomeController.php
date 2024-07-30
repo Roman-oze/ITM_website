@@ -16,8 +16,22 @@ class HomeController extends Controller
     public function home()
     {
         $scholars = Scholarship::all();
-        $students = DB::table('users')->count();
-       return view('frontend.home',['students' => $students],compact('scholars'));
+        $studentCount = DB::table('users')->count();
+        $facultyCount = DB::table('teachers')->count();
+        $alumniCount = DB::table('alumnis')->count();
+        $scholarshipCount = DB::table('scholarships')->count();
+
+
+
+
+    return view('frontend.home',compact('scholars'),[
+        'studentCount' => $studentCount,
+        'facultyCount' => $facultyCount,
+        'alumniCount' => $alumniCount,
+        'scholarshipCount' => $scholarshipCount,
+    ]);
+
+
     }
 
     /**
