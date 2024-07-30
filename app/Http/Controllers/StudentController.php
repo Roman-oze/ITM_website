@@ -76,9 +76,12 @@ class StudentController extends Controller
     }
     public function show($id)
     {
-        $data['student'] =DB::table('students')->where('id',$id)->first();
-        return view('student.show',$data);
-    }
+        // $data['student'] =DB::table('students')->where('id',$id)->first();
+        // return view('student.show',$data);
+
+        $std =Student::count();
+        dd($std);
+        }
 
 
     public function edit($id)

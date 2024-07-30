@@ -210,6 +210,7 @@ Route::controller(AdminController::class)->group(function(){
 Route::get('/dashboard/students', 'index')->name('dashboard.index');
 Route::get('/student/create', 'create')->name('create');
 Route::post('/student', 'store')->name('student.store');
+Route::get('/student/show/{id}', 'show')->name('student.show');
 Route::get('/student/edit/{id}', 'edit')->name('student.edit');
 Route::put('/student/update/{id}','update')->name('student.update');
 Route::delete('student/delete/{id}', 'destroy')->name('delete');

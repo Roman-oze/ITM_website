@@ -16,8 +16,11 @@
                     <div class="col-md-3 p-2">
                       <div class="card  bg-success">
                         <div class="card-body">
+
                           <h5 class="card-title text-white">Total Student</h5>
-                          <b><h3 class="card-text text-white">549</h3></b>
+                          <b><h3 class="card-text text-white">{{$studentCount}}</h3></b>
+                          {{-- <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="0" class="purecounter">{{$students}}</span> --}}
+
                         </div>
                       </div>
                     </div>
@@ -25,7 +28,7 @@
                       <div class="card bg-primary">
                         <div class="card-body">
                           <h5 class="card-title text-white">Total Faculty</h5>
-                          <b><h3 class="card-text text-white">50</h3></b>
+                          <b><h3 class="card-text text-white">{{$facultyCount}}</h3></b>
                         </div>
                       </div>
                     </div>
@@ -33,7 +36,7 @@
                       <div class="card bg-info">
                         <div class="card-body">
                           <h5 class="card-title text-white">Total Alumni</h5>
-                          <b><h3 class="card-text text-white">40</h3></b>
+                          <b><h3 class="card-text text-white">{{$alumniCount}}</h3></b>
                         </div>
                       </div>
                   </div>
@@ -41,7 +44,7 @@
                       <div class="card bg-secondary">
                         <div class="card-body">
                           <h5 class="card-title text-white">Total Research</h5>
-                          <b><h3 class="card-text text-white">29</h3></b>
+                          <b><h3 class="card-text text-white">{{$scholarshipCount}}</h3></b>
                         </div>
                       </div>
                   </div>

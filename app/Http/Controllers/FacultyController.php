@@ -13,9 +13,13 @@ class FacultyController extends Controller
      * Display a listing of the resource.
      */
 
-
     public function member()
     {
+
+
+
+
+
         $teachers = Teacher::whereNotIn('designation', ['Dean of ITM Department','Head of ITM Department'])->get();
 
         $teachers_new = Teacher::whereIn('designation', ['Dean of ITM Department','Head of ITM Department'])->get();
@@ -33,6 +37,7 @@ class FacultyController extends Controller
     public function index()
     {
         $teachers = DB::table('teachers')->paginate(10);
+
 
         return view('faculty.index',compact('teachers'));
     }

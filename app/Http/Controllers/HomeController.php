@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Student;
+use App\Models\Teacher;
 use App\Models\Scholarship;
-
+use App\Models\Alumni;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -13,7 +16,8 @@ class HomeController extends Controller
     public function home()
     {
         $scholars = Scholarship::all();
-       return view('frontend.home',compact('scholars'));
+        $students = DB::table('users')->count();
+       return view('frontend.home',['students' => $students],compact('scholars'));
     }
 
     /**

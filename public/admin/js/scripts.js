@@ -56,4 +56,101 @@ function fetchUploadedRoutines(season) {
         routineList.appendChild(li);
     });
 }
+ // Function to update counter
+ function updateCounter(counter) {
+    var start = parseInt(counter.getAttribute('data-purecounter-start'));
+    var end = parseInt(counter.getAttribute('data-purecounter-end'));
+    var duration = parseInt(counter.getAttribute('data-purecounter-duration'));
+    var range = end - start;
+    var current = start;
+    var increment = end > start ? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+
+    function count() {
+        counter.innerText = current;
+        if (current !== end) {
+            current += increment;
+            setTimeout(count, stepTime);
+        }
+    }
+
+    count();
+}
+
+// Function to handle scroll event
+function handleScroll() {
+    if (!scrolled) {
+        counters.forEach(function (counter) {
+            if (isInViewport(counter)) {
+                updateCounter(counter);
+                scrolled = true;
+            }
+        });
+    }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', handleScroll);
+});
+// JavaScript to start typing effect after page load
+window.onload = function() {
+// Get the text container
+var textContainer = document.getElementById('typing-text');
+// Get the text content
+var text = textContainer.innerHTML;
+// Clear the text content
+textContainer.innerHTML = '';
+// Define a function to simulate typing effect
+function typeWriter(text, i) {
+if (i < text.length) {
+textContainer.innerHTML += text.charAt(i);
+i++;
+setTimeout(function() {
+typeWriter(text, i);
+}, 100); // Adjust typing speed here (in milliseconds)
+}
+}
+// Start the typing effect
+typeWriter(text, 0);
+};
+
+
+function openForm() {
+document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+document.getElementById("myForm").style.display = "none";
+}
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+var counters = document.querySelectorAll('.purecounter');
+var speed = 200; // The speed of counting in milliseconds
+
+counters.forEach(function (counter) {
+  var start = parseInt(counter.getAttribute('data-purecounter-start'));
+  var end = parseInt(counter.getAttribute('data-purecounter-end'));
+  var duration = parseInt(counter.getAttribute('data-purecounter-duration'));
+  var range = end - start;
+  var current = start;
+  var increment = end > start ? 1 : -1;
+  var stepTime = Math.abs(Math.floor(duration / range));
+
+  function updateCounter() {
+      counter.innerText = current;
+      if (current !== end) {
+          current += increment;
+          setTimeout(updateCounter, stepTime);
+      }
+  }
+
+  updateCounter();
+});
+});
+
+
 

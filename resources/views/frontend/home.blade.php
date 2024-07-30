@@ -415,7 +415,7 @@
         <div class="row mt-5  d-flex justify-space-bewteen">
           <div class="col-md-3 col-6  text-center p-2 ">
             <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">549</span>
+            <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">{{$students}}</span>
             <p class="text-color">Student</p>
           </div>
           </div>

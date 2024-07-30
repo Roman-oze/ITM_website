@@ -88,15 +88,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 </main>
 
 @endsection
