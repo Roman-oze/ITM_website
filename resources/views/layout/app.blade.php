@@ -13,12 +13,12 @@
       </header>
 
 
-    @yield('content')
+     @yield('content')
 
 
-    <footer>
+
         @include('layout._footer')
-    </footer>
+
 
     <script src="{{asset('frontend/js/app.min.js')}}">
         @include('layout._script')

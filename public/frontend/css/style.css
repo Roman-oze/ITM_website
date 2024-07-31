@@ -834,9 +834,6 @@ mix-blend-mode: color-burn;
   background-position: center;
   background-repeat: no-repeat;
 
-
-
-
 }
 
 .scholarpic{
@@ -866,7 +863,18 @@ object-position: center;
     }
   }
 
+  .listitem1{
+    width: 270px;
+    display: block;
+    margin:  auto;
+    padding: 10px;
+    color: rgb(223, 233, 234);
+   border-radius: 24px;
+   text-align: center;
+   background-color:#000000;
+   border: 1px solid rgb(17, 219, 237);
 
+  }
 .item1{
   width:200px;
   display: block;
@@ -1275,7 +1283,6 @@ color: #ffffff;
     background-image:linear-gradient(rgb(227, 214, 214),#1dd3dad3);
     background-size: cover;
     background-position: center;
-    padding: 10px;
   }
   .club{
     padding-top: 100px;
@@ -1367,8 +1374,9 @@ border: 0.5rem solid rgba(0, 0, 0, 0.1);
 }
 
 #gallery img {
-    width: 100px;
-    margin: 10px;
+    width: 100%;
+    display: block;
+    margin: auto;
 }
 
 #uploaded-files {
@@ -2111,4 +2119,39 @@ border: none;
   .event-card-footer a {
     color: #007bff;
     text-decoration: none;
+  }
+/* footer */
+.left {
+    text-align: center;
+    padding-right: 10px;
+    width: 40%; /* The width is 20%, by default */
+  }
+
+  .main-left {
+    padding: 10px;
+    float: left;
+    width: 20%; /* The width is 60%, by default */
+  }
+
+  .main-right {
+    padding: 10px;
+    float: left;
+    width: 20%; /* The width is 20%, by default */
+  }
+  .right {
+    padding: 10px;
+
+    width: 20%; /* The width is 20%, by default */
+  }
+  .wrap-input200 {
+    position: relative;
+    width: 90%;
+    z-index: 1;
+    margin-bottom: 10px;
+  }
+  /* Use a media query to add a break point at 800px: */
+  @media screen and (max-width: 800px) {
+    .left, .main-left,.main-right, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
   }

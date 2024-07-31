@@ -5,6 +5,7 @@ use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Scholarship;
 use App\Models\Alumni;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,6 +16,7 @@ class HomeController extends Controller
      */
     public function home()
     {
+        $message = Message::all();
         $scholars = Scholarship::all();
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();
@@ -22,9 +24,7 @@ class HomeController extends Controller
         $scholarshipCount = DB::table('scholarships')->count();
 
 
-
-
-    return view('frontend.home',compact('scholars'),[
+         return view('frontend.home',compact('scholars','message'),[
         'studentCount' => $studentCount,
         'facultyCount' => $facultyCount,
         'alumniCount' => $alumniCount,

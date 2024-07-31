@@ -40,6 +40,7 @@
             <div class="flip-card-back p-3 text-right" style="line-height:22px;">
                   <h4>{{$alumn->name}}</h4>
                   <hr>
+                  <div class="p-1">
                       Student Id: {{$alumn->roll}}<br>
 
                       Batch: {{$alumn->batch}}<br>
@@ -52,14 +53,12 @@
 
                       Phone No: {{$alumn->phone}}<br>
 
-                      <p>Email: {{$alumn->email}}<br>
+                     Email: {{$alumn->email}}<br>
 
 
-                      <p> Office Address: {{$alumn->address}}</p>
+                      Office Address: {{$alumn->address}}
+                    </div>
 
-                      <div class="social-links text-center">
-
-                      </div>
             </div>
           </div>
         </div>

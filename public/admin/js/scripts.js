@@ -89,9 +89,7 @@ function handleScroll() {
     }
 }
 
-// Add scroll event listener
-window.addEventListener('scroll', handleScroll);
-});
+
 // JavaScript to start typing effect after page load
 window.onload = function() {
 // Get the text container
