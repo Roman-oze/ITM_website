@@ -87,6 +87,7 @@ route::controller(RegisterController::class)->group(function(){
 
 route::controller(MessageController::class)->group(function(){
     route::post('/viewer/message','store')->name('viwer.store');
+    route::get('/message','index')->name('index.message');
     route::delete('/inbox/{id}','destroy')->name('inbox.delete');
 
 

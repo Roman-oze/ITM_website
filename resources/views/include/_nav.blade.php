@@ -23,6 +23,7 @@
                 <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                 <li><a class="dropdown-item" href="{{route('register')}}">Registration</a></li>
                 @endif
+                
             </ul>
         </li>
     </ul>

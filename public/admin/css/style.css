@@ -417,3 +417,11 @@ nav ul li a {
 
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
+
+  /* .table-responsive {
+    margin: 20px 0;
+  }
+
+  th, td {
+    white-space: nowrap;
+  } */

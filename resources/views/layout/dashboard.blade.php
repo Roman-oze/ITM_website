@@ -19,10 +19,6 @@
         </div>
 
 
-
-
-
-
         @include('include._footer')
 
         <script src="{{asset('admin/js/scripts.js')}}">

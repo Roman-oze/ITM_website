@@ -47,7 +47,7 @@
                         </nav>
                     </div>
 
-                    <a class="nav-link" href="{{route('staff.index')}}">
+                    <a class="nav-link" href="{{route('index.message')}}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-message fa-fw text-white fa-lg"></i></div>
                         Messages
                     </a>
@@ -116,19 +116,15 @@
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-circle-info text-white fa-lg"></i></div>
                         Notice Board
                     </a>
-                    <a class="nav-link" href="{{route('chart')}}">
+                    {{-- <a class="nav-link" href="{{route('chart')}}">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Charts
                     </a>
                     <a class="nav-link" href="{{route('static')}}">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Tables
-                    </a>
+                    </a> --}}
                 </div>
-            </div>
-            <div class="sb-sidenav-footer">
-                <div class="small">Logged in as:</div>
-                ITM
             </div>
         </nav>
     </div>

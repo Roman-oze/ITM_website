@@ -866,7 +866,6 @@
               </div>
                 <div class="container mt-3">
                   <div class="row text-center">
-
                   <div class="col-md-12 col-sm-12 text-center rounded">
                         <div class=" rounded-3 p-3 shadow-lg manual-shadow2 border-900 box">
                           <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Web Aplication</p><br>
