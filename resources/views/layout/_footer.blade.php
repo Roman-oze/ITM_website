@@ -13,7 +13,7 @@
 
   </div>
 
-  <div class="main-left">
+  <div class="main-left ">
     <h2 class="ftco-heading-2">Get in Touch</h2>
     <p><a target="_blank" class="text-dark " href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Home</a></p>
                                <p><a target="_blank" class="text-dark " href="https://daffodilvarsity.edu.bd/department/itm/local-tuition">Tuition Fee</a></p>

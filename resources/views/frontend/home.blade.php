@@ -8,50 +8,6 @@
 @extends('layout.app')
 
 
-@section('headerpage')
-
-
-
-<div class="container-fluid  mt-5">
-
-        <div class="left-1">
-            <div class="headline">
-            <h1 class="text-white-50 welcome">Welcome!</h1>
-            <h3 class=" department aos-init aos-animate">Department of</h3>
-            <div  class="itm  text-white animate__animated animate__fadeInLeft h2">
-               Information Technology & Management <img src="{{asset('frontend/image/verifi.png')}}" class="verify">
-             </div>
-             </div>
-
-
-             <div class="club animate__animated animate__bounce animate__delay-2s">
-                <a target="_blank" href="{{route('club')}}" class="bn5  "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
-            </div>
-
-        </div>
-        <div class="right-1">
-            <img src="{{asset('frontend/image/student3.png')}}" class="image-shadow img-fluid-custom  animate__animated animate__fadeInDown">
-
-
-            <div class="">
-                <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-white fa-4x open-button"></i></button>
-             <div class="chat-popup" id="myForm">
-                <form action="{{route('viwer.store')}}" method="POST" class="form-container">
-                     @csrf
-                     <h1>Chat</h1>
-
-                       <label for="msg"><b>Message</b></label>
-                      <textarea  placeholder="Type message.." name="message" required></textarea>
-
-                     <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
-                     <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
-                </form>
-             </div>
-             </div>
-        </div>
-
-    </div>
-
 {{-- <div class="container-fluid  mt-5">
     <div class="row ">
       <div class="col-md-6 intro">
@@ -93,15 +49,50 @@
    {{-- <button class="" onclick="openForm()"> <i class="fa-regular fa-comment-dots text-success fa-4x open-button"></i></button> --}}
 
 
-@endsection
-
-
-
-
 
 @section('content')
 
-{{-- <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
+
+<section id="main-10">
+    <div id="left-10">
+        <div class="headline">
+        <h1 class="text-white-50 welcome">Welcome!</h1>
+        <h3 class=" department aos-init aos-animate">Department of</h3>
+        <div  class="itm  text-white animate__animated animate__fadeInLeft h2">
+           Information Technology & Management<img src="{{asset('frontend/image/verifi.png')}}" class="verify">
+         </div>
+         </div>
+
+
+         <div class="club animate__animated animate__bounce animate__delay-2s">
+            <a target="_blank" href="{{route('club')}}" class="bn5  "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
+        </div>
+
+    </div>
+    <div id="right-10">
+        <img src="{{asset('frontend/image/student3.png')}}" class="coverimage  image-shadow img-fluid-custom  animate__animated animate__fadeInDown">
+
+
+        <div class="">
+            <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-white fa-4x open-button"></i></button>
+         <div class="chat-popup" id="myForm">
+            <form action="{{route('viwer.store')}}" method="POST" class="form-container">
+                 @csrf
+                 <h1>Chat</h1>
+
+                   <label for="msg"><b>Message</b></label>
+                  <textarea  placeholder="Type message.." name="message" required></textarea>
+
+                 <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
+                 <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
+            </form>
+         </div>
+         </div>
+    </div>
+</section>
+
+
+<section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="container d-flex justify-content-evenly">
     <div class="fe-box img-fluid-custom">
         <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
@@ -133,32 +124,106 @@
         <h6 class="btn3">Transport</h6>
     </div>
     </div>
-</section> --}}
+</section>
 
 
 
 
+
+
+
+
+ <div class="container-fluid mt-5 p-4">
+    {{-- <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of </h1> --}}
+
+        <div class="row justify-content-center covepage  mt-5 ">
+            <div class="col-md-6 align-items-stretch d-flex">
+                <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg);">
+                    <div class="video justify-content-center">
+                        {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
+                        {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
+                            <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid-custom manual-shadow "  >
+                                {{-- <iframe width="640" height="450" src="#">
+                                </iframe> --}}
+
+                            <span class="ion-ios-play"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6  p-2 ">
+
+                <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4>
+
+
+                    <p class="text-white-50 heading_section"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
+
+                    <br>
+                    <br>
+                        <a target="_blank" class="read" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a>
+                        <br>
+                   <div class="fb">
+                      <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
+                       <br>
+                       <br>
+                      <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
+                    </div>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+    <div class="container mt-5">
+        <div class="row mt-5  d-flex justify-space-bewteen">
+          <div class="col-md-3 col-6  text-center p-2 ">
+            <div class="border rounded-3  container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">{{$studentCount}}</span>
+            <p class="text-color">Student</p>
+          </div>
+          </div>
+          <div class="col-md-3 col-6 text-center p-2">
+            <div class="border rounded-3  container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="{{$facultyCount}}" data-purecounter-duration="0" class="purecounter">50</span>
+            <p class="text-color">Faculty</p>
+          </div>
+          </div>
+          <div class="col-md-3 col-6 text-center p-2">
+            <div class="border rounded-3  container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="{{$alumniCount}}" data-purecounter-duration="0" class="purecounter">40</span>
+            <p class="text-color">Alumni</p>
+          </div>
+          </div>
+
+          <div class="col-md-3 col-6 text-center p-2">
+          <div class="border rounded-3 container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="{{$scholarshipCount}}" data-purecounter-duration="0" class="purecounter">29</span>
+            <p class="text-color">Research</p>
+            </div>
+            </div>
+            </div>
+            </div>
+                <br>
+                <br>
+                <br>
+                <br>
 
 <div class="container-fluid text-center mt-5 ">
+    <div class="row text-center mt-5 p-5">
 
 
+
+        <h3 class="text-warning feature">Features</h3>
+        <h2 class="text-white why"> Why Choose ITM</h2>
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-
-        <h3 class="text-warning feature">Features</h3>
-        <h1 class="text-white why"> Why Choose ITM</h1>
-
         <h2 class=" text-white special">Special Course </h2>
 </div>
-
-</div>
-
-
-<div class="container-fluid text-center mt-5 ">
-
     <div class="row p-3">
               <div class="col-md-3 p-3 ">
                 <div class="flip-card flip-shadow ">
@@ -385,88 +450,7 @@
                </div>
                </div>
                </div>
-
-
-        <br>
-        <br>
-        <br>
-        <div class="mt-5">
-            <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of </h1>
-        </div>
- <div class="container-fluid mt-5 p-4">
-        <div class="row justify-content-center covepage  mt-5 ">
-            <div class="col-md-6 align-items-stretch d-flex">
-                <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg);">
-                    <div class="video justify-content-center">
-                        {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
-                        {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
-                            <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid-custom manual-shadow "  >
-                                {{-- <iframe width="640" height="450" src="#">
-                                </iframe> --}}
-
-                            <span class="ion-ios-play"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6  p-2 ">
-
-                <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4>
-
-
-                    <p class="text-white-50 heading_section"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
-
-<br>
-<br>
-                        <a target="_blank" class="read" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a>
-                        <br>
-                   <div class="fb">
-                      <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
-                       <br>
-                       <br>
-                      <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
-                    </div>
-
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-    <div class="container mt-5">
-        <div class="row mt-5  d-flex justify-space-bewteen">
-          <div class="col-md-3 col-6  text-center p-2 ">
-            <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">{{$studentCount}}</span>
-            <p class="text-color">Student</p>
-          </div>
-          </div>
-          <div class="col-md-3 col-6 text-center p-2">
-            <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="{{$facultyCount}}" data-purecounter-duration="0" class="purecounter">50</span>
-            <p class="text-color">Faculty</p>
-          </div>
-          </div>
-          <div class="col-md-3 col-6 text-center p-2">
-            <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="{{$alumniCount}}" data-purecounter-duration="0" class="purecounter">40</span>
-            <p class="text-color">Alumni</p>
-          </div>
-          </div>
-
-          <div class="col-md-3 col-6 text-center p-2">
-          <div class="border rounded-3 container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="{{$scholarshipCount}}" data-purecounter-duration="0" class="purecounter">29</span>
-            <p class="text-color">Research</p>
-            </div>
-            </div>
-            </div>
-            </div>
-                <br>
-                <br>
-                <br>
-                <br>
+               </div>
 
 <div class="mt-5">
     <h1 class="about_itm text-center text-white">Study Abroad</h1>
@@ -474,7 +458,7 @@
 
 <div class="container-fluid mt-5 p-5">
     <div class="row text-center aboardpage">
-        <div class="col-md-8 text-center mb-4 ">
+        <div class="col-md-8 text-center mb-3 ">
             <img src="{{asset('frontend/image/student2.png')}}" class="scholarpic animate__animated animate__fadeInLeft " alt="Student">
             </div>
             <div class="col-md-4 text-center p-4 scholar">
@@ -533,8 +517,8 @@
 
 
 
-<div class="container mt-5 ">
-    <div class="row d-flex ">
+<div class="container-fluid mt-5 ">
+    <div class="row d-flex p-5">
 
 @foreach ($scholars as $scholar)
       <div class="col-md-3 p-2">
@@ -887,10 +871,10 @@
                   <div class="divider-custom-line"></div>
               </div>
               </div>
-                <div class="container mt-3">
+                <div class="container-fluid mt-3">
                   <div class="row text-center">
                   <div class="col-md-12 col-sm-12 text-center rounded">
-                        <div class=" rounded-3 p-3 shadow-lg manual-shadow2 border-900 box">
+                        <div class=" rounded-3 shadow-lg manual-shadow2 border-900 box">
                           <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Web Aplication</p><br>
                           <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Mobile Application</p><br>
                           <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Business & Management</p><br>
@@ -907,6 +891,7 @@
 
               </div>
               </div>
+
               <div class="container-fluid mt-5">
                 <div class="row mt-5 d-flex justify-content-center p-3 ">
 
@@ -1035,8 +1020,8 @@
                 </div>
                </div>
 
-               <div class="container mt-5">
-                <div class="row d-flex  align-items-center  ">
+               <div class="container-fluid mt-5">
+                <div class="row d-flex  align-items-center  p-5">
                   <!-- Card 1 -->
                   <div class="col-md-3">
                     <div class="card mb-4  p-3 bg-black shadow">
@@ -1097,7 +1082,7 @@
         </div>
 
 
-        <div class="container  mt-5">
+        <div class="container-fluid  mt-5">
 
             <!-- Dropdown Button -->
             <div class="dropdown h-70">
