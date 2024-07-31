@@ -4,7 +4,7 @@
 <div class="row footer_page mt-5">
 
 <div class="left">
-    <img src="{{ asset('frontend/image/itmclub.png')}}" >
+    <img src="{{ asset('frontend/image/itmclub.png')}}" class="img-fluid" >
 
     <a class="p-1 navbar_text" href="https://www.facebook.com/diu.itm"><i class="fa-brands fa-facebook fa-2x text-dark"></i></a>
     <a class="text-dark p-1" href="https://www.facebook.com/itmclub.daffodilvarsity"><i class="fa-brands fa-linkedin fa-2x text-dark"></i></a>

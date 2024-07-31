@@ -10,7 +10,49 @@
 
 @section('headerpage')
 
+
+
 <div class="container-fluid  mt-5">
+
+        <div class="left-1">
+            <div class="headline">
+            <h1 class="text-white-50 welcome">Welcome!</h1>
+            <h3 class=" department aos-init aos-animate">Department of</h3>
+            <div  class="itm  text-white animate__animated animate__fadeInLeft h2">
+               Information Technology & Management <img src="{{asset('frontend/image/verifi.png')}}" class="verify">
+             </div>
+             </div>
+
+
+             <div class="club animate__animated animate__bounce animate__delay-2s">
+                <a target="_blank" href="{{route('club')}}" class="bn5  "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
+            </div>
+
+        </div>
+        <div class="right-1">
+            <img src="{{asset('frontend/image/student3.png')}}" class="image-shadow img-fluid-custom  animate__animated animate__fadeInDown">
+
+
+            <div class="">
+                <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-white fa-4x open-button"></i></button>
+             <div class="chat-popup" id="myForm">
+                <form action="{{route('viwer.store')}}" method="POST" class="form-container">
+                     @csrf
+                     <h1>Chat</h1>
+
+                       <label for="msg"><b>Message</b></label>
+                      <textarea  placeholder="Type message.." name="message" required></textarea>
+
+                     <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
+                     <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
+                </form>
+             </div>
+             </div>
+        </div>
+
+    </div>
+
+{{-- <div class="container-fluid  mt-5">
     <div class="row ">
       <div class="col-md-6 intro">
         <div class="top">
@@ -35,15 +77,14 @@
 
       <div class="col-md-6  ">
         <div class="cover-border text-center ">
-        <!-- <img src="black-jacket.png" class="dp"> -->
-        <!-- <img src="diu-3.png" class="dp"> -->
+
         <img src="{{asset('frontend/image/student3.png')}}" class="image1 img-fluid-custom  animate__animated animate__fadeInDown">
-        {{-- <img src="{{asset('frontend/image/student4.png')}}" class="image1 img-fluid "> --}}
+
       </div>
       </div>
 
     </div>
-</div>
+</div> --}}
 
    {{-- <button class="open-button" onclick="openForm()"><img src="{{asset('frontend/image/logo.png')}}" alt="" class="pop-img "></button> --}}
 
@@ -51,21 +92,6 @@
 
    {{-- <button class="" onclick="openForm()"> <i class="fa-regular fa-comment-dots text-success fa-4x open-button"></i></button> --}}
 
-   <button class="" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-white fa-4x open-button"></i></button>
-</div>
-
-<div class="chat-popup" id="myForm">
-   <form action="{{route('viwer.store')}}" method="POST" class="form-container">
-        @csrf
-        <h1>Chat</h1>
-
-          <label for="msg"><b>Message</b></label>
-         <textarea  placeholder="Type message.." name="message" required></textarea>
-
-        <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
-        <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
-   </form>
-</div>
 
 @endsection
 
@@ -110,28 +136,27 @@
 </section> --}}
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-"></div>
-    </div>
-</div>
-<br>
-<br>
+
+
 
 <div class="container-fluid text-center mt-5 ">
-    <div  class="">
-    <h3 class="text-warning">Features</h3>
-        <h1 class="text-white"> Why Choose ITM</h1>
+
+
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        <h2 class=" text-white">Special Course </h2>
+
+        <h3 class="text-warning feature">Features</h3>
+        <h1 class="text-white why"> Why Choose ITM</h1>
+
+        <h2 class=" text-white special">Special Course </h2>
+</div>
+
 </div>
 
 
-</div>
 <div class="container-fluid text-center mt-5 ">
 
     <div class="row p-3">
@@ -261,7 +286,7 @@
               </div>
             </div> --}}
 
-        </div>
+
     <div class="row p-3">
               <div class="col-md-3 p-3 ">
                 <div class="flip-card flip-shadow ">
@@ -362,8 +387,6 @@
                </div>
 
 
-
-
         <br>
         <br>
         <br>
@@ -457,7 +480,7 @@
             <div class="col-md-4 text-center p-4 scholar">
                 <h4 class="aboard animate__animated animate__fadeInRight mt-1">Facilities List</h4><br>
 
-                <div class="mt-5 ">
+                <div class="link-list" >
             <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Scholarship</a><br>
             <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item2 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</a><br>
             <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item3 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Job</a><br>
@@ -672,7 +695,7 @@
 
 <div class="row text-center">
                 <div class="text-dark text-center  service_text">
-                    <h1 class="text-white ">Service <i class="fa-solid fa-universal-access"></i></h1>
+                    <h1 class="text-white service">Service <i class="fa-solid fa-universal-access"></i></h1>
                     <div class="divider-custom">
                         <div class="divider-custom-line"></div>
                         <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>

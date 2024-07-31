@@ -173,7 +173,7 @@ background-position: center;
     width: 55px;
     border-radius: 50%;
   }
-  .image1{
+  .image-shadow{
     /* filter:drop-shadow(5px 5px 5px  rgba(235, 151, 5, 0.936) ); */
     /* filter:drop-shadow(5px 5px 5px  rgb(4, 176, 99) ); */
     filter:drop-shadow(5px 5px 5px  rgb(5, 206, 202) );
@@ -923,7 +923,7 @@ object-position: center;
  color: rgb(204, 201, 195);
  border-bottom:2px solid rgba(220, 214, 214, 0.856);
  width: 150px;
- padding-top: 10px;
+ padding-top: 40px;
  font-size: large;
  display: block;
  margin: auto;
@@ -1284,9 +1284,9 @@ color: #ffffff;
     background-size: cover;
     background-position: center;
   }
-  .club{
-    padding-top: 100px;
-  }
+  /* .club{
+    padding-top: 150px;
+  } */
  .photo{
   height: 50px;
   width: 50px;
@@ -2120,6 +2120,82 @@ border: none;
     color: #007bff;
     text-decoration: none;
   }
+
+/* coverpage */
+
+.left-1 {
+
+    padding: 20px;
+    float: left;
+    width: 50%; /* The width is 20%, by default */
+  }
+  /* .main{
+background-color: #00ffd5;
+height: auto;
+  } */
+  .right-1 {
+
+    padding: 10px;
+    float: left;
+    width: 50%; /* The width is 20%, by default */
+  }
+
+  @media screen and (max-width: 800px) {
+    .left,.right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+
+  @media screen and (max-width: 800px) {
+    .right,.img {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+  @media screen and (max-width: 700px) {
+    .left,.itm {
+      font-size: small; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+  @media screen and (max-width: 700px) {
+    .left,.itm {
+      font-size: small;
+      /* display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden; */
+      /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .club{
+       padding-top: 120px;
+       font-size: small;
+     }
+    }
+  @media screen and (max-width: 1100px) {
+    .club{
+       padding-top: 100px;
+       font-size: small;
+     }
+    }
+
+
+  @media screen and (min-width: 1200px) {
+    .headline{
+       padding-top: 50px;
+       padding-left: 50px;
+       font-size: larger;
+     }
+    }
+  @media screen and (max-width: 420px) {
+    .headline{
+       padding-top:0px;
+       font-size: small;
+     }
+    }
+
+
+
 /* footer */
 .left {
     text-align: center;
