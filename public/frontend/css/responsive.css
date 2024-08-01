@@ -364,6 +364,25 @@
     }
 
 
+    @media (min-width:319px) and (max-width:480px) {
+
+         .inner .col{
+           width:48%;
+           margin: 1%;
+           text-align: center;
+           box-sizing: border-box;
+           padding-bottom: 3px;
+
+
+         }
+         .inner .col .imgslide{
+           width: 100%;
+         }
+         .inner .col .col-btn{
+           color: #ffffff;
+           font-size:xx-small;
+         }
+         }
 
 
 
@@ -408,125 +427,4 @@
 
 
 
-    @media (min-width: 320px) and (max-width: 480px) {
 
-        #Feature .fe-box{
-            width: 0px;
-            text-align: center;
-            padding: 15px 5px;
-            box-shadow: 15px 15px 15px  rgb(0, 0,0,0.06);
-            border: 1px solid whitesmoke;
-            border-radius:4px;
-
-          }
-          #Feature .fe-box h6{
-          padding: 4px 4px 3px 4px;
-          line-height: 1;
-          border-radius: 4px;
-          cursor: pointer;
-          }
-          #Feature .fe-box h6:hover{
-          background-color: #088178;
-          color: #ffffff;
-          }
-
-      }
-
-
-
-
-  .section-p1{
-    padding: 40px 80px;
-    /* background-color: #189d92; */
-  }
-  .section-m1{
-    margin: 40px 0px;
-  }
-  #Feature{
-  display: flex;
-  align-items: center;
-  justify-content:space-evenly;
-  }
-
-
-  #Feature .fe-box{
-    width: 150px;
-    text-align: center;
-    padding: 25px 15px;
-    box-shadow: 15px 15px 15px  rgb(0, 0,0,0.06);
-    border: 1px solid whitesmoke;
-    border-radius:4px;
-
-  }
-  #Feature .fe-box h6{
-  padding: 9px 8px 6px 8px;
-  line-height: 1;
-  border-radius: 4px;
-  cursor: pointer;
-  }
-  #Feature .fe-box h6:hover{
-  background-color: #088178;
-  color: #ffffff;
-  }
-
-  #Feature .fe-box .btn1{
-    background-color: #050505;
-    font-size: medium;
-    color: #000000;
-  }
-  #Feature .fe-box .btn1{
-    background-color: #81ee8a;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn2{
-    background-color: #66eba8;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn3{
-    background-color: #f1b25f;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn4{
-    background-color: #dff75a;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn5{
-    background-color: #6cf160;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn6{
-    background-color: #f8c843;
-    font-size: medium;
-  }
-
-  #Feature .fe-box img{
-    width: 100%;
-    margin-bottom: 10px;
-
-  }
-  /* For desktop screens */
-  @media only screen and (min-width: 768px) {
-    .fe-box {
-        width: 25%; /* Arrange items in a grid with 4 columns */
-        padding: 0 15px;
-    }
-  }
-
-  /* For smaller screens */
-  @media only screen and (max-width: 767px) {
-    .fe-box {
-        width: 50%; /* Arrange items in a grid with 2 columns */
-        float: left;
-        padding: 0 15px;
-    }
-  }
-
-  /* For very small screens */
-  @media only screen and (max-width: 480px) {
-    .fe-box {
-        width: 100%; /* Occupy full width */
-        float: none;
-        padding: 0 0 15px 0;
-        text-align: center;
-    }
-  }

@@ -92,49 +92,71 @@
 </section>
 
 
-<section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
+{{-- <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="container d-flex justify-content-evenly">
-    <div class="fe-box img-fluid-custom">
+        <div class="fe-box ">
         <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
-        <h6 class="btn2">Waiver</h6>
+        <h6 class="btn1">Waiver</h6>
     </div>
-    <div class="fe-box img-fluid-custom">
+    <div class="fe-box ">
         <img src="{{asset('frontend/image/laptop.png')}}" alt="" class="imgslide">
-        <h6 class="btn1">Free Laptop</h6>
+        <h6 class="btn2">Free Laptop</h6>
     </div>
-    <div class="fe-box img-fluid-custom">
+    <div class="fe-box ">
         <img src="{{asset('frontend/image/hall.png')}}" alt="" class="imgslide">
         <h6 class="btn3">Hall</h6>
     </div>
 
-    <div class="fe-box img-fluid-custom">
+    <div class="fe-box ">
         <img src="{{asset('frontend/image/innovation.png')}}" alt="" class="imgslide">
-        <h6 class="btn6">Innovation</h6>
+        <h6 class="btn4">Innovation</h6>
     </div>
-    <div class="fe-box img-fluid-custom">
+    <div class="fe-box ">
         <img src="{{asset('frontend/image/clubimage.png')}}" alt="" class="imgslide">
-        <h6 class="btn1">35+ Club</h6>
+        <h6 class="btn5">35+ Club</h6>
     </div>
-    <div class="fe-box img-fluid-custom">
+    <div class="fe-box ">
         <img src="{{asset('frontend/image/life_insurance.png')}}" alt="" class="imgslide">
-        <h6 class="btn2">Life-Insurance</h6>
+        <h6 class="btn6">Life-Insurance</h6>
     </div>
-    <div class="fe-box img-fluid-custom">
+    <div class="fe-box ">
         <img src="{{asset('frontend/image/buss.png')}}" alt="" class="imgslide">
-        <h6 class="btn3">Transport</h6>
+        <h6 class="btn1">Transport</h6>
     </div>
     </div>
+</section> --}}
+
+<section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
+    <div class="inner ">
+        <div class="col">
+            <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
+            <p class="col-btn">Waiver</p>
+        </div>
+        <div class="col">
+            <img src="{{asset('frontend/image/laptop.png')}}" alt="" class="imgslide">
+            <p class="col-btn">Free Laptop</p>
+        </div>
+        <div class="col">
+            <img src="{{asset('frontend/image/hall.png')}}" alt="" class="imgslide">
+            <p class="col-btn">Hall</p>
+        </div>
+        <div class="col">
+            <img src="{{asset('frontend/image/innovation.png')}}" alt="" class="imgslide">
+            <p class="col-btn">innovation</p>
+        </div>
+        <div class="col">
+            <img src="{{asset('frontend/image/clubimage.png')}}" alt="" class="imgslide">
+            <p class="col-btn">Club</p>
+        </div>
+        <div class="col">
+            <img src="{{asset('frontend/image/buss.png')}}" alt="" class="imgslide">
+            <p class="col-btn">Transport</p>
+        </div>
+        </div>
 </section>
 
-
-
-
-
-
-
-
  <div class="container-fluid mt-5 p-4">
-    {{-- <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of </h1> --}}
+    <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of </h1>
 
         <div class="row justify-content-center covepage  mt-5 ">
             <div class="col-md-6 align-items-stretch d-flex">
@@ -863,6 +885,13 @@
                <br>
                <br>
                <br>
+               <div class="section-border" data-controller="SectionDivider" style="clip-path: url(#section-divider-64ab4a69a3c6fa011e19653c);" data-controllers-bound="SectionDivider">
+                <div class="section-background">
+
+
+
+                </div>
+              </div>
                <div class="text-center mt-5">
                 <h2 class="text-center text-light">Specialist</h2>
                 <div class="divider-custom">
@@ -874,7 +903,7 @@
                 <div class="container-fluid mt-3">
                   <div class="row text-center">
                   <div class="col-md-12 col-sm-12 text-center rounded">
-                        <div class=" rounded-3 shadow-lg manual-shadow2 border-900 box">
+                        <div class=" rounded-3  manual-shadow2  box">
                           <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Web Aplication</p><br>
                           <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Mobile Application</p><br>
                           <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Business & Management</p><br>
@@ -1008,6 +1037,9 @@
             </div>
 
                </section> --}}
+
+
+
 
                <br>
                <br>

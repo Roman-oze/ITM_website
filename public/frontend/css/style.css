@@ -556,6 +556,20 @@ btn */
   object-fit: contain;
   mix-blend-mode: color-burn;
 }
+.section-p1{
+    padding: 40px 80px;
+    /* background-color: #189d92; */
+  }
+  .section-m1{
+    margin: 40px 0px;
+  }
+#Feature{
+display: flex;
+align-items: center;
+justify-content:space-evenly;
+}
+
+
 
 .facility{
   background-color: #0e8cb2;
@@ -749,75 +763,7 @@ object-position: center;
 
 }
 
-.section-p1{
-    padding: 40px 80px;
-    /* background-color: #189d92; */
-  }
-  .section-m1{
-    margin: 40px 0px;
-  }
-  #Feature{
-  display: flex;
-  align-items: center;
-  justify-content:space-evenly;
-  }
 
-
-  #Feature .fe-box{
-    width: 150px;
-    text-align: center;
-    padding: 25px 15px;
-    box-shadow: 15px 15px 15px  rgb(0, 0,0,0.06);
-    border: 1px solid whitesmoke;
-    border-radius:4px;
-
-  }
-  #Feature .fe-box h6{
-  padding: 9px 8px 6px 8px;
-  line-height: 1;
-  border-radius: 4px;
-  cursor: pointer;
-  }
-  #Feature .fe-box h6:hover{
-  background-color: #088178;
-  color: #ffffff;
-  }
-
-  #Feature .fe-box .btn1{
-    background-color: #050505;
-    font-size: medium;
-    color: #000000;
-  }
-  #Feature .fe-box .btn1{
-    background-color: #81ee8a;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn2{
-    background-color: #66eba8;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn3{
-    background-color: #f1b25f;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn4{
-    background-color: #dff75a;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn5{
-    background-color: #6cf160;
-    font-size: medium;
-  }
-  #Feature .fe-box .btn6{
-    background-color: #f8c843;
-    font-size: medium;
-  }
-
-  #Feature .fe-box img{
-    width: 100%;
-    margin-bottom: 10px;
-
-  }
 
 
   .listitem1{
@@ -2332,5 +2278,46 @@ height: auto;
         margin-bottom: 10px;
       }
   }
+
+
+
+  .inner{
+  width: 100%;
+  }
+  .inner .col{
+    width: 14%;
+    margin: 1%;
+    float: left;
+    text-align: center;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    box-shadow: 15px 15px 15px  rgb(0, 0,0,0.06);
+    border-radius:4px;
+    cursor: pointer;
+    border: 1px solid whitesmoke;
+
+}
+
+.inner .col p{
+background-color: #088178;
+color: #ffffff;
+border-radius:4px;
+width: auto;
+
+}
+.inner .col p:hover{
+    background-color: #053330;
+    color: #ffffff;
+    border-radius:4px;
+
+
+    }
+
+  .inner .col .imgslide{
+    width: 100%;
+  }
+
+
+
 
 
