@@ -320,20 +320,34 @@
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
 }
-  @media screen and (max-width: 700px) {
+@media screen and  (max-width: 425px) {
     .left,.itm {
       font-size: small; /* The width is 100%, when the viewport is 800px or smaller */
     }
-}
-  @media screen and (max-width: 700px) {
-    .left,.itm {
-      font-size: small;
-      /* display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 1;
-      overflow: hidden; */
-      /* The width is 100%, when the viewport is 800px or smaller */
+    .itm-card {
+        text-align: center;
+
     }
+    .face {
+        text-align: center;
+
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .left,.itm {
+        font-size: large; /* The width is 100%, when the viewport is 800px or smaller */
+      }
+
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+
+    .left,.itm {
+        font-size: xx-large; /* The width is 100%, when the viewport is 800px or smaller */
+      }
+
   }
   @media screen and (min-width: 1200px) {
     .club{
@@ -392,6 +406,24 @@
 
 
 
+
+
+
+         @media screen and  (max-width: 425px) {
+
+
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+
+
+          }
+
+          @media (min-width: 1025px) and (max-width: 1280px) {
+
+            
+
+          }
 
 
 

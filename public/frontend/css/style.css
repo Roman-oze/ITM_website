@@ -675,7 +675,7 @@ font-weight: bold;
 }
 
 .face:hover{
-  color: rgb(0, 0, 0);
+  color: rgb(16, 190, 152);
   font-weight: bold;
 
 }
@@ -690,28 +690,25 @@ font-weight: bold;
 
 }
 .tube:hover{
-  color: rgb(0, 0, 0);
-  font-weight: bold;
+    color: rgb(16, 190, 152);
+    font-weight: bold;
 
 
 }
 
-.read{
+.down-btn{
 color: #dbc7c7;
 border-radius: 24px;
 font-weight: bold;
 transition: transform 0.2s;
 padding: 10px;
-border: solid 1px rgb(231, 223, 223);
+border: solid 1px rgb(17, 181, 241);
+text-decoration: none;
 }
-.read,a{
-  color: #efe6e6;
-  text-decoration: none;
+a{
+    text-decoration: none;
 }
-.read:hover{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05);
-}
+
 .menucard:hover{
   color: blue;
 

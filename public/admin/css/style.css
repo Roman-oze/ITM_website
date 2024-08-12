@@ -425,3 +425,6 @@ nav ul li a {
   th, td {
     white-space: nowrap;
   } */
+   a{
+    text-decoration: none;
+   }

@@ -3,7 +3,7 @@
 @section('main')
 
 
-
+<main>
 <div class="card  p-4">
     <h1 class="mt-4">Message</h1>
     <ol class="breadcrumb mb-4">
@@ -19,7 +19,7 @@
 
 
 
-        <table class="table">
+        <table class="table ">
             <thead>
                 <tr>
                     <th>View</th>
@@ -47,6 +47,6 @@
             </tbody>
         </table>
     </div>
-
+</main>
 
 @endsection

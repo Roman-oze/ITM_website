@@ -174,7 +174,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6  p-2 ">
+            <div class="col-md-6  p-2 itm-card">
 
                 <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4>
 
@@ -183,10 +183,10 @@
 
                     <br>
                     <br>
-                        <a target="_blank" class="read" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a>
+                        <a target="_blank" class="down-btn" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a>
                         <br>
                    <div class="fb">
-                      <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
+                      <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face"><i class="fa-brands fa-facebook"></i>acebook </a></i>
                        <br>
                        <br>
                       <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
