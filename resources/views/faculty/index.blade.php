@@ -66,17 +66,17 @@
         <td >{{$teacher->email}}</td>
         <td>{{$teacher->phone}}</td>
 
-        <td class="d-flex">
+        <td class="">
 
-            <a href="{{route('edit.faculty',$teacher->teacher_id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+    
+           <a href="{{route('edit.faculty',$teacher->teacher_id)}}" class=" btn btn-outline-info" class="p-3 "><i class="fa-solid fa-pen-to-square  "></i></a>
 
-           <form  action="{{route('delete.faculty',$teacher->teacher_id)}}" method="POST" >
-               @csrf
-               @method('DELETE')
-               <button type="submit" onclick="return confirm('Are you sure?')" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
-               </button>
-
+       <form action="{{route('delete.faculty',$teacher->teacher_id)}}" method="post" style="display:inline;">
+           @csrf
+           @method('DELETE')
+           <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
            </form>
+
         </td>
       </tr>
 

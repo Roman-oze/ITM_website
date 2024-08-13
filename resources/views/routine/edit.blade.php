@@ -1,7 +1,12 @@
 @extends('layout.dashboard')
 
 @section('main')
-<div class="container mt-5">
+<div class="container">
+    <h1 class="mt-4">Routine</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Routine Edit</li>
+    </ol>
     <div class="card shadow p-4">
         <div class="card-body">
             <h3 class="card-title text-center p-2">Upload Files</h3>

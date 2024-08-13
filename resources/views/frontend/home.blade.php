@@ -53,7 +53,7 @@
 @section('content')
 
 
-<section id="main-10">
+{{-- <section id="main-10">
     <div id="left-10">
         <div class="headline">
         <h1 class="text-white-50 welcome">Welcome!</h1>
@@ -70,7 +70,7 @@
 
     </div>
     <div id="right-10">
-        <img src="{{asset('frontend/image/student3.png')}}" class="coverimage  image-shadow img-fluid-custom  animate__animated animate__fadeInDown">
+        <img src="{{asset('frontend/image/student3.png')}}" class="coverimage  image-shadow img-fluid-custom  animate">
 
 
         <div class="">
@@ -89,7 +89,26 @@
          </div>
          </div>
     </div>
-</section>
+</section> --}}
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+          <h1>Better Solutions For Your Business.</h1>
+
+          <h2>Entrust Your Accounting Problems With Us.</h2>
+
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+          <img src="http://127.0.0.1:8000/here_section/1723477639.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 {{-- <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
@@ -186,7 +205,7 @@
                         <a target="_blank" class="down-btn" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a>
                         <br>
                    <div class="fb">
-                      <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face"><i class="fa-brands fa-facebook"></i>acebook </a></i>
+                      <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face"><i class="fa-brands fa-facebook"></i> Facebook </a></i>
                        <br>
                        <br>
                       <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
@@ -198,6 +217,7 @@
 <br>
 <br>
 <br>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
     <div class="container mt-5">
         <div class="row mt-5  d-flex justify-space-bewteen">
           <div class="col-md-3 col-6  text-center p-2 ">
@@ -488,8 +508,8 @@
 
                 <div class="link-list" >
             <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Scholarship</a><br>
-            <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item2 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</a><br>
-            <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item3 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Job</a><br>
+            <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</a><br>
+            <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Job</a><br>
             <a target="_blank" href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="bn5">Apply</a>
         </div>
         </div>

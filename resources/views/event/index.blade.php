@@ -70,8 +70,8 @@
            <form action="{{route('event_delete',$event->id)}}" method="post" style="display:inline;">
                @csrf
                @method('DELETE')
-               <button type="submit"  class="p-3 " onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></button>
-           </form>
+               <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
+               </form>
 
 
         </td>

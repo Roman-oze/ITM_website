@@ -41,7 +41,7 @@
                       </div>
                   </div>
                     <div class="col-md-3  p-2">
-                      <div class="card bg-secondary">
+                      <div class="card bg-danger">
                         <div class="card-body">
                           <h5 class="card-title text-white">Total Research</h5>
                           <b><h3 class="card-text text-white">{{$scholarshipCount}}</h3></b>

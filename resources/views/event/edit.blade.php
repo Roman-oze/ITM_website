@@ -4,11 +4,13 @@
 
 
 <div class="container p-3">
-    <h2 class="text-danger">Edit Event</h2>
-    <br>
-    <br>
-    <a href="{{route('admin.event')}}" class="btn btn-dark text-white">Back</a>
-    <br>
+
+    <h1 class="mt-4">Event</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+        <li class="breadcrumb-item active">event Edit</li>
+    </ol>
+
 
 
     <form action="{{route('event_update',$event->id)}}" enctype="multipart/form-data" method="POST">

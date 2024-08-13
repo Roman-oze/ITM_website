@@ -56,12 +56,12 @@
 
         <td class="d-flex">
 
-            <a href="{{route('staff.edit',$staff->id)}}" onclick="return confirm('Are you sure?')" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+            <a href="{{route('staff.edit',$staff->id)}}" onclick="return confirm('Are you sure?')"  class="p-3" ><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
 
            <form  action="{{route('staff.delete',$staff->id)}}" method="POST" >
                @csrf
                @method('DELETE')
-               <button type="submit" onclick="return confirm('Are you sure?')" class="p-2"><i class="fa-solid fa-trash text-danger"></i>
+               <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
                </button>
 
            </form>

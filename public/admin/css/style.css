@@ -13,7 +13,6 @@ html{
 body{
     margin: 0;
     padding: 0;
-    background-color: #b1d3f2;
     /* background-image:linear-gradient(rgb(24, 212, 175)) url('../assets/img/nav-bg-2\ \(2\).png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -425,6 +424,6 @@ nav ul li a {
   th, td {
     white-space: nowrap;
   } */
-   a{
+  .linked:hover {
     text-decoration: none;
-   }
+  }

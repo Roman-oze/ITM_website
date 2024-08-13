@@ -5,9 +5,12 @@
 
 
 <div class="container-fluid mt-3">
-    <div class=" text-center">
-        <h2 class="btn btn-dark">Edit</h2>
-    </div>
+    <h1 class="mt-4">Faculty</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Faculty Edit</li>
+    </ol>
+
     <br>
     <form  action="{{route('update.faculty',$teacher->teacher_id)}}"  method="POST" enctype="multipart/form-data">
         @csrf

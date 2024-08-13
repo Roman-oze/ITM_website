@@ -9,9 +9,12 @@
 
 
 <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/app.min.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
+<link href="{{asset('frontend/image/Itmfullogo.png')}}" rel="icon" />
+
 {{-- <link rel="stylesheet" href="{{asset('z')}}"> --}}
 {{-- @stack('head') --}}
 

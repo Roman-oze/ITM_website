@@ -67,9 +67,24 @@ route::controller(UserController::class)->group(function(){
 });
 
 
+// protected
 
+// Route::get('/profile',function(){
+//     return "Welcome to your profile";
+// })->middleware('guard');
 
+// Route::get('/user',function(){
+//     return "Welcome to your user profile";
+// })->middleware('guard');
 
+// Route::get('/logins',function(){
+//    session()->put('id',1);
+//    return redirect()->route('dashboard');
+// });
+// Route::get('/no-access',function(){
+//     echo "You're not to be access page";
+//     die;
+// });
 
 
 
@@ -114,9 +129,6 @@ route::controller(RelationalController::class)->group(function(){
 
   //   Route::get('teachers','teachers')->name('teachers');
 
-
-
-
    });
 
 Route::controller(EventController::class)->group(function(){
@@ -159,7 +171,7 @@ Route::controller(AuthController::class)->group(function(){
     Route::get('logout', 'logout')->name('logout');
     Route::get('user/reset_password', 'password')->name('reset_password');
 
-});
+})->middleware('guard');
 
 
 

@@ -51,13 +51,13 @@
 
     <td class="d-flex">
 
-        <a href="{{route('edit.scholarship',$scholar->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  "></i></a>
+        <a href="{{route('edit.scholarship',$scholar->id)}}" class=" btn btn-outline-info" class="p-3 "><i class="fa-solid fa-pen-to-square  "></i></a>
 
        <form  action="{{route('delete.scholarship',$scholar->id)}}" method="POST"  enctype="multipart/form-data">
            @csrf
            @method('DELETE')
 
-           <button type="submit" onclick="return confirm('Are you sure?')" class="p-3 "><i class="fa-regular fa-trash-can text-danger "></i>
+           <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
            </button>
 
        </form>

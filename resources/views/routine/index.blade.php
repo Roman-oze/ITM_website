@@ -87,12 +87,7 @@
             <form action="{{route('routine.delete',$routine->id)}}" method="POST" style="display:inline;">
                 @csrf
                 @method('DELETE')
-                <button type="submit" onclick="return confirm('Are you sure?')" class="p-2"><i class="fa-solid fa-trash"></i>
-                    @if (session('message'))
-                    <div class="alert alert-success">
-                        {{ session('message') }}
-                    </div>
-                @endif
+                <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
             </form>
 
 
