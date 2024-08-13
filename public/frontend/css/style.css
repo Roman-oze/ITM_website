@@ -92,9 +92,9 @@ background-position: center;
   .topbar-btn:hover {
     color: rgb(5, 206, 202);
   }
-  .navbar_text {
+  /* .navbar_text {
     color: white;
-  }
+  } */
   @media (max-width: 768px) {
     .icontop {
       font-size: 16px;
@@ -123,13 +123,17 @@ background-position: center;
     height: 600px;
     width: auto;
   }
-
-  .brand-logo {
-    height: 50px;
-    width: auto;
-    padding-left: 50px;
+  #header.header-scrolled,
+  #header.header-inner-pages {
+    background: rgba(40, 58, 90, 0.9);
   }
-  #navbarNav {
+  .brand-logo {
+    height: 80px;
+    width: auto;
+    width: auto;
+
+  }
+  /* #navbarNav {
     padding-right: 30px;
     padding-left: 15px;
     text-align: start;
@@ -147,7 +151,12 @@ background-position: center;
   }
   .link-hover:hover {
     transform: translateY(-10px);
-  }
+  } */
+  /* .nav-link:hover {
+    color: rgb(5, 206, 202);
+    font-size: medium;
+    transition: transform 0.3s;
+  } */
     .name{
       color: #8a5f10;
     }
@@ -255,7 +264,7 @@ background-position: center;
 }
 
 .dropdown-content a:hover {
-    background-color: rgb(19, 153, 180);
+    background-color: #37517E;
 
 }
 
@@ -264,6 +273,7 @@ background-position: center;
 .homeicon{
     border: solid 1px #b9b2b2;;
     border-radius: 24px ;
+    color: white;
     padding: 0.5rem 1rem;
 
 
@@ -273,7 +283,13 @@ background-position: center;
     border-radius: 24px ;
     padding: 0.5rem 1rem;
 }
-
+@media (max-width: 575px) {
+    .homeicon{
+        border: solid 1px #37517E;
+        font-size: 50px;
+        color:#37517E;
+    }
+  }
 /* .navbar_text a {
   font-size:larger;
   color: #000000e1;

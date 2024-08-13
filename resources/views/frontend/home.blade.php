@@ -242,7 +242,7 @@
 <br>
 <br>
 <br>
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a>
+{{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a> --}}
     <div class="container mt-5">
         <div class="row mt-5  d-flex justify-space-bewteen">
           <div class="col-md-3 col-6  text-center p-2 ">

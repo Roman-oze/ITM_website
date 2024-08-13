@@ -57,9 +57,15 @@
     width: 50%;
   }
 } */
+@media (max-width: 480px) {
+    .brand-logo {
+      height: 70px;
+      padding-left: 10px;
+    }
 
+}
 
-/* 
+/*
     @media (min-width: 320px) and (max-width:768px) {
    .heading_section{
 
