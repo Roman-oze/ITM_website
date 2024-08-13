@@ -104,8 +104,8 @@ cursor: pointer;
 .btn0{
 padding:10px;
 border-radius: 24px;
-border: 1px rgb(252, 253, 253) solid ;
-color: rgb(255, 254, 254);
+border: 1px rgb(17, 209, 209) solid ;
+color: rgb(0, 0, 0);
 cursor: pointer;
 }
 .btn2{

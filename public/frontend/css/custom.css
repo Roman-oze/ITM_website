@@ -452,7 +452,7 @@ body {
 
   @media (max-width: 991px) {
     #hero {
-      height: 100vh;
+      height: 118vh;
       text-align: center;
     }
 
@@ -473,6 +473,7 @@ body {
     #hero h1 {
       font-size: 28px;
       line-height: 36px;
+
     }
 
     #hero h2 {
@@ -885,7 +886,7 @@ body {
   --------------------------------------------------------------*/
   .cta {
     background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)),
-      url("../img/cta-bg.jpg") fixed center center;
+      url("../image/cta-bg.jpg") fixed center center;
     background-size: cover;
     padding: 120px 0;
   }

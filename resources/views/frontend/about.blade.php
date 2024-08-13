@@ -3,23 +3,23 @@
 @section('content')
 <br>
 <br>
-<div class="container-fluid">
+
+<section id="services" class="services section-bg text-left mt-5" >
+    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+      <div class="section-title ">
+        <h2 class=" " style="color: #37517e;">Our Department</h2>
+
 <div class="row gx-4 gx-lg-5   align-items-center justify-content-center text-center">
-    <div class="col-lg-8 align-self-end">
-        <h1 class="text-info  font-weight-bold">Our Department</h1>
-    </div>
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
+
     <div class="col-lg-8 align-self-baseline d-flex">
-        <p class="text-white-50 mb-5 heading_section ">""Daffodil International University, situated in the vibrant heart of Dhaka, Bangladesh, offers a dynamic learning environment. Nestled in the midst of cultural richness and urban energy, our campus provides students with an inspiring backdrop to pursue their academic endeavors. Explore the fusion of education and culture as you navigate your learning journey at Daffodil International University."</p>
+        <p class="text-dark-50 mb-5 heading_section ">""Daffodil International University, situated in the vibrant heart of Dhaka, Bangladesh, offers a dynamic learning environment. Nestled in the midst of cultural richness and urban energy, our campus provides students with an inspiring backdrop to pursue their academic endeavors. Explore the fusion of education and culture as you navigate your learning journey at Daffodil International University."</p>
     </div>
     {{-- <img src="{{asset('frontend/image/diu_admission.jpg')}}" class="w-50 h-50"> --}}
     <img src="{{asset('frontend/image/event_photo/fin.jpg')}}" class="department-group-image">
 </div>
 </div>
+</div>
+</section>
 <br>
 <br>
 <br>
@@ -176,7 +176,7 @@
 <br>
 
 
-    <h2 class="p-2 text-white text-center">Faculty of Science and Information Technology</h2>
+    <h2 class="p-2 text-dark text-center">Faculty of Science and Information Technology</h2>
 <div class="text-center">
     <div class="divider-custom">
         <div class="divider-custom-line"></div>
@@ -196,10 +196,10 @@
                        <img src="{{ asset($staff->image) }}" class="staff-image" alt="Circular Image rounded">
                     </div>
                       <div class=" text-left">
-                        <h2 class="staff-name text-white">{{$staff->name}}</h2>
-                        <span class="d-block position mb-4 text-white-50">{{$staff->position}}</span>
-                        <a href="{{$staff->email}}" class="text-white"><i class="fa-solid fa-envelope text-white fa-lg p-2"></i></a>
-                        <a href="{{$staff->mobile}}" class="text-white"><i class="fa-solid fa-square-phone text-white fa-lg p-2"></i></a>
+                        <h2 class="staff-name text-dark">{{$staff->name}}</h2>
+                        <span class="d-block position mb-4 text-dark-50">{{$staff->position}}</span>
+                        <a href="{{$staff->email}}" class="text-dark"><i class="fa-solid fa-envelope text-dark fa-lg p-2"></i></a>
+                        <a href="{{$staff->mobile}}" class="text-dark"><i class="fa-solid fa-square-phone text-dark fa-lg p-2"></i></a>
 
                       </div>
                     </div>

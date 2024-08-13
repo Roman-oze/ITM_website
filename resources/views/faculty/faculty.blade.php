@@ -22,7 +22,7 @@
     <br>
     <br>
     <div class="col-lg-8 mt-3 align-self-baseline  rounded-3 p-3 custom-box  border-900 box">
-        <p class="text-white-50 p-4">Become a catalyst for transformation at Daffodil International University. As a faculty member, you'll inspire minds, foster innovation, and contribute to academic excellence. Join us in shaping the leaders of tomorrow and experiencing a fulfilling journey of professional growth and impact."
+        <p class="text-dark-50 p-4">Become a catalyst for transformation at Daffodil International University. As a faculty member, you'll inspire minds, foster innovation, and contribute to academic excellence. Join us in shaping the leaders of tomorrow and experiencing a fulfilling journey of professional growth and impact."
  </p>
 </div>
 </div>
@@ -42,7 +42,7 @@
 
             <div class="faculty-card-content">
                 <div class="head"><p> {{($teacher->designation)}}</p></div>
-                <h2 class="text-white">{{($teacher->name)}}</h2>
+                <h2 class="text-dark">{{($teacher->name)}}</h2>
                 {{-- <h5 class="text-white-50">{{($teacher->designation)}}</h5> --}}
                 <a href="{{($teacher->fb)}}"><i class="fa-brands fa-facebook icon1 p-2"></i></a>
                 <a href="{{($teacher->linked)}}"><i class="fa-brands fa-linkedin icon1 p-2" ></i></a>
@@ -150,7 +150,7 @@
                 </div>
                 <br>
                 <h4 class="p-2 text-info">{{$teacher->name}}</h4>
-                <p class="text-white">{{$teacher->designation}}</p>
+                <p class="text-dark">{{$teacher->designation}}</p>
                 <div class="">
                     <a href="{{$teacher->fb}}" class="p-2"><i class="fa-brands fa-facebook icon1"></i></a>
                     <a href="{{$teacher->linked}}" class="p-2"><i class="fa-brands fa-linkedin icon1"></i></a>

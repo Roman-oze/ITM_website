@@ -95,16 +95,40 @@
 
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-          <h1>Better Solutions For Your Business.</h1>
+            <h1 class="text-white-50 welcome">Welcome!</h1>
 
-          <h2>Entrust Your Accounting Problems With Us.</h2>
+          <h2>Department of</h2>
+
+          <h1>Information Technology & Management<img src="{{asset('frontend/image/verifi.png')}}" class="verify"></h1>
+
+          {{-- <div class="d-flex justify-content-center justify-content-lg-start">
+            <div class=" animate__animated animate__bounce animate__delay-2s">
+                <a target="_blank" href="{{route('club')}}" class="bn5  "><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
+            </div>
+          </div> --}}
 
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <a href="{{route('club')}}" class="btn-get-started scrollto">Get Started</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-          <img src="http://127.0.0.1:8000/here_section/1723477639.png" class="img-fluid animated" alt="">
+          <img src="{{asset('frontend/image/hero-img.png')}}" class="img-fluid animated" alt="">
+
+          <div class="">
+            <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-info fa-4x open-button"></i></button>
+         <div class="chat-popup" id="myForm">
+            <form action="{{route('viwer.store')}}" method="POST" class="form-container">
+                 @csrf
+                 <h1>Chat</h1>
+
+                   <label for="msg"><b>Message</b></label>
+                  <textarea  placeholder="Type message.." name="message" required></textarea>
+
+                 <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
+                 <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
+            </form>
+         </div>
+         </div>
         </div>
       </div>
     </div>
@@ -175,7 +199,7 @@
 </section>
 
  <div class="container-fluid mt-5 p-4">
-    <h1 class="fac_text text-center"><i class="fa-brands fa-elementor "></i>Department of </h1>
+    <h1 class="fac_text text-center text-dark"><i class="fa-brands fa-elementor "></i>Department of </h1>
 
         <div class="row justify-content-center covepage  mt-5 ">
             <div class="col-md-6 align-items-stretch d-flex">
@@ -195,7 +219,8 @@
 
             <div class="col-md-6  p-2 itm-card">
 
-                <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4>
+                {{-- <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4> --}}
+                    <h1 class="text-white itm">Information Technology and Management (ITM)</h1>
 
 
                     <p class="text-white-50 heading_section"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
@@ -217,32 +242,32 @@
 <br>
 <br>
 <br>
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a>
     <div class="container mt-5">
         <div class="row mt-5  d-flex justify-space-bewteen">
           <div class="col-md-3 col-6  text-center p-2 ">
             <div class="border rounded-3  container_design text-center p-5 ">
             <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">{{$studentCount}}</span>
-            <p class="text-color">Student</p>
+            <p class="pure-text">Student</p>
           </div>
           </div>
           <div class="col-md-3 col-6 text-center p-2">
             <div class="border rounded-3  container_design text-center p-5 ">
             <span data-purecounter-start="0" data-purecounter-end="{{$facultyCount}}" data-purecounter-duration="0" class="purecounter">50</span>
-            <p class="text-color">Faculty</p>
+            <p class="pure-text" >Faculty</p>
           </div>
           </div>
           <div class="col-md-3 col-6 text-center p-2">
             <div class="border rounded-3  container_design text-center p-5 ">
             <span data-purecounter-start="0" data-purecounter-end="{{$alumniCount}}" data-purecounter-duration="0" class="purecounter">40</span>
-            <p class="text-color">Alumni</p>
+            <p class="pure-text">Alumni</p>
           </div>
           </div>
 
           <div class="col-md-3 col-6 text-center p-2">
           <div class="border rounded-3 container_design text-center p-5 ">
             <span data-purecounter-start="0" data-purecounter-end="{{$scholarshipCount}}" data-purecounter-duration="0" class="purecounter">29</span>
-            <p class="text-color">Research</p>
+            <p class="pure-text">Research</p>
             </div>
             </div>
             </div>
@@ -252,26 +277,32 @@
                 <br>
                 <br>
 
-<div class="container-fluid text-center mt-5 ">
-    <div class="row text-center mt-5 p-5">
+
+
+<section id="services" class="services section-bg text-left" >
+    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+      <div class="section-title ">
+        <h3 class=" " style="color: #37517e;">Features</h3>
+        <h2 class="text-muted why"> Why Choose ITM</h2>
+    {{-- <div class="row text-center mt-5 p-5">
 
 
 
-        <h3 class="text-warning feature">Features</h3>
-        <h2 class="text-white why"> Why Choose ITM</h2>
+        <h3 class=" " style="color: #37517e;">Features</h3>
+        <h2 class="text-muted why"> Why Choose ITM</h2>
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        <h2 class=" text-white special">Special Course </h2>
-</div>
+        <h2 class=" section-title" style="color: #37517e;">Special Course </h2>
+   </div> --}}
     <div class="row p-3">
               <div class="col-md-3 p-3 ">
                 <div class="flip-card flip-shadow ">
                  <div class="flip-card-inner ">
-                   <div class="flip-card-front flip-custom-2">
-             <div class="child-div-2">
+                    <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
+                        <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/web.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white p-2">Web Developer</h4>
 
@@ -294,8 +325,8 @@
               <div class="col-md-3 p-3 ">
                 <div class="flip-card  flip-shadow">
                  <div class="flip-card-inner">
-                   <div class="flip-card-front flip-custom-2">
-             <div class="child-div-2">
+                    <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
+                        <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/app.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white p-2">Mobile App Developer</h4>
 
@@ -318,8 +349,8 @@
               <div class="col-md-3 p-3 ">
                 <div class="flip-card  flip-shadow">
                  <div class="flip-card-inner">
-                   <div class="flip-card-front flip-custom-2">
-             <div class="child-div-2">
+                    <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
+                        <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/business.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white feature_title p-2">Entrepreneur</h4>
 
@@ -342,8 +373,8 @@
               <div class="col-md-3 p-3">
                 <div class="flip-card  flip-shadow">
                  <div class="flip-card-inner">
-                   <div class="flip-card-front flip-custom-2">
-             <div class="child-div-2">
+                    <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
+             <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/cybersec.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white p-2">Cyber Security</h4>
 
@@ -398,8 +429,8 @@
               <div class="col-md-3 p-3 ">
                 <div class="flip-card flip-shadow ">
                  <div class="flip-card-inner ">
-                   <div class="flip-card-front flip-custom-2">
-             <div class="child-div-2">
+                    <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
+                        <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/HR.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white p-2">Human Resource</h4>
 
@@ -422,8 +453,8 @@
               <div class="col-md-3 p-3 ">
                 <div class="flip-card  flip-shadow">
                  <div class="flip-card-inner">
-                   <div class="flip-card-front flip-custom-2">
-             <div class="child-div-2">
+                    <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
+                        <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/MIS.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white p-2">Management Information</h4>
 
@@ -446,8 +477,8 @@
               <div class="col-md-3 p-3 ">
                 <div class="flip-card  flip-shadow">
                  <div class="flip-card-inner">
-                   <div class="flip-card-front flip-custom-2">
-             <div class="child-div-2">
+                    <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
+                        <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/database.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white p-2">Database Management</h4>
 
@@ -470,8 +501,8 @@
               <div class="col-md-3 p-3">
                 <div class="flip-card  flip-shadow">
                  <div class="flip-card-inner">
-                   <div class="flip-card-front flip-custom-2">
-             <div class="child-div-2">
+                    <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
+                        <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/sqa.png')}}" alt="" class="img-fluid-custom"><br>
                 <h4 style="text-white p-2">Software Quality Testing</h4>
 
@@ -493,12 +524,21 @@
                </div>
                </div>
                </div>
+               </div>
+               </div>
+</section>
 
+
+<section id="services" class="services section-bg text-left" >
+    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+      <div class="section-title ">
+        <h2 class=" " style="color: #37517e;">Study Abroad</h2>
+        {{-- <h2 class="text-muted why"> Why Choose ITM</h2>
 <div class="mt-5">
     <h1 class="about_itm text-center text-white">Study Abroad</h1>
-</div>
+</div> --}}
 
-<div class="container-fluid mt-5 p-5">
+
     <div class="row text-center aboardpage">
         <div class="col-md-8 text-center mb-3 ">
             <img src="{{asset('frontend/image/student2.png')}}" class="scholarpic animate__animated animate__fadeInLeft " alt="Student">
@@ -507,15 +547,17 @@
                 <h4 class="aboard animate__animated animate__fadeInRight mt-1">Facilities List</h4><br>
 
                 <div class="link-list" >
-            <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Scholarship</a><br>
-            <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Internship</a><br>
-            <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item1 d-block p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Job</a><br>
+            <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-2 text-transition"><i class="fa-solid fa-check-double text-info"></i> Scholarship</a><br>
+            <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item1 d-block p-2 text-transition"><i class="fa-solid fa-check-double text-info"></i> Internship</a><br>
+            <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item1 d-block p-2 text-transition"><i class="fa-solid fa-check-double text-info"></i> Job</a><br>
             <a target="_blank" href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="bn5">Apply</a>
         </div>
         </div>
     </div>
 </div>
-
+</div>
+</div>
+</section>
 {{-- <div class="container feature-section ">
     <div class="row align-items-center aboardpage">
       <div class="col-md-6 text-center p-3">
@@ -602,60 +644,75 @@
 <br>
 <br>
 <br>
-        <div class=" mt-5">
-            <h1 class="fac_text text-center">Our Facilities</h1>
-        </div>
 
-               <div class="grid-container grid-bg mt-5" >
-                <div class="grid-item ">
-                    <img src="{{asset('frontend/image/hunderd.png')}}" alt="Waiver">
-                    <span>Waiver</span>
+
+
+<div id="cta" class="cta">
+    <div class=" mt-5">
+        <h1 class="fac_text text-center">Our Facilities</h1>
+    </div>
+    <div class="container aos-init aos-animate" data-aos="zoom-in">
+      <div class="row">
+        <div class="col-lg-12 text-center text-lg-start">
+            {{-- grid-bg --}}
+                   <div class="grid-container  mt-5" >
+                    <div class="grid-item ">
+                        <img src="{{asset('frontend/image/hunderd.png')}}" alt="Waiver">
+                        <span>Waiver</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/laptop.png')}}" alt="Free Laptop">
+                        <span>Free Laptop</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/hall.png')}}" alt="Hall">
+                        <span>Hall</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/latest.png')}}" alt="Latest Curriculum">
+                        <span>Latest Curriculum</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/innovation.png')}}" alt="Innovation">
+                        <span>Innovation</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/clubimage.png')}}" alt="35+ Club">
+                        <span>35+ Club</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/diubus.png')}}" alt="Transport">
+                        <span>Transport</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/oncampus.png')}}" alt="DIU Recruitment">
+                        <span>DIU Recruitment</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/e-library.png')}}" alt="E-Library">
+                        <span>E-Library</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/Rover Scout.png')}}" alt="Rover Scout">
+                        <span>Rover Scout</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/global network.png')}}" alt="Global Networking">
+                        <span>Global Networking</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="{{asset('frontend/image/life_insurance.png')}}" alt="Life Insurance">
+                        <span>Life Insurance</span>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/laptop.png')}}" alt="Free Laptop">
-                    <span>Free Laptop</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/hall.png')}}" alt="Hall">
-                    <span>Hall</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/latest.png')}}" alt="Latest Curriculum">
-                    <span>Latest Curriculum</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/innovation.png')}}" alt="Innovation">
-                    <span>Innovation</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/clubimage.png')}}" alt="35+ Club">
-                    <span>35+ Club</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/diubus.png')}}" alt="Transport">
-                    <span>Transport</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/oncampus.png')}}" alt="DIU Recruitment">
-                    <span>DIU Recruitment</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/e-library.png')}}" alt="E-Library">
-                    <span>E-Library</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/Rover Scout.png')}}" alt="Rover Scout">
-                    <span>Rover Scout</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/global network.png')}}" alt="Global Networking">
-                    <span>Global Networking</span>
-                </div>
-                <div class="grid-item">
-                    <img src="{{asset('frontend/image/life_insurance.png')}}" alt="Life Insurance">
-                    <span>Life Insurance</span>
-                </div>
-            </div>
+        </div>
+        {{-- <div class="col-lg-3 cta-btn-container text-center">
+          <a class="cta-btn align-middle" href="#contact">Call To Action</a>
+        </div> --}}
+      </div>
+    </div>
+  </div>
+
                 <br>
                 <br>
                 <br>
@@ -719,23 +776,18 @@
                </div> --}}
 
 
-<div class="row text-center">
-                <div class="text-dark text-center  service_text">
-                    <h1 class="text-white service">Service <i class="fa-solid fa-universal-access"></i></h1>
-                    <div class="divider-custom">
-                        <div class="divider-custom-line"></div>
-                        <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
-                        <div class="divider-custom-line"></div>
-                    </div>
-                    <p class="text-info m-3">Our service 24 hours open for our Student</p>
 
-                </div>
-            </div>
 
-                <div class="container-fluid mt-5 ">
-                    <div class="row p-5">
-                        <div class="col-md-3  p-2 ">
-                            <div class="card bg-black custom-box img-fluid-custom">
+
+            <section id="services" class="services section-bg text-left" >
+                <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+
+                  <div class="section-title text-left">
+                    <h2 class=" service_head">Service <i class="fa-solid fa-universal-access"></i></h2>
+                    <p class="text-dark m-3">Our service 24 hours open for our Student</p>
+                    <div class="row ">
+
+                        {{-- <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">                            <div class="card bg-black custom-box img-fluid-custom">
                                 <div class="item-bg">
                                 <img src="{{asset('frontend/image/blc.png')}}" class="card-img-top img-decorate " alt="Blc">
                             </div>
@@ -744,46 +796,79 @@
                                     <p class="text-white-50 p-2 service_text">course enrollment get feature  study roadmap with quiz assignments presentations</p>
                               </div>
                             </div>
-                           </div>
-                        <div class="col-md-3  p-2 ">
-                            <div class="card bg-black custom-box img-fluid-custom">
-                                <div class="item-bg">
+                           </div> --}}
+
+                           <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon-box">
+
+                                <img src="{{asset('frontend/image/blc.png')}}" class="card-img-top img-decorate " alt="Blc">
+
+                              <h4><a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-outline-info text-dark mt-3">Blc</a></h4>
+
+                               <p>course enrollment get feature  study roadmap with quiz assignments presentationsl
+                              </p>
+                            </div>
+                          </div>
+
+                           <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon-box">
+
                                 <img src="{{asset('frontend/image/portal.png')}}" class="card-img-top img-decorate" alt="Student Portal">
+
+                                <h4><a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-outline-info text-dark mt-3 ">Student Portal</a></h4>
+
+                               <p>Payment, result, transport, clearance, and all services are provided by the student portal.</p>
                             </div>
-                              <div class="card-content p-2">
-                                <a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-outline-info btn-block mt-3 ">Student Portal</a>
-                                <p class="text-white-50 mt-2">Payment, result, transport, clearance, and all services are provided by the student portal.</p>
-                              </div>
-                            </div>
-                           </div>
-                        <div class="col-md-3  p-2 ">
-                            <div class="card bg-black custom-box img-fluid-custom">
-                                <div class="item-bg">
+                          </div>
+
+                           <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon-box">
+
                                 <img src="{{asset('frontend/image/1card.png')}}" class="card-img-top img-decorate" alt="1card">
+
+                                <h4><a target="_blank" href="https://1card.com.bd/" class="btn btn-outline-info text-dark mt-3">1card</a></h4>
+
+                               <p>Download the 1card Android app and iOS app. All services are available within this app.</p>
                             </div>
-                              <div class="card-content p-2">
-                                <a target="_blank" href="https://1card.com.bd/" class="btn btn-outline-info btn-block mt-3">1card</a>
-                                <p class="text-white-50 mt-2">Download the 1card Android app and iOS app. All services are available within this app.</p>
-                              </div>
-                            </div>
-                           </div>
-                        <div class="col-md-3  p-2 ">
-                            <div class="card bg-black custom-box img-fluid-custom">
-                                <div class="item-bg">
+                          </div>
+
+                           <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon-box">
+
                                 <img src="{{asset('frontend/image/blue-bus-png.png')}}" class="card-img-top img-decorate " alt="Transport">
-                                </div>
-                                <div class="card-content p-2">
-                                <a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-outline-info btn-block  mt-3">Transport</a>
-                                <p class="text-white-50 mt-2">Firstly apply for transport card then use transport service for several card for eachsemester </p>
-                              </div>
+
+                                <h4><a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-outline-info text-dark  mt-3">Transport</a>
+                                </h4>
+
+                               <p>Firstly apply for transport card then use transport service for several card for eachsemester </p>
                             </div>
-                           </div>
+                          </div>
+
+
+
                     </div>
                 </div>
+                </div>
+            </section>
 
-
-
-
+            <section id="cta" class="cta">
+                <div class="container aos-init aos-animate" data-aos="zoom-in">
+                  <div class="row">
+                    <div class="col-lg-9 text-center text-lg-start">
+                      <h3>Call To Action</h3>
+                      <p>
+                        Ready to transform your financial management? Contact us for a
+                        personalized demo. Discover how our innovative solutions can
+                        empower your business. Don't wait, unlock your full financial
+                        potential today!
+                      </p>
+                    </div>
+                    <div class="col-lg-3 cta-btn-container text-center">
+                      <a class="cta-btn align-middle" href="{{route('about')}}">Call To Action</a>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
 
                {{-- <div class="container-fluid fourbg ">
@@ -805,7 +890,7 @@
                  </div>
              </div> --}}
 
-             <section id="academic">
+             {{-- <section id="academic">
                 <div class="text-center mt-5">
                   <h2 class="text-warning p-1">Experience</h2>
                   <div class="divider-custom">
@@ -861,6 +946,58 @@
 
               </div>
               </div>
+              </section> --}}
+              <section id="services" class="services section-bg">
+                <div class="container aos-init aos-animate" data-aos="fade-up">
+                  <div class="section-title">
+                    <h2>Experience</h2>
+                    <p>
+                        Gather practical experiences from each course
+                    </p>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+                      <div class="icon-box">
+                        <div class="icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                        <h4><a href="">Leadership</a></h4>
+                        <p>
+                            I know how lead in the  organizational
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+                      <div class="icon-box">
+                        <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <h4><a href="">Creativity</a></h4>
+                        <p>
+                            When Suddenly need to innovation something
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+                      <div class="icon-box">
+                        <div class="icon"><i class="fa-solid fa-circle-info"></i></div>
+                        <h4><a href="">IT Support </a></h4>
+                        <p>
+                            Technical tool and technique thats i do daily basis
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+                      <div class="icon-box">
+                        <div class="icon"><i class="fa-solid fa-person-rays"></i></div>
+                        <h4><a href="">Human Resource</a></h4>
+                        <p>
+                            Talent,performance.innovation for each organizational
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </section>
                <!-- <div class="container-fluid ">
                    <div class="row  text-center d-flex justify-content-center">
@@ -913,7 +1050,7 @@
                 </div>
               </div>
                <div class="text-center mt-5">
-                <h2 class="text-center text-light">Specialist</h2>
+                <h2 class="text-center text-muted">Specialist</h2>
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
                   <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
@@ -933,7 +1070,7 @@
                       </div>
                       <div class="row p-2">
                       <div class="col-md-12 col-sm-12 text-center rounded text-box mt-5">
-                        <p class="smooth-text text-white text-200">
+                        <p class="smooth-text text-dark text-200">
                           As a web developer, I excel in creating user-friendly interfaces and efficient code. I specialize in crafting responsive designs, optimizing performance, and leveraging emerging technologies. With a dedication to innovation and ongoing learning, I deliver impactful solutions that enhance online experiences and propel business growth.
                         </p>
                       </div>
@@ -1177,7 +1314,80 @@
 <br>
 
 
+<section id="contact" class="contact">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>
+          Ready to take your financial management to the next level? Contact
+          us today for personalized consultation and discover how our
+          expertise can empower your business growth. Let's navigate your
+          financial journey together towards success.
+        </p>
+      </div>
 
+      <div class="row">
+        <div class="col-lg-5 d-flex align-items-stretch">
+          <div class="info">
+            <div class="address">
+                <i class="fa-solid fa-map-location-dot"></i>
+              <h4>Location:</h4>
+              <p>
+                AB4-Building-Khagan,Ashulia,Dhaka
+              </p>
+            </div>
+
+            <div class="email">
+              <i class="fa-regular fa-envelope"></i>
+              <h4>Email:</h4>
+              <p>
+                itmoffice@daffodilvarsity.edu.bd</p>
+            </div>
+
+            <div class="phone">
+                <i class="fa-solid fa-phone"></i>
+              <h4>Call:</h4>
+              <p>01847140039</p>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29187.16159450864!2d90.320302!3d23.875601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23dd12bbc75%3A0x313d214552eabe56!2sDaffodil%20Smart%20City!5e0!3m2!1sen!2sbd!4v1702204472544!5m2!1sen!2sbd" style="border: 0; width: 100%; height: 290px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" class="form-control" id="name" required="">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="name">Your Email</label>
+                <input type="email" class="form-control" name="email" id="email" required="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Subject</label>
+              <input type="text" class="form-control" name="subject" id="subject" required="">
+            </div>
+            <div class="form-group">
+              <label for="name">Message</label>
+              <textarea class="form-control" name="message" rows="10" required=""></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">
+                Your message has been sent. Thank you!
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 @endsection

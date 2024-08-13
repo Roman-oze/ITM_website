@@ -6,14 +6,10 @@
 <br>
 <br>
 
-    <div class="text-center"><h1 class="  text-white p-2 rounded">Academic Events</h1></div>
-    {{-- <div class="divider-custom-icon"><h1 class="text-danger">Upcoming Event</h1></div> --}}
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fa-solid fa-circle"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
 
+<section id="services" class="services section-bg text-left" >
+    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+      <div class="section-title text-left">
     {{-- <div class="container">
         <div class="row">
             @foreach ($event as $event)
@@ -37,7 +33,7 @@
       </div> --}}
 
 
-      <h2 class=" text-white-50 text-left p-5">Upcoming</h2>
+      <h2 class=" text-dark text-left">Upcoming</h2>
 
       <div class="container">
         <div class="row">
@@ -90,6 +86,9 @@
             </div>
 
           </div>
+          </div>
+          </div>
+</section>
 
 
 

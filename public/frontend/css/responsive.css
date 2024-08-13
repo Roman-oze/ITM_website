@@ -32,7 +32,7 @@
   } */
 
   /* Media queries */
-  @media (min-width: 768px) and (max-width:1440px) {
+  /* @media (min-width: 768px) and (max-width:1440px) {
     .topbar-btn-container{
   float: right;
     }
@@ -56,10 +56,10 @@
     font-size: small;
     width: 50%;
   }
-}
+} */
 
 
-
+/* 
     @media (min-width: 320px) and (max-width:768px) {
    .heading_section{
 
@@ -70,7 +70,7 @@
     overflow: hidden;
    }
 
- }
+ } */
 
     @media (min-width: 320px) and (max-width:767px) {
    .department-group-image{
@@ -186,7 +186,7 @@
         }
       }
 
-    @media (max-width: 1200px) {
+    /* @media (max-width: 1200px) {
         .club{
             padding-left: 40px;
           }
@@ -203,7 +203,14 @@
         .club{
             padding-left: 20px;
           }
-      }
+      } */
+
+      /* @media (min-width: 768px) and (max-width: 1024px) {
+        .club{
+            padding-left: 30px;
+          }
+      } */
+
 
     @media screen and (max-width:430px) {
 
@@ -421,7 +428,7 @@
 
           @media (min-width: 1025px) and (max-width: 1280px) {
 
-            
+
 
           }
 

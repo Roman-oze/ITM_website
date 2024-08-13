@@ -126,7 +126,7 @@
         }
         .icon1{
           font-size:x-large;
-          color: rgb(238, 223, 223);
+          color: rgb(1, 1, 1);
 
         }
         .icon1:hover{

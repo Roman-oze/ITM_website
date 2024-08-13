@@ -5,17 +5,18 @@
 
 @section('content')
 
-<div class="row gx-4 gx-lg-3 h-100 align-items-center justify-content-center text-center">
+<div class="row gx-4 gx-lg-3 h-100 align-items-center justify-content-center text-center" >
     <div class="col-lg-8 align-self-end">
         <h1 class="text-info font-weight-bold">Course  Details</h1>
         <hr class="divider text-white" />
     </div>
     <div class="col-lg-8 align-self-baseline d-flex ">
-        <p class="text-white mb-5">"Embrace your course as a journey of growth. Every lesson is a step toward unlocking your potential. Stay committed, embrace challenges, and let curiosity drive your success. Transform knowledge into expertise and let the pursuit of learning be your motivation."</p>
+        <p class="text-dark mb-5">"Embrace your course as a journey of growth. Every lesson is a step toward unlocking your potential. Stay committed, embrace challenges, and let curiosity drive your success. Transform knowledge into expertise and let the pursuit of learning be your motivation."</p>
 
     </div>
 
 
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a>
 
     {{-- <div class="container">
         <h2>Dynamic Tabs</h2>

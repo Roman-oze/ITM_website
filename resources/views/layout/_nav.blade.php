@@ -48,7 +48,7 @@
     </div>
   </div> --}}
 
-    <div id="top-bar">
+    {{-- <div id="top-bar">
         <div class="container small">
           <div class="row text-light text-center ">
             <div class="col-sm-6 py-1 text-sm-left">
@@ -61,7 +61,7 @@
                      </div>
           </div>
         </div>
-    </div>
+    </div> --}}
 
 {{--
     <div id="top-bar">
@@ -103,7 +103,7 @@
 
 
 
-    <nav class="navbar navbar-expand-lg p-2 text-center" style="background-color: rgb(7, 40, 47);">
+    <nav class="navbar navbar-expand-lg p-2 text-center fixed-top " >
         <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/portal.png')}}" alt="" class="brand-logo"></a>
         <button class="navbar-toggler fa-1x bg-info text-white rounded-circle p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -155,11 +155,40 @@
             <li class="nav-item">
               <a class="nav-link link-hover" href="{{route('about')}}">Contact</a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <div class="right-padd animate__animated animate__bounce animate__repeat-2 admission-btn">
                 <a target="_blank" class="bn50 p-3" href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply Online</a>
               </div>
-            </li>
+            </li> --}}
+            <li>
+                <a class="getstarted scrollto" href="https://pd.daffodilvarsity.edu.bd/admission/online">Apply Online</a>
+              </li>
+              <li>
+                <a class="getstarted scrollto" href="{{route('login')}}">Login <i class="fa-solid fa-lock"></i></a>
+              </li>
           </ul>
         </div>
       </nav>
+
+      <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto"><a href="index.html">SoftwareGiant</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+            <li><a class="nav-link scrollto" href="#products">Products</a></li>
+            <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+            <li><a class="nav-link scrollto active" href="#contact">Contact</a></li>
+            <li>
+              <a class="getstarted scrollto" href="#about">Get Started</a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
