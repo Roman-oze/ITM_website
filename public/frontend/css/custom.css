@@ -283,7 +283,7 @@ body {
   }
 
   .mobile-nav-toggle.bi-x {
-    color: #fff;
+    color: #37517e;
   }
 
   @media (max-width: 991px) {
@@ -299,13 +299,14 @@ body {
   .navbar-mobile {
     position: fixed;
     overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    top:20px;
+    right:20px;
+    left: 20px;
+    bottom: 20px;
     background: rgba(255, 255, 255, 0.9);
     transition: 0.3s;
     z-index: 999;
+    border-radius: 14px;
   }
 
   .navbar-mobile .mobile-nav-toggle {

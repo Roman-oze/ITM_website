@@ -359,10 +359,9 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 btn */
 .bn5 {
     padding: 0.6em 2em;
-    border: 1px solid rgb(11, 232, 232);
+    border: 1px solid rgb(255, 255, 255);
     outline: none;
     color: rgb(221, 217, 217);
-    background: rgb(20, 16, 51);
     cursor: pointer;
     position: relative;
     z-index: 0;

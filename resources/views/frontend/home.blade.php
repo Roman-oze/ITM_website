@@ -108,7 +108,7 @@
           </div> --}}
 
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="{{route('club')}}" class="btn-get-started scrollto">Get Started</a>
+            <a href="{{route('club')}}" class="btn-get-started scrollto bn5"><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">

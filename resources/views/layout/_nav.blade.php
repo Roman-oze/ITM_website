@@ -215,7 +215,7 @@
             </li>
               <li><a class="nav-link scrollto" href="{{route('about')}}">Contact</a></li>
               <li>
-                <a class="getstarted scrollto" href="https://pd.daffodilvarsity.edu.bd/admission/online">Online Apply</a>
+                <a class="getstarted scrollto " href="https://pd.daffodilvarsity.edu.bd/admission/online">Online Apply</a>
               </li>
               <li>
                 <a class="getstarted scrollto" href="{{route('login')}}">Login <i class="fa-solid fa-lock"></i></a>
