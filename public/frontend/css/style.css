@@ -127,12 +127,12 @@ background-position: center;
   #header.header-inner-pages {
     background: rgba(40, 58, 90, 0.9);
   }
-  .brand-logo {
-    height: 80px;
-    width: auto;
+  /* #header.brand-logo {
+    height: 72px;
     width: auto;
 
-  }
+
+  } */
   /* #navbarNav {
     padding-right: 30px;
     padding-left: 15px;
@@ -615,7 +615,7 @@ justify-content:space-evenly;
  }
  .fac_text{
   color: #ffffff;
-  border: 3px solid #02556e;
+  border: 3px solid #e8eff1;
   border-radius: 50px;
   width: 50%;
   display: block;
@@ -2324,6 +2324,11 @@ width: auto;
 
   .animate{
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+
+  .text-blue{
+    color: #37517e;
+    font-weight: bold;
   }
 
 

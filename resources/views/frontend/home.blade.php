@@ -593,7 +593,7 @@
 <br>
 
 <div class="highlight mt-5">
- <h2 class="text-white highlight">Scholarship</h2>
+ <h2 class="text-blue highlight">Scholarship</h2>
  <div class=" ">
      <span class="elementor-divider-separator"></span>
  </div>
@@ -614,7 +614,7 @@
            <div class="text p-1">
            <h2>{{$scholar->name}}</h2>
            <p class="h5 text-muted">{{$scholar->country}}</p>
-           <h4 class="text-warning">Contratulations!</h4>
+           <h4 class="text-blue">Contratulations!</h4>
        </div>
        </div>
        </div>

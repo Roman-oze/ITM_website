@@ -59,8 +59,8 @@
 } */
 @media (max-width: 480px) {
     .brand-logo {
-      height: 70px;
-      padding-left: 10px;
+      height: 90px;
+      width: auto;
     }
 
 }
@@ -218,7 +218,7 @@
       } */
 
 
-    @media screen and (max-width:430px) {
+      @media (min-width: 320px) and (max-width: 480px) {
 
         .aboard{
             font-size: small;
@@ -235,7 +235,6 @@
             color: white;
             border-radius: 24px;
            text-align: center;
-           background-color:#42cfeb;
            font-size: small;
 
 
@@ -268,7 +267,7 @@
           .scholar{
 
             background-image: url(../image/mobilescreen.png);
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
 

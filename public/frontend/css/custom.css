@@ -131,7 +131,9 @@ body {
   }
 
   #header .logo img {
-    max-height: 40px;
+    max-height: 50px;
+    width: 45px;
+
   }
 
   /*--------------------------------------------------------------
@@ -516,10 +518,10 @@ body {
   /*--------------------------------------------------------------
   # Sections General
   --------------------------------------------------------------*/
-  section {
+  /* section {
     padding: 60px 0;
     overflow: hidden;
-  }
+  } */
 
   .section-bg {
     background-color: #f3f5fa;
