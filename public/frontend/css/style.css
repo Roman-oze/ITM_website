@@ -614,7 +614,7 @@ justify-content:space-evenly;
  }
  .fac_text{
   color: #ffffff;
-  border: 3px solid #e8eff1;
+  border: 3px solid  #37517e;
   border-radius: 50px;
   width: 50%;
   display: block;
@@ -2328,6 +2328,9 @@ width: auto;
   .text-blue{
     color: #37517e;
     font-weight: bold;
+  }
+  .bg-blue{
+    background-color: #37517e;
   }
 
 

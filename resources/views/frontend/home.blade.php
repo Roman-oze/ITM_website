@@ -198,6 +198,8 @@
         </div>
 </section>
 
+
+
  <div class="container-fluid mt-5 p-4">
     <h1 class="fac_text text-center text-dark"><i class="fa-brands fa-elementor "></i>Department of </h1>
 
@@ -1082,7 +1084,7 @@
                 <div class="row mt-5 d-flex justify-content-center p-3 ">
 
                <div class="col-md-3 text-center  p-2">
-                <div class="card p-2 bg-black custom-box img-fluid-custom">
+                <div class="card p-2 bg-blue custom-box img-fluid-custom">
                     <i class="fa-solid fa-laptop-code iconic fa-3x"></i>
                   <div class="card-content">
                     <h4 class="p-2 text-white"><strong>Web application</strong></h4>
@@ -1091,7 +1093,7 @@
                 </div>
                </div>
                <div class="col-md-3 text-center p-2">
-                <div class="card p-2 bg-black custom-box img-fluid-custom">
+                <div class="card p-2 bg-blue custom-box img-fluid-custom">
                   <i class="fa-solid fa-mobile-screen-button iconic fa-3x"></i>
                   <div class="card-content">
 
@@ -1102,7 +1104,7 @@
                 </div>
                </div>
                <div class="col-md-3 text-center p-2">
-                <div class="card p-2 bg-black custom-box img-fluid-custom">
+                <div class="card p-2 bg-blue custom-box img-fluid-custom">
                   <i class="fa-solid fa-circle-info iconic fa-3x"></i>
                   <div class="card-content">
 
@@ -1113,7 +1115,7 @@
                 </div>
                </div>
                <div class="col-md-3 text-center p-2">
-                <div class="card p-2 bg-black custom-box img-fluid-custom ">
+                <div class="card p-2 bg-blue custom-box img-fluid-custom ">
 
                   <i class="fa-solid fa-business-time iconic fa-3x"></i>
                   <div class="card-content">
@@ -1203,7 +1205,7 @@
                <br>
 
                <div class="highlight mt-5">
-                <h2 class="text-white highlight">Hightlights</h2>
+                <h2 class="text-blue highlight">Hightlights</h2>
                 <div class=" ">
                     <span class="elementor-divider-separator"></span>
                 </div>
@@ -1213,7 +1215,7 @@
                 <div class="row d-flex  align-items-center  p-5">
                   <!-- Card 1 -->
                   <div class="col-md-3">
-                    <div class="card mb-4  p-3 bg-black shadow">
+                    <div class="card mb-4  p-3 bg-blue shadow">
                       <div class="mb-4">
                         <div class="mb-4"><img src="{{asset('frontend/image/jobfair2.png')}}" alt="Image" class="img-fluid-custom"></div>
                     </div>
@@ -1233,7 +1235,7 @@
                   </div>
                   <!-- Card 2 -->
                   <div class="col-md-3">
-                    <div class="card mb-4  p-3 bg-black shadow" >
+                    <div class="card mb-4  p-3 bg-blue shadow" >
                       <div class="mb-4">
                         <div class="mb-4"><img src="{{asset('frontend/image/visite.jpg')}}" alt="Image" class="img-fluid-custom"></div>
                     </div>
@@ -1251,7 +1253,7 @@
                   </div>
                   <!-- Card 3 -->
                   <div class="col-md-3">
-                    <div class="card mb-4 p-3 bg-black shadow">
+                    <div class="card mb-4 p-3 bg-blue shadow">
                       <div class="mb-4">
                         <div class="mb-4"><img src="{{asset('frontend/image/internship3.png')}}" alt="Image" class="img-fluid-custom"></div>
                     </div>
