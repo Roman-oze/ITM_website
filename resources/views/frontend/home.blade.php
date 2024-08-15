@@ -99,7 +99,7 @@
 
           <h2>Department of</h2>
 
-          <h1>Information Technology & Management<img src="{{asset('frontend/image/verifi.png')}}" class="verify"></h1>
+          <h1 class="animate__animated animate__bounce animate__delay-2s">Information Technology & Management<img src="{{asset('frontend/image/verifi.png')}}" class="verify "></h1>
 
           {{-- <div class="d-flex justify-content-center justify-content-lg-start">
             <div class=" animate__animated animate__bounce animate__delay-2s">
@@ -108,33 +108,33 @@
           </div> --}}
 
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="{{route('club')}}" class="btn-get-started scrollto bn5"><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
+            <a href="{{route('club')}}" class="btn-get-started scrollto bn5 animate__animated animate__fadeInRight"><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-          <img src="{{asset('frontend/image/hero-img.png')}}" class="img-fluid animated" alt="">
+          <img src="{{asset('frontend/image/hero-img.png')}}" class="img-fluid animated " alt="">
 
-          <div class="">
-            <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-info fa-4x open-button"></i></button>
-         <div class="chat-popup" id="myForm">
-            <form action="{{route('viwer.store')}}" method="POST" class="form-container">
-                 @csrf
-                 <h1>Chat</h1>
 
-                   <label for="msg"><b>Message</b></label>
-                  <textarea  placeholder="Type message.." name="message" required></textarea>
-
-                 <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
-                 <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
-            </form>
-         </div>
-         </div>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="">
+    <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-dark fa-4x open-button"></i></button>
+ <div class="chat-popup" id="myForm">
+    <form action="{{route('viwer.store')}}" method="POST" class="form-container">
+         @csrf
+         <h1 class="text-dark">Chat</h1>
 
+           <label for="msg"><b>Message</b></label>
+          <textarea  placeholder="Type message.." name="message" required></textarea>
+
+         <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
+         <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
+    </form>
+ </div>
+ </div>
 {{-- <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="container d-flex justify-content-evenly">
         <div class="fe-box ">
@@ -241,9 +241,11 @@
         </div>
     </div>
 </div>
+
 <br>
 <br>
 <br>
+
 {{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a> --}}
     <div class="container mt-5">
         <div class="row mt-5  d-flex justify-space-bewteen">
@@ -1356,36 +1358,61 @@
         </div>
 
         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-            <div class="row">
-              <div class="form-group col-md-6">
-                <label for="name">Your Name</label>
-                <input type="text" name="name" class="form-control" id="name" required="">
+            <form
+              action="{{route('contact_store')}}"
+              method="post"
+              class="php-email-form">
+              @csrf
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    id="name"
+                    required
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    required
+                  />
+                </div>
               </div>
-              <div class="form-group col-md-6">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" required="">
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="subject"
+                  id="subject"
+                  required
+                />
               </div>
-            </div>
-            <div class="form-group">
-              <label for="name">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" required="">
-            </div>
-            <div class="form-group">
-              <label for="name">Message</label>
-              <textarea class="form-control" name="message" rows="10" required=""></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">
-                Your message has been sent. Thank you!
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea
+                  class="form-control"
+                  name="message"
+                  required
+                ></textarea>
               </div>
-            </div>
-            <div class="text-center">
-              <button type="submit">Send Message</button>
-            </div>
-          </form>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  Your message has been sent. Thank you!
+                </div>
+              </div>
+              <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

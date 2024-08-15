@@ -21,6 +21,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\ContactMessageController;
 
 use App\Http\Middleware\Itm;
 
@@ -99,6 +100,11 @@ route::controller(RegisterController::class)->group(function(){
 });
 
 
+route::controller(ContactMessageController::class)->group(function(){
+    Route::get('/message/index','index')->name('contact.index');
+    Route::post('store', 'store')->name('contact_store');
+    Route::delete('/message/delete/{id}', 'destroy')->name('message.delete');
+});
 
 route::controller(MessageController::class)->group(function(){
     route::post('/viewer/message','store')->name('viwer.store');
