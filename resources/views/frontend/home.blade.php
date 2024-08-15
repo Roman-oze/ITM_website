@@ -1383,7 +1383,7 @@
               </div>
             </div>
             <div class="text-center">
-              <button type="submit"><i class="fa-regular fa-paper-plane fa-2x plane text-white"></i> Send Message</button>
+              <button type="submit"><i class="fa-regular fa-paper-plane fa-lg plane text-white"></i> Send Message</button>
             </div>
           </form>
         </div>
