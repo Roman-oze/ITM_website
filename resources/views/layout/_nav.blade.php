@@ -220,6 +220,9 @@
               <li>
                 <a class="getstarted scrollto" href="{{route('login')}}">Login <i class="fa-solid fa-lock"></i></a>
               </li>
+              <li>
+                <a class="getstarted scrollto" href="{{route('login')}}">Login <i class="fa-solid fa-lock"></i></a>
+              </li>
 
             </ul>
             <i class="fa-solid fa-bars mobile-nav-toggle"></i>
