@@ -4,14 +4,17 @@
 
 @section('content')
 
+<section id="services" class="services section-bg text-left" >
+    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+      <div class="section-title text-left">
+        <h2 class=" text-dark text-left mt-5">Routine</h2>
 
 
-
-<div class="row mt-2">
-
+        <div class="container">
+            <div class="row">
     <div class="col-md-12 mt-3  text-center">
         <a href="">
-            <h1 class="text-light btn btn-outline-info">Click here for get routine by email <a href="itmoffice@daffodilvarsity.edu.bd"> <i class="fa-solid fa-envelope "></i></a>
+            <h1 class="text-dark btn btn-outline-info">Click here for get routine by email <a href="itmoffice@daffodilvarsity.edu.bd"> <i class="fa-solid fa-envelope "></i></a>
             </h1>
         </a>
     </div>
@@ -30,7 +33,7 @@
     <tbody class="text-center">
         <thead class="">
         <h4 class="text-dark bg-light p-2 text-center rounded">Semester</h4>
-        
+
     </thead>
     <tbody class="text-center">
 
@@ -58,4 +61,7 @@
 
 </div>
 </div>
+</div>
+</div>
+</section>
 @endsection

@@ -114,21 +114,7 @@
         <div class="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
           <img src="{{asset('frontend/image/hero-img.png')}}" class="img-fluid animated" alt="">
 
-          <div class="">
-            <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-info fa-4x open-button"></i></button>
-         <div class="chat-popup" id="myForm">
-            <form action="{{route('viwer.store')}}" method="POST" class="form-container">
-                 @csrf
-                 <h1>Chat</h1>
 
-                   <label for="msg"><b>Message</b></label>
-                  <textarea  placeholder="Type message.." name="message" required></textarea>
-
-                 <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
-                 <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
-            </form>
-         </div>
-         </div>
         </div>
       </div>
     </div>
@@ -168,6 +154,21 @@
     </div>
     </div>
 </section> --}}
+<div class="">
+    <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-dark fa-4x open-button"></i></button>
+ <div class="chat-popup" id="myForm">
+    <form action="{{route('viwer.store')}}" method="POST" class="form-container">
+         @csrf
+         <h1>Chat</h1>
+
+           <label for="msg"><b>Message</b></label>
+          <textarea  placeholder="Type message.." name="message" required></textarea>
+
+         <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
+         <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
+    </form>
+ </div>
+ </div>
 
 <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="inner ">
@@ -1356,7 +1357,8 @@
         </div>
 
         <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form action="{{route('contact_store')}}" method="post" role="form" class="php-email-form">
+            @csrf
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="name">Your Name</label>
