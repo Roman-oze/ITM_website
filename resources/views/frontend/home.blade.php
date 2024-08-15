@@ -1388,6 +1388,8 @@
               <button type="submit"><i class="fa-regular fa-paper-plane fa-lg plane text-white"></i> Send Message</button>
             </div>
           </form>
+
+         
         </div>
       </div>
     </div>

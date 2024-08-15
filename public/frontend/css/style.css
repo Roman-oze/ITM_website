@@ -11,7 +11,7 @@ html{
 }
 
 body {
-    background-color: rgb(231, 236, 238);
+    background-color: rgb(255, 255, 255);
     /* background-color: #37517E; */
     /* background-color: rgb(24, 54, 146); */
     /* background-color: rgb(4, 49, 58); */
@@ -2332,5 +2332,7 @@ width: auto;
   .bg-blue{
     background-color: #37517e;
   }
-
+  .text_color{
+    color: #1e3256;
+}
 

@@ -102,7 +102,7 @@ route::controller(RegisterController::class)->group(function(){
 
 route::controller(ContactMessageController::class)->group(function(){
     Route::get('/message/index','index')->name('contact.index');
-    Route::post('store', 'store')->name('contact_store');
+    Route::post('/message', 'store')->name('contact_store');
     Route::delete('/message/delete/{id}', 'destroy')->name('message.delete');
 });
 

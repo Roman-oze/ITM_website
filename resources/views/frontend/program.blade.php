@@ -177,20 +177,20 @@
 
 
 
-<section id="catagory"></section>
+<section id="catagory">
 
 <div class="container mt-5">
  <div class="row p-1 text-center">
-  <h2 class="dee1  text-white p-3">Category of Courses</h2>
+  <h2 class="dee1  text-dark p-3">Category of Courses</h2>
 
 <table class="table-striped">
 <thead>
   <tr>
-    <th>Category of Courses</th>
-    <th>No of Courses</th>
-    <th>Credit per Course</th>
-    <th>Total Credit</th>
-    <th>Allocation</th>
+    <th scope="col">Category of Courses</th>
+    <th scope="col">No of Courses</th>
+    <th scope="col">Credit per Course</th>
+    <th scope="col">Total Credit</th>
+    <th scope="col">Allocation</th>
   </tr>
 </thead>
 <tbody>
@@ -245,16 +245,23 @@
   </tr>
   <tr>
     <th>Total</th>
+    <th></th>
+    <th></th>
     <th>142</th>
-    <th></th>
-    <th></th>
-    <th>100%</th>
+    <th >100%</th>
+
   </tr>
+  {{-- <td colspan="3" class="text-right">Total Credits</td>
+      <td colspan="2">27</td> --}}
 </tbody>
 </table>
 
 </div>
 </div>
+</section>
+
+
+
 
   <div class="dee1">
       <h2>List of Course</h2>
@@ -263,7 +270,6 @@
     </div>
 
 <div class="container mt-4">
-
 <table>
   <thead>
     <tr>
@@ -451,7 +457,7 @@
     <tfoot>
       <tr>
         <th colspan="3">Total Credits</th>
-        <td colspan="3">45</td>
+        <th colspan="3">45</th>
       </tr>
     </tfoot>
   </table>

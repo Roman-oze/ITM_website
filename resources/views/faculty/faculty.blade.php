@@ -7,26 +7,19 @@
 
 @section('headerpage')
 
-<br>
-<br>
-<div class="contaienr">
-<div class="row gx-4 gx-lg-5 align-items-center  justify-content-center text-center p-4">
-    <div class="col-lg-8 align-self-end p-3">
-        <h1 class="faculty-section-heading text-uppercase text-white">Faculty</h1>
-    </div>
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fa-solid fa-circle"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
-    <br>
-    <br>
-    <div class="col-lg-8 mt-3 align-self-baseline  rounded-3 p-3 custom-box  border-900 box">
-        <p class="text-dark-50 p-4">Become a catalyst for transformation at Daffodil International University. As a faculty member, you'll inspire minds, foster innovation, and contribute to academic excellence. Join us in shaping the leaders of tomorrow and experiencing a fulfilling journey of professional growth and impact."
+<section id="services" class="services section-bg text-left" >
+    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+      <div class="section-title text-center">
+
+
+      <h2 class=" text-dark text-left">Faculty</h2>
+      <div class="col-lg-12 mt-3 align-self-baseline  rounded-3 p-3 custom-box  border-600 box">
+        <p class="text-dark-50 p-5">Become a catalyst for transformation at Daffodil International University. As a faculty member, you'll inspire minds, foster innovation, and contribute to academic excellence. Join us in shaping the leaders of tomorrow and experiencing a fulfilling journey of professional growth and impact."
  </p>
 </div>
 </div>
 </div>
+</section>
 @endsection
 
 @section('content')
@@ -35,14 +28,14 @@
     <div class="container">
     <div class="row d-flex justify-content-evenly">
        @foreach ($teachers_new as $teacher)
-        <div class="col-md-4 p-3 animate__animated animate__fadeInDown">
+        <div class="col-md-4 p-3 animate__animated animate__fadeInDown text-center">
         <div class="faculty-card1">
 
             <img src="{{asset($teacher->image)}}" class="card-img-top  " alt="Circular Image">
 
             <div class="faculty-card-content">
                 <div class="head"><p> {{($teacher->designation)}}</p></div>
-                <h2 class="text-dark">{{($teacher->name)}}</h2>
+                <h3 class="text_color">{{($teacher->name)}}</h3>
                 {{-- <h5 class="text-white-50">{{($teacher->designation)}}</h5> --}}
                 <a href="{{($teacher->fb)}}"><i class="fa-brands fa-facebook icon1 p-2"></i></a>
                 <a href="{{($teacher->linked)}}"><i class="fa-brands fa-linkedin icon1 p-2" ></i></a>
@@ -143,13 +136,13 @@
 
         @foreach ($teachers as $teacher)
 
-        <div class="col-md-4 p-2 animate__animated animate__fadeInUp">
+        <div class="col-md-4 p-2 animate__animated animate__fadeInUp text-center">
             <div class="circular">
                 <div class="img-bg">
                 <img src="{{ asset($teacher->image) }}" class="mx-auto rounded-circle" alt="Circular Image">
                 </div>
                 <br>
-                <h4 class="p-2 text-info">{{$teacher->name}}</h4>
+                <h4 class="p-2 text_color">{{$teacher->name}}</h4>
                 <p class="text-dark">{{$teacher->designation}}</p>
                 <div class="">
                     <a href="{{$teacher->fb}}" class="p-2"><i class="fa-brands fa-facebook icon1"></i></a>
