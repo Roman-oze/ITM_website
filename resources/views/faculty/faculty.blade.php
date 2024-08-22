@@ -31,7 +31,9 @@
         <div class="col-md-4 p-3 animate__animated animate__fadeInDown text-center">
         <div class="faculty-card1">
 
-            <img src="{{asset($teacher->image)}}" class="card-img-top  " alt="Circular Image">
+            {{-- <img src="{{asset($teacher->image)}}" class="card-img-top shadow " alt="Circular Image"> --}}
+            <img src="{{asset($teacher->image)}}" class="faculty_profile  " alt="Circular Image">
+
 
             <div class="faculty-card-content">
                 <div class="head"><p> {{($teacher->designation)}}</p></div>

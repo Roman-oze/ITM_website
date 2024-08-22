@@ -184,7 +184,7 @@
                 <div class="dropdown">
                     <a class="nav-link scrollto" href="#">Admission</a>
                     <div class="dropdown-content ms-auto rounded">
-                      <a target="_blank" href="{{route('admission_eligibility')}}" class="nav-link text-dark">Admission Eligibility</a>
+                      <a target="_blank" href="{{route('admission_eligibility')}}" class="nav-link text-white">Admission Eligibility</a>
                       <a target="_blank" href="{{route('Local_tuition')}}" class="nav-link text-dark">Local Tuition</a>
                       <a target="_blank" href="{{route('international_tuition')}}" class="nav-link text-dark">International Tuition</a>
                       <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-dark">Admission Test result</a>

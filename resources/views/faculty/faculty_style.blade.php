@@ -2067,5 +2067,24 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
   }
 
+  .faculty_profile{
+    width: 300px;
+    height: 320px;
+    border-radius: 50%;
+    margin: 10px auto;
+    display: block;
+    border: 0.5px solidwhite;
+    box-shadow: 0px 1px 14px 0;
+}
+.image-shadow{
+    /* filter:drop-shadow(5px 5px 5px  rgba(235, 151, 5, 0.936) ); */
+    /* filter:drop-shadow(5px 5px 5px  rgb(4, 176, 99) ); */
+    filter:drop-shadow(5px 5px 5px  rgb(5, 206, 202) );
+
+
+}
+.shadow{
+    filter:drop-shadow(5px 5px 5px  rgb(5, 206, 202) );
+}
 
   </style>
