@@ -5,9 +5,13 @@
 
 @extends('layout.app')
 
-@section('headerpage')
 
-<section id="services" class="services section-bg text-left" >
+
+
+@section('content')
+
+
+<section id="services" class="services section-bg text-left mt-5" >
     <div class="container aos-init aos-animate text-left" data-aos="fade-up">
       <div class="section-title text-center">
 
@@ -20,12 +24,10 @@
 </div>
 </div>
 </section>
-@endsection
 
-@section('content')
 
     <!-- First Line: Single Card at the Top -->
-    <div class="container">
+    <div class="container mt-5">
     <div class="row d-flex justify-content-evenly">
        @foreach ($teachers_new as $teacher)
         <div class="col-md-4 p-3 animate__animated animate__fadeInDown text-center">

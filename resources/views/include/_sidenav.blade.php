@@ -43,6 +43,11 @@
                     </div>
                     <div class="collapse p-1" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
+                            <a  href="{{route('dashboard.scholarship')}}" class="linked">Scholarship</a>
+                        </nav>
+                    </div>
+                    <div class="collapse p-1" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
                             <a  href="#" class="linked">Research Publication</a>
                         </nav>
                     </div>
@@ -63,11 +68,20 @@
                     </a>
                     <a class="nav-link" href="{{route('dashboard.event')}}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days text-white fa-lg"></i></div>
+                        Schedule
+                    </a>
+                    <a class="nav-link" href="{{route('dashboard.event')}}">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days text-white fa-lg"></i></div>
                         Events
                     </a>
                     <a class="nav-link" href="{{route('dashboard.scholarship')}}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-award  text-white fa-lg"></i></div>
-                        Scholarship
+                        Application Form
+                    </a>
+
+                    <a class="nav-link" href="{{route('dashboard.scholarship')}}">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-award  text-white fa-lg"></i></div>
+                        Communicationn
                     </a>
 
                     <a class="nav-link" href="{{route('staff.index')}}">

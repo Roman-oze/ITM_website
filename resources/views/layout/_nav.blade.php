@@ -174,20 +174,21 @@
         <div class="container d-flex align-items-center">
             {{-- <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/portal.png')}}" alt="" class="brand-logo"></a> --}}
             <h1 class="logo me-auto"><a href="index.html"><img src="{{asset('frontend/image/logo.png')}}" alt="" class="brand"></a></h1>
-            {{-- <h1 class="logo me-auto"><a href="index.html">I T M</h1> --}}
+            {{-- <h1 class=" text-white me-auto"><a href="index.html">I T M</h1> --}}
           <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link scrollto active" href="{{route('home')}}"><i class="fa-solid fa-house s-4 homeicon"></i></a>
+              <li>
+                <a class="nav-link scrollto active" href="{{route('home')}}"><i class="fa-solid fa-house s-4 homeicon"></i></a>
               </li>
               {{-- <li><a class="nav-link scrollto" href="#services">Services</a></li> --}}
               <li>
                 <div class="dropdown">
                     <a class="nav-link scrollto" href="#">Admission</a>
                     <div class="dropdown-content ms-auto rounded">
-                      <a target="_blank" href="{{route('admission_eligibility')}}" class="nav-link text-white">Admission Eligibility</a>
-                      <a target="_blank" href="{{route('Local_tuition')}}" class="nav-link text-dark">Local Tuition</a>
-                      <a target="_blank" href="{{route('international_tuition')}}" class="nav-link text-dark">International Tuition</a>
-                      <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-dark">Admission Test result</a>
+                      <a target="_blank" href="{{route('admission_eligibility')}}" class="nav-link text-info">Admission Eligibility</a>
+                      <a target="_blank" href="{{route('Local_tuition')}}" class="nav-link text-info">Local Tuition</a>
+                      <a target="_blank" href="{{route('international_tuition')}}" class="nav-link text-info">International Tuition</a>
+                      <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-info">Admission Test result</a>
                       <a target="_blank" href="" class="nav-link text-dark">Admission Notice</a>
                     </div>
                   </div>
@@ -195,11 +196,11 @@
               <li><div class="dropdown">
                 <a class="nav-link scrollto" href="#">Students</a>
                 <div class="dropdown-content ms-auto rounded">
-                  <a target="_blank" href="{{route('events')}}" class="nav-link text-dark">Events</a>
-                  <a target="_blank" href="{{route('alumni')}}" class="nav-link text-dark">Alumni</a>
-                  <a target="_blank" href="{{route('Local_tuition')}}" class="nav-link text-dark">Research</a>
-                  <a target="_blank" href="{{route('international_tuition')}}" class="nav-link text-dark">Scholarship</a>
-                  <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-dark">Notice Board</a>
+                  <a target="_blank" href="{{route('events')}}" class="nav-link text-info">Events</a>
+                  <a target="_blank" href="{{route('alumni')}}" class="nav-link text-info">Alumni</a>
+                  <a target="_blank" href="#" class="nav-link text-info">Research</a>
+                  <a target="_blank" href="{{route('scholar')}}" class="nav-link text-info">Scholarship</a>
+                  <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-info">Notice Board</a>
                 </div>
               </div></li>
               <li><a class="nav-link scrollto"  href="{{route('program')}}">Programs</a></li>
@@ -208,8 +209,8 @@
                 <div class="dropdown rounded">
                 <a class="nav-link scrollto" href="#">Routine</a>
                 <div class="dropdown-content rounded">
-                  <a class="text-dark h5" target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link">Spring-2024</a>
-                  <a class="text-dark h5" target="_blank" href="{{route('semester.routines')}}" class="nav-link">Fall-2024</a>
+                  <a class=" h5" target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link text-info">Spring-2024</a>
+                  <a class=" h5" target="_blank" href="{{route('semester.routines')}}" class="nav-link  text-info">Fall-2024</a>
                 </div>
               </div>
             </li>

@@ -154,8 +154,10 @@
     </div>
     </div>
 </section> --}}
+
+{{--
 <div class="">
-    <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots text-dark fa-4x open-button"></i></button>
+    <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots  fa-4x  open-button"></i></button>
  <div class="chat-popup" id="myForm">
     <form action="{{route('viwer.store')}}" method="POST" class="form-container">
          @csrf
@@ -168,7 +170,74 @@
          <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
     </form>
  </div>
- </div>
+ </div> --}}
+
+
+
+
+<button class="open-button" onclick="openForm()"><i class="fa-solid fa-arrow-right-arrow-left p-1 text-white"></i></button>
+
+<div class="calpse-bar p-2" id="myForm">
+<form action="" method="POST" class="form-container">
+
+    <div id="map-widgets-holder" class="my-3 my-md-0 mx-3 mx-md-0 text-center text-md-left bg-white">
+        <div class="info--card-holder mt-5 mt-md-0 ">
+            <aside class="mb-3">
+                <h4 class="h4 mb-0 font-weight-bold heading-font text-blue p-1">Information Technology & Management</h4>
+                <div class="mb-3">
+                    <div>
+
+                    </div>
+                </div>
+
+                <div class="border p-1 ">
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6 mb-3 mb-md-0 ">
+                            <div class="dash-count bg-color text-center p-1">
+                                <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">{{$studentCount}}</span>
+                                <p class="pure-text">
+                                    <a href="" class="text-white-50">Student</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 rounded">
+                            <div class="dash-count bg-color  text-center p-1">
+                                <span data-purecounter-start="0" data-purecounter-end="{{$facultyCount}}" data-purecounter-duration="0" class="purecounter">{{$facultyCount}}</span>
+                                <p class="pure-text">
+                                    <a href="{{route('faculty.member')}}" class="text-white-50">Faculty</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                            <div class="dash-count bg-color  text-center p-1">
+                                <span data-purecounter-start="0" data-purecounter-end="{{$alumniCount}}" data-purecounter-duration="0" class="purecounter">{{$alumniCount}}</span>
+                                <p class="pure-text">
+                                    <a href="{{route('alumni')}}" class="text-white-50">Alumni</a>
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 ">
+                            <div class="dash-count bg-color  text-center p-1">
+                                <span data-purecounter-start="0" data-purecounter-end="{{$scholarshipCount}}" data-purecounter-duration="0" class="purecounter">{{$scholarshipCount}}</span>
+                                <p class="pure-text">
+                                    <a href="" class="text-white-50">Scholars</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+  <button type="button" class="open-button" onclick="closeForm()"><i class="fa-solid fa-arrow-right-arrow-left p-1 text-white"></i></button>
+</form>
+</div>
+</div>
 
 <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="inner ">
@@ -198,87 +267,6 @@
         </div>
         </div>
 </section>
-
-
-
- <div class="container-fluid mt-5 p-4">
-    <h1 class="fac_text text-center text-dark"><i class="fa-brands fa-elementor "></i>Department of </h1>
-
-        <div class="row justify-content-center covepage  mt-5 ">
-            <div class="col-md-6 align-items-stretch d-flex">
-                <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg);">
-                    <div class="video justify-content-center">
-                        {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
-                        {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
-                            <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid-custom manual-shadow "  >
-                                {{-- <iframe width="640" height="450" src="#">
-                                </iframe> --}}
-
-                            <span class="ion-ios-play"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6  p-2 itm-card">
-
-                {{-- <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4> --}}
-                    <h1 class="text-white itm">Information Technology and Management (ITM)</h1>
-
-
-                    <p class="text-white-50 heading_section"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
-
-                    <br>
-                    <br>
-                        <a target="_blank" class="down-btn" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a>
-                        <br>
-                   <div class="fb">
-                      <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face"><i class="fa-brands fa-facebook"></i> Facebook </a></i>
-                       <br>
-                       <br>
-                      <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
-                    </div>
-
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-{{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a> --}}
-    <div class="container mt-5">
-        <div class="row mt-5  d-flex justify-space-bewteen">
-          <div class="col-md-3 col-6  text-center p-2 ">
-            <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">{{$studentCount}}</span>
-            <p class="pure-text">Student</p>
-          </div>
-          </div>
-          <div class="col-md-3 col-6 text-center p-2">
-            <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="{{$facultyCount}}" data-purecounter-duration="0" class="purecounter">50</span>
-            <p class="pure-text" >Faculty</p>
-          </div>
-          </div>
-          <div class="col-md-3 col-6 text-center p-2">
-            <div class="border rounded-3  container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="{{$alumniCount}}" data-purecounter-duration="0" class="purecounter">40</span>
-            <p class="pure-text">Alumni</p>
-          </div>
-          </div>
-
-          <div class="col-md-3 col-6 text-center p-2">
-          <div class="border rounded-3 container_design text-center p-5 ">
-            <span data-purecounter-start="0" data-purecounter-end="{{$scholarshipCount}}" data-purecounter-duration="0" class="purecounter">29</span>
-            <p class="pure-text">Research</p>
-            </div>
-            </div>
-            </div>
-            </div>
-                <br>
-                <br>
-                <br>
-                <br>
 
 
 
@@ -530,6 +518,88 @@
                </div>
                </div>
 </section>
+
+
+
+
+ <div class="container-fluid mt-5 p-4">
+    <h1 class="fac_text text-center text-dark"><i class="fa-brands fa-elementor "></i>Department of </h1>
+
+        <div class="row justify-content-center covepage  mt-5 ">
+            <div class="col-md-6 align-items-stretch d-flex">
+                <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg);">
+                    <div class="video justify-content-center">
+                        {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
+                        {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
+                            <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid-custom manual-shadow "  >
+                                {{-- <iframe width="640" height="450" src="#">
+                                </iframe> --}}
+
+                            <span class="ion-ios-play"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6  p-2 itm-card">
+
+                {{-- <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4> --}}
+                    <h1 class="text-white itm">Information Technology and Management (ITM)</h1>
+
+
+                    <p class="text-white-50 heading_section"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
+
+                    <br>
+                    <br>
+                        <a target="_blank" class="down-btn" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a>
+                        <br>
+                   <div class="fb">
+                      <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face"><i class="fa-brands fa-facebook"></i> Facebook </a></i>
+                       <br>
+                       <br>
+                      <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
+                    </div>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+{{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a> --}}
+    <div class="container mt-5">
+        <div class="row mt-5  d-flex justify-space-bewteen">
+          <div class="col-md-3 col-6  text-center p-2 ">
+            <div class="border rounded-3  container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="549" data-purecounter-duration="0" class="purecounter">{{$studentCount}}</span>
+            <p class="pure-text">Student</p>
+          </div>
+          </div>
+          <div class="col-md-3 col-6 text-center p-2">
+            <div class="border rounded-3  container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="{{$facultyCount}}" data-purecounter-duration="0" class="purecounter">50</span>
+            <p class="pure-text" >Faculty</p>
+          </div>
+          </div>
+          <div class="col-md-3 col-6 text-center p-2">
+            <div class="border rounded-3  container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="{{$alumniCount}}" data-purecounter-duration="0" class="purecounter">40</span>
+            <p class="pure-text">Alumni</p>
+          </div>
+          </div>
+
+          <div class="col-md-3 col-6 text-center p-2">
+          <div class="border rounded-3 container_design text-center p-5 ">
+            <span data-purecounter-start="0" data-purecounter-end="{{$scholarshipCount}}" data-purecounter-duration="0" class="purecounter">29</span>
+            <p class="pure-text">Research</p>
+            </div>
+            </div>
+            </div>
+            </div>
+                <br>
+                <br>
+                <br>
+                <br>
 
 
 <section id="services" class="services section-bg text-left" >
@@ -867,7 +937,7 @@
                       </p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                      <a class="cta-btn align-middle" href="{{route('about')}}">Call To Action</a>
+                      <a class="cta-btn align-middle" href="tel:+8801847140039">Call To Action</a>
                     </div>
                   </div>
                 </div>
@@ -1389,7 +1459,7 @@
             </div>
           </form>
 
-         
+
         </div>
       </div>
     </div>

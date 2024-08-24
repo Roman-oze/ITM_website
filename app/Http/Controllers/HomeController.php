@@ -24,7 +24,7 @@ class HomeController extends Controller
         $scholarshipCount = DB::table('scholarships')->count();
 
 
-         return view('frontend.home',compact('scholars','message'),[
+         return view('home',compact('scholars','message'),[
         'studentCount' => $studentCount,
         'facultyCount' => $facultyCount,
         'alumniCount' => $alumniCount,

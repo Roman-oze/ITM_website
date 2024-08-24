@@ -1,23 +1,22 @@
 @extends('layout.app')
 
-@section('headerpage')
-<div class="highlight mt-5 ">
-    <h1 class="mt-4 text-white">Alumni</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item text-white"><a href="{{route('home')}}">Home</a></li>
-        <li class="breadcrumb-item text-white">Alumni List </li>
-    </ol>
-
-   </div>
-
-
-
-@endsection
 
 
 @section('content')
 
 
+<section id="services" class="services section-bg text-left mt-5" >
+    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+      <div class="section-title text-center">
+
+
+      <h2 class=" text-dark text-left">Alumni</h2>
+
+ </p>
+</div>
+</div>
+</div>
+</section>
 
 
    <div class="container mt-5 ">

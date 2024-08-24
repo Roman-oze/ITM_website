@@ -202,7 +202,6 @@ Route::controller(AdminController::class)->group(function(){
 
  Route::controller(AlumniController::class)->group(function(){
     Route::get('Admission/alumni', 'alumni')->name('alumni');
-
     Route::get('/dashboard/alumni', 'index')->name('dashboard.alumni');
     Route::get('/alumni/create', 'create')->name('create.alumni');
     Route::post('/alumni/store', 'store')->name('alumni.store');
@@ -214,6 +213,10 @@ Route::controller(AdminController::class)->group(function(){
 
 
  Route::controller(ScholarshipController::class)->group(function(){
+
+
+    Route::get('/scholarship', 'scholar')->name('scholarship');
+
 
     Route::get('/dashboard/scholarship', 'index')->name('dashboard.scholarship');
     Route::get('/scholarship/create', 'create')->name('create.scholarship');

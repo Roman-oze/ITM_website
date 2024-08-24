@@ -10,6 +10,12 @@ class ScholarshipController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function scholar()
+    {
+        $scholars  = Scholarship::all();
+        return view('scholarship.scholar',compact('scholars'));
+    }
+
     public function index()
     {
       $scholars = Scholarship::all();
