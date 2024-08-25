@@ -304,3 +304,6 @@ const modeToggle = document.getElementById('mode-toggle');
       // Start the typing effect
       typeWriter(text, 0);
     };
+
+
+    

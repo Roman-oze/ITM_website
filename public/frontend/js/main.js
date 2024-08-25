@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 (function() {
-  
+
 
   /**
    * Easy selector helper function
@@ -35,7 +35,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -166,7 +166,7 @@
   }
 
   /**
-   * Initiate  glightbox 
+   * Initiate  glightbox
    */
   const glightbox = GLightbox({
     selector: '.glightbox'
@@ -220,7 +220,7 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
@@ -256,3 +256,27 @@
   });
 
 })()
+function openLiveChat() {
+    document.getElementById("liveChatPopup").style.display = "block";
+}
+
+// Close the live chat
+function closeLiveChat() {
+    document.getElementById("liveChatPopup").style.display = "none";
+}
+
+// Send live chat message
+function sendLiveChatMessage() {
+    var input = document.getElementById("liveChatInput").value;
+    if (input.trim() === "") return;
+
+    var messages = document.getElementById("liveChatMessages");
+
+    var newMessage = document.createElement("div");
+    newMessage.classList.add("live-chat-message");
+    newMessage.textContent = input;
+
+    messages.appendChild(newMessage);
+    document.getElementById("liveChatInput").value = "";
+    messages.scrollTop = messages.scrollHeight;
+}

@@ -2491,7 +2491,7 @@ opacity: 0.8;
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-background-color: #21e74f;      }
+background-color: #37517e;      }
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
@@ -2515,3 +2515,116 @@ background: linear-gradient(0deg, rgb(27, 79, 58) 0%, rgb(56, 114, 75) 100%);
 align-items: center;
 justify-content: center; */
 }
+.live-chat-container {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 32px;
+    width: 300px;
+    max-width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+/* Live chat header */
+.live-chat-header {
+    background-color: #37517e;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.live-chat-header h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.live-chat-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Live chat body */
+.live-chat-body {
+    background-color: #f1f1f1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Live chat messages */
+.live-chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 200px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.live-chat-message {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    align-self: flex-start;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+
+/* Live chat input */
+#liveChatInput {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: white;
+}
+
+/* Live chat send button */
+.live-chat-send-button {
+    background-color: #37517e;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.live-chat-send-button:hover {
+    background-color:#37517e;
+}
+
+/* Chat icon style */
+.live-chat-icon {
+    width: 50px;
+    height: 50px;
+    fill: #37517e;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.live-chat-open-button:hover {
+    background-color: #37517e;
+}
+
+

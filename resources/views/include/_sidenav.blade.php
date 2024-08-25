@@ -85,7 +85,7 @@
                     </a>
 
                     <a class="nav-link" href="{{route('staff.index')}}">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-building-user text-white fa-lg"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fa-regular fa-address-book text-white fa-lg"></i></div>
                         Staff
                     </a>
 

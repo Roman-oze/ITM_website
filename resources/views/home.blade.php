@@ -172,8 +172,31 @@
  </div>
  </div> --}}
 
+ <div class="live-chat-container" id="liveChatPopup">
+    <div class="live-chat-header">
+        <h4>Chat with Us</h4>
+        <button type="button" onclick="closeLiveChat()">X</button>
+    </div>
+    <div class="live-chat-body">
+        <div class="live-chat-messages" id="liveChatMessages">
+            <!-- Messages will be appended here -->
+        </div>
+        <form action="{{ route('viwer.store') }}" method="POST" class="form-container">
+            @csrf
+            <textarea id="liveChatInput" name="message" placeholder="Type your message..."></textarea>
+            {{-- <button type="submit" class="live-chat-send-button">Send</button> --}}
+            <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
+
+        </form>
+    </div>
+</div>
+
+<!-- Chat icon -->
+<i class="fa-solid fa-comment-dots  fa-4x  live-chat-icon" onclick="openLiveChat()"></i>
 
 
+
+ {{-- collapse sidebar --}}
 
 <button class="open-button" onclick="openForm()"><i class="fa-solid fa-arrow-right-arrow-left p-1 text-white"></i></button>
 
