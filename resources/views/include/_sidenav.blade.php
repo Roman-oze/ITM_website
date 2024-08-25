@@ -1,6 +1,6 @@
 
 <div id="layoutSidenav_nav">
-        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <nav class="sb-sidenav accordion sb-sidenav-dark side-bg" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
 
@@ -14,12 +14,12 @@
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse p-1 " id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav accordion rounded " id="sidenavAccordionPages">
+                        <nav class="sb-sidenav-menu-nested nav drop-link " id="sidenavAccordionPages">
                             <a  href="{{route('users')}}" class="linked "> Admins</a>
                         </nav>
                     </div>
                     <div class="collapse p-1 " id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav accordion rounded" id="sidenavAccordionPages">
+                        <nav class="sb-sidenav-menu-nested nav drop-link" id="sidenavAccordionPages">
                             <a  href="" class="linked"> Upcoming</a>
                         </nav>
                     </div>
@@ -32,22 +32,22 @@
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse p-1" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a  href="{{route('dashboard.index')}}" class="linked">Students</a>
+                        <nav class="sb-sidenav-menu-nested nav drop-link">
+                            <a  href="{{route('dashboard.index')}}" class="linked ">Students</a>
                         </nav>
                     </div>
                     <div class="collapse p-1" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
+                        <nav class="sb-sidenav-menu-nested nav drop-link">
                             <a  href="{{route('dashboard.alumni')}}" class="linked">Alumni</a>
                         </nav>
                     </div>
                     <div class="collapse p-1" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
+                        <nav class="sb-sidenav-menu-nested nav drop-link">
                             <a  href="{{route('dashboard.scholarship')}}" class="linked">Scholarship</a>
                         </nav>
                     </div>
                     <div class="collapse p-1" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
+                        <nav class="sb-sidenav-menu-nested nav drop-link">
                             <a  href="#" class="linked">Research Publication</a>
                         </nav>
                     </div>
@@ -95,13 +95,13 @@
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down fa-lg"></i></div>
                     </a>
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <nav class="sb-sidenav-menu-nested nav drop-link" id="sidenavAccordionPages">
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                 Authentication
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
+                                <nav class="sb-sidenav-menu-nested nav drop-link">
                                     <a class="nav-link" href="{{route('login')}}">Login</a>
                                     <a class="nav-link" href="{{route('register')}}">Register</a>
                                     <a class="nav-link" href="{{route("reset_password")}}">Forgot Password</a>
@@ -112,7 +112,7 @@
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
+                                <nav class="sb-sidenav-menu-nested nav drop-link">
                                     <a class="nav-link" href="401.html">401 Page</a>
                                     <a class="nav-link" href="404.html">404 Page</a>
                                     <a class="nav-link" href="500.html">500 Page</a>

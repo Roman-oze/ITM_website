@@ -1,6 +1,6 @@
 
 
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+<nav class="sb-topnav navbar navbar-expand navbar-dark nav-bg">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3 " href="{{route('dashboard')}}">ITM</a>
     <!-- Sidebar Toggle-->
@@ -18,7 +18,8 @@
         <div class="dropdown">
 
             <button class="btn btn-outline-white  text-white dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ Auth::user()->name }}
+                {{-- {{ Auth::user()->name }} --}}
+                User
 
                 {{-- <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />

@@ -424,6 +424,29 @@ nav ul li a {
   th, td {
     white-space: nowrap;
   } */
+  .linked{
+    text-decoration: none;
+    color:rgba(247, 234, 234, 0.781);
+    font-weight: 30px;
+    margin-left:15px ;
+    padding: 5px;
+
+}
+.linked:hover{
+
+    color:rgb(255, 255, 255);
+    font-weight: 30px;
+    padding: 5px;
+
+
+
+}
   .linked:hover {
     text-decoration: none;
+  }
+  .nav-bg , .side-bg , .footer-bg{
+    background: rgb(25, 42, 72);
+  }
+  .drop-link{
+    background-color: #166963;
   }

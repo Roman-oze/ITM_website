@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdmissionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProgramController;
@@ -65,6 +66,12 @@ route::controller(UserController::class)->group(function(){
     Route::delete('users/delete/{id}', 'destroy')->name('user.delete');
     Route::get('/users/search','search')->name('search.user');
 
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 
