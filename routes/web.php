@@ -130,7 +130,7 @@ route::controller(RelationalController::class)->group(function(){
 
  Route::controller(FacultyController::class)->group(function(){
 
-    Route::get('/faculty/member','member')->name('faculty.member');
+    Route::get('/faculty','member')->name('faculty');
     Route::get('/faculty/create','create')->name('create.faculty');
     Route::get('/dashboard/faculty','index')->name('dashboard.faculty');
     Route::post('/faculty/store', 'store')->name('faculty.store');
