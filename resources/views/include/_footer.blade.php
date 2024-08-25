@@ -1,5 +1,5 @@
 
-<footer class="footer-bg text-white">
+<footer class="bg-dark text-white">
     <div class="p-4">
         <div class="row text-center">
             <div class="col-sm-6 text-sm-left small mb-4 mb-sm-0 text-left">
