@@ -44,12 +44,13 @@ class MailController extends Controller
 
             $response = Mail::to( $adminMail)->send(new SendRoutine($request->all(), $fileName));
 
-            if($response){
-                return back()->with('success','Thank You Email sent successfully');
-            }
-            return back()->with('error','please try again');
+            // if($response){
+            //     return back()->with('success','Thank You Email sent successfully');
+            // }
+            // return back()->with('error','please try again');
 
 
+                dd($response);
 
         }
 
