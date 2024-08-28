@@ -1898,7 +1898,8 @@ border: none;
     border-radius: 14px ;
     border: 1px solid white;
     padding: 10px;
-  }
+    letter-spacing: normal;
+}
   .alumni-custom{
     height: 160px;
     width: 155px;
@@ -1909,7 +1910,7 @@ border: none;
   }
   .child-div{
     height: 110px;
-    background: #37517e;
+    background: #ffffff;
     padding: 20px;
 
   }
@@ -1927,7 +1928,7 @@ border: none;
   }
    .flip-custom{
     padding-bottom: 20px;
-    background-color: white;
+    background-color: #37517e;
     color: #000;
 
 }

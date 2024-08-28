@@ -30,8 +30,8 @@
       <div class="child-div">
               <div class="mb-4 "><img src="{{ asset($alumn->image) }}" alt="Image" class="alumni-custom"></div>
               <div class="text p-3">
-              <h2>{{$alumn->name}}</h2>
-              <p class="text-muted">{{$alumn->designation}}</p>
+              <h3 class="text-white">{{$alumn->name}}</h3>
+              <p class="text-white">{{$alumn->designation}}</p>
           </div>
           </div>
           </div>

@@ -324,9 +324,9 @@
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
                          <h4 class="p-2">web development</h4>
                          <hr>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
-                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
-                             quae molestias velit quasi, impedit beatae commodi.</p>
+                         <p>Build beautiful, functional websites that inspire, inform, and connect.
+                            With every line of code, you're shaping the digital world. \
+                            Let your creativity and technical skills come together to create something truly remarkable.</p>
 
                              <div class="social-links text-center">
 
@@ -348,9 +348,10 @@
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
                          <h4>Mobile App Developer</h4>
                          <hr>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
-                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
-                             quae molestias velit quasi, impedit beatae commodi.</p>
+                         <p>mobile apps can be incredibly rewarding,
+                            offering the opportunity to create innovative solutions and reach a global audience.
+                           chance to solve real-world problems, contribute to technological advancements,
+                             and achieve professional growth.</p>
 
                              <div class="social-links text-center">
 
@@ -372,9 +373,19 @@
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
                          <h4>Entrepreneur</h4>
                          <hr>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
-                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
-                             quae molestias velit quasi, impedit beatae commodi.</p>
+                         <p>A person who organizes and operates a business,
+                            taking on financial risks in hopes of profit.
+                            They are often characterized by their innovative ideas,
+                            risk-taking spirit, and determination to succeed.
+
+
+
+
+
+
+
+
+                         </p>
 
                              <div class="social-links text-center">
 
@@ -396,9 +407,7 @@
                    <div class="flip-card-back p- text-left " style="line-height:22px;">
                          <h4>Cyber Security</h4>
                          <hr>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
-                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
-                             quae molestias velit quasi, impedit beatae commodi.</p>
+                         <p>cybersecurity is to protect computer systems, networks, and data from cyberattacks. This involves safeguarding information from unauthorized access, modification, or deletion, and preventing disruptions to services. In essence, cybersecurity aims to ensure the confidentiality, integrity, and availability of digital assets.</p>
 
                              <div class="social-links text-center">
 
@@ -452,9 +461,7 @@
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
                     <h4 style="text-white p-2">Human Resource</h4>
                     <hr>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
-                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
-                             quae molestias velit quasi, impedit beatae commodi.</p>
+                         <p>Human Resources (HR) manages employees. It covers hiring, training, performance, and employee relations. HR helps organizations succeed by having the right people in the right places.</p>
 
                              <div class="social-links text-center">
 
@@ -469,16 +476,14 @@
                     <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
                         <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/MIS.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white p-2">Management Information</h4>
+                <h4 style="text-white p-2">M I S</h4>
 
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
                     <h4 style="text-white p-2">Management Information</h4>
                     <hr>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
-                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
-                             quae molestias velit quasi, impedit beatae commodi.</p>
+                         <p>(MIS) uses technology to collect, process, and analyze data to help businesses make better decisions. It improves efficiency, communication, and competitiveness. Examples include CRM, ERP, SCM, and BI tools.</p>
 
                              <div class="social-links text-center">
 
@@ -497,12 +502,10 @@
 
                  </div>
                  </div>
-                   <div class="flip-card-back p-3 text-left " style="line-height:22px;">
+                   <div class="flip-card-back text-left " style="line-height:22px;">
                     <h4 style="text-white p-2">Database Management</h4>
                     <hr>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
-                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
-                             quae molestias velit quasi, impedit beatae commodi.</p>
+                         <p>Organizing data efficiently. Key parts: modeling, storage, retrieval, security. Types: relational, NoSQL, object-oriented. Benefits: accuracy, decisions, efficiency, security, scalability, collaboration, analysis, integration, compliance. Popular DBMS: MySQL, Oracle, SQL Server, MongoDB, </p>
 
                              <div class="social-links text-center">
 
@@ -524,9 +527,7 @@
                    <div class="flip-card-back p- text-left " style="line-height:22px;">
                     <h4 style="text-white p-3">Software Quality Testing</h4>
                     <hr>
-                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eius aperiam sunt magni.
-                             Expedita ipsam molestiae dolorum incidunt porro, mollitia voluptas quos assumenda
-                             quae molestias velit quasi, impedit beatae commodi.</p>
+                         <p>Evaluating software to ensure it meets requirements. Includes planning, design, execution, tracking, and reporting. Types: unit, integration, system, acceptance. Benefits: improved quality, reduced costs, customer satisfaction, reliability. SQT is crucial for high-quality software.</p>
 
                              <div class="social-links text-center">
 
@@ -553,7 +554,9 @@
                     <div class="video justify-content-center">
                         {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
                         {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
-                            <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid-custom manual-shadow "  >
+                            {{-- <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid-custom manual-shadow "  > --}}
+                                <img src="{{asset('frontend/image/student3.png')}}" class="image1 img-fluid-custom  animate__animated animate__fadeInDown">
+
                                 {{-- <iframe width="640" height="450" src="#">
                                 </iframe> --}}
 
