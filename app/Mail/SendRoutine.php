@@ -3,22 +3,27 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Mailables\Attachment;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendRoutine extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $request;
+    public $fileName;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($request ,  $fileName)
     {
-        //
+       $this->request = $request;
+       $this->fileName = $fileName;
     }
 
     /**
@@ -27,7 +32,7 @@ class SendRoutine extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Send Routine',
+            subject: 'Contact from - Admin ITM department',
         );
     }
 
@@ -37,7 +42,7 @@ class SendRoutine extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail-template.welcome-mail',
         );
     }
 
@@ -48,6 +53,14 @@ class SendRoutine extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        $attachment = [];
+        if ($this->fileName) {
+            $attachment = [
+                Attachment::fromPath(public_path('/attachment/'.$this->fileName))
+
+            ];
+            }
+            return $attachment;
+
     }
 }

@@ -23,6 +23,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\MailController;
 
 use App\Http\Middleware\Itm;
 
@@ -294,3 +295,9 @@ Route::controller(ClubController::class)->group(function(){
     Route::view('/upcoming','club/upcoming')->name('upcoming');
     Route::get('/membership','membership')->name('membership');
 });
+
+Route::get('send-mail',[MailController::class,'SendWelcomeEmail']);
+
+Route::get('/contact',[MailController::class,'contactForm'])->name('contactForm');
+
+Route::post('/contact',[MailController::class,'sendContactMail'])->name('contact.mail');

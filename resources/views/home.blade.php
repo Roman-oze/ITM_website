@@ -545,6 +545,7 @@
 
 
 
+
  <div class="container-fluid mt-5 p-4">
     <h1 class="fac_text text-center text-dark"><i class="fa-brands fa-elementor "></i>Department of </h1>
 
@@ -1229,7 +1230,7 @@
 
 
               <div class="container-fluid mt-5">
-                <div class="row ">
+                <div class="row  ">
                    <marquee class=" logos text-center mt-5 ">
                     <img src="{{asset('frontend/image/Flutter-App.png')}}" alt="">
                    <img src="{{asset('frontend/image/java.png')}}" alt="">
