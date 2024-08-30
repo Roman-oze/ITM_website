@@ -189,7 +189,7 @@
                       <a target="_blank" href="{{route('Local_tuition')}}" class="nav-link text-info">Local Tuition</a>
                       <a target="_blank" href="{{route('international_tuition')}}" class="nav-link text-info">International Tuition</a>
                       <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-info">Admission Test result</a>
-                      <a target="_blank" href="" class="nav-link text-dark">Admission Notice</a>
+                      <a target="_blank" href="" class="nav-link text-info">Admission Notice</a>
                     </div>
                   </div>
               </li>

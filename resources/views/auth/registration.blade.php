@@ -3,21 +3,21 @@
  <!-- resources/views/students/create.blade.php -->
 
 
- @extends('layout.app')
- @section('content')
-
+ @extends('layouts.dashboard')
+ @section('main')
+ <main>
      <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt " data-tilt>
-					<img src="{{asset('frontend/image/Itmfullogo.png')}}" alt="IMG"  class="loginimage">
+					<img src="{{asset('img/img-01.png')}}" alt="IMG"  class="loginimage">
 				</div>
 
-                <form action="{{route('store.user')}}"  method="POST" enctype="multipart/form-data" class="login100-form validate-form">
+                <form action="{{route('register.store')}}"  method="POST" enctype="multipart/form-data" class="login100-form validate-form">
 
                     @csrf
 
-					<span class="login100-form-title">
+					<span class="login100-form-title text-white">
 						Admin Registration
 					</span>
                     @if (session()->has('success'))
@@ -85,7 +85,7 @@
 					</div>
 
                     <div class="text-center p-t-136 mt-2">
-						<a class="txt3 text-muted" href="{{route('login')}}">
+						<a class="txt3 text-white" href="{{route('login')}}">
 							Need an account? Sign in!
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
@@ -96,6 +96,8 @@
 			</div>
 		</div>
 	</div>
+</main>
+
  @endsection
 
 

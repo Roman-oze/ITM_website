@@ -9,6 +9,8 @@
 
         <link href="{{asset('admin/css/styles.css')}}" rel="stylesheet"/>
         <link href="{{asset('admin/css/style.css')}}" rel="stylesheet"/>
+        {{-- <link href="{{asset('frontend/css/custom.css')}}" rel="stylesheet"/> --}}
+
 
 
 

@@ -1,6 +1,6 @@
 
 
-<nav class="sb-topnav navbar navbar-expand navbar-dark nav-bg">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3 " href="{{route('dashboard')}}">ITM</a>
     <!-- Sidebar Toggle-->
@@ -17,9 +17,9 @@
         <!-- User Dropdown -->
         <div class="dropdown">
 
-            <button class="btn btn-outline-white  text-white dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                {{-- {{ Auth::user()->name }} --}}
-                User
+            <button class="getstarted scrollto text-dark dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user"></i> {{ Auth::user()->name }}
+                {{-- User --}}
 
                 {{-- <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -28,37 +28,23 @@
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                 <!-- Profile Link -->
                 <li>
-                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                    <a class="dropdown-item text-dark" href="{{ route('profile.edit') }}">
                         {{ __('Profile') }}
                     </a>
                 </li>
 
                 <!-- Logout -->
                 <li>
-                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                    <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <button type="submit" class="dropdown-item text-dark" onclick="event.preventDefault(); this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </button>
                     </form>
                 </li>
             </ul>
         </div>
-
-        <!-- Hamburger (Mobile Menu Button) -->
-        <div class="d-sm-none ms-auto">
-            <button class="btn btn-white p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
-                    <path d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                <svg class="h-6 w-6 d-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
-                    <path d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
         </div>
-    </div>
-
-    <!-- Collapse Menu for Mobile -->
 
 </nav>
 

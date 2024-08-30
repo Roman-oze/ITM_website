@@ -53,7 +53,7 @@
                     </div>
 
                     <a class="nav-link" href="{{route('contactForm')}}">
-                        <div class="sb-nav-link-icon"><i class="fa-regular fa-message fa-fw text-white fa-lg"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fa-regular fa-envelope text-white fa-lg"></i></div>
                         Send Mail
                     </a>
                     <a class="nav-link" href="{{route('contact.index')}}">
@@ -108,7 +108,7 @@
                                 <nav class="sb-sidenav-menu-nested nav drop-link">
                                     <a class="nav-link" href="{{route('login')}}">Login</a>
                                     <a class="nav-link" href="{{route('register')}}">Register</a>
-                                    <a class="nav-link" href="{{route("reset_password")}}">Forgot Password</a>
+                                    <a class="nav-link" href="{{route('password.request')}}">Forgot Password</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">

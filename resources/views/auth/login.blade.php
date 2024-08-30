@@ -11,12 +11,12 @@
 					<img src="{{asset('frontend/image/Itmfullogo.png')}}" alt="IMG"  class="loginimage">
 				</div>
 
-                <form action="{{route('loginUser')}}"  method="POST" enctype="multipart/form-data" class="login100-form validate-form">
+                <form action="{{route('login')}}"  method="POST" enctype="multipart/form-data" class="login100-form validate-form">
 
                     @csrf
 
 					<span class="login100-form-title">
-						Admin Login
+						Login
 					</span>
 
                     @if (session()->has('success'))
@@ -85,7 +85,7 @@
 					</div>
 
                     <div class="card-footer text-center py-3">
-                        <div class="small"><a href="{{route('reset_password')}}" class="txt2 text-muted">Username / Password?</a></div>
+                        <div class="small"><a href="{{route('password.request')}}" class="txt2 text-muted">Username / Password?</a></div>
                     </div>
 
                     <div class="text-center p-t-136">

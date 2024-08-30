@@ -1,4 +1,11 @@
+
+
+
+
 <?php
+
+
+
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdmissionController;
@@ -18,16 +25,17 @@ use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\RelationalController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\DashbaordController;
 
 use App\Http\Middleware\Itm;
 
 use Faker\Guesser\Name;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
 // use Illuminate\Support\Facades\Auth;
 
 
@@ -56,6 +64,20 @@ use Faker\Guesser\Name;
 
 //  });
 
+// Route::get('/dashboard', function () {
+//     return view('auth.dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+route::get('/dashboard',[DashbaordController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
 route::controller(UserController::class)->group(function(){
 
     Route::get('/users', 'index')->name('users');
@@ -69,43 +91,21 @@ route::controller(UserController::class)->group(function(){
 
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
 
-// protected
 
-// Route::get('/profile',function(){
-//     return "Welcome to your profile";
-// })->middleware('guard');
 
-// Route::get('/user',function(){
-//     return "Welcome to your user profile";
-// })->middleware('guard');
 
-// Route::get('/logins',function(){
-//    session()->put('id',1);
-//    return redirect()->route('dashboard');
-// });
-// Route::get('/no-access',function(){
-//     echo "You're not to be access page";
-//     die;
+// route::controller(AuthController::class)->group(function(){
+//     Route::get('user/login', 'login')->name('login');
+//     Route::post('loginUser', 'loginUser')->name('loginUser');
+//     Route::get('user/register', 'register')->name('register');
+
 // });
 
-
-
-
-route::controller(LoginController::class)->group(function(){
-    Route::get('user/login', 'login')->name('login');
-    Route::post('loginUser', 'loginUser')->name('loginUser');
-});
-
-route::controller(RegisterController::class)->group(function(){
-    Route::get('user/register', 'register')->name('register');
-});
+// route::controller(RegisterController::class)->group(function(){
+//     Route::get('user/register', 'register')->name('register');
+// });
 
 
 route::controller(ContactMessageController::class)->group(function(){
@@ -176,16 +176,16 @@ Route::controller(RoutineController::class)->group(function(){
 
 
 
-Route::controller(AuthController::class)->group(function(){
+// Route::controller(AuthController::class)->group(function(){
 
-    Route::get('dashboard', 'dashboard')->name('dashboard');
-    // Route::get('user/login', 'login')->name('login');
-    // Route::post('loginUser', 'loginUser')->name('loginUser');
+//     Route::get('dashboard', 'dashboard')->name('dashboard');
+//     Route::get('user/login', 'login')->name('login');
+//     Route::post('loginUser', 'loginUser')->name('loginUser');
 
-    Route::get('logout', 'logout')->name('logout');
-    Route::get('user/reset_password', 'password')->name('reset_password');
+//     Route::get('logout', 'logout')->name('logout');
+//     Route::get('user/reset_password', 'password')->name('reset_password');
 
-})->middleware('guard');
+// })->middleware('guard');
 
 
 
@@ -283,6 +283,7 @@ route::controller(AdmissionController::class)->group(function(){
 
 
 
+
 route::get('/',[HomeController::class,'home'])->name('home');
 route::get('/program',[ProgramController::class,'program'])->name('program');
 route::get('/about',[AboutController::class,'about'])->name('about');
@@ -301,3 +302,5 @@ Route::get('send-mail',[MailController::class,'SendWelcomeEmail']);
 Route::get('/contact',[MailController::class,'contactForm'])->name('contactForm');
 
 Route::post('/contact',[MailController::class,'sendContactMail'])->name('contact.mail');
+
+require __DIR__.'/auth.php';
