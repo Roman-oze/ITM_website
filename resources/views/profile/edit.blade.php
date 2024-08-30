@@ -29,7 +29,7 @@
                                 <h4>Profile Information</h4>
                             </div>
                             <div class="card-body">
-                                <form method="post" action="{{ route('password.update') }}">
+                                <form method="post" action="{{ route('profile.update') }}">
                                     @csrf
                                     @method('put')
 

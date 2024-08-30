@@ -1,6 +1,6 @@
 
 
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark p-3">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3 " href="{{route('dashboard')}}">ITM</a>
     <!-- Sidebar Toggle-->
@@ -35,12 +35,13 @@
 
                 <!-- Logout -->
                 <li>
-                    <form method="POST" action="{{ route('logout') }}">
+                    <form method="POST" action="{{ route('logout') }}" class="dropdown-item text-dark">
                         @csrf
                         <button type="submit" class="dropdown-item text-dark" onclick="event.preventDefault(); this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </button>
                     </form>
+
                 </li>
             </ul>
         </div>
