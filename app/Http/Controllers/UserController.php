@@ -1,126 +1,115 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Auth;
 use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Echo_;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Auth\Events\Validated;
-use Illuminate\Support\Facades\Session;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $users = User::all();
+        return view('role-permission.user.index',[
+            'users' => $users
+        ]);
+    }
 
-     public function index(){
-        $users = User::paginate(10);
-        return view('user.index', compact('users'));
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $roles = Role::all();
+         return view('role-permission.user.create',[
+            'roles' => $roles
+         ]);
+    }
 
-     }
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
 
-     public function create(){
-
-       return view('user.create');
-
-     }
-
-
-    //  public function store( Request $request ){
-
-
-
-    //     $this->validate($request, [
-
-    //         'name'          => 'required|string|max:255|unique:users,username',
-    //         'email'             => 'required|string|email|max:255|unique:users,email',
-    //         'password'          => 'required',
-
-    //     ]);
-
-
-
-    //         $user = new User();
-    //         $user->name = $request['username'];
-    //         $user->email = $request['email'];
-    //         $user->password = Hash::make( $request['password'] );
-    //         $user->save();
-
-    //          return redirect( route('login') )->with(['success' => 'User Successfully Created!']);
-    // }
-
-    public function store(Request $request){
-
-       $request -> validate ([
-
-            'name'=>'required',
-            'email'=>'required|email|unique:users',
-            'password' => 'required|string|min:5|max:16',
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|max:25|',
+            'roles' => 'required'
         ]);
 
-         $data['name']=$request->name;
-         $data['email']=$request->email;
-         $data['password']= $request->password;
-         $data['created_at']=date('Y-m-d H:i:s');
-         $data['updated_at']=date('Y-m-d H:i:s');
 
+        $user = new User();
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = bcrypt($request->input('password'));
+        $user->save();
 
-        DB::table('users')->insert($data);
-     return redirect('user/login')->with('success','Congratulations! You Profile is Ready');
-
-
+        $user->roles()->sync($request->input('roles'));
+        return redirect()->route('users')->with('success', 'User created successfully');
 
 
     }
 
-    public function show($id)
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
     {
-        $users =DB::table('users')->where('id',$id)->first();
-        return view('user.show',compact('users'));
+        //
     }
 
-    public function edit($id)
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
     {
-        $users = DB::table('users')->where('id',$id)->first();
-         return view('user.edit',compact('users'));
-    }
 
-
-    public function update(Request $request,string $id){
-
-
-     $data['name']=$request->name;
-     $data['email']=$request->email;
-     $data['password']= $request->password;
-
-
-        DB::table('users')->where('id',$id)->update($data);
-        return redirect()->route('users')->with('success','User Updated Successfully');
-
-
-
+        $user = User::find($id);
+        $roles = Role::all();
+        return view('role-permission.user.edit',[
+            'user' => $user,
+            'roles' => $roles
+            ]);
 
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
 
-    public function destroy($id){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,'.$id,
+            'password' => 'nullable|min:8|max:25',
+            'roles' => 'required'
+            ]);
 
-        DB::table('users')->where('id',$id)->delete();
-
-        return redirect()->back()->with('success','User delete Successfully');
-
-
+            $user = User::find($id);
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->password = bcrypt($request->input('password'));
+            $user->save();
+            $user->roles()->sync($request->input('roles'));
+            return redirect()->route('users.index')->with('success', 'User updated successfully');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $userId)
+    {
 
-
-    public function search(Request $request){
-
-        $data = $request->input('search');
-        $users =DB::table('users')->where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);
-        return view('user.index',compact('users'));
+     $users = User::find($userId);
+     $users->delete();
+     return redirect()->route('users.index')->with('success', 'User deleted successfully');
 
     }
-
-
 }

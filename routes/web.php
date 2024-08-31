@@ -36,41 +36,31 @@ use App\Http\Middleware\Itm;
 use Faker\Guesser\Name;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-// use Illuminate\Support\Facades\Auth;
 
 
-// Route::controller(AdminController::class)->middleware('guard')->group(function(){
-
-//      Route::get('dashboard', 'dashboard')->name('dashboard');
-//     Route::get('admin/login', 'login')->name('admin_login');
-// });
 
 
-// Route::get('/admin_login',function(){
-//     session()->put('id',1);
-//     return redirect()->route('dashboard');
 
-// });
 
-// Route::get('/logout',function(){
-//     session()->forget('id');
-//     return redirect('/');
 
-// });
+route::group(['middleware'  =>['role:user']], function(){
+    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-//  Route::get('/no-access',function(){
-//     echo"you're not to access this page";
-//     die;
+route::resource('permissions',App\Http\Controllers\PermissionController::class);
+route::get('permissions/{id}/delete',[App\Http\Controllers\PermissionController::class,'destroy']);
 
-//  });
+route::resource('roles',App\Http\Controllers\RoleController::class);
+route::get('roles/{roleId}/delete',[App\Http\Controllers\RoleController::class,'destroy']);
 
-// Route::get('/dashboard', function () {
-//     return view('auth.dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+route::get('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'addPermissionToRole']);
+route::put('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'updatePermissionToRole']);
+
+route::resource('users',App\Http\Controllers\UserController::class);
+route::get('users/{userId}/delete',[App\Http\Controllers\UserController::class,'destroy']);
+});
 
 
 route::get('/dashboard',[DashbaordController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -78,18 +68,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-route::controller(UserController::class)->group(function(){
+// route::controller(UserController::class)->group(function(){
 
-    Route::get('/users', 'index')->name('users');
-    Route::post('/users', 'store')->name('store.user');
-    Route::get('/users/create', 'create')->name('create.user');
-    Route::get('/users/show/{id}', 'show')->name('show.user');
-    Route::get('/users/edit/{id}', 'edit')->name('edit.user');
-    Route::put('/users/update/{id}', 'update')->name('update.user');
-    Route::delete('users/delete/{id}', 'destroy')->name('user.delete');
-    Route::get('/users/search','search')->name('search.user');
+//     Route::get('/users', 'index')->name('users');
+//     Route::post('/users', 'store')->name('store.user');
+//     Route::get('/users/create', 'create')->name('create.user');
+//     Route::get('/users/show/{id}', 'show')->name('show.user');
+//     Route::get('/users/edit/{id}', 'edit')->name('edit.user');
+//     Route::put('/users/update/{id}', 'update')->name('update.user');
+//     Route::delete('users/delete/{id}', 'destroy')->name('user.delete');
+//     Route::get('/users/search','search')->name('search.user');
 
-});
+// });
 
 
 
@@ -192,18 +182,18 @@ Route::controller(RoutineController::class)->group(function(){
 
 
 
-Route::controller(AdminController::class)->group(function(){
+// Route::controller(AdminController::class)->group(function(){
 
-    Route::get('user', 'user')->name('admin.user');
-    Route::get('admin/show/{id}', 'show')->name('show');
-    Route::get('admin/edit/{id}', 'edit')->name('admin.edit');
-    Route::put('admin/update/{id}','update')->name('admin.update');
-    Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');
-
-
+//     Route::get('user', 'user')->name('admin.user');
+//     Route::get('admin/show/{id}', 'show')->name('show');
+//     Route::get('admin/edit/{id}', 'edit')->name('admin.edit');
+//     Route::put('admin/update/{id}','update')->name('admin.update');
+//     Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');
 
 
-});
+
+
+// });
 
 
 

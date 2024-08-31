@@ -198,12 +198,12 @@
                 <div class="dropdown-content ms-auto rounded">
                   <a target="_blank" href="{{route('events')}}" class="nav-link text-info">Events</a>
                   <a target="_blank" href="{{route('alumni')}}" class="nav-link text-info">Alumni</a>
-                  <a target="_blank" href="{{route('scholarship')}}" class="nav-link text-info">Scholarship</a>
+                  <a target="_blank" href="" class="nav-link text-info">Scholarship</a>
                   <a target="_blank" href="#" class="nav-link text-info">Notice Board</a>
                 </div>
               </div></li>
               <li><a class="nav-link scrollto"  href="{{route('program')}}">Course</a></li>
-              <li><a class="nav-link scrollto" href="{{route('faculty.member')}}">Faculty Members</a></li>
+              <li><a class="nav-link scrollto" href="">Faculty Members</a></li>
                <li>
                 <div class="dropdown rounded">
                 <a class="nav-link scrollto" href="#">Routine</a>
