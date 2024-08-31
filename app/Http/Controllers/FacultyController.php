@@ -13,7 +13,7 @@ class FacultyController extends Controller
      * Display a listing of the resource.
      */
 
-    public function member()
+    public function faculty()
     {
 
 

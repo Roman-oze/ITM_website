@@ -131,7 +131,6 @@ route::controller(RelationalController::class)->group(function(){
 
  Route::controller(FacultyController::class)->group(function(){
 
-    Route::get('/faculty','member')->name('faculty');
     Route::get('/faculty/create','create')->name('create.faculty');
     Route::get('/dashboard/faculty','index')->name('dashboard.faculty');
     Route::post('/faculty/store', 'store')->name('faculty.store');
@@ -139,6 +138,8 @@ route::controller(RelationalController::class)->group(function(){
     Route::put('/faculty/update/{id}', 'update')->name('update.faculty');
     Route::delete('/faculty/delete/{id}', 'destroy')->name('delete.faculty');
     route::get('/faculty/searching','search')->name('faculty.search');
+    Route::get('/teacher','faculty')->name('faculty.meber');
+
 
 
   //   Route::get('teachers','teachers')->name('teachers');

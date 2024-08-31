@@ -226,7 +226,7 @@
                             <div class="dash-count bg-color  text-center p-1">
                                 <span data-purecounter-start="0" data-purecounter-end="{{$facultyCount}}" data-purecounter-duration="0" class="purecounter">{{$facultyCount}}</span>
                                 <p class="pure-text">
-                                    <a href="{{route('faculty')}}" class="text-white-50">Faculty</a>
+                                    <a href="{{route('faculty.member')}}" class="text-white-50">Faculty</a>
                                 </p>
 
                             </div>

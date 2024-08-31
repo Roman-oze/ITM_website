@@ -9,6 +9,7 @@
     <div class="row p-5">
 
 
+
         <div class="accordion" id="accordionExample">
             <div class="accordion-item mb-2">
 <div class="accordion-header" id="heading1">
@@ -31,4 +32,5 @@
 
 </div>
 </div>
+
 @endsection
