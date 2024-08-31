@@ -42,8 +42,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 
-
-route::group(['middleware'  =>['role:user']], function(){
+route::group(['middleware'  =>['role:admin']], function(){
     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 route::resource('permissions',App\Http\Controllers\PermissionController::class);

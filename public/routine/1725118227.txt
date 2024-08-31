@@ -1,0 +1,166 @@
+ERDiagram
+    USER {
+        int id PK
+        string name
+        string email
+        string password
+        int role_id FK
+    }
+
+    ROLE {
+        int id PK
+        string role_name
+    }
+    
+    PERMISSION {
+        int id PK
+        string permission_name
+    }
+
+    USER ||--o{ ROLE : "has"
+    ROLE }o--o{ PERMISSION : "grants"
+
+    COURSE {
+        int id PK
+        string course_name
+        string course_code
+        int credit
+        int student_id FK
+        int faculty_id FK
+    }
+
+    SCHEDULE {
+        int id PK
+        string day
+        int faculty_id FK
+        int course_id FK
+
+    }
+
+    
+    ROUTINE {
+        int id PK
+	string file
+        string day
+        string time
+        int course_id FK
+        int faculty_id FK
+        int user_id FK
+    }
+
+    EVENT {
+        int id PK
+        string name
+	string image
+        string date
+	string time
+        string location
+	string description
+    }
+
+    FACULTY {
+        int id PK
+        string name
+	string image
+        string department
+        string designation
+	string fb
+        string linkedin
+        string email
+	string phone
+        string address
+    }
+
+    STUDENT {
+        int id PK
+        string name
+        int roll
+	string batch
+	string email
+	string mobile
+        int course_id FK
+    }
+
+    SEMESTER_DROP {
+        int id PK
+	string semester
+        string reason
+        string description
+        int user_id FK
+    }
+
+    APPLICATION_FORM {
+        int id PK
+        string to
+	string from
+	string subject 
+        string description
+        int user_id FK
+    }
+
+    SERVICE {
+        int id PK
+        string icon
+        string name
+        string description
+    }
+
+    COMMUNICATION {
+        int id PK
+        string name
+	string email
+	string subject
+        string message
+        int user_id FK
+    }
+
+    ALUMNI {
+        int id PK
+string image
+        string name
+	string roll
+	string batch
+	string pass_year
+	string organization
+	string designation
+	string phone
+	string email
+	string address
+    }
+
+    SCHOLARSHIP {
+        int id PK
+	string image
+        string name
+	string roll
+	string batch
+	string country
+	string duration
+	string email
+
+    }
+
+    STAFF {
+        int id PK
+	string image
+        string name
+        string position
+        string email
+        string mobile
+    }
+
+    CLUB {
+        int id PK
+        string link
+        int leader_id FK
+    }
+
+    NOTICE_BOARD {
+        int id PK
+        string file
+        string title
+        string description
+        string date
+    }
+
+    

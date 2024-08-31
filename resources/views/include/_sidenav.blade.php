@@ -66,7 +66,7 @@
                         Routine
                     </a>
                     <a class="nav-link" href="{{route('dashboard.event')}}">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days text-white fa-lg"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-clipboard-list text-white fa-lg"></i></div>
                         Schedule
                     </a>
                     <a class="nav-link" href="{{route('dashboard.event')}}">
