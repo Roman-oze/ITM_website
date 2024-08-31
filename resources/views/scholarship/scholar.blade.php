@@ -32,7 +32,7 @@
              <div class="text p-1">
              <h2>{{$scholar->name}}</h2>
              <p class="h5 text-muted">{{$scholar->country}}</p>
-             <h4 class="text-blue">Contratulations!</h4>
+             <h4 class="text-blue">Congratulations!</h4>
          </div>
          </div>
          </div>

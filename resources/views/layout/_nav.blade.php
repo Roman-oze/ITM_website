@@ -173,7 +173,7 @@
       <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
             {{-- <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/portal.png')}}" alt="" class="brand-logo"></a> --}}
-            <h1 class="logo me-auto"><a href="index.html"><img src="{{asset('frontend/image/logo.png')}}" alt="" class="brand"></a></h1>
+            <h1 class="logo me-auto"><a href="{{route('home')}}"><img src="{{asset('frontend/image/logo.png')}}" alt="" class="brand"></a></h1>
             {{-- <h1 class=" text-white me-auto"><a href="index.html">I T M</h1> --}}
           <nav id="navbar" class="navbar">
             <ul>
@@ -198,9 +198,8 @@
                 <div class="dropdown-content ms-auto rounded">
                   <a target="_blank" href="{{route('events')}}" class="nav-link text-info">Events</a>
                   <a target="_blank" href="{{route('alumni')}}" class="nav-link text-info">Alumni</a>
-                  <a target="_blank" href="#" class="nav-link text-info">Research</a>
                   <a target="_blank" href="{{route('scholarship')}}" class="nav-link text-info">Scholarship</a>
-                  <a target="_blank" href="https://daffodilvarsity.edu.bd/admission-test" class="nav-link text-info">Notice Board</a>
+                  <a target="_blank" href="#" class="nav-link text-info">Notice Board</a>
                 </div>
               </div></li>
               <li><a class="nav-link scrollto"  href="{{route('program')}}">Course</a></li>

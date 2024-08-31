@@ -1,6 +1,3 @@
-
-
-
 @extends('layout.dashboard')
 
 @section('main')
@@ -15,89 +12,70 @@
 </form> --}}
 
 <main>
-    <div class="container-fluid px-4">
+
+    <div class="container mt-5">
         <h1 class="mt-4">Faculty</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">faculty List </li>
+            <li class="breadcrumb-item active">Faculty List</li>
         </ol>
         <br>
+        <div class="row">
+            <div class="col-md-12">
 
-      <div class="row">
-        <div class="col-md-10 text-left">
-            <form action="{{route('faculty.search')}}" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" name="search" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+                @if (session('status'))
+                    <div class="alert alert-success">{{session('status')}}</div>
+                @endif
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>
+                            <a href="{{route('create.faculty')}}" class="btn btn-primary float-end">ADD FACULTY</a>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Designation</th>
+                                        <th>Facebook</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($teachers as $teacher)
+                                    <tr>
+                                        <td>{{$teacher->teacher_id}}</td>
+                                        <td><img src="{{ asset($teacher->image) }}" width="50" height="50" class="rounded-circle"></td>
+                                        <td>{{$teacher->name}}</td>
+                                        <td>{{$teacher->designation}}</td>
+                                        <td>{{$teacher->fb}}</td>
+                                        <td>{{$teacher->email}}</td>
+                                        <td>{{$teacher->phone}}</td>
+                                        <td>
+                                            <a href="{{route('edit.faculty',$teacher->teacher_id)}}" class="btn btn-success">
+                                                <i class="fa-solid fa-user-pen"></i>
+                                            </a>
+                                            <a href="{{route('delete.faculty',$teacher->teacher_id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div> <!-- end table-responsive -->
+                    </div>
                 </div>
-            </form>
-            <a href="{{ route('create.faculty') }}" class="btn btn-outline-dark ">Add Faculty</a>
-
+            </div>
         </div>
-
-
     </div>
-
-
-
-    <table class="table table-striped mt-3 ">
-        <thead>
-            <tr >
-                <th >ID</th>
-                <th >Image</th>
-                <th >Name</th>
-                <th >Designation</th>
-                <th >Facebook</th>
-                {{-- <th class="text-white">LinkedIn</th> --}}
-                <th >Email</th>
-                <th >Phone</th>
-                <th >Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($teachers as $teacher)
-
-        <td >{{$teacher->teacher_id}}</td>
-        <td><img src="{{ asset($teacher->image) }}"  width="50" height="50" class="rounded-circle" ></td>
-        <td >{{$teacher->name}}</td>
-        <td >{{$teacher->designation}}</td>
-        <td >{{$teacher->fb}}</td>
-        {{-- <td class="text-white-50">{{$teacher->linked}}</td> --}}
-        <td >{{$teacher->email}}</td>
-        <td>{{$teacher->phone}}</td>
-
-        <td class="">
-
-    
-           <a href="{{route('edit.faculty',$teacher->teacher_id)}}" class=" btn btn-outline-info" class="p-3 "><i class="fa-solid fa-pen-to-square  "></i></a>
-
-       <form action="{{route('delete.faculty',$teacher->teacher_id)}}" method="post" style="display:inline;">
-           @csrf
-           @method('DELETE')
-           <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
-           </form>
-
-        </td>
-      </tr>
-
-
-
-
-
-      @endforeach
-        </tbody>
-    </table>
-
-
-    <div class="row">
-        {{ $teachers->links('pagination::bootstrap-5') }}
-    </div>
-
-
-
-
-</div>
-</div>
 </main>
 
 @endsection

@@ -32,7 +32,8 @@
       </div>
 
 
-    <table class="table table-striped bg-light mt-3 ">
+      <div class="table-responsive">
+        <table class="table table-striped">
         <thead>
             <tr >
                 <th class="text-dark">ID</th>
@@ -82,6 +83,7 @@
       @endforeach
         </tbody>
     </table>
+    </div>
 
 
     <div class="row">

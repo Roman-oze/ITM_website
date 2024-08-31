@@ -711,9 +711,9 @@
    <div class="child-div">
            <div class="mb-4 "><img src="{{asset($scholar->image)}}" alt="Image" class="alumni-custom"></div>
            <div class="text p-1">
-           <h2>{{$scholar->name}}</h2>
-           <p class="h5 text-muted">{{$scholar->country}}</p>
-           <h4 class="text-blue">Contratulations!</h4>
+           <h2 class="text-white">{{$scholar->name}}</h2>
+           <p class="h5 text-white-50">{{$scholar->country}}</p>
+           <h4 class="text-warning"><i class="fa-solid fa-hands-bubbles"></i> Congratulations!</h4>
        </div>
        </div>
        </div>

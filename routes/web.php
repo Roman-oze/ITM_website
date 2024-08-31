@@ -138,7 +138,7 @@ route::controller(RelationalController::class)->group(function(){
     Route::put('/faculty/update/{id}', 'update')->name('update.faculty');
     Route::delete('/faculty/delete/{id}', 'destroy')->name('delete.faculty');
     route::get('/faculty/searching','search')->name('faculty.search');
-    Route::get('/teacher','faculty')->name('faculty.meber');
+    Route::get('/teacher','faculty')->name('faculty.member');
 
 
 
@@ -224,9 +224,7 @@ Route::controller(AdminController::class)->group(function(){
  Route::controller(ScholarshipController::class)->group(function(){
 
 
-    Route::get('/scholarship', 'scholar')->name('scholarship');
-
-
+    Route::get('/scholarship', 'scholar')->name('scholarship.index');
     Route::get('/dashboard/scholarship', 'index')->name('dashboard.scholarship');
     Route::get('/scholarship/create', 'create')->name('create.scholarship');
     Route::post('/scholarship/store', 'store')->name('store.scholarship');
