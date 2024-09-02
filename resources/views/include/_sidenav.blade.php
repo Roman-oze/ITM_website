@@ -47,16 +47,14 @@
                         </nav>
                     </div>
 
-    @foreach ($menus as $menu)
-
-
-
+                 {{-- @foreach ($menus as $menu)
 
                     <a class="nav-link" href="{{$menu->nav_link}}">
                         <div class="sb-nav-link-icon"><i class="{{$menu->icon}} text-white fa-lg"></i></div>
                         {{$menu->nav_name}}
                     </a>
-                    {{-- <a class="nav-link" href="{{route('contact.index')}}">
+                    @endforeach --}}
+                    <a class="nav-link" href="{{route('contact.index')}}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-message fa-fw text-white fa-lg"></i></div>
                         Messages
                     </a>
@@ -91,8 +89,8 @@
                     <a class="nav-link" href="{{route('staff.index')}}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-address-book text-white fa-lg"></i></div>
                         Staff
-                    </a> --}}
-                    @endforeach
+                    </a>
+
                     {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-gear text-white fa-lg"></i></div>
                         Setting
@@ -113,8 +111,8 @@
                             </div>
 
                         </nav>
-                    </div> --}}
-                    <a class="nav-link" href="{{route('menu-permission.index')}}">
+                    </div>
+                    <a class="nav-link" href="{{route('index')}}">
                         <div class="sb-nav-link-icon"><i class=" text-white fa-lg"></i></div>
                         Menu Permission
                     </a>

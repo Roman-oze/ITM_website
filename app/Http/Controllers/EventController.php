@@ -20,7 +20,6 @@ class EventController extends Controller
 //  frontend view file
     public function events(){
 
-
         $upcoming =Event::whereIN('name',['empty'])->get();
         $event = Event::whereNotIn('name',['empty'])->get();;
         return view('event.events',compact('event','upcoming'));
@@ -68,7 +67,7 @@ class EventController extends Controller
       DB::table('events')->insert($data);
 
     //   return redirect()->route->back()->with('success','Event Added Successfully');
-    return redirect()->route('event')->with('success','Event Added Successfully');
+    return redirect()->route('event.index')->with('success','Event Added Successfully');
 
     // dd(DB::table('events')->get());
 
@@ -110,7 +109,7 @@ class EventController extends Controller
 
       DB::table('events')->where('id',$id)->update($data);
 
-      return redirect()->route('event')->with('success','Event update Successfully');
+      return redirect()->route('event.index')->with('success','Event update Successfully');
     }
 
     /**
@@ -119,7 +118,7 @@ class EventController extends Controller
     public function destroy(string $id)
     {
         $event = DB::table('events')->where('id',$id)->delete();
-        return redirect()->route('event')->with('success','Event delete Successfully');
+        return redirect()->route('event.index')->with('success','Event delete Successfully');
     }
 
 

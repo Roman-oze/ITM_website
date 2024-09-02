@@ -214,6 +214,7 @@
                         <h5 class="heading_30 mb_50 h1 " data-bs-aos="fade-up" data-bs-aos-delay="100">Department of Information Technology &amp; Management</h5>
                     </div>
                 </div>
+
                         {{-- <div class="row mt-2">
                         <div class="col-md-12 col-sm-12 col-sm-12">
                             <h5 class="text_blue text_bold mb_30 h2 text-success" data-bs-aos="fade-up" data-bs-aos-delay="200">Head of the Department</h5>
@@ -263,7 +264,29 @@
   <br>
 <br>
 
+<h2 class="p-2 text-dark text-center">Faculty of Science and Information Technology Staff</h2>
 
+{{-- <div class="container mt-5 ">
+    <div class="row text-left ">
+      <!-- Card 1 -->
+      @foreach ($staffs as $staff)
+      <div class="col-md-4 ">
+        <div class=" text-center  p-2">
+          <div class="mb-4">
+           <img src="{{ asset($staff->image) }}" class="staff-image" alt="Circular Image rounded">
+        </div>
+          <div class=" text-left">
+            <h2 class="staff-name text-dark">{{$staff->name}}</h2>
+            <span class="d-block position mb-4 text-dark-50">{{$staff->position}}</span>
+            <a href="{{$staff->email}}" class="text-dark"><i class="fa-solid fa-envelope text-dark fa-lg p-2"></i></a>
+            <a href="{{$staff->mobile}}" class="text-dark"><i class="fa-solid fa-square-phone text-dark fa-lg p-2"></i></a>
+
+          </div>
+        </div>
+      </div>
+      @endforeach
+    </div>
+</div> --}}
 
 {{-- <div class ="container-fluid">
     <div class="gy-4">

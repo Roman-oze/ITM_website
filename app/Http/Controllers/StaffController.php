@@ -26,7 +26,7 @@ class StaffController extends Controller
         $menus = Menu::all();
         $staffs = DB::table('staffs')->get();
 
-        return view('faculty.faculty',compact('staffs','menus'));
+        return view('frontend.about',compact('staffs','menus'));
     }
 
 
@@ -69,7 +69,7 @@ class StaffController extends Controller
 
 
 
-        DB::table('staffs')->insert($data);
+      Staff::insert($data);
         return redirect('/staff/index');
 
 

@@ -186,7 +186,7 @@
 
 
 
-    <div class="row mt-5 text-center border-1 p-2 text-dark">
+    {{-- <div class="row mt-5 text-center border-1 p-2 text-dark">
         @foreach ($staffs as $staff)
       <div class="col-md-3">
         <div class="card img-fluid-custom">
@@ -207,7 +207,7 @@
       </div>
       @endforeach
     </div>
-  </div>
+  </div> --}}
 
 
 
