@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use Illuminate\Http\Request;
-use App\Models\ContactMessage;
 
+use App\Models\ContactMessage;
 use Illuminate\Support\Facades\DB;
 
 class ContactMessageController extends Controller
@@ -14,8 +15,9 @@ class ContactMessageController extends Controller
      */
     public function index()
     {
+        $menus = Menu::all();
         $contacts = ContactMessage::all();
-       return view('contact.index',compact('contacts'));
+       return view('contact.index',compact('contacts','menus'));
     }
 
     /**

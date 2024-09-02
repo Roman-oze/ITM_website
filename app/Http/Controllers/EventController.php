@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Event;
 
 class EventController extends Controller
 {
@@ -19,6 +20,7 @@ class EventController extends Controller
 //  frontend view file
     public function events(){
 
+
         $upcoming =Event::whereIN('name',['empty'])->get();
         $event = Event::whereNotIn('name',['empty'])->get();;
         return view('event.events',compact('event','upcoming'));
@@ -26,8 +28,9 @@ class EventController extends Controller
 
     // admin dashvboard event file
     public function index(){
+        $menus = Menu::all();
         $events = DB::table('events')->get();
-        return view('event.index',compact('events'));
+        return view('event.index',compact('events','menus'));
     }
 
     public function create()

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Student;
+use App\Models\Menu;
 use Illuminate\Auth\Events\Validated;
 use PhpParser\Node\Stmt\Echo_;
 
@@ -27,10 +28,11 @@ class StudentController extends Controller
 
     public function index(){
 
+        $menus = Menu::all();
       $students = DB::table('students')->paginate(10);
 
 
-    return view('student.index',compact('students'));
+    return view('student.index',compact('students','menus'));
 
     //  $students = Student::paginate(10);
     //  return view('student.index',compact('students'));

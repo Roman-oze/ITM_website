@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Scholarship;
+use App\Models\Menu;
 
+use App\Models\Scholarship;
 use Illuminate\Http\Request;
 
 class ScholarshipController extends Controller
@@ -18,8 +19,9 @@ class ScholarshipController extends Controller
 
     public function index()
     {
+        $menus = Menu::all();
       $scholars = Scholarship::all();
-       return view('scholarship.index',compact('scholars'));
+       return view('scholarship.index',compact('scholars','menus'));
     }
 
     /**

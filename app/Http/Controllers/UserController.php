@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
@@ -13,9 +14,12 @@ class UserController extends Controller
      */
     public function index()
     {
+        $menus = Menu::all();
         $users = User::all();
         return view('role-permission.user.index',[
-            'users' => $users
+            'users' => $users,
+            'menus' => $menus
+
         ]);
     }
 
@@ -111,5 +115,12 @@ class UserController extends Controller
      $users->delete();
      return redirect()->route('users.index')->with('success', 'User deleted successfully');
 
+    }
+
+    public function search(Request $request){
+        $search = $request->input('search');
+        $users = User::where('name', 'LIKE', '%' . $search . '%')->orWhere('email','LIKE','%'.$search.'%')->pagination(10);
+
+        return view('role-permission.user.index', compact('users'));
     }
 }

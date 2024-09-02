@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Teacher;
+use App\Models\Menu;
 use App\Models\Staff;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -36,10 +37,12 @@ class FacultyController extends Controller
 
     public function index()
     {
+        $menus = Menu::all();
+
         $teachers = DB::table('teachers')->paginate(10);
 
 
-        return view('faculty.index',compact('teachers'));
+        return view('faculty.index',compact('teachers','menus'));
     }
 
     /**

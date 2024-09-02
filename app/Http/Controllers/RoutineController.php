@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Menu;
 use App\Models\Routine;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -22,8 +23,9 @@ class RoutineController extends Controller
     }
     public function index()
     {
+        $menus = Menu::all();
        $routines = DB::table('routines')->get();
-       return view('routine.index',compact('routines'));
+       return view('routine.index',compact('routines','menus'));
 
     }
 

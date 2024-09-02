@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -22,9 +23,10 @@ class StaffController extends Controller
 
    public function staff()
     {
+        $menus = Menu::all();
         $staffs = DB::table('staffs')->get();
 
-        return view('faculty.faculty',compact('staffs'));
+        return view('faculty.faculty',compact('staffs','menus'));
     }
 
 

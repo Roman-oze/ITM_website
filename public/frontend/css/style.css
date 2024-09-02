@@ -808,8 +808,8 @@ object-position: center;
     color: rgb(223, 233, 234);
    border-radius: 24px;
    text-align: center;
-   background-color:37517e;
-   border: 1px solid rgb(17, 219, 237);
+   background-color:#088178;
+   /* border: 1px solid rgb(0, 0, 0); */
 
   }
 .item1{
@@ -1699,7 +1699,7 @@ border: none;
         height: 100px;
       }
       .logos{
-        background-color:#e0e4e9;
+        background-color:#ebeff3;
       }
 
       .ftco-heading-2 {

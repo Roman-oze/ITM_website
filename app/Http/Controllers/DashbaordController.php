@@ -8,6 +8,7 @@ use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Scholarship;
 use App\Models\Alumni;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +20,7 @@ class DashbaordController extends Controller
 {
        public function dashboard()
     {
-
+        $menus = Menu::all();
         $messages = Message::all();
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();
@@ -31,6 +32,9 @@ class DashbaordController extends Controller
         'facultyCount' => $facultyCount,
         'alumniCount' => $alumniCount,
         'scholarshipCount' => $scholarshipCount,
+        'menus' => $menus,
     ]);
     }
+
+
 }

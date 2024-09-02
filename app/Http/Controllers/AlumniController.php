@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Alumni;
+use App\Models\Menu;
 
+use App\Models\Alumni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
@@ -18,8 +19,9 @@ class AlumniController extends Controller
         return view('alumni.alumni',compact('alumns'));
     }
     public function index(){
+        $menus = Menu::all();
         $alumns = Alumni::all();
-        return view('alumni.index',compact('alumns'));
+        return view('alumni.index',compact('alumns','menus'));
     }
 
     /**

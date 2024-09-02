@@ -261,6 +261,8 @@
 </div>
 </div>
 
+
+
 <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
     <div class="inner ">
         <div class="col">
@@ -281,7 +283,9 @@
         </div>
         <div class="col">
             <img src="{{asset('frontend/image/clubimage.png')}}" alt="" class="imgslide">
-            <p class="col-btn">Club</p>
+            <p class="col-btn">
+                <a href="{{route('club')}}" class="text-white">Club</a>
+            </p>
         </div>
         <div class="col">
             <img src="{{asset('frontend/image/buss.png')}}" alt="" class="imgslide">
@@ -322,9 +326,9 @@
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                         <h4 class="p-2">web development</h4>
+                         <h5>web development</h5>
                          <hr>
-                         <p>Build beautiful, functional websites that inspire, inform, and connect.
+                         <p style="font-size: small">Build beautiful, functional websites that inspire, inform, and connect.
                             With every line of code, you're shaping the digital world. \
                             Let your creativity and technical skills come together to create something truly remarkable.</p>
 
@@ -346,9 +350,9 @@
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                         <h4>Mobile App Developer</h4>
+                         <h5>Mobile App Developer</h5>
                          <hr>
-                         <p>mobile apps can be incredibly rewarding,
+                         <p style="font-size: small">mobile apps can be incredibly rewarding,
                             offering the opportunity to create innovative solutions and reach a global audience.
                            chance to solve real-world problems, contribute to technological advancements,
                              and achieve professional growth.</p>
@@ -371,20 +375,12 @@
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                         <h4>Entrepreneur</h4>
+                         <h5 >Entrepreneur</h5>
                          <hr>
-                         <p>A person who organizes and operates a business,
+                         <p style="font-size: small">A person who organizes and operates a business,
                             taking on financial risks in hopes of profit.
                             They are often characterized by their innovative ideas,
                             risk-taking spirit, and determination to succeed.
-
-
-
-
-
-
-
-
                          </p>
 
                              <div class="social-links text-center">
@@ -405,9 +401,9 @@
                  </div>
                  </div>
                    <div class="flip-card-back p- text-left " style="line-height:22px;">
-                         <h4>Cyber Security</h4>
+                         <h5>Cyber Security</h5>
                          <hr>
-                         <p>cybersecurity is to protect computer systems, networks, and data from cyberattacks. This involves safeguarding information from unauthorized access, modification, or deletion, and preventing disruptions to services. In essence, cybersecurity aims to ensure the confidentiality, integrity, and availability of digital assets.</p>
+                         <p style="font-size: small">cybersecurity is to protect computer systems, networks, and data from cyberattacks. This involves safeguarding information from unauthorized access, modification, or deletion, and preventing disruptions to services. In essence, cybersecurity aims to ensure the confidentiality, integrity, and availability of digital assets.</p>
 
                              <div class="social-links text-center">
 
@@ -459,9 +455,9 @@
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                    <h4 style="text-white p-2">Human Resource</h4>
+                    <h5 style="text-white p-2">Human Resource</h5>
                     <hr>
-                         <p>Human Resources (HR) manages employees. It covers hiring, training, performance, and employee relations. HR helps organizations succeed by having the right people in the right places.</p>
+                         <p style="font-size: small">Human Resources (HR) manages employees. It covers hiring, training, performance, and employee relations. HR helps organizations succeed by having the right people in the right places.</p>
 
                              <div class="social-links text-center">
 
@@ -481,9 +477,9 @@
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                    <h4 style="text-white p-2">Management Information</h4>
+                    <h5 style="text-white p-2">Management Information</h5>
                     <hr>
-                         <p>(MIS) uses technology to collect, process, and analyze data to help businesses make better decisions. It improves efficiency, communication, and competitiveness. Examples include CRM, ERP, SCM, and BI tools.</p>
+                         <p style="font-size: small">(MIS) uses technology to collect, process, and analyze data to help businesses make better decisions. It improves efficiency, communication, and competitiveness. Examples include CRM, ERP, SCM, and BI tools.</p>
 
                              <div class="social-links text-center">
 
@@ -503,9 +499,9 @@
                  </div>
                  </div>
                    <div class="flip-card-back text-left " style="line-height:22px;">
-                    <h4 style="text-white p-2">Database Management</h4>
+                    <h5 style="text-white p-2">Database Management</h5>
                     <hr>
-                         <p>Organizing data efficiently. Key parts: modeling, storage, retrieval, security. Types: relational, NoSQL, object-oriented. Benefits: accuracy, decisions, efficiency, security, scalability, collaboration, analysis, integration, compliance. Popular DBMS: MySQL, Oracle, SQL Server, MongoDB, </p>
+                         <p style="font-size: small">Organizing data efficiently. Key parts: modeling, storage, retrieval, security. Types: relational, NoSQL, object-oriented. Benefits: accuracy, decisions, efficiency, security, scalability, collaboration, analysis, integration, compliance. Popular DBMS: MySQL, Oracle, SQL Server, MongoDB, </p>
 
                              <div class="social-links text-center">
 
@@ -525,9 +521,9 @@
                  </div>
                  </div>
                    <div class="flip-card-back p- text-left " style="line-height:22px;">
-                    <h4 style="text-white p-3">Software Quality Testing</h4>
+                    <h5 style="text-white p-3">Software Quality Testing</h5>
                     <hr>
-                         <p>Evaluating software to ensure it meets requirements. Includes planning, design, execution, tracking, and reporting. Types: unit, integration, system, acceptance. Benefits: improved quality, reduced costs, customer satisfaction, reliability. SQT is crucial for high-quality software.</p>
+                         <p style="font-size: small">Evaluating software to ensure it meets requirements. Includes planning, design, execution, tracking, and reporting. Types: unit, integration, system, acceptance. Benefits: improved quality, reduced costs, customer satisfaction, reliability. SQT is crucial for high-quality software.</p>
 
                              <div class="social-links text-center">
 
@@ -1135,101 +1131,7 @@
                  </div>
                </div>
                </div> -->
-
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <div class="section-border" data-controller="SectionDivider" style="clip-path: url(#section-divider-64ab4a69a3c6fa011e19653c);" data-controllers-bound="SectionDivider">
-                <div class="section-background">
-
-
-
-                </div>
-              </div>
-               <div class="text-center mt-5">
-                <h2 class="text-center text-muted">Specialist</h2>
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
-                  <div class="divider-custom-line"></div>
-              </div>
-              </div>
-                <div class="container-fluid mt-3">
-                  <div class="row text-center">
-                  <div class="col-md-12 col-sm-12 text-center rounded">
-                        <div class=" rounded-3  manual-shadow2  box">
-                          <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Web Aplication</p><br>
-                          <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Mobile Application</p><br>
-                          <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-success"></i> Business & Management</p><br>
-
-                        </div>
-                      </div>
-                      </div>
-                      <div class="row p-2">
-                      <div class="col-md-12 col-sm-12 text-center rounded text-box mt-5">
-                        <p class="smooth-text text-dark text-200">
-                          As a web developer, I excel in creating user-friendly interfaces and efficient code. I specialize in crafting responsive designs, optimizing performance, and leveraging emerging technologies. With a dedication to innovation and ongoing learning, I deliver impactful solutions that enhance online experiences and propel business growth.
-                        </p>
-                      </div>
-
-              </div>
-              </div>
-
-              <div class="container-fluid mt-5">
-                <div class="row mt-5 d-flex justify-content-center p-3 ">
-
-               <div class="col-md-3 text-center  p-2">
-                <div class="card p-2 bg-blue custom-box img-fluid-custom">
-                    <i class="fa-solid fa-laptop-code iconic fa-3x"></i>
-                  <div class="card-content">
-                    <h4 class="p-2 text-white"><strong>Web application</strong></h4>
-                    <p class="text-white-50 p-2">I know how lead in the  organizational</p>
-                  </div>
-                </div>
-               </div>
-               <div class="col-md-3 text-center p-2">
-                <div class="card p-2 bg-blue custom-box img-fluid-custom">
-                  <i class="fa-solid fa-mobile-screen-button iconic fa-3x"></i>
-                  <div class="card-content">
-
-                    <h4 class="p-2 text-white"><strong>Mobile application</strong></h4>
-
-                    <p class="text-white-50 p-2">When Suddenly need to innovation something </p>
-                  </div>
-                </div>
-               </div>
-               <div class="col-md-3 text-center p-2">
-                <div class="card p-2 bg-blue custom-box img-fluid-custom">
-                  <i class="fa-solid fa-circle-info iconic fa-3x"></i>
-                  <div class="card-content">
-
-                    <h4 class="p-2 text-white"><strong>Management</strong></h4>
-
-                    <p class="text-white-50 p-2">Technical tool and technique thats i do daily basis</p>
-                  </div>
-                </div>
-               </div>
-               <div class="col-md-3 text-center p-2">
-                <div class="card p-2 bg-blue custom-box img-fluid-custom ">
-
-                  <i class="fa-solid fa-business-time iconic fa-3x"></i>
-                  <div class="card-content">
-
-                    <h4 class="p-2 text-white"><strong>Business</strong></h4>
-
-                    <p class="text-white-50 p-2 ">Talent,performance.innovation for each organizational</p>
-                  </div>
-                </div>
-               </div>
-
-              </div>
-              </div>
-
-
-
-              <div class="container-fluid mt-5">
+               <div class="container-fluid mt-5">
                 <div class="row  ">
                    <marquee class=" logos text-center mt-5 ">
                     <img src="{{asset('frontend/image/Flutter-App.png')}}" alt="">
@@ -1250,6 +1152,104 @@
                   </marquee>
                   </div>
                </div>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <div class="section-border" data-controller="SectionDivider" style="clip-path: url(#section-divider-64ab4a69a3c6fa011e19653c);" data-controllers-bound="SectionDivider">
+                <div class="section-background">
+
+
+
+                </div>
+              </div>
+               {{-- <div class="text-center mt-5">
+                <h2 class="text-center text-muted">Specialist</h2>
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
+                  <div class="divider-custom-line"></div>
+              </div>
+              </div> --}}
+
+              <div class="section-title">
+                <h2>Specialist</h2>
+                <p>
+                    Nowaday make your bright future with technology
+                </p>
+              </div>
+
+
+                <div class="container-fluid mt-3">
+                  <div class="row text-center">
+                  <div class="col-md-12 col-sm-12 text-center rounded">
+                        <div class=" rounded-3  ">
+                          <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-white"></i> Web Aplication</p><br>
+                          <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-white"></i> Mobile Application</p><br>
+                          <p class="listitem1  p-2 text-transition"><i class="fa-regular fa-circle-check text-white"></i> Business & Management</p><br>
+
+                        </div>
+                      </div>
+                      </div>
+                      <div class="row p-2">
+                      <div class="col-md-12 col-sm-12 text-center rounded text-box mt-5">
+                        <p class="smooth-text text-dark text-200">
+                          As a web developer, I excel in creating user-friendly interfaces and efficient code. I specialize in crafting responsive designs, optimizing performance, and leveraging emerging technologies. With a dedication to innovation and ongoing learning, I deliver impactful solutions that enhance online experiences and propel business growth.
+                        </p>
+                      </div>
+
+              </div>
+              </div>
+
+
+
+              <section id="services" class="services section-bg">
+                <div class="container aos-init aos-animate" data-aos="fade-up">
+                  <div class="row">
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+                      <div class="icon-box">
+                        <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h4><a href="">Web application</a></h4>
+                        <p>
+                            I know how lead in the  organizational
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+                      <div class="icon-box">
+                        <div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h4><a href="">Mobile application</a></h4>
+                        <p>
+                            When Suddenly need to innovation something
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+                      <div class="icon-box">
+                        <div class="icon"><i class="fa-solid fa-circle-info"></i></div>
+                        <h4><a href="">Management</a></h4>
+                        <p>
+                            Technical tool and technique thats i do daily basis
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+                      <div class="icon-box">
+                        <div class="icon"><i class="fa-solid fa-business-time"></i></div>
+                        <h4><a href="">Business</a></h4>
+                        <p>
+                            Talent,performance.
+                            innovation for each organizational
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
                {{-- <section id="skill" class="section-p2 ">
                   <div class="container-fluid mt-5 justify-content-evenly">
@@ -1294,14 +1294,7 @@
 
                </section> --}}
 
-
-
-
-               <br>
-               <br>
-               <br>
-
-               <div class="highlight mt-5">
+               {{-- <div class="highlight mt-5">
                 <h2 class="text-blue highlight">Hightlights</h2>
                 <div class=" ">
                     <span class="elementor-divider-separator"></span>
@@ -1367,10 +1360,10 @@
 
             </div>
         </div>
-        </div>
+        </div> --}}
 
 
-        <div class="container-fluid  mt-5">
+        {{-- <div class="container-fluid  mt-5">
 
             <!-- Dropdown Button -->
             <div class="dropdown h-70">
@@ -1404,7 +1397,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
 
 <br>
 <br>

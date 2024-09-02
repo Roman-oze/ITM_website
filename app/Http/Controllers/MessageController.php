@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -22,8 +23,9 @@ class MessageController extends Controller
      */
     public function index()
     {
+        $menus = Menu::all();
        $messages = Message::all();
-       return view('message.index',compact('messages'));
+       return view('message.index',compact('messages','menus'));
     }
 
     /**

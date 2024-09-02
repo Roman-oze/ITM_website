@@ -30,6 +30,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\DashbaordController;
+// use App\Http\Controllers\MenuController;
 
 use App\Http\Middleware\Itm;
 
@@ -56,10 +57,16 @@ route::put('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController
 
 route::resource('users',App\Http\Controllers\UserController::class);
 route::get('users/{userId}/delete',[App\Http\Controllers\UserController::class,'destroy']);
+route::get('/users/search',[App\Http\Controllers\UserController::class,'search'])->name('search.user');
+
 });
 
 
 route::get('/dashboard',[DashbaordController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::resource('menus',App\Http\Controllers\MenuController::class);
+// Route::resource('menu/index',[App\Http\Controllers\MenuController::class,'index']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -67,34 +74,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// route::controller(UserController::class)->group(function(){
-
-//     Route::get('/users', 'index')->name('users');
-//     Route::post('/users', 'store')->name('store.user');
-//     Route::get('/users/create', 'create')->name('create.user');
-//     Route::get('/users/show/{id}', 'show')->name('show.user');
-//     Route::get('/users/edit/{id}', 'edit')->name('edit.user');
-//     Route::put('/users/update/{id}', 'update')->name('update.user');
-//     Route::delete('users/delete/{id}', 'destroy')->name('user.delete');
-//     Route::get('/users/search','search')->name('search.user');
-
-// });
-
-
-
-
-
-
-// route::controller(AuthController::class)->group(function(){
-//     Route::get('user/login', 'login')->name('login');
-//     Route::post('loginUser', 'loginUser')->name('loginUser');
-//     Route::get('user/register', 'register')->name('register');
-
-// });
-
-// route::controller(RegisterController::class)->group(function(){
-//     Route::get('user/register', 'register')->name('register');
-// });
 
 
 route::controller(ContactMessageController::class)->group(function(){
@@ -111,17 +90,10 @@ route::controller(MessageController::class)->group(function(){
 
 });
 
-route::controller(RelationalController::class)->group(function(){
-    route::get('/relation', 'index')->name('index');
-    route::get('/member', 'member')->name('member');
-    route::get('/group', 'group')->name('group');
-
-});
-
  Route::controller(FacultyController::class)->group(function(){
 
     Route::get('/faculty/create','create')->name('create.faculty');
-    Route::get('/dashboard/faculty','index')->name('dashboard.faculty');
+    Route::get('/dashboard/faculty','index')->name('faculty.index');
     Route::post('/faculty/store', 'store')->name('faculty.store');
     Route::get('/faculty/edit/{id}', 'edit')->name('edit.faculty');
     Route::put('/faculty/update/{id}', 'update')->name('update.faculty');
@@ -130,15 +102,12 @@ route::controller(RelationalController::class)->group(function(){
     Route::get('/teacher','faculty')->name('faculty.member');
 
 
-
-  //   Route::get('teachers','teachers')->name('teachers');
-
    });
 
 Route::controller(EventController::class)->group(function(){
 
     Route::get('/events','events')->name('events');
-    Route::get('dashboard/event', 'index')->name('dashboard.event');
+    Route::get('/dashboard/event', 'index')->name('event.index');
     Route::get('event/create', 'create')->name('event/create');
     route::post('event_store','event_store')->name('event_store');
     route::get('event_show/{id}','show')->name('event_show');
@@ -153,7 +122,7 @@ Route::controller(EventController::class)->group(function(){
 Route::controller(RoutineController::class)->group(function(){
 
     route::get('/semester/routine','routine')->name('semester.routines');
-    route::get('dashboard/routine','index')->name('dashboard.routines');
+    route::get('/dashboard/routine','index')->name('routine.index');
     route::get('/routine/create','create')->name('routine.create');
     route::post('/routine/store','store')->name('routine.store');
     route::get('/routine/edit/{id}','edit')->name('routine.edit');
@@ -165,22 +134,6 @@ Route::controller(RoutineController::class)->group(function(){
 
 
 
-
-// Route::controller(AuthController::class)->group(function(){
-
-//     Route::get('dashboard', 'dashboard')->name('dashboard');
-//     Route::get('user/login', 'login')->name('login');
-//     Route::post('loginUser', 'loginUser')->name('loginUser');
-
-//     Route::get('logout', 'logout')->name('logout');
-//     Route::get('user/reset_password', 'password')->name('reset_password');
-
-// })->middleware('guard');
-
-
-
-
-
 // Route::controller(AdminController::class)->group(function(){
 
 //     Route::get('user', 'user')->name('admin.user');
@@ -189,18 +142,13 @@ Route::controller(RoutineController::class)->group(function(){
 //     Route::put('admin/update/{id}','update')->name('admin.update');
 //     Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');
 
-
-
-
 // });
-
-
 
 
 
  Route::controller(AlumniController::class)->group(function(){
     Route::get('Admission/alumni', 'alumni')->name('alumni');
-    Route::get('/dashboard/alumni', 'index')->name('dashboard.alumni');
+    Route::get('/dashboard/alumni', 'index')->name('alumni.index');
     Route::get('/alumni/create', 'create')->name('create.alumni');
     Route::post('/alumni/store', 'store')->name('alumni.store');
     Route::get('/alumni/edit/{id}', 'edit')->name('edit.alumni');
@@ -213,8 +161,8 @@ Route::controller(RoutineController::class)->group(function(){
  Route::controller(ScholarshipController::class)->group(function(){
 
 
-    Route::get('/scholarship', 'scholar')->name('scholarship.index');
-    Route::get('/dashboard/scholarship', 'index')->name('dashboard.scholarship');
+    Route::get('/scholarship', 'scholar')->name('scholarship');
+    Route::get('/dashboard/scholarship', 'index')->name('scholarship.index');
     Route::get('/scholarship/create', 'create')->name('create.scholarship');
     Route::post('/scholarship/store', 'store')->name('store.scholarship');
     Route::get('/scholarship/edit/{id}', 'edit')->name('edit.scholarship');
@@ -225,7 +173,7 @@ Route::controller(RoutineController::class)->group(function(){
 
  Route::controller(StudentController::class)->group(function(){
 
-Route::get('/dashboard/students', 'index')->name('dashboard.index');
+Route::get('/students', 'index')->name('student.index');
 Route::get('/student/create', 'create')->name('create');
 Route::post('/student', 'store')->name('student.store');
 Route::get('/student/show/{id}', 'show')->name('student.show');

@@ -15,7 +15,7 @@
                     </a>
                     <div class="collapse p-1 " id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav drop-link " id="sidenavAccordionPages">
-                            <a  href="{{route('users')}}" class="linked "> Admins</a>
+                            <a  href="{{route('users.index')}}" class="linked "> Admins</a>
                         </nav>
                     </div>
                     <div class="collapse p-1 " id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -33,60 +33,66 @@
                     </a>
                     <div class="collapse p-1" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav drop-link">
-                            <a  href="{{route('dashboard.index')}}" class="linked ">Students</a>
+                            <a  href="{{route('student.index')}}" class="linked ">Students</a>
                         </nav>
                     </div>
                     <div class="collapse p-1" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav drop-link">
-                            <a  href="{{route('dashboard.alumni')}}" class="linked">Alumni</a>
+                            <a  href="{{route('alumni.index')}}" class="linked">Alumni</a>
                         </nav>
                     </div>
                     <div class="collapse p-1" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav drop-link">
-                            <a  href="{{route('dashboard.scholarship')}}" class="linked">Scholarship</a>
+                            <a  href="{{route('scholarship.index')}}" class="linked">Scholarship</a>
                         </nav>
                     </div>
 
-                    <a class="nav-link" href="{{route('contactForm')}}">
-                        <div class="sb-nav-link-icon"><i class="fa-regular fa-envelope text-white fa-lg"></i></div>
-                        Send Mail
+    @foreach ($menus as $menu)
+
+
+
+
+                    <a class="nav-link" href="{{$menu->nav_link}}">
+                        <div class="sb-nav-link-icon"><i class="{{$menu->icon}} text-white fa-lg"></i></div>
+                        {{$menu->nav_name}}
                     </a>
-                    <a class="nav-link" href="{{route('contact.index')}}">
+                    {{-- <a class="nav-link" href="{{route('contact.index')}}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-message fa-fw text-white fa-lg"></i></div>
                         Messages
                     </a>
 
-                    <a class="nav-link" href="{{route('dashboard.faculty')}}">
+                    <a class="nav-link" href="{{route('faculty.index')}}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate text-white fa-lg"></i></div>
                         Faculty
                     </a>
 
-                    <a class="nav-link" href="{{route('dashboard.routines')}}">
+                    <a class="nav-link" href="{{route('routine.index')}}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-calendar-check text-white fa-lg" ></i></div>
                         Routine
                     </a>
-                    <a class="nav-link" href="{{route('dashboard.event')}}">
+                    <a class="nav-link" href="">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-clipboard-list text-white fa-lg"></i></div>
                         Schedule
                     </a>
-                    <a class="nav-link" href="{{route('dashboard.event')}}">
+                    <a class="nav-link" href="{{route('event.index')}}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days text-white fa-lg"></i></div>
                         Events
                     </a>
-                    <a class="nav-link" href="{{route('dashboard.scholarship')}}">                        <div class="sb-nav-link-icon"><i class="fa-solid fa-file-word text-white fa-lg"></i></div>
+                    <a class="nav-link" href="{{route('menus.create')}}">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-file-word text-white fa-lg"></i></div>
                         Application Form
                     </a>
 
-                    <a class="nav-link" href="{{route('dashboard.scholarship')}}">
+                    <a class="nav-link" href="">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-award  text-white fa-lg"></i></div>
-                        Communicationn
+                        Communication
                     </a>
 
                     <a class="nav-link" href="{{route('staff.index')}}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-address-book text-white fa-lg"></i></div>
                         Staff
-                    </a>
-
+                    </a> --}}
+                    @endforeach
                     {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-gear text-white fa-lg"></i></div>
                         Setting
