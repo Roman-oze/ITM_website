@@ -30,7 +30,8 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\DashbaordController;
-// use App\Http\Controllers\MenuController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\MenuPermissionController;
 
 use App\Http\Middleware\Itm;
 
@@ -55,7 +56,7 @@ route::get('roles/{roleId}/delete',[App\Http\Controllers\RoleController::class,'
 route::get('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'addPermissionToRole']);
 route::put('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'updatePermissionToRole']);
 
-route::resource('users',App\Http\Controllers\UserController::class);
+route::resource('/users',App\Http\Controllers\UserController::class);
 route::get('users/{userId}/delete',[App\Http\Controllers\UserController::class,'destroy']);
 route::get('/users/search',[App\Http\Controllers\UserController::class,'search'])->name('search.user');
 
@@ -64,8 +65,12 @@ route::get('/users/search',[App\Http\Controllers\UserController::class,'search']
 
 route::get('/dashboard',[DashbaordController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('menus',App\Http\Controllers\MenuController::class);
-// Route::resource('menu/index',[App\Http\Controllers\MenuController::class,'index']);
+
+Route::resource('menus',MenuController::class);
+Route::resource('menu-permission',MenuPermissionController::class);
+Route::get('menu-permission/create',[MenuPermissionController::class,'create_permission']);
+// Route::resource('menu-permission',[MenuController::class]);
+// Route::post('/assign-permission', [MenuPermissionController::class, 'assignPermission'])->name('menupermissions.assign');
 
 
 Route::middleware('auth')->group(function () {

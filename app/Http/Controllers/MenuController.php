@@ -8,7 +8,7 @@ use App\Models\Menu;
 
 class MenuController extends Controller
 {
-  
+
     /**
      * Show the form for creating a new resource.
      *
@@ -18,7 +18,7 @@ class MenuController extends Controller
     {
         $menus = Menu::all();
         return view('menu.create',
-    compact('menus'));
+        compact('menus'));
     }
 
     /**

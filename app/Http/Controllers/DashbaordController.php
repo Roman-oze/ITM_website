@@ -21,6 +21,7 @@ class DashbaordController extends Controller
        public function dashboard()
     {
         $menus = Menu::all();
+
         $messages = Message::all();
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();

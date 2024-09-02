@@ -114,7 +114,10 @@
 
                         </nav>
                     </div> --}}
-
+                    <a class="nav-link" href="{{route('menu-permission.index')}}">
+                        <div class="sb-nav-link-icon"><i class=" text-white fa-lg"></i></div>
+                        Menu Permission
+                    </a>
                     <div class="sb-sidenav-menu-heading">Additional</div>
 
                     <a class="nav-link" href="{{route('chart')}}">
