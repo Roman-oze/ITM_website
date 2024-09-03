@@ -2,16 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NoticeBoard;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use PHPUnit\Framework\TestStatus\Notice;
 
 class PdfController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function pdf_generate()
     {
-        //
+
+        $notices = NoticeBoard::get();
+        $data = [
+
+            'university' => 'Daffodil International University (DIU)',
+            'address' => 'Daffodil Smart City, Birulia, Savar, Dhaka-1216, Bangladesh',
+            'department' => 'Information Technology & Management',
+            'name' => '(Ms. Nusrat Jahan)',
+            'position' => 'Head of ITM Department',
+            'date' => date('m/d/y'),
+            'notices' => $notice,
+
+
+
+        ];
+        $pdf = Pdf::loadView('pdf.invoice', $data);
+        return $pdf->download('itm.pdf');
     }
 
     /**

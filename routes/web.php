@@ -20,6 +20,7 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\DashbaordController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuPermissionController;
+use App\Http\Controllers\NoticeBoardController;
 use App\Http\Middleware\Itm;
 use Faker\Guesser\Name;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -191,6 +192,20 @@ Route::controller(ClubController::class)->group(function(){
     Route::view('/upcoming','club/upcoming')->name('upcoming');
     Route::get('/membership','membership')->name('membership');
 });
+
+Route::controller(NoticeBoardController::class)->group(function(){
+    Route::get('/notices','index')->name('notice.index');
+    Route::get('/notice/create','create')->name('notice.create');
+    Route::post('/store','store')->name('notice.store');
+    Route::get('/notice/edit/{id}','edit')->name('notice.edit');
+    Route::put('/notice/update/{id}','update')->name('notice.update');
+    Route::delete('/notice/delete/{id}','destroy')->name('notice.delete');
+
+});
+
+Route::get('/pdf_generate', [App\Http\Controllers\PdfController::class,'pdf_generate']);
+
+
 
 
 Route::get('send-mail',[MailController::class,'SendWelcomeEmail']);
