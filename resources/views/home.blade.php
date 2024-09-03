@@ -246,7 +246,7 @@
                             <div class="dash-count bg-color  text-center p-1">
                                 <span data-purecounter-start="0" data-purecounter-end="{{$scholarshipCount}}" data-purecounter-duration="0" class="purecounter">{{$scholarshipCount}}</span>
                                 <p class="pure-text">
-                                    <a href="" class="text-white-50">Scholars</a>
+                                    <a href="{{route('scholarship')}}" class="text-white-50">Scholars</a>
                                 </p>
 
                             </div>
@@ -450,14 +450,16 @@
                     <div class="flip-card-front flip-custom-2 " style="background: #37517e;">
                         <div class="child-div-2 " style="background: rgb(237, 240, 240)";>
                 <img src="{{asset('frontend/image/HR.png')}}" alt="" class="img-fluid-custom"><br>
-                <h4 style="text-white p-2">Human Resource</h4>
+                <h4 style="text-white p-2">Project Management</h4>
 
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                    <h5 style="text-white">Human Resource</h5>
+                    <h5 style="text-white">Project Management</h5>
                     <hr>
-                         <p style="font-size: small">Human Resources (HR) manages employees. It covers hiring, training, performance, and employee relations. HR helps organizations succeed by having the right people in the right places.</p>
+                         <p style="font-size: small">What is project management?
+                            Definition
+                            Project management is the application of processes, methods, skills, knowledge and experience to achieve specific project objectives according to the project acceptance criteria within agreed parameters.</p>
 
                              <div class="social-links text-center">
 
@@ -688,7 +690,7 @@
 <br>
 
 <div class="highlight mt-5">
- <h2 class="text-blue highlight">Scholarship</h2>
+ <h2 class="text-blue highlight">Recent Scholarship</h2>
  <div class=" ">
      <span class="elementor-divider-separator"></span>
  </div>
@@ -1065,7 +1067,7 @@
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
                       <div class="icon-box">
                         <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
-                        <h4><a href="">Creativity</a></h4>
+                        <h4><a href="">FinTech</a></h4>
                         <p>
                             When Suddenly need to innovation something
                         </p>

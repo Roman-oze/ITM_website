@@ -13,6 +13,7 @@ class AboutController extends Controller
     public function about()
     {
          $staffs = DB::table('staffs')->get();
+         $staffs = Staff::whereIn('position'['cordinate']);
 
         return view('frontend.about',compact('staffs'));
     }
