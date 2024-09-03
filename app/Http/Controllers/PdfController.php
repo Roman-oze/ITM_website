@@ -4,26 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdmissionController extends Controller
+class PdfController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function Local_tuition()
+    public function index()
     {
-       return view('admission.tuition');
+        //
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function international_tuition()
+    public function create()
     {
-       return view('admission.international_tuiton');
-    }
-    public function admission_eligibility()
-    {
-       return view('admission.admission_eligibility');
+        //
     }
 
     /**

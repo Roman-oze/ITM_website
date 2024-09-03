@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Staff;
+use App\Models\Alumni;
+use App\Models\Message;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Scholarship;
-use App\Models\Alumni;
-use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -34,51 +35,37 @@ class HomeController extends Controller
 
     }
 
+
+    public function Local_tuition()
+    {
+       return view('admission.tuition');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function international_tuition()
     {
-        //
+       return view('admission.international_tuiton');
+    }
+    public function admission_eligibility()
+    {
+       return view('admission.admission_eligibility');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function about()
     {
-        //
+         $staffs = Staff::get();
+        //  $staffs = Staff::whereIn('position'['cordinate']);
+
+        return view('frontend.about',compact('staffs'));
+    }
+    public function chart(){
+        return view('statistic.chart');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    public function static(){
+        return view('statistic.static');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
