@@ -455,7 +455,7 @@
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                    <h5 style="text-white p-2">Human Resource</h5>
+                    <h5 style="text-white">Human Resource</h5>
                     <hr>
                          <p style="font-size: small">Human Resources (HR) manages employees. It covers hiring, training, performance, and employee relations. HR helps organizations succeed by having the right people in the right places.</p>
 
@@ -477,7 +477,7 @@
                  </div>
                  </div>
                    <div class="flip-card-back p-3 text-left " style="line-height:22px;">
-                    <h5 style="text-white p-2">Management Information</h5>
+                    <h5 style="text-white">Management Information</h5>
                     <hr>
                          <p style="font-size: small">(MIS) uses technology to collect, process, and analyze data to help businesses make better decisions. It improves efficiency, communication, and competitiveness. Examples include CRM, ERP, SCM, and BI tools.</p>
 
@@ -499,7 +499,7 @@
                  </div>
                  </div>
                    <div class="flip-card-back text-left " style="line-height:22px;">
-                    <h5 style="text-white p-2">Database Management</h5>
+                    <h5 style="text-white">Database Management</h5>
                     <hr>
                          <p style="font-size: small">Organizing data efficiently. Key parts: modeling, storage, retrieval, security. Types: relational, NoSQL, object-oriented. Benefits: accuracy, decisions, efficiency, security, scalability, collaboration, analysis, integration, compliance. Popular DBMS: MySQL, Oracle, SQL Server, MongoDB, </p>
 
@@ -521,7 +521,7 @@
                  </div>
                  </div>
                    <div class="flip-card-back p- text-left " style="line-height:22px;">
-                    <h5 style="text-white p-3">Software Quality Testing</h5>
+                    <h5 style="text-white ">Software Quality Testing</h5>
                     <hr>
                          <p style="font-size: small">Evaluating software to ensure it meets requirements. Includes planning, design, execution, tracking, and reporting. Types: unit, integration, system, acceptance. Benefits: improved quality, reduced costs, customer satisfaction, reliability. SQT is crucial for high-quality software.</p>
 

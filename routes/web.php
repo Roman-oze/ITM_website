@@ -166,7 +166,7 @@ Route::controller(RoutineController::class)->group(function(){
  Route::controller(ScholarshipController::class)->group(function(){
 
 
-    Route::get('/scholarship', 'scholar')->name('scholarship');
+    Route::get('/admission/scholarship', 'scholar')->name('scholarship');
     Route::get('/dashboard/scholarship', 'index')->name('scholarship.index');
     Route::get('/scholarship/create', 'create')->name('create.scholarship');
     Route::post('/scholarship/store', 'store')->name('store.scholarship');
