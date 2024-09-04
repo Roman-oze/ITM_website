@@ -8,11 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Routine extends Model
 {
     use HasFactory;
-    protected $table='routines';
-    protected $primaryKey='id';
-
-    protected $fillable = ['file','type'];
-
-
+    protected $fillable = ['name', 'file_path', 'type', 'uploaded_at'];
 
 }

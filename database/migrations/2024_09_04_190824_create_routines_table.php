@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('routines', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->string('file');
-            $table->string('type')->default('student');
+            $table->string('name');
+            $table->string('file_path');
+            $table->string('type');
+            $table->timestamp('uploaded_at')->useCurrent();
             $table->timestamps();
         });
     }

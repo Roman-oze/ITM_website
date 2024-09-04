@@ -18,13 +18,16 @@ class RoutineController extends Controller
     public function spring()
     {
        $routines = DB::table('routines')->get();
-       return view('routine.routine',compact('routines'));
+       return view('routine.spring',compact('routines'));
 
     }
     public function fall()
     {
-       $routines = DB::table('routines')->get();
-       return view('routine.routine',compact('routines'));
+        $file = Routine::get();
+    //    $routines = DB::table('routines')->get();
+       return view('routine.fall',[
+        'file' => $file
+       ]);
 
     }
 
@@ -33,8 +36,8 @@ class RoutineController extends Controller
     public function index()
     {
         $menus = Menu::all();
-       $routines = DB::table('routines')->get();
-       return view('routine.index',compact('routines','menus'));
+       $files = DB::table('routines')->get();
+       return view('routine.index',compact('files','menus'));
 
     }
 
@@ -50,32 +53,62 @@ class RoutineController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(Request $request)
+    // {
+    //     // Validate the file input
+    //     $request->validate([
+    //         'file' => 'required|max:2048',
+    //         'type' => 'required|string',
+    //         'date' => 'required|date',
+    //     ]);
+
+    //     // Generate a new file name
+    //     $fileName = time() . '.' . $request->file('file')->getClientOriginalExtension();
+
+    //     // Move the file to the 'routine' directory
+    //     $request->file('file')->move(('routine'), $fileName);
+
+    //     // Prepare data for insertion
+    //     $data['file'] = 'routine/' . $fileName;
+    //     $data['type'] = $request->type;
+    //     $data['date'] = $request->date;
+
+    //     // Insert data into the database
+    //     DB::table('routines')->insert($data);
+
+    //     // Redirect to the create routine route
+    //     return redirect()->route('routine.index');
+    // }
+
     public function store(Request $request)
     {
-        // Validate the file input
         $request->validate([
-            'file' => 'required|max:2048',
-            'type' => 'required|string',
-            'date' => 'required|date',
+            'file' => 'required|file',
+            'type' => 'required|string|max:255',
         ]);
 
-        // Generate a new file name
-        $fileName = time() . '.' . $request->file('file')->getClientOriginalExtension();
+        $file = $request->file('file');
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $filePath = $file->storeAs('uploads', $fileName, 'public');
 
-        // Move the file to the 'routine' directory
-        $request->file('file')->move(('routine'), $fileName);
+        Routine::create([
+            'name' => $fileName,
+            'file_path' => '/storage/' . $filePath,
+            'type' => $request->type,
+            'uploaded_at' => now(),
+        ]);
 
-        // Prepare data for insertion
-        $data['file'] = 'routine/' . $fileName;
-        $data['type'] = $request->type;
-        $data['date'] = $request->date;
-
-        // Insert data into the database
-        DB::table('routines')->insert($data);
-
-        // Redirect to the create routine route
-        return redirect()->route('dashboard.routines');
+        return redirect()->back()->with('success', 'File uploaded successfully.');
     }
+
+    // Handle file download
+    public function download($id)
+    {
+        $file = Routine::findOrFail($id);
+        return Storage::download('public/' . basename($file->file_path));
+    }
+
+
 
     /**
      * Display the specified resource.
@@ -111,7 +144,7 @@ class RoutineController extends Controller
 
         DB::table('events')->where('id',$id)->update($data);
 
-        return redirect()->route('dashboard.routines')->with('success','routine update Successfully');
+        return redirect()->route('routine.index')->with('success','routine update Successfully');
     }
 
     /**
@@ -120,7 +153,7 @@ class RoutineController extends Controller
     public function destroy(string $id)
     {
        DB::table('routines')->where('id',$id)->delete();
-       return redirect()->route('dashboard.routines')->with('success','routine delete Successfully');
+       return redirect()->route('routine.index')->with('success','routine delete Successfully');
 
 
     }
@@ -132,12 +165,6 @@ class RoutineController extends Controller
     //     $message->to('rumuislam202@gmail.com','routine')->subject('New Routine Created');
     // });
 
-
-    public function download(Request $request, $file)
-    {
-        $path = storage_path('routine/'.$file);
-        return response()->download($path);
-    }
 
 
 

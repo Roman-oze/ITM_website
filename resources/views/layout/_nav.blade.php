@@ -223,10 +223,10 @@
                <li>
                 <div class="dropdown rounded">
                 <a class="nav-link scrollto" href="#">Routine</a>
-                <div class="dropdown-content rounded">
+                <div class="dropdown-content rounded ">
                   {{-- <a class=" h5" target="_blank" href="{{asset('frontend/image/ITM-Spring-2024-Routine.pdf')}}" class="nav-link text-info">Spring-2024</a> --}}
-                  <a class=" h5" target="_blank" href="" class="nav-link text-info">Spring-2024</a>
-                  <a class=" h5" target="_blank" href="" class="nav-link  text-info">Fall-2024</a>
+                  <a class=" h5" target="_blank" href="{{route('spring.routines')}}" class="nav-link text-info">Spring-2024</a>
+                  <a class=" h5" target="_blank" href="{{route('fall.routines')}}" class="nav-link  text-info">Fall-2024</a>
                 </div>
               </div>
             </li>

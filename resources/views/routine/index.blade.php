@@ -4,15 +4,17 @@
 
 @section('main')
 
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Routine</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">routine List </li>
+        </ol>
+        <br>
 
-<div class="container mt-5">
-    <h1 class="mt-4">Routine</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">create routine </li>
-    </ol>
-    <br>
-    <div class="card shadow p-4">
+    <div class="row d-flex justify-content-evenly">
+    <div class=" col-md-6 card shadow p-3">
         <div class="card-body">
             <h3 class="card-title text-center p-2">Upload Files</h3>
             <div id="drop-area" class="border p-5 text-center shadow bg-light">
@@ -27,7 +29,11 @@
                         </div>
                         <p class="mt-2 btn btn-outline-info ">Drag and Drop files here</p>
                     </div>
-                    <br>
+
+                    <div class="mb-3 btn btn-outline-info text-white">
+                    <label for="">Name :</label>
+                    <input type="text" name="name" placeholder=" Name" class="form-control">
+                    </div>
 
                     <div class="mb-3 btn btn-outline-info text-white">
                     <input type="radio" id="" name="type"  value="spring">
@@ -40,8 +46,8 @@
                       <label for="" class="text-dark"><strong>Fall</strong></label>
                     </div>
 
-
-                    {{-- <div class="mb-3">
+{{--
+                    <div class="mb-3">
                         <label class="" for="date">
                             <input type="date" id="fileElem" name="date" class="form-control">
                         </label>
@@ -56,14 +62,11 @@
             </div>
 
         </div>
-    </div>
-
-    <div class="container mt-5">
-        <div class="card shadow p-4">
-            <div class="card-body">
+<div class=" col-md-6 p-3">
 
 
-    <table class="table table-striped bg-light rounded">
+
+    {{-- <table class="table table-striped bg-light rounded shadow">
         <tbody class="text-center">
             <thead class="text-center">
             <tr >
@@ -77,7 +80,6 @@
 
             @foreach($routines as $routine)
 
-        {{-- <td class="text-dark">{{($routine->file) }}</td> --}}
         <td class="text-dark">{{$routine->type}}</td>
         <td class="text-dark">{{$routine->date}}</td>
         <td class="d-flex justify-content-evenly">
@@ -88,12 +90,7 @@
             <form action="{{route('routine.delete',$routine->id)}}" method="POST" style="display:inline;">
                 @csrf
                 @method('DELETE')
-                <button type="submit" onclick="return confirm('Are you sure?')" class="p-2"><i class="fa-solid fa-trash"></i>
-                    @if (session('message'))
-                    <div class="alert alert-success">
-                        {{ session('message') }}
-                    </div>
-                @endif
+                <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
             </form>
 
 
@@ -101,18 +98,45 @@
 
       @endforeach
         </tbody>
-    </table>
+    </table> --}}
 
-
-    <div class="row">
-        {{-- {{ $record->links('pagination::bootstrap-5') }} --}}
+    <div class="container">
+        <h2>Uploaded Files</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                     <th>Name</th>
+                <th>Type</th>
+                <th>Date Uploaded</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($files as $file)
+                <tr>
+                    <td>{{ $file->name }}</td>
+                    <td>{{ $file->type }}</td>
+                    <td>{{ $file->uploaded_at }}</td>
+                    <td>
+                        <a href="{{ route('files.download', $file->id) }}" class="btn btn-sm btn-success">Download</a>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     </div>
 
 </div>
 </div>
 </div>
+</div>
+</div>
 
 
+
+
+
+</main>
 
 @endsection
 

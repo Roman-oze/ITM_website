@@ -123,7 +123,7 @@ Route::controller(RoutineController::class)->group(function(){
     route::get('/routine/edit/{id}','edit')->name('routine.edit');
     route::put('/routine/update/{id}','update')->name('routine.update');
     route::delete('/routine/delete/{id}','destroy')->name('routine.delete');
-    route::get('routine/download/{id}','download')->name('download');
+    Route::get('/files/download/{id}',  'download')->name('files.download');
 });
 // Route::controller(AdminController::class)->group(function(){
 

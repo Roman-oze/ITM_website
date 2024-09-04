@@ -64,7 +64,7 @@
                         Faculty
                     </a>
 
-                    <a class="nav-link" href="{{route('routine.index')}}">
+                    <a class="nav-link" href="{{url('/dashboard/routine')}}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-calendar-check text-white fa-lg" ></i></div>
                         Routine
                     </a>
