@@ -171,45 +171,45 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-const modeToggle = document.getElementById('mode-toggle');
-        const body = document.body;
-        const modeIcon = document.getElementById('mode-icon');
+// const modeToggle = document.getElementById('mode-toggle');
+//         const body = document.body;
+//         const modeIcon = document.getElementById('mode-icon');
 
-        // Check for user's preference in local storage
-        document.addEventListener('DOMContentLoaded', () => {
-            const isDarkMode = localStorage.getItem('dark-mode');
-            if (isDarkMode === 'true') {
-                body.classList.add('dark-mode');
-                modeIcon.classList.replace('fa-sun', 'fa-moon');
-            }
-        });
+//         // Check for user's preference in local storage
+//         document.addEventListener('DOMContentLoaded', () => {
+//             const isDarkMode = localStorage.getItem('dark-mode');
+//             if (isDarkMode === 'true') {
+//                 body.classList.add('dark-mode');
+//                 modeIcon.classList.replace('fa-sun', 'fa-moon');
+//             }
+//         });
 
-        // Toggle between light and dark mode
-        modeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            if (body.classList.contains('dark-mode')) {
-                modeIcon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('dark-mode', 'true');
-            } else {
-                modeIcon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('dark-mode', 'false');
-            }
-        });
-    // Text to be typed
-    const textToType = "Department of Information Technology & Management";
+//         // Toggle between light and dark mode
+//         modeToggle.addEventListener('click', () => {
+//             body.classList.toggle('dark-mode');
+//             if (body.classList.contains('dark-mode')) {
+//                 modeIcon.classList.replace('fa-sun', 'fa-moon');
+//                 localStorage.setItem('dark-mode', 'true');
+//             } else {
+//                 modeIcon.classList.replace('fa-moon', 'fa-sun');
+//                 localStorage.setItem('dark-mode', 'false');
+//             }
+//         });
+//     // Text to be typed
+//     const textToType = "Department of Information Technology & Management";
 
-    // Get the text container
-    const typingTextContainer = document.getElementById('typing-text');
+//     // Get the text container
+//     const typingTextContainer = document.getElementById('typing-text');
 
-    // Function to simulate typing effect
-    function typeText(index) {
-      typingTextContainer.innerHTML = textToType.slice(0, index);
-      if (index < textToType.length) {
-        setTimeout(() => {
-          typeText(index + 1);
-        }, 100); // Adjust the typing speed (in milliseconds)
-      }
-    }
+//     // Function to simulate typing effect
+//     function typeText(index) {
+//       typingTextContainer.innerHTML = textToType.slice(0, index);
+//       if (index < textToType.length) {
+//         setTimeout(() => {
+//           typeText(index + 1);
+//         }, 100); // Adjust the typing speed (in milliseconds)
+//       }
+//     }
 
     // Start the typing animation
     typeText(0);
@@ -306,4 +306,6 @@ const modeToggle = document.getElementById('mode-toggle');
     };
 
 
-    
+
+
+

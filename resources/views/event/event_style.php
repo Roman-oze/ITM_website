@@ -1,6 +1,6 @@
-<!-- 
+<!--
 <style>
-    
+
     .heading{
       background-color: #f4f4f4;
       color: white;
@@ -44,4 +44,5 @@
     .event-card .button:hover {
       background-color: #0056b3;
     }
-  </style> -->
+  </style> -->'
+b

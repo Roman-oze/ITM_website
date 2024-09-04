@@ -1,11 +1,11 @@
 
 
-@include('faculty.faculty_style')
+
 
 
 @extends('layout.app')
 
-
+@include('faculty.faculty_style')
 
 
 @section('content')
@@ -178,6 +178,7 @@
             <h5 class="heading_30 mb_50 h1 " data-bs-aos="fade-up" data-bs-aos-delay="100">Department of Information Technology &amp; Management</h5>
         </div>
 
+    </div>
     </div>
 
 

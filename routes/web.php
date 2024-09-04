@@ -115,7 +115,8 @@ Route::controller(EventController::class)->group(function(){
 });
 
 Route::controller(RoutineController::class)->group(function(){
-    route::get('/semester/routine','routine')->name('semester.routines');
+    route::get('/semester/spring','spring')->name('spring.routines');
+    route::get('/semester/fall','fall')->name('fall.routines');
     route::get('/dashboard/routine','index')->name('routine.index');
     route::get('/routine/create','create')->name('routine.create');
     route::post('/routine/store','store')->name('routine.store');

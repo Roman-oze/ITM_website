@@ -15,12 +15,21 @@ class RoutineController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function routine()
+    public function spring()
     {
        $routines = DB::table('routines')->get();
        return view('routine.routine',compact('routines'));
 
     }
+    public function fall()
+    {
+       $routines = DB::table('routines')->get();
+       return view('routine.routine',compact('routines'));
+
+    }
+
+
+
     public function index()
     {
         $menus = Menu::all();

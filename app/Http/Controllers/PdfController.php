@@ -24,7 +24,7 @@ class PdfController extends Controller
             'name' => '(Ms. Nusrat Jahan)',
             'position' => 'Head of ITM Department',
             'date' => date('m/d/y'),
-            'notices' => $notice,
+            'notices' => $notices,
 
 
 

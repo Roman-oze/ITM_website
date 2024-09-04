@@ -39,14 +39,14 @@
         <div class="row">
             @foreach ($upcoming as $upcome)
             <div class="col-md-4 ">
-                <div class="event-card box-shadow">
+                <div class="event-card  ">
                     <img src="{{$upcome->image}}" alt="Event Image" class="img">
-                    <h1 class="event-card-title text-center text-success bg-light p-2">{{$upcome->name}}</h1>
+                    <h1 class="event-card-title text-center text-success  p-2">{{$upcome->name}}</h1>
                     <div class="event-card-body">
                       <p class="event-card-text text-white">{{$upcome->description}}</p>
-                    <p class="card-text"> <strong> <i class="fa-regular fa-clock text-light"></i> </strong><span class="badge badge-success text-success ">{{$upcome->time}}</span></p>
-                    <p class="card-text"> <i class="fa-solid fa-calendar-days text-light"></i> <span class="badge badge-success text-success ">{{$upcome->date}}</span></p>
-                    <p class="card-text"> <strong> <i class="fa-solid fa-location-dot text-white"></i> </strong><span class="badge badge-success text-success bt">{{$upcome->location}}</span></p>
+                    <p class="card-text"> <strong> <i class="fa-regular fa-clock text-light"></i> </strong><span class="badge badge-success text-white ">{{$upcome->time}}</span></p>
+                    <p class="card-text"> <i class="fa-solid fa-calendar-days text-light"></i> <span class="badge badge-success text-white ">{{$upcome->date}}</span></p>
+                    <p class="card-text"> <strong> <i class="fa-solid fa-location-dot text-white"></i> </strong><span class="badge badge-success text-white ">{{$upcome->location}}</span></p>
                     </div>
                   </div>
             </div>
@@ -71,14 +71,14 @@
                 <div class="col-md-4 ">
                     <div class="event-card box-shadow">
                         <img src="{{$event->image}}" alt="Event Image" class="img">
-                        <h1 class="event-card-title text-center text-success bg-light p-2">{{$event->name}}</h1>
+                       <marquee behavior="" direction=""><h1 class="event-card-title text-center text-success bg-light p-2">{{$event->name}}</h1></marquee>
 
                         <div class="event-card-body">
 
                           <p class="event-card-text text-white">{{$event->description}}</p>
-                        <p class="card-text"> <strong> <i class="fa-regular fa-clock text-light"></i> </strong><span class="badge badge-success text-success ">{{$event->time}}</span></p>
-                        <p class="card-text"> <i class="fa-solid fa-calendar-days text-light"></i> <span class="badge badge-success text-success ">{{$event->date}}</span></p>
-                        <p class="card-text"> <strong> <i class="fa-solid fa-location-dot text-white"></i> </strong><span class="badge badge-success text-success bt">{{$event->location}}</span></p>
+                        <p class="card-text"> <strong> <i class="fa-regular fa-clock text-light"></i> </strong><span class="badge badge-white text-white ">{{$event->time}}</span></p>
+                        <p class="card-text"> <i class="fa-solid fa-calendar-days text-light"></i> <span class="badge badge-success text-white ">{{$event->date}}</span></p>
+                        <p class="card-text"> <strong> <i class="fa-solid fa-location-dot text-white"></i> </strong><span class="badge badge-white text-white">{{$event->location}}</span></p>
                         </div>
                       </div>
                 </div>

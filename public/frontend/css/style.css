@@ -30,6 +30,11 @@ h6 {
 .bg-color{
     background-color: #37517E;
 }
+/* .event-card-body {
+    padding: 20px;
+    background-color: #37517E;
+} */
+
 
 .hero-section-bg{
 background-image: url('../image/hero-section-bg.svg');
@@ -2009,7 +2014,7 @@ border: none;
 
   }
   .event-card {
-    background-color: #181a1a;
+    background-color: #37517e;
     border-radius: 10px;
     overflow: hidden;
     margin: 20px 0;

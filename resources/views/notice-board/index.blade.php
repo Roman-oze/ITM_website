@@ -53,9 +53,9 @@
                                 </button>
                             </form>
 
-                            <a href="{{ url('/pdf_generate') }}" class="btn btn-dark">
+                            <button id="downloadBtn" class="btn btn-dark">
                                 <i class="fa-solid fa-circle-down"></i>
-                            </a>
+                            </button>
                         </div>
 
             </div>
@@ -68,6 +68,23 @@
 </div>
 
 </main>
+<script>
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '{{ url('/pdf_generate') }}', true); // Correct usage with quotes
+        xhr.responseType = 'blob'; // Important for PDF download
+        xhr.onload = function() {
+            if (this.status === 200) {
+                var blob = new Blob([this.response], { type: 'application/pdf' });
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = 'itm.pdf';
+                link.click();
+            }
+        };
+        xhr.send();
+    });
+</script>
 
 @endsection
 
