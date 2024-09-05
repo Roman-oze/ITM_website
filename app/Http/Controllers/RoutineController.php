@@ -17,17 +17,15 @@ class RoutineController extends Controller
      */
     public function spring()
     {
-       $routines = DB::table('routines')->get();
-       return view('routine.spring',compact('routines'));
+       $springs= Routine::whereIn('type',['spring'])->get();
+       return view('routine.spring',compact('springs'));
 
     }
     public function fall()
     {
-        $file = Routine::get();
+        $falls = Routine::whereIn('type',['fall'])->get();
     //    $routines = DB::table('routines')->get();
-       return view('routine.fall',[
-        'file' => $file
-       ]);
+       return view('routine.fall',compact('falls'));
 
     }
 
@@ -105,7 +103,7 @@ class RoutineController extends Controller
     public function download($id)
     {
         $file = Routine::findOrFail($id);
-        return Storage::download('public/' . basename($file->file_path));
+        return Storage::download('public/uploads/' . basename($file->file_path));
     }
 
 
@@ -115,8 +113,8 @@ class RoutineController extends Controller
      */
     public function show(string $id)
     {
-       $routine =DB::table('routines')->where('id',$id)->first();
-       return view('routine.show',compact('routine'));
+       $springs =DB::table('routines')->where('id',$id)->first();
+       return view('routine.show',compact('springs'));
     }
 
     /**
@@ -124,7 +122,7 @@ class RoutineController extends Controller
      */
     public function edit(string $id)
     {
-        $routine = DB::table('routines')->where('id',$id)->first();
+        $routine = Routine::where('id',$id)->first();
         return view('routine.edit',compact('routine'));
     }
 
@@ -142,7 +140,7 @@ class RoutineController extends Controller
 
 
 
-        DB::table('events')->where('id',$id)->update($data);
+        Routine::where('id',$id)->update($data);
 
         return redirect()->route('routine.index')->with('success','routine update Successfully');
     }
@@ -152,7 +150,7 @@ class RoutineController extends Controller
      */
     public function destroy(string $id)
     {
-       DB::table('routines')->where('id',$id)->delete();
+     Routine::where('id',$id)->delete();
        return redirect()->route('routine.index')->with('success','routine delete Successfully');
 
 

@@ -14,6 +14,18 @@
     <br>
     <div class="card shadow p-4">
         <div class="card-body">
+
+            <div class="mb-3 btn btn-outline-info text-white">
+                <input type="radio" id="" name="type"  value="spring">
+                  <label for="" class="text-dark"><strong>Spring</strong></label>
+              </div>
+
+
+            <div class="mb-3 btn btn-outline-success text-white">
+                <input type="radio" id="" name="type" value="fall">
+                  <label for="" class="text-dark"><strong>Fall</strong></label>
+                </div>
+
             <h3 class="card-title text-center p-2">Upload Files</h3>
             <div id="drop-area" class="border p-5 text-center shadow bg-light">
                 <form action="{{route('routine.store')}}" method="POST" enctype="multipart/form-data" id="upload-form">
@@ -29,23 +41,10 @@
                     </div>
                     <br>
 
-                    <div class="mb-3 btn btn-outline-info text-white">
-                    <input type="radio" id="" name="type"  value="spring">
-                      <label for="" class="text-dark"><strong>Spring</strong></label>
-                  </div>
-
-
-                <div class="mb-3 btn btn-outline-success text-white">
-                    <input type="radio" id="" name="type" value="fall">
-                      <label for="" class="text-dark"><strong>Fall</strong></label>
+                    <div class="form-group">
+                        <label for="title">Description</label>
+                        <input type="text" id="title" name="name" required placeholder="Description">
                     </div>
-
-
-                    {{-- <div class="mb-3">
-                        <label class="" for="date">
-                            <input type="date" id="fileElem" name="date" class="form-control">
-                        </label>
-                    </div> --}}
 
                     <div id="gallery" class="mt-4">
                     <button type="submit" class="btn btn-success mt-3">

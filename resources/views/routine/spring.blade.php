@@ -23,7 +23,7 @@
 
 
 
-        @foreach($routines as $routine)
+        @foreach($springs as $spring)
 
     {{-- <td class="text-dark">{{($routine->file) }}</td> --}}
         {{-- <td class="text-dark text-capitalize text-center"><h5>{{$routine->type}}</h5></td>
@@ -34,15 +34,17 @@
 
             <div class="card text-center shadow-lg" style="width: 20rem; border-radius: 15px; overflow: hidden;">
                 <div class="card-header bg-color text-white" style="font-size: 1.2rem; padding: 20px 10px;">
-                  <i class="fas fa-calendar-alt"></i> Spring
+                  <i class="fas fa-calendar-alt"></i> {{ $spring->type }}
                 </div>
                 <div class="card-body" style="background-image: url('https://example.com/background.jpg'); background-size: cover; padding: 30px;">
-                  <p class="card-text text-dark mb-4" style="font-size: 1rem;">Manage and access all semester-related documents.</p>
-                  <a href="#" class="btn btn-light btn-block mb-2" style="border-radius: 20px;"><i class="fas fa-eye"></i> View</a>
-                  <a href="#" class="btn btn-light btn-block" style="border-radius: 20px;"><i class="fas fa-download"></i> Download</a>
+                  <p class="card-text text-dark mb-4" style="font-size: 1rem;">{{ $spring->name }}</p>
+                  <a href="{{url('/routine/show',$spring->id)}}" class="btn btn-light btn-block mb-2" style="border-radius: 20px;"><i class="fas fa-eye"></i> View</a>
+                  <a href="{{route('files.download',$spring->id)}}" class="btn btn-light btn-block" style="border-radius: 20px;"><i class="fas fa-download"></i> Download</a>
                 </div>
                 <div class="card-footer text-muted">
-                  Last updated: 2 days ago
+                  {{-- Last updated: 2 days ago --}}
+            Last updated:    <strong> {{ $spring->uploaded_at }} </strong>
+
                 </div>
               </div>
 

@@ -118,8 +118,9 @@ Route::controller(RoutineController::class)->group(function(){
     route::get('/semester/spring','spring')->name('spring.routines');
     route::get('/semester/fall','fall')->name('fall.routines');
     route::get('/dashboard/routine','index')->name('routine.index');
-    route::get('/routine/create','create')->name('routine.create');
+    // route::get('/routine/create','create')->name('routine.create');
     route::post('/routine/store','store')->name('routine.store');
+    route::get('/routine/show/{id}','show')->name('routine.show');
     route::get('/routine/edit/{id}','edit')->name('routine.edit');
     route::put('/routine/update/{id}','update')->name('routine.update');
     route::delete('/routine/delete/{id}','destroy')->name('routine.delete');
