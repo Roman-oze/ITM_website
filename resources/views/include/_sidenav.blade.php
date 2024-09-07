@@ -63,12 +63,16 @@
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate text-white fa-lg"></i></div>
                         Faculty
                     </a>
+                    <a class="nav-link" href="{{route('Courses.index')}}">
+                        <div class="sb-nav-link-icon"><i class="fa-regular fa-newspaper text-white fa-lg"></i></div>
+                        Course
+                    </a>
 
                     <a class="nav-link" href="{{url('/dashboard/routine')}}">
                         <div class="sb-nav-link-icon"><i class="fa-regular fa-calendar-check text-white fa-lg" ></i></div>
                         Routine
                     </a>
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{route('schedules.index')}}">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-clipboard-list text-white fa-lg"></i></div>
                         Schedule
                     </a>

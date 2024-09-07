@@ -7,6 +7,7 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RoutineController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClubController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\DashbaordController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuPermissionController;
 use App\Http\Controllers\NoticeBoardController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Middleware\Itm;
 use Faker\Guesser\Name;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -135,6 +137,9 @@ Route::controller(RoutineController::class)->group(function(){
 //     Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');
 
 // });
+route::resource('schedules',ScheduleController::class);
+route::resource('Courses',CourseController::class);
+
 
  Route::controller(AlumniController::class)->group(function(){
     Route::get('Admission/alumni', 'alumni')->name('alumni');

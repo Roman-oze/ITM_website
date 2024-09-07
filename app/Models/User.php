@@ -44,4 +44,9 @@ class User extends Authenticatable
     public function MenuPermissions(){
     return $this->hasMany(MenuPermission::class);
     }
+
+    public function Schedule(){
+        return $this->hasMany(Schedule::class,'user_id','user_id');
+        
+    }
 }
