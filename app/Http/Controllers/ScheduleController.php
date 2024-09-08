@@ -44,19 +44,25 @@ class ScheduleController extends Controller
         $request->validate([
             'course_id' => 'required',
             'teacher_id' => 'required',
-            'user_id' => 'required',
-            'day' => 'required',
+            // 'user_id' => 'required',
+            'Day' => 'required',
 
             ]);
             // Schedule::create($request->all());
             // return redirect()->route('schedules.index')->with('success', 'Schedule created successfully');
-            $schedule = new Schedule();
-            $schedule->user_id = $request->input('user_id');
-            $schedule->course_id = $request->input('course_id');
-            $schedule->teacher_id = $request->input('teacher_id');
-            $schedule->day = $request->input('day');
-            $schedule->save();
+            // $schedule = new Schedule();
+            // $schedule->user_id = $request->input('user_id');
+            // $schedule->course_id = $request->input('course_id');
+            // $schedule->teacher_id = $request->input('teacher_id');
+            // $schedule->day = $request->input('day');
+            // $schedule->save();
+            // return redirect()->route('schedules.index')->with('success', 'Schedule created successfully');
+            // $schedule ['user_id'] =$request->user_id;
+            $schedule ['course_id'] =$request->course_id;
+            $schedule ['teacher_id'] =$request->teacher_id;
+            $schedule ['Day'] =$request->Day;
             return redirect()->route('schedules.index')->with('success', 'Schedule created successfully');
+
 
 
     }

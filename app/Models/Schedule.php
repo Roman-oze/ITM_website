@@ -9,7 +9,10 @@ class Schedule extends Model
 {
     use HasFactory;
 
+
     protected $fillable = ['day','course_id','teacher_id'];
+
+    protected $primaryKey = 'schedules';
 
     public function courses(){
      return $this->belongsTo(Course::class,'course_id','course_id');
