@@ -1,105 +1,101 @@
 @extends('layout.app')
 
+@include('frontend.program_style')
+
 @section('content')
 
 <br>
 <br>
 <br>
 <br>
-<div class="container mt-5">
-    {{-- <button id="toggleButton" class="btn btn-primary">Show Data</button>
 
-    <div id="dataContainer" class="data-container">
-        @if(isset($data))
-            <!-- Display your data here -->
-            @foreach($data as $item)
-                <p>{{ $item->cp }} - {{ $item->info }}</p>
-            @endforeach
-        @endif
-    </div> --}}
-    @foreach ($data as $course)
-    <div class="card">
-        <div class="card-header">
-            <h5 class="card-title">{{ $course->course_id }}</h5>
+
+
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Course List</h2>
+                <input class="form-control mb-3 search-box" id="searchInput" type="text" placeholder="Search courses...">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th>Credit</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courseTableBody">
+                        @foreach ($data as $course)
+                        <tr>
+                            <td>{{ $course->course_code }}</td>
+                            <td>{{ $course->course_name }}</td>
+                            <td>{{ $course->credit }}</td>
+                            <td>
+                                <button class="btn btn-info btn-sm view-details" data-id="{{ $course->course_id }}">View</button>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-            <div class="card-body">
-                <p class="card-text">ITM Course</p>
-                <p class="card-text">Course Code: {{ $course->course_code }}</p>
-                <p class="card-text">Course Name: {{ $course->course_name }}</p>
-            </div>
-            </div>
-    @endforeach
+        </div>
+    </div>
 </div>
 
+<!-- Modal for View Details -->
+<div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="courseModalLabel">Course Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-dark">
+                <p class="text-dark"><strong>Course ID:</strong> <span id="modalCourseID"></span></p>
+                <p class="text-dark"><strong>Course Code:</strong> <span id="modalCourseCode"></span></p>
+                <p class="text-dark"><strong>Course Name:</strong> <span id="modalCourseName"></span></p>
+                <p class="text-dark"><strong>Credit:</strong> <span id="modalcredit"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Bootstrap and jQuery Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<section id="1stsemester">
-    <h2 class="fst">1st Year</h2>
-    <h4 class=" text-center ">1st Semester</h4>
+<script>
+    // Search filter function
+    $(document).ready(function () {
+        $('#searchInput').on('keyup', function () {
+            var value = $(this).val().toLowerCase();
+            $('#courseTableBody tr').filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
 
-  <table>
-      <thead>
-          <tr>
-              <th>Course Code</th>
-              <th>Course Title</th>
-              <th>Total Credit</th>
+        // Modal for View Details
+        $('.view-details').on('click', function () {
+            var courseID = $(this).data('id');
+            var courseCode = $(this).closest('tr').find('td:nth-child(2)').text();
+            var courseName = $(this).closest('tr').find('td:nth-child(3)').text();
+            var credit = $(this).closest('tr').find('td:nth-child(4)').text();
 
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
+            $('#modalCourseID').text(courseID);
+            $('#modalCourseCode').text(courseCode);
+            $('#modalCourseName').text(courseName);
+            $('#modalCredit').text(credit);
 
-              <td>ENG 101</td>
-              <td>Basic Functional English</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>MATH 101</td>
-              <td>Mathematics</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 101</td>
-              <td>Principles of Accounting</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 102</td>
-              <td>Principles of Management</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 111</td>
-              <td>Computer Fundamentals</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 112</td>
-              <td>Computer Fundamentals Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>ITM 123</td>
-              <td>Software Requirement Analysis and Design</td>
-              <td>3</td>
-
-          </tr>
-      </tbody>
-      <tfoot>
-          <tr class="text-white">
-              <td colspan="2">Total Credits</td>
-              <td colspan="1">19</td>
-          </tr>
-      </tfoot>
-  </table>
-</section>
-
+            $('#courseModal').modal('show');
+        });
+    });
+</script>
 
 {{-- <script>
     $(document).ready(function() {
