@@ -80,7 +80,7 @@
 
 {{ $students->links('pagination::bootstrap-5') }}
 
-</div>
+
 
 
 

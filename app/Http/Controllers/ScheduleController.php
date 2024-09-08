@@ -15,9 +15,13 @@ class ScheduleController extends Controller
     public function index()
     {
 
-        $schedules = $schedules = Schedule::with('Course', 'Teacher')->get();
+        //  $schedules = Schedule::with('Course', 'Teacher')->get();
+        $schedules = Schedule::with('Course', 'Teacher')->get();
+
+
+
         return view('schedule.index',[
-            'schedules' => $schedules,
+            'schedules' => $schedules
         ]);
     }
 
@@ -61,6 +65,10 @@ class ScheduleController extends Controller
             $schedule ['course_id'] =$request->course_id;
             $schedule ['teacher_id'] =$request->teacher_id;
             $schedule ['Day'] =$request->Day;
+            // return redirect()->route('schedules.index')->with('success', 'Schedule created successfully');
+            // echo"<pre>";
+            // print_r($schedule);
+            Schedule::insert($schedule);
             return redirect()->route('schedules.index')->with('success', 'Schedule created successfully');
 
 
@@ -96,6 +104,9 @@ class ScheduleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Schedule::where('schedule_id',$id)->delete();
+        return redirect()->route('schedules.index')->with('success', 'Schedule deleted successfully');
     }
+
+  
 }

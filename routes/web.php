@@ -3,7 +3,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RoutineController;
@@ -139,6 +138,11 @@ Route::controller(RoutineController::class)->group(function(){
 // });
 route::resource('schedules',ScheduleController::class);
 route::resource('Courses',CourseController::class);
+route::get('/search',[CourseController::class,'search'])->name('course.search');
+route::get('/course_list',[CourseController::class,'course_list'])->name('course_list');
+route::get('/course',[CourseController::class,'program'])->name('program');
+
+
 
 
  Route::controller(AlumniController::class)->group(function(){
@@ -184,7 +188,6 @@ Route::controller(StaffController::class)->group(function(){
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/','home')->name('home');
-    route::get('/program','program')->name('program');
     route::get('/about','about')->name('about');
     route::get('/local_tuition','Local_tuition')->name('Local_tuition');
     route::get('/international_tuition','international_tuition')->name('international_tuition');

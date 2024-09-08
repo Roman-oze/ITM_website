@@ -10,9 +10,54 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function program()
+    {
+
+
+
+
+
+
+
+        $courses = Course::all();
+        return view('frontend.program',[
+            'courses' => $courses
+        ]);
+
+    }
+
+    public function course_list()
+    {
+        $data = Course::whereIn('course_code',[
+            'ENG 101','MATH 101','ITM 101','ITM 102','ITM 111','ITM 112','ITM 123'
+
+        ])->get();
+        // $data = Course::all();
+        return view('Course.course_list',compact('data'));
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function index()
     {
-        $courses = Course::all();
+        $courses = Course::paginate(10);;
         return view('course.index', compact('courses'));
     }
 
@@ -93,6 +138,14 @@ class CourseController extends Controller
     {
         Course::where('course_id',$id)->delete();
        return redirect()->route('Courses.index')->with('success', 'Course deleted successfully');
+    }
+
+    public function search(Request $request){
+
+        $search = $request->input('search');
+        $courses = Course::where('course_id','like','%'.   $search .'%')->orWhere('course_code','like','%'.   $search .'%')->orWhere('course_name','like','%'.    $search .'%')->get();
+
+        return view('Course.index', compact('courses'));
     }
 
 }

@@ -32,6 +32,7 @@ class StudentController extends Controller
       $students = DB::table('students')->paginate(10);
 
 
+
     return view('student.index',compact('students','menus'));
 
     //  $students = Student::paginate(10);
@@ -124,7 +125,7 @@ class StudentController extends Controller
     public function search(Request $request){
 
         $data = $request->input('search');
-        $students =DB::table('students')->where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);
+        $students = Student::where('name','like','%'.$data.'%')->orWhere('email','like','%'.$data.'%')->paginate(10);
         return view('student.index',compact('students'));
 
     }
