@@ -141,6 +141,8 @@ route::resource('Courses',CourseController::class);
 route::get('/search',[CourseController::class,'search'])->name('course.search');
 route::get('/course_list',[CourseController::class,'course_list'])->name('course_list');
 route::get('/course',[CourseController::class,'program'])->name('program');
+Route::get('/courses', [CourseController::class, 'showCourseList'])->name('courses.list');
+Route::get('/courses/{semester}', [CourseController::class, 'getCoursesBySemester']);
 
 
 

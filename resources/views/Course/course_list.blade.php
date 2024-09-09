@@ -16,7 +16,7 @@
     <div class="table-wrapper">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="text-center">Course List</h2>
+                <h2 class="text-center">1st semester Course</h2>
                 <input class="form-control mb-3 search-box" id="searchInput" type="text" placeholder="Search courses...">
                 <table class="table table-bordered table-hover table-striped">
                     <thead class="thead-dark">
@@ -45,13 +45,20 @@
     </div>
 </div>
 
+<div id="div1">
+
+</div>
+<input type="submit" value="click me" id="btn1">
+
+
+
 <!-- Modal for View Details -->
 <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="courseModalLabel">Course Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" id="toggleButton" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -65,39 +72,10 @@
     </div>
 </div>
 
-<!-- Bootstrap and jQuery Scripts -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 
 <script>
-    // Search filter function
-    $(document).ready(function () {
-        $('#searchInput').on('keyup', function () {
-            var value = $(this).val().toLowerCase();
-            $('#courseTableBody tr').filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-            });
-        });
-
-        // Modal for View Details
-        $('.view-details').on('click', function () {
-            var courseID = $(this).data('id');
-            var courseCode = $(this).closest('tr').find('td:nth-child(2)').text();
-            var courseName = $(this).closest('tr').find('td:nth-child(3)').text();
-            var credit = $(this).closest('tr').find('td:nth-child(4)').text();
-
-            $('#modalCourseID').text(courseID);
-            $('#modalCourseCode').text(courseCode);
-            $('#modalCourseName').text(courseName);
-            $('#modalCredit').text(credit);
-
-            $('#courseModal').modal('show');
-        });
-    });
-</script>
-
-{{-- <script>
     $(document).ready(function() {
         $('#toggleButton').click(function() {
             var $dataContainer = $('#dataContainer');
@@ -112,6 +90,6 @@
             }
         });
     });
-</script> --}}
+</script>
 
 @endsection

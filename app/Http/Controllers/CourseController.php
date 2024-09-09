@@ -11,13 +11,7 @@ class CourseController extends Controller
      * Display a listing of the resource.
      */
 
-    public function program()
-    {
-
-
-
-
-
+    public function program(){
 
 
         $courses = Course::all();
@@ -39,9 +33,22 @@ class CourseController extends Controller
     }
 
 
+    public function showCourseList()
+    {
+        return view('Course.Course_list'); // Ensure the view is saved as Course/Course_list.blade.php
+    }
 
+    // Method to fetch courses by semester via AJAX
+    public function getCoursesBySemester ($semester)
+    {
+        // Fetch courses based on the semester
+        $courses = Course::whereIn('course_code',[
+            'ENG 101','MATH 101','ITM 101','ITM 102','ITM 111','ITM 112','ITM 123'
 
+        ])->get();
 
+        return response()->json($courses);
+    }
 
 
 

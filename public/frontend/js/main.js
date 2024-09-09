@@ -280,3 +280,30 @@ function sendLiveChatMessage() {
     document.getElementById("liveChatInput").value = "";
     messages.scrollTop = messages.scrollHeight;
 }
+ // Search filter function
+ $(document).ready(function () {
+    $('#searchInput').on('keyup', function () {
+        var value = $(this).val().toLowerCase();
+        $('#courseTableBody tr').filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+
+    // Modal for View Details
+    $('.view-details').on('click', function () {
+        var courseID = $(this).data('id');
+        var courseCode = $(this).closest('tr').find('td:nth-child(2)').text();
+        var courseName = $(this).closest('tr').find('td:nth-child(3)').text();
+        var credit = $(this).closest('tr').find('td:nth-child(4)').text();
+
+        $('#modalCourseID').text(courseID);
+        $('#modalCourseCode').text(courseCode);
+        $('#modalCourseName').text(courseName);
+        $('#modalCredit').text(credit);
+
+        $('#courseModal').modal('show');
+    });
+});
+
+
+

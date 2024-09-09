@@ -115,7 +115,7 @@
 
 <div class="course text-center">
     <a href="#catagory" class="btn0">Course Catagory</a>
-    <a href="#1stsemester" class="btn1">1st Semester</a>
+    <a href="{{route('course_list')}}" class="btn1 text-dark">1st Semester</a>
     <a href="#2ndsemester" class="btn2">2nd Semester</a>
     <a href="#3rdsemester" class="btn3">3rd Semester</a>
     <a href="#4thsemester" class="btn4">4th Semester</a>
