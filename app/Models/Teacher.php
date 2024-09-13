@@ -16,6 +16,7 @@ class Teacher extends Model
 
 
     public function schedules(){
-        return $this->hasMany(Schedule::class,'teacher_id','teacher_id');
+        return $this->hasMany(Schedule::class,'teacher_id');
     }
+
 }

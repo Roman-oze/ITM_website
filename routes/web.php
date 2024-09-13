@@ -137,6 +137,9 @@ Route::controller(RoutineController::class)->group(function(){
 
 // });
 route::resource('schedules',ScheduleController::class);
+route::delete('schedules\delete\{id}',[ScheduleController::class,'destroy'])->name('schedule.delete');
+
+
 route::resource('Courses',CourseController::class);
 route::get('/search',[CourseController::class,'search'])->name('course.search');
 route::get('/course_list',[CourseController::class,'course_list'])->name('course_list');
