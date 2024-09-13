@@ -26,7 +26,7 @@ class CourseController extends Controller
         $data = Course::whereIn('course_code',[
             'ENG 101','MATH 101','ITM 101','ITM 102','ITM 111','ITM 112','ITM 123'
 
-        ])->get();
+        ])->paginate(10);
         // $data = Course::all();
         return view('Course.course_list',compact('data'));
 

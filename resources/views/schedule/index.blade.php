@@ -4,9 +4,23 @@
 
 <main>
     <div class="container mt-5">
-        <h2>Schedules</h2>
-        <a href="{{ route('schedules.create') }}" class="btn btn-primary mb-3">Add New Schedule</a>
+        <h2 class="mt-5">Schedules</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Schedules List </li>
+        </ol>
+        <div>
+            <a href="{{ route('schedules.create') }}" class="btn btn-primary mb-3">Add New Schedule</a>
 
+
+            <form action="{{route('schedule.search')}}" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0 float-end" method="POST">
+
+                <div class="input-group">
+                    <input class="form-control"   type="text" name="search" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </div>
         @if (session()->has('success'))
 
         <div class="alert alert-success">
@@ -23,11 +37,12 @@
 
         @endif
 
-
+        @if($schedules->isNotEmpty())
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Course</th>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
                     <th>Faculty</th>
                     <th>Room No</th>
                     <th>Day</th>
@@ -39,6 +54,7 @@
             <tbody>
                 @foreach($schedules as $schedule)
                     <tr>
+                        <td>{{ $schedule->course->course_code }}</td>
                         <td>{{ $schedule->course->course_name }}</td>
                         <td>{{ $schedule->teacher->name }}</td>
                         <td>{{ $schedule->room_no }}</td>
@@ -47,10 +63,10 @@
                         <td>{{ $schedule->end_time }}</td>
                         <td>
                             <a href="{{ route('schedules.edit', $schedule->schedule_id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('schedules.delete', $schedule->schedule_id) }}" method="POST" style="display:inline;">
+                            <form action="{{ route('schedule.delete', $schedule->schedule_id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">
+                                <button type="submit" onclick="confirm('Are you sure?')" class="btn btn-danger btn-sm">
                                     Delete
                                 </button>
                             </form>
@@ -59,6 +75,12 @@
                 @endforeach
             </tbody>
         </table>
+        @else
+    <p>No schedules found.</p>
+@endif
+        {{-- {{ $schedules->links('pagination::bootstrap-4') }} --}}
+
+
     </div>
 
 

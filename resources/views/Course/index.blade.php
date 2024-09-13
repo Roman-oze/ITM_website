@@ -28,7 +28,6 @@
                         <button type="submit" class="btn btn-primary">Search</button>
                     </form> --}}
 
-                    <a href="{{ url('/course_list') }}" class="btn btn-primary float-end">show list</a>
 
                     <a href="{{ route('Courses.create') }}" class="btn btn-primary float-end">Add New Course</a>
                 </h3>
@@ -76,9 +75,8 @@
 
             </tbody>
         </table>
-       <div class="text-center">
-        {{ $courses->links() }}
-    </div>
+        {{-- {{ $courses->links('pagination::bootstrap-4') }} --}}
+
     </div>
     </div>
 
