@@ -80,10 +80,7 @@
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days text-white fa-lg"></i></div>
                         Events
                     </a>
-                    <a class="nav-link" href="{{route('menus.create')}}">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-file-word text-white fa-lg"></i></div>
-                        Application Form
-                    </a>
+
 
                     <a class="nav-link" href="">
                         <div class="sb-nav-link-icon"><i class="fa-solid fa-award  text-white fa-lg"></i></div>

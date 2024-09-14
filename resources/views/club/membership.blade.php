@@ -1,5 +1,6 @@
-@extends('club._club_master')
+@extends('club.layout.club_master')
 
+@section('club_header')
 @section('club_header')
  <div class="container-fluid ">
 <br>
@@ -8,7 +9,7 @@
 <br>
         <div class="row">
           <div class="col-md-6 col-sm-12  text-center">
-            <img src="{{asset('frontend/image/itmclub.png')}}" class="images animate__animated animate__fadeInLeft">
+            <img src="{{asset('frontend/image/itmclub.png')}}" class="img-fluid animate__animated animate__fadeInLeft">
           </div>
           <div class="col-md-6 paragh col-sm-12  text-center">
            <h3 class="btnn animate__animated animate__bounce">Join Our Club</h3><br>
@@ -16,10 +17,13 @@
 
           <img src="{{asset('frontend/image/qr.png')}}" class="QR">
           <b><p class="p-3"> Department of Information Technology & Management and ITM Club Facebook page here do like follow and share </p></b>
-          <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
-          <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i><br>
 
-
+          <div class="text-center">
+              <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
+              <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i><br>
+          </div>
+       <div>
+    </div>
         </div>
         </div>
       </div>
@@ -40,19 +44,19 @@
 
 
         <div class="col-lg-4 col-6 text-center p-5">
-            <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="0" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="0" class="purecounter">26</span>
             <p class="text-color">Committee</p>
           </div>
 
         <div class="col-lg-4 col-6 text-center  p-5">
-          <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="0" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="0" class="purecounter">1</span>
           <p class="text-color">Memebers</p>
         </div>
 
 
         <div class="col-lg-4 col-6 text-center p-5">
-          <span data-purecounter-start="0" data-purecounter-end="10000" data-purecounter-duration="0" class="purecounter"></span>
-          <p class="text-color">Budget</p>
+          <span data-purecounter-start="0" data-purecounter-end="10000" data-purecounter-duration="0" class="purecounter">15</span>
+          <p class="text-color">Total Event</p>
         </div>
 
       </div>

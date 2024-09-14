@@ -3,18 +3,19 @@
    @include('club.layout.head')
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top p-2">
+<nav class="navbar navbar-expand-lg navbar-light club-bg-color fixed-top p-2">
+
 @include('club.layout.nav')
 </nav>
 
 <header>
       <br>
       <br>
-      @yield('club_header')
       <br>
       <br>
-</header>
+    </header>
 
+    @yield('club_header')
 <div class="container">
     @yield('main_content')
 </div>

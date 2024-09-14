@@ -101,7 +101,7 @@ body {
   border:1px solid black;
   border-radius: 24px;
   padding:auto;
-  width: 50%;
+  width: 65%;
   display: block;
   margin: auto;
   font-weight:bold;
@@ -323,7 +323,29 @@ font-size: 2rem
 }
 
 .club-bg-color{
-background-color: rgb(8, 36, 121);
-background-image: linear-gradient(to right, rgba(205, 213, 205, 0.621) , rgba(8, 36, 121));
+background-color: #37517E;
+/* background-image: linear-gradient(to right, rgba(205, 213, 205, 0.621) , rgba(8, 36, 121)); */
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .pborder {
+        width: 228px;
+    }
+    .h1border {
+        width: 214px;
+    }
+    .img00 {
+        height: 228px;
+        width: 350px;
+    }
+    .img00 {
+        height: 210px;
+        width: 298px;
+    }
+    /* .btnn {
+
+        width: 76%;
+    } */
+
+  }

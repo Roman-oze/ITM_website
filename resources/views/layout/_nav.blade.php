@@ -170,10 +170,9 @@
         </div>
       </nav> --}}
 
-      <header id="header" class="fixed-top">
-        {{-- <div id="top-bar">
-        <div class="container small">
-          <div class="row text-light text-center ">
+      {{-- <div id="top-bar">
+          <div class="container small">
+              <div class="row text-light text-center ">
             <div class="col-sm-6 py-1 text-sm-left">
                 Information Technology & Management(I T M)
             </div>
@@ -181,10 +180,11 @@
 
                 <a class="topbar-btn" href="{{route('login')}}"><i class="fa-solid fa-lock "></i> Login</a>
                 <a class="topbar-btn" href="{{route('register')}}"><i class="fa-solid fa-user "></i> Register</a>
-                     </div>
-          </div>
+            </div>
         </div>
-    </div> --}}
+    </div>
+</div> --}}
+<header id="header" class="fixed-top">
 
         <div class="container d-flex align-items-center">
             {{-- <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/portal.png')}}" alt="" class="brand-logo"></a> --}}

@@ -1,6 +1,6 @@
 
 @extends('club.committee_style')
-@extends('club._club_master')
+@extends('club.layout.club_master')
 
 <br>
 <br>
@@ -9,7 +9,7 @@
 <br>
 <section id="Committee">
     <div class=" headdiv" >
-      <h1 class="text-muted">Our ITM Club Committee</h1>
+      <h3 class="text-muted  animate__animated animate__bounce">Our ITM Club Committee</h3>
     </div>
     <br>
     <br>

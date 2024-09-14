@@ -1,4 +1,4 @@
-@extends('club._club_master')
+@extends('club.layout.club_master')
 
 
 
@@ -38,7 +38,7 @@
 <br>
         <div class="row">
           <div class="col-md-6 col-sm-12  text-center">
-            <img src="{{asset('frontend/image/itmclub.png')}}" class="images animate__animated animate__fadeInLeft">
+            <img src="{{asset('frontend/image/itmclub.png')}}" class="img-fluid animate__animated animate__fadeInLeft">
           </div>
           <div class="col-md-6 paragh col-sm-12  text-center">
            <h3 class="btnn animate__animated animate__bounce">Join Our Club</h3><br>
@@ -46,15 +46,19 @@
 
           <img src="{{asset('frontend/image/qr.png')}}" class="QR">
           <b><p class="p-3"> Department of Information Technology & Management and ITM Club Facebook page here do like follow and share </p></b>
-          <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
-          <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i><br>
 
-
+          <div class="text-center">
+              <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
+              <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i><br>
+          </div>
+       <div>
+    </div>
         </div>
         </div>
       </div>
       <br>
 @endsection
+
 
 @section('main_content')
 
@@ -172,15 +176,15 @@
   </div>
   <div class="container">
     <div class="row mt-5">
-            <div class="col-md-4">
+            <div class="col-md-4 mt-2">
                 <img src="{{asset('frontend/image/event_photo/aymansadik.jpg')}}" class="img00  rounded">
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-2">
                 <img src="{{asset('frontend/image/event_photo/img0.jpg')}}" class="img00  rounded">
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-2">
                 <img src="{{asset('frontend/image/event_photo/img1.jpg')}}" class="img00  rounded">
 
             </div>
@@ -188,16 +192,16 @@
           </div>
 
     <div class="row mt-5">
-            <div class="col-md-4">
+            <div class="col-md-4 mt-1">
                 <img src="{{asset('frontend/image/event_photo/img2.jpg')}}" class="img00 rounded">
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-2">
                 <img src="{{asset('frontend/image/event_photo/img6.jpg')}}" class="img00 rounded">
 
             </div>
-            <div class="col-md-4">
-                <img src="{{asset('frontend/image/event_photo/img4.jpg')}}" class="img00  rounded">
+            <div class="col-md-4 mt-2">
+                <img src="{{asset('frontend/image/event_photo/fintech.jpg')}}" class="img00  rounded">
 
             </div>
 

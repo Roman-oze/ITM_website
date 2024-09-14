@@ -3,28 +3,50 @@
 @section('main')
 
 <main>
+    <div class="container mt-5">
 
-<div class="container mt-5">
+        <!-- Back Button -->
+        <a href="{{ route('Courses.index') }}" class="btn btn-outline-success mb-3">
+            <h5>Back</h5>
+        </a>
 
-    <a href="{{route('Courses.index')}} " class="btn btn-outline-success text-left"><h5>Back</h5></a>
+        <!-- Card Layout -->
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h4 class="text-center">Create New Course</h4>
+            </div>
 
-    <form action="{{ route('Courses.store') }}" method="POST">
-        @csrf
-        <div class="mb-3">
-            <label for="day" class="form-label">Course name</label>
-            <input type="text" name="course_name" class="form-control" id="day" required>
+            <div class="card-body">
+                <!-- Form Starts -->
+                <form action="{{ route('Courses.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="course_name" class="form-label">Course Name</label>
+                        <input type="text" name="course_name" class="form-control" id="course_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="course_code" class="form-label">Course Code</label>
+                        <input type="text" name="course_code" class="form-control" id="course_code" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="credit" class="form-label">Credit</label>
+                        <input type="number" name="credit" class="form-control" id="credit" required>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="text-center">
+
+                        <button type="submit" class="btn bg-dark text-white ">Save</button>
+                    </div>
+                </form>
+                <!-- Form Ends -->
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="day" class="form-label">Course Code</label>
-            <input type="text" name="course_code" class="form-control" id="day" required>
-        </div>
-        <div class="mb-3">
-            <label for="day" class="form-label">Credit</label>
-            <input type="number" name="credit" class="form-control" id="day" required>
-        </div>
-
-        <button type="submit" class="btn btn-success">Save</button>
-    </form>
-</div>
+    </div>
+    </div>
+    </div>
 </main>
+
 @endsection

@@ -1,5 +1,5 @@
 <section id="contact">
-    <div class="row text-center bgcolor">
+    <div class="row text-center club-bg-color">
       <div class="contact-header">
         <h1 class="text-dark bg-light ">Contact Us</h1>
     </div>

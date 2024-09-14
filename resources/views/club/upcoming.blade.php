@@ -1,5 +1,5 @@
 
-@extends('club._club_master')
+@extends('club.layout.club_master')
 
 @section('club_header')
  <div class="container-fluid ">
@@ -7,16 +7,23 @@
 <br>
 <br>
 <br>
-     <div class="row">
+        <div class="row">
           <div class="col-md-6 col-sm-12  text-center">
-            <img src="{{asset('frontend/image/itmclub.png')}}" class="images animate__animated animate__fadeInLeft">
-            </div>
-           <div class="col-md-6 paragh col-sm-12  text-center">
+            <img src="{{asset('frontend/image/itmclub.png')}}" class="img-fluid animate__animated animate__fadeInLeft">
+          </div>
+          <div class="col-md-6 paragh col-sm-12  text-center">
            <h3 class="btnn animate__animated animate__bounce">Join Our Club</h3><br>
-           <img src="{{asset('frontend/image/qr.png')}}" class="QR">
+
+
+          <img src="{{asset('frontend/image/qr.png')}}" class="QR">
           <b><p class="p-3"> Department of Information Technology & Management and ITM Club Facebook page here do like follow and share </p></b>
-          <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
-          <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i><br>
+
+          <div class="text-center">
+              <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
+              <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i><br>
+          </div>
+       <div>
+    </div>
         </div>
         </div>
       </div>
@@ -34,7 +41,7 @@
 
     <div class="row">
       <!-- Card 1 -->
-      <div class="col-md-4">
+      <div class="col-md-4 mt-2">
         <div class="card">
           <h2 class="card-title text-white bg-info p-2">Orientation</h2>
           <img src="{{asset('frontend/image/event_photo/orient.jpg')}}" class="card-img-top" alt="Event Image 1">
@@ -48,7 +55,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="col-md-4">
+      <div class="col-md-4 mt-2">
         <div class="card">
           <h2 class="card-title text-white bg-info p-2">ITM Summit</h2>
           <img src="{{asset('frontend/image/event_photo/itmsummit.jpg')}}" class="card-img-top" alt="Event Image 2">
@@ -62,7 +69,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="col-md-4">
+      <div class="col-md-4 mt-2">
         <div class="card">
           <h2 class="card-title text-white bg-info p-2">FinTech Summit</h2>
           <img src="{{asset('frontend/image/event_photo/fin.jpg')}}" class="card-img-top" alt="Event Image 3">
