@@ -305,5 +305,16 @@ function sendLiveChatMessage() {
     });
 });
 
+$.ajax({
+    url: '/schedules/' + id,
+    type: 'DELETE',
+    data: {
+        _token: $('meta[name="csrf-token"]').attr('content')
+    },
+    success: function(result) {
+        // Handle success
+    }
+});
+
 
 

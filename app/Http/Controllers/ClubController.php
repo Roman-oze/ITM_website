@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,6 +23,10 @@ class ClubController extends Controller
 //         return view('frontend.about',compact('staffs'));
 
 //    }
+public function upcoming(){
+    $upcoming = Event::all();
+    return view('club.upcoming',compact('upcoming'));
+}
 
 
 }

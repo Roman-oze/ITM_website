@@ -104,7 +104,7 @@
 
   @media (min-width: 320px) and (max-width: 768px) {
     .fac_text {
-        width:96%;
+        width:50%;
       }
     }
   @media (min-width: 320px) and (max-width: 991px) {

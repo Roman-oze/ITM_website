@@ -137,8 +137,12 @@ Route::controller(RoutineController::class)->group(function(){
 
 // });
 route::resource('schedules',ScheduleController::class);
-route::get('schedules\delete\{id}',[ScheduleController::class,'destroy'])->name('schedule.delete');
-route::get('schedules\search',[ScheduleController::class,'search'])->name('schedule.search');
+Route::delete('/schedules/{schedule_id}', [ScheduleController::class, 'destroy'])->name('schedules.delete');
+// Route::get('/schedules/edit/{id}', [ScheduleController::class, 'edit'])->name('schedules.edit');
+// Route::get('/schedules/show/{id}', [ScheduleController::class, 'show'])->name('schedules.show');
+
+route::post('schedules/search',[ScheduleController::class,'search'])->name('schedule.search');
+
 
 
 route::resource('Courses',CourseController::class);
@@ -205,7 +209,7 @@ Route::controller(HomeController::class)->group(function(){
 Route::controller(ClubController::class)->group(function(){
     Route::view('/club','club/club')->name('club');
     Route::view('/committee','club/committee')->name('committee');
-    Route::view('/upcoming','club/upcoming')->name('upcoming');
+    Route::get('/upcoming','upcoming')->name('upcoming');
     Route::get('/membership','membership')->name('membership');
 });
 

@@ -31,66 +31,90 @@
 @endsection
 
 @section('main_content')
-<div class="divider-custom">
-    <div class="divider-custom-line"></div>
-    <div class="divider-custom-icon"><h1 class=" bg-outline-info text-dark p-2 rounded">Academic Events</h1></div>
-    {{-- <div class="divider-custom-icon"><h1 class="text-danger">Upcoming Event</h1></div> --}}
-    <div class="divider-custom-line"></div>
-  </div>
-<div class="container-fluid mt-5">
+<br>
+<br>
+<br>
 
-    <div class="row">
-      <!-- Card 1 -->
-      <div class="col-md-4 mt-2">
-        <div class="card">
-          <h2 class="card-title text-white bg-info p-2">Orientation</h2>
-          <img src="{{asset('frontend/image/event_photo/orient.jpg')}}" class="card-img-top" alt="Event Image 1">
-          <div class="card-body">
-            <p>Date: <span class="card-text">Feburary 7th, 2024</span></p>
-            <p>Location: <span class="card-text">Animul Hoque Hall</span></p>
-            <p>Description: <span class="card-text">Recap of the symposium on artificial intelligence and its applications in various fields.</span></p>
-            <a href="#" class="btn btn-info">View Event</a>
+
+<section id="services" class="services section-bg text-left" >
+    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+      <div class="section-title text-left">
+    {{-- <div class="container">
+        <div class="row">
+            @foreach ($event as $event)
+          <div class="col-md-4">
+            <div class="event-card">
+              <img src="{{$event->image}}" alt="Event Image">
+              <div class="event-card-body">
+                <h2 class="event-card-title">{{$event->name}}</h2>
+                <p class="event-card-text">{{$event->description}}</p>
+                <p class="card-text"> <strong> Date: </strong><span class="card-text">{{$event->date}}</span></p>
+                    <p class="card-text"> <strong> Time: </strong><span class="card-text">{{$event->time}}</span></p>
+                    <p class="card-text"> <strong> Location: </strong><span class="card-text">{{$event->location}}</span></p>
+                <div class="event-card-footer">
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
           </div>
+          @endforeach
         </div>
+      </div> --}}
+
+
+      <h2 class=" text-dark text-left">Upcoming</h2>
+
+      <div class="container">
+        <div class="row">
+            @foreach ($upcoming as $upcome)
+            <div class="col-md-4 ">
+                <div class="event-card  ">
+                    <img src="{{$upcome->image}}" alt="Event Image" class="img">
+                    <h1 class="event-card-title text-center text-white  p-2">{{$upcome->name}}</h1>
+                    <div class="event-card-body">
+                      <p class="event-card-text text-white">{{$upcome->description}}</p>
+                    <p class="card-text"> <strong> <i class="fa-regular fa-clock text-light"></i> </strong><span class="badge badge-success text-white ">{{$upcome->time}}</span></p>
+                    <p class="card-text"> <i class="fa-solid fa-calendar-days text-light"></i> <span class="badge badge-success text-white ">{{$upcome->date}}</span></p>
+                    <p class="card-text"> <strong> <i class="fa-solid fa-location-dot text-white"></i> </strong><span class="badge badge-success text-white ">{{$upcome->location}}</span></p>
+                    </div>
+                  </div>
+            </div>
+            @endforeach
+        </div>
+
       </div>
 
-      <!-- Card 2 -->
-      <div class="col-md-4 mt-2">
-        <div class="card">
-          <h2 class="card-title text-white bg-info p-2">ITM Summit</h2>
-          <img src="{{asset('frontend/image/event_photo/itmsummit.jpg')}}" class="card-img-top" alt="Event Image 2">
-          <div class="card-body">
-            <p>Date: <span class="card-text">July 7th, 2024</span></p>
-            <p>Location: <span class="card-text">Auditorium</span></p>
-            <p>Description: <span class="card-text">Ayman Sadik came to our ITM Summit Departmental program, providing a lot of knowledge.</span></p>
-            <a href="#" class="btn btn-info">View Event</a>
+
+
+
+
+
+
+
+
+
+
+        {{-- <div class="container">
+            <div class="row">
+                @foreach ($event as $event)
+                <div class="col-md-4 ">
+                    <div class="event-card box-shadow">
+                        <img src="{{$event->image}}" alt="Event Image" class="img">
+                       <marquee behavior="" direction=""><h1 class="event-card-title text-center text-success bg-light p-2">{{$event->name}}</h1></marquee>
+
+                        <div class="event-card-body">
+
+                          <p class="event-card-text text-white">{{$event->description}}</p>
+                        <p class="card-text"> <strong> <i class="fa-regular fa-clock text-light"></i> </strong><span class="badge badge-white text-white ">{{$event->time}}</span></p>
+                        <p class="card-text"> <i class="fa-solid fa-calendar-days text-light"></i> <span class="badge badge-success text-white ">{{$event->date}}</span></p>
+                        <p class="card-text"> <strong> <i class="fa-solid fa-location-dot text-white"></i> </strong><span class="badge badge-white text-white">{{$event->location}}</span></p>
+                        </div>
+                      </div>
+                </div>
+                @endforeach
+            </div>
+
+          </div> --}}
           </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-4 mt-2">
-        <div class="card">
-          <h2 class="card-title text-white bg-info p-2">FinTech Summit</h2>
-          <img src="{{asset('frontend/image/event_photo/fin.jpg')}}" class="card-img-top" alt="Event Image 3">
-          <div class="card-body">
-            <p>Date: <span class="card-text">September 16th, 2024</span></p>
-            <p>Location: <span class="card-text"> Animul Hoque Hall</span></p>
-            <p>Description: <span class="card-text">Learned lots of things from this program, Recap of the symposium on artificial intelligence.</span></p>
-            <a href="#" class="btn btn-info">View Event</a>
           </div>
-        </div>
-      </div>
-
-      <br>
-      <br>
-      <br>
-
-
-    </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
   @endsection

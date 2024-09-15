@@ -46,11 +46,23 @@ class ScheduleController extends Controller
         return redirect()->route('schedules.index')->with('success', 'Schedule created successfully.');
     }
 
-    public function edit(Schedule $schedule)
+    public function edit(string $schedule_id)
     {
-        $courses = Course::all();
-        $teachers = Teacher::all();
-        return view('schedule.edit', compact('schedule', 'courses', 'teachers'));
+        // $courses = Course::whereIn('course_code','course_name')->get();
+        // $teachers = Teacher::whereIn('name')->get();
+         $schedule = Schedule::where('schedule_id', $schedule_id)->firstOrFail();
+
+    // Pass the schedule data to the edit view
+    return view('schedule.edit', compact('schedule'));
+    }
+
+    public function show (string $schedule_id){
+
+        // $schedules = Schedule::with('course', 'teacher')->get();
+
+        $schedule = Schedule::where('schedule_id', $schedule_id)->firstOrFail();
+
+        return view('schedule.show',compact('schedule'));
     }
 
     public function update(Request $request, Schedule $schedule)
@@ -68,31 +80,36 @@ class ScheduleController extends Controller
         return redirect()->route('schedule.index')->with('success', 'Schedule updated successfully.');
     }
 
-    public function destroy(string $schedule_id)
+
+    public function destroy($schedule_id)
     {
-       Schedule::where('schedule_id',$schedule_id)->delete();
+        $schedule = Schedule::findOrFail($schedule_id); // Find the schedule by ID or fail if not found
+        $schedule->delete(); // Delete the schedule
+
         return redirect()->route('schedules.index')->with('success', 'Schedule deleted successfully.');
     }
+
+
 
     public function  search(Request $request){
 
         $search = $request->input('search');
+
 
         // $schedules = Schedule::with('course','teacher')->where('day', 'like', '%' . $search .'%')
         // ->orWhere('name','like','%'.$search.'%')->orWhere('course_code','like','%'.$search.'%')
         // ->orWhere('course_name','like','%'.$search.'%')->orWhere('day','like','%'.$search.'%')
         // ->orWhere('start_time','like','%'.$search.'%')->orWhere('room_no','like','%'.$search.'%')->get();
 
-        $schedules = Schedule::where('course_code', 'LIKE', "%{$search}%")
-            ->orWhere('course_name', 'LIKE' .$search.'%')
-            ->orWhere('name', 'LIKE','LIKE'.$search.'%')
-            ->orWhere('day', 'LIKE', 'LIKE' .$search.'%')
-            ->orWhere('start_time', 'LIKE' .$search.'%')
+        $schedules = Schedule::where('course_code', 'like'.$search.'%')
+            ->orWhere('course_name', 'like','%' .$search.'%')
+            ->orWhere('name', 'like','%'.$search.'%')
+            ->orWhere('day', 'like','%' .$search.'%')
+            ->orWhere('start_time','like' ,'%'.$search.'%')
             ->paginate(10);
 
-        return view('schedule.index',[
-            'schedules' => $schedules,
-        ]);
+
+        return view('schedule.index',[ 'schedules' => $schedules,]);
         // echo"<pre>";
         // print_r($schedules);
 

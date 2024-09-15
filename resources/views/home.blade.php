@@ -545,16 +545,32 @@
 
 
  <div class="container-fluid mt-5 p-4">
-    <h1 class="fac_text text-center text-dark"><i class="fa-brands fa-elementor "></i>Department of </h1>
 
-        <div class="row justify-content-center covepage  mt-5 ">
+     <div class="section-title">
+         <h2><i class="fa-brands fa-elementor "></i> Department of  I T M</h2>
+         </div>
+         {{-- <div class="rounded text-box mt-5"> --}}
+            {{-- <h2 class="fac_text text-center text-dark"><i class="fa-brands fa-elementor "></i>Department of  I T M</h2> --}}
+        {{-- </div> --}}
+        {{-- <div class="content">
+            <h3>Why Choose Us?</h3>
+            <p>
+                <strong>"Education is the most powerful weapon which you can use to change the world."</strong>
+                 provides you a unique opportunity to have BSc. in Information Technology and Management.
+                 In the field of Information Technology and Management, the job possibilities are almost endless.
+                 "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...
+            </p>
+          </div> --}}
+
+        <div class="row justify-content-center   mt-5 ">
+
+        {{-- <div class="row justify-content-center covepage  mt-5 "> --}}
             <div class="col-md-6 align-items-stretch d-flex">
                 <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg);">
                     <div class="video justify-content-center">
-                        {{-- <iframe class="embed-responsive-item" src="https://annisulhuq.daffodil.university/vt/" frameborder="0" allow="accelerometer; autoplay" allowfullscreen width="100%" height="100%"></iframe> --}}
                         {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
                             {{-- <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid-custom manual-shadow "  > --}}
-                                <img src="{{asset('frontend/image/student3.png')}}" class="image1 img-fluid-custom  animate__animated animate__fadeInDown">
+                                <img src="{{asset('frontend/image/why-us.png')}}" class="image1 img-fluid-custom      animate__animated animate__fadeInDown">
 
                                 {{-- <iframe width="640" height="450" src="#">
                                 </iframe> --}}
@@ -565,13 +581,24 @@
                 </div>
             </div>
 
-            <div class="col-md-6  p-2 itm-card">
+            <div class="col-md-6  p-3 itm-card">
+
+
 
                 {{-- <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4> --}}
                     <h1 class="text-white itm">Information Technology and Management (ITM)</h1>
 
+                     <div class="content">
+            <h3>Why Choose Us?</h3>
+            <p class="why_itm">
+               "Education is the most powerful weapon which you can use to change the world."
+                 provides you a unique opportunity to have BSc. in Information Technology and Management.
+                 In the field of Information Technology and Management, the job possibilities are almost endless.
+                 "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...
+            </p>
+          </div>
 
-                    <p class="text-white-50 heading_section"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
+                    {{-- <p class="text-white-50 heading_section"> provides you a unique opportunity to have BSc. in Information Technology and Management. In the field of Information Technology and Management, the job possibilities are almost endless. "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...<p>
 
                     <br>
                     <br>
@@ -582,14 +609,78 @@
                        <br>
                        <br>
                       <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
-                    </div>
+                    </div> --}}
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Information
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show mt-2" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <i class="ri-check-double-line text-success fa-lg"></i> <strong>"Innovative Curriculum: "</strong>
+                           Our program integrates cutting-edge information technologies and prepares students for the latest industry trends
+                           <br>
+                           <br>
+                           <i class="ri-check-double-line text-success fa-lg"></i> <strong>"Hands-On Experience:"</strong>
+                          Engage in real-world projects, internships, and practical training with information systems and data management.
+                          </div>
+                        </div>
+                        <div class="accordion-item ">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Technology
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse p-3 mt-2" data-bs-parent="#accordionExample">
+                            <div class="accordion-body  ">
+
+                                <i class="ri-check-double-line text-success fa-lg"></i><strong>  "State-of-the-Art Facilities":</strong>
+                                {{-- <a target="_blank" class="down-btn" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a> --}}
+                                Modern labs, high-tech equipment, and the latest software tools for advanced learning and research.
+                                <br>
+                                <br>
+                                <i class="ri-check-double-line text-success fa-lg"></i><strong>  "Industry Partnerships: "</strong>
+                                 Collaborations with tech companies providing exposure to the industry and potential job placements.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Management
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {{-- <div class="d-flex justify-content-evenly">
+                                    <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face"><i class="fa-brands fa-facebook"></i> Facebook </a></i>
+                                     <br>
+                                     <br>
+                                    <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
+                                  </div> --}}
+                                  <i class="ri-check-double-line text-success fa-lg"></i><strong>" Leadership Skills: "</strong>
+                                    Develop essential management skills such as project management, strategic planning, and organizational behavior.
+                                    <br>
+                                <br>
+                                <i class="ri-check-double-line text-success fa-lg"></i><strong>"Career Advancement: "</strong>
+                                     Success stories of alumni who have achieved significant career milestones and leadership positions.
+                                </div>
+                          </div>
+                        </div>
+                      </div>
 
         </div>
     </div>
+    </div>
+</div>
+</div>
 </div>
 <br>
 <br>
 <br>
+
 {{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a> --}}
     <div class="container mt-5">
         <div class="row mt-5  d-flex justify-space-bewteen">
@@ -1133,6 +1224,8 @@
                  </div>
                </div>
                </div> -->
+
+
                <div class="container-fluid mt-5">
                 <div class="row  ">
                    <marquee class=" logos text-center mt-5 ">

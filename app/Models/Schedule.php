@@ -10,6 +10,7 @@ class Schedule extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'schedule_id'; // Specify the correct primary key
 
 
     protected $fillable = [

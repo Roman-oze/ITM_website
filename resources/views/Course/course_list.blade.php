@@ -75,21 +75,6 @@
 
 
 
-<script>
-    $(document).ready(function() {
-        $('#toggleButton').click(function() {
-            var $dataContainer = $('#dataContainer');
-            var $button = $(this);
 
-            if ($dataContainer.is(':visible')) {
-                $dataContainer.hide();
-                $button.text('Show Data');
-            } else {
-                $dataContainer.show();
-                $button.text('Hide Data');
-            }
-        });
-    });
-</script>
 
 @endsection

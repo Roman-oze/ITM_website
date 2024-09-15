@@ -1,133 +1,150 @@
 @extends('layout.app')
 @include('frontend.program_style')
 
+@section('headerpage')
 
+<br>
+<br>
+<br>
+<div class="container mt-5">
+    <div class="row float-end">
+        <div class="">
+
+            <a target="_blank" class="down-btn " href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a>
+        </div>
+    </div>
+
+    <div class="row gx-4 gx-lg-3 h-100 align-items-center justify-content-center text-center" >
+        <div class="col-lg-8 align-self-end">
+            <h1 class="text-info font-weight-bold">Course  Details</h1>
+            <hr class="divider text-white" />
+        </div>
+        <div class="col-lg-8 align-self-baseline d-flex ">
+            <p class="text-dark mb-5">"Embrace your course as a journey of growth. Every lesson is a step toward unlocking your potential. Stay committed, embrace challenges, and let curiosity drive your success. Transform knowledge into expertise and let the pursuit of learning be your motivation."</p>
+
+        </div>
+
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a>
+
+        {{-- <div class="container">
+            <h2>Dynamic Tabs</h2>
+            <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
+
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#home">All course List</a></li>
+              <li><a data-toggle="tab" href="#menu1">1st Semeste</a></li>
+              <li><a data-toggle="tab" href="#menu2">2nd Semester</a></li>
+              <li><a data-toggle="tab" href="#menu3">3rd Semester</a></li>
+              <li><a data-toggle="tab" href="#menu4">4th Semester</a></li>
+              <li><a data-toggle="tab" href="#menu5">5th Semester</a></li>
+              <li><a data-toggle="tab" href="#menu6">6th Semester</a></li>
+              <li><a data-toggle="tab" href="#menu7">7th Semester</a></li>
+              <li><a data-toggle="tab" href="#menu8">8th Semester</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <h3>All course List</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div id="menu1" class="tab-pane fade">
+                <h3>1st Semeste</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+              <div id="menu2" class="tab-pane fade">
+                <h3>2nd Semester</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              </div>
+              <div id="menu3" class="tab-pane fade">
+                <h3>3rd Semester</h3>
+                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              </div>
+              <div id="menu4" class="tab-pane fade">
+                <h3>4th Semester</h3>
+                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              </div>
+              <div id="menu5" class="tab-pane fade">
+                <h3>5th Semester</h3>
+                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              </div>
+              <div id="menu6" class="tab-pane fade">
+                <h3>6th Semester</h3>
+                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              </div>
+              <div id="menu7" class="tab-pane fade">
+                <h3>7th Semester</h3>
+                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              </div>
+              <div id="menu8" class="tab-pane fade">
+                <h3>8th Semester</h3>
+                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              </div>
+            </div>
+          </div> --}}
+
+
+
+
+
+
+          {{-- <div class="container">
+            <h2>Dynamic Tabs</h2>
+            <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
+
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+              <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+              <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+              <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <h3>HOME</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div id="menu1" class="tab-pane fade">
+                <h3>Menu 1</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+              <div id="menu2" class="tab-pane fade">
+                <h3>Menu 2</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              </div>
+              <div id="menu3" class="tab-pane fade">
+                <h3>Menu 3</h3>
+                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              </div>
+            </div>
+          </div>
+     --}}
+
+
+
+    <div class="course text-center">
+        <a href="#catagory" class="btn0">Course Catagory</a>
+        <a href="{{route('course_list')}}" class="btn1 text-dark">1st Semester</a>
+        <a href="#2ndsemester" class="btn2">2nd Semester</a>
+        <a href="#3rdsemester" class="btn3">3rd Semester</a>
+        <a href="#4thsemester" class="btn4">4th Semester</a>
+        <a href="#5thsemester" class="btn5">5th Semester</a>
+        <a href="#6thsemester" class="btn6">6th Semester</a>
+        <a href="#7thsemester" class="btn7">7th Semester</a>
+        <a href="#8thsemester" class="btn8">8th Semester</a>
+
+      </div>
+    </div>
+    </div>
+@endsection
 
 @section('content')
 
-<div class="row gx-4 gx-lg-3 h-100 align-items-center justify-content-center text-center" >
-    <div class="col-lg-8 align-self-end">
-        <h1 class="text-info font-weight-bold">Course  Details</h1>
-        <hr class="divider text-white" />
-    </div>
-    <div class="col-lg-8 align-self-baseline d-flex ">
-        <p class="text-dark mb-5">"Embrace your course as a journey of growth. Every lesson is a step toward unlocking your potential. Stay committed, embrace challenges, and let curiosity drive your success. Transform knowledge into expertise and let the pursuit of learning be your motivation."</p>
-
-    </div>
-
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a>
-
-    {{-- <div class="container">
-        <h2>Dynamic Tabs</h2>
-        <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
-
-        <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#home">All course List</a></li>
-          <li><a data-toggle="tab" href="#menu1">1st Semeste</a></li>
-          <li><a data-toggle="tab" href="#menu2">2nd Semester</a></li>
-          <li><a data-toggle="tab" href="#menu3">3rd Semester</a></li>
-          <li><a data-toggle="tab" href="#menu4">4th Semester</a></li>
-          <li><a data-toggle="tab" href="#menu5">5th Semester</a></li>
-          <li><a data-toggle="tab" href="#menu6">6th Semester</a></li>
-          <li><a data-toggle="tab" href="#menu7">7th Semester</a></li>
-          <li><a data-toggle="tab" href="#menu8">8th Semester</a></li>
-        </ul>
-
-        <div class="tab-content">
-          <div id="home" class="tab-pane fade in active">
-            <h3>All course List</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div id="menu1" class="tab-pane fade">
-            <h3>1st Semeste</h3>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-          <div id="menu2" class="tab-pane fade">
-            <h3>2nd Semester</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          </div>
-          <div id="menu3" class="tab-pane fade">
-            <h3>3rd Semester</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          </div>
-          <div id="menu4" class="tab-pane fade">
-            <h3>4th Semester</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          </div>
-          <div id="menu5" class="tab-pane fade">
-            <h3>5th Semester</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          </div>
-          <div id="menu6" class="tab-pane fade">
-            <h3>6th Semester</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          </div>
-          <div id="menu7" class="tab-pane fade">
-            <h3>7th Semester</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          </div>
-          <div id="menu8" class="tab-pane fade">
-            <h3>8th Semester</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          </div>
-        </div>
-      </div> --}}
 
 
 
 
-
-
-      {{-- <div class="container">
-        <h2>Dynamic Tabs</h2>
-        <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
-
-        <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-          <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-          <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-          <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
-        </ul>
-
-        <div class="tab-content">
-          <div id="home" class="tab-pane fade in active">
-            <h3>HOME</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div id="menu1" class="tab-pane fade">
-            <h3>Menu 1</h3>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-          <div id="menu2" class="tab-pane fade">
-            <h3>Menu 2</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          </div>
-          <div id="menu3" class="tab-pane fade">
-            <h3>Menu 3</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-          </div>
-        </div>
-      </div>
- --}}
-
-
-
-<div class="course text-center">
-    <a href="#catagory" class="btn0">Course Catagory</a>
-    <a href="{{route('course_list')}}" class="btn1 text-dark">1st Semester</a>
-    <a href="#2ndsemester" class="btn2">2nd Semester</a>
-    <a href="#3rdsemester" class="btn3">3rd Semester</a>
-    <a href="#4thsemester" class="btn4">4th Semester</a>
-    <a href="#5thsemester" class="btn5">5th Semester</a>
-    <a href="#6thsemester" class="btn6">6th Semester</a>
-    <a href="#7thsemester" class="btn7">7th Semester</a>
-    <a href="#8thsemester" class="btn8">8th Semester</a>
-
-  </div>
-</div>
-
-<div class="container">
+{{-- <div class="container">
     <div class="row">
         <div class="col-md-12">
             <!--<h4 class="mb-5 text-center">Information Technology &amp; Management</h4>-->
@@ -171,10 +188,13 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
-
+<br>
+<br>
+<br>
+<br>
 
 
 <section id="catagory">
