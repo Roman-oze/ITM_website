@@ -90,7 +90,8 @@ class RoutineController extends Controller
         $filePath = $file->storeAs('uploads', $fileName, 'public');
 
         Routine::create([
-            'name' => $fileName,
+            // 'name' => $fileName,
+            'name' => $request->name,
             'file_path' => '/storage/' . $filePath,
             'type' => $request->type,
             'uploaded_at' => now(),

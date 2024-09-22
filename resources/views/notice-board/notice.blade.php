@@ -1,7 +1,7 @@
 
-@extends('layout.dashboard')
+@extends('layout.app')
 
-@section('main')
+@section('content')
 
 {{-- <form  action="records" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" >
     <div class="input-group">
@@ -12,16 +12,17 @@
 
 </form> --}}
 
-<main>
 
-    <div class="container mt-5">
-        <h1 class="mt-4">Notice</h1>
-        <ol class="breadcrumb mb-4">
+    <div class="container mt-5 text-center">
+        {{-- <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
             <li class="breadcrumb-item active">Notice </li>
-        </ol>
+        </ol> --}}
         <br>
-
+        <br>
+        <br>
+        <h1 class="mt-4 text-center">Notice</h1>
+{{--
             <div class="card">
                 <div class="card-header">
                     <h5>
@@ -29,45 +30,45 @@
                     </h5>
                 </div>
 
-            </div>
+            </div> --}}
 
 
-<div class="row">
-    @foreach ($notices as $notice)
-    <div class="col-md-6">
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        @foreach ($notices as $notice)
         <div class="card p-3 mt-3">
               <div class="card-body p-3 mt-3">
                 <h2  class="text-danger text-center mt-2">{{ $notice->title }}</h2>
                         <p class=" badge text-dark text-right">{{ $notice->created_at->format('F j, Y, g:i a') }}</p>
                         <p class="mt-2 p-3">{{ $notice->content }}</p>
                         <div style="display: flex; justify-content: space-evenly; align-items: center;">
-                            <a href="{{ route('notice.edit', $notice->id) }}" class="btn btn-info">
+                            {{-- <a href="{{ route('notice.edit', $notice->id) }}" class="btn btn-info">
                                 <i class="fa-solid fa-pen-to-square"></i>
-                            </a>
+                            </a> --}}
 
-                            <form action="{{ route('notice.delete', $notice->id) }}" method="POST" style="margin: 0;">
+                            {{-- <form action="{{ route('notice.delete', $notice->id) }}" method="POST" style="margin: 0;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger">
                                     <i class="fa fa-trash"></i>
                                 </button>
-                            </form>
+                            </form> --}}
 
-                            <button id="downloadBtn" class="btn btn-dark">
-                                <i class="fa-solid fa-circle-down"></i>
+                            <button id="downloadBtn" class="btn btn-block">
+                                <i class="fa-solid fa-circle-down fa-2x"></i>
                             </button>
                         </div>
 
             </div>
         </div>
+        @endforeach
     </div>
-@endforeach
 </div>
 
 </div>
 </div>
 
-</main>
+
 <script>
     document.getElementById('downloadBtn').addEventListener('click', function() {
         var xhr = new XMLHttpRequest();

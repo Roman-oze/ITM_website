@@ -214,7 +214,8 @@ Route::controller(ClubController::class)->group(function(){
 });
 
 Route::controller(NoticeBoardController::class)->group(function(){
-    Route::get('/notices','index')->name('notice.index');
+    Route::get('/notices','notice')->name('notice');
+    Route::get('/dashboard/notice','index')->name('notice.index');
     Route::get('/notice/create','create')->name('notice.create');
     Route::post('/store','store')->name('notice.store');
     Route::get('/notice/edit/{id}','edit')->name('notice.edit');

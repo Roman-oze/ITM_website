@@ -10,6 +10,10 @@ class NoticeBoardController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function notice(){
+        $notices = NoticeBoard::all();
+        return view('notice-board.notice', compact('notices'));
+    }
     public function index()
     {
        $notices = NoticeBoard::all();

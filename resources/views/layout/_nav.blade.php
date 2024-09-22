@@ -215,7 +215,7 @@
                   <a target="_blank" href="{{route('alumni')}}" class="nav-link text-info">Alumni</a>
                   <a target="_blank" href="{{route('scholarship')}}" class="nav-link text-info">Scholarship</a>
                   {{-- <a target="_blank" href="{{url('/admission/scholarship')}}" class="nav-link text-info">Scholarship</a> --}}
-                  <a target="_blank" href="#" class="nav-link text-info">Notice Board</a>
+                  <a target="_blank" href="{{route('notice')}}" class="nav-link text-info">Notice Board</a>
                 </div>
               </div></li>
               <li><a class="nav-link scrollto"  href="{{route('program')}}">Course</a></li>

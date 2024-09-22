@@ -119,9 +119,22 @@
                     <td>{{ $file->name }}</td>
                     <td>{{ $file->uploaded_at }}</td>
                     <td>
-                        <a href="{{ route('files.download', $file->id) }}" class="btn btn-sm btn-success">Download</a>
+                        {{-- <a href="{{ route('files.download', $file->id) }}" class="btn btn-sm btn-success">Download</a> --}}
+                        {{-- <a href="{{ route('routine.delete', $file->id) }}" class="btn btn-sm btn-danger">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a> --}}
+
+                        <form action="{{route('routine.delete',$file->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-danger">
+                                <i class="fa-solid fa-trash-can"></i>
+                                </button>
+
+                        </form>
                     </td>
                 </tr>
+
             @endforeach
             </tbody>
         </table>
