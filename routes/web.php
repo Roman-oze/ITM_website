@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RoutineController;
@@ -204,6 +205,7 @@ Route::controller(HomeController::class)->group(function(){
     route::get('/admission_eligibility','admission_eligibility')->name('admission_eligibility');
     Route::get('/chart','chart')->name('chart');
     Route::get('/static','static')->name('static');
+    Route::get('/contact','contact')->name('contact');
 });
 
 Route::controller(ClubController::class)->group(function(){
@@ -223,6 +225,13 @@ Route::controller(NoticeBoardController::class)->group(function(){
     Route::delete('/notice/delete/{id}','destroy')->name('notice.delete');
 
 });
+
+// website setup
+route::resource('/herosection',HerosectionController::class);
+Route::delete('/herosection/{id}', [ScheduleController::class, 'destroy'])->name('herosection.delete');
+
+
+
 
 Route::get('/pdf_generate', [App\Http\Controllers\PdfController::class,'pdf_generate']);
 
