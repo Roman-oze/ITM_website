@@ -385,3 +385,12 @@ background-color: #37517E;
     color: #007bff;
     text-decoration: none;
   }
+  .img-decorate{
+    height: 150px;
+    width: 150px;
+    transition: transform 0.4s;
+  }
+  .img-decorate:hover{
+    transform: scale(1.05);
+
+  }

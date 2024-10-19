@@ -34,10 +34,18 @@
 
     <div class="row p-4 col-6 d-block m-auto card">
 
- <div class="mb-3">
-    <label for="image" class="form-label">Image URL</label>
-    <input type="file" class="form-control" id="imageInput" name="image" value="{{asset($teacher->image)}}" >
-  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Image</label>
+    @if ($teacher->image)
+        <div>
+            <img src="{{ asset($teacher->image) }}" alt="teacher Image" width="100">
+        </div>
+    @endif
+    <input type="file" class="form-control" id="image" name="image">
+</div>
+
+
   <div class="mb-3">
     <label for="nameInput" class="form-label">Name</label>
     <input type="text" class="form-control" id="nameInput" name="name" value="{{$teacher->name}}">

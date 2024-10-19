@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Staff;
 use App\Models\Alumni;
 use App\Models\Message;
+use App\Models\Herosection;
+use App\Models\Service;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Scholarship;
@@ -17,6 +19,9 @@ class HomeController extends Controller
      */
     public function home()
     {
+
+        $hero = Herosection::first();
+        $services = Service::all();
         $message = Message::all();
         $scholars = Scholarship::all();
         $studentCount = DB::table('users')->count();
@@ -25,11 +30,12 @@ class HomeController extends Controller
         $scholarshipCount = DB::table('scholarships')->count();
 
 
-         return view('home',compact('scholars','message'),[
+         return view('home',compact('hero','scholars','message'),[
         'studentCount' => $studentCount,
         'facultyCount' => $facultyCount,
         'alumniCount' => $alumniCount,
         'scholarshipCount' => $scholarshipCount,
+        'services' => $services,
     ]);
 
 
@@ -68,6 +74,6 @@ class HomeController extends Controller
         return view('statistic.static');
     }
 
-    
+
 
 }

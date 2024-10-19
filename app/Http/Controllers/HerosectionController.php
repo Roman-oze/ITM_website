@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\models\Herosection;
 use Illuminate\Http\Request;
 
 class HerosectionController extends Controller
@@ -11,7 +11,8 @@ class HerosectionController extends Controller
      */
     public function index()
     {
-        return view('website_setup.Hero.hero_section');
+        $herosections = Herosection::get();
+        return view('website_setup.Hero.hero_section',compact('herosections'));
     }
 
     /**
@@ -19,7 +20,7 @@ class HerosectionController extends Controller
      */
     public function create()
     {
-        //
+        return view('website_setup.Hero.create');
     }
 
     /**
@@ -27,9 +28,26 @@ class HerosectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+       $request->validate([
+        'title' => 'required',
+        'description' => 'required',
+        'link' => 'nullable|url',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+    $hero = new Herosection();
+    $hero->title = $request->input('title');
+    $hero->description = $request->input('description');
+    $hero->link = $request->input('link');
 
+    $fileName = time().'.'.$request->file('image')->getClientOriginalExtension();
+    $request->file('image')->move('hero',$fileName);
+
+
+    $hero->image ='hero/'.$fileName;
+    $hero->save();
+    return redirect()->route('herosection.index')->with('success','Hero Section Added Successfully');
+
+}
     /**
      * Display the specified resource.
      */
@@ -59,6 +77,8 @@ class HerosectionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Herosection::where('id',$id)->delete();
+        return redirect()->route('herosection.index')->with('success','Hero Section Deleted Successfully');
+
     }
 }

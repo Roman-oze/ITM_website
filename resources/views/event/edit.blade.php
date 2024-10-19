@@ -23,11 +23,20 @@
             <span class="text-danger">@error('name'){{$message}}@enderror</span>
           </div>
 
+  
+
       <div class="mb-3">
-        <label for="image" class="form-label">Image URL</label>
-        <input type="file" class="form-control" value="{{asset($event->image)}}" name="image" >
-       <span class="text-danger">@error('image'){{$message}}@enderror</span>
-      </div>
+        <label for="image" class="form-label">Image</label>
+        @if ($event->image)
+            <div>
+                <img src="{{asset($event->image)}}" alt="Service Image" width="100">
+            </div>
+        @endif
+        <input type="file" class="form-control" id="image" name="image">
+        <span class="text-danger">@error('image'){{$message}}@enderror</span>
+
+    </div>
+
 
 
       <div class="mb-3">

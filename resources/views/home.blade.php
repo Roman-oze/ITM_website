@@ -97,9 +97,9 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
             <h1 class="text-white-50 welcome">Welcome!</h1>
 
-          <h2>Department of</h2>
+          <h2>{{ $hero->title }}</h2>
 
-          <h1>Information Technology & Management<img src="{{asset('frontend/image/verifi.png')}}" class="verify"></h1>
+          <h1>{{ $hero->description }}<img src="{{asset('frontend/image/verifi.png')}}" class="verify"></h1>
 
           {{-- <div class="d-flex justify-content-center justify-content-lg-start">
             <div class=" animate__animated animate__bounce animate__delay-2s">
@@ -108,11 +108,11 @@
           </div> --}}
 
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="{{route('club')}}" class="btn-get-started scrollto bn5"><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
+            <a href="{{ $hero->link }}" class="btn-get-started scrollto bn5"><i class="fa-solid fa-house-circle-check "></i>  ITM Club  </a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-          <img src="{{asset('frontend/image/hero-img.png')}}" class="img-fluid animated" alt="">
+          <img src="{{asset($hero->image)}}" class="img-fluid animated" alt="">
 
 
         </div>
@@ -985,55 +985,20 @@
                               </div>
                             </div>
                            </div> --}}
+                           @foreach ($services as $service)
 
                            <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
                             <div class="icon-box">
 
-                                <img src="{{asset('frontend/image/blc.png')}}" class="card-img-top img-decorate " alt="Blc">
+                                <img src="{{asset($service->image)}}" class="card-img-top img-decorate " alt="Blc">
 
-                              <h4><a target="_blank" href="https://elearn.daffodilvarsity.edu.bd/" class="btn btn-outline-info text-dark mt-3">Blc</a></h4>
+                              <h4><a target="_blank" href="{{ $service->link}}" class="btn btn-outline-info text-dark mt-3">{{ $service->link_name}}</a></h4>
 
-                               <p>course enrollment get feature  study roadmap with quiz assignments presentationsl
+                               <p>{{ $service->description}}
                               </p>
                             </div>
                           </div>
-
-                           <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon-box">
-
-                                <img src="{{asset('frontend/image/portal.png')}}" class="card-img-top img-decorate" alt="Student Portal">
-
-                                <h4><a target="_blank" href="http://studentportal.diu.edu.bd/" class="btn btn-outline-info text-dark mt-3 ">Student Portal</a></h4>
-
-                               <p>Payment, result, transport, clearance, and all services are provided by the student portal.</p>
-                            </div>
-                          </div>
-
-                           <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon-box">
-
-                                <img src="{{asset('frontend/image/1card.png')}}" class="card-img-top img-decorate" alt="1card">
-
-                                <h4><a target="_blank" href="https://1card.com.bd/" class="btn btn-outline-info text-dark mt-3">1card</a></h4>
-
-                               <p>Download the 1card Android app and iOS app. All services are available within this app.</p>
-                            </div>
-                          </div>
-
-                           <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon-box">
-
-                                <img src="{{asset('frontend/image/blue-bus-png.png')}}" class="card-img-top img-decorate " alt="Transport">
-
-                                <h4><a target="_blank" href="https://daffodilvarsity.edu.bd/article/transport" class="btn btn-outline-info text-dark  mt-3">Transport</a>
-                                </h4>
-
-                               <p>Firstly apply for transport card then use transport service for several card for eachsemester </p>
-                            </div>
-                          </div>
-
-
-
+                        @endforeach
                     </div>
                 </div>
                 </div>

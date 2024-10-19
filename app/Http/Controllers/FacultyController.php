@@ -76,6 +76,9 @@ class FacultyController extends Controller
 
 
 
+
+
+
             $data ['image'] =  'faculty/'.$fileName;
             $data['name']=$request->name;
             $data['designation']=$request->designation;
@@ -154,8 +157,9 @@ class FacultyController extends Controller
      */
     public function destroy(string $id)
     {
-        DB::table('teachers')->where('teacher_id',$id)->delete();
-        return redirect()->back();
+        Teacher::where('teacher_id',$id)->delete();
+        return redirect()->route('dashboard.faculty')->with('success','Faculty delete Successfully');
+
     }
 
 

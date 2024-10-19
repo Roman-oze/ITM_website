@@ -1026,6 +1026,7 @@ height: 65px;
     background-image:linear-gradient(rgb(36, 156, 177),#1d49dad3);
     color:  #fbfeff;
     border: none;
+    
     border-radius: 14px;
     transition: 1s;
   }
