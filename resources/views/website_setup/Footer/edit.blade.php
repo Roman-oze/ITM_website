@@ -4,10 +4,10 @@
 <main>
     <div class="container mt-5">
 
-        <h1 class="mt-4">Footer Create </h1>
+        <h1 class="mt-4">Footer Edit </h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Footer Create </li>
+            <li class="breadcrumb-item active">Footer Edit </li>
         </ol>
 
 

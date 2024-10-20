@@ -6,6 +6,7 @@ use App\Models\Alumni;
 use App\Models\Message;
 use App\Models\Herosection;
 use App\Models\Service;
+use App\Models\Footer;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Scholarship;
@@ -22,6 +23,7 @@ class HomeController extends Controller
 
         $hero = Herosection::first();
         $services = Service::all();
+        $footers = Footer::all();
         $message = Message::all();
         $scholars = Scholarship::all();
         $studentCount = DB::table('users')->count();
@@ -36,6 +38,7 @@ class HomeController extends Controller
         'alumniCount' => $alumniCount,
         'scholarshipCount' => $scholarshipCount,
         'services' => $services,
+        'footers' => $footers,
     ]);
 
 

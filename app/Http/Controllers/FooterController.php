@@ -80,12 +80,12 @@ class FooterController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validated = $request->validate([
-            'address' => 'required|string|max:255',
-            'phone' => 'required|string|max:15',
-            'email' => 'required|email',
-            'footer_logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+        // $validated = $request->validate([
+        //     'address' => 'nullable|required|string|max:255',
+        //     'phone' => 'nullable|required|string|max:15',
+        //     'email' => 'nullable|required|email',
+        //     'footer_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        // ]);
 
         $fileName = time().'.'.$request->file('footer_logo')->getClientOriginalExtension();
         $request->file('footer_logo')->move('footer_logo', $fileName);
@@ -100,7 +100,7 @@ class FooterController extends Controller
         $data['instagram '] = $request->instagram ;
         $data['linkedin '] = $request->linkedin ;
 
-         Footer::where('id',$id)->update($data);
+        Footer::where('id',$id)->update($data);
 
 
 

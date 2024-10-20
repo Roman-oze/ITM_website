@@ -76,13 +76,14 @@
       <div class="footer-top">
         <div class="container">
           <div class="row">
+            @foreach ($footers as $footer)
             <div class="col-lg-3 col-md-6 footer-contact">
               <h3>( I T M )</h3>
               <p>
-                AB-4 Building (6th Floor), <br>Khagan,Ashulia
-                <br>Dhaka. <br><br><strong>Phone:</strong> +01847140039
-                55<br>
-                <strong>Email:</strong>  itmoffice@daffodilvarsity.edu.bd<br>
+                {{ $footer->address }} <br><br><strong>Phone:</strong>
+                {{ $footer->phone }}
+                <br>
+                <strong>Email:</strong>{{ $footer->email }}<br>
               </p>
             </div>
 
@@ -100,7 +101,7 @@
 
                 </li>
                 <li>
-                  <i class="bx bx-chevron-right"></i> <a href="{{route('about')}}">Contact Us</a>
+                  <i class="bx bx-chevron-right"></i> <a href="{{route('about')}}" target="_blank">Contact Us</a>
                 </li>
               </ul>
             </div>
@@ -110,11 +111,11 @@
               <ul>
                 <li>
                   <i class="bx bx-chevron-right"></i>
-                  <a href="https://daffodilvarsity.edu.bd/department/itm/local-tuition">Tuition fees</a>
+                  <a href="{{ $footer->tuition_fees }}">Tuition fees</a>
                 </li>
                 <li>
                   <i class="bx bx-chevron-right"></i>
-                  <a href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Download Course</a>
+                  <a href="{{ $footer->course_download  }}" target="_blank">Download Course</a>
                 </li>
                 <li>
                   <i class="bx bx-chevron-right"></i>
@@ -133,11 +134,13 @@
               <img src="{{ asset('frontend/image/itmclub.png')}}" class="img-fluid" >
 
               <div class="social-links mt-3">
-                <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="google-plus"><i class="fa-solid fa-envelope"></i></a>
-                <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="{{ $footer->facebook }}" class="facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="{{ $footer->instragram }}" class="google-plus" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <a href="{{ $footer->linkedin }}" class="linkedin" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
               </div>
             </div>
+
+            @endforeach
           </div>
         </div>
       </div>

@@ -31,7 +31,6 @@
                                 <img src="{{ asset($institute->footer_logo) }}" class="card-img-top" alt="Institute Logo">
                             </div>
                         @endif
-                        <input type="file" class="form-control" id="image" name="footer_logo">
 
 
 
@@ -47,13 +46,13 @@
 
                         <div class="mt-3">
                             <a href="{{ $institute->facebook }}" target="_blank" class="me-2">
-                                <i class="fab fa-facebook-f fa-2x"></i>
+                                <i class="fab fa-facebook-f "></i>
                             </a>
                             <a href="{{ $institute->instagram }}" target="_blank" class="me-2">
-                                <i class="fab fa-instagram fa-2x"></i>
+                                <i class="fab fa-instagram "></i>
                             </a>
                             <a href="{{ $institute->linkedin }}" target="_blank" class="me-2">
-                                <i class="fab fa-linkedin-in fa-2x"></i>
+                                <i class="fab fa-linkedin-in "></i>
                             </a>
                             <br>
 
