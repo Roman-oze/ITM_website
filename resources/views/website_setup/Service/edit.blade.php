@@ -26,7 +26,7 @@
             <div class="col-6">
                 <form action="{{ route('services.update',$service->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('POST')
+                    @method('PUT')
 
                     <div class="mb-3">
                         <label for="image" class="form-label">Image</label>
@@ -37,7 +37,7 @@
                         @endif
                         <input type="file" class="form-control" id="image" name="image">
                     </div>
-                    
+
                     <div class="mb-3">
                         <label for="link" class="form-label">Link Name</label>
                         <input class="form-control" id="link" name="link_name" rows="3" value="{{ $service->link_name}}">
@@ -53,7 +53,7 @@
                         <textarea class="form-control" id="description" name="description" rows="3" required>{{ $service->description }}</textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-success">update</button>
                 </form>
             </div>
         </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RoutineController;
@@ -233,6 +234,12 @@ Route::delete('/herosection/{id}', [HerosectionController::class, 'destroy'])->n
 
 route::resource('/services',ServiceController::class);
 Route::delete('/service/{id}', [ServiceController::class, 'destroy'])->name('service.delete');
+
+// route::resource('/footer',FooterController::class);
+// Route::delete('/footer/{id}', [FooterController::class, 'destroy'])->name('footer.delete');
+
+route::resource('/footer',FooterController::class);
+Route::delete('/footer/{id}', [FooterController::class, 'destroy'])->name('footer.delete');
 
 
 

@@ -51,7 +51,7 @@
                         <a href="{{route('herosection.index')}}" class="nav-link">Hero Section</a>
                         <a href="#" class="nav-link">Feature</a>
                         <a href="{{route('services.index')}}" class="nav-link">Services</a>
-                        <a href="#" class="nav-link">Footer</a>
+                        <a href="{{route('footer.index')}}" class="nav-link">Footer</a>
                         <a href="#" class="nav-link">Appearance</a>
                     </nav>
                 </div>

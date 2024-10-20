@@ -69,7 +69,7 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         // Find the service by ID
-        $service = Service::findOrFail($id);
+
 
         // Check if a new image is uploaded
 
@@ -78,16 +78,15 @@ class ServiceController extends Controller
             $request->file('image')->move('service', $fileName);
 
             // Update the service image path
-            $service->image = 'service/'.$fileName;
-
-
+        $data['image'] = 'service/'.$fileName;
         // Update other fields
-        $service->link_name = $request->link_name;
-        $service->link = $request->link;
-        $service->description = $request->description;
+        $data['link_name'] = $request->link_name;
+        $data['link'] = $request->link;
+        $data['description'] = $request->description;
 
         // Save the updated service
-        $service->save();
+        Service::where('id', $id)->update($data);
+
 
         // Redirect with a success message
         return redirect()->route('services.index')->with('success', 'Service updated successfully.');
