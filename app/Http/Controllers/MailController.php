@@ -5,17 +5,14 @@ namespace App\Http\Controllers;
 use App\Mail\UserNotificationMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Facades\Storage;
 
 class MailController extends Controller
-
-
-
 {
-
- public function index(){
-    return view('emails.send-mail');
- }
+    public function index()
+    {
+        return view('emails.send-mail');
+    }
 
     public function sendMail(Request $request)
     {
@@ -27,22 +24,33 @@ class MailController extends Controller
             'attachment' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
         ]);
 
-        // Store file if uploaded
-        $filePath = null;
-        if ($request->hasFile('attachment')) {
-            $filePath = $request->file('attachment')->store('attachments');
-        }
-
-        // Prepare email details
+        // Email details
         $details = [
             'subject' => $request->subject,
-            'message' => $request->message,
+            'message' => $request->message
         ];
 
-        // Send emails to each recipient
+        // Process file upload if it exists
+        $attachmentPath = null;
+        if ($request->hasFile('attachment')) {
+            $attachmentPath = $request->file('attachment')->store('attachments');
+        }
+
+        // Send emails
         $emails = explode(',', $request->emails);
         foreach ($emails as $email) {
-            Mail::to(trim($email))->send(new UserNotificationMail($details, $filePath ? storage_path('app/' . $filePath) : null));
+            $email = trim($email); // Trim whitespace
+            // Optional: Validate email format
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                try {
+                    Mail::to($email)->send(new UserNotificationMail($details, $attachmentPath));
+                } catch (\Exception $e) {
+                    // Optionally handle the error for each email
+                    return redirect()->back()->with('error', 'Error sending email to: ' . $email);
+                }
+            } else {
+                return redirect()->back()->with('error', 'Invalid email address: ' . $email);
+            }
         }
 
         return redirect()->back()->with('success', 'Emails sent successfully!');

@@ -11,23 +11,22 @@ class UserNotificationMail extends Mailable
     use Queueable, SerializesModels;
 
     public $details;
-    public $filePath;
+    public $attachment;
 
-    public function __construct($details, $filePath = null)
+    public function __construct($details, $attachment = null)
     {
         $this->details = $details;
-        $this->filePath = $filePath;
+        $this->attachment = $attachment;
     }
 
     public function build()
     {
         $email = $this->subject($this->details['subject'])
                       ->view('emails.notification')
-                      ->with('details', $this->details);
+                      ->with('message', $this->details['message']);
 
-        // Attach file if exists
-        if ($this->filePath) {
-            $email->attach($this->filePath);
+        if ($this->attachment) {
+            $email->attach(storage_path('app/' . $this->attachment));
         }
 
         return $email;
