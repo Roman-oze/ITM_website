@@ -17,7 +17,7 @@
 
 
         <div class="row">
-            @foreach($institutes as $institute)
+            @foreach($footers as $institute)
             <div class="col-md-4 mb-4">
                 <div class="card">
                     {{-- @if($institute->footer_logo)

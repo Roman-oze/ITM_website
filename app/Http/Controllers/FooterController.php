@@ -12,9 +12,14 @@ class FooterController extends Controller
      */
     public function index()
     {
-        $institutes = Footer::all();
-       return view('website_setup.Footer.footer',compact('institutes'));
+        $footers = Footer::all();
+       return view('website_setup.Footer.footer',compact('footers'));
     }
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.

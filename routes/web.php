@@ -248,11 +248,20 @@ Route::get('/pdf_generate', [App\Http\Controllers\PdfController::class,'pdf_gene
 
 
 
+Route::get('/send-mail', function () {
+return view('emails.send-mail');
+})->name('send.mail.form');
 
-Route::get('send-mail',[MailController::class,'SendWelcomeEmail']);
+Route::post('/send-mail', [MailController::class, 'sendMail'])->name('send.mail');
+Route::get('/send-form', [MailController::class, 'index'])->name('send-form.index');
 
-Route::get('/contact',[MailController::class,'contactForm'])->name('contactForm');
 
-Route::post('/contact',[MailController::class,'sendContactMail'])->name('contact.mail');
+// Route::get('send-mail',[MailController::class,'SendWelcomeEmail']);
+
+// Route::get('/send-emails', [MailController::class, 'sendEmails']);
+
+// Route::get('/contact',[MailController::class,'contactForm'])->name('contactForm');
+
+// Route::post('/contact',[MailController::class,'sendContactMail'])->name('contact.mail');
 
 require __DIR__.'/auth.php';

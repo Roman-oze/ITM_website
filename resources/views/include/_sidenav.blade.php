@@ -56,11 +56,19 @@
                     </nav>
                 </div>
 
+
                 <!-- Messages Link -->
                 <a class="nav-link" href="{{route('contact.index')}}">
                     <div class="sb-nav-link-icon"><i class="fa-regular fa-message fa-fw text-white fa-lg"></i></div>
                     Messages
                 </a>
+
+                <!-- Mail Link -->
+                <a class="nav-link" href="{{route('send-form.index')}}">
+                    <div class="sb-nav-link-icon"><i class="fa-regular fa-envelope text-white fa-lg"></i></div>
+                    Mail
+                </a>
+
 
                 <!-- Faculty Link -->
                 <a class="nav-link" href="{{route('faculty.index')}}">
@@ -90,12 +98,6 @@
                 <a class="nav-link" href="{{route('event.index')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days text-white fa-lg"></i></div>
                     Events
-                </a>
-
-                <!-- Communication Link -->
-                <a class="nav-link" href="#">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-award text-white fa-lg"></i></div>
-                    Communication
                 </a>
 
                 <!-- Staff Link -->

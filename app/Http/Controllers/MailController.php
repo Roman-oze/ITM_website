@@ -2,70 +2,49 @@
 
 namespace App\Http\Controllers;
 
-use Log;
-use Exception;
-Use App\Mail\SendRoutine;
+use App\Mail\UserNotificationMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
+
 class MailController extends Controller
+
+
+
 {
-   public function SendWelcomeEmail(){
-    $toEmail = 'itmoffecial@gmail.com';
-    $message ='welcome to our itm website';
-    $subject = 'Welcome email in laravel using email';
-    // $fromEmail = 'itmoffecial@gmail.com';
-    // $fromName = 'ITM OFFICIAL';
-    // $headers = "From: $fromEmail \r\n";
 
-    $response = Mail::to($toEmail)->send(new SendRoutine($message,$subject));
+ public function index(){
+    return view('emails.send-mail');
+ }
 
-    dd($response);
-   }
+    public function sendMail(Request $request)
+    {
+        // Validate form data
+        $validated = $request->validate([
+            'emails' => 'required|string',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+            'attachment' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+        ]);
 
-   public function sendContactMail(Request $request){
-
-    $this->validate($request,[
-        'name' => 'required',
-        'email' => 'required|email',
-        'subject'=> 'required | min:5 |max:100',
-        'message' => 'required| min:10 |max:255',
-        'attachment' =>'required | mimes:pdf,doc,docx,xls,xlsx,csv|max:2048'
-    ]);
-
-    try{
-        if($request->hasFile('attachment')){
-
-            $fileName = time().'.'.$request->file('attachment')->extension();
-            $request->file('attachment')->move('attachment', $fileName);
-
-            $adminMail = 'itmoffecial@gmail.com';
-
-
-            $response = Mail::to( $adminMail)->send(new SendRoutine($request->all(), $fileName));
-
-            // if($response){
-            //     return back()->with('success','Thank You Email sent successfully');
-            // }
-            // return back()->with('error','please try again');
-
-
-                dd($response);
-
+        // Store file if uploaded
+        $filePath = null;
+        if ($request->hasFile('attachment')) {
+            $filePath = $request->file('attachment')->store('attachments');
         }
 
+        // Prepare email details
+        $details = [
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ];
+
+        // Send emails to each recipient
+        $emails = explode(',', $request->emails);
+        foreach ($emails as $email) {
+            Mail::to(trim($email))->send(new UserNotificationMail($details, $filePath ? storage_path('app/' . $filePath) : null));
+        }
+
+        return redirect()->back()->with('success', 'Emails sent successfully!');
     }
-    catch(Exception $e){
-        return back()->with('error','please try again');
-    }
-
-   }
-
-   public function contactForm(){
-
-    return view('mail-temlate.contact-form');
-
-   }
-
-
 }
