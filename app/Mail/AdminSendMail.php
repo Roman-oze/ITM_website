@@ -3,10 +3,7 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class AdminSendMail extends Mailable
@@ -26,45 +23,26 @@ class AdminSendMail extends Mailable
     }
 
     /**
-     * Get the message envelope.
-     */
-    public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: 'Admin Send Mail '
-        );
-    }
-
-    /**
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            markdown: 'Emails.Mail-Template',
-            with: [
-                'messageContent' => $this->messageContent,
-            ]
-        );
-    }
-
-    /**
-     * Get the attachments for the message.
+     * Build the message.
      *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     * @return $this
      */
-    public function attachments(): array
+    public function build()
     {
-        $attachments = [];
+        $email = $this->subject('Admin Send Mail')
+                      ->view('Emails.Mail-Template')
+                      ->with('messageContent', $this->messageContent);
 
+        // Check if an attachment is present and attach it to the email
         if ($this->attachment) {
-            $attachments[] = new \Illuminate\Mail\Mailables\Attachment(
-                path: $this->attachment->getRealPath(),
-                as: $this->attachment->getClientOriginalName(),
-                mime: $this->attachment->getMimeType()
-            );
+            $email->attach($this->attachment->getRealPath(), [
+                'as' => $this->attachment->getClientOriginalName(),
+                'mime' => $this->attachment->getMimeType(),
+            ]);
         }
 
-        return $attachments;
+        return $email;
     }
 }
+
+

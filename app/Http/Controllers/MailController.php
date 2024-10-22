@@ -21,11 +21,10 @@ class MailController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'emails' => 'required',
             'message' => 'required',
-            'attachment' => 'nullable|file',
+            'attachment' => 'nullable|file|max:10240', // optional file with a size limit (e.g., 10 MB)
         ]);
 
         // Split emails by comma and trim whitespace
