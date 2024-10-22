@@ -10,8 +10,8 @@ class UserNotificationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $details;
-    public $attachment;
+    public $details = '';
+    public $attachment =' ';
 
     public function __construct($details, $attachment = null)
     {
