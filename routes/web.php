@@ -248,9 +248,9 @@ Route::get('/pdf_generate', [App\Http\Controllers\PdfController::class,'pdf_gene
 
 
 
-Route::get('/send-mail', function () {
-return view('emails.send-mail');
-})->name('send.mail.form');
+    // Route::get('/send-mail', function () {
+    // return view('emails.send-mail');
+    // })->name('send.mail.form');
 
 Route::post('/send-mail', [MailController::class, 'sendMail'])->name('send.mail');
 Route::get('/send-form', [MailController::class, 'index'])->name('send-form.index');

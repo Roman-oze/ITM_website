@@ -19,7 +19,7 @@
                     {{ session()->get('error') }}
                 </div>
             @endif
-                <div class="card">
+                {{-- <div class="card">
                     <div class="card-header bg-dark text-white text-center h4">Send Email with Attachment</div>
                     <div class="card-body">
                         <form action="{{ route('send.mail') }}" method="POST" enctype="multipart/form-data">
@@ -58,6 +58,34 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+    <div class="container mt-5">
+        <h2 class="mb-4">Send Mail</h2>
+
+        <form action="{{ route('send.mail') }}" method="POST">
+            @csrf
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
+
+
+
 </main>
 @endsection
+
