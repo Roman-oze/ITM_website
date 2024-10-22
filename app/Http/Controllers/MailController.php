@@ -1,54 +1,69 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Log;
-
-use App\Mail\SendMail;
 use Exception;
+
+use App\Mail\AdminSendMail;
+// use App\Mail\SendMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class MailController extends Controller
 {
-    public function index()
+    public function create()
     {
         return view('emails.send-mail');
     }
 
 
-public function sendMail()
-{
-//    $name = $request->name;
-//    $phone = $request->phone;
-//    $message = $request->message;
+    public function store(Request $request)
+    {
 
-//    $toEmail = "rumuislam202@gmail.com";
+        $request->validate([
+            'emails' => 'required',
+            'message' => 'required',
+            'attachment' => 'nullable|file',
+        ]);
 
-//    $response = Mail::to(  $toEmail )->send(new SendMail($name , $phone , $message));
+        // Split emails by comma and trim whitespace
+        $emails = array_map('trim', explode(',', $request->emails));
+        $messageContent = $request->message;
+        $attachment = $request->file('attachment');
+
+        // Loop through each email and send the mail
+        foreach ($emails as $email) {
+            Mail::to($email)->send(new AdminSendMail($messageContent, $attachment));
+        }
+
+        return back()->with('success', 'Emails sent successfully!');
+    }
 
 
-//     return back()->with('success', 'Email(s) sent successfully!');
 
-try {
-    $toEmail = "rumuislam202@gmail.com";
+// public function store( Request $request)
+// {
 
-    $welcomeMessage = "This is the Department of Information Technology & Management";
+//        $valiadtionData =  $request->validate([
+//             'name' =>' required | string | max:255',
+//             'email' => 'required|email | unique :users|max:255',
+//         ]);
 
-    $response =  Mail::to($toEmail)->send(new SendMail($welcomeMessage));
+//         DB::table('users')->insert($request->except(keys: '_token'));
 
-   dd($response);
 
-    // Log::info("Email sent successfully to: " . $toEmail);
 
-} catch (Exception $e) {
+//         Mail::to($request->email)->send(new RegistrationSuccessMail($request));
 
-    // Log::error("Unable to send email: " . $e->getMessage());
+//         Mail::to(users: 'admin@gmail.com')->send(new UserReport());
 
-    return back()->with('error', 'Error sending email');
-}
+//         return redirect()->back()->with('success', 'R sent successfully');
 
-}
+
+
+// }
     // public function sendMail(Request $request)
     // {
     //     // Validate form data

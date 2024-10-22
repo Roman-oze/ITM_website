@@ -252,10 +252,11 @@ Route::get('/pdf_generate', [App\Http\Controllers\PdfController::class,'pdf_gene
     // return view('emails.send-mail');
     // })->name('send.mail.form');
 
-// Route::post('/send-mail', [MailController::class, 'sendMail'])->name('send.mail');
-Route::get('/send-form', [MailController::class, 'index'])->name('send-form.index');
+Route::post('/send-mail', [MailController::class, 'store'])->name('send.mail.data');
 
-Route::get('send-email', [MailController::class,'sendMail'])->name('sendMail');
+Route::get('/send-mail-form', [MailController::class, 'create'])->name('send-mail-form.create');
+
+// Route::get('send-email', [MailController::class,'sendMail'])->name('sendMail');
 
 
 // Route::get('send-mail',[MailController::class,'SendWelcomeEmail']);

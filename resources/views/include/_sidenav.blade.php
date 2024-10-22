@@ -64,7 +64,7 @@
                 </a>
 
                 <!-- Mail Link -->
-                <a class="nav-link" href="{{route('sendMail')}}">
+                <a class="nav-link" href="{{ route('send-mail-form.create') }}">
                     <div class="sb-nav-link-icon"><i class="fa-regular fa-envelope text-white fa-lg"></i></div>
                     Mail
                 </a>

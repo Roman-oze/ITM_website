@@ -21,7 +21,7 @@
     <body>
 
         <p>Hello, Beloved Students</p>
-        <p>{{ $welcomeMessage }}</p>
+        <p>{{ $messageContent }}</p>
         <br>
         <br>
 

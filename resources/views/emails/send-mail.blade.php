@@ -5,7 +5,7 @@
     <div class="container mt-5">
         <h2 class="text-center mb-4">Send Mail to Multiple Users</h2>
 
-        <a href="{{url('send-email')}}" class="btn btn-outline-dark">Tap send mail </a>
+        {{-- <a href="{{route('sendMail')}}" class="btn btn-outline-dark">Tap send mail </a> --}}
 
 
 
@@ -61,31 +61,46 @@
             </div>
         </div>
     </div> --}}
-    <div class="container mt-5">
+    {{-- <div class="container mt-5">
         <h2 class="mb-4">Send Mail</h2>
 
-        <form action="{{ route('send.mail') }}" method="POST">
+        <form action="{{ route('send.mail.data') }}" method="POST">
             @csrf
 
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="name" name="name" >
             </div>
 
             <div class="form-group">
-                <label for="phone">Phone:</label>
-                <input type="text" class="form-control" id="phone" name="phone" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                <label for="phone">Email:</label>
+                <input type="text" class="form-control" id="phone" name="email" >
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-    </div>
+    </div> --}}
 
+    <form action="{{ route('send.mail.data') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+
+        <div class="form-group">
+            <label for="emails">Emails (comma separated):</label>
+            <input type="text" class="form-control" name="emails" placeholder="Enter email addresses" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea class="form-control" name="message" rows="5" placeholder="Enter your message" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="attachment">Attachment (optional):</label>
+            <input type="file" class="form-control-file" name="attachment">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Email</button>
+    </form>
 
 
 </main>
