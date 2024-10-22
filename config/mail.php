@@ -34,16 +34,27 @@ return [
     */
 
     'mailers' => [
+        // 'smtp' => [
+        //     'transport' => 'smtp',
+        //     'url' => env('MAIL_URL'),
+        //     'host' => env('MAIL_HOST', 'sandbox.smtp.mailtrap.io'),
+        //     'port' => env('MAIL_PORT', 2525),
+        //     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+        //     'username' => env('880d80e92fcf9e'),
+        //     'password' => env('493926a1d9a66a'),
+        //     'timeout' => null,
+        //     'local_domain' => env('MAIL_EHLO_DOMAIN'),
+        // ],
         'smtp' => [
             'transport' => 'smtp',
             'url' => env('MAIL_URL'),
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
+            'host' => env('MAIL_HOST', '127.0.0.1'),
+            'port' => env('MAIL_PORT', 2525),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('da2e3175533e82'),
-            'password' => env('7fecbb411b75fe'),
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
-            'local_domain' => env('MAIL_EHLO_DOMAIN'),
+            'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
         ],
 
         'ses' => [

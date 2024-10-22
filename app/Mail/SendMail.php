@@ -3,40 +3,55 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $name;
-    public $phone;
-    public $message; // Renamed to avoid conflict with class name
-
     /**
      * Create a new message instance.
-     *
-     * @param string $name
-     * @param string $phone
-     * @param string $message
-     * @return void
      */
-    public function __construct($name, $phone, $message)
+
+     public $welcomeMessage = " ";
+
+    public function __construct($welcomeMessage)
     {
-        $this->name = $name;
-        $this->phone = $phone;
-        $this->message = $message; // Avoid conflict with the $message property of Mailable class
+        //
+        $this->welcomeMessage = $welcomeMessage;
     }
 
     /**
-     * Build the message.
-     *
-     * @return $this
+     * Get the message envelope.
      */
-    public function build()
+    public function envelope(): Envelope
     {
-        return $this->subject('ITM admin  ')
-                    ->view('emails.notification');
+        return new Envelope(
+            subject: 'Send Mail from  department of ITM',
+        );
+    }
+
+    /**
+     * Get the message content definition.
+     */
+    public function content(): Content
+    {
+        return new Content(
+            view: 'Emails.Mail-Template',
+        );
+    }
+
+    /**
+     * Get the attachments for the message.
+     *
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     */
+    public function attachments(): array
+    {
+        return [];
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Log;
 
 use App\Mail\SendMail;
 use Exception;
@@ -16,21 +17,38 @@ class MailController extends Controller
     }
 
 
-public function sendMail(Request $request)
+public function sendMail()
 {
-   $name = $request->name;
-   $phone = $request->phone;
-   $message = $request->message;
+//    $name = $request->name;
+//    $phone = $request->phone;
+//    $message = $request->message;
 
-   $toEmail = "rumuislam202@gmail.com";
+//    $toEmail = "rumuislam202@gmail.com";
 
-   $response = Mail::to(  $toEmail )->send(new SendMail($name , $phone , $message));
+//    $response = Mail::to(  $toEmail )->send(new SendMail($name , $phone , $message));
 
 
-    return back()->with('success', 'Email(s) sent successfully!');
+//     return back()->with('success', 'Email(s) sent successfully!');
+
+try {
+    $toEmail = "rumuislam202@gmail.com";
+
+    $welcomeMessage = "This is the Department of Information Technology & Management";
+
+    $response =  Mail::to($toEmail)->send(new SendMail($welcomeMessage));
+
+   dd($response);
+
+    // Log::info("Email sent successfully to: " . $toEmail);
+
+} catch (Exception $e) {
+
+    // Log::error("Unable to send email: " . $e->getMessage());
+
+    return back()->with('error', 'Error sending email');
 }
 
-
+}
     // public function sendMail(Request $request)
     // {
     //     // Validate form data

@@ -5,6 +5,8 @@
     <div class="container mt-5">
         <h2 class="text-center mb-4">Send Mail to Multiple Users</h2>
 
+        <a href="{{url('send-email')}}" class="btn btn-outline-dark">Tap send mail </a>
+
 
 
         <div class="row justify-content-center">
