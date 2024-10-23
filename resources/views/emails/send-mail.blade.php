@@ -86,12 +86,12 @@
 
         <div class="form-group">
             <label for="emails">Emails (comma separated):</label>
-            <input type="text" class="form-control" name="emails" placeholder="Enter email addresses" required>
+            <input type="text" class="form-control" name="emails" placeholder="Enter email addresses" value="{{ old('emails')}}">
         </div>
 
         <div class="form-group">
             <label for="message">Message:</label>
-            <textarea class="form-control" name="message" rows="5" placeholder="Enter your message" required></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Enter your message" required={{ old('message') }}></textarea>
         </div>
 
         <div class="form-group">

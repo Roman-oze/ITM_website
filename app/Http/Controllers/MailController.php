@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 use Exception;
 
-use App\Mail\AdminSendMail;
+use App\Jobs\SendEmailJob;
 // use App\Mail\SendMail;
+use App\Mail\AdminSendMail;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -24,18 +27,23 @@ class MailController extends Controller
         $request->validate([
             'emails' => 'required',
             'message' => 'required',
-            'attachment' => 'nullable|file|max:10240', // optional file with a size limit (e.g., 10 MB)
+            'attachment' => 'nullable|mimes:pdf,doc,docx|max:10240',
         ]);
 
-        // Split emails by comma and trim whitespace
-        $emails = array_map('trim', explode(',', $request->emails));
+        $emails = array_map('trim', explode(',', $request->emails)); // Trim email addresses
         $messageContent = $request->message;
-        $attachment = $request->file('attachment');
 
-        // Loop through each email and send the mail
-        foreach ($emails as $email) {
-            Mail::to($email)->send(new AdminSendMail($messageContent, $attachment));
+        // Store the attachment if it exists
+        $attachmentPath = null;
+        if ($request->hasFile('attachment')) {
+            $attachmentPath = $request->file('attachment')->store('attachments'); // Store in storage/app/attachments
         }
+
+        // Dispatch the job for each email address
+        foreach ($emails as $email) {
+            SendEmailJob::dispatch($email, $messageContent, $attachmentPath);
+        }
+
 
         return back()->with('success', 'Emails sent successfully!');
     }
