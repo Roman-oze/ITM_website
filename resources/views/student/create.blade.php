@@ -55,11 +55,17 @@
                                                     <input type="text" class="form-control" name="roll" required placeholder="ID">
                                                     <span class="text-danger">@error('roll'){{ $message }}@enderror</span>
                                                 </div>
-                                                <div class="form-group mb-3">
 
-                                                    <input type="text" class="form-control" name="batch" required placeholder="Batch">
-                                                    <span class="text-danger">@error('batch'){{ $message }}@enderror</span>
+
+                                                <div class="form-group mb-3">
+                                                    <label for="batch" class="form-label text-white">Select Batch:</label>
+                                                    <select name="batch_id" id="batch" class="form-select">
+                                                        @foreach($batches as $batch)
+                                                            <option value="{{ $batch->batch_id }}">{{ $batch->batch_name }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
+
                                                 <div class="form-group mb-3">
 
                                                     <input type="email" class="form-control" name="email" required placeholder="Email">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Student;
+use App\Models\Batch;
 use App\Models\Menu;
 use Illuminate\Auth\Events\Validated;
 use PhpParser\Node\Stmt\Echo_;
@@ -23,7 +24,9 @@ class StudentController extends Controller
     }
     public function create()
     {
-        return view('student.create');
+        $batches = Batch::all();
+        
+        return view('student.create',compact('batches'));
     }
 
     public function index(){
@@ -47,20 +50,20 @@ class StudentController extends Controller
         $request->validate([
             'name' => 'required',
             'roll' => 'required',
-            'batch' => 'required',
             'email' => 'required', // Assuming 'users' is the table name and 'email' is the column name
             'blood' => 'required', // Assuming 'users' is the table name and 'email' is the column name
             'address' => 'required',
             'mobile' => 'required', // Assuming 'users' is the table name and 'mobile' is the column name
-            'type' => 'required', // Assuming 'users' is the table name and 'mobile' is the column name
-           // 'password_confirmation' is the default field name for password confirmation
+            'type' => 'required',
+            'batch_id' => 'required',
+
            ]) ;
 
 
          $data['name']=$request->name;
          $data['roll']=$request->roll;
-         $data['batch']=$request->batch;
          $data['email']=$request->email;
+         $data['batch_id']=$request->batch_id;
          $data['blood']=$request->blood;
          $data['address']=$request->address;
          $data['mobile']=$request->mobile;
@@ -98,8 +101,8 @@ class StudentController extends Controller
 
         $data['name']=$request->name;
         $data['roll']=$request->roll;
-        $data['batch']=$request->batch;
         $data['email']=$request->email;
+        $data['batch_id']=$request->batch_id;
         $data['blood']=$request->blood;
         $data['address']=$request->address;
         $data['mobile']=$request->mobile;

@@ -7,7 +7,8 @@ use App\Jobs\SendEmailJob;
 // use App\Mail\SendMail;
 use App\Mail\AdminSendMail;
 use Illuminate\Http\Request;
-
+use App\models\Batch;
+use App\models\Student;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -18,7 +19,10 @@ class MailController extends Controller
 {
     public function create()
     {
-        return view('emails.send-mail');
+        $students = Student::get();
+
+        return view('emails.send-mail',compact('students'));
+
     }
 
 

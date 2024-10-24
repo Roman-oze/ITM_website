@@ -84,6 +84,25 @@
     <form action="{{ route('send.mail.data') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
+        {{-- <label for="batch">Select Batch:</label>
+        <select name="batch" id="batch" required>
+            <option value="">Choose Batch</option>
+            @foreach ($batches as $batch)
+                <option class="text-dark" value="{{ $batch->batch }}">{{ $batch->email }}</option>
+            @endforeach
+        </select> --}}
+
+
+
+        {{-- <div class="form-group">
+            <select name="batch_id" id="batch" class="form-select">
+                <option value="">Choose Batch</option>
+                @foreach($students as $student)
+                    <option value="">{{ $student->email }}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="form-group">
             <label for="emails">Emails (comma separated):</label>
             <input type="text" class="form-control" name="emails" placeholder="Enter email addresses" value="{{ old('emails')}}">
@@ -100,7 +119,58 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Send Email</button>
-    </form>
+    </form> --}}
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Batch Dependent Email Dropdown</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Select Batch to Show Student Emails</h1>
+
+    <label for="batch">Select Batch:</label>
+    <select name="batch" id="batch">
+        <option value="">Choose Batch</option>
+        @foreach($students as $batch)
+            <option value="{{ $batch->batch_id }}">{{ $batch->batch_name }}</option>
+        @endforeach
+    </select>
+
+    <h2>Emails</h2>
+    <ul id="emailList"></ul>
+
+    <script>
+        $(document).ready(function () {
+            $('#batch').on('change', function () {
+                var batchId = $(this).val();
+                $('#emailList').empty(); // Clear the previous email list
+
+                if (batchId) {
+                    $.ajax({
+                        url: '/get-students',
+                        type: 'POST',
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                            batch_id: batchId
+                        },
+                        success: function (data) {
+                            if (data.length > 0) {
+                                $.each(data, function (key, email) {
+                                    $('#emailList').append('<li>' + email + '</li>');
+                                });
+                            } else {
+                                $('#emailList').append('<li>No students found for this batch.</li>');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 
 
 </main>
