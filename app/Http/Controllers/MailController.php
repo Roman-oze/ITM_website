@@ -19,9 +19,9 @@ class MailController extends Controller
 {
     public function create()
     {
-        $students = Student::get();
+        $batches = Batch::get();
 
-        return view('emails.send-mail',compact('students'));
+        return view('emails.send-mail',compact('batches'));
 
     }
 
@@ -33,6 +33,20 @@ class MailController extends Controller
             'message' => 'required',
             'attachment' => 'nullable|mimes:pdf,doc,docx|max:10240',
         ]);
+
+        // $students = Student::where('batch_id', $request)->get();
+
+        // if($students->isEmpty()) {
+        //     return '<p>No students found for this batch.</p>';
+        // }
+
+        // $output = '<ul>';
+        // foreach ($students as $student) {
+        //     $output .= '<li>' . $student->email . '</li>';
+        // }
+        // $output .= '</ul>';
+
+        // return $output;
 
         $emails = array_map('trim', explode(',', $request->emails)); // Trim email addresses
         $messageContent = $request->message;
