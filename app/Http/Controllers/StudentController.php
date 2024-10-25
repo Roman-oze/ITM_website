@@ -25,18 +25,25 @@ class StudentController extends Controller
     public function create()
     {
         $batches = Batch::all();
-        
+
         return view('student.create',compact('batches'));
     }
 
     public function index(){
 
+
         $menus = Menu::all();
-      $students = DB::table('students')->paginate(10);
+        $batches = Batch::all();
+        // $students = Student::with('batches')->get();
+
+    //   $students = DB::table('students')->paginate(10);
+
+$students = Student::with('batch')->paginate(10);
 
 
 
-    return view('student.index',compact('students','menus'));
+
+    return view('student.index',compact('students','menus','batches'));
 
     //  $students = Student::paginate(10);
     //  return view('student.index',compact('students'));

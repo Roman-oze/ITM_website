@@ -14,6 +14,9 @@ class Student extends Model
 
     protected $fillable = ['name','roll','email','batch_id','blood', 'address', 'mobile','type'];
 
-
+    public function batch()
+    {
+        return $this->belongsTo(Batch::class, 'batch_id');
+    }
 
 }

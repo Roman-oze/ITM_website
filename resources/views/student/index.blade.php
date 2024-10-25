@@ -40,11 +40,13 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($students as $student)
+        @foreach($students as $student
+
+        )
                     <tr class="">
                 <td>{{ $student->name }}</td>
                 <td>{{ $student->roll }}</td>
-                <td>{{ $student->batch }}</td>
+                <td>{{ $student->batch->batch_name ?? 'No Batch Assigned' }}</td> <!-- Batch name -->
                 <td>{{ $student->email }}</td>
                 <td>{{ $student->blood }}</td>
                 <td>{{ $student->mobile }}</td>
