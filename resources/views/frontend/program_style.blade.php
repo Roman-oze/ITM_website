@@ -2075,5 +2075,12 @@ body {
   .product-btn:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
   }
-
+  .semester-button:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+        transition: all 0.2s;
+    }
+    .catagory{
+        overflow: scroll;
+    }
   </style>

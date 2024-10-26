@@ -7,142 +7,79 @@
 <br>
 <br>
 <div class="container mt-5">
-    <div class="row float-end">
-        <div class="">
-
-            <a target="_blank" class="down-btn " href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a>
+    <div class="row justify-content-end">
+        <div class="col-auto">
+            <a target="_blank" class="btn0" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">
+                Course List <i class="fa-solid fa-circle-down conic fa-lg"></i>
+            </a>
         </div>
     </div>
 
-    <div class="row gx-4 gx-lg-3 h-100 align-items-center justify-content-center text-center" >
-        <div class="col-lg-8 align-self-end">
-            <h1 class="text-info font-weight-bold">Course  Details</h1>
+    <div class="row gx-4 gx-lg-3 mt-3  align-items-center justify-content-center text-center">
+        <div class="col-lg-8 col-md-10 align-self-end">
+            <h1 class="text-info font-weight-bold">Course Details</h1>
             <hr class="divider text-white" />
         </div>
-        <div class="col-lg-8 align-self-baseline d-flex ">
-            <p class="text-dark mb-5">"Embrace your course as a journey of growth. Every lesson is a step toward unlocking your potential. Stay committed, embrace challenges, and let curiosity drive your success. Transform knowledge into expertise and let the pursuit of learning be your motivation."</p>
 
+        <div class="col-lg-8 col-md-10 align-self-baseline d-flex">
+            <p class="text-dark mb-5">
+                "Embrace your course as a journey of growth. Every lesson is a step toward unlocking your potential. Stay committed, embrace challenges, and let curiosity drive your success. Transform knowledge into expertise and let the pursuit of learning be your motivation."
+            </p>
         </div>
-
-
-        <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a>
-
-        {{-- <div class="container">
-            <h2>Dynamic Tabs</h2>
-            <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
-
-            <ul class="nav nav-tabs">
-              <li class="active"><a data-toggle="tab" href="#home">All course List</a></li>
-              <li><a data-toggle="tab" href="#menu1">1st Semeste</a></li>
-              <li><a data-toggle="tab" href="#menu2">2nd Semester</a></li>
-              <li><a data-toggle="tab" href="#menu3">3rd Semester</a></li>
-              <li><a data-toggle="tab" href="#menu4">4th Semester</a></li>
-              <li><a data-toggle="tab" href="#menu5">5th Semester</a></li>
-              <li><a data-toggle="tab" href="#menu6">6th Semester</a></li>
-              <li><a data-toggle="tab" href="#menu7">7th Semester</a></li>
-              <li><a data-toggle="tab" href="#menu8">8th Semester</a></li>
-            </ul>
-
-            <div class="tab-content">
-              <div id="home" class="tab-pane fade in active">
-                <h3>All course List</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div id="menu1" class="tab-pane fade">
-                <h3>1st Semeste</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-              <div id="menu2" class="tab-pane fade">
-                <h3>2nd Semester</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-              </div>
-              <div id="menu3" class="tab-pane fade">
-                <h3>3rd Semester</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-              <div id="menu4" class="tab-pane fade">
-                <h3>4th Semester</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-              <div id="menu5" class="tab-pane fade">
-                <h3>5th Semester</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-              <div id="menu6" class="tab-pane fade">
-                <h3>6th Semester</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-              <div id="menu7" class="tab-pane fade">
-                <h3>7th Semester</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-              <div id="menu8" class="tab-pane fade">
-                <h3>8th Semester</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-            </div>
-          </div> --}}
-
-
-
-
-
-
-          {{-- <div class="container">
-            <h2>Dynamic Tabs</h2>
-            <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
-
-            <ul class="nav nav-tabs">
-              <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-              <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-              <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-              <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
-            </ul>
-
-            <div class="tab-content">
-              <div id="home" class="tab-pane fade in active">
-                <h3>HOME</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div id="menu1" class="tab-pane fade">
-                <h3>Menu 1</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-              <div id="menu2" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-              </div>
-              <div id="menu3" class="tab-pane fade">
-                <h3>Menu 3</h3>
-                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              </div>
-            </div>
-          </div>
-     --}}
-
-
-
-    <div class="course text-center">
-        <a href="#catagory" class="btn0">Course Catagory</a>
-        <a href="{{route('course_list')}}" class="btn1 text-dark">1st Semester</a>
-        <a href="#2ndsemester" type="button" class="btn2">2nd Semester</a>
-        <a href="#3rdsemester" class="btn3">3rd Semester</a>
-        <a href="#4thsemester" class="btn4">4th Semester</a>
-        <a href="#5thsemester" class="btn5">5th Semester</a>
-        <a href="#6thsemester" class="btn6">6th Semester</a>
-        <a href="#7thsemester" class="btn7">7th Semester</a>
-        <a href="#8thsemester" class="btn8">8th Semester</a>
-
-      </div>
     </div>
-    </div>
+</div>
+
+
+<div class="container mt-5">
+    <a href="#catagory" class="btn0">Course Catagory</a>
+
+    @for ($i = 1; $i <= 8; $i++)
+        <button type="button" class="btn semester-button mx-1 my-1"
+                data-semester="{{ $i }}"
+                style="padding: 9px 12px; color:black ; border-radius: 40px;
+                    background-color: {{ $i === 1 ? '#4FDADA' : ($i === 2 ? '#81EE8A' : ($i === 3 ? '#37517E' : ($i === 4 ? '#F1B25F' : ($i === 5 ? '#6f42c1' : ($i === 6 ? '#F1B25F' : ($i === 7 ? '#37517E' : '#20c997')))))) }};
+                    color: white; border: none;">
+            {{ $i }}{{ $i === 1 ? 'st' : ($i === 2 ? 'nd' : ($i === 3 ? 'rd' : 'th')) }} Semester
+        </button>
+    @endfor
+
+    <h2 class="text-center mt-5">Course List</h2>
+    <div id="course-list" class="list-group p-2"></div>
+</div>
+
+<script>
+    const courseData = @json($courseData);
+
+    $(document).ready(function() {
+        $('.semester-button').click(function() {
+            let semester = $(this).data('semester');
+
+            // Clear previous course list
+            $('#course-list').empty();
+
+
+            if (semester) {
+                // Get the course list for the selected semester
+                const courses = courseData[semester];
+                $.each(courses, function(index, course) {
+                    $('#course-list').append(
+                        `<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center p-3"
+                        style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: #f9fafc;">
+                            <span style="font-weight: 500; color: #37517E;">${course.course_name} (${course.course_code})</span>
+                            <span class="badge badge-dark badge-pill" style="font-size: 0.9em; background-color: #4B628B;">${course.credit} Credits</span>
+                        </a>`
+                    );
+                });
+            }
+        });
+    });
+</script>
 @endsection
 
 @section('content')
 
 
-
-<div class="container">
+{{-- <div class="container">
     <h1>Select Semester</h1>
     <div class="btn-group mb-4" role="group" aria-label="Semester buttons">
         @for ($i = 1; $i <= 8; $i++)
@@ -179,7 +116,7 @@
             }
         });
     });
-</script>
+</script> --}}
 
 
 
@@ -239,9 +176,9 @@
 <br>
 
 
-<section id="catagory">
+<section id="catagory" class="">
 
-<div class="container mt-5">
+<div class="container mt-5 catagory">
  <div class="row p-1 text-center">
   <h2 class="dee1  text-dark p-3">Category of Courses</h2>
 
@@ -331,7 +268,7 @@
     </h1>
     </div>
 
-<div class="container mt-4">
+<div class="container mt-4 catagory">
 <table>
   <thead>
     <tr>
@@ -409,7 +346,7 @@
 <br>
 <br>
 
-<div class="container mt-5">
+<div class="container mt-5 catagory">
   <div class="dee1">
       <h2>Information Technology Core Courses: 45 credits
     </div>
@@ -531,7 +468,7 @@
   <h2>Information Technology Lab Courses: 10 credits
   </h2>
 </div>
-<div class="container mt-5">
+<div class="container mt-5 catagory">
 
   <table>
     <thead>
@@ -634,7 +571,7 @@
   <h2>Management Core Courses: 42 credits
       </h2>
       </div>
-<div class="container mt-5">
+<div class="container mt-5 catagory">
 
   </h2>
   <table>
@@ -748,7 +685,7 @@
 
       </div>
 
-<div class="container mt-5">
+<div class="container mt-5 catagory">
 
   <table>
     <thead>
@@ -825,7 +762,7 @@
   </h2>
       </div>
 
-<div class="container mt-5">
+<div class="container mt-5 catagory">
 
   <table>
     <thead>
@@ -895,7 +832,7 @@
   <h2>Additional Mandatory Courses: 12 credits
   </h2>
       </div>
-<div class="container mt-5">
+<div class="container mt-5 catagory">
 
   <table>
     <thead>
@@ -925,7 +862,7 @@
 </section>
 
 
-<section id="1stsemester">
+<section id="1stsemester" class="catagory">
     <h2 class="fst">1st Year</h2>
     <h4 class=" text-center ">1st Semester</h4>
 
@@ -993,7 +930,7 @@
 </section>
 
 
-<section id="2ndsemester">
+<section id="2ndsemester" class="catagory">
 
 
   <h2 class="fst">1st Year</h2>
@@ -1060,7 +997,7 @@
       </tfoot>
   </table>
 </section>
-<section id="3rdsemester">
+<section id="3rdsemester" class="catagory">
 
 
   <h2 class="fst">2nd Year</h2>
@@ -1128,7 +1065,7 @@
       </tfoot>
   </table>
 </section>
-<section id="4thsemester">
+<section id="4thsemester" class="catagory">
 
 
   <h2 class="fst">2nd Year</h2>
@@ -1202,7 +1139,7 @@
       </tfoot>
   </table>
 </section>
-<section id="5thsemester">
+<section id="5thsemester" class="catagory">
   <h2 class="fst">3rd Year</h2>
   <h4 class=" text-center ">5th Semester</h4>
 
@@ -1275,7 +1212,7 @@
       </tfoot>
   </table>
 </section>
-<section id="6thsemester">
+<section id="6thsemester" class="catagory">
   <h2 class="fst">3rd Year</h2>
   <h4 class=" text-center ">6th Semester</h4>
 
@@ -1349,7 +1286,7 @@
       </tfoot>
   </table>
 </section>
-<section id="7thsemester">
+<section id="7thsemester" class="catagory">
   <h2 class="fst">4th Year</h2>
   <h4 class=" text-center ">7th Semester</h4>
 
@@ -1411,7 +1348,7 @@
       </tfoot>
   </table>
 </section>
-<section id="8thsemester">
+<section id="8thsemester" class="catagory">
   <h2 class="fst">4th Year</h2>
   <h4 class=" text-center ">8th Semester</h4>
 
