@@ -1026,7 +1026,7 @@ height: 65px;
     background-image:linear-gradient(rgb(36, 156, 177),#1d49dad3);
     color:  #fbfeff;
     border: none;
-    
+
     border-radius: 14px;
     transition: 1s;
   }
@@ -2673,4 +2673,34 @@ font-weight: bold;
 .accordion-button :hover{
 color: #37517e;
 font-weight: bold;
+}
+.course-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    margin-bottom: 15px;
+}
+.course-card:hover {
+    transform: translateY(-5px);
+}
+.course-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.course-details {
+    padding: 15px;
+}
+.btn-view {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+.btn-view:hover {
+    background-color: #0056b3;
 }

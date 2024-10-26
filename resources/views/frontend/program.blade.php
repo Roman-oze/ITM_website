@@ -125,7 +125,7 @@
     <div class="course text-center">
         <a href="#catagory" class="btn0">Course Catagory</a>
         <a href="{{route('course_list')}}" class="btn1 text-dark">1st Semester</a>
-        <a href="#2ndsemester" class="btn2">2nd Semester</a>
+        <a href="#2ndsemester" type="button" class="btn2">2nd Semester</a>
         <a href="#3rdsemester" class="btn3">3rd Semester</a>
         <a href="#4thsemester" class="btn4">4th Semester</a>
         <a href="#5thsemester" class="btn5">5th Semester</a>
@@ -139,6 +139,48 @@
 @endsection
 
 @section('content')
+
+
+
+<div class="container">
+    <h1>Select Semester</h1>
+    <div class="btn-group mb-4" role="group" aria-label="Semester buttons">
+        @for ($i = 1; $i <= 8; $i++)
+            <a href="{{ $i === 1 ? route('course_list') : '#'.$i.'thsemester' }}" class="btn btn-primary semester-button mx-1" data-semester="{{ $i }}">
+                {{ $i }}{{ $i === 1 ? 'st' : ($i === 2 ? 'nd' : ($i === 3 ? 'rd' : 'th')) }} Semester
+            </a>
+        @endfor
+    </div>
+
+
+    <h2>Course List</h2>
+    <div id="course-list" class="list-group"></div>
+</div>
+
+<script>
+    const courseData = @json($courseData);
+
+    $(document).ready(function() {
+        $('.semester-button').click(function() {
+            let semester = $(this).data('semester');
+
+            // Clear previous course list
+            $('#course-list').empty();
+
+
+            if (semester) {
+                // Get the course list for the selected semester
+                const courses = courseData[semester];
+                $.each(courses, function(index, course) {
+                    $('#course-list').append(
+                        `<a href="#" class="list-group-item list-group-item-action">${course.course_name} (${course.course_code}) - ${course.credit} Credits</a>`
+                    );
+                });
+            }
+        });
+    });
+</script>
+
 
 
 
