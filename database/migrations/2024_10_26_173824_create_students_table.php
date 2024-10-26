@@ -12,18 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->string('name');
             $table->string('roll');
-            $table->unsignedBigInteger('batch_id');
-            $table->string('email')->unique();
+            $table->foreignId('batch_id')->constrained(); // Assuming there's a batch table
+            $table->string('email');
             $table->string('blood');
             $table->string('mobile');
             $table->string('address');
             $table->string('type')->default('active');
             $table->timestamps();
 
-            $table->foreign('batch_id')->references('id')->on('batches')->onDelete('cascade');
+            
         });
     }
 

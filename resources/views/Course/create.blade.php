@@ -22,38 +22,57 @@
 
 
                 @if(session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-                @if(session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
                 @endif
 
-                <!-- Form Starts -->
                 <form action="{{ route('Courses.store') }}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="course_name" class="form-label">Course Name</label>
-                        <input type="text" name="course_name" class="form-control" id="course_name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="course_code" class="form-label">Course Code</label>
-                        <input type="text" name="course_code" class="form-control" id="course_code" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="credit" class="form-label">Credit</label>
-                        <input type="number" name="credit" class="form-control" id="credit" required>
-                    </div>
+                @csrf
 
-                    <!-- Save Button -->
-                    <div class="text-center">
+                <div class="form-group">
+                    <label for="semester_id">Semester</label>
+                    <select name="semester_id" id="semester_id" class="form-control p-1" required>
+                        <option value="">Select Semester</option>
+                        {{-- @for ($i = 1; $i <= 8; $i++)
+                            <option value="{{ $i }}">Semester {{ $i }}</option>
+                        @endfor --}}
+                        @foreach ($semesters as $semester)
+                        <option value="{{ $semester->semester_id }}">{{ $semester->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('semester_id')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
 
-                        <button type="submit" class="btn bg-dark text-white ">Save</button>
-                    </div>
+                <div class="form-group">
+                    <label for="course_name">Course Name</label>
+                    <input type="text" name="course_name" id="course_name" class="form-control" required>
+                    @error('course_name')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="course_code">Course Code</label>
+                    <input type="text" name="course_code" id="course_code" class="form-control" required>
+                    @error('course_code')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="credit">Credit Hours</label>
+                    <input type="number" name="credit" id="credit" class="form-control" required>
+                    @error('credit')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Course</button>
                 </form>
+
                 <!-- Form Ends -->
             </div>
         </div>
@@ -63,3 +82,7 @@
 </main>
 
 @endsection
+
+
+
+

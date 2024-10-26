@@ -44,7 +44,7 @@
                     @endif --}}
 
                     <!-- Table for course data -->
-                    <div class="table-responsive">
+                    {{-- <div class="table-responsive">
                         <table class="table table-striped text-center">
                             <thead>
                                 <tr>
@@ -81,6 +81,47 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div> --}}
+
+                    <div class="container">
+                        @foreach($courses as $semesterId => $semesterCourses)
+                            <h3>Semester {{ $semesterId }}</h3>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Course Code</th>
+                                        <th>Course Name</th>
+                                        <th>Credit </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($semesterCourses as $course)
+                                        <tr>
+                                            <td>{{ $course->course_code }}</td>
+                                            <td>{{ $course->course_name }}</td>
+                                            <td>{{ $course->credit }}</td>
+                                            <td>
+                                                <td>
+                                                    <!-- Edit Button -->
+                                                    <a href="{{ route('Courses.edit', $course->course_id) }}" class="btn btn-warning btn-sm">
+                                                        <i class="fa-solid fa-user-pen"></i>
+                                                    </a>
+
+                                                    <!-- Delete Form -->
+                                                    <form action="{{ route('Courses.destroy', $course->course_id) }}" method="POST" style="display:inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm" onclick=" return confirm('Are you sure !')">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        @endforeach
                     </div>
 
                     <!-- Pagination (if needed) -->

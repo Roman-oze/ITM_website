@@ -19,6 +19,16 @@
             <label for="day" class="form-label">Course Code</label>
             <input type="text" name="course_code" class="form-control" value="{{ $course->course_code }}"  id="day" required>
         </div>
+
+        <div class="form-group mb-3">
+            <label for="batch" class="form-label text-white">Semester Choose :</label>
+            <select name="batch_id" id="batch" class="form-select">
+                @foreach($semesters as $semesters)
+                    <option value="{{ $semesters->semesters_id }}">{{ $semesters->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        
         <div class="mb-3">
             <label for="day" class="form-label">Credit</label>
             <input type="number" name="credit" class="form-control" value="{{ $course->credit }}" id="day" required>
