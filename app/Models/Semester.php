@@ -13,7 +13,7 @@ class Semester extends Model
     protected $primaryKey='semester_id';
 
     protected $fillable = [
-      'name'
+      'semester_name'
     ];
 
 }

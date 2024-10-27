@@ -31,7 +31,7 @@
 
 
 <div class="container mt-5">
-    <a href="#catagory" class="btn0">Course Catagory</a>
+    <a href="#catagory" class="btn0">Course Category</a>
 
     @for ($i = 1; $i <= 8; $i++)
         <button type="button" class="btn semester-button mx-1 my-1"
@@ -43,8 +43,15 @@
         </button>
     @endfor
 
-    <h2 class="text-center mt-5">Course List</h2>
+    <h2 class="mt-5 text-center">Course List</h2>
     <div id="course-list" class="list-group p-2"></div>
+
+    <!-- Use a row and col to align the total credits to the right -->
+    <div class="row mt-3">
+        <div class="col text-end"> <!-- Align text to the right -->
+            <div id="total-credits" style="font-weight: bold; color: #37517E;"></div> <!-- Total credits display -->
+        </div>
+    </div>
 </div>
 
 <script>
@@ -54,26 +61,43 @@
         $('.semester-button').click(function() {
             let semester = $(this).data('semester');
 
-            // Clear previous course list
+            // Clear previous course list and total credits
             $('#course-list').empty();
-
+            $('#total-credits').empty();
 
             if (semester) {
                 // Get the course list for the selected semester
                 const courses = courseData[semester];
+                let totalCredits = 0; // Initialize total credits variable
+
                 $.each(courses, function(index, course) {
+                    // Sum the credits
+                    totalCredits += parseInt(course.credit); // Ensure the credit is treated as an integer
+
+                    // Append course to the course list
                     $('#course-list').append(
-                        `<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center p-3"
+                        `<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between p-3"
                         style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: #f9fafc;">
-                            <span style="font-weight: 500; color: #37517E;">${course.course_name} (${course.course_code})</span>
-                            <span class="badge badge-dark badge-pill" style="font-size: 0.9em; background-color: #4B628B;">${course.credit} Credits</span>
+                            <span style="font-weight: 500; color: #37517E;">
+                                (${course.course_code})
+                            </span>
+                            <span style="font-weight: 500; text-align: start; color: #37517E;">
+                                (${course.course_name})
+                            </span>
+                            <span class="badge badge-dark badge-pill" style="font-size: 0.9em; background-color: #4B628B;">
+                                ${course.credit} Credits
+                            </span>
                         </a>`
                     );
                 });
+
+                // Display total credits
+                $('#total-credits').text(`Total Credits: ${totalCredits}`);
             }
         });
     });
 </script>
+
 @endsection
 
 @section('content')
@@ -175,12 +199,10 @@
 <br>
 <br>
 
-
 <section id="catagory" class="">
-
-<div class="container mt-5 catagory">
- <div class="row p-1 text-center">
-  <h2 class="dee1  text-dark p-3">Category of Courses</h2>
+    <div class="container mt-5 catagory">
+        <div class="row p-1 text-center">
+            <h2 class="dee1 text-dark p-3">Category of Courses</h2>
 
 <table class="table-striped">
 <thead>
@@ -336,8 +358,10 @@
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="3" class="text-right">Total Credits</td>
-      <td colspan="2">27</td>
+
+
+      <th colspan="3">Total Credits</th>
+      <th colspan="2">27</th>
     </tr>
   </tfoot>
 </table>
@@ -560,7 +584,7 @@
     <tfoot>
       <tr>
         <th colspan="3">Total Credits</th>
-        <td colspan="3">16</td>
+        <th colspan="3">16</th>
       </tr>
     </tfoot>
   </table>
@@ -671,8 +695,9 @@
     </tbody>
     <tfoot>
       <tr>
-        <th>Total Credits</th>
-        <td>42</td>
+
+        <th colspan="3">Total Credits</th>
+        <th colspan="3">42</th>
       </tr>
     </tfoot>
   </table>
@@ -862,536 +887,5 @@
 </section>
 
 
-<section id="1stsemester" class="catagory">
-    <h2 class="fst">1st Year</h2>
-    <h4 class=" text-center ">1st Semester</h4>
-
-  <table>
-      <thead>
-          <tr>
-              <th>Course Code</th>
-              <th>Course Title</th>
-              <th>Total Credit</th>
-
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-
-              <td>ENG 101</td>
-              <td>Basic Functional English</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>MATH 101</td>
-              <td>Mathematics</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 101</td>
-              <td>Principles of Accounting</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 102</td>
-              <td>Principles of Management</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 111</td>
-              <td>Computer Fundamentals</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 112</td>
-              <td>Computer Fundamentals Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>ITM 123</td>
-              <td>Software Requirement Analysis and Design</td>
-              <td>3</td>
-
-          </tr>
-      </tbody>
-      <tfoot>
-          <tr class="text-white">
-              <td colspan="2">Total Credits</td>
-              <td colspan="1">19</td>
-          </tr>
-      </tfoot>
-  </table>
-</section>
-
-
-<section id="2ndsemester" class="catagory">
-
-
-  <h2 class="fst">1st Year</h2>
-  <h4 class=" text-center">2nd Semester</h4>
-  <table>
-      <thead>
-          <tr>
-              <th>Course Code</th>
-              <th>Course Title</th>
-              <th>Total Credit</th>
-
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-
-              <td>ITM 211</td>
-              <td>HCI and User Experience</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ENG 102</td>
-              <td>Business English</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>STA 101</td>
-              <td>Introduction to Statistics</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 103</td>
-              <td>Principles of Marketing</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 121</td>
-              <td>Structurer Programming</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 122</td>
-              <td>Structurer Programming Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>ITM 203</td>
-              <td>Social Media Marketing</td>
-              <td>3</td>
-
-          </tr>
-      </tbody>
-      <tfoot>
-          <tr class="text-white">
-              <td colspan="2">Total Credits</td>
-              <td colspan="1">19</td>
-          </tr>
-      </tfoot>
-  </table>
-</section>
-<section id="3rdsemester" class="catagory">
-
-
-  <h2 class="fst">2nd Year</h2>
-  <h4 class=" text-center ">3rd Semester</h4>
-
-  <table>
-      <thead>
-          <tr>
-              <th>Course Code</th>
-              <th>Course Title</th>
-              <th>Total Credit</th>
-
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-
-              <td>ITM 201</td>
-              <td>Managerial Accounting</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 202</td>
-              <td>Business Communication</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>AOL 101</td>
-              <td>Art Of Living</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 217</td>
-              <td>Data Structure and Algorithm</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 218</td>
-              <td>Data Structure and Algorithm Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>ITM 122</td>
-              <td>Object Oriented Concepts</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 213</td>
-              <td>Object Oriented Concepts Lab</td>
-              <td>1</td>
-
-          </tr>
-      </tbody>
-      <tfoot>
-          <tr class="text-white">
-              <td colspan="2">Total Credits</td>
-              <td colspan="1">17</td>
-          </tr>
-      </tfoot>
-  </table>
-</section>
-<section id="4thsemester" class="catagory">
-
-
-  <h2 class="fst">2nd Year</h2>
-  <h4 class=" text-center ">4th Semester</h4>
-
-  <table>
-      <thead>
-          <tr>
-              <th>Course Code</th>
-              <th>Course Title</th>
-              <th>Total Credit</th>
-
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-
-              <td>ITM 204</td>
-              <td>Human Resource Management</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>GE 215</td>
-              <td>Legal Environment in Business</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 206</td>
-              <td>Entrepreneurship in IT</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 221</td>
-              <td>Database Management System</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 222</td>
-              <td>Database Management System Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>ITM 223</td>
-              <td>Website Application Development </td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 224</td>
-              <td>Website Application Development Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>GE 314</td>
-              <td>Bangladesh Studies</td>
-              <td>1</td>
-
-          </tr>
-      </tbody>
-      <tfoot>
-          <tr class="text-white">
-              <td colspan="2">Total Credits</td>
-              <td colspan="1">20</td>
-          </tr>
-      </tfoot>
-  </table>
-</section>
-<section id="5thsemester" class="catagory">
-  <h2 class="fst">3rd Year</h2>
-  <h4 class=" text-center ">5th Semester</h4>
-
-  <table>
-      <thead>
-          <tr>
-              <th>Course Code</th>
-              <th>Course Title</th>
-              <th>Total Credit</th>
-
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-
-              <td>GE 337</td>
-              <td>Engineering Economics</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 301</td>
-              <td>Management Information System</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 306</td>
-              <td>Introduction To Finance</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 313</td>
-              <td>Moblile Application Development</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 314</td>
-              <td>Moblile Application Development Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>ITM 315</td>
-              <td>Data Communication and Computer Networking</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 316</td>
-              <td>Data Communication and Computer Networking Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>MATH 312</td>
-              <td>Numerical Method</td>
-              <td>3</td>
-
-          </tr>
-
-      </tbody>
-      <tfoot>
-          <tr class="text-white">
-              <td colspan="2">Total Credits</td>
-              <td colspan="1">20</td>
-          </tr>
-      </tfoot>
-  </table>
-</section>
-<section id="6thsemester" class="catagory">
-  <h2 class="fst">3rd Year</h2>
-  <h4 class=" text-center ">6th Semester</h4>
-
-
-  <table>
-      <thead>
-          <tr>
-              <th>Course Code</th>
-              <th>Course Title</th>
-              <th>Total Credit</th>
-
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-
-              <td>ITM 302</td>
-              <td>Business and Web Analytics</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 303</td>
-              <td>Production and Operation Management</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 328</td>
-              <td>Introduction To Machine Learning</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 329</td>
-              <td>Introduction To Machine Learning Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>ITM 322</td>
-              <td>Softoware and Web Security</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 323</td>
-              <td>Software Quality Assurance and Testing</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 324</td>
-              <td>Software Quality Assurance and Testing Lab</td>
-              <td>1</td>
-
-          </tr>
-          <tr>
-              <td>MATH 309</td>
-              <td>Banking and Insurance</td>
-              <td>3</td>
-
-          </tr>
-
-      </tbody>
-      <tfoot>
-          <tr class="text-white">
-              <td colspan="2">Total Credits</td>
-              <td colspan="1">20</td>
-          </tr>
-      </tfoot>
-  </table>
-</section>
-<section id="7thsemester" class="catagory">
-  <h2 class="fst">4th Year</h2>
-  <h4 class=" text-center ">7th Semester</h4>
-
-
-  <table>
-      <thead>
-          <tr>
-              <th>Course Code</th>
-              <th>Course Title</th>
-              <th>Total Credit</th>
-
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-
-              <td>ITM 451</td>
-              <td>Industrial Placement / Professional Certification / Study Aboard</td>
-              <td>6</td>
-
-          </tr>
-          <tr>
-              <td>ITM 421</td>
-              <td>Open Source Software System</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>40X / 41X</td>
-              <td>Elective-1</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>40X / 41X</td>
-              <td>Elective-2</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>FIN 101</td>
-              <td>Blockchain And Crypto Currency in Financial Technology</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>FIN 102</td>
-              <td>Machine Learing and Artificial Intelligence in Finance</td>
-              <td>3</td>
-
-          </tr>
-
-      </tbody>
-      <tfoot>
-          <tr class="text-white">
-              <td colspan="2">Total Credits</td>
-              <td colspan="1">15</td>
-          </tr>
-      </tfoot>
-  </table>
-</section>
-<section id="8thsemester" class="catagory">
-  <h2 class="fst">4th Year</h2>
-  <h4 class=" text-center ">8th Semester</h4>
-
-
-  <table>
-      <thead>
-          <tr>
-              <th>Course Code</th>
-              <th>Course Title</th>
-              <th>Total Credit</th>
-
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-
-              <td>ITM 401</td>
-              <td>Research Methodology</td>
-              <td>3</td>
-
-          </tr>
-          <tr>
-              <td>ITM 452</td>
-              <td>Thesis / Project</td>
-              <td>6</td>
-
-          </tr>
-          <tr>
-              <td>ITM 321</td>
-              <td>Software Documentation</td>
-              <td>3</td>
-
-          </tr>
-
-
-      </tbody>
-      <tfoot>
-          <tr class="text-white">
-              <td colspan="2">Total Credits</td>
-              <td colspan="1">12</td>
-          </tr>
-      </tfoot>
-  </table>
-</section>
 @endsection
 

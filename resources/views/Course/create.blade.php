@@ -27,6 +27,12 @@
                 </div>
                 @endif
 
+                @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+                @endif
+
                 <form action="{{ route('Courses.store') }}" method="POST">
                 @csrf
 
@@ -38,7 +44,7 @@
                             <option value="{{ $i }}">Semester {{ $i }}</option>
                         @endfor --}}
                         @foreach ($semesters as $semester)
-                        <option value="{{ $semester->semester_id }}">{{ $semester->name }}</option>
+                        <option value="{{ $semester->semester_id }}">{{ $semester->semester_name }}</option>
                         @endforeach
                     </select>
                     @error('semester_id')

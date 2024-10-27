@@ -49,7 +49,7 @@
                 <div class="collapse" id="collapseWebsiteSetup" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a href="{{route('herosection.index')}}" class="nav-link">Hero Section</a>
-                        <a href="#" class="nav-link">Feature</a>
+                        <a href="{{ route('features.create')}}" class="nav-link" >Feature</a>
                         <a href="{{route('services.index')}}" class="nav-link">Services</a>
                         <a href="{{route('footer.index')}}" class="nav-link">Footer</a>
                         <a href="#" class="nav-link">Appearance</a>

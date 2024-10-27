@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HerosectionController;
+use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\AuthController;
@@ -229,6 +230,7 @@ Route::controller(NoticeBoardController::class)->group(function(){
 });
 
 // website setup
+
 route::resource('/herosection',HerosectionController::class);
 Route::delete('/herosection/{id}', [HerosectionController::class, 'destroy'])->name('herosection.delete');
 
@@ -237,6 +239,9 @@ Route::delete('/service/{id}', [ServiceController::class, 'destroy'])->name('ser
 
 // route::resource('/footer',FooterController::class);
 // Route::delete('/footer/{id}', [FooterController::class, 'destroy'])->name('footer.delete');
+
+route::resource('/features',FeatureController::class);
+Route::delete('/feature/{id}', [FeatureController::class, 'destroy'])->name('feature.delete');
 
 route::resource('/footer',FooterController::class);
 Route::delete('/footer/{id}', [FooterController::class, 'destroy'])->name('footer.delete');
