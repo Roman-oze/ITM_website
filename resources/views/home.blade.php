@@ -104,16 +104,17 @@
 <div class="chat-container" id="chatContainer">
     <div class="chat-header">
         <h2 class="text-center">Live Chat</h2>
+        {{-- <button class="close-button" onclick="closeChat()">X</button> --}}
 
         {{-- close button --}}
-        {{-- <button type="button" class="btn btn-block" onclick="chatContainer()"><i class="fa-regular fa-circle-xmark close-btn"></i></button> --}}
+        {{-- <button type="button" class="btn btn-block" onclick="closeChat()"><i class="fa-regular fa-circle-xmark close-btn"></i></button> --}}
     </div>
     <div class="chat-box" id="chat-box">
         <div class="messages" id="messages"></div>
     </div>
     <div class="chat-input">
         <input type="text" id="user-input" placeholder="Type your message..." >
-        <button id="send-btn" class="btn btn-block"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button> <!-- Send button icon -->
+        <button id="send-btn" class="btn btn-block"><i class="fa-regular fa-paper-plane fa-2x plane text-dark"></i></button> <!-- Send button icon -->
     </div>
 </div>
 
@@ -754,7 +755,7 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="col-lg-7 d-flex align-items-stretch">
           <div class="info">
             <div class="address">
                 <i class="fa-solid fa-map-location-dot"></i>
@@ -780,39 +781,75 @@
           </div>
         </div>
 
-        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form action="{{route('contact_store')}}" method="post" role="form" class="php-email-form">
-            @csrf
-            <div class="row">
-              <div class="form-group col-md-6">
-                <label for="name">Your Name</label>
-                <input type="text" name="name" class="form-control" id="name" required="">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" required="">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="name">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" required="">
-            </div>
-            <div class="form-group">
-              <label for="name">Message</label>
-              <textarea class="form-control" name="message" rows="10" required=""></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">
-                Your message has been sent. Thank you!
-              </div>
-            </div>
-            <div class="text-center">
-              <button type="submit"><i class="fa-regular fa-paper-plane fa-lg plane text-white"></i> Send Message</button>
-            </div>
-          </form>
+        <div class="col-lg-5 mt-5 mt-lg-0 d-flex align-items-stretch float-end">
 
+
+
+            {{-- <form action="{{ route('notifications.store') }}" method="POST" class="php-email-form">
+
+                @csrf
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Your Email</label>
+                        <input type="email" class="form-control" name="email" id="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" name="message" rows="10" required></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit"><i class="fa-regular fa-paper-plane fa-lg plane text-white"></i> Send Message</button>
+                  </div>
+            </form> --}}
+
+            <form action="{{ route('notifications.store') }}" method="post" >
+                @csrf
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" class="form-control" id="name" required="">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Your Email</label>
+                    <input type="email" class="form-control" name="email" id="email" required="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject" required="">
+                </div>
+                <div class="form-group">
+                  <label for="name">Message</label>
+                  <textarea class="form-control" name="message" rows="10" required=""></textarea>
+                </div>
+                <div class="my-3">
+                    @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                        </div>
+                    @endif
+
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-dark"><i class="fa-regular fa-paper-plane fa-lg plane text-white"></i> Send Message</button>
+                </div>
+              </form>
 
         </div>
       </div>

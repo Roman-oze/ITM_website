@@ -14,13 +14,40 @@
     </form>
 
         <!-- Notification -->
-    <div class="notification-icon" id="notificationIcon">
+    {{-- <div class="notification-icon" id="notificationIcon">
         <i class="fas fa-bell">
             <span class="badge badge-danger" id="badgeNotification">{{count($notifications)}}</span>
-            
+
             </i>
         </i>
-    </div>
+    </div> --}}
+    <!-- Notification Icon with Dropdown -->
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-bell"></i>
+        <span class="badge bg-danger" id="notificationCount">{{ \App\Models\Notification::where('is_read', false)->count() }}</span>
+    </a>
+
+    <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="notificationDropdown" style="width: 300px;">
+        <li class="dropdown-header">Notifications</li>
+
+        <!-- Example Notification Items -->
+        @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
+            <li class="notification-item">
+                <a href="{{ route('notifications.index') }}" class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span><strong>{{ $notification->subject }}</strong><br>{{ $notification->message }}</span>
+                    <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
+                </a>
+            </li>
+        @endforeach
+
+        <!-- Button to View All Notifications -->
+        <li class="text-center mt-2">
+            <a href="{{ route('notifications.index') }}" class="btn btn-dark ">View All Notifications</a>
+        </li>
+    </ul>
+</li>
+
 
     <!-- Navbar-->
     <div class="d-flex align-items-center ms-sm-6">

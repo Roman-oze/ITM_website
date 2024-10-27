@@ -653,4 +653,38 @@ nav ul li a {
 
   }
 
+/* Notification Dropdown Styling */
+#notificationDropdown {
+    position: relative;
+}
+
+#notificationCount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 6px;
+    border-radius: 50%;
+    font-size: 0.75rem;
+}
+
+.dropdown-menu .notification-item a {
+    color: #333;
+    padding: 10px;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu .notification-item a:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-header {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.text-muted {
+    font-size: 0.75rem;
+    margin-left: auto;
+}
 
