@@ -12,10 +12,11 @@
 <div class="card mb-4">
     <div class="card-header float-end">
         <h3 class=" float-end">
-            <a href="{{ route('features.create')}}" class="btn btn-outline-dark">Create</a>
+            <a href="{{route('feature.create')}}" class="btn btn-outline-dark">Create</a>
         </h3>
         </div>
 </div>
+
 
     <div class="container-fluid">
 <div class="row p-3">
@@ -43,9 +44,14 @@
      </div>
      <div class="d-flex justify-content-evenly mt-1">
 
-        <a href="" class=" btn btn-info">Edit</a>
+        <a href="{{route('feature.edit',$feature->id)}}" class=" btn btn-info">Edit</a>
 
-        <a href="" class=" btn btn-danger">Delete</a>
+        <form action="{{ route('feature.delete',$feature->id)}}" method="POST">
+            @csrf
+            @method('DELETE')
+
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure !')">Delete</button>
+        </form>
 
      </div>
      </div>

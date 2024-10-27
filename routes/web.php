@@ -240,8 +240,20 @@ Route::delete('/service/{id}', [ServiceController::class, 'destroy'])->name('ser
 // route::resource('/footer',FooterController::class);
 // Route::delete('/footer/{id}', [FooterController::class, 'destroy'])->name('footer.delete');
 
-route::resource('/features',FeatureController::class);
-Route::delete('/feature/{id}', [FeatureController::class, 'destroy'])->name('feature.delete');
+// route::resource('/features',FeatureController::class);
+// Route::delete('/feature/{id}', [FeatureController::class, 'destroy'])->name('features.delete');
+
+
+
+Route::controller(FeatureController::class)->group(function(){
+    Route::get('/feature/index','index')->name('feature.index');
+    Route::get('/feature/create','create')->name('feature.create');
+    Route::post('/feature','store')->name('feature.store');
+    Route::get('/feature/edit/{id}','edit')->name('feature.edit');
+    Route::put('/feature/update/{id}','update')->name('feature.update');
+    Route::delete('/feature/delete/{id}','destroy')->name('feature.delete');
+
+});
 
 route::resource('/footer',FooterController::class);
 Route::delete('/footer/{id}', [FooterController::class, 'destroy'])->name('footer.delete');

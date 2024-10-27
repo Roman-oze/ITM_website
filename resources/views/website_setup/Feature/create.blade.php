@@ -29,12 +29,12 @@
             </div>
 
             @endif
-                <form action="{{ route('features.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('feature.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" name="title" required>
+                        <input type="text" class="form-control" id="title" name="title" value="{{ old('description') }}">
                         @error('title')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
@@ -42,7 +42,7 @@
 
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                        <textarea class="form-control" id="description" name="description" rows="3" required {{ old('description') }}></textarea>
                         @error('description')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
