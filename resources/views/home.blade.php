@@ -79,50 +79,54 @@
  </div>
  </div> --}}
 
- <div class="live-chat-container" id="liveChatPopup">
+ {{-- <div class="live-chat-container" id="liveChatPopup">
     <div class="live-chat-header">
         <h4>Chat with Us</h4>
         <button type="button" onclick="closeLiveChat()">X</button>
     </div>
     <div class="live-chat-body">
         <div class="live-chat-messages" id="liveChatMessages">
-            <!-- Messages will be appended here -->
         </div>
         <form action="{{ route('viwer.store') }}" method="POST" class="form-container">
             @csrf
             <textarea id="liveChatInput" name="message" placeholder="Type your message..."></textarea>
-            {{-- <button type="submit" class="live-chat-send-button">Send</button> --}}
             <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
 
         </form>
     </div>
+</div> --}}
+<div class="inbox-icon" id="inboxIcon">
+   <!-- Use the comment dots icon -->
+    <div color="#ffffff" class="sc-kgUAy♂h bIyeJp"><svg width="29" height="30" viewBox="0 0 29 30" fill="none" onclick="openLiveChat()" xmlns="http://www.w3.org/2000/svg"><path d="M20.5002 10.1999H22.9002C24.2257 10.1999 25.3002 11.2744 25.3002 12.5999V19.7999C25.3002 21.1254 24.2257 22.1999 22.9002 22.1999H20.5002V26.9999L15.7002 22.1999H10.9002C10.2375 22.1999 9.63745 21.9313 9.20314 21.497M9.20314 21.497L13.3002 17.3999H18.1002C19.4257 17.3999 20.5002 16.3254 20.5002 14.9999V7.7999C20.5002 6.47442 19.4257 5.3999 18.1002 5.3999H6.1002C4.77471 5.3999 3.7002 6.47442 3.7002 7.7999V14.9999C3.7002 16.3254 4.77471 17.3999 6.1002 17.3999H8.5002V22.1999L9.20314 21.497Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
 </div>
 
-<div class="chat-container">
+<!-- Chat Container -->
+<div class="chat-container" id="chatContainer">
     <div class="chat-header">
-        <h2>Live Chat</h2>
-        <button id="close-chat">X</button>
+        <h2 class="text-center">Live Chat</h2>
+
+        {{-- close button --}}
+        {{-- <button type="button" class="btn btn-block" onclick="chatContainer()"><i class="fa-regular fa-circle-xmark close-btn"></i></button> --}}
     </div>
     <div class="chat-box" id="chat-box">
         <div class="messages" id="messages"></div>
     </div>
     <div class="chat-input">
-        <input type="text" id="liveChatInput" placeholder="Type your message..." />
-        <button id="send-btn">Send</button>
+        <input type="text" id="user-input" placeholder="Type your message..." >
+        <button id="send-btn" class="btn btn-block"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button> <!-- Send button icon -->
     </div>
 </div>
+
+
 
 <!-- Chat icon -->
 {{-- <i class="fa-solid fa-comments  fa-4x  live-chat-icon" onclick="openLiveChat()"></i> --}}
 
  {{-- collapse sidebar --}}
- <div color="#ffffff" class="sc-kgUAyh bIyeJp"><svg width="29" height="30" viewBox="0 0 29 30" fill="none" onclick="openLiveChat()" xmlns="http://www.w3.org/2000/svg"><path d="M20.5002 10.1999H22.9002C24.2257 10.1999 25.3002 11.2744 25.3002 12.5999V19.7999C25.3002 21.1254 24.2257 22.1999 22.9002 22.1999H20.5002V26.9999L15.7002 22.1999H10.9002C10.2375 22.1999 9.63745 21.9313 9.20314 21.497M9.20314 21.497L13.3002 17.3999H18.1002C19.4257 17.3999 20.5002 16.3254 20.5002 14.9999V7.7999C20.5002 6.47442 19.4257 5.3999 18.1002 5.3999H6.1002C4.77471 5.3999 3.7002 6.47442 3.7002 7.7999V14.9999C3.7002 16.3254 4.77471 17.3999 6.1002 17.3999H8.5002V22.1999L9.20314 21.497Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
 
 <button class="open-button" onclick="openForm()"><i class="fa-solid fa-arrow-right-arrow-left p-1 text-white"></i></button>
 
 <div class="calpse-bar p-2" id="myForm">
-<form action="" method="POST" class="form-container">
-
     <div id="map-widgets-holder" class="my-3 my-md-0 mx-3 mx-md-0 text-center text-md-left bg-white">
         <div class="info--card-holder mt-5 mt-md-0 ">
             <aside class="mb-3">
@@ -178,7 +182,7 @@
             </aside>
         </div>
   <button type="button" class="open-button" onclick="closeForm()"><i class="fa-solid fa-arrow-right-arrow-left p-1 text-white"></i></button>
-</form>
+
 </div>
 </div>
 

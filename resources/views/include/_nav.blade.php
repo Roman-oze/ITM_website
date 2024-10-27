@@ -12,6 +12,16 @@
             <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
         </div>
     </form>
+
+        <!-- Notification -->
+    <div class="notification-icon" id="notificationIcon">
+        <i class="fas fa-bell">
+            <span class="badge badge-danger" id="badgeNotification">{{count($notifications)}}</span>
+            
+            </i>
+        </i>
+    </div>
+
     <!-- Navbar-->
     <div class="d-flex align-items-center ms-sm-6">
         <!-- User Dropdown -->
