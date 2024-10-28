@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -48,14 +49,16 @@ class UserController extends Controller
         ]);
 
 
-        $user = new User();
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('password'));
-        $user->save();
+        $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' =>Hash::make($request->password),
+                'roles' => $request->roles,
+                ]);
 
-        $user->roles()->sync($request->input('roles'));
-        return redirect()->route('users')->with('success', 'User created successfully');
+        $user->roles()->sync($request->roles);
+
+        return redirect()->back()->with('success', 'User created successfully');
 
 
     }
@@ -71,14 +74,15 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(USer $user)
     {
 
-        $user = User::find($id);
-        $roles = Role::all();
+        $roles = Role::pluck('name','name')->all();
+        $userRoles = $user->roles()->pluck('name','name')->all();
         return view('role-permission.user.edit',[
-            'user' => $user,
-            'roles' => $roles
+            'roles' => $roles,
+            'userRoles' => $userRoles,
+            'user' => $user
             ]);
 
     }

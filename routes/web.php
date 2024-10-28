@@ -45,8 +45,24 @@ Route::middleware('auth')->group(function () {
 
 
 
-route::group(['middleware'  =>['role:admin']], function(){
-    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+// route::group(['middleware'  =>['role:admin']], function(){
+//     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// route::resource('permissions',App\Http\Controllers\PermissionController::class);
+// route::get('permissions/{id}/delete',[App\Http\Controllers\PermissionController::class,'destroy']);
+
+// route::resource('roles',App\Http\Controllers\RoleController::class);
+// route::get('roles/{roleId}/delete',[App\Http\Controllers\RoleController::class,'destroy']);
+
+// route::get('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'addPermissionToRole']);
+// route::put('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'updatePermissionToRole']);
+
+// route::resource('/users',App\Http\Controllers\UserController::class);
+// route::get('users/{userId}/delete',[App\Http\Controllers\UserController::class,'destroy']);
+// route::get('/users/search',[App\Http\Controllers\UserController::class,'search'])->name('search.user');
+
+// });
+
 
 route::resource('permissions',App\Http\Controllers\PermissionController::class);
 route::get('permissions/{id}/delete',[App\Http\Controllers\PermissionController::class,'destroy']);
@@ -57,11 +73,9 @@ route::get('roles/{roleId}/delete',[App\Http\Controllers\RoleController::class,'
 route::get('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'addPermissionToRole']);
 route::put('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'updatePermissionToRole']);
 
-route::resource('/users',App\Http\Controllers\UserController::class);
+route::resource('users',UserController::class);
 route::get('users/{userId}/delete',[App\Http\Controllers\UserController::class,'destroy']);
 route::get('/users/search',[App\Http\Controllers\UserController::class,'search'])->name('search.user');
-
-});
 
 
 Route::resource('menus',MenuController::class);

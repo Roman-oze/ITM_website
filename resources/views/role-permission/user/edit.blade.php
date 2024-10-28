@@ -32,7 +32,9 @@
                                 <label for="name" class="form-label">Roles</label>
                                 <select name="roles[]" class="form-control" multiple>
                                     @foreach($roles as $role)
-                                    <option value="{{$role->id}}">{{$role->name}}</option>
+                                    <option value="{{$role}}" {{in_array($role, $userRoles) ? 'selected' :''}}>
+                                        {{$role}}
+                                    </option>
                                     @endforeach
                                     </select>
 

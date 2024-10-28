@@ -105,22 +105,51 @@ class RoleController extends Controller
 
     }
 
-    public function addPermissionToRole($roleId){
-        $role = Role::find($roleId);
-        $permissions = Permission::get();
-        $rolePermission = DB::table('role_has_permissions')
-        ->where('role_id',$roleId)
-        ->pluck('permission_id');
+    // public function addPermissionToRole($roleId){
+    //     $role = Role::find($roleId);
+    //     $permissions = Permission::get();
+    //     $rolePermission = DB::table('role_has_permissions')
+    //     ->where('role_has_permissions'.'role_id',$roleId)
+    //     ->pluck('role_has_permission'.'permission_id	','role_has_permission'.'permission_id	')
+    //     ->all();
 
 
 
-        return view('role-permission.role.add-permission',[
-            'role' => $role,
-            'permissions' => $permissions,
-            'rolePermission' => $rolePermission,
-            ]);
+    //     return view('role-permission.role.add-permission',[
+    //         'role' => $role,
+    //         'permissions' => $permissions,
+    //         'rolePermission' => $rolePermission,
+    //         ]);
 
+    // }
+
+    public function addPermissionToRole($roleId)
+{
+    // Find the role by ID
+    $role = Role::find($roleId);
+
+    // Check if the role exists
+    if (!$role) {
+        return redirect()->back()->with('error', 'Role not found.');
     }
+
+    // Get all permissions
+    $permissions = Permission::all();
+
+    // Get permissions associated with the role
+    $rolePermissions = DB::table('role_has_permissions')
+        ->where('role_id', $roleId) // Correctly reference the role_id column
+        ->pluck('permission_id') // Correctly pluck the permission_id column
+        ->all();
+
+    // Return the view with the role, all permissions, and the permissions assigned to the role
+    return view('role-permission.role.add-permission', [
+        'role' => $role,
+        'permissions' => $permissions,
+        'rolePermissions' => $rolePermissions, // Renamed to rolePermissions for clarity
+    ]);
+}
+
 
 
     public function updatePermissionToRole(Request $request, $roleId){

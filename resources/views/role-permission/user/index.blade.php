@@ -50,7 +50,7 @@
                         <a href="{{url('users/'.$user->id.'/edit')}}" class="btn btn-primary">
                             <i class="fa fa-edit"></i>
                             </a>
-                            <a href="{{url('users/'.$user->id.'/delete')}}" class="btn btn-danger">
+                            <a href="{{url('users/'.$user->id.'/delete')}}" class="btn btn-danger" onclick="return confirm('Are you sure!')">
 
                                 <i class="fa fa-trash"></i>
                                 </a>
