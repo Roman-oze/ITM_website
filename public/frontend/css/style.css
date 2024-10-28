@@ -2717,3 +2717,26 @@ a:hover {
 .close-btn{
 
 }
+#Feature .inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#Feature .col {
+    flex: 1 1 150px; /* Each item takes a minimum width of 150px */
+    max-width: 200px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #Feature .col {
+        flex: 1 1 100%; /* Stack items on screens smaller than 768px */
+    }
+}
+
+.imgslide {
+    width: 100%;
+    max-width: 80px;
+    height: 80px;
+}

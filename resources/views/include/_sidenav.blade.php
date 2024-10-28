@@ -57,12 +57,6 @@
                 </div>
 
 
-                <!-- Messages Link -->
-                <a class="nav-link" href="{{route('contact.index')}}">
-                    <div class="sb-nav-link-icon"><i class="fa-regular fa-message fa-fw text-white fa-lg"></i></div>
-                    Messages
-                </a>
-
                 <!-- Mail Link -->
                 <a class="nav-link" href="{{ route('send-mail-form.create') }}">
                     <div class="sb-nav-link-icon"><i class="fa-regular fa-envelope text-white fa-lg"></i></div>

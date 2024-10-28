@@ -26,7 +26,6 @@ class HomeController extends Controller
         $features = Feature::all();
         $services = Service::all();
         $footers = Footer::all();
-        $message = Message::all();
         $scholars = Scholarship::all();
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();
@@ -34,7 +33,7 @@ class HomeController extends Controller
         $scholarshipCount = DB::table('scholarships')->count();
 
 
-         return view('home',compact('hero','scholars','message','footers'),[
+         return view('home',compact('hero','scholars','footers'),[
         'studentCount' => $studentCount,
         'facultyCount' => $facultyCount,
         'alumniCount' => $alumniCount,

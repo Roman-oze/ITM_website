@@ -62,6 +62,7 @@
     </div>
 </section> --}}
 
+
 {{--
 <div class="">
     <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots  fa-4x  open-button"></i></button>
@@ -189,36 +190,48 @@
 
 
 
-<section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
-    <div class="inner ">
-        <div class="col">
+<section id="Feature" class="section-p1" style="background-color: rgb(213, 217, 234);">
+    <div class="inner d-flex flex-wrap justify-content-center text-center">
+        <div class="col p-3">
             <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
-            <p class="col-btn">Waiver</p>
-        </div>
-        <div class="col">
-            <img src="{{asset('frontend/image/laptop.png')}}" alt="" class="imgslide">
-            <p class="col-btn">Free Laptop</p>
-        </div>
-        <div class="col">
-            <img src="{{asset('frontend/image/hall.png')}}" alt="" class="imgslide">
-            <p class="col-btn">Hall</p>
-        </div>
-        <div class="col">
-            <img src="{{asset('frontend/image/innovation.png')}}" alt="" class="imgslide">
-            <p class="col-btn">innovation</p>
-        </div>
-        <div class="col">
-            <img src="{{asset('frontend/image/clubimage.png')}}" alt="" class="imgslide">
             <p class="col-btn">
-                <a href="{{route('club')}}" class="text-white">Club</a>
+                <a href="https://daffodilvarsity.edu.bd/tuition-fee-calculator" class="text-white" target="_blank">Waiver</a>
             </p>
         </div>
-        <div class="col">
+        <div class="col p-3">
+            <img src="{{asset('frontend/image/laptop.png')}}" alt="" class="imgslide">
+            <p class="col-btn">
+                <a href="https://laptop.daffodilvarsity.edu.bd/index.php/apply-and-instruction/instruction-for-laptop-receive" class="text-white" target="_blank">Free Laptop</a>
+            </p>
+        </div>
+        <div class="col p-3">
+            <img src="{{asset('frontend/image/hall.png')}}" alt="" class="imgslide">
+            <p class="col-btn">
+                <a href="https://hall.daffodilvarsity.edu.bd/" class="text-white" target="_blank">Hall</a>
+            </p>
+        </div>
+        <div class="col p-3">
             <img src="{{asset('frontend/image/buss.png')}}" alt="" class="imgslide">
-            <p class="col-btn">Transport</p>
+            <p class="col-btn">
+                <a href="https://daffodilvarsity.edu.bd/article/transport" class="text-white" target="_blank">Transport</a>
+            </p>
         </div>
+        <div class="col p-3">
+            <img src="{{asset('frontend/image/lightbulb-icon.png')}}" alt="" class="imgslide">
+            <p class="col-btn">
+                <a href="" class="text-white" target="_blank">Innovation</a>
+            </p>
+
         </div>
+        <div class="col p-3">
+            <img src="{{asset('frontend/image/clubimage.png')}}" alt="" class="imgslide">
+            <p class="col-btn">
+                <a href="{{route('club')}}" class="text-white" target="_blank">Club</a>
+            </p>
+        </div>
+    </div>
 </section>
+
 
 
 
@@ -254,123 +267,89 @@
         </section>
 
 
-
-
-
-
- <div class="container-fluid mt-5 p-4">
-
-     <div class="section-title">
-         <h2><i class="fa-brands fa-elementor "></i> Department of  I T M</h2>
-         </div>
-
-
-        <div class="row justify-content-center   mt-5 ">
-
-        {{-- <div class="row justify-content-center covepage  mt-5 "> --}}
-            <div class="col-md-6 align-items-stretch d-flex">
-                <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg);">
-                    <div class="video justify-content-center">
-                        {{-- <a href="https://www.facebook.com/share/v/PRtyYekzGpyqkezy/" class="icon-video popup-vimeo d-flex justify-content-center align-items-center"> --}}
-                            {{-- <image src="{{asset('frontend/image/student4.png')}}" class="img-fluid-custom manual-shadow "  > --}}
-                                <img src="{{asset('frontend/image/why-us.png')}}" class="image1 img-fluid-custom      animate__animated animate__fadeInDown">
-
-                                {{-- <iframe width="640" height="450" src="#">
-                                </iframe> --}}
-
+    <div class="container-fluid mt-5 p-4">
+            <div class="section-title">
+                <h2><i class="fa-brands fa-elementor"></i> Department of ITM</h2>
+            </div>
+        <div class="row justify-content-center mt-5">
+                <div class="col-md-6 align-items-stretch d-flex">
+                    <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg');">
+                        <div class=" justify-content-center">
+                            {{-- <img src="{{asset('frontend/image/why-us.png')}}" class="image1 img-fluid-custom animate__animated animate__fadeInDown"> --}}
+                            <img src="https://www.signulu.com/images/latest/it_banner_img.png" class="image1 img-fluid-custom animate__animated animate__fadeInDown">
                             <span class="ion-ios-play"></span>
-                        </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 p-3 itm-card">
+                    <h1 class="text-white itm">Information Technology and Management (ITM)</h1>
+                    <div class="content">
+                        <h3>Why Choose Us?</h3>
+                        <p class="why_itm">
+                            "Education is the most powerful weapon which you can use to change the world."
+                            This program provides you with a unique opportunity to earn a BSc in Information Technology and Management.
+                            In the field of Information Technology and Management, the job possibilities are almost endless.
+                            "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on the cloud...
+                        </p>
+                    </div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Information
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show mt-2" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <i class="ri-check-double-line text-success fa-lg"></i> <strong>Innovative Curriculum:</strong>
+                                    Our program integrates cutting-edge information technologies and prepares students for the latest industry trends.
+                                    <br><br>
+                                    <i class="ri-check-double-line text-success fa-lg"></i> <strong>Hands-On Experience:</strong>
+                                    Engage in real-world projects, internships, and practical training with information systems and data management.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Technology
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse p-3 mt-2" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <i class="ri-check-double-line text-success fa-lg"></i><strong> State-of-the-Art Facilities:</strong>
+                                    Modern labs, high-tech equipment, and the latest software tools for advanced learning and research.
+                                    <br><br>
+                                    <i class="ri-check-double-line text-success fa-lg"></i><strong> Industry Partnerships:</strong>
+                                    Collaborations with tech companies providing exposure to the industry and potential job placements.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Management
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <i class="ri-check-double-line text-success fa-lg"></i><strong> Leadership Skills:</strong>
+                                    Develop essential management skills such as project management, strategic planning, and organizational behavior.
+                                    <br><br>
+                                    <i class="ri-check-double-line text-success fa-lg"></i><strong> Career Advancement:</strong>
+                                    Success stories of alumni who have achieved significant career milestones and leadership positions.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6  p-3 itm-card">
-
-
-
-                {{-- <h2 class="mb-4 text-warning itm p-2">Information Technology and Management (ITM)</h4> --}}
-                    <h1 class="text-white itm">Information Technology and Management (ITM)</h1>
-
-                     <div class="content">
-            <h3>Why Choose Us?</h3>
-            <p class="why_itm">
-               "Education is the most powerful weapon which you can use to change the world."
-                 provides you a unique opportunity to have BSc. in Information Technology and Management.
-                 In the field of Information Technology and Management, the job possibilities are almost endless.
-                 "The major goal of the discipline, which is now unique in our nation, is to integrate information technology with business intelligence. We also intend to secure financial systems on cloud...
-            </p>
-          </div>
-
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Information
-                            </button>
-                          </h2>
-                          <div id="collapseOne" class="accordion-collapse collapse show mt-2" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <i class="ri-check-double-line text-success fa-lg"></i> <strong>"Innovative Curriculum: "</strong>
-                           Our program integrates cutting-edge information technologies and prepares students for the latest industry trends
-                           <br>
-                           <br>
-                           <i class="ri-check-double-line text-success fa-lg"></i> <strong>"Hands-On Experience:"</strong>
-                          Engage in real-world projects, internships, and practical training with information systems and data management.
-                          </div>
-                        </div>
-                        <div class="accordion-item ">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Technology
-                            </button>
-                          </h2>
-                          <div id="collapseTwo" class="accordion-collapse collapse p-3 mt-2" data-bs-parent="#accordionExample">
-                            <div class="accordion-body  ">
-
-                                <i class="ri-check-double-line text-success fa-lg"></i><strong>  "State-of-the-Art Facilities":</strong>
-                                {{-- <a target="_blank" class="down-btn" href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Course List  <i class="fa-solid fa-circle-down conic fa-lg"></i></a> --}}
-                                Modern labs, high-tech equipment, and the latest software tools for advanced learning and research.
-                                <br>
-                                <br>
-                                <i class="ri-check-double-line text-success fa-lg"></i><strong>  "Industry Partnerships: "</strong>
-                                 Collaborations with tech companies providing exposure to the industry and potential job placements.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Management
-                            </button>
-                          </h2>
-                          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                {{-- <div class="d-flex justify-content-evenly">
-                                    <a target="_blank" href="https://www.facebook.com/islamfull.5" class="face"><i class="fa-brands fa-facebook"></i> Facebook </a></i>
-                                     <br>
-                                     <br>
-                                    <a target="_blank" href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i>
-                                  </div> --}}
-                                  <i class="ri-check-double-line text-success fa-lg"></i><strong>" Leadership Skills: "</strong>
-                                    Develop essential management skills such as project management, strategic planning, and organizational behavior.
-                                    <br>
-                                <br>
-                                <i class="ri-check-double-line text-success fa-lg"></i><strong>"Career Advancement: "</strong>
-                                     Success stories of alumni who have achieved significant career milestones and leadership positions.
-                                </div>
-                          </div>
-                        </div>
-                      </div>
-
         </div>
     </div>
-    </div>
-</div>
-</div>
-</div>
-<br>
-<br>
-<br>
+    <br><br><br>
+
 
 {{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a> --}}
 <div class="container mt-5">
@@ -755,7 +734,7 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-7 d-flex align-items-stretch">
+        <div class="col-lg-6 d-flex align-items-stretch">
           <div class="info">
             <div class="address">
                 <i class="fa-solid fa-map-location-dot"></i>
@@ -781,7 +760,8 @@
           </div>
         </div>
 
-        <div class="col-lg-5 mt-5 mt-lg-0 d-flex align-items-stretch float-end">
+        <div class="col-lg-6 d-flex align-items-stretch ">
+            <div class="info">
 
 
 
@@ -817,7 +797,7 @@
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="name">Your Name</label>
-                    <input type="text" name="name" class="form-control" id="name" required="">
+                    <input type="text" name="name" class="form-control md" id="name" required="">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="name">Your Email</label>
@@ -851,6 +831,7 @@
                 </div>
               </form>
 
+           </div>
         </div>
       </div>
     </div>

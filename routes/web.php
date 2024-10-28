@@ -16,7 +16,6 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\FeatureController;
-use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoutineController;
 use App\Http\Controllers\ServiceController;
@@ -27,20 +26,8 @@ use App\Http\Controllers\HerosectionController;
 use App\Http\Controllers\NoticeBoardController;
 use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\NotificationController;
-use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\MenuPermissionController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -84,20 +71,6 @@ Route::get('menu-permission/create',[MenuPermissionController::class,'create_per
 // Route::post('/assign-permission', [MenuPermissionController::class, 'assignPermission'])->name('menupermissions.assign');
 
 
-
-
-route::controller(ContactMessageController::class)->group(function(){
-    Route::get('/message/index','index')->name('contact.index');
-    Route::post('/message', 'store')->name('contact_store');
-    Route::delete('/message/delete/{id}', 'destroy')->name('message.delete');
-});
-
-route::controller(MessageController::class)->group(function(){
-    route::post('/viewer/message','store')->name('viwer.store');
-    route::get('/message','index')->name('index.message');
-    route::delete('/inbox/{id}','destroy')->name('inbox.delete');
-});
-
  Route::controller(FacultyController::class)->group(function(){
     Route::get('/faculty/create','create')->name('create.faculty');
     Route::get('/dashboard/faculty','index')->name('faculty.index');
@@ -132,6 +105,7 @@ Route::controller(RoutineController::class)->group(function(){
     route::delete('/routine/delete/{id}','destroy')->name('routine.delete');
     Route::get('/files/download/{id}',  'download')->name('files.download');
 });
+
 // Route::controller(AdminController::class)->group(function(){
 
 //     Route::get('user', 'user')->name('admin.user');
@@ -141,11 +115,12 @@ Route::controller(RoutineController::class)->group(function(){
 //     Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');
 
 // });
+
+
 route::resource('schedules',ScheduleController::class);
 Route::delete('/schedules/{schedule_id}', [ScheduleController::class, 'destroy'])->name('schedules.delete');
 // Route::get('/schedules/edit/{id}', [ScheduleController::class, 'edit'])->name('schedules.edit');
 // Route::get('/schedules/show/{id}', [ScheduleController::class, 'show'])->name('schedules.show');
-
 route::post('schedules/search',[ScheduleController::class,'search'])->name('schedule.search');
 
 
@@ -238,13 +213,6 @@ Route::delete('/herosection/{id}', [HerosectionController::class, 'destroy'])->n
 route::resource('/services',ServiceController::class);
 Route::delete('/service/{id}', [ServiceController::class, 'destroy'])->name('service.delete');
 
-// route::resource('/footer',FooterController::class);
-// Route::delete('/footer/{id}', [FooterController::class, 'destroy'])->name('footer.delete');
-
-// route::resource('/features',FeatureController::class);
-// Route::delete('/feature/{id}', [FeatureController::class, 'destroy'])->name('features.delete');
-
-
 
 Route::controller(FeatureController::class)->group(function(){
     Route::get('/feature/index','index')->name('feature.index');
@@ -265,10 +233,6 @@ Route::delete('/footer/{id}', [FooterController::class, 'destroy'])->name('foote
 Route::get('/pdf_generate', [App\Http\Controllers\PdfController::class,'pdf_generate']);
 
 
-
-    // Route::get('/send-mail', function () {
-    // return view('emails.send-mail');
-    // })->name('send.mail.form');
 
 Route::post('/send-mail', [MailController::class, 'store'])->name('send.mail.data');
 

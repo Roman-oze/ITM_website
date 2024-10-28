@@ -68,7 +68,7 @@
                     <div class="card-body ">
                         <h5 class="card-title text-muted">ID: <span class="text-dark"><strong>{{ $student->roll }}</strong></span></h5>
                         <h4 class="card-text text-white bg-dark rounded p-2">{{ $student->name }}</h4>
-                        <p class="card-text">Batch: {{ $student->batch }}</p>
+                        <p class="card-text">Batch: {{ $student->batch->batch_name }}</p>
                         <p class="card-text">Email: {{ $student->email }}</p>
                         <p class="card-text">Mobile: {{ $student->mobile }}</p>
                         <p class="card-text">Address: {{ $student->address }}</p>

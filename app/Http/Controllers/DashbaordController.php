@@ -22,13 +22,12 @@ class DashbaordController extends Controller
     {
         $menus = Menu::all();
 
-        $messages = Message::all();
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();
         $alumniCount = DB::table('alumnis')->count();
         $scholarshipCount = DB::table('scholarships')->count();
 
-       return view('dashboard',compact('messages'),[
+       return view('dashboard',[
         'studentCount' => $studentCount,
         'facultyCount' => $facultyCount,
         'alumniCount' => $alumniCount,

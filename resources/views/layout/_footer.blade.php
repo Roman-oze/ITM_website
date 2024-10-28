@@ -133,9 +133,9 @@
             <img src="{{ asset('frontend/image/itmclub.png')}}" class="img-fluid" >
 
             <div class="social-links mt-3">
-              <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
-              <a href="#" class="google-plus"><i class="fa-solid fa-envelope"></i></a>
-              <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.facebook.com/diu.itm" target="_blank" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.facebook.com/diu.itm" target="_blank" class="google-plus"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://www.facebook.com/diu.itm" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@
   </footer>
 
 
-  
+
 {{-- <footer id="footer">
       <div class="footer-newsletter">
         <div class="container">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\Batch;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,9 +12,11 @@ class ClubController extends Controller
 {
         public function membership(){
 
-        $students = DB::table('students')->get();
+            $batches = Batch::all();
 
-        return view('club.membership',compact('students'));
+        $students = Student::with('Batch')->get();
+
+        return view('club.membership',compact('students','batches'));
 
    }
 //         public function staff(){
