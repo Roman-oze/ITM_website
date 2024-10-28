@@ -28,96 +28,33 @@
     </div>
 </section>
 
-{{-- <section id="Feature" class="section-p1 " style="background-color: rgb(213, 217, 234);">
-    <div class="container d-flex justify-content-evenly">
-        <div class="fe-box ">
-        <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
-        <h6 class="btn1">Waiver</h6>
-    </div>
-    <div class="fe-box ">
-        <img src="{{asset('frontend/image/laptop.png')}}" alt="" class="imgslide">
-        <h6 class="btn2">Free Laptop</h6>
-    </div>
-    <div class="fe-box ">
-        <img src="{{asset('frontend/image/hall.png')}}" alt="" class="imgslide">
-        <h6 class="btn3">Hall</h6>
-    </div>
-
-    <div class="fe-box ">
-        <img src="{{asset('frontend/image/innovation.png')}}" alt="" class="imgslide">
-        <h6 class="btn4">Innovation</h6>
-    </div>
-    <div class="fe-box ">
-        <img src="{{asset('frontend/image/clubimage.png')}}" alt="" class="imgslide">
-        <h6 class="btn5">35+ Club</h6>
-    </div>
-    <div class="fe-box ">
-        <img src="{{asset('frontend/image/life_insurance.png')}}" alt="" class="imgslide">
-        <h6 class="btn6">Life-Insurance</h6>
-    </div>
-    <div class="fe-box ">
-        <img src="{{asset('frontend/image/buss.png')}}" alt="" class="imgslide">
-        <h6 class="btn1">Transport</h6>
-    </div>
-    </div>
-</section> --}}
-
-
-{{--
-<div class="">
-    <button class="btn btn-block" onclick="openForm()"> <i class="fa-solid fa-comment-dots  fa-4x  open-button"></i></button>
- <div class="chat-popup" id="myForm">
-    <form action="{{route('viwer.store')}}" method="POST" class="form-container">
-         @csrf
-         <h1>Chat</h1>
-
-           <label for="msg"><b>Message</b></label>
-          <textarea  placeholder="Type message.." name="message" required></textarea>
-
-         <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
-         <button type="button" class="btn cancel" onclick="closeForm()"><i class="fa-solid fa-circle-xmark text-danger  fa-3x"></i></button>
-    </form>
- </div>
- </div> --}}
-
- {{-- <div class="live-chat-container" id="liveChatPopup">
-    <div class="live-chat-header">
-        <h4>Chat with Us</h4>
-        <button type="button" onclick="closeLiveChat()">X</button>
-    </div>
-    <div class="live-chat-body">
-        <div class="live-chat-messages" id="liveChatMessages">
-        </div>
-        <form action="{{ route('viwer.store') }}" method="POST" class="form-container">
-            @csrf
-            <textarea id="liveChatInput" name="message" placeholder="Type your message..."></textarea>
-            <button type="submit" class="btn btn-outline-success"><i class="fa-regular fa-paper-plane fa-2x plane"></i></button>
-
-        </form>
-    </div>
-</div> --}}
 <div class="inbox-icon" id="inboxIcon">
    <!-- Use the comment dots icon -->
-    <div color="#ffffff" class="sc-kgUAy♂h bIyeJp"><svg width="29" height="30" viewBox="0 0 29 30" fill="none" onclick="openLiveChat()" xmlns="http://www.w3.org/2000/svg"><path d="M20.5002 10.1999H22.9002C24.2257 10.1999 25.3002 11.2744 25.3002 12.5999V19.7999C25.3002 21.1254 24.2257 22.1999 22.9002 22.1999H20.5002V26.9999L15.7002 22.1999H10.9002C10.2375 22.1999 9.63745 21.9313 9.20314 21.497M9.20314 21.497L13.3002 17.3999H18.1002C19.4257 17.3999 20.5002 16.3254 20.5002 14.9999V7.7999C20.5002 6.47442 19.4257 5.3999 18.1002 5.3999H6.1002C4.77471 5.3999 3.7002 6.47442 3.7002 7.7999V14.9999C3.7002 16.3254 4.77471 17.3999 6.1002 17.3999H8.5002V22.1999L9.20314 21.497Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+    <div color="#ffffff" class="sc-kgUAy♂h bIyeJp"><svg width="29" height="30" viewBox="0 0 29 30" fill="none"  xmlns="http://www.w3.org/2000/svg"><path d="M20.5002 10.1999H22.9002C24.2257 10.1999 25.3002 11.2744 25.3002 12.5999V19.7999C25.3002 21.1254 24.2257 22.1999 22.9002 22.1999H20.5002V26.9999L15.7002 22.1999H10.9002C10.2375 22.1999 9.63745 21.9313 9.20314 21.497M9.20314 21.497L13.3002 17.3999H18.1002C19.4257 17.3999 20.5002 16.3254 20.5002 14.9999V7.7999C20.5002 6.47442 19.4257 5.3999 18.1002 5.3999H6.1002C4.77471 5.3999 3.7002 6.47442 3.7002 7.7999V14.9999C3.7002 16.3254 4.77471 17.3999 6.1002 17.3999H8.5002V22.1999L9.20314 21.497Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
 </div>
 
 <!-- Chat Container -->
 <div class="chat-container" id="chatContainer">
     <div class="chat-header">
-        <h2 class="text-center">Live Chat</h2>
-        {{-- <button class="close-button" onclick="closeChat()">X</button> --}}
-
-        {{-- close button --}}
-        {{-- <button type="button" class="btn btn-block" onclick="closeChat()"><i class="fa-regular fa-circle-xmark close-btn"></i></button> --}}
+        <h3 class="text-center">Live Chat <i class="fa-solid fa-circle live-icon"></i></h3>
     </div>
     <div class="chat-box" id="chat-box">
         <div class="messages" id="messages"></div>
     </div>
     <div class="chat-input">
-        <input type="text" id="user-input" placeholder="Type your message..." >
-        <button id="send-btn" class="btn btn-block"><i class="fa-regular fa-paper-plane fa-2x plane text-dark"></i></button> <!-- Send button icon -->
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-btn" class="btn btn-block"><i class="fa-regular fa-paper-plane fa-2x plane live-chat-icon"></i></button>
     </div>
+
+    <!-- Messenger Button -->
+    <a href="https://m.me/diu.itm" target="_blank" class="sc-bYwyHq hNYHKM" style="text-decoration: none;">
+        <div class="messenger-body">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/yd/r/hlvibnBVrEb.svg" alt="Messenger Icon" style="width: 24px; height: 24px; margin-right: 5px;">
+            <span>Messenger</span>
+        </div>
+    </a>
 </div>
+
 
 
 
