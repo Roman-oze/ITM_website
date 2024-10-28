@@ -100,6 +100,21 @@
                     Staff
                 </a>
 
+                <!-- Club Dropdown -->
+                <a class="nav-link collapsed mt-1" href="#" data-bs-toggle="collapse" data-bs-target="#collapseClub" aria-expanded="false" aria-controls="collapseClub">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-hotel text-white fa-lg"></i></div>
+                    Club
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseClub" aria-labelledby="headingClub" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a href="" class="nav-link">Committee</a>
+                        <a href="{{route('membership.index')}}" class="nav-link">Member</a>
+                        <a href="" class="nav-link">Event</a>
+                        <a href="" class="nav-link">Contact</a>
+                    </nav>
+                </div>
+
                 <!-- Notice Board Link -->
                 <a class="nav-link" href="{{route('notice.index')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-circle-info text-white fa-lg"></i></div>

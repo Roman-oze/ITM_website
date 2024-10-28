@@ -23,37 +23,36 @@
 <br>
 <br>
 <br>
-<div class="container mt-5 ">
-    <div class="row text-left ">
-      <!-- Card 1 -->
-      {{-- @foreach ($staffs as $staff) --}}
-      <div class="col-md-4 ">
-        <div class=" text-center  p-2">
-          <div class="mb-4">
-           <img src="{{asset('frontend/image/event_photo/img0.jpg')}}" class="department-single-image" alt="Circular Image rounded">
+<div class="container ">
+    <div class="row text-left">
+        <h3 class="mt-2">Recently</h3>
+        <!-- Card 1 -->
+        {{-- @foreach ($staffs as $staff) --}}
+        <div class="col-12 col-sm-6 col-md-4 mb-1">
+            <div class="text-center p-2">
+                <div class="mb-4">
+                    <img src="{{asset('frontend/image/event_photo/aymansadik.jpg')}}" class="department-single-image img-fluid" alt="Circular Image rounded">
+                </div>
+            </div>
         </div>
-
+        <div class="col-12 col-sm-6 col-md-4 mb-1">
+            <div class="text-center p-2">
+                <div class="mb-4">
+                    <img src="{{asset('frontend/image/event_photo/fundation.jpg')}}" class="department-single-image img-fluid" alt="Circular Image rounded">
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class=" text-center  p-2">
-          <div class="mb-4">
-           <img src="{{asset('frontend/image/event_photo/itmsummit.jpg')}}" class="department-single-image" alt="Circular Image rounded">
+        <div class="col-12 col-sm-6 col-md-4 mb-1">
+            <div class="text-center p-2">
+                <div class="mb-4">
+                    <img src="{{asset('frontend/image/event_photo/itmsummit.jpg')}}" class="department-single-image img-fluid" alt="Circular Image rounded">
+                </div>
+            </div>
         </div>
-
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class=" text-center  p-2">
-          <div class="mb-4">
-           <img src="{{asset('frontend/image/event_photo/decorate.jpg')}}" class="department-single-image" alt="Circular Image rounded">
-        </div>
-
-        </div>
-      </div>
-      {{-- @endforeach --}}
+        {{-- @endforeach --}}
     </div>
 </div>
+
 {{-- <div class="row justify-content-center mb-5">
 
   </div>

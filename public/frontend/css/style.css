@@ -1866,11 +1866,24 @@ p {
     width: 70%;
     height: 70%;
 }
-.department-single-image{
-    height: 300px;
-    width: 400px;
 
+
+.department-single-image {
+    width: 100%; /* Full width of the container */
+    height: 300px; /* Fixed height */
+    object-fit: contain; /* Ensures the entire image is visible */
+    max-width: 400px; /* Optional: Set a maximum width */
+    transition: transform 0.3s ease; /* Smooth transition for the transform effect */
 }
+
+.department-single-image:hover {
+    transform: scale(1.05); /* Scale up by 5% on hover */
+}
+
+
+
+
+
 .admission-btn
 {
   margin: 13px;
@@ -2601,7 +2614,7 @@ font-weight: bold;
 .chat-container {
     position: fixed;
     bottom: 93px;
-    right: 26px;
+    right: 30px;
     width: 275px;
     max-width: 90%;
     border-top-left-radius: 38px;
@@ -2651,8 +2664,8 @@ font-weight: bold;
 }
 
 .message.user {
-    background-color: #143d69;
-    color: white;
+    background-color: #dfe6ec;
+    color: rgb(11, 11, 11);
     align-self: flex-end;
 }
 

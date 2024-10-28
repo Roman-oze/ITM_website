@@ -188,10 +188,11 @@ Route::controller(HomeController::class)->group(function(){
 });
 
 Route::controller(ClubController::class)->group(function(){
-    Route::view('/club','club/club')->name('club');
-    Route::view('/committee','club/committee')->name('committee');
+    Route::get('/club','club')->name('club');
+    Route::get('/committee','committee')->name('committee');
     Route::get('/upcoming','upcoming')->name('upcoming');
     Route::get('/membership','membership')->name('membership');
+    Route::get('/membership/index','index')->name('membership.index');
 });
 
 Route::controller(NoticeBoardController::class)->group(function(){

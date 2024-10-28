@@ -1,5 +1,5 @@
 
-@extends('club.committee_style')
+@extends('club.committee.committee_style')
 @extends('club.layout.club_master')
 
 <br>

@@ -10,26 +10,39 @@ use Illuminate\Support\Facades\DB;
 
 class ClubController extends Controller
 {
+
+        public function club(){
+
+            return view('club.club');
+    }
+
         public function membership(){
 
             $batches = Batch::all();
 
-        $students = Student::with('Batch')->get();
+            $students = Student::with('Batch')->get();
 
-        return view('club.membership',compact('students','batches'));
+            return view('club.member.membership',compact('students','batches'));
 
    }
-//         public function staff(){
 
-//         $staffs = DB::table('staffs')->get();
+        public function committee(){
+            return view('club.committee.committee');
+        }
 
-//         return view('frontend.about',compact('staffs'));
+        public function upcoming(){
+            $upcoming = Event::all();
+            return view('club.event.upcoming',compact('upcoming'));
+        }
 
-//    }
-public function upcoming(){
-    $upcoming = Event::all();
-    return view('club.upcoming',compact('upcoming'));
-}
+     public function index(){
+
+        $batches = Batch::all();
+
+        $students = Student::with('Batch')->get();
+
+        return view('club.member.index',compact('students','batches'));
+     }
 
 
 }
