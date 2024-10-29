@@ -27,6 +27,8 @@ use App\Http\Controllers\NoticeBoardController;
 use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\MenuPermissionController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
@@ -43,39 +45,86 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(['super-admin'])->group(function () {
+    Route::resource('permissions', PermissionController::class);
+    Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy']);
 
+    Route::resource('roles', RoleController::class);
+    Route::get('roles/{roleId}/delete', [RoleController::class, 'destroy']);
+    Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole']);
+    Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole']);
+});
 
-// route::group(['middleware'  =>['role:admin']], function(){
-//     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::middleware(['admin'])->group(function () {
+    Route::resource('users', UserController::class);
+    Route::get('users/{userId}/delete', [UserController::class, 'destroy']);
+    Route::get('/users/search', [UserController::class, 'search'])->name('search.user');
+});
+
+Route::middleware(['faculty'])->group(function () {
+    route::get('/dashboard',[DashbaordController::class,'dashboard']);
+});
+// Route::group(['middleware' => ['role:admin']], function () {
 
 // route::resource('permissions',App\Http\Controllers\PermissionController::class);
 // route::get('permissions/{id}/delete',[App\Http\Controllers\PermissionController::class,'destroy']);
 
 // route::resource('roles',App\Http\Controllers\RoleController::class);
-// route::get('roles/{roleId}/delete',[App\Http\Controllers\RoleController::class,'destroy']);
+// route::get('roles/{roleId}/delete',[App\Http\Controllers\RoleController::class,'destroy'])->middleware('permission');
 
 // route::get('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'addPermissionToRole']);
 // route::put('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'updatePermissionToRole']);
 
-// route::resource('/users',App\Http\Controllers\UserController::class);
+// route::resource('users',UserController::class);
 // route::get('users/{userId}/delete',[App\Http\Controllers\UserController::class,'destroy']);
 // route::get('/users/search',[App\Http\Controllers\UserController::class,'search'])->name('search.user');
 
 // });
 
 
-route::resource('permissions',App\Http\Controllers\PermissionController::class);
-route::get('permissions/{id}/delete',[App\Http\Controllers\PermissionController::class,'destroy']);
+// Route::resource('permissions', PermissionController::class)->middleware('permission:view-permissions');
+// Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy'])->middleware('permission:delete-permissions');
 
-route::resource('roles',App\Http\Controllers\RoleController::class);
-route::get('roles/{roleId}/delete',[App\Http\Controllers\RoleController::class,'destroy']);
+// Route::resource('roles', RoleController::class);
+// Route::get('roles/{roleId}/delete', [RoleController::class, 'destroy'])->middleware('permission:delete-roles');
 
-route::get('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'addPermissionToRole']);
-route::put('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'updatePermissionToRole']);
+// Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole'])->middleware('permission:manage-roles');
+// Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole'])->middleware('permission:manage-roles');
 
-route::resource('users',UserController::class);
-route::get('users/{userId}/delete',[App\Http\Controllers\UserController::class,'destroy']);
-route::get('/users/search',[App\Http\Controllers\UserController::class,'search'])->name('search.user');
+// Route::resource('users', UserController::class)->middleware('permission:view-users');
+// Route::get('users/{userId}/delete', [UserController::class, 'destroy'])->middleware('permission:delete-users');
+// Route::get('/users/search', [UserController::class, 'search'])->name('search.user')->middleware('permission:search-users');
+
+
+
+// Route::group(['middleware' => ['role:super-admin']], function () {
+
+//     Route::resource('permissions', PermissionController::class);
+//     Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy'])->name('permissions.delete');
+
+//     Route::resource('roles', RoleController::class);
+//     Route::get('roles/{roleId}/delete', [RoleController::class, 'destroy'])->middleware('permission')->name('roles.delete');
+//     Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole'])->name('roles.give-permission');
+//     Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole'])->name('roles.update-permission');
+
+//     Route::resource('users', UserController::class);
+//     Route::get('users/{userId}/delete', [UserController::class, 'destroy'])->name('users.delete');
+//     Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
+// });
+
+// Route::group(['middleware' => ['role:admin']], function () {
+
+//     Route::resource('roles', RoleController::class)->except(['destroy']); // Admin cannot delete roles
+//     Route::resource('users', UserController::class)->only(['index', 'edit', 'update', 'show']); // Admin cannot delete users
+//     Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
+// });
+
+// Route::group(['middleware' => ['role:faculty']], function () {
+
+//     Route::get('/faculty-dashboard', [UserController::class, 'facultyDashboard'])->name('faculty.dashboard');
+
+// });
+
 
 
 Route::resource('menus',MenuController::class);

@@ -90,24 +90,30 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
 
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'nullable|min:8|max:25',
             'roles' => 'required'
             ]);
 
-            $user = User::find($id);
-            $user->name = $request->input('name');
-            $user->email = $request->input('email');
-            $user->password = bcrypt($request->input('password'));
-            $user->save();
-            $user->roles()->sync($request->input('roles'));
-            return redirect()->route('users.index')->with('success', 'User updated successfully');
+            $data = [
+                'name' => $request->name,
+                'email' => $request->email,
+            ];
+
+            if($request->password){
+                $data['password'] = bcrypt($request->password);
+                }
+                $user->update($data);
+                $user->syncRoles($request->roles);
+                return redirect()->route('users.index')->with('success','User updated successfully');
+
+
     }
+
 
     /**
      * Remove the specified resource from storage.

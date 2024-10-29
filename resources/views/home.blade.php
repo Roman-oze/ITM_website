@@ -17,7 +17,7 @@
                 </h1>
                 <div class="d-flex justify-content-center justify-content-lg-start">
                     <a href="{{ $hero->link }}" class="btn-get-started scrollto bn5">
-                        <i class="fa-solid fa-house-circle-check"></i> ITM Club
+                        <i class="fa-solid fa-house-circle-check "></i> ITM Club
                     </a>
                 </div>
             </div>

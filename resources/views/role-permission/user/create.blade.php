@@ -12,6 +12,19 @@
                         </h4>
                     </div>
                     <div class="card-body">
+
+                        @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ $message }}
+                        </div>
+                        @endif
+
+                        @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ $message }}
+                        </div>
+                        @endif
+
                         <form action="{{url('users')}}" method="POST">
                             @csrf
                             <div class="mb-3">

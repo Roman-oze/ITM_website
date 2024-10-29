@@ -49,40 +49,130 @@
 </li>
 
 
-    <!-- Navbar-->
-    <div class="d-flex align-items-center ms-sm-6">
-        <!-- User Dropdown -->
-        <div class="dropdown">
 
-            <button class="getstarted scrollto text-dark dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-user"></i> {{ Auth::user()->name }}
-                {{-- User --}}
+<!-- Optionally, add icons library like Bootstrap Icons if not already included -->
 
-                {{-- <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
-                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg> --}}
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                <!-- Profile Link -->
-                <li>
-                    <a class="dropdown-item text-dark" href="{{ route('profile.edit') }}">
-                        {{ __('Profile') }}
-                    </a>
-                </li>
+<div class="d-flex align-items-center ms-sm-6">
+    <!-- User Profile Dropdown -->
+    <div class="dropdown">
 
-                <!-- Logout -->
-                <li>
-                    <form method="POST" action="{{ route('logout') }}" class="dropdown-item text-dark">
-                        @csrf
-                        <button type="submit" class="dropdown-item text-dark" onclick="event.preventDefault(); this.closest('form').submit();">
-                            {{ __('Log Out') }}
-                        </button>
-                    </form>
+        <!-- Profile Button -->
+        <button class="profile-btn text-dark dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{{ Auth::user()->profile_picture_url }}" alt="Profile Picture" class="profile-img me-2">
+            <span class="user-name">{{ Auth::user()->name }}</span>
+        </button>
 
-                </li>
-            </ul>
-        </div>
-        </div>
+        <!-- Advanced Dropdown Menu -->
+        <ul class="dropdown-menu dropdown-menu-end advanced-dropdown" aria-labelledby="userDropdown">
+            <!-- Profile Section -->
+            <li class="dropdown-header profile-section text-center">
+                <img src="{{ Auth::user()->profile_picture_url }}" alt="Profile Picture" class="profile-img-large mb-2">
+                <p class="m-0">{{ Auth::user()->name }}</p>
+                <small class="text-muted">{{ Auth::user()->email }}</small>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+
+            <!-- Profile Link -->
+            <li>
+                <a class="dropdown-item profile-item" href="{{ route('profile.edit') }}">
+                    <i class="bi bi-person-lines-fill me-2"></i> {{ __('Profile') }}
+                </a>
+            </li>
+
+            <!-- Settings Link -->
+            <li>
+                <a class="dropdown-item settings-item" href="">
+                    <i class="bi bi-gear me-2"></i> {{ __('Settings') }}
+                </a>
+            </li>
+
+            <!-- Logout -->
+            <li>
+                <form method="POST" action="{{ route('logout') }}" class="logout-form">
+                    @csrf
+                    <button type="submit" class="dropdown-item logout-item" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <i class="bi bi-box-arrow-right me-2"></i>{{ __('Log Out') }}
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- CSS for Advanced Profile Button -->
+<style>
+    /* Profile Button */
+    .profile-btn {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        padding: 8px 15px;
+        border-radius: 30px;
+        background-color: #f8f9fa;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-btn:hover {
+        background-color: #e2e6ea;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Profile Image */
+    .profile-img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .profile-img-large {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* User Name Text */
+    .user-name {
+        font-size: 16px;
+        color: #333;
+    }
+
+    /* Dropdown Styling */
+    .advanced-dropdown {
+        width: 250px;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.3s ease;
+    }
+
+    .profile-section {
+        padding: 15px 20px;
+    }
+
+    .dropdown-item {
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f3f4f6;
+        color: #333;
+    }
+
+    .logout-item {
+        color: #d9534f;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+</style>
 
 </nav>
 

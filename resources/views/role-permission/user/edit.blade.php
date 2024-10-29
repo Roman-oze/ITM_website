@@ -18,14 +18,23 @@
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" name="name" value="{{$user->name}}" class="form-control">
+                                @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="name" class="form-label">Email</label>
                                 <input type="text" name="email" value="{{$user->email}}" class="form-control">
+                                @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="name" class="form-label">password</label>
                                 <input type="password"  name="password" value="{{$user->passsword}}" class="form-control">
+                                @error('password')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="mb-3">
@@ -37,7 +46,9 @@
                                     </option>
                                     @endforeach
                                     </select>
-
+                                    @error('roles')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="mb-3">
