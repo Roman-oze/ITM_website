@@ -22,14 +22,14 @@
         </i>
     </div> --}}
     <!-- Notification Icon with Dropdown -->
-<li class="nav-item dropdown">
+<li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa fa-bell"></i>
         <span class="badge bg-danger" id="notificationCount">{{ \App\Models\Notification::where('is_read', false)->count() }}</span>
     </a>
 
-    <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="notificationDropdown" style="width: 300px;">
-        <li class="dropdown-header">Notifications</li>
+    <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="notificationDropdown" style="width: auto;">
+        <li class="dropdown-header h3">Notifications</li>
 
         <!-- Example Notification Items -->
         @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
@@ -42,7 +42,7 @@
         @endforeach
 
         <!-- Button to View All Notifications -->
-        <li class="text-center mt-2">
+        <li class="text-center m-3">
             <a href="{{ route('notifications.index') }}" class="btn btn-dark ">View All Notifications</a>
         </li>
     </ul>
@@ -58,7 +58,6 @@
 
         <!-- Profile Button -->
         <button class="profile-btn text-dark dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="{{ Auth::user()->profile_picture_url }}" alt="Profile Picture" class="profile-img me-2">
             <span class="user-name">{{ Auth::user()->name }}</span>
         </button>
 
@@ -66,9 +65,8 @@
         <ul class="dropdown-menu dropdown-menu-end advanced-dropdown" aria-labelledby="userDropdown">
             <!-- Profile Section -->
             <li class="dropdown-header profile-section text-center">
-                <img src="{{ Auth::user()->profile_picture_url }}" alt="Profile Picture" class="profile-img-large mb-2">
-                <p class="m-0">{{ Auth::user()->name }}</p>
-                <small class="text-muted">{{ Auth::user()->email }}</small>
+                <p class="badge badge-dark">{{ Auth::user()->name }}</p><br>
+                <small class=" badge badge-dark">{{ Auth::user()->email }}</small>
             </li>
             <li><hr class="dropdown-divider"></li>
 
@@ -80,11 +78,11 @@
             </li>
 
             <!-- Settings Link -->
-            <li>
+            {{-- <li>
                 <a class="dropdown-item settings-item" href="">
                     <i class="bi bi-gear me-2"></i> {{ __('Settings') }}
                 </a>
-            </li>
+            </li> --}}
 
             <!-- Logout -->
             <li>

@@ -15,4 +15,5 @@ class SuperAdminMiddleware
         }
         abort(403, 'Unauthorized');
     }
+    
 }

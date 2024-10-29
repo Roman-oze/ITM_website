@@ -37,6 +37,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 
+
 route::get('/dashboard',[DashbaordController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -45,25 +46,92 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['super-admin'])->group(function () {
-    Route::resource('permissions', PermissionController::class);
-    Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy']);
 
-    Route::resource('roles', RoleController::class);
-    Route::get('roles/{roleId}/delete', [RoleController::class, 'destroy']);
-    Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole']);
-    Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole']);
+
+Route::group(['middleware' => ['isAdmin']],function(){
+
+route::resource('permissions',App\Http\Controllers\PermissionController::class);
+route::get('permissions/{id}/delete',[App\Http\Controllers\PermissionController::class,'destroy']);
+
+route::resource('roles',App\Http\Controllers\RoleController::class);
+route::get('roles/{roleId}/delete',[App\Http\Controllers\RoleController::class,'destroy']);
+// ->middleware('permission:delete role');
+
+route::get('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'addPermissionToRole']);
+route::put('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController::class,'updatePermissionToRole']);
+
+route::resource('users',UserController::class);
+route::get('users/{userId}/delete',[App\Http\Controllers\UserController::class,'destroy']);
+
 });
 
-Route::middleware(['admin'])->group(function () {
-    Route::resource('users', UserController::class);
-    Route::get('users/{userId}/delete', [UserController::class, 'destroy']);
-    Route::get('/users/search', [UserController::class, 'search'])->name('search.user');
-});
+// Super Admin Routes
+// Route::group(['middleware' => ['role:super-admin']], function () {
 
-Route::middleware(['faculty'])->group(function () {
-    route::get('/dashboard',[DashbaordController::class,'dashboard']);
-});
+//     // Permissions Management
+//     Route::resource('permissions', PermissionController::class);
+//     Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy'])->name('permissions.delete');
+
+//     // Roles Management
+//     Route::resource('roles', RoleController::class);
+//     Route::get('roles/{roleId}/delete', [RoleController::class, 'destroy'])->name('roles.delete');
+//     Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole'])->name('roles.give-permission');
+//     Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole'])->name('roles.update-permission');
+
+//     // Users Management
+//     Route::resource('users', UserController::class);
+//     Route::get('users/{userId}/delete', [UserController::class, 'destroy'])->name('users.delete');
+//     Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
+//     route::get('/dashboard',[DashbaordController::class,'dashboard'])->name('dashboard');    // Additional faculty routes can be added here
+
+// });
+
+// // Admin Routes
+// Route::group(['middleware' => ['role:admin']], function () {
+
+//     // Admin can manage roles but cannot delete them
+//     Route::resource('roles', RoleController::class)->except(['destroy']);
+//     Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole'])->name('roles.give-permission');
+//     Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole'])->name('roles.update-permission');
+
+//     // Admin can manage users but cannot delete them
+//     Route::resource('users', UserController::class)->only(['index', 'edit', 'update', 'show']);
+//     Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
+//     route::get('/dashboard',[DashbaordController::class,'dashboard'])->name('dashboard');    // Additional faculty routes can be added here
+
+// });
+
+// // Faculty Routes
+// Route::group(['middleware' => ['role:faculty']], function () {
+
+//     // Faculty-specific routes (example: faculty dashboard)
+//     route::get('/dashboard',[DashbaordController::class,'dashboard'])->name('dashboard');    // Additional faculty routes can be added here
+// });
+
+
+
+
+// route::get('/users/search',[App\Http\Controllers\UserController::class,'search'])->name('search.user');
+
+// Route::middleware(['super-admin'])->group(function () {
+//     Route::resource('permissions', PermissionController::class);
+//     Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy']);
+
+//     Route::resource('roles', RoleController::class);
+//     Route::get('roles/{roleId}/delete', [RoleController::class, 'destroy']);
+//     Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole']);
+//     Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole']);
+// });
+
+// Route::middleware(['admin'])->group(function () {
+//     Route::resource('users', UserController::class);
+//     Route::get('users/{userId}/delete', [UserController::class, 'destroy']);
+//     Route::get('/users/search', [UserController::class, 'search'])->name('search.user');
+// });
+
+// Route::middleware(['faculty'])->group(function () {
+//     route::get('/dashboard',[DashbaordController::class,'dashboard']);
+// });
 // Route::group(['middleware' => ['role:admin']], function () {
 
 // route::resource('permissions',App\Http\Controllers\PermissionController::class);
