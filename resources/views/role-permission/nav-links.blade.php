@@ -1,8 +1,17 @@
 <div class="container mt-3">
     <div class="row">
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 ">
             <a href="{{route('permissions.index')}}" class="btn btn-info mx-2">Permission</a>
             <a href="{{route('roles.index')}}" class="btn btn-danger mx-2">Roles</a>
             <a href="{{route('users.index')}}" class="btn btn-success mx-2">User</a>
 
-</div>
+       </div>
+
+<style>
+    .btn{
+        transition: transform 0.4s;
+    }
+    .btn:hover{
+        transform: scale(1.1);
+    }
+</style>

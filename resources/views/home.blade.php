@@ -1,8 +1,10 @@
 
-
-
-
+{{-- @include('layout._footer', ['footers' => $footers]) --}}
 @extends('layout.app')
+
+
+
+
 
 @section('content')
 <section id="hero" class="d-flex align-items-center">

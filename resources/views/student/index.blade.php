@@ -63,7 +63,9 @@
 
 
                 <td class="text-center justify-content-evenly">
-                         <a href="{{route('student.edit',$student->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+                    @can('')
+                    <a href="{{route('student.edit',$student->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+                    @endcan
 
                         <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
                                 @csrf

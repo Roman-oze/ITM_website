@@ -79,6 +79,8 @@ class Kernel extends HttpKernel
         'isAdmin' => \App\Http\Middleware\CustomMiddleware::class,
         // 'guard' =>\app\Http\Middleware\Itm::class
         // 'guard' =>\app\Http\Middleware\WebGuard::class
+        // 'menu.permission' => \App\Http\Middleware\CheckMenuPermission::class,
+
 
     ];
 

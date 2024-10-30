@@ -8,25 +8,28 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'icon', 'nav_name', 'nav_link', 'parent_id',
-    ];
 
-    // If you have any relationships, define them here
-    public function parent()
+
+    protected $fillable = ['icon', 'name', 'link', 'parent_id'];
+
+
+    public function permissions()
     {
-        return $this->belongsTo(Menu::class, 'parent_id');
-    }
-
-    public function children()
-    {
-        return $this->hasMany(Menu::class, 'parent_id');
-    }
-
-    public function MenuPermission(){
-
         return $this->hasMany(MenuPermission::class);
     }
+
+
+        // Relationship to get submenus (children) for a dropdown
+        public function children()
+        {
+            return $this->hasMany(Menu::class, 'parent_id');
+        }
+
+        // Relationship to get the parent menu of a submenu
+        public function parent()
+        {
+            return $this->belongsTo(Menu::class, 'parent_id');
+        }
 
 
 }

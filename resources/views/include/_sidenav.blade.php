@@ -38,11 +38,9 @@
 
                 <!-- Website Setup Dropdown -->
                 <a class="nav-link collapsed mt-1 text-white fa-lg" href="#" data-bs-toggle="collapse" data-bs-target="#collapseWebsiteSetup" aria-expanded="false" aria-controls="collapseWebsiteSetup">
-                    <div class="sb-nav-link-icon  text-white fa-lg"><svg id="Group_28315" data-name="Group 28315" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                        <circle id="Ellipse_893" data-name="Ellipse 893" cx="0.625" cy="0.625" r="0.625" transform="translate(7.375 6.125)" fill="#575b6a"></circle>
-                        <path id="Path_40777" data-name="Path 40777" d="M13.5,0H2.5A2.5,2.5,0,0,0,0,2.5V11a2.5,2.5,0,0,0,2.5,2.5H7.375v1.25H5.5A.625.625,0,0,0,5.5,16h5a.625.625,0,0,0,0-1.25H8.625V12.875A.625.625,0,0,0,8,12.25H2.5A1.251,1.251,0,0,1,1.25,11V2.5A1.251,1.251,0,0,1,2.5,1.25h11A1.251,1.251,0,0,1,14.75,2.5V11a1.251,1.251,0,0,1-1.25,1.25h-3a.625.625,0,0,0,0,1.25h3A2.5,2.5,0,0,0,16,11V2.5A2.5,2.5,0,0,0,13.5,0Z" fill="#575b6a"></path>
-                        <path id="Path_40778" data-name="Path 40778" d="M120.375,84.75a.625.625,0,0,0,.625-.625v-.688a3.107,3.107,0,0,0,1.1-.456l.487.487a.625.625,0,0,0,.884-.884l-.487-.487a3.108,3.108,0,0,0,.456-1.1h.688a.625.625,0,1,0,0-1.25h-.688a3.108,3.108,0,0,0-.456-1.1l.487-.487a.625.625,0,0,0-.884-.884l-.487.487a3.107,3.107,0,0,0-1.1-.456v-.688a.625.625,0,0,0-1.25,0v.688a3.108,3.108,0,0,0-1.1.456l-.487-.487a.625.625,0,0,0-.884.884l.487.487a3.108,3.108,0,0,0-.456,1.1h-.688a.625.625,0,0,0,0,1.25h.688a3.108,3.108,0,0,0,.456,1.1l-.487.487a.625.625,0,0,0,.884.884l.487-.487a3.107,3.107,0,0,0,1.1.456v.688A.625.625,0,0,0,120.375,84.75ZM118.5,80.375a1.875,1.875,0,1,1,1.875,1.875A1.877,1.877,0,0,1,118.5,80.375Z" transform="translate(-112.375 -73.625)" fill="#575b6a"></path>
-                    </svg></div>
+                    <div class="sb-nav-link-icon  text-white fa-lg">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
                     Website Setup
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -57,8 +55,36 @@
                 </div>
 
 
+                <!-- Menu Permission Dropdown -->
+                <a class="nav-link collapsed mt-1 text-white fa-lg" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMenuPermission" aria-expanded="false" aria-controls="collapseMenuPermission">
+                    <div class="sb-nav-link-icon text-white fa-lg">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    Menu Permission
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseMenuPermission" aria-labelledby="headingFour" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a href="{{ route('menu-permission.index') }}" class="nav-link">Display Assign</a>
+                        <a href="{{ route('menu.create') }}" class="nav-link">Create Menu</a>
+                        <a href="{{ route('menu-permissions.create') }}" class="nav-link">Assign Menu</a>
+                    </nav>
+                </div>
+
+
+
+
+
+                        @foreach ( $menus as $menu)
+
+                                <a class="nav-link" href="{{ $menu->link }}">
+                                    <div class="sb-nav-link-icon"><i class="{{ $menu->icon }} text-white fa-lg"></i></div>
+                                    {{ $menu->name }}
+                                </a>
+                        @endforeach
+
                 <!-- Mail Link -->
-                <a class="nav-link" href="{{ route('send-mail-form.create') }}">
+                {{-- <a class="nav-link" href="{{ route('send-mail-form.create') }}">
                     <div class="sb-nav-link-icon"><i class="fa-regular fa-envelope text-white fa-lg"></i></div>
                     Mail
                 </a>
@@ -119,7 +145,7 @@
                 <a class="nav-link" href="{{route('notice.index')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-circle-info text-white fa-lg"></i></div>
                     Notice Board
-                </a>
+                </a> --}}
             </div>
         </div>
     </nav>

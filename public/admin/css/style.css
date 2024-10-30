@@ -763,3 +763,60 @@ nav ul li a {
     0% { opacity: 0; transform: translateY(-10px); }
     100% { opacity: 1; transform: translateY(0); }
 }
+    /* Profile Button */
+
+    /* User Name Text */
+    .user-name {
+        font-size: 16px;
+        color: #333;
+    }
+
+    /* Dropdown Styling */
+    .advanced-dropdown {
+        width: 150px;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.3s ease;
+    }
+
+    .profile-section {
+        padding: 15px 20px;
+    }
+
+    .dropdown-item {
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f3f4f6;
+        color: #333;
+    }
+
+    .logout-item {
+        color: #d9534f;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .profile-btn {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        padding: 8px 15px;
+        border-radius: 30px;
+        background-color: #f8f9fa;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-btn:hover {
+        background-color: #e2e6ea;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }

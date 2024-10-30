@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('menus', function (Blueprint $table) {
-            $table->id(); // Equivalent to $table->bigIncrements('id');
-            $table->string('icon');
-            $table->string('nav_name');
-            $table->string('nav_link');
-            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->id();
+            $table->string('icon')->nullable();  // For menu icons
+            $table->string('name');              // Name of the menu item
+            $table->string('link')->nullable();  // Link for the menu item (nullable for dropdowns)
+            $table->unsignedBigInteger('parent_id')->nullable(); // ID of the parent menu item for dropdowns
             $table->timestamps();
 
-            // Foreign key constraint to self-reference the menus table
             $table->foreign('parent_id')->references('id')->on('menus')->onDelete('cascade');
         });
     }

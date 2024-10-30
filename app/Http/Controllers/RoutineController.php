@@ -33,9 +33,8 @@ class RoutineController extends Controller
 
     public function index()
     {
-        $menus = Menu::all();
        $files = DB::table('routines')->get();
-       return view('routine.index',compact('files','menus'));
+       return view('routine.index',compact('files'));
 
     }
 

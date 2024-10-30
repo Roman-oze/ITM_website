@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class CustomMiddleware
@@ -16,20 +16,14 @@ class CustomMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        /** @var App\Models\Users */
-        if(Auth::check()){
-            $user = Auth::check();
-            if($user->hasRole(['super-admin','admin','faculty']))
-            {
-
+        if (Auth::check()) {
+            $user = Auth::user();
+            if ($user->hasRole(['super-admin', 'admin', 'faculty'])) {
                 return $next($request);
-
             }
-            abort(403,"User Does not have correct roles");
-
+            abort(403, "User does not have correct roles");
         }
 
-        abort(401);
-
+        abort(401, "Unauthorized");
     }
 }

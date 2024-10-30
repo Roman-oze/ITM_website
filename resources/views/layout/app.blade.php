@@ -18,6 +18,8 @@
 
 
         @include('layout._footer')
+        {{-- @include('layout._footer', ['footers' => $footers]) --}}
+
 
 
     <script src="{{asset('frontend/js/app.min.js')}}">

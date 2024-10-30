@@ -22,9 +22,9 @@
         </i>
     </div> --}}
     <!-- Notification Icon with Dropdown -->
-<li class="nav-item dropdown ">
+<li class="nav-item dropdown p-3 ">
     <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa fa-bell"></i>
+        <i class="fa fa-bell fa-2x"></i>
         <span class="badge bg-danger" id="notificationCount">{{ \App\Models\Notification::where('is_read', false)->count() }}</span>
     </a>
 
@@ -64,25 +64,18 @@
         <!-- Advanced Dropdown Menu -->
         <ul class="dropdown-menu dropdown-menu-end advanced-dropdown" aria-labelledby="userDropdown">
             <!-- Profile Section -->
-            <li class="dropdown-header profile-section text-center">
+            {{-- <li class="dropdown-header profile-section text-center">
                 <p class="badge badge-dark">{{ Auth::user()->name }}</p><br>
                 <small class=" badge badge-dark">{{ Auth::user()->email }}</small>
             </li>
-            <li><hr class="dropdown-divider"></li>
+            <li><hr class="dropdown-divider"></li> --}}
 
             <!-- Profile Link -->
             <li>
-                <a class="dropdown-item profile-item" href="{{ route('profile.edit') }}">
+                <a class="dropdown-item profile-item " href="{{ route('profile.edit') }}">
                     <i class="bi bi-person-lines-fill me-2"></i> {{ __('Profile') }}
                 </a>
             </li>
-
-            <!-- Settings Link -->
-            {{-- <li>
-                <a class="dropdown-item settings-item" href="">
-                    <i class="bi bi-gear me-2"></i> {{ __('Settings') }}
-                </a>
-            </li> --}}
 
             <!-- Logout -->
             <li>
@@ -98,79 +91,5 @@
 </div>
 
 <!-- CSS for Advanced Profile Button -->
-<style>
-    /* Profile Button */
-    .profile-btn {
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-        padding: 8px 15px;
-        border-radius: 30px;
-        background-color: #f8f9fa;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .profile-btn:hover {
-        background-color: #e2e6ea;
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Profile Image */
-    .profile-img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .profile-img-large {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    /* User Name Text */
-    .user-name {
-        font-size: 16px;
-        color: #333;
-    }
-
-    /* Dropdown Styling */
-    .advanced-dropdown {
-        width: 250px;
-        border-radius: 10px;
-        padding: 10px;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        animation: fadeIn 0.3s ease;
-    }
-
-    .profile-section {
-        padding: 15px 20px;
-    }
-
-    .dropdown-item {
-        font-weight: 500;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    .dropdown-item:hover {
-        background-color: #f3f4f6;
-        color: #333;
-    }
-
-    .logout-item {
-        color: #d9534f;
-    }
-
-    @keyframes fadeIn {
-        0% { opacity: 0; transform: translateY(-10px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-</style>
-
 </nav>
 

@@ -16,8 +16,43 @@
         <li class="breadcrumb-item active">Profile Update</li>
     </ol>
 
+    {{-- <div class="container mt-5 d-flex justify-content-center">
+        <div class="card shadow-lg border-0 rounded-lg" style="width: 100%; max-width: 500px;">
+            <!-- Card Header with Profile Picture and Edit Icon -->
+            <div class="card-header bg-dark text-center position-relative">
+                <!-- Profile Picture Wrapper -->
+                <div class="position-relative" style="width: 100px; height: 100px; margin: 0 auto;">
+                    <img src="{{ asset($user->profile_picture ?? 'path/to/default_profile.jpg') }}"
+                         class="rounded-circle img-thumbnail"
+                         alt="User Image"
+                         width="100"
+                         height="100"
+                         style="object-fit: cover;">
 
-            {{-- @include('profile.partials.update-profile-information-form') --}}
+                    <!-- Edit Icon Overlay -->
+                    <label for="profile_picture" class="position-absolute bottom-0 end-0 bg-primary rounded-circle p-2" style="cursor: pointer;">
+                        <i class="fa fa-edit text-white"></i>
+                    </label>
+                    <input type="file" id="profile_picture" name="profile_picture" class="d-none" accept="image/*">
+                </div>
+
+                <h5 class="card-title text-white mt-3">{{ $user->name }}</h5>
+                <p class="text-light">{{ $user->email }}</p>
+            </div>
+
+            <!-- Card Body with Badge Spans -->
+            <div class="card-body bg-light">
+                <div class="mb-3">
+                    <span class="badge bg-secondary">Name: {{ $user->name }}</span>
+                </div>
+                <div class="mb-3">
+                    <span class="badge bg-secondary">Email: {{ $user->email }}</span>
+                </div>
+                <button type="button" class="btn btn-primary btn-block mt-4" onclick="window.location.href='{{ route('profile.edit') }}'">save</button>
+            </div>
+        </div>
+    </div> --}}
+
 
 
 
@@ -36,12 +71,12 @@
                                     <div id="alerts"></div> <!-- Placeholder for alerts -->
 
                                     <div class="form-group">
-                                        <label for="name" class="text-white">Name</label>
+                                        <label for="name" class="text-dark"> Name</label>
                                         <input type="text" class="form-control" name="name" value="{{ old('name', $user->name) }}" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="name"class="text-white">Email</label>
+                                        <label for="name"class="text-dark">Email</label>
                                         <input type="email" class="form-control" name="email"    value="{{ old('email', $user->email) }}" required>
                                     </div>
 

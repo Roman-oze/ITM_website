@@ -55,7 +55,7 @@
 </div>
 </footer> --}}
 
-<footer id="footer">
+{{-- <footer id="footer">
     <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
@@ -151,11 +151,11 @@
         <a href="https://github.com/Roman-oze/resume">Roman Oze</a>
       </div>
     </div>
-  </footer>
+  </footer> --}}
 
 
 
-{{-- <footer id="footer">
+<footer id="footer">
       <div class="footer-newsletter">
         <div class="container">
           <div class="row justify-content-center">
@@ -255,4 +255,4 @@
           <a href="https://github.com/Roman-oze/resume">Roman Oze</a>
         </div>
       </div>
-    </footer> --}}
+    </footer>
