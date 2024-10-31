@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('icon')->nullable();      // Font Awesome icon class (nullable)
             $table->string('link')->nullable();      // Link path
             $table->foreignId('parent_id')->nullable()->constrained('menus')->onDelete('cascade'); // Parent menu for dropdown
-            $table->integer('sort_order')->nullable(); // Sort order for display (nullable)
-            $table->timestamps();    
+            $table->integer('order')->nullable(); // Sort order for display (nullable)
+            $table->timestamps();
         });
     }
 

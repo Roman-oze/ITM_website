@@ -112,7 +112,7 @@ class MenuController extends Controller
             'icon' => 'nullable|string|max:255',         // Icon is optional
             'link' => 'nullable|string|max:255',         // Link is optional
             'parent_id' => 'nullable|integer|exists:menus,id',
-            'sort_order' => 'nullable|integer',          // Sort order is optional
+            'order' => 'nullable|integer',          // Sort order is optional
         ]);
 
         Menu::create([
@@ -120,10 +120,10 @@ class MenuController extends Controller
             'icon' => $request->icon,                    // Nullable
             'link' => $request->link,                    // Nullable
             'parent_id' => $request->parent_id,          // Nullable for top-level menus
-            'sort_order' => $request->sort_order,        // Nullable
+            'order' => $request->order,        // Nullable
         ]);
         // Redirect to a specific route with a success message
-        return redirect()->route('menus.create')->with('success', 'Menu item created successfully!');
+        return redirect()->back()->with('success', 'Menu item created successfully!');
 
 
     //     $request->validate([

@@ -111,8 +111,8 @@
 
         <!-- Sort Order -->
         <div class="mb-3">
-            <label for="sort_order" class="form-label">Sort Order</label>
-            <input type="number" class="form-control" id="sort_order" name="sort_order" required>
+            <label for="order" class="form-label">Sort Order</label>
+            <input type="number" class="form-control" id="order" name="order" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Create Menu</button>
