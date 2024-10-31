@@ -22,42 +22,58 @@ class DashbaordController extends Controller
 {
        public function dashboard()
     {
-        // $userRoleId = Auth::user()->role_id;
-
-        // // Query the menus with role-based permissions
-        // $menus = Menu::with(['children', 'permissions' => function ($query) use ($userRoleId) {
-        //     $query->where('role_id', $userRoleId);
-        // }])
-        // ->whereNull('parent_id')  // Get only parent menus initially
-        // ->orderBy('id')           // Order by the desired field
-        // ->get();
-
-        // $userRoleId = Auth::user()->role_id;
-
-        // // Retrieve the menus, ordered by the 'order' column
-        // $menus = Menu::with(['children' => function ($query) {
-        //     $query->orderBy('order'); // Order submenus
-        // }, 'permissions' => function ($query) use ($userRoleId) {
-        //     $query->where('role_id', $userRoleId);
-        // }])
-        // ->whereNull('parent_id')  // Only parent menus
-        // ->orderBy('order')        // Order by the new 'order' column
-        // ->get();
-// Assuming the authenticated user has a role assigned
+// Get the current user's role
 $roleId = Auth::user()->role_id;
 
-// Step 1: Retrieve menus with access based on role permissions
-$menus = Menu::with(['children' => function($query) use ($roleId) {
-                    $query->whereHas('permissions', function($q) use ($roleId) {
-                        $q->where('role_id', $roleId);
-                    });
-                }])
-            ->whereNull('parent_id') // Top-level menus
-            ->whereHas('permissions', function($query) use ($roleId) {
-                $query->where('role_id', $roleId);
-            })
-            ->orderBy('order')
-            ->get();
+// Fetch top-level menus with their children, applying permissions
+ // Get the authenticated user's role
+ $roleId = Auth::user()->role_id;
+
+ // Fetch menus where the user has at least one permission
+ $menus = Menu::with(['children' => function ($query) use ($roleId) {
+     $query->whereHas('permissions', function ($q) use ($roleId) {
+         $q->where('role_id', $roleId)
+           ->where(function ($q) {
+               $q->where('can_create', true)
+                 ->orWhere('can_edit', true)
+                 ->orWhere('can_update', true)
+                 ->orWhere('can_delete', true);
+           });
+     });
+ }])
+ ->whereNull('parent_id') // Only top-level menus
+ ->whereHas('permissions', function ($query) use ($roleId) {
+     $query->where('role_id', $roleId)
+           ->where(function ($q) {
+               $q->where('can_create', true)
+                 ->orWhere('can_edit', true)
+                 ->orWhere('can_update', true)
+                 ->orWhere('can_delete', true);
+           });
+ })
+ ->orderBy('order')
+ ->get();
+
+
+
+
+    // {{-- fixed --}}
+// // Assuming the authenticated user has a role assigned
+// $roleId = Auth::user()->role_id;
+
+// // Step 1: Retrieve menus with access based on role permissions
+// $menus = Menu::with(['children' => function($query) use ($roleId) {
+//                     $query->whereHas('permissions', function($q) use ($roleId) {
+//                         $q->where('role_id', $roleId);
+//                     });
+//                 }])
+//             ->whereNull('parent_id') // Top-level menus
+//             ->whereHas('permissions', function($query) use ($roleId) {
+//                 $query->where('role_id', $roleId);
+//             })
+//             ->orderBy('order')
+//             ->get();
+// {{-- fixed --}}
 
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();
@@ -82,6 +98,7 @@ $menus = Menu::with(['children' => function($query) use ($roleId) {
         'alumniCount' => $alumniCount,
         'scholarshipCount' => $scholarshipCount,
         'menus' => $menus,
+        
     ]);
     }
 

@@ -59,12 +59,16 @@
                                         <td>{{$teacher->email}}</td>
                                         <td>{{$teacher->phone}}</td>
                                         <td>
+                                            @can('edit')
                                             <a href="{{route('edit.faculty',$teacher->teacher_id)}}" class="btn btn-success">
                                                 <i class="fa-solid fa-user-pen"></i>
                                             </a>
+                                            @endcan
+                                            @can('delete')
                                             <a href="{{route('delete.faculty',$teacher->teacher_id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger">
                                                 <i class="fa fa-trash"></i>
                                             </a>
+                                            @endcan
                                         </td>
                                     </tr>
                                     @endforeach

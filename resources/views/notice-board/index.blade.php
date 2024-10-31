@@ -45,6 +45,7 @@
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
 
+                            @can('delete')
                             <form action="{{ route('notice.delete', $notice->id) }}" method="POST" style="margin: 0;">
                                 @csrf
                                 @method('DELETE')
@@ -52,6 +53,7 @@
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </form>
+                            @endcan
 
                             <button id="downloadBtn" class="btn btn-dark">
                                 <i class="fa-solid fa-circle-down"></i>

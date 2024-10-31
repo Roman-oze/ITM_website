@@ -115,7 +115,7 @@ Route::controller(FeatureController::class)->group(function(){
 
 });
 
-});
+
 
 // Super Admin Routes
 // Route::group(['middleware' => ['role:super-admin']], function () {
@@ -204,7 +204,7 @@ route::post('schedules/search',[ScheduleController::class,'search'])->name('sche
 
 route::resource('Courses',CourseController::class);
 route::get('/search',[CourseController::class,'search'])->name('course.search');
-route::get('/course_list',[CourseController::class,'course_list'])->name('course_list');
+// route::get('/course/index',[CourseController::class,'index'])->name('index');
 route::get('/course',[CourseController::class,'program'])->name('program');
 Route::get('/courses', [CourseController::class, 'showCourseList'])->name('courses.list');
 Route::get('/courses/{semester}', [CourseController::class, 'getCoursesBySemester']);
@@ -253,25 +253,6 @@ Route::controller(StaffController::class)->group(function(){
     route::delete('staff/delete/{id}','destroy')->name('staff.delete');
 });
 
-Route::controller(HomeController::class)->group(function(){
-    Route::get('/','home')->name('home');
-    route::get('/about','about')->name('about');
-    route::get('/local_tuition','Local_tuition')->name('Local_tuition');
-    route::get('/international_tuition','international_tuition')->name('international_tuition');
-    route::get('/admission_eligibility','admission_eligibility')->name('admission_eligibility');
-    Route::get('/chart','chart')->name('chart');
-    Route::get('/static','static')->name('static');
-    Route::get('/contact','contact')->name('contact');
-});
-
-Route::controller(ClubController::class)->group(function(){
-    Route::get('/club','club')->name('club');
-    Route::get('/committee','committee')->name('committee');
-    Route::get('/upcoming','upcoming')->name('upcoming');
-    Route::get('/membership','membership')->name('membership');
-    Route::get('/membership/index','index')->name('membership.index');
-});
-
 Route::controller(NoticeBoardController::class)->group(function(){
     Route::get('/notices','notice')->name('notice');
     Route::get('/dashboard/notice','index')->name('notice.index');
@@ -282,11 +263,6 @@ Route::controller(NoticeBoardController::class)->group(function(){
     Route::delete('/notice/delete/{id}','destroy')->name('notice.delete');
 
 });
-
-
-
-
-
 
 
 Route::get('/pdf_generate', [App\Http\Controllers\PdfController::class,'pdf_generate']);
@@ -300,6 +276,14 @@ Route::controller(MailController::class)->group(function(){
 });
 
 
+Route::controller(ClubController::class)->group(function(){
+    Route::get('/club','club')->name('club');
+    Route::get('/committee','committee')->name('committee');
+    Route::get('/upcoming','upcoming')->name('upcoming');
+    Route::get('/membership','membership')->name('membership');
+    Route::get('/membership/index','index')->name('membership.index');
+});
+
 
 Route::get('/notifications', [NotificationController::class, 'store'])->name('notifications.store');
 Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
@@ -307,4 +291,20 @@ Route::patch('/notifications/{notification}/read', [NotificationController::clas
 Route::post('/notifications', [NotificationController::class, 'store'])->name('notifications.store');
 Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy'])->name('notifications.delete');
 
+});
+// Middleware End
+
+
+
+
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/','home')->name('home');
+    route::get('/about','about')->name('about');
+    route::get('/local_tuition','Local_tuition')->name('Local_tuition');
+    route::get('/international_tuition','international_tuition')->name('international_tuition');
+    route::get('/admission_eligibility','admission_eligibility')->name('admission_eligibility');
+    Route::get('/chart','chart')->name('chart');
+    Route::get('/static','static')->name('static');
+    Route::get('/contact','contact')->name('contact');
+});
 require __DIR__.'/auth.php';

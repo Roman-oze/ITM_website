@@ -24,11 +24,11 @@
             <label for="batch" class="form-label text-white">Semester Choose :</label>
             <select name="batch_id" id="batch" class="form-select">
                 @foreach($semesters as $semesters)
-                    <option value="{{ $semesters->semesters_id }}">{{ $semesters->name }}</option>
+                    <option value="{{ $semesters->semester_id }}">{{ $semesters->semester_name }}</option>
                 @endforeach
             </select>
         </div>
-        
+
         <div class="mb-3">
             <label for="day" class="form-label">Credit</label>
             <input type="number" name="credit" class="form-control" value="{{ $course->credit }}" id="day" required>

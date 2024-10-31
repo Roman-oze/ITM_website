@@ -66,15 +66,18 @@
                         <td>{{ $schedule->start_time }}</td>
                         <td>{{ $schedule->end_time }}</td>
                         <td>
+
                             <a href="{{route('schedules.show', $schedule->schedule_id)}}" class="btn btn-info btn-sm">Show</a>
+
                             <a href="{{route('schedules.edit', $schedule->schedule_id)}}" class="btn btn-warning btn-sm">Edit</a>
-
-
+                   
+                            @can('delete')
                             <form action="{{ route('schedules.delete', $schedule->schedule_id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" onclick="confirm('Are You Sure?')" class="btn btn-danger">Delete</button>
                             </form>
+                            @endcan
 
 
                         </td>

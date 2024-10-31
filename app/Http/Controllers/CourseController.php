@@ -30,38 +30,6 @@ class CourseController extends Controller
 
     }
 
-    public function course_list()
-    {
-        $data = Course::whereIn('course_code',[
-            'ENG 101','MATH 101','ITM 101','ITM 102','ITM 111','ITM 112','ITM 123'
-
-        ])->paginate(10);
-
-        $courses = Course::all();
-
-        // Group courses by semesters (for demonstration)
-        $courseData = [
-            1 => $courses->whereIn('course_code', [ 'ENG 101','MATH 101','ITM 101','ITM 102','ITM 111','ITM 112','ITM 123']),
-            2 => $courses->whereIn('course_code', [ 'ITM 211','ENG102','STA101','ITM 103','ITM 121','ITM 122','ITM 203']),
-            3 => $courses->whereIn('course_code',[ 'ITM 201','ITM 202','AOL 101','ITM 217','ITM 218','ITM 213','ITM 214']),
-            4 => $courses->whereIn('course_code', [ 'ITM 204','GE 215','ITM 206','ITM 221','ITM 222','ITM 223','ITM 224','GE 314']),
-            5 => $courses->whereIn('course_code', [ 'GE 337','ITM 301','ITM 306','ITM 313','ITM 314','ITM 315','ITM 316','MATH 312']),
-            6 => $courses->whereIn('course_code', ['ITM 302','ITM 303','ITM 328','ITM 329','ITM 322','ITM 323','ITM 324','ITM 309']),
-            7 => $courses->whereIn('course_code', ['ITM 451','ITM 421','40X/41X','40X/41X','FIN 101','FIN 102']),
-            8 => $courses->whereIn('course_code', ['ITM 401','ITM 452','ITM 321']),
-            // Add more semesters and course groupings as needed...
-        ];
-
-
-
-        // $data = Course::all();
-        return view('Course.course_list',compact('data','courseData'));
-
-    }
-
-
-
-
 
     public function index()
     {
@@ -127,7 +95,7 @@ class CourseController extends Controller
      */
     public function edit(string $id)
     {
-        $semesters = Semester::all();
+          $semesters = Semester::all();
           $course = Course::where('course_id',$id)->first();
           return view('course.edit', compact('course','semesters'));
     }

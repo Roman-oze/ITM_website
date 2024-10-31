@@ -102,12 +102,17 @@
                                             <td>{{ $course->credit }}</td>
                                             <td>
                                                 <td>
+
+
                                                     <!-- Edit Button -->
+
                                                     <a href="{{ route('Courses.edit', $course->course_id) }}" class="btn btn-warning btn-sm">
                                                         <i class="fa-solid fa-user-pen"></i>
                                                     </a>
 
+
                                                     <!-- Delete Form -->
+                                                    @can('delete')
                                                     <form action="{{ route('Courses.destroy', $course->course_id) }}" method="POST" style="display:inline;">
                                                         @csrf
                                                         @method('DELETE')
@@ -115,6 +120,7 @@
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                     </form>
+                                                    @endcan
                                                 </td>
                                             </td>
                                         </tr>

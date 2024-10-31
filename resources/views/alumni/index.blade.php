@@ -54,16 +54,19 @@
 
     <td class=" align-self-center justify-content-evenly">
 
+
         <a href="{{route('edit.alumni',$alumn->id)}}"class=" btn btn-outline-dark" class="p-2 "><i class="fa-solid fa-pen-to-square text-info  "></i></a>
 
-       <form  action="{{route('delete.alumni',$alumn->id)}}" method="POST"  enctype="multipart/form-data">
-           @csrf
-           @method('DELETE')
 
-           <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
-           </button>
+        @can('delete')
+        <form  action="{{route('delete.alumni',$alumn->id)}}" method="POST"  enctype="multipart/form-data">
+            @csrf
+            @method('DELETE')
 
-       </form>
+            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
+            </button>
+        </form>
+        @endcan
     </td>
   </tr>
 

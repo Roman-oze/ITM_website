@@ -109,7 +109,9 @@
                 <th>Type</th>
                 <th>Description</th>
                 <th>Date</th>
+                @can('delete')
                 <th>Actions</th>
+                @endcan
             </tr>
         </thead>
         <tbody>
@@ -124,6 +126,7 @@
                             <i class="fa-solid fa-trash-can"></i>
                         </a> --}}
 
+                        @can('delete')
                         <form action="{{route('routine.delete',$file->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
@@ -132,6 +135,7 @@
                                 </button>
 
                         </form>
+                        @endcan
                     </td>
                 </tr>
 

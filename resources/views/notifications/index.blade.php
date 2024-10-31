@@ -49,11 +49,14 @@
                                             <button type="submit" class="btn btn-outline-primary btn-sm">Mark as Read</button>
                                         </form>
                                     @endif
+                                    @can('delete')
+
                                     <form action="{{ route('notifications.delete', $notification) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this notification?');">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
                                     </form>
+                                    @endcan
                                 </div>
                             </li>
                         @endforeach

@@ -63,15 +63,16 @@
 
 
                 <td class="text-center justify-content-evenly">
-                    @can('')
-                    <a href="{{route('student.edit',$student->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
-                    @endcan
 
-                        <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button  type="submit"  class="p-3 bg-none" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></button>
-                        </form>
+                    <a href="{{route('student.edit',$student->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+
+                    @can('delete')
+                    <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button  type="submit"  class="p-3 bg-none" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></button>
+                    </form>
+                    @endcan
 
 
                         </td>
