@@ -22,7 +22,28 @@ class DashbaordController extends Controller
 {
        public function dashboard()
     {
-        $menus = Menu::all();
+        // $userRoleId = Auth::user()->role_id;
+
+        // // Query the menus with role-based permissions
+        // $menus = Menu::with(['children', 'permissions' => function ($query) use ($userRoleId) {
+        //     $query->where('role_id', $userRoleId);
+        // }])
+        // ->whereNull('parent_id')  // Get only parent menus initially
+        // ->orderBy('id')           // Order by the desired field
+        // ->get();
+
+        $userRoleId = Auth::user()->role_id;
+
+        // Retrieve the menus, ordered by the 'order' column
+        $menus = Menu::with(['children' => function ($query) {
+            $query->orderBy('order'); // Order submenus
+        }, 'permissions' => function ($query) use ($userRoleId) {
+            $query->where('role_id', $userRoleId);
+        }])
+        ->whereNull('parent_id')  // Only parent menus
+        ->orderBy('order')        // Order by the new 'order' column
+        ->get();
+
 
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();

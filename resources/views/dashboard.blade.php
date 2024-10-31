@@ -1,4 +1,4 @@
-@include('include._sidenav', ['menus' => $menus])
+@include('include._sidenav', ['$menus' => $menus])
 
 @extends('layout.dashboard')
 

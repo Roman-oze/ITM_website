@@ -42,7 +42,7 @@
     <!-- resources/views/create_menu.blade.php -->
 
 <div class="container">
-    <form action="{{ route('menu.store') }}" method="POST">
+    {{-- <form action="{{ route('menu.store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="icon">Icon</label>
@@ -70,8 +70,55 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Create Menu</button>
+    </form> --}}
+</div>
+
+<div class="container">
+
+    <form action="{{ route('menu.store') }}" method="POST">
+        @csrf
+
+        <!-- Menu Name -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Menu Name</label>
+            <input type="text" class="form-control" id="name" name="name" required placeholder="Course">
+        </div>
+
+        <!-- Icon -->
+        <div class="mb-3">
+            <label for="icon" class="form-label">Icon (Font Awesome class)</label>
+            <input type="text" class="form-control" id="icon" name="icon" placeholder="fa-solid fa-user" required>
+        </div>
+
+        <!-- Link -->
+        <div class="mb-3">
+            <label for="link" class="form-label">Link</label>
+            <input type="text" class="form-control" id="link" name="link" placeholder="/dashboard">
+        </div>
+
+        <!-- Parent Menu (for dropdowns) -->
+        <div class="mb-3">
+            <label for="parent_id" class="form-label">Parent Menu</label>
+            <select class="form-select" id="parent_id" name="parent_id">
+                <option value="">No Parent (Top-level menu)</option>
+                @foreach($menus as $menu)
+                    <option value="{{ $menu->id }}">{{ $menu->name }}</option>
+                @endforeach
+            </select>
+            <small class="form-text text-muted">Select a parent menu if this menu is a submenu.</small>
+        </div>
+
+
+        <!-- Sort Order -->
+        <div class="mb-3">
+            <label for="sort_order" class="form-label">Sort Order</label>
+            <input type="number" class="form-control" id="sort_order" name="sort_order" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Menu</button>
     </form>
 </div>
+
 
 
 </div>

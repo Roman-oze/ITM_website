@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('icon')->nullable();  // For menu icons
-            $table->string('name');              // Name of the menu item
-            $table->string('link')->nullable();  // Link for the menu item (nullable for dropdowns)
-            $table->unsignedBigInteger('parent_id')->nullable(); // ID of the parent menu item for dropdowns
-            $table->timestamps();
-
-            $table->foreign('parent_id')->references('id')->on('menus')->onDelete('cascade');
+            $table->string('name');                  // Menu name
+            $table->string('icon')->nullable();      // Font Awesome icon class (nullable)
+            $table->string('link')->nullable();      // Link path
+            $table->foreignId('parent_id')->nullable()->constrained('menus')->onDelete('cascade'); // Parent menu for dropdown
+            $table->integer('sort_order')->nullable(); // Sort order for display (nullable)
+            $table->timestamps();    
         });
     }
 

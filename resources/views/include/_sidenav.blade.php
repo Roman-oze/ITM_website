@@ -3,85 +3,49 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
 
-                <!-- Dashboard Link -->
-                <a class="nav-link" href="{{route('dashboard')}}">
-                    <div class="sb-nav-link-icon text-white"><i class="fas fa-tachometer-alt fa-lg"></i></div>
-                    Dashboard
-                </a>
-
-                <!-- Users Dropdown -->
-                <a class="nav-link collapsed mt-3" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-users text-white fa-lg"></i></div>
-                    Users
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="collapseUsers" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a href="{{route('users.index')}}" class="nav-link">Admins</a>
-                        <a href="#" class="nav-link">Upcoming</a>
-                    </nav>
-                </div>
-
-                <!-- Students Dropdown -->
-                <a class="nav-link collapsed mt-1" href="#" data-bs-toggle="collapse" data-bs-target="#collapseStudents" aria-expanded="false" aria-controls="collapseStudents">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-book-open fa-lg text-white"></i></div>
-                    Students
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="collapseStudents" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a href="{{route('student.index')}}" class="nav-link">Students</a>
-                        <a href="{{route('alumni.index')}}" class="nav-link">Alumni</a>
-                        <a href="{{route('scholarship.index')}}" class="nav-link">Scholarship</a>
-                    </nav>
-                </div>
-
-                <!-- Website Setup Dropdown -->
-                <a class="nav-link collapsed mt-1 text-white fa-lg" href="#" data-bs-toggle="collapse" data-bs-target="#collapseWebsiteSetup" aria-expanded="false" aria-controls="collapseWebsiteSetup">
-                    <div class="sb-nav-link-icon  text-white fa-lg">
-                        <i class="fa-solid fa-gear"></i>
+<!-- Sidebar Menu -->
+        @foreach ($menus as $menu)
+            <li class="nav-item">
+                @if ($menu->children->isNotEmpty())
+                    <a class="nav-link collapsed mt-1 text-white fa-lg" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMenu{{ $menu->id }}" aria-expanded="false" aria-controls="collapseMenu{{ $menu->id }}">
+                        <div class="sb-nav-link-icon text-white fa-lg">
+                            @if($menu->icon)
+                                <i class="{{ $menu->icon }}"></i>
+                            @endif
+                        </div>
+                        {{ $menu->name }}
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseMenu{{ $menu->id }}" aria-labelledby="heading{{ $menu->id }}" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            @foreach ($menu->children as $child)
+                                <a href="{{ $child->link ?? '#' }}" class="nav-link">{{ $child->name }}</a>
+                            @endforeach
+                        </nav>
                     </div>
-                    Website Setup
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="collapseWebsiteSetup" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a href="{{route('herosection.index')}}" class="nav-link">Hero Section</a>
-                        <a href="{{route('feature.index')}}" class="nav-link" >Feature</a>
-                        <a href="{{route('services.index')}}" class="nav-link">Services</a>
-                        <a href="{{route('footer.index')}}" class="nav-link">Footer</a>
-                        <a href="#" class="nav-link">Appearance</a>
-                    </nav>
-                </div>
-
-
-                <!-- Menu Permission Dropdown -->
-                <a class="nav-link collapsed mt-1 text-white fa-lg" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMenuPermission" aria-expanded="false" aria-controls="collapseMenuPermission">
-                    <div class="sb-nav-link-icon text-white fa-lg">
-                        <i class="fa-solid fa-lock"></i>
-                    </div>
-                    Menu Permission
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="collapseMenuPermission" aria-labelledby="headingFour" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a href="{{ route('menu-permission.index') }}" class="nav-link">Display Assign</a>
-                        <a href="{{ route('menu.create') }}" class="nav-link">Create Menu</a>
-                        <a href="{{ route('menu-permissions.create') }}" class="nav-link">Assign Menu</a>
-                    </nav>
-                </div>
+                @else
+                    <a href="{{ $menu->link ?? '#' }}" class="nav-link">
+                        <div class="sb-nav-link-icon text-white fa-lg">
+                            @if($menu->icon)
+                                <i class="{{ $menu->icon }}"></i>
+                            @endif
+                        </div>
+                        {{ $menu->name }}
+                    </a>
+                @endif
+            </li>
+        @endforeach
+    </ul>
 
 
 
-
-
-                        @foreach ( $menus as $menu)
+                        {{-- @foreach ( $menus as $menu)
 
                                 <a class="nav-link" href="{{ $menu->link }}">
                                     <div class="sb-nav-link-icon"><i class="{{ $menu->icon }} text-white fa-lg"></i></div>
                                     {{ $menu->name }}
                                 </a>
-                        @endforeach
+                        @endforeach --}}
 
                 <!-- Mail Link -->
                 {{-- <a class="nav-link" href="{{ route('send-mail-form.create') }}">
