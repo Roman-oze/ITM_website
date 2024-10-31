@@ -90,23 +90,6 @@ class MenuController extends Controller
     public function store(Request $request)
     {
 
-           // Validate the form data
-        //    $request->validate([
-        //     'icon' => 'nullable|string',
-        //     'name' => 'required|string|max:255',
-        //     'link' => 'nullable|string|max:255',
-        //     'parent_id' => 'nullable|exists:menus,id'
-
-        // ]);
-
-        // // Create a new menu item
-        // Menu::create([
-        //     'icon' => $request->icon,
-        //     'name' => $request->name,
-        //     'link' => $request->link,
-        //     'parent_id' => $request->parent_id,
-
-        // ]);
         $request->validate([
             'name' => 'required|string|max:255',
             'icon' => 'nullable|string|max:255',         // Icon is optional
@@ -125,55 +108,51 @@ class MenuController extends Controller
         // Redirect to a specific route with a success message
         return redirect()->back()->with('success', 'Menu item created successfully!');
 
-
-    //     $request->validate([
-    //          'icon' => 'nullable|string',
-    //         'name' => 'required|string',
-    //         'link' => 'nullable|string', // Allow plain text input
-    //     ]);
-
-    // $data['icon'] =$request->icon;
-    //  $data['name'] =$request->name;
-    //  $data['link'] =$request->link;
-
-    // Menu::create(
-    //     $data
-    // );
-
-
-    // return redirect()->back()->with('success', 'Menu item created successfully.');
-
     }
 
     // Show form to edit an existing menu item (admin and super-admin only)
     public function edit($id)
     {
-        $this->authorizeAction('can_edit');
-        $menu = Menu::findOrFail($id);
         return view('menus.edit', compact('menu'));
     }
 
     // Update the menu item (admin and super-admin only)
     public function update(Request $request, $id)
     {
-        $this->authorizeAction('can_edit');
+        // $this->authorizeAction('can_edit');
+        // $request->validate([
+        //     'name' => 'required|string',
+        //    'link' => 'required|string',
+        // ]);
+
+        // $menu = Menu::findOrFail($id);
+        // $menu->update($request->only(['name', 'link']));
+        // return redirect()->route('menus.index')->with('success', 'Menu item updated successfully.');
+        $menuPermission = MenuPermission::findOrFail($id);
+
         $request->validate([
-            'name' => 'required|string',
-           'link' => 'required|string',
+            'can_create' => 'boolean',
+            'can_edit' => 'boolean',
+            'can_delete' => 'boolean',
         ]);
 
-        $menu = Menu::findOrFail($id);
-        $menu->update($request->only(['name', 'link']));
-        return redirect()->route('menus.index')->with('success', 'Menu item updated successfully.');
+        $menuPermission->update($request->all());
+
+        return redirect()->back()->with('success', 'Menu permission updated successfully.');
     }
 
     // Delete the menu item (super-admin only)
     public function destroy($id)
     {
-        $this->authorizeAction('can_delete');
-        $menu = Menu::findOrFail($id);
-        $menu->delete();
-        return redirect()->route('menus.index')->with('success', 'Menu item deleted successfully.');
+        // $this->authorizeAction('can_delete');
+        // $menu = Menu::findOrFail($id);
+        // $menu->delete();
+        // return redirect()->route('menus.index')->with('success', 'Menu item deleted successfully.');
+
+        $menuPermission = MenuPermission::findOrFail($id);
+    $menuPermission->delete();
+
+    return redirect()->back()->with('success', 'Menu permission deleted successfully.');
     }
 
     // Helper function to check action permissions

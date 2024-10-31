@@ -2,34 +2,35 @@
 
 namespace App\Http\Controllers;
 use App\Models\Menu;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\MenuPermission;
-use App\Models\User;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Validator;
 // use Spatie\Permission\Models\Permission;
 
 class MenuPermissionController extends Controller
 {
 
-    public function create()
-{
-    $menus = Menu::all();
-    $roles = Role::all();
-    return view('setup-menu.menu-permission.assign-permission', compact('menus', 'roles'));
-}
+            public function create()
+        {
+            $menus = Menu::all();
+            $roles = Role::all();
+            return view('setup-menu.menu-permission.assign-permission', compact('menus', 'roles'));
+        }
 
-public function index()
-{
+        public function index()
+        {
 
-    $permissions = MenuPermission::with('menu', 'role')->get();
-    return view('setup-menu.index', compact('permissions'));
-}
+            $permissions = MenuPermission::with('menu', 'role')->get();
+            return view('setup-menu.index', compact('permissions'));
+        }
 
 
 
-public function store(Request $request)
-    {
-        // Validate the incoming request
+    public function store(Request $request)
+        {
+            // Validate the incoming request
         $request->validate([
             'menu_ids' => 'required|array',      // Ensure multiple menus are allowed
             'role_ids' => 'required|array',      // Ensure multiple roles are allowed
@@ -56,28 +57,77 @@ public function store(Request $request)
         return redirect()->back()->with('success', 'Menu permissions saved successfully!');
     }
 
+    public function edit($id)
+    {
+        $permission = MenuPermission::with('role', 'menu')->findOrFail($id);
+        $menus = Menu::all();
+        return view('setup-menu.menu-permission.edit', compact('permission','menus'));
+    }
+    public function update(Request $request, $id)
+    {
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'menu_name' => 'required|string|max:255',
+            'can_create' => 'required|boolean',
+            'can_edit' => 'required|boolean',
+            'can_update' => 'required|boolean',
+            'can_delete' => 'required|boolean',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        // Find the existing permission
+        $permission = MenuPermission::findOrFail($id);
+
+        // Update the permission with the validated data
+        $permission->menu()->associate(Menu::where('name', $request->menu_name)->first()); // Assuming you have a way to get the menu by name
+        $permission->can_create = $request->can_create;
+        $permission->can_edit = $request->can_edit;
+        $permission->can_update = $request->can_update;
+        $permission->can_delete = $request->can_delete;
+
+        // Save the updated permission
+        $permission->save();
+
+        return redirect()->route('menu-permissions.index')
+            ->with('success', 'Menu permission updated successfully.');
+    }
 
 
 
+    // Method to delete the permission
+    public function destroy($id)
+    {
+        $permission = MenuPermission::findOrFail($id);
+        $permission->delete();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return redirect()->route('menu-permissions.index')
+            ->with('success', 'Menu permission deleted successfully.');
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Display a listing of the resource.
      */

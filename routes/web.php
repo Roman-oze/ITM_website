@@ -57,6 +57,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 // });
 
 
+
+
+
+Route::group(['middleware' => ['menu.permission']],function(){
+
+route::get('/dashboard',[DashbaordController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 // Menu
 Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
 Route::get('/menu/create', [MenuController::class, 'create'])->name('menu.create');
@@ -65,11 +71,10 @@ Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
 //  Menu Permission
 
 route::resource('menu-permissions',MenuPermissionController::class);
-route::get('MenuPermissionController/{id}/delete',[MenuPermissionController::class,'destroy']);
+// route::get('MenuPermissionController/{id}/delete',[MenuPermissionController::class,'destroy']);
+});
 
 
-
-route::get('/dashboard',[DashbaordController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
