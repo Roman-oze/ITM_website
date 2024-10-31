@@ -112,7 +112,7 @@
         <!-- Sort Order -->
         <div class="mb-3">
             <label for="order" class="form-label">Sort Order</label>
-            <input type="number" class="form-control" id="order" name="order" required>
+            <input type="number" class="form-control" id="order" name="order" >
         </div>
 
         <button type="submit" class="btn btn-primary">Create Menu</button>

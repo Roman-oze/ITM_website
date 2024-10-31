@@ -292,10 +292,14 @@ Route::controller(NoticeBoardController::class)->group(function(){
 Route::get('/pdf_generate', [App\Http\Controllers\PdfController::class,'pdf_generate']);
 
 
+Route::controller(MailController::class)->group(function(){
 
-Route::post('/send-mail', [MailController::class, 'store'])->name('send.mail.data');
+    Route::post('/send-mail', 'store')->name('send.mail.data');
+    Route::get('/send-mail-form', 'create')->name('send-mail-form.create');
 
-Route::get('/send-mail-form', [MailController::class, 'create'])->name('send-mail-form.create');
+});
+
+
 
 Route::get('/notifications', [NotificationController::class, 'store'])->name('notifications.store');
 Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
