@@ -6,7 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\MenuPermission;
 use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validtor;
+use Illuminate\Support\Facades\Auth; // This is correct
+
 // use Spatie\Permission\Models\Permission;
 
 class MenuPermissionController extends Controller
@@ -14,6 +16,8 @@ class MenuPermissionController extends Controller
 
             public function create()
         {
+            $user = Auth::user();
+
             $menus = Menu::all();
             $roles = Role::all();
             return view('setup-menu.menu-permission.assign-permission', compact('menus', 'roles'));

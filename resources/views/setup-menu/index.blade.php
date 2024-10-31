@@ -41,14 +41,17 @@
                 <td>{{ $permission->can_update ? 'Yes' : 'No' }}</td>
                 <td>{{ $permission->can_delete ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ route('menu-permission.edit', $permission->id) }}" class="btn btn-primary">Edit</a>
+                        @can('edit')
+                        <a href="{{ route('menu-permission.edit', $permission->id) }}" class="btn btn-info">
+                            <i class="fa fa-edit"></i>
+                            </a>
+                        @endcan
 
-                        <form action="{{ route('menu-permissions.destroy', $permission->id) }}" method="
-                            post" style="display: inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                        @can('delete')
+                            <a href="{{ route('menu-permissions.destroy', $permission->id) }}" class="btn btn-danger " onclick="return confirm('Are you sure!')">
+                                <i class="fa fa-trash "></i>
+                            </a>
+                        @endcan
                 </td>
             </tr>
         @endforeach

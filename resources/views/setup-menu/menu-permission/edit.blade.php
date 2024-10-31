@@ -23,7 +23,6 @@
         </div>
     @endif
 
-    <div class="container ">
 
 
         <div class="container d-flex justify-content-center">
@@ -101,9 +100,10 @@
                     </form>
                 </div>
             </div>
+        </div>
+</div>
 
-
-
+<br>
 
 </main>
 @endsection
