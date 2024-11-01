@@ -151,4 +151,18 @@ counters.forEach(function (counter) {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Select all alumni cards
+    const alumniCards = document.querySelectorAll('.alumni-card');
+
+    alumniCards.forEach(card => {
+        // Create the graduated label
+        const graduatedLabel = document.createElement('div');
+        graduatedLabel.className = 'graduated-label';
+        graduatedLabel.innerText = 'Graduated';
+
+        // Append the label to the card
+        card.appendChild(graduatedLabel);
+    });
+});
 

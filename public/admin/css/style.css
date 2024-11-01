@@ -820,3 +820,221 @@ nav ul li a {
         background-color: #e2e6ea;
         box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
     }
+    .alumni-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .alumni-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .alumni-img-container {
+        width: 100%;
+        height: 180px;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .alumni-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid#088178;
+    }
+
+    .alumni-contact .badge {
+        font-size: 0.9rem;
+        padding: 0.5em 0.8em;
+        border-radius: 15px;
+    }
+
+    .btn-outline-primary {
+        border-color:#088178;
+        color: #37517E;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #37517E;
+        color: #fff;
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: #fff;
+    }
+    .alumni-card {
+        position: relative; /* To allow absolute positioning of the label */
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .alumni-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Graduated label styling */
+    .graduated-label {
+        position: absolute;
+        top: 10px;
+        left: -10px;
+        background-color: #088178; /* Green background */
+        color: #fff;
+        padding: 5px 15px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        border-radius: 3px;
+        transform: rotate(-15deg); /* Tilt the label */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    /* Flip card container */
+.flip-card {
+    perspective: 1000px;
+    width: 100%;
+    height: 250px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and back card sides */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Front side styling */
+.flip-card-front {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.alumni-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Back side styling */
+.flip-card-back {
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+.action-buttons .btn {
+    margin-top: 10px;
+    width: 90px;
+    font-size: 0.9rem;
+}
+
+    
+    .scholarship-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .scholarship-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .scholarship-card img {
+        border: 3px solid #088178;
+    }
+
+    .scholarship-card .card-title {
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    .scholarship-card .text-muted {
+        font-size: 0.9rem;
+    }
+
+    .scholarship-card .btn-outline-info, .scholarship-card .btn-outline-danger {
+        width: 80px;
+    }
+
+    .btn-outline-info:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    /* .faculty-fb{
+        border-radius:14px;
+        padding:8px;
+        border:1px solid blue;
+        background-color:blue;
+        color:white;
+    } */
+
+    .faculty-label {
+        position: absolute;
+        top: 10px; /* Default positioning */
+        left: -10px; /* Default positioning */
+        background-color: #088178; /* Green background */
+        color: #fff;
+        padding: 5px 15px; /* Default padding */
+        font-size: 0.85rem; /* Default font size */
+        font-weight: bold;
+        border-radius: 3px;
+        transform: rotate(-25deg); /* Tilt the label */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .faculty-label {
+            top: 5px; /* Adjust top position */
+            left: -49px; /* Adjust left position */
+            padding: 4px 10px; /* Reduce padding */
+            font-size: 0.75rem; /* Slightly smaller font size */
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .faculty-label {
+            top: 5px; /* Further adjust top position */
+            left: -24; /* Center the label */
+            padding: 3px 8px; /* Further reduce padding */
+            font-size: 0.7rem; /* Smaller font size */
+            transform: rotate(-27deg); /* Less tilt for smaller screens */
+        }
+    }
+    

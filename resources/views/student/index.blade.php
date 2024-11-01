@@ -1,95 +1,59 @@
 @extends('layout.dashboard')
 
-
 @section('main')
 <main>
     <div class="container-fluid px-4">
         <h1 class="mt-4">Students</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Students List </li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Students List</li>
         </ol>
 
-       <div class="row">
-        <div class="col-md-10 text-left">
-            <form action="{{route('student.search')}}" method="GET" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" name="search" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
-                </div>
-            </form>
-            <a href="{{ route('create') }}" class="btn btn-outline-dark ">New Add</a>
-
+        <div class="row mb-4">
+            <div class="col-md-10">
+                <form action="{{ route('student.search') }}" method="GET" class="form-inline ms-auto d-flex">
+                    <input class="form-control me-2" type="text" name="search" placeholder="Search for..." aria-label="Search">
+                    <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a href="{{ route('create') }}" class="btn btn-outline-dark ms-3">New Add</a>
+            </div>
         </div>
 
+        <div class="row">
+            @foreach($students as $student)
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="card h-100 border-light shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="card-title mb-0">{{ $student->name }}</h6>
+                                @if($student->type == 'active')
+                                    <span class="badge bg-success">Active</span>
+                                @else
+                                    <span class="badge bg-danger">Inactive</span>
+                                @endif
+                            </div>
+                            <p class="small mb-1"><strong>ID:</strong> {{ $student->roll }}</p>
+                            <p class="small mb-1"><strong>Batch:</strong> {{ $student->batch->batch_name ?? 'No Batch Assigned' }}</p>
+                            <p class="small mb-1"><strong>Email:</strong> {{ $student->email }}</p>
+                            <div class="d-flex mt-2">
+                                <a href="{{ route('student.edit', $student->id) }}" class="btn btn-outline-info btn-sm me-2"><i class="fa-solid fa-pen"></i> Edit</a>
+                                @can('delete')
+                                    <form action="{{ route('delete', $student->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
+                                    </form>
+                                @endcan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 
+        <div class="d-flex justify-content-center mt-4">
+            {{ $students->links('pagination::bootstrap-5') }}
+        </div>
     </div>
-
-<table class="table table-striped mt-5">
-    <thead>
-        <tr class="">
-            <th>Name</th>
-            <th>ID</th>
-            <th>Batch</th>
-            <th>Email</th>
-            <th>Blood</th>
-            <th>Mobile</th>
-            <th>Address</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($students as $student
-
-        )
-                    <tr class="">
-                <td>{{ $student->name }}</td>
-                <td>{{ $student->roll }}</td>
-                <td>{{ $student->batch->batch_name ?? 'No Batch Assigned' }}</td> <!-- Batch name -->
-                <td>{{ $student->email }}</td>
-                <td>{{ $student->blood }}</td>
-                <td>{{ $student->mobile }}</td>
-                <td>{{ $student->address }}</td>
-                <td >
-
-                    @if($student->type == 'active')
-                        <h3 class="badge badge-success  text-success btn "><i class="fa-solid fa-circle text-success fa-lg"></i> Active</h3>
-                    @else
-                        <h3 class="badge badge-danger text-danger btn "><i class="fa-solid fa-ban text-danger fa-lg"></i> Inactive</h3>
-                    @endif
-               </td>
-
-
-
-                <td class="text-center justify-content-evenly">
-
-                    <a href="{{route('student.edit',$student->id)}}" class="p-3"><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
-
-                    @can('delete')
-                    <form action="{{route('delete',$student->id)}}" method="post" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button  type="submit"  class="p-3 bg-none" onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-danger  fa-lg"></i></button>
-                    </form>
-                    @endcan
-
-
-                        </td>
-                    </tr>
-                    @endforeach
-    </tbody>
-</table>
-
 </main>
-
-{{ $students->links('pagination::bootstrap-5') }}
-
-
-
-
-
 @endsection
-
-
-

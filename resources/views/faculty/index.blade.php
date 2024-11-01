@@ -2,84 +2,92 @@
 
 @section('main')
 
-{{-- <form  action="records" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" >
-    <div class="input-group">
-        <input class="form-control" type="text" placeholder="Search for..." name="search" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
-
-    </div>
-
-</form> --}}
-
 <main>
-
     <div class="container mt-5">
         <h1 class="mt-4">Faculty</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Faculty List</li>
         </ol>
-        <br>
-        <div class="row">
-            <div class="col-md-12">
 
-                @if (session('status'))
-                    <div class="alert alert-success">{{session('status')}}</div>
-                @endif
+      
 
-                <div class="card">
-                    <div class="card-header">
-                        <h5>
-                            <a href="{{route('create.faculty')}}" class="btn btn-primary float-end">ADD FACULTY</a>
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Image</th>
-                                        <th>Name</th>
-                                        <th>Designation</th>
-                                        <th>Facebook</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($teachers as $teacher)
-                                    <tr>
-                                        <td>{{$teacher->teacher_id}}</td>
-                                        <td><img src="{{ asset($teacher->image) }}" width="50" height="50" class="rounded-circle"></td>
-                                        <td>{{$teacher->name}}</td>
-                                        <td>{{$teacher->designation}}</td>
-                                        <td>{{$teacher->fb}}</td>
-                                        <td>{{$teacher->email}}</td>
-                                        <td>{{$teacher->phone}}</td>
-                                        <td>
-                                            @can('edit')
-                                            <a href="{{route('edit.faculty',$teacher->teacher_id)}}" class="btn btn-success">
-                                                <i class="fa-solid fa-user-pen"></i>
-                                            </a>
-                                            @endcan
-                                            @can('delete')
-                                            <a href="{{route('delete.faculty',$teacher->teacher_id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
-                                            @endcan
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div> <!-- end table-responsive -->
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    <a href="{{ route('create.faculty') }}" class="btn btn-primary float-end">Add Faculty</a>
+                </h4>
+            </div>
+        </div>   
+
+        <div class="row mt-5">
+            @if (session('status'))
+                <div class="alert alert-success">{{ session('status') }}</div>
+            @endif
+
+            @foreach($teachers as $teacher)
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-0 transition-transform hover:scale-105 position-relative">
+                        <span class="faculty-label">{{ $teacher->designation }}</span>
+                        <div class="card-body text-center">
+                            <img src="{{ asset($teacher->image) }}" width="100" height="100" class="rounded-circle mb-3" alt="Faculty Image">
+                            <h5 class="card-title">{{ $teacher->name }}</h5>
+                            <p class="card-text mt-2"><strong>Email:</strong> {{ $teacher->email }}</p>
+                            <p class="card-text"><strong>Phone:</strong> {{ $teacher->phone }}</p>
+                            <div class="mb-2">
+                                <a href="{{ $teacher->fb }}" target="_blank" class="btn btn-link text-decoration-none">
+                                    <i class="fa-brands fa-facebook-square text-info"></i> Facebook
+                                </a>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                @can('edit')
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('edit.faculty', $teacher->teacher_id) }}">
+                                                    <i class="fa-solid fa-user-pen"></i> Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <form action="{{ route('delete.faculty', $teacher->teacher_id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item text-danger">
+                                                        <i class="fa fa-trash"></i> Delete
+                                                    </button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                @endcan
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
+    </div>
     </div>
 </main>
 
 @endsection
+
+<style>
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.position-relative {
+    position: relative;
+}
+.badge {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* Text color */
+}
+</style>

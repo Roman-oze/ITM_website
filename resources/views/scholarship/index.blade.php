@@ -1,85 +1,67 @@
 @extends('layout.dashboard')
 
-
 @section('main')
 <main>
     <div class="container-fluid px-4">
         <h1 class="mt-4">Scholarship</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Scholarship List </li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Scholarship List</li>
         </ol>
 
+        <div class="mb-4">
+            <a href="{{ route('create.scholarship') }}" class="btn btn-dark text-white">Add Scholars</a>
+        </div>
+
         <div class="row">
-            <div class=" text-left">
-              <a href="{{ route('create.scholarship') }}" class="btn btn-dark text-white">Add scholars</a>
+            @foreach($scholars as $scholar)
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-0 scholarship-card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img src="{{ asset($scholar->image) }}" alt="Profile Image" class="rounded-circle mb-3" width="80" height="80">
+                                <h5 class="card-title text-primary">{{ $scholar->name }}</h5>
+                                <p class="text-muted mb-1">{{ $scholar->country }}</p>
+                                <p class="text-muted small">Batch: {{ $scholar->batch }} | ID: {{ $scholar->roll }}</p>
+                            </div>
+                            <hr>
+                            <p class="text-center">
+                                <strong>Duration:</strong> {{ $scholar->duration }}<br>
+                                <strong>Email:</strong> {{ $scholar->email }}
+                            </p>
 
-            </div>
-          </div>
-
+                            <div class="d-flex justify-content-center">
+                                @can('edit')
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Actions
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('edit.scholarship', $scholar->id) }}">
+                                                    <i class="fa-solid fa-user-pen"></i> Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                @can('delete')
+                                                <form action="{{ route('delete.scholarship', $scholar->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item text-danger">
+                                                        <i class="fa fa-trash"></i> Delete
+                                                    </button>
+                                                </form>
+                                                @endcan
+                                            </li>
+                                        </ul>
+                                    </div>
+                                @endcan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
-
-
-
-
-    <div class="table-responsive">
-        <table class="table table-striped">
-    <thead>
-        <tr >
-            <th >ID</th>
-            <th >Image</th>
-            <th >Name</th>
-            <th >Country</th>
-            <th >ID</th>
-            <th >batch</th>
-            <th >Duration</th>
-            <th >Email</th>
-            <th >Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach( $scholars as $scholar)
-
-    <td >{{$scholar->id}}</td>
-    <td><img src="{{ asset($scholar->image) }}"  width="50" height="50" class="rounded-circle" ></td>
-    <td >{{$scholar->name}}</td>
-    <td >{{$scholar->country}}</td>
-    <td >{{$scholar->roll}}</td>
-    <td >{{$scholar->batch}}</td>
-    <td >{{$scholar->duration}}</td>
-    <td>{{$scholar->email}}</td>
-
-
-    <td class="d-flex">
-
-     
-        <a href="{{route('edit.scholarship',$scholar->id)}}" class=" btn btn-outline-info" class="p-3 "><i class="fa-solid fa-pen-to-square  "></i></a>
-
-
-        @can('delete')
-        <form  action="{{route('delete.scholarship',$scholar->id)}}" method="POST"  enctype="multipart/form-data">
-            @csrf
-            @method('DELETE')
-
-            <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
-            </button>
-        </form>
-        @endcan
-    </td>
-  </tr>
-
-
-
-
-
-  @endforeach
-    </tbody>
-</table>
-    </div>
-
 </main>
-
 @endsection
-
-
-
