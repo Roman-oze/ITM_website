@@ -104,8 +104,7 @@
 
   @media (min-width: 320px) and (max-width: 768px) {
     .fac_text {
-        width: 58%;
-        font-size: large;
+        width:54%;
       }
     }
   @media (min-width: 320px) and (max-width: 991px) {
@@ -175,7 +174,23 @@
 
     }
 
-    */
+    @media (max-width: 1200px) {
+        .scholarpic {
+          width: 100%; /* Adjust the width for medium screens */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scholarpic {
+          width: 100%; /* Adjust the width for smaller screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scholarpic {
+          width: 100%; /* Adjust the width for very small screens */
+        }
+      }
 
     /* @media (max-width: 1200px) {
         .club{
@@ -213,18 +228,14 @@
             width: 100px;
           }
           .item1{
-            width:130px;
-            display: block;
-            margin:  auto;
-            padding: 5px;
-            color: white;
-            border-radius: 24px;
-           text-align: center;
-           font-size: small;
-
-
-
+            width:114px;
+           font-size: xx-small;
           }
+          .aboard {
+            font-size: xx-small;
+            padding-top: 4px;
+            width: 110px;
+        }
           .item2{
             width:130px;
             display: block;
@@ -257,12 +268,39 @@
             background-repeat: no-repeat;
 
           }
+          
 
     }
 
 
     @media screen and (min-width:700px) {
-  
+        .scholar{
+
+            background-image: url(../image/mobilescreen.png);
+            background-size: cover;
+            background-position: center;
+
+
+          }
+        .aboard{
+            font-size: medium;
+            padding-top: 30px;
+            color: rgb(204, 201, 195);
+            border-bottom: 1px solid rgba(220, 214, 214, 0.856);
+            width: 120px;
+          }
+          .item1{
+            width:150px;
+            padding: 5px;
+           font-size: small;
+
+
+
+          }
+          .item2{
+            width:150px;
+            font-size: small;
+            padding: 5px;
 
 
           }

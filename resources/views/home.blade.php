@@ -90,7 +90,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 rounded">
-                            <div class="dash-count bg-color  text-center p-1">
+                            <div class="dash-count bg-color  text-center p-1 ">
                                 <span data-purecounter-start="0" data-purecounter-end="{{$facultyCount}}" data-purecounter-duration="0" class="purecounter">{{$facultyCount}}</span>
                                 <p class="pure-text">
                                     <a href="{{route('faculty.member')}}" class="text-white-50">Faculty</a>
@@ -293,38 +293,35 @@
 
 {{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="fa-solid fa-arrow-up"></i></a> --}}
 <div class="container mt-5">
-    <div class="row mt-5 d-flex justify-content-between">
-
+    <div class="row mt-5 d-flex justify-content-center justify-content-md-between">
         <div class="col-md-3 col-6 text-center p-2">
-            <div class="border rounded-3 container_design text-center p-5">
-                <span data-purecounter-start="0" data-purecounter-end="{{ $studentCount }}" data-purecounter-duration="0" class="purecounter">{{ $studentCount }}</span>
+            <div class="circle-design text-center">
+                <span data-purecounter-start="0" data-purecounter-end="{{ $studentCount }}" data-purecounter-duration="3" class="purecounter">{{ $studentCount }}</span>
                 <p class="pure-text">Student</p>
             </div>
         </div>
-
         <div class="col-md-3 col-6 text-center p-2">
-            <div class="border rounded-3 container_design text-center p-5">
-                <span data-purecounter-start="0" data-purecounter-end="{{ $facultyCount }}" data-purecounter-duration="0" class="purecounter">{{ $facultyCount }}</span>
+            <div class="circle-design text-center">
+                <span data-purecounter-start="0" data-purecounter-end="{{ $facultyCount }}" data-purecounter-duration="3" class="purecounter">{{ $facultyCount }}</span>
                 <p class="pure-text">Faculty</p>
             </div>
         </div>
-
         <div class="col-md-3 col-6 text-center p-2">
-            <div class="border rounded-3 container_design text-center p-5">
-                <span data-purecounter-start="0" data-purecounter-end="{{ $alumniCount }}" data-purecounter-duration="0" class="purecounter">{{ $alumniCount }}</span>
+            <div class="circle-design text-center">
+                <span data-purecounter-start="0" data-purecounter-end="{{ $alumniCount }}" data-purecounter-duration="3" class="purecounter">{{ $alumniCount }}</span>
                 <p class="pure-text">Alumni</p>
             </div>
         </div>
-
         <div class="col-md-3 col-6 text-center p-2">
-            <div class="border rounded-3 container_design text-center p-5">
-                <span data-purecounter-start="0" data-purecounter-end="{{ $scholarshipCount }}" data-purecounter-duration="0" class="purecounter">{{ $scholarshipCount }}</span>
+            <div class="circle-design text-center">
+                <span data-purecounter-start="0" data-purecounter-end="{{ $scholarshipCount }}" data-purecounter-duration="3" class="purecounter">{{ $scholarshipCount }}</span>
                 <p class="pure-text">Research</p>
             </div>
         </div>
-
     </div>
 </div>
+
+
 
 <br><br><br><br>
 
@@ -344,13 +341,13 @@
             
                 <div class="link-list">
                     <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-2 text-transition">
-                        <i class="fa-solid fa-check-double text-info"></i> Scholarship
+                        <i class="fa-regular fa-circle-check"></i> Scholarship
                     </a><br>
                     <a href="https://internship.daffodilvarsity.edu.bd/?app=home" class="item1 d-block p-2 text-transition">
-                        <i class="fa-solid fa-check-double text-info"></i> Internship
+                        <i class="fa-regular fa-circle-check"></i> Internship
                     </a><br>
-                    <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item1 d-block p-2 text-transition">
-                        <i class="fa-solid fa-check-double text-info"></i> Job
+                    <a href="https://daffodilvarsity.edu.bd/international/exchange-program" class="item1 d-block  text-transition">
+                        <i class="fa-regular fa-circle-check"></i> Job
                     </a><br>
                     <a target="_blank" href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="bn5">Apply</a>
                 </div>
@@ -371,31 +368,42 @@
     </div>
 </div>
 
-<div class="container-fluid mt-5">
-    <div class="row d-flex p-5">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
         @foreach ($scholars as $scholar)
             <div class="col-md-3 p-2">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front flip-custom">
                             <div class="child-div">
-                                <div class="mb-4">
-                                    <img src="{{ asset($scholar->image) }}" alt="Image" class="alumni-custom">
+                                <div class="scholarship-label d-flex align-items-center" data-country="{{ $scholar->country }}">
+                                    <span class="country-icon me-2"></span> <!-- Placeholder for the country icon -->
+                                    <span class="country-label"></span> <!-- Placeholder for the country label -->
                                 </div>
-                                <div class="text p-1">
-                                    <h2 class="text-white">{{ $scholar->name }}</h2>
-                                    <p class="h5 text-white-50">{{ $scholar->country }}</p>
-                                    <h4 class="text-warning"><i class="fa-solid fa-hands-bubbles"></i> Congratulations!</h4>
+                                <div class="mb-4">
+                                    <img src="{{ asset($scholar->image) }}" alt="Image" class="alumni-custom img-fluid">
+                                </div>
+                                <div class="text p-3">
+                                    <h3 class="text-white">{{ $scholar->name }}</h3>
+                                    <span class="text-white">{{ $scholar->country }}</span>
+                                    <h4 class="congratulations-message text-warning" role="alert" aria-live="polite">
+                                        <i class="fa-solid fa-hands-bubbles" aria-hidden="true"></i> Congratulations!
+                                    </h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="flip-card-back text-left" style="line-height:22px;">
-                            <h4>{{ $scholar->name }}</h4>
+
+                        <div class="flip-card-back p-3 text-right" style="line-height: 22px;">
+                            <h4 class="text-white">{{ $scholar->name }}</h4>
                             <hr>
-                            <p>Student ID: {{ $scholar->roll }}</p>
-                            <p>Batch: {{ $scholar->batch }}</p>
-                            <p>Duration: {{ $scholar->duration }}</p>
-                            <p>Email: <br>{{ $scholar->email }}</p>
+                            <div class="p-1">
+                                <span class="d-block"><i class="fa-solid fa-id-card"></i> Student ID: {{ $scholar->roll }}</span>
+                                <span class="d-block"><i class="fa-solid fa-calendar-alt"></i> Batch: {{ $scholar->batch }}</span>
+                                <span class="d-block"><i class="fa-solid fa-calendar-check"></i> Duration: Year: {{ $scholar->duration }}</span>
+                                <br>
+                                <span class="badge bg-light text-dark mt-1"><i class="fa-solid fa-envelope"></i> {{ $scholar->email }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -403,7 +411,6 @@
         @endforeach
     </div>
 </div>
-
 <br>
 <br>
 <br>
