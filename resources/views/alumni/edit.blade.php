@@ -49,8 +49,11 @@
 
 
                                                 <div class="form-group mb-3">
-
-                                                    <input type="file" class="form-control" name="image" value="{{$alumni->image}}" required placeholder="image">
+                                                    @if ($alumni->image)
+                                                    <img src="{{ asset($alumni->image) }}" alt="" width="100">
+                                                    @endif
+                                                        
+                                                    <input type="file" class="form-control" name="image" value="{{ asset($alumni->image) }}" required placeholder="image">
                                                     <span class="text-danger">@error('image'){{ $message }}@enderror</span>
                                                 </div>
                                                 <div class="form-group mb-3">

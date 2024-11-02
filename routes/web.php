@@ -60,7 +60,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 
-Route::group(['middleware' => ['menu.permission']],function(){
+// Route::group(['middleware' => ['menu.permission']],function(){
 
 route::get('/dashboard',[DashbaordController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 // Menu
@@ -72,7 +72,7 @@ Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
 
 route::resource('menu-permissions',MenuPermissionController::class);
 // route::get('MenuPermissionController/{id}/delete',[MenuPermissionController::class,'destroy']);
-});
+// });
 
 
 
@@ -98,6 +98,9 @@ route::put('roles/{roleId}/give-permission',[App\Http\Controllers\RoleController
 
 route::resource('users',UserController::class);
 route::get('users/{userId}/delete',[App\Http\Controllers\UserController::class,'destroy']);
+
+});
+// Middleware End
 
 // website setup
 
@@ -296,8 +299,7 @@ Route::patch('/notifications/{notification}/read', [NotificationController::clas
 Route::post('/notifications', [NotificationController::class, 'store'])->name('notifications.store');
 Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy'])->name('notifications.delete');
 
-});
-// Middleware End
+
 
 
 

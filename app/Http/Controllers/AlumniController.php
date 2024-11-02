@@ -98,29 +98,29 @@ class AlumniController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+{
+    $data = [
+        'name' => $request->name,
+        'roll' => $request->roll,
+        'batch' => $request->batch,
+        'pass_year' => $request->pass_year,
+        'organization' => $request->organization,
+        'designation' => $request->designation,
+        'phone' => $request->phone,
+        'email' => $request->email,
+        'address' => $request->address,
+    ];
 
-        $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move('alumni',$fileName);
-
-
-        $data ['image'] = 'alumni/'.$fileName;
-        $data ['name'] = $request->name;
-        $data ['roll'] = $request->roll;
-        $data ['batch'] = $request->batch;
-        $data ['pass_year'] = $request->pass_year;
-        $data ['organization'] = $request->organization;
-        $data ['designation'] = $request->designation;
-        $data ['phone'] = $request->phone;
-        $data ['email'] = $request->email;
-        $data ['address'] = $request->address;
-
-        Alumni::where('id',$id)->update($data);
-        return redirect('/dashboard/alumni')->back();
-
-
-
+    // Check if the image file is present in the request
+    if ($request->hasFile('image')) {
+        $fileName = time() . '-itm.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move('alumni', $fileName);
+        $data['image'] = 'alumni/' . $fileName;
     }
+
+    Alumni::where('id', $id)->update($data);
+    return redirect()->back()->with('success, Update successfully');
+}
 
     /**
      * Remove the specified resource from storage.

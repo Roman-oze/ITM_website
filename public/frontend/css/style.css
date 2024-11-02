@@ -783,7 +783,7 @@ height: 100px;
 width: 100px;
 mix-blend-mode: color-burn;
 }
-.scholar{
+/* .scholar{
 
   background-image: url(../image/mobilescreen.png);
   background-size: contain;
@@ -798,6 +798,77 @@ mix-blend-mode: color-burn;
 object-position: center;
 
 
+} */
+ 
+
+.scholarpic {
+    max-width: 100%;
+    height: auto;
+    object-position: center;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .scholarpic {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.scholar {
+    background-image: url(../image/mobilescreen.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+}
+
+/* Style adjustments for large screens */
+@media (min-width: 1440px) {
+    .scholar {
+        background-size: contain;
+        padding: 2rem 1.5rem;
+    }
+
+    .link-list .item1 {
+        font-size: 1.2rem;
+    }
+
+    .aboard {
+        font-size: 1.5rem;
+    }
+}
+
+/* Style adjustments for medium screens */
+@media (max-width: 1024px) {
+    .scholar {
+        background-size: cover;
+        padding: 1.5rem 1rem;
+    }
+
+    .link-list .item1 {
+        font-size: 1rem;
+    }
+
+    .aboard {
+        font-size: 1.3rem;
+    }
+}
+
+/* Style adjustments for smaller screens */
+@media (max-width: 768px) {
+    .scholar {
+        padding: 1rem 0.5rem;
+        text-align: center;
+    }
+
+    .link-list .item1 {
+        font-size: 0.9rem;
+    }
+
+    .aboard {
+        font-size: 1.2rem;
+    }
 }
 
 
@@ -1164,6 +1235,15 @@ color: #ffffff;
     color:white;
 
   }
+
+.loading {
+    color: #007bff;
+    font-size: 16px;
+}
+
+.sent-message i {
+    margin-right: 5px; /* Spacing between the tick icon and text */
+}
 
   .fbicon{
     height: 40px;
@@ -2490,6 +2570,7 @@ transform: translateX(-50%);
     height: 143px;
     width: 27px;
     background-color: #088178;
+    z-index: 2;
     /* background-color: #2c3e50; */
 }
 
@@ -2775,3 +2856,4 @@ a:hover {
   transform: rotate(-35deg); /* Tilt the label */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
+
