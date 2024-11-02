@@ -25,7 +25,7 @@
                                     <img src="{{ asset($alumn->image) }}" alt="Image" class="alumni-custom img-fluid"> <!-- img-fluid class makes image responsive -->
                                 </div>
                                 <div class="text p-3">
-                                    <h2 class="text-white">{{ $alumn->name }}</h2>
+                                    <h3 class="text-white">{{ $alumn->name }}</h3>
                                     <p class="text-white">{{ $alumn->designation }}</p>
                                 </div>
                             </div>
