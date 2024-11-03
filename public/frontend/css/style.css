@@ -2959,3 +2959,29 @@ a:hover {
         font-size: 0.8rem;
     }
 }
+.custom-btn {
+    background: #37517E;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-btn:hover {
+    background: #088178;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    color: #fff 
+}
+
+.custom-btn:disabled {
+    background: #ccc;
+    box-shadow: none;
+    cursor: not-allowed;
+}

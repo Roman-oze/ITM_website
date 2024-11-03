@@ -207,7 +207,7 @@
         </section>
 
 
-    <div class="container-fluid mt-5 p-4">
+    <div class="container-fluid mt-5 p-4 ">
             <div class="section-title">
                 <h2><i class="fa-brands fa-elementor"></i> Department of ITM</h2>
             </div>

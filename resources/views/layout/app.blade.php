@@ -1,33 +1,28 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  @include('layout._head')
+    @include('layout._head')
 </head>
 
 <body>
-    {{-- <nav class="navbar navbar-expand-lg navbar-light  fixed-top facilty p-2 t-center"> --}}
-        @include('layout._nav')
+    <!-- Navbar -->
+    @include('layout._nav')
 
+    <!-- Header Section -->
+    <header>
+        @yield('headerpage')
+    </header>
 
-      <header>
-           @yield('headerpage')
-      </header>
+    <!-- Main Content -->
+  
+        @yield('content')
+ 
 
+    <!-- Footer -->
+    @include('layout._footer')
 
-     @yield('content')
-
-
-
-        @include('layout._footer')
-        {{-- @include('layout._footer', ['footers' => $footers]) --}}
-
-
-
-    <script src="{{asset('frontend/js/app.min.js')}}">
-        @include('layout._script')
-    </script>
-
-
+    <!-- JavaScript Files -->
+    <script src="{{ asset('frontend/js/app.min.js') }}"></script>
+    @include('layout._script')
 </body>
 </html>
-
-
