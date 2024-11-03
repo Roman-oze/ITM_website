@@ -27,6 +27,8 @@
         <div class=" text-left">
           <a href="{{ route('staff.create') }}" class="btn btn-dark text-white">Add Profile</a>
 
+          <a href="{{ url('/staff/author') }}" class="btn btn-dark text-white float-right">User TYpe or ROle</a>
+
         </div>
       </div>
 

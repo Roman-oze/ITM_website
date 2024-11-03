@@ -4,16 +4,39 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use App\Models\Staff;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+
 
 class StaffController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+
+        public function author(){
+
+        if(Auth::id()){
+            
+            $userType = Auth()->user()->role;
+
+            return "User Role is :".$userType;
+
+        }
+        }
+
+
+
+
+
+
+
+
     public function index()
     {
         $staffs = DB::table('staffs')->get();
