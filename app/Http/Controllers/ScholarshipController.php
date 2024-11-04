@@ -20,8 +20,8 @@ class ScholarshipController extends Controller
     public function index()
     {
         $menus = Menu::all();
-      $scholars = Scholarship::all();
-       return view('scholarship.index',compact('scholars','menus'));
+      $scholarship = Scholarship::paginate(8);
+       return view('scholarship.index',compact('scholarship','menus'));
     }
 
     /**

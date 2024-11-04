@@ -166,3 +166,59 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+function searchTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase().split(" "); // Split input by spaces for multiple terms
+    const table = document.querySelector('.table tbody');
+    const rows = table.getElementsByTagName('tr');
+
+    // Loop through all table rows
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let matchAllTerms = true;
+
+        // Check if each search term is found in any cell of the row
+        for (const term of filter) {
+            let termFound = false;
+            for (let j = 0; j < cells.length; j++) {
+                const cell = cells[j];
+                if (cell.textContent.toLowerCase().includes(term)) {
+                    termFound = true;
+                    break; // Term found, move to next term
+                }
+            }
+            // If a term isn't found in any cell, mark matchAllTerms as false and stop checking
+            if (!termFound) {
+                matchAllTerms = false;
+                break;
+            }
+        }
+
+        // Toggle row visibility based on whether all terms were matched
+        rows[i].style.display = matchAllTerms ? '' : 'none';
+    }
+}
+
+
+function searchTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.querySelector('.table tbody');
+    const rows = table.getElementsByTagName('tr');
+
+    // Loop through all rows, except the header
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let found = false;
+
+        // Check only the "Course Code" and "Course Name" columns
+        if (cells[0].textContent.toLowerCase().indexOf(filter) > -1 || cells[1].textContent.toLowerCase().indexOf(filter) > -1) {
+            found = true;
+        }
+
+        // Toggle the visibility of the row based on the search result
+        rows[i].style.display = found ? '' : 'none';
+    }
+}
+

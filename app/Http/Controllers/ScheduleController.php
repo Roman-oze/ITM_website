@@ -91,27 +91,26 @@ class ScheduleController extends Controller
 
 
 
-    public function  search(Request $request){
+    // public function  search(Request $request){
 
-        $search = $request->input('search');
+    //     $search = $request->input('search');
 
 
-        // $schedules = Schedule::with('course','teacher')->where('day', 'like', '%' . $search .'%')
-        // ->orWhere('name','like','%'.$search.'%')->orWhere('course_code','like','%'.$search.'%')
-        // ->orWhere('course_name','like','%'.$search.'%')->orWhere('day','like','%'.$search.'%')
-        // ->orWhere('start_time','like','%'.$search.'%')->orWhere('room_no','like','%'.$search.'%')->get();
+    //     $schedules = Schedule::where('course_code', 'like'.$search.'%')
+    //         ->orWhere('course_name', 'like','%' .$search.'%')
+    //         ->orWhere('name', 'like','%'.$search.'%')
+    //         ->orWhere('day', 'like','%' .$search.'%')
+    //         ->orWhere('start_time','like' ,'%'.$search.'%')
+    //         ->paginate(10);
 
-        $schedules = Schedule::where('course_code', 'like'.$search.'%')
-            ->orWhere('course_name', 'like','%' .$search.'%')
-            ->orWhere('name', 'like','%'.$search.'%')
-            ->orWhere('day', 'like','%' .$search.'%')
-            ->orWhere('start_time','like' ,'%'.$search.'%')
-            ->paginate(10);
+    //         dd(
 
-            dd(
+    //             $schedules
+    //         );
 
-                $schedules
-            );
+
+
+
 
         // return view('schedule.index',[ 'schedules' => $schedules,]);
         // echo"<pre>";
@@ -121,4 +120,4 @@ class ScheduleController extends Controller
     }
 
 
-}
+

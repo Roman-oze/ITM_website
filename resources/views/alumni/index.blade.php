@@ -3,7 +3,7 @@
 @section('main')
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Alumni</h1>
+        <h3 class="mt-4">Alumni</h3>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Alumni List</li>
@@ -15,35 +15,32 @@
 
         <div class="row">
             @foreach($alumns as $alumn)
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 col-sm-6 mb-4">
                     <div class="card alumni-card border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="alumni-img-container">
-                                <img src="{{ asset($alumn->image) }}" alt="Profile Image" class="alumni-img">
+                        <div class="card-body p-3">
+                            <div class="alumni-img-container text-center">
+                                <img src="{{ asset($alumn->image) }}" alt="Profile Image" class="alumni-img rounded-circle">
                             </div>
-                            <div class="text-center mt-3">
-                                <h5 class="card-title text-primary">{{ $alumn->name }}</h5>
-                                <p class="text-muted small">Batch: {{ $alumn->batch }} | Year: {{ $alumn->pass_year }}</p>
-                                <p class="text-muted small">ID: {{ $alumn->roll }}</p>
+                            <div class="text-center mt-2">
+                                <h6 class="card-title text-primary mb-1">{{ $alumn->name }}</h6>
+                                <p class="text-muted small mb-0">Batch: {{ $alumn->batch }} | Year: {{ $alumn->pass_year }}</p>
+                                <p class="text-muted small mb-1">ID: {{ $alumn->roll }}</p>
                             </div>
 
-                            <hr class="my-3">
-
-                            <p class="card-text text-center">
+                            <p class="card-text text-center mt-2 small">
                                 <strong>Organization:</strong> {{ $alumn->organization }}<br>
-                                <strong>Designation:</strong> {{ $alumn->designation }}<br>
+                                <strong>Designation:</strong> {{ $alumn->designation }}
                             </p>
 
-                            <div class="alumni-contact text-center">
-                                <span class="badge bg-light text-dark"><i class="fa-solid fa-phone"></i> {{ $alumn->phone }}</span><br>
-                                <span class="badge bg-light text-dark mt-1"><i class="fa-solid fa-envelope"></i> {{ $alumn->email }}</span>
+                            <div class="alumni-contact text-center mt-2">
+                                <span class="badge bg-light text-dark small"><i class="fa-solid fa-phone"></i> {{ $alumn->phone }}</span><br>
+                                <span class="badge bg-light text-dark small mt-1"><i class="fa-solid fa-envelope"></i> {{ $alumn->email }}</span>
                             </div>
 
-
-                            <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center mt-2">
                                 @can('edit')
                                     <div class="dropdown">
-                                        <button class="btn btn-outline-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
                                             Actions
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="actionMenu">
@@ -71,6 +68,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="d-flex justify-content-center mt-4">
+                {{ $alumns->links('pagination::bootstrap-4') }}
+            </div>
         </div>
     </div>
 </main>

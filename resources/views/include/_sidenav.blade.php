@@ -3,7 +3,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <!-- Sidebar Menu -->
-                {{-- @foreach ($menus->where('parent_id', null) as $menu)
+                @foreach ($menus->where('parent_id', null) as $menu)
                     @if ($menu->children->isEmpty())
                         <!-- Normal menu format -->
                         <a class="nav-link" href="{{ $menu->link }}">
@@ -31,17 +31,17 @@
                             </nav>
                         </div>
                     @endif
-                @endforeach --}}
+                @endforeach
 
-                @foreach ($menu_permissions as $permission)
+                {{-- @foreach ($menu_permissions as $permission)
                         <!-- Normal menu format -->
                         @if ($permission->menu->children->isEmpty())
                         <!-- Normal menu format -->
                         <a class="nav-link" href="{{ $permission->menu->link }}">
                             <div class="sb-nav-link-icon">
-                                <i class="{{ $permission->menu->icon }}"></i> 
+                                <i class="{{ $permission->menu->icon }}"></i>
                             </div>
-                            {{ $permission->menu->name }}  
+                            {{ $permission->menu->name }}
                         </a>
                     @else
                         <!-- Dropdown menu format -->
@@ -62,8 +62,8 @@
                             </nav>
                         </div>
                     @endif
-               
-                @endforeach
+
+                @endforeach --}}
 
 
             </div>

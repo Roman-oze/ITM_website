@@ -33,14 +33,17 @@ class CourseController extends Controller
 
     public function index()
     {
-        // $courses = Course::paginate(10);
+        $coursePage = Course::paginate(10);
 
         $courses = Course::orderBy('semester_id')
         ->orderBy('course_code')
         ->get()
         ->groupBy('semester_id'); // Group by semester_id
 
-        return view('course.index', compact('courses'));
+        return view('course.index', [
+            'coursePage' => $coursePage,
+            'courses' => $courses,
+        ]);
     }
 
     /**

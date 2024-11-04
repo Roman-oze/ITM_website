@@ -64,7 +64,6 @@ class UserController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' =>Hash::make($request->password),
-                'roles' => $request->roles,
                 ]);
 
         $user->roles()->sync($request->roles);

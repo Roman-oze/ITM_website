@@ -20,7 +20,8 @@ class AlumniController extends Controller
     }
     public function index(){
         $menus = Menu::all();
-        $alumns = Alumni::all();
+        $alumns = Alumni::paginate(8); // Adjust '10' to the number of records per page you want
+
         return view('alumni.index',compact('alumns','menus'));
     }
 

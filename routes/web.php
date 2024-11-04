@@ -163,7 +163,7 @@ Route::get('menu-permission/create',[MenuPermissionController::class,'create_per
     Route::get('/faculty/edit/{id}', 'edit')->name('edit.faculty');
     Route::put('/faculty/update/{id}', 'update')->name('update.faculty');
     Route::delete('/faculty/delete/{id}', 'destroy')->name('delete.faculty');
-    route::get('/faculty/searching','search')->name('faculty.search');
+    route::get('/faculty/search','search')->name('faculty.search');
     Route::get('/teacher','faculty')->name('faculty.member');
 });
 
@@ -206,7 +206,8 @@ route::resource('schedules',ScheduleController::class);
 Route::delete('/schedules/{schedule_id}', [ScheduleController::class, 'destroy'])->name('schedules.delete');
 // Route::get('/schedules/edit/{id}', [ScheduleController::class, 'edit'])->name('schedules.edit');
 // Route::get('/schedules/show/{id}', [ScheduleController::class, 'show'])->name('schedules.show');
-route::post('schedules/search',[ScheduleController::class,'search'])->name('schedule.search');
+route::get('schedules/search',[ScheduleController::class,'search'])->name('schedule.search');
+
 
 
 

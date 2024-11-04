@@ -24,175 +24,56 @@ class MailController extends Controller
         return view('emails.send-mail',compact('batches'));
 
     }
-    public function send()
-    {
-        // $emails = Student::pluck('email')->toArray();
-        // $emails = $batch->students->pluck('email')->toArray();
-        $batches = Batch::with('students')->get();
-
-
-
-        dd(
-            // $emails
-            $batches
-        );
-  
-    }
 
 
     public function store(Request $request)
-    {
-        
-        $messageContent = $request->input('message');
-        $emails = [];
-    
-        if ($request->has('batch_id')) {
-            // Send email to students in the selected batch
-            $batch = Batch::find($request->batch_id);
-            $emails = $batch->students->pluck('email')->toArray();
-        } elseif ($request->has('manual_emails')) {
-            // Send email to manually inputted addresses
-            $emails = explode(',', $request->input('manual_emails'));
-        }
-    
-        foreach ($emails as $email) {
-            Mail::to($email)->send(new AdminSendMail($messageContent));
-        }
-    
-        // $messageContent = $request->input('message');
-        // $emails = [];
-    
-        // if ($request->has('batch_id')) {
-        //     // Send email to students in the selected batch
-        //     $batch = Batch::find($request->batch_id);
-        //     $emails = $batch->students->pluck('email')->toArray();
-        // } 
-        // elseif ($request->has('email')) {
-        //     // Send email to manually inputted addresses
-        //     $emails = explode(',', $request->input('email'));
-        // }
-    
-        // foreach ($emails as $email) {
-        //     Mail::to($email)->send(new AdminSendMail($messageContent));
-        // }
-        // $student_emails = Student::where('batch_id', $request)->get();
-        
-        // if($students->isEmpty()) {
-            //     return '<p>No students found for this batch.</p>';
-            // }
-            
-            // $output = '<ul>';
-            // foreach ($students as $student) {
-                //     $output .= '<li>' . $student->email . '</li>';
-                // }
-                // $output .= '</ul>';
-                
-                // return $output;
-                
-                
-        //         $request->validate([
-        //             'emails' => 'required',
-        //             'message' => 'required',
-        //             'attachment' => 'nullable|mimes:pdf,doc,docx|max:10240',
-        //         ]);
+{
+    // Validate inputs
+    $request->validate([
+        'message' => 'required',
+        'attachment' => 'nullable|mimes:pdf,doc,docx|max:10240',
+    ]);
 
-        // $emails = array_map('trim', explode(',', $request->emails)); // Trim email addresses
-        // $messageContent = $request->message;
+    $emails = [];
+    $messageContent = $request->input('message');
+    $attachmentPath = null;
 
-        // // Store the attachment if it exists
-        // $attachmentPath = null;
-        // if ($request->hasFile('attachment')) {
-        //     $attachmentPath = $request->file('attachment')->store('attachments'); // Store in storage/app/attachments
-        // }
-
-        // // Dispatch the job for each email address
-        // foreach ($emails as $email) {
-        //     SendEmailJob::dispatch($email, $messageContent, $attachmentPath);
-        // }
-
-
-        return back()->with('success', 'Emails sent successfully!');
+    // Handle attachment if provided
+    if ($request->hasFile('attachment')) {
+        $attachmentPath = $request->file('attachment')->store('attachments'); // Store in storage/app/attachments
     }
 
+    // Check if batch-wise email is requested
+    if ($request->has('batch_id') && $request->batch_id) {
+        $batch = Batch::find($request->batch_id);
+        if ($batch && $batch->students) {
+            $emails = $batch->students->pluck('email')->toArray();
+        }
+    }
+    // Check if manual emails are provided
+    elseif ($request->has('emails')) {
+        $emails = array_map('trim', explode(',', $request->input('emails')));
+    }
+
+    // Check if there are emails to send to
+    if (empty($emails)) {
+        return back()->with('error', 'No emails found for sending.');
+    }
+
+    // Send emails with or without attachment based on each scenario
+    foreach ($emails as $email) {
+        // Dispatch job based on whether attachment exists
+        if ($attachmentPath) {
+            SendEmailJob::dispatch($email, $messageContent, $attachmentPath);
+        } else {
+            SendEmailJob::dispatch($email, $messageContent, null);
+        }
+    }
+
+    return back()->with('success', 'Emails sent successfully!');
+}
 
 
-// public function store( Request $request)
-// {
-
-//        $valiadtionData =  $request->validate([
-//             'name' =>' required | string | max:255',
-//             'email' => 'required|email | unique :users|max:255',
-//         ]);
-
-//         DB::table('users')->insert($request->except(keys: '_token'));
-
-
-
-//         Mail::to($request->email)->send(new RegistrationSuccessMail($request));
-
-//         Mail::to(users: 'admin@gmail.com')->send(new UserReport());
-
-//         return redirect()->back()->with('success', 'R sent successfully');
-
-
-
-// }
-    // public function sendMail(Request $request)
-    // {
-    //     // Validate form data
-    //     $validated = $request->validate([
-    //         'emails' => 'required|string',
-    //         'subject' => 'required|string',
-    //         'message' => 'required|string',
-    //         'attachment' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
-    //     ]);
-
-    //     // Email details
-    //     $details = [
-    //         'subject' => $request->subject,
-    //         'message' => $request->message
-    //     ];
-
-    //     // Process file upload if it exists
-    //     $attachmentPath = null;
-    //     if ($request->hasFile('attachment')) {
-    //         $attachmentPath = $request->file('attachment')->store('attachments');
-    //     }
-
-    //     // Send emails
-    //     $emails = explode(',', $request->emails);
-    //     foreach ($emails as $email) {
-    //         $email = trim($email); // Trim whitespace
-    //         // Optional: Validate email format
-    //         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    //             try {
-    //                 Mail::to($email)->send(new UserNotificationMail($details, $attachmentPath));
-    //             } catch (\Exception $e) {
-    //                 // Optionally handle the error for each email
-    //                 return redirect()->back()->with('error', 'Error sending email to: ' . $email);
-    //             }
-    //         } else {
-    //             return redirect()->back()->with('error', 'Invalid email address: ' . $email);
-    //         }
-    //     }
-
-    //     return redirect()->back()->with('success', 'Emails sent successfully!');
-    // }
-// public function sendMail(){
-//     try{
-
-//         $emails = "rumuislam303@gmail.com";
-//         // $subject = "Semester Routine";
-//         $message = "Hello, dear student this is your class routine";
-
-//         $response = Mail::to($emails)->send(new SendMail ($message));
-
-//         dd($response);
-//     }
-//     catch (Exception $e){
-//         return redirect()->back()->with('error', 'Error sending email');
-//     }
-// }
 
 
 }
