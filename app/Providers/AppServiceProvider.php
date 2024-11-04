@@ -30,7 +30,9 @@ class AppServiceProvider extends ServiceProvider
     {
         // Share $menus with all views that include '_sidenav'
         View::composer('include._sidenav', function ($view) {
-            $view->with('menus', Menu::all());
+            // $view->with('menus', Menu::all());
+                        // $view->with('menu_permissions', Menu::all());
+
         });
 
         // Share $footers with all views that include '_footer'

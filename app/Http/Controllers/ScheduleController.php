@@ -108,8 +108,12 @@ class ScheduleController extends Controller
             ->orWhere('start_time','like' ,'%'.$search.'%')
             ->paginate(10);
 
+            dd(
 
-        return view('schedule.index',[ 'schedules' => $schedules,]);
+                $schedules
+            );
+
+        // return view('schedule.index',[ 'schedules' => $schedules,]);
         // echo"<pre>";
         // print_r($schedules);
 

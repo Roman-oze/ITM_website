@@ -14,10 +14,12 @@ class Batch extends Model
 
     protected $fillable = ['batch_name'];
 
+ 
     public function students()
-    {
-        return $this->hasMany(Student::class);
-    }
+{
+    return $this->hasMany(Student::class, 'batch_id'); // 'batch_id' is the foreign key in the students table
+}
+
 
 
 }

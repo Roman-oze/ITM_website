@@ -8,6 +8,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Models\Role;
 
 class User extends Authenticatable
 {
@@ -49,4 +50,11 @@ class User extends Authenticatable
         return $this->hasMany(Schedule::class,'user_id','user_id');
         
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+   
 }

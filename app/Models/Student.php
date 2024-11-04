@@ -8,15 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use HasFactory;
-    protected $PrimaryKey=['id'];
 
     protected $table='students';
 
     protected $fillable = ['name','roll','email','batch_id','blood', 'address', 'mobile','type'];
 
-    public function batch()
+ 
+
+        public function batch()
     {
-        return $this->belongsTo(Batch::class, 'batch_id');
+        return $this->belongsTo(Batch::class, 'batch_id'); // Specify 'batch_id' as the foreign key
     }
+
 
 }

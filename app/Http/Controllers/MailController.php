@@ -24,43 +24,91 @@ class MailController extends Controller
         return view('emails.send-mail',compact('batches'));
 
     }
+    public function send()
+    {
+        // $emails = Student::pluck('email')->toArray();
+        // $emails = $batch->students->pluck('email')->toArray();
+        $batches = Batch::with('students')->get();
+
+
+
+        dd(
+            // $emails
+            $batches
+        );
+  
+    }
 
 
     public function store(Request $request)
     {
-        $request->validate([
-            'emails' => 'required',
-            'message' => 'required',
-            'attachment' => 'nullable|mimes:pdf,doc,docx|max:10240',
-        ]);
-
-        // $students = Student::where('batch_id', $request)->get();
-
-        // if($students->isEmpty()) {
-        //     return '<p>No students found for this batch.</p>';
-        // }
-
-        // $output = '<ul>';
-        // foreach ($students as $student) {
-        //     $output .= '<li>' . $student->email . '</li>';
-        // }
-        // $output .= '</ul>';
-
-        // return $output;
-
-        $emails = array_map('trim', explode(',', $request->emails)); // Trim email addresses
-        $messageContent = $request->message;
-
-        // Store the attachment if it exists
-        $attachmentPath = null;
-        if ($request->hasFile('attachment')) {
-            $attachmentPath = $request->file('attachment')->store('attachments'); // Store in storage/app/attachments
+        
+        $messageContent = $request->input('message');
+        $emails = [];
+    
+        if ($request->has('batch_id')) {
+            // Send email to students in the selected batch
+            $batch = Batch::find($request->batch_id);
+            $emails = $batch->students->pluck('email')->toArray();
+        } elseif ($request->has('manual_emails')) {
+            // Send email to manually inputted addresses
+            $emails = explode(',', $request->input('manual_emails'));
         }
-
-        // Dispatch the job for each email address
+    
         foreach ($emails as $email) {
-            SendEmailJob::dispatch($email, $messageContent, $attachmentPath);
+            Mail::to($email)->send(new AdminSendMail($messageContent));
         }
+    
+        // $messageContent = $request->input('message');
+        // $emails = [];
+    
+        // if ($request->has('batch_id')) {
+        //     // Send email to students in the selected batch
+        //     $batch = Batch::find($request->batch_id);
+        //     $emails = $batch->students->pluck('email')->toArray();
+        // } 
+        // elseif ($request->has('email')) {
+        //     // Send email to manually inputted addresses
+        //     $emails = explode(',', $request->input('email'));
+        // }
+    
+        // foreach ($emails as $email) {
+        //     Mail::to($email)->send(new AdminSendMail($messageContent));
+        // }
+        // $student_emails = Student::where('batch_id', $request)->get();
+        
+        // if($students->isEmpty()) {
+            //     return '<p>No students found for this batch.</p>';
+            // }
+            
+            // $output = '<ul>';
+            // foreach ($students as $student) {
+                //     $output .= '<li>' . $student->email . '</li>';
+                // }
+                // $output .= '</ul>';
+                
+                // return $output;
+                
+                
+        //         $request->validate([
+        //             'emails' => 'required',
+        //             'message' => 'required',
+        //             'attachment' => 'nullable|mimes:pdf,doc,docx|max:10240',
+        //         ]);
+
+        // $emails = array_map('trim', explode(',', $request->emails)); // Trim email addresses
+        // $messageContent = $request->message;
+
+        // // Store the attachment if it exists
+        // $attachmentPath = null;
+        // if ($request->hasFile('attachment')) {
+        //     $attachmentPath = $request->file('attachment')->store('attachments'); // Store in storage/app/attachments
+        // }
+
+        // // Dispatch the job for each email address
+        // foreach ($emails as $email) {
+        //     SendEmailJob::dispatch($email, $messageContent, $attachmentPath);
+        // }
 
 
         return back()->with('success', 'Emails sent successfully!');
@@ -145,4 +193,6 @@ class MailController extends Controller
 //         return redirect()->back()->with('error', 'Error sending email');
 //     }
 // }
+
+
 }
