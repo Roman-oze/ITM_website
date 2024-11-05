@@ -335,10 +335,10 @@
             <div class="col-md-8 col-12 text-center mb-3">
                 <img src="{{ asset('frontend/image/student2.png') }}" class="img-fluid scholarpic animate__animated animate__fadeInLeft" alt="Student">
             </div>
-            
+
             <div class="col-md-4 text-center p-4 scholar">
                 <h4 class="aboard animate__animated animate__fadeInRight mt-1">Facilities List</h4><br>
-            
+
                 <div class="link-list">
                     <a href="https://daffodilvarsity.edu.bd/scholarship" class="item1 d-block p-2 text-transition">
                         <i class="fa-regular fa-circle-check"></i> Scholarship
@@ -352,7 +352,7 @@
                     <a target="_blank" href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" class="bn5">Apply</a>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </section>
@@ -505,7 +505,7 @@
     </div>
 </section>
 
-<section id="cta" class="cta">
+<section id="cta" class="cta shadow border-0 ">
     <div class="container aos-init aos-animate" data-aos="zoom-in">
       <div class="row">
         <div class="col-lg-9 text-center text-lg-start">
@@ -533,7 +533,7 @@
         </div>
 
         <div class="row">
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init " data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box">
                     <div class="icon"><i class="fa-solid fa-book-open-reader"></i></div>
                     <h4><a href="#">Leadership</a></h4>
@@ -654,7 +654,7 @@
                     <p>Technical tools and techniques that I use on a daily basis.</p>
                 </div>
             </div>
-            
+
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
                 <div class="icon-box">
                     <div class="icon"><i class="fa-solid fa-business-time"></i></div>
@@ -669,111 +669,6 @@
 <br><br><br><br><br>
 
 
-
-
-            {{-- <form action="{{ route('notifications.store') }}" method="POST" class="php-email-form">
-
-                @csrf
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="name">Your Name</label>
-                        <input type="text" name="name" class="form-control" id="name" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="email">Your Email</label>
-                        <input type="email" class="form-control" name="email" id="email" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" class="form-control" name="subject" id="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" name="message" rows="10" required></textarea>
-                </div>
-
-                <div class="text-center">
-                    <button type="submit"><i class="fa-regular fa-paper-plane fa-lg plane text-white"></i> Send Message</button>
-                  </div>
-            </form> --}}
-
-            {{-- <div class="container aos-init aos-animate" data-aos="fade-up">
-                <div class="section-title text-center">
-                    <h2>Contact</h2>
-                    <p>
-                        Ready to take your financial management to the next level? Contact us today for personalized consultation and discover how our expertise can empower your business growth. Let's navigate your financial journey together towards success.
-                    </p>
-                </div>
-            
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 d-flex align-items-stretch">
-                        <div class="info">
-                            <div class="address">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                                <h4>Location:</h4>
-                                <p>AB4-Building-Khagan, Ashulia, Dhaka</p>
-                            </div>
-                            <div class="email">
-                                <i class="fa-regular fa-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>itmoffice@daffodilvarsity.edu.bd</p>
-                            </div>
-                            <div class="phone">
-                                <i class="fa-solid fa-phone"></i>
-                                <h4>Call:</h4>
-                                <p>01847140039</p>
-                            </div>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29187.16159450864!2d90.320302!3d23.875601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23dd12bbc75%3A0x313d214552eabe56!2sDaffodil%20Smart%20City!5e0!3m2!1sen!2sbd!4v1702204472544!5m2!1sen!2sbd" style="border: 0; width: 100%; height: 290px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-            
-                    <div class="col-lg-6 col-md-12 d-flex align-items-stretch">
-                        <div class="info">
-                            <form action="{{ route('notifications.store') }}" method="post">
-                                @csrf
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for="name">Your Name</label>
-                                        <input type="text" name="name" class="form-control" id="name" required="">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="name">Your Email</label>
-                                        <input type="email" class="form-control" name="email" id="email" required="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="subject">Subject</label>
-                                    <input type="text" class="form-control" name="subject" id="subject" required="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea class="form-control" name="message" rows="6" required=""></textarea>
-                                </div>
-                                <div class="my-3">
-                                    @if (session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                    </div>
-                                    @endif
-                                    @if (session('error'))
-                                    <div class="alert alert-danger">
-                                        {{ session('error') }}
-                                    </div>
-                                    @endif
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-dark">
-                                        <i class="fa-regular fa-paper-plane fa-lg plane text-white"></i> Send Message
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             --}}
-
              <section id="contact" class="contact">
                 <div class="container aos-init aos-animate" data-aos="fade-up">
                   <div class="section-title">
@@ -785,7 +680,7 @@
                       financial journey together towards success.
                     </p>
                   </div>
-            
+
                   <div class="row">
                     <div class="col-lg-5 d-flex align-items-stretch">
                       <div class="info">
@@ -796,14 +691,14 @@
                             AB4-Building-Khagan,Ashulia,Dhaka
                           </p>
                         </div>
-            
+
                         <div class="email">
                           <i class="fa-regular fa-envelope"></i>
                           <h4>Email:</h4>
                           <p>
                             itmoffice@daffodilvarsity.edu.bd</p>
                         </div>
-            
+
                         <div class="phone">
                             <i class="fa-solid fa-phone"></i>
                           <h4>Call:</h4>
@@ -812,19 +707,19 @@
                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29187.16159450864!2d90.320302!3d23.875601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23dd12bbc75%3A0x313d214552eabe56!2sDaffodil%20Smart%20City!5e0!3m2!1sen!2sbd!4v1702204472544!5m2!1sen!2sbd" style="border: 0; width: 100%; height: 290px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                       </div>
                     </div>
-            
+
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
 
                         @if (session('success')){
                             <div class="alert alert-success">
                                 {{session('success')}}
-                            </div>    
+                            </div>
                              }
                         @endif
                         @if (session('error')){
                             <div class="alert alert-success">
                                 {{session('error')}}
-                            </div>    
+                            </div>
                              }
                         @endif
 
@@ -859,8 +754,8 @@
                                 </button>
                             </div>
                         </form>
-                        
-            
+
+
                     </div>
                   </div>
                 </div>

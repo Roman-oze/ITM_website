@@ -4,16 +4,16 @@
 
 <main>
     <div class="container mt-5">
-        <h2 class="mt-5 text-center text-primary">Schedules Management</h2>
+        <h3 class=" text-primary mb-4">Schedules Management</h3>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Schedules List</li>
         </ol>
 
-        <div class="m-3 d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <a href="{{ route('schedules.create') }}" class="btn btn-dark mb-3 mb-md-0"><i class="fas fa-plus-circle"></i> Add Schedule</a>
-            <form action="" method="GET" class="d-flex" style="width: 100%; max-width: 400px;">
-                <input class="form-control me-2" id="searchInput" type="text" name="search" placeholder="Search by course code, name, room no, or day..." onkeyup="searchTable()" aria-label="Search">
+        <div class="d-flex justify-content-between mb-3">
+            <a href="{{ route('schedules.create') }}" class="btn btn-dark rounded-pill shadow"><i class="fas fa-plus-circle"></i> Add Schedule</a>
+            <form action="" method="GET" class="d-flex" style="max-width: 500px; width: 100%;">
+                <input class="form-control me-2  rounded-pill shadow border-0 animated-card " id="searchInput" type="text" name="search" placeholder="Search by don't be space after Text..." onkeyup="searchTable()" aria-label="Search">
             </form>
         </div>
 
@@ -36,7 +36,7 @@
         @endif
 
         <div class="table-responsive">
-            <table class="table table-hover table-striped table-bordered rounded shadow-sm">
+            <table class="table table-hover table-striped table-bordered shadow-sm">
                 <thead class="thead-light">
                     <tr>
                         <th>Course Code</th>
@@ -45,7 +45,6 @@
                         <th>Room No</th>
                         <th>Day</th>
                         <th>Start Time</th>
-                        <th>End Time</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -58,7 +57,6 @@
                             <td>{{ $schedule->room_no }}</td>
                             <td>{{ $schedule->day }}</td>
                             <td>{{ $schedule->start_time }}</td>
-                            <td>{{ $schedule->end_time }}</td>
                             <td class="d-flex">
                                 <a href="{{ route('schedules.show', $schedule->schedule_id) }}" class="btn btn-info btn-sm me-1">Show</a>
                                 <a href="{{ route('schedules.edit', $schedule->schedule_id) }}" class="btn btn-warning btn-sm me-1">Edit</a>
@@ -76,37 +74,36 @@
             </table>
         </div>
 
-        <div class="d-flex justify-content-center mt-4">
             {{ $schedules->links('pagination::bootstrap-4') }}
-        </div>
     </div>
-
-    <script>
-        function searchTable() {
-            const input = document.getElementById('searchInput');
-            const filter = input.value.toLowerCase();
-            const table = document.querySelector('.table tbody');
-            const rows = table.getElementsByTagName('tr');
-
-            for (let i = 0; i < rows.length; i++) {
-                const cells = rows[i].getElementsByTagName('td');
-                let found = false;
-
-                // Check relevant columns for matching text
-                for (let j = 0; j < cells.length; j++) {
-                    const cell = cells[j];
-                    // Search in specific columns: course code, course name, faculty name, room number, and day
-                    if (j === 0 || j === 1 || j === 2 || j === 3 || j === 4) {
-                        if (cell.textContent.toLowerCase().indexOf(filter) > -1) {
-                            found = true;
-                            break;
-                        }
-                    }
-                }
-                rows[i].style.display = found ? '' : 'none'; // Show or hide row based on match
-            }
-        }
-    </script>
 </main>
+
+<script>
+    function searchTable() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const table = document.querySelector('table tbody');
+        const rows = table.querySelectorAll('tr');
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            const courseCode = cells[0].textContent.toLowerCase(); // course_code
+            const courseName = cells[1].textContent.toLowerCase(); // course_name
+            const facultyName = cells[2].textContent.toLowerCase(); // name
+            const roomNo = cells[3].textContent.toLowerCase(); // room_no
+            const day = cells[4].textContent.toLowerCase(); // day
+
+            // Check if input matches any of the relevant fields
+            if (courseCode.includes(input) ||
+                courseName.includes(input) ||
+                facultyName.includes(input) ||
+                roomNo.includes(input) ||
+                day.includes(input)) {
+                row.style.display = ''; // Show row
+            } else {
+                row.style.display = 'none'; // Hide row
+            }
+        });
+    }
+</script>
 
 @endsection

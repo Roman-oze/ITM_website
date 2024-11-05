@@ -201,24 +201,51 @@ function searchTable() {
 }
 
 
+// function searchTable() {
+//     const input = document.getElementById('searchInput');
+//     const filter = input.value.toLowerCase();
+//     const table = document.querySelector('.table tbody');
+//     const rows = table.getElementsByTagName('tr');
+
+//     // Loop through all rows, except the header
+//     for (let i = 0; i < rows.length; i++) {
+//         const cells = rows[i].getElementsByTagName('td');
+//         let found = false;
+
+//         // Check only the "Course Code" and "Course Name" columns
+//         if (cells[0].textContent.toLowerCase().indexOf(filter) > -1 || cells[1].textContent.toLowerCase().indexOf(filter) > -1) {
+//             found = true;
+//         }
+
+//         // Toggle the visibility of the row based on the search result
+//         rows[i].style.display = found ? '' : 'none';
+//     }
+// }
+
 function searchTable() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.querySelector('.table tbody');
-    const rows = table.getElementsByTagName('tr');
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const table = document.querySelector('table tbody');
+    const rows = table.querySelectorAll('tr');
 
-    // Loop through all rows, except the header
-    for (let i = 0; i < rows.length; i++) {
-        const cells = rows[i].getElementsByTagName('td');
-        let found = false;
+    rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        // Column indices based on your provided column names
+        const courseCode = cells[0].textContent.toLowerCase(); // course_code
+        const courseName = cells[1].textContent.toLowerCase(); // course_name
+        const facultyName = cells[2].textContent.toLowerCase(); // name
+        const roomNo = cells[3].textContent.toLowerCase(); // room_no
+        const day = cells[4].textContent.toLowerCase(); // day
 
-        // Check only the "Course Code" and "Course Name" columns
-        if (cells[0].textContent.toLowerCase().indexOf(filter) > -1 || cells[1].textContent.toLowerCase().indexOf(filter) > -1) {
-            found = true;
+        // Check if input matches any of the relevant fields
+        if (courseCode.includes(input) ||
+            courseName.includes(input) ||
+            facultyName.includes(input) ||
+            roomNo.includes(input) ||
+            day.includes(input)) {
+            row.style.display = ''; // Show row
+        } else {
+            row.style.display = 'none'; // Hide row
         }
-
-        // Toggle the visibility of the row based on the search result
-        rows[i].style.display = found ? '' : 'none';
-    }
+    });
 }
 
