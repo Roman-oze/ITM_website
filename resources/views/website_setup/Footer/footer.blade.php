@@ -4,68 +4,60 @@
 <main>
     <div class="container mt-5">
 
-        <h1 class="mt-4">Footer </h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Footer</li>
         </ol>
 
-        <h3 class="mt-1 p-3">
-            <a href="{{ route('footer.create')}}" class="btn btn-outline-dark">Create</a>
-        </h3>
+        <div class="text-left mb-3">
+            <a href="{{ route('footer.create') }}" class="btn btn-dark"><i class="fas fa-plus-circle"></i> Create New Footer</a>
+        </div>
 
-
-
-        <div class="row">
+        <div class="row mb-3">
             @foreach($footers as $institute)
             <div class="col-md-4 mb-4">
-                <div class="card">
-                    {{-- @if($institute->footer_logo)
-                        <img src="{{ asset($institute->footer_logo) }}" class="card-img-top" alt="Institute Logo">
-                    @endif --}}
-
-
-                        <label for="image" class="form-label">Image</label>
+                <div class="card shadow border-0 rounded">
+                    <div class="position-relative">
                         @if ($institute->footer_logo)
-                            <div>
-                                <img src="{{ asset($institute->footer_logo) }}" class="card-img-top" alt="Institute Logo">
+                            <img src="{{ asset($institute->footer_logo) }}" class="card-img-top" alt="Institute Logo" style="height: 200px; object-fit: cover;">
+                        @else
+                            <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px; background-color: #f8f9fa;">
+                                <span class="text-muted">No Image Available</span>
                             </div>
                         @endif
-
-
-
-
-
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ $institute->address }}</h5>
-                        <p class="card-text">Phone: {{ $institute->phone }}</p>
-                        <p class="card-text">Email: {{ $institute->email }}</p>
+                        <p class="card-text">Phone: <strong>{{ $institute->phone }}</strong></p>
+                        <p class="card-text">Email: <strong>{{ $institute->email }}</strong></p>
 
-                        <a href="{{ $institute->tuition_fees }}" class="btn btn-outline-success" download>Tuition Fees</a>
-                        <a href="{{ $institute->course_download }}" class="btn btn-outline-dark" download>Download Course</a>
-
-                        <div class="mt-3">
-                            <a href="{{ $institute->facebook }}" target="_blank" class="me-2">
-                                <i class="fab fa-facebook-f "></i>
-                            </a>
-                            <a href="{{ $institute->instagram }}" target="_blank" class="me-2">
-                                <i class="fab fa-instagram "></i>
-                            </a>
-                            <a href="{{ $institute->linkedin }}" target="_blank" class="me-2">
-                                <i class="fab fa-linkedin-in "></i>
-                            </a>
-                            <br>
-
-                            <div class="d-flex justify-content-evenly">
-                                <a href="{{route('footer.edit',$institute->id)}}" class="btn btn-outline-info">Edit</a>
-                                <form action="{{route('footer.destroy',$institute->id)}}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                                </form>
-                            </div>
+                        <div class="mb-3">
+                            <a href="{{ $institute->tuition_fees }}" class="btn btn-success btn-sm" download>Download Tuition Fees</a>
+                            <a href="{{ $institute->course_download }}" class="btn btn-secondary btn-sm" download>Download Course</a>
                         </div>
 
+                        <div class="d-flex justify-content-center mb-3">
+                            <a href="{{ $institute->facebook }}" target="_blank" class="me-2 text-primary">
+                                <i class="fab fa-facebook-f fa-lg"></i>
+                            </a>
+                            <a href="{{ $institute->instagram }}" target="_blank" class="me-2 text-danger">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                            <a href="{{ $institute->linkedin }}" target="_blank" class="text-info">
+                                <i class="fab fa-linkedin-in fa-lg"></i>
+                            </a>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ route('footer.edit', $institute->id) }}" class="btn btn-outline-info">Edit</a>
+                            @can('manage-user')
+                            <form action="{{ route('footer.destroy', $institute->id) }}" method="POST" enctype="multipart/form-data" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                            </form>
+                            @endcan
+                        </div>
                     </div>
                 </div>
             </div>

@@ -44,8 +44,10 @@
                     </div>
                     <div class="mt-1 p-1 d-flex justify-content-evenly" >
 
+
                         <a href="{{route('services.edit',$service->id)}}" class="btn btn-outline-info">Edit</a>
 
+                        @can('manage-user')
                         <form action="{{ route('services.destroy', $service->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this item?');" class="mt-3">
                             @csrf
                             @method('DELETE')
@@ -54,6 +56,7 @@
                             </button> --}}
                             <button type="submit"  class=" btn btn-outline-danger p-3 " onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-black  fa-lg "></i></button>
 
+                            @endcan
                         </form>
                     </div>
                 </div>

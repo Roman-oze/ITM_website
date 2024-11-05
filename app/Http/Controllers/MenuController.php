@@ -28,62 +28,23 @@ class MenuController extends Controller
 
     public function index()
 {
-    // $user = auth()->user();
-    // $menus = Menu::whereNull('parent_id')->get();
-    // $userMenus = Menu::where('user_id', $user->id)->get();
-    // $permissions = MenuPermission::where('user_id', $user->id)->get();
-    // return view('setup-menu.menus.index', compact('menus', 'userMenus', 'permissions
-    // '));
+    $user = Auth::user();
+    $roleId = $user->role_id;
 
-
-    $userRoleId = Auth::user()->role_id;
-
-    // Query the menus with role-based permissions
-    $menus = Menu::with(['children', 'permissions' => function ($query) use ($userRoleId) {
-        $query->where('role_id', $userRoleId);
+    // Fetch menus with permissions based on user role
+    $menus = Menu::with(['permissions' => function ($query) use ($roleId) {
+        $query->where('role_id', $roleId);
     }])
-    ->whereNull('parent_id')  // Get only parent menus initially
-    ->orderBy('id')           // Order by the desired field
+    ->whereNull('parent_id') // Only top-level menus
+    ->orderBy('order')
     ->get();
-    return view('setup-menu.menus.index', compact('menus'));
 
 
-    // Fetch menus with their permissions
-    // $menus = Menu::with('permissions') // Eager load permissions if you have defined a relationship
-    //     ->get()
-    //     ->filter(function ($menu) use ($user) {
-    //         // Check if the user has permissions for the menu
-    //         $permission = MenuPermission::where('role', $user->role)
-    //             ->where('menu_id', $menu->id)
-    //             ->whereNotIn('name','Notification')
-    //             ->first();
+    return view('setup-menu.menus.index',[
+        'menus' => $menus,
 
-    //         // Include menu if the user has view permission or is a super-admin
-    //         return $user->role === 'super-admin' || ($permission && $permission->view);
-    //     })
-    //     ->groupBy('parent_id'); // Group menus by parent_id
-
-    // return view('setup-menu.index', compact('menus'));
-
-
+    ]);
 }
-
-    // public function index()
-    // {
-    //     $user = auth()->user();
-    //     $menus = Menu::all()->filter(function ($menu) use ($user) {
-    //         $permission = MenuPermission::where('role', $user->role)
-    //             ->where('menu_id', $menu->id)
-    //             ->first();
-
-    //         // Only include menu if the user has view permission or is a super-admin
-    //         return $permission && ($permission->view || $user->role == 'super-admin');
-    //     });
-
-    //     return view('setup-menu.index', compact('menus'));
-
-
-    // }
 
 
     // Store the new menu item (admin and super-admin only)
@@ -110,61 +71,54 @@ class MenuController extends Controller
 
     }
 
-    // Show form to edit an existing menu item (admin and super-admin only)
+
+
     public function edit($id)
     {
-        return view('menus.edit', compact('menu'));
+        $menu = Menu::findOrFail($id); // Find the menu by ID
+        $menus = Menu::whereNull('parent_id')->get(); // Get top-level menus for the parent dropdown
+
+        return view('setup-menu.menus.edit', compact('menu', 'menus'));
     }
 
-    // Update the menu item (admin and super-admin only)
     public function update(Request $request, $id)
     {
-        // $this->authorizeAction('can_edit');
-        // $request->validate([
-        //     'name' => 'required|string',
-        //    'link' => 'required|string',
-        // ]);
-
-        // $menu = Menu::findOrFail($id);
-        // $menu->update($request->only(['name', 'link']));
-        // return redirect()->route('menus.index')->with('success', 'Menu item updated successfully.');
-        $menuPermission = MenuPermission::findOrFail($id);
-
         $request->validate([
-            'can_create' => 'boolean',
-            'can_edit' => 'boolean',
-            'can_delete' => 'boolean',
+            'name' => 'required|string|max:255',
+            'icon' => 'nullable|string|max:255',
+            'link' => 'nullable|string|max:255',
+            'parent_id' => 'nullable|exists:menus,id',
+            'order' => 'nullable|integer',
         ]);
 
-        $menuPermission->update($request->all());
+        // Find the menu by ID and update it
+        $menu = Menu::findOrFail($id);
+        $menu->name = $request->input('name');
+        $menu->icon = $request->input('icon');
+        $menu->link = $request->input('link');
+        $menu->parent_id = $request->input('parent_id');
+        $menu->order = $request->input('order');
+        $menu->save();
 
-        return redirect()->back()->with('success', 'Menu permission updated successfully.');
+        return redirect()->back()->with('success', 'Menu updated successfully!');
     }
 
-    // Delete the menu item (super-admin only)
-    public function destroy($id)
-    {
-        // $this->authorizeAction('can_delete');
-        // $menu = Menu::findOrFail($id);
-        // $menu->delete();
-        // return redirect()->route('menus.index')->with('success', 'Menu item deleted successfully.');
 
-        $menuPermission = MenuPermission::findOrFail($id);
-    $menuPermission->delete();
 
-    return redirect()->back()->with('success', 'Menu permission deleted successfully.');
-    }
+            // Delete the menu item (super-admin only)
+            public function destroy($id)
+        {
+            // Find and delete the menu
+            $menu = Menu::findOrFail($id);
 
-    // Helper function to check action permissions
-    private function authorizeAction($permission)
-    {
-        $role = Auth::user()->role;
-        $menuPermission = MenuPermission::where('role', $role)
-            ->where('menu_id', request()->route('id'))
-            ->first();
+            // Check if menu has children and prevent deletion if it does
+            if ($menu->children()->count() > 0) {
+                return redirect()->back()->with('error', 'Cannot delete a menu with submenus.');
+            }
 
-        if (!$menuPermission || !$menuPermission->$permission) {
-            abort(403, 'Unauthorized action.');
+            $menu->delete();
+
+            return redirect()->back()->with('success', 'Menu deleted successfully!');
         }
-    }
+
 }

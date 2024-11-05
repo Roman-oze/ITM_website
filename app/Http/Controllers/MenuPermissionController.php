@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\MenuPermission;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Validtor;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth; // This is correct
 
 // use Spatie\Permission\Models\Permission;
@@ -27,7 +28,7 @@ class MenuPermissionController extends Controller
         {
 
             $permissions = MenuPermission::with('menu', 'role')->get();
-            return view('setup-menu.index', compact('permissions'));
+            return view('setup-menu.menu-permission.index', compact('permissions'));
         }
 
 

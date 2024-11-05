@@ -1,98 +1,87 @@
-
-
-
 @extends('layout.dashboard')
 
 @section('main')
-
-{{-- <form  action="records" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" >
-    <div class="input-group">
-        <input class="form-control" type="text" placeholder="Search for..." name="search" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
-
-    </div>
-
-</form> --}}
-
 <main>
     <div class="container-fluid px-4">
         <h2 class="mt-4">ITM Office Staff</h2>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">staff List </li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Staff List</li>
         </ol>
-        <br>
 
-    <div class="row ">
-        <div class=" text-left">
-          <a href="{{ route('staff.create') }}" class="btn btn-dark text-white">Add Profile</a>
+        <!-- Search Bar -->
+        <form action="records" method="GET" class="input-group mb-4">
+            <input type="text" class="form-control" placeholder="Search staff by name, position..." name="search">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
 
-          <a href="{{ url('/staff/author') }}" class="btn btn-dark text-white float-right">User TYpe or ROle</a>
-
+        <!-- Add Staff Button -->
+        <div class="d-flex justify-content-end mb-3">
+            <a href="{{ route('staff.create') }}" class="btn btn-primary">
+                <i class="fas fa-plus-circle"></i> Add Profile
+            </a>
         </div>
-      </div>
 
-
-      <div class="table-responsive">
-        <table class="table table-striped">
-        <thead>
-            <tr >
-                <th >ID</th>
-                <th >Image</th>
-                <th >Name</th>
-                <th >Position</th>
-                <th >Email</th>
-                <th >Phone</th>
-                <th >Action</th>
-            </tr>
-        </thead>
-        <tbody>
+        <!-- Staff Cards -->
+        <div class="row">
             @foreach($staffs as $staff)
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <img src="{{ asset($staff->image) }}" alt="{{ $staff->name }}" class="rounded-circle mb-3" width="80" height="80">
+                        <h5 class="card-title">{{ $staff->name }}</h5>
+                        <p class="text-muted mb-2">{{ $staff->position }}</p>
+                        <p><i class="fas fa-envelope"></i> {{ $staff->email }}</p>
+                        <p><i class="fas fa-phone"></i> {{ $staff->mobile }}</p>
 
-        <td >{{$staff->id}}</td>
-        <td><img src="{{ asset($staff->image) }}"  width="40" height="40" class="rounded-circle" ></td>
-        <td >{{$staff->name}}</td>
-        <td >{{$staff->position}}</td>
-        <td >{{$staff->email}}</td>
-        <td>{{$staff->mobile}}</td>
+                        <div class="d-flex justify-content-center mt-3">
+                            <!-- Edit Button with Tooltip -->
+                            <a href="{{ route('staff.edit', $staff->id) }}" class="btn btn-outline-info me-2" data-bs-toggle="tooltip" title="Edit Profile">
+                                <i class="fas fa-pen"></i>
+                            </a>
 
-        <td class="d-flex">
+                            <!-- Delete Button with Modal Confirmation -->
+                            @can('delete')
+                            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $staff->id }}" title="Delete Profile">
+                                <i class="fas fa-trash"></i>
+                            </button>
 
-            <a href="{{route('staff.edit',$staff->id)}}" onclick="return confirm('Are you sure?')"  class="p-3" ><i class="fa-solid fa-pen-to-square text-info  fa-lg"></i></a>
+                            <!-- Delete Confirmation Modal -->
+                            <div class="modal fade" id="deleteModal{{ $staff->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $staff->id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteModalLabel{{ $staff->id }}">Confirm Deletion</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete <strong>{{ $staff->name }}</strong>?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            <form action="{{ route('staff.delete', $staff->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endcan
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
 
-            @can('delete')
-            <form  action="{{route('staff.delete',$staff->id)}}" method="POST" >
-                @csrf
-                @method('DELETE')
-                <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-dark" class="p-2 "><i class="fa-regular fa-trash-can text-danger"></i>
-                </button>
-
-            </form>
-            @endcan
-
-
-        </td>
-      </tr>
-
-
-
-
-
-      @endforeach
-        </tbody>
-    </table>
+        <!-- Pagination -->
+        <div class="pagination justify-content-center mt-3">
+            {{-- {{ $staffs->links('pagination::bootstrap-5') }} --}}
+        </div>
     </div>
-
-
-    <div class="row">
-        {{-- {{ $record->links('pagination::bootstrap-5') }} --}}
-    </div>
-
-</div>
-</div>
-
-
-
 </main>
-
 @endsection

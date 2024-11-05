@@ -33,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('menus', Menu::all());
                         // $view->with('menu_permissions', Menu::all());
 
+                        
+
         });
 
         // Share $footers with all views that include '_footer'

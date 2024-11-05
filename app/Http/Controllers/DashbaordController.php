@@ -20,6 +20,57 @@ use Illuminate\Support\Facades\Session;
 
 class DashbaordController extends Controller
 {
+
+
+    private function getStudentAdmissionsData()
+    {
+        // Sample logic: Get admissions count per month over the past year
+        $studentAdmissions = Student::selectRaw('MONTH(created_at) as month, COUNT(*) as count')
+            ->whereYear('created_at', now()->year)
+            ->groupBy('month')
+            ->orderBy('month')
+            ->get();
+
+        // Format data for the chart
+        $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        $admissionsData = array_fill(0, 12, 0);
+
+        foreach ($studentAdmissions as $entry) {
+            $admissionsData[$entry->month - 1] = $entry->count;
+        }
+
+        return [
+            'labels' => $months,
+            'data' => $admissionsData
+        ];
+    }
+
+    private function getAlumniGrowthData()
+    {
+        // Sample logic: Get alumni count per year over the past five years
+    
+
+            $alumniGrowth = Alumni::selectRaw('pass_year as year, COUNT(*) as count')
+        ->whereBetween('pass_year', [now()->subYears(5)->year, now()->year])
+        ->groupBy('pass_year')
+        ->orderBy('pass_year', 'asc')
+        ->get();
+
+        // Format data for the chart
+        $years = [];
+        $growthData = [];
+
+        foreach ($alumniGrowth as $entry) {
+            $years[] = $entry->year;
+            $growthData[] = $entry->count;
+        }
+
+        return [
+            'labels' => $years,
+            'data' => $growthData
+        ];
+    }
+
        public function dashboard()
     {
             // Get the current user's role
@@ -72,10 +123,15 @@ class DashbaordController extends Controller
         //             ->get();
         // {{-- fixed --}}
 
+
         $studentCount = Student::count();
         $facultyCount = Teacher::count();
         $alumniCount = Alumni::count();
         $scholarshipCount = Scholarship::count();
+        $studentData = $this->getStudentAdmissionsData();
+
+        // Fetch and process data for the Alumni Growth chart
+        $alumniData = $this->getAlumniGrowthData();
 
        return view('dashboard',[
         'studentCount' => $studentCount,
@@ -83,6 +139,8 @@ class DashbaordController extends Controller
         'alumniCount' => $alumniCount,
         'scholarshipCount' => $scholarshipCount,
         'menus' => $menus,
+        'studentData' => $studentData,
+        'alumniData' => $alumniData,
 
     ]);
     }

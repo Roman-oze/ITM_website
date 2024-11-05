@@ -1,83 +1,86 @@
-
 @extends('layout.dashboard')
 
-
-
-
-
 @section('main')
-
 <main>
-            <div class="container-fluid px-4">
-                <h1 class="mt-4">Dashboard</h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-                <br>
+    <div class="container-fluid px-4">
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <h1 class="mb-0">Dashboard</h1>
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </div>
 
-                <div class="row">
-                    <div class="col-md-3 p-2">
-                      <div class="card  bg-success">
-                        <div class="card-body">
-
-                          <h5 class="card-title text-white">Total Student</h5>
-                          <b><h3 class="card-text text-white">{{$studentCount}}</h3></b>
-                          {{-- <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="0" class="purecounter">{{$students}}</span> --}}
-
+        <div class="row mt-4">
+            <div class="col-md-3 mb-4">
+                <div class="card text-white bg-success h-100">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h5 class="card-title">Total Students</h5>
+                            <h3 class="card-text fw-bold">{{$studentCount}}</h3>
                         </div>
-                      </div>
+                        <i class="fas fa-user-graduate fa-3x opacity-75"></i>
                     </div>
-                    <div class="col-md-3  p-2">
-                      <div class="card bg-primary">
-                        <div class="card-body">
-                          <h5 class="card-title text-white">Total Faculty</h5>
-                          <b><h3 class="card-text text-white">{{$facultyCount}}</h3></b>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card text-white bg-primary h-100">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h5 class="card-title">Total Faculty</h5>
+                            <h3 class="card-text fw-bold">{{$facultyCount}}</h3>
                         </div>
-                      </div>
+                        <i class="fas fa-chalkboard-teacher fa-3x opacity-75"></i>
                     </div>
-                    <div class="col-md-3  p-2">
-                      <div class="card bg-info">
-                        <div class="card-body">
-                          <h5 class="card-title text-white">Total Alumni</h5>
-                          <b><h3 class="card-text text-white">{{$alumniCount}}</h3></b>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card text-white bg-info h-100">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h5 class="card-title">Total Alumni</h5>
+                            <h3 class="card-text fw-bold">{{$alumniCount}}</h3>
                         </div>
-                      </div>
-                  </div>
-                    <div class="col-md-3  p-2">
-                      <div class="card bg-danger">
-                        <div class="card-body">
-                          <h5 class="card-title text-white">Total Scholarship</h5>
-                          <b><h3 class="card-text text-white">{{$scholarshipCount}}</h3></b>
-                        </div>
-                      </div>
-                  </div>
-
-                  </div>
-
-
-                <div class="row mt-3">
-                    <div class="col-xl-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-chart-area me-1"></i>
-                                Student Admission
-                            </div>
-                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                        </div>
+                        <i class="fas fa-users fa-3x opacity-75"></i>
                     </div>
-                    <div class="col-xl-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-chart-bar me-1"></i>
-                                 Student Result
-                            </div>
-                            <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card text-white bg-danger h-100">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h5 class="card-title">Total Scholarships</h5>
+                            <h3 class="card-text fw-bold">{{$scholarshipCount}}</h3>
                         </div>
+                        <i class="fas fa-graduation-cap fa-3x opacity-75"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-xl-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-light d-flex align-items-center">
+                        <i class="fas fa-chart-area me-2"></i>
+                        <span>Student Admissions</span>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-light d-flex align-items-center">
+                        <i class="fas fa-chart-bar me-2"></i>
+                        <span>Alumni</span>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="myBarChart" width="100%" height="40"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        </main>
-
+</main>
 @endsection
