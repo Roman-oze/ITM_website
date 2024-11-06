@@ -1,18 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+use App\Models\Menu;
 // use App\Models\auth;
+use App\Models\User;
+use App\Models\Alumni;
 use App\Models\Message;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Scholarship;
-use App\Models\Alumni;
-use App\Models\Menu;
-use App\Models\MenuPermission;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\MenuPermission;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -22,63 +23,20 @@ class DashbaordController extends Controller
 {
 
 
-    private function getStudentAdmissionsData()
-    {
-        // Sample logic: Get admissions count per month over the past year
-        $studentAdmissions = Student::selectRaw('MONTH(created_at) as month, COUNT(*) as count')
-            ->whereYear('created_at', now()->year)
-            ->groupBy('month')
-            ->orderBy('month')
-            ->get();
-
-        // Format data for the chart
-        $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        $admissionsData = array_fill(0, 12, 0);
-
-        foreach ($studentAdmissions as $entry) {
-            $admissionsData[$entry->month - 1] = $entry->count;
-        }
-
-        return [
-            'labels' => $months,
-            'data' => $admissionsData
-        ];
-    }
-
-    private function getAlumniGrowthData()
-    {
-        // Sample logic: Get alumni count per year over the past five years
-    
-
-            $alumniGrowth = Alumni::selectRaw('pass_year as year, COUNT(*) as count')
-        ->whereBetween('pass_year', [now()->subYears(5)->year, now()->year])
-        ->groupBy('pass_year')
-        ->orderBy('pass_year', 'asc')
-        ->get();
-
-        // Format data for the chart
-        $years = [];
-        $growthData = [];
-
-        foreach ($alumniGrowth as $entry) {
-            $years[] = $entry->year;
-            $growthData[] = $entry->count;
-        }
-
-        return [
-            'labels' => $years,
-            'data' => $growthData
-        ];
-    }
-
        public function dashboard()
     {
             // Get the current user's role
-            $roleId = Auth::user()->role_id;
+
+
+
 
             // Fetch top-level menus with their children, applying permissions
             // Get the authenticated user's role
-            $roleId = Auth::user()->role_id;
+            $roleId = Auth::user()->Role;
+
+
+
+
 
             // Fetch menus where the user has at least one permission
             $menus = Menu::with(['children' => function ($query) use ($roleId) {
@@ -128,10 +86,6 @@ class DashbaordController extends Controller
         $facultyCount = Teacher::count();
         $alumniCount = Alumni::count();
         $scholarshipCount = Scholarship::count();
-        $studentData = $this->getStudentAdmissionsData();
-
-        // Fetch and process data for the Alumni Growth chart
-        $alumniData = $this->getAlumniGrowthData();
 
        return view('dashboard',[
         'studentCount' => $studentCount,
@@ -139,8 +93,6 @@ class DashbaordController extends Controller
         'alumniCount' => $alumniCount,
         'scholarshipCount' => $scholarshipCount,
         'menus' => $menus,
-        'studentData' => $studentData,
-        'alumniData' => $alumniData,
 
     ]);
     }
