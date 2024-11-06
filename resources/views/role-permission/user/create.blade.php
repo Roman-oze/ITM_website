@@ -1,65 +1,111 @@
+
+
 @extends('layout.dashboard')
 
 @section('main')
 <main>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Create User
-                            <a href="{{url('users')}}" class="btn btn-danger float-end">Back</a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
+     <div class="limiter mt-5">
+        <h4>
+            <a href="{{url('users')}}" class="btn btn-dark m-1">Back</a>
+        </h4>
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt " data-tilt>
+                    <img src="{{asset('frontend/image/Itmfullogo.png')}}" alt="IMG"  class="loginimage">
 
-                        @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
+				</div>
+
+                <form action="{{route('users.store')}}"  method="POST" enctype="multipart/form-data" class="login100-form validate-form">
+
+                    @csrf
+
+
+                    @if (session()->has('success'))
+
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
                         </div>
-                        @endif
 
-                        @if (session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}  
+                    @endif
+
+                    @if (session()->has('error'))
+
+                    <div class="alert alert-danger">
+                        {{ session()->get('error') }}
                         </div>
-                        @endif
 
-                        <form action="{{url('users')}}" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" name="name" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Email</label>
-                                <input type="text" name="email" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">password</label>
-                                <input type="password" name="password" class="form-control">
-                            </div>
+                    @endif
 
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Roles</label>
-                                <select name="roles[]" class="form-control" multiple>
-                                    @foreach($roles as $role)
-                                    <option value="{{$role->id}}">{{$role->name}}</option>
-                                    @endforeach
-                                    </select>
 
-                            </div>
 
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Save</button>
-                            </div>
-                        </form>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					<span class="login100-form-title text-dark">
+						Super-Admin Registration
+					</span>
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="name" name="name" placeholder="Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+                        <i class="fa-solid fa-user " aria-hidden="true"></i>
+						</span>
+                        <span class="text-danger">
+                            @error('name')
+                         {{$message}}
+                        @enderror
+                      </span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="email" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+                        <span class="text-danger">
+                            @error('email')
+                         {{$message}}
+                        @enderror
+                      </span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="password" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+                        <span class="text-danger">
+                            @error('password')
+                            {{$message}}
+                           @enderror
+                       </span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+                            <label for="name" class="form-label">Roles</label>
+                        <select name="roles[]" class="form-control" multiple>
+                            @foreach($roles as $role)
+                                <option value="{{$role->id}}">{{$role->name}}</option>
+                            @endforeach
+                        </select>
+                        <span class="text-danger">
+                            @error('password')
+                            {{$message}}
+                           @enderror
+                       </span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Register
+						</button>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
 </main>
 
-@endsection
+ @endsection

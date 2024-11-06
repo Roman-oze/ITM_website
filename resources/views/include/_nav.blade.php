@@ -17,6 +17,8 @@
         </div>
     </form>
 
+    @can('manage-user')
+
     <!-- Notifications Dropdown -->
     <li class="nav-item dropdown p-3">
         <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,6 +45,7 @@
             </li>
         </ul>
     </li>
+    @endcan
 
     <!-- User Profile Dropdown -->
     <div class="d-flex align-items-center ms-sm-6">

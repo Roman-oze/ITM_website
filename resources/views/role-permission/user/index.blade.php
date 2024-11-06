@@ -5,7 +5,7 @@
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
                 @if (session('status'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ session('status') }}
@@ -16,7 +16,7 @@
                 <div class="card shadow-sm border-0">
                     <div class="card-header bg-white d-flex justify-content-between align-items-center">
                         <h3 class="text-primary mb-0">User Management</h3>
-                        <a href="{{ url('users/create') }}" class="btn btn-outline-primary">
+                        <a href="{{ url('users/create') }}" class="btn btn-outline-primary d-none d-sm-inline-block">
                             <i class="fas fa-plus-circle"></i> Add User
                         </a>
                     </div>
@@ -45,18 +45,21 @@
                                             </td>
                                             <td>{{ $user->email }}</td>
                                             <td class="text-center">
-                                                @can('edit')
-                                                    <a href="{{ url('users/' . $user->id . '/edit') }}" class="btn btn-sm btn-outline-primary me-2">
-                                                        <i class="fas fa-edit"></i> Edit
-                                                    </a>
-                                                @endcan
+                                                <div class="d-flex justify-content-center flex-wrap">
+                                                    @can('edit')
+                                                        <a href="{{ url('users/' . $user->id . '/edit') }}"
+                                                           class="btn    me-2 mb-2">
+                                                            <i class="fas fa-edit text-info"></i>
+                                                        </a>
+                                                    @endcan
 
-                                                @can('delete')
-                                                    <button onclick="if(confirm('Are you sure?')) { window.location.href='{{ url('users/' . $user->id . '/delete') }}' }"
-                                                        class="btn btn-sm btn-outline-danger">
-                                                        <i class="fas fa-trash-alt"></i> Delete
-                                                    </button>
-                                                @endcan
+                                                    @can('delete')
+                                                        <button onclick="if(confirm('Are you sure?')) { window.location.href='{{ url('users/' . $user->id . '/delete') }}' }"
+                                                                class="btn mb-2">
+                                                            <i class="fas fa-trash-alt text-danger"></i> 
+                                                        </button>
+                                                    @endcan
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -65,8 +68,19 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+
+    <style>
+        @media (max-width: 576px) {
+            .card-header h3 {
+                font-size: 1.25rem;
+            }
+            .btn-outline-primary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 @endsection

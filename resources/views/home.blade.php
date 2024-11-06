@@ -188,7 +188,7 @@
                                 <div class="flip-card-front flip-custom-2" style="background: #37517e;">
                                     <div class="child-div-2" style="background: rgb(237, 240, 240);">
                                         <img src="{{ asset($feature->image) }}" alt="Feature Image" class="img-fluid-custom"><br>
-                                        <h4 class="text-white p-2">{{ $feature->title }}</h4>
+                                        <h4 class="flip-text">{{ $feature->title }}</h4>
                                     </div>
                                 </div>
                                 <div class="flip-card-back p-3 text-left" style="line-height:22px;">
@@ -533,7 +533,7 @@
         </div>
 
         <div class="row">
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init " data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box">
                     <div class="icon"><i class="fa-solid fa-book-open-reader"></i></div>
                     <h4><a href="#">Leadership</a></h4>
@@ -594,39 +594,62 @@
 <br>
 <br>
 <br>
-<div class="section-border" data-controller="SectionDivider" style="clip-path: url(#section-divider-64ab4a69a3c6fa011e19653c);" data-controllers-bound="SectionDivider">
-    <div class="section-background"></div>
-</div>
-<div class="section-title">
-    <h2>Specialist</h2>
-    <p>Nowaday make your bright future with technology</p>
-</div>
 
-<div class="container-fluid mt-3">
-    <div class="row text-center">
-        <div class="col-md-12 col-sm-12 text-center rounded">
-            <div class="rounded-3">
-                <p class="listitem1 p-2 text-transition">
-                    <i class="fa-regular fa-circle-check text-white"></i> Web Application
-                </p><br>
-                <p class="listitem1 p-2 text-transition">
-                    <i class="fa-regular fa-circle-check text-white"></i> Mobile Application
-                </p><br>
-                <p class="listitem1 p-2 text-transition">
-                    <i class="fa-regular fa-circle-check text-white"></i> Business & Management
-                </p><br>
+
+
+
+
+<div class="container-fluid -bg py-5">
+    <!-- Expertise Section -->
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-10 col-md-12">
+            <div class="expertise-section p-5 rounded shadow-lg text-white">
+                <div class="section-title">
+                    <h2>Specialist</h2>
+                    <p class="text-dark">Nowaday make your bright future with technology</p>
+                </div>
+                <div class="container expertise-section">
+                    <!-- Web Applications -->
+                    <div class="expertise-item">
+                        <div class="expertise-icon"><i class="fas fa-desktop"></i></div>
+                        <h4 class="expertise-title">Web Applications</h4>
+                        <p class="expertise-desc">Custom-built, responsive web applications to meet business goals.</p>
+                    </div>
+
+                    <!-- Mobile Applications -->
+                    <div class="expertise-item">
+                        <div class="expertise-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h4 class="expertise-title">Mobile Applications</h4>
+                        <p class="expertise-desc">Cross-platform mobile solutions for a seamless user experience.</p>
+                    </div>
+
+                    <!-- Business & Management -->
+                    <div class="expertise-item">
+                        <div class="expertise-icon"><i class="fas fa-briefcase"></i></div>
+                        <h4 class="expertise-title">Business & Management</h4>
+                        <p class="expertise-desc">Insightful consulting to drive efficiency and innovation.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="row p-2">
-        <div class="col-md-12 col-sm-12 text-center rounded text-box mt-5">
-            <p class="smooth-text text-dark text-200">
-                As a web developer, I excel in creating user-friendly interfaces and efficient code. I specialize in crafting responsive designs, optimizing performance, and leveraging emerging technologies. With a dedication to innovation and ongoing learning, I deliver impactful solutions that enhance online experiences and propel business growth.
-            </p>
+    <!-- About Section -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-10 col-md-12">
+            <div class="about-section p-5 bg-light rounded shadow-lg text-center text-dark">
+                <h3 class="about-title mb-3">About Me</h3>
+                <p class="about-text lead">
+                    A dedicated web developer focused on building efficient, user-friendly applications.
+                    I combine modern design principles, emerging technologies, and meticulous attention
+                    to detail to create impactful solutions for clients across industries.
+                </p>
+                <a href="#contact" class="btn btn-gradient mt-4">Get in Touch</a>
+            </div>
         </div>
     </div>
 </div>
+
 
 <section id="services" class="services section-bg">
     <div class="container aos-init aos-animate" data-aos="fade-up">

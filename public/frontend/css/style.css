@@ -2715,7 +2715,7 @@ font-weight: bold;
 .chat-container {
     position: fixed;
     bottom: 93px;
-    right: 30px;
+    right: 20px;
     width: 275px;
     max-width: 90%;
     border-top-left-radius: 38px;
@@ -2986,3 +2986,81 @@ a:hover {
     cursor: not-allowed;
 }
 
+.flip-text{
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 25px;
+    padding: 10px;
+
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* .flip-text{
+        font-size: SM;
+        margin-top: 40px;
+        padding: 10px;
+
+    } */
+
+}
+.expertise-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 80px 20px;
+    background-color: #fff;
+}
+.expertise-item {
+    max-width: 320px;
+    text-align: center;
+    padding: 40px;
+    margin: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.expertise-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    background-color: #f9fafc;
+}
+.expertise-icon {
+    font-size: 45px;
+    color: #007bff;
+    background: #e9f2ff;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    display: inline-block;
+    transition: background 0.3s, color 0.3s;
+    margin-bottom: 25px;
+}
+.expertise-item:hover .expertise-icon {
+    background: #007bff;
+    color: #fff;
+}
+.expertise-title {
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-top: 10px;
+    color: #333;
+}
+.expertise-desc {
+    color: #6c757d;
+    font-size: 1em;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+/* Smooth icon entrance */
+.expertise-icon i {
+    transition: transform 0.3s ease;
+}
+.expertise-item:hover .expertise-icon i {
+    transform: scale(1.1);
+}

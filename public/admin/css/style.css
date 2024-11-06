@@ -105,8 +105,8 @@ nav ul li a {
   /*------------------------------------------------------------------
   [  ]*/
   .login100-pic {
-    width: 316px;
-  }
+    width: 304px;
+    margin-top: 137px;  }
 
   .login100-pic img {
     max-width: 100%;

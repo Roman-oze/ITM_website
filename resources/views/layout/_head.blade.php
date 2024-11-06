@@ -1,7 +1,7 @@
 
 <meta charset="UTF-8">
 
-<link rel="Website Icon" type="jpg" href="{{asset('frontend/image/url_logo.jpg')}}">
+<link rel="Website Icon" type="jpg" href="{{asset('frontend/image/IT3.jpg')}}">
 {{-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> --}}
 
 <meta charset="utf-8" />
