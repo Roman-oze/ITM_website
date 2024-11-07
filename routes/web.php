@@ -153,6 +153,7 @@ Route::get('menu/display',[MenuController::class,'display'])->name('menu.display
 
 Route::resource('menu-permission',MenuPermissionController::class);
 Route::get('menu-permission/create',[MenuPermissionController::class,'create_permission']);
+Route::get('menu-permission/sidebar',[MenuPermissionController::class,'sidebar']);
 // Route::resource('menu-permission',[MenuController::class]);
 // Route::post('/assign-permission', [MenuPermissionController::class, 'assignPermission'])->name('menupermissions.assign');
 

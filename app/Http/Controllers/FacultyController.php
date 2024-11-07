@@ -18,6 +18,15 @@ class FacultyController extends Controller
     {
 
 
+        // $teachers = Teacher::all();
+
+        // // Task 1: Assign the Dean and Head of ITM Department to the first row
+        // $firstRowTeachers = $teachers->filter(function ($teacher) {
+        //     return $teacher->designation == 'Dean of ITM Department' || $teacher->designation == 'Head Of ITM Department';
+        // });
+
+        // // Task 2: The rest of the teachers for the second row
+        // $secondRowTeachers = $teachers->diff($firstRowTeachers);
 
 
 
@@ -28,7 +37,14 @@ class FacultyController extends Controller
 
         $staffs = Staff::whereIn('position', ['Assistant Coordination Officer'])->get();
 
-        return view('faculty.faculty',compact('teachers', 'staffs', 'teachers_new'));
+        return view('faculty.faculty',[
+            'teachers' => $teachers,
+            'teachers_new' => $teachers_new,
+            // 'firstRowTeachers' => $firstRowTeachers,
+            // 'secondRowTeachers' => $secondRowTeachers,
+
+
+        ]);
     }
 
 
@@ -193,6 +209,6 @@ class FacultyController extends Controller
 
 
 
-    
+
 
 }

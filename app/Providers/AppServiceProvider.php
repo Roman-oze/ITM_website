@@ -62,6 +62,7 @@ class AppServiceProvider extends ServiceProvider
 
 
         //     // $view->with('menu_permissions', Menu::all());
+        //     $view->with('menus', $menus);
 
 
 
