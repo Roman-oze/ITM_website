@@ -149,6 +149,8 @@ Route::controller(FeatureController::class)->group(function(){
 
 
 Route::resource('menus',MenuController::class);
+Route::get('menu/display',[MenuController::class,'display'])->name('menu.display');
+
 Route::resource('menu-permission',MenuPermissionController::class);
 Route::get('menu-permission/create',[MenuPermissionController::class,'create_permission']);
 // Route::resource('menu-permission',[MenuController::class]);

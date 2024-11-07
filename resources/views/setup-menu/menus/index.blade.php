@@ -9,14 +9,19 @@
         <li class="breadcrumb-item active">Menu list </li>
     </ol>
     <br>
+ <div class="card">
+    <div class="card-header">
 
-    <a href="{{route('menus.create')}}" class="btn btn-outline-dark  float-center   "> <i class="fas fa-plus-circle"></i> Create Menu</a>
+        <a href="{{route('menus.create')}}" class="btn btn-dark  float-left   "> <i class="fas fa-plus-circle"></i> Create Menu</a>
+        <a href="{{route('menu-permissions.create')}}" class="btn btn-dark  float-end   "> <i class="fa-solid fa-key"></i> Assign Menu</a>
+    </div>
+ </div>
 
-    <div class="row  p-5">
+    <div class="row m-2">
         @foreach ($menus as $menu)
             <div class="col-md-6 mb-4">
-                <div class="card-penel shadow-sm animated-card">
-                    <div class="card-header d-flex justify-content-between align-items-center p-3">
+                <div class="card-penel shadow-sm animated-card ">
+                    <div class="card-header d-flex justify-content-between align-items-center p-3 menu-bg">
                         <h5 class="mb-0">
                             <i class="{{ $menu->icon }}"></i> {{ $menu->name }}
                         </h5>

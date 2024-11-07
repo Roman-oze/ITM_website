@@ -6,7 +6,8 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\MenuPermission;
+use App\Http\Controllers\MenuPermissionController; // Make sure this is MenuController
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use Symfony\Component\HttpFoundation\Response;
 
 class CheckMenuPermission
@@ -39,6 +40,23 @@ class CheckMenuPermission
     //     // Redirect to an access denied route if the user lacks permission
     //     return redirect()->route('access.denied')->with('error', 'You do not have permission to access this resource.');
     // }
+
+    public function handle($request, Closure $next)
+    {
+        if (Auth::check()) {
+            // Retrieve the user's role directly from the `users` table
+            $role = Auth::user()->role;
+
+            // Fetch menu items for the user’s role
+            $menuController = new MenuPermissionController();
+            $menu = $menuController->getMenuByRole($role);
+
+            // Store menu items in session for later use in views
+            session(['dashboard_menu' => $menu]);
+        }
+
+        return $next($request);
+    }
 
 
 }

@@ -1132,3 +1132,7 @@ nav ul li a {
         color: #fff;
         font-size: 0.875em;
     }
+.menu-bg{
+    background-color: #dee2e8;
+    border-radius: 24px;
+}

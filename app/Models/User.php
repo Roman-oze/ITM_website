@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable =
-    ['name', 'email','email_verified_at','password'];
+    ['name', 'email','email_verified_at','password','role'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -49,4 +49,15 @@ class User extends Authenticatable
         return $this->hasMany(Schedule::class,'user_id','user_id');
 
     }
+    // public function hasRole($roles)
+    // {
+    //     // Assuming roles are stored as a string or relation in your database
+    //     $userRole = $this->role; // Adjust based on your role setup
+
+    //     if (is_array($roles)) {
+    //         return in_array($userRole, $roles);
+    //     }
+
+    //     return $userRole === $roles;
+    // }
 }

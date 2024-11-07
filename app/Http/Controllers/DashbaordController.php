@@ -32,9 +32,7 @@ class DashbaordController extends Controller
 
             // Fetch top-level menus with their children, applying permissions
             // Get the authenticated user's role
-            $roleId = Auth::user()->Role;
-
-
+            $roleId = Auth()->user()->role;
 
 
 
@@ -81,6 +79,9 @@ class DashbaordController extends Controller
         //             ->get();
         // {{-- fixed --}}
 
+        $menu_permission = MenuPermission::where('role_id', $roleId)->get();
+
+
 
         $studentCount = Student::count();
         $facultyCount = Teacher::count();
@@ -93,6 +94,7 @@ class DashbaordController extends Controller
         'alumniCount' => $alumniCount,
         'scholarshipCount' => $scholarshipCount,
         'menus' => $menus,
+        'menu_permissions' => $menu_permission,
 
     ]);
     }

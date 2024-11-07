@@ -26,9 +26,16 @@
         </div>
     @endif
 
+    <div class="card">
+        <div class="card-header">
+
+            <a href="{{route('menu-permission.index')}}" class="btn btn-dark "> <i class="fa-solid fa-list"></i>Menu Permission List</a>
+            <a href="{{route('menu.display')}}" class="btn btn-dark  float-end   "> <i class="fa-solid fa-bars-staggered"></i> Display Menu</a>
+        </div>
+     </div>
+
     <div class="container ">
 
-        <a href="{{route('menu-permission.index')}}" class="btn btn-dark ">Menu Permission List</a>
 
         <form action="{{ route('menu-permission.store') }}" method="POST" class="p-4 bg-light rounded shadow-sm">
             @csrf

@@ -46,6 +46,13 @@ class MenuController extends Controller
     ]);
 }
 
+        public function display(){
+
+            $menus = Menu::all();
+
+            return view('setup-menu.menus.display',compact('menus'));
+        }
+
 
     // Store the new menu item (admin and super-admin only)
     public function store(Request $request)
@@ -70,6 +77,7 @@ class MenuController extends Controller
         return redirect()->back()->with('success', 'Menu item created successfully!');
 
     }
+
 
 
 

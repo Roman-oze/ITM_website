@@ -13,51 +13,55 @@
                     </div>
                 @endif
 
-                <div class="card shadow-sm border-0">
-                    <div class="card-header bg-white d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
-                        <h3 class="text-primary mb-2 mb-md-0">Roles Management</h3>
-                        <a href="{{ url('roles/create') }}" class="btn btn-outline-primary btn-sm">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-header bg-light d-flex flex-column flex-md-row justify-content-between align-items-center p-4">
+                        <h3 class="text-dark fw-bold mb-2 mb-md-0">Roles Management</h3>
+                        <a href="{{ url('roles/create') }}" class="btn btn-primary btn-sm">
                             <i class="fas fa-plus-circle"></i> Add Role
                         </a>
                     </div>
 
-                    <div class="card-body p-3 p-md-4">
+                    <div class="card-body p-4">
                         <div class="table-responsive">
-                            <table class="table table-hover align-middle">
-                                <thead class="table-primary">
+                            <table class="table table-striped table-hover align-middle text-center">
+                                <thead class="table-light">
                                     <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col" class="text-center">Actions</th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Role Name</th>
+                                        <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($roles as $role)
+                                    @forelse ($roles as $role)
                                         <tr>
-                                            <td>{{ $role->id }}</td>
-                                            <td>{{ $role->name }}</td>
-                                            <td class="text-center">
-                                                <div class="d-flex justify-content-center flex-wrap gap-1">
-                                                    <a href="{{ url('roles/' . $role->id . '/give-permission') }}" class="btn btn-sm btn-outline-info">
-                                                        <i class="fas fa-key"></i> Permissions
+                                            <td class="fw-bold">{{ $role->id }}</td>
+                                            <td class="text-secondary">{{ $role->name }}</td>
+                                            <td>
+                                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                                    <a href="{{ url('roles/' . $role->id . '/give-permission') }}" class="btn btn-info btn-sm text-white d-flex align-items-center">
+                                                        <i class="fas fa-key me-1"></i> <span>Permissions</span>
                                                     </a>
 
                                                     @can('update role')
-                                                        <a href="{{ url('roles/' . $role->id . '/edit') }}" class="btn btn-sm btn-outline-primary">
-                                                            <i class="fa fa-edit"></i> Edit
+                                                        <a href="{{ url('roles/' . $role->id . '/edit') }}" class="btn btn-secondary   btn-sm text-white d-flex align-items-center">
+                                                            <i class="fa fa-edit me-1"></i> <span>Edit</span>
                                                         </a>
                                                     @endcan
 
                                                     @can('delete role')
-                                                        <button onclick="if(confirm('Are you sure?')) { window.location.href='{{ url('roles/' . $role->id . '/delete') }}' }"
-                                                            class="btn btn-sm btn-outline-danger">
-                                                            <i class="fa fa-trash"></i> Delete
+                                                        <button onclick="if(confirm('Are you sure you want to delete this role?')) { window.location.href='{{ url('roles/' . $role->id . '/delete') }}' }"
+                                                                class="btn btn-danger btn-sm text-white d-flex align-items-center">
+                                                            <i class="fa fa-trash me-1"></i> <span>Delete</span>
                                                         </button>
                                                     @endcan
                                                 </div>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="3" class="text-muted">No roles available.</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
@@ -67,5 +71,4 @@
             </div>
         </div>
     </div>
-
 @endsection

@@ -13,7 +13,7 @@
             <div class="card-header d-flex justify-content-between align-items-center">
                 <span class="h5 mb-0">Manage Permissions</span>
                 <div>
-                    <a href="{{ route('menu.create') }}" class="btn btn-info mr-2">Create Menu</a>
+                    <a href="{{ route('menus.create') }}" class="btn btn-info mr-2">Create Menu</a>
                     <a href="{{ route('menu-permissions.create') }}" class="btn btn-success">Create Menu Permission</a>
                 </div>
             </div>

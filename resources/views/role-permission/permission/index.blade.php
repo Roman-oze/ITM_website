@@ -40,15 +40,15 @@
                                             <td class="text-center">
                                                 <div class="d-flex justify-content-center flex-wrap gap-1">
                                                     @can('update permission')
-                                                        <a href="{{ url('permissions/' . $permission->id . '/edit') }}" class="btn btn-sm btn-outline-primary">
-                                                            <i class="fa fa-edit"></i> Edit
+                                                        <a href="{{ url('permissions/' . $permission->id . '/edit') }}" class="btn btn-sm btn-outline-primary p-2">
+                                                            <i class="fa fa-edit"></i>
                                                         </a>
                                                     @endcan
 
                                                     @can('delete permission')
                                                         <button onclick="if(confirm('Are you sure?')) { window.location.href='{{ url('permissions/' . $permission->id . '/delete') }}' }"
                                                             class="btn btn-sm btn-outline-danger">
-                                                            <i class="fa fa-trash"></i> Delete
+                                                            <i class="fa fa-trash"></i>
                                                         </button>
                                                     @endcan
                                                 </div>
