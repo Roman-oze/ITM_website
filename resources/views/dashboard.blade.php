@@ -1,3 +1,5 @@
+{{-- @include('include._sidenav', ['menus' => $menus]) --}}
+
 @extends('layout.dashboard')
 
 @section('main')

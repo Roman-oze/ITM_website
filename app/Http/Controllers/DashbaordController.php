@@ -23,6 +23,7 @@ class DashbaordController extends Controller
 {
 
 
+
        public function dashboard()
     {
             // Get the current user's role
@@ -79,7 +80,13 @@ class DashbaordController extends Controller
         //             ->get();
         // {{-- fixed --}}
 
-        $menu_permission = MenuPermission::where('role_id', $roleId)->get();
+
+        // $roleId = Auth()->user()->role;
+
+
+
+
+        // $menu_permission = MenuPermission::where('role_id', $roleId)->get();
 
 
 
@@ -94,7 +101,7 @@ class DashbaordController extends Controller
         'alumniCount' => $alumniCount,
         'scholarshipCount' => $scholarshipCount,
         'menus' => $menus,
-        'menu_permissions' => $menu_permission,
+            // 'menu_permissions' => $menu_permission,
 
     ]);
     }

@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Auth; // This is correct
 class MenuPermissionController extends Controller
 {
 
+           
+
             public function create()
         {
             $user = Auth::user();
