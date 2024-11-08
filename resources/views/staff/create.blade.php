@@ -11,12 +11,26 @@
             <li class="breadcrumb-item active">create staff </li>
         </ol>
         <br>
-        <a href="" class="btn btn-dark text-white">Back</a>
+        <a href="{{route('staff.index')}}" class="btn btn-dark text-white">Back</a>
         <br>
+
+
 
 
         <form action="{{route('staff.store')}}" enctype="multipart/form-data"  method="POST">
             @csrf
+
+            @if (session('success'))
+              <div class=" alert alert-success">
+                {{ session('success') }}
+              </div>
+            @endif
+            @if (session('error'))
+            <div class=" alert alert-danger">
+                {{ session('error') }}
+            </div>
+            @endif
+
             <div class="mb-3">
                 <label for="image" class="form-label">Image URL</label>
                 <input type="file" class="form-control" id="imageInput" name="image" >

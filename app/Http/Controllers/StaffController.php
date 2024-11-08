@@ -18,25 +18,6 @@ class StaffController extends Controller
      * Display a listing of the resource.
      */
 
-
-        public function author(){
-
-        if(Auth::id()){
-            
-            $userType = Auth()->user()->role;
-
-            return "User Role is :".$userType;
-
-        }
-        }
-
-
-
-
-
-
-
-
     public function index()
     {
         $staffs = DB::table('staffs')->get();
@@ -93,7 +74,7 @@ class StaffController extends Controller
 
 
       Staff::insert($data);
-        return redirect('/staff/index');
+        return redirect()->back()->with('success','Staff create successfully!');
 
 
 
@@ -139,7 +120,7 @@ class StaffController extends Controller
 
 
         DB::table('staffs')->where('id',$id)->update($data);
-        return redirect('/staff/index')->with('success','Update profile');
+        return redirect()->back()->with('success','Update profile Successfully !');
 
     }
 
@@ -149,7 +130,7 @@ class StaffController extends Controller
     public function destroy(string $id)
     {
         DB::table('staffs')->where('id',$id)->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success','Delete Successfully !');
 
     }
 

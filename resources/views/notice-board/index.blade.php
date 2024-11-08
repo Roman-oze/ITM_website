@@ -40,26 +40,34 @@
                 <h2  class="text-danger text-center mt-2">{{ $notice->title }}</h2>
                         <p class=" badge text-dark text-right">{{ $notice->created_at->format('F j, Y, g:i a') }}</p>
                         <p class="mt-2 p-3">{{ $notice->content }}</p>
-                        <div style="display: flex; justify-content: space-evenly; align-items: center;">
-                            <a href="{{ route('notice.edit', $notice->id) }}" class="btn btn-info">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </a>
 
-                            @can('delete')
-                            <form action="{{ route('notice.delete', $notice->id) }}" method="POST" style="margin: 0;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </form>
-                            @endcan
-
-                            <button id="downloadBtn" class="btn btn-dark">
-                                <i class="fa-solid fa-circle-down"></i>
+                    <div class="d-flex justify-content-center mt-2">
+                        @can('edit')
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                Actions
                             </button>
+                            <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('notice.edit', $notice->id) }}">
+                                        <i class="fa-solid fa-user-pen"></i> Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    @can('delete')
+                                    <form action="{{ route('notice.delete', $notice->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item text-danger">
+                                            <i class="fa fa-trash"></i> Delete
+                                        </button>
+                                    </form>
+                                    @endcan
+                                </li>
+                            </ul>
                         </div>
-
+                    @endcan
+                </div>
             </div>
         </div>
     </div>

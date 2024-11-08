@@ -36,42 +36,33 @@
                         <p><i class="fas fa-envelope"></i> {{ $staff->email }}</p>
                         <p><i class="fas fa-phone"></i> {{ $staff->mobile }}</p>
 
-                        <div class="d-flex justify-content-center mt-3">
-                            <!-- Edit Button with Tooltip -->
-                            <a href="{{ route('staff.edit', $staff->id) }}" class="btn btn-outline-info me-2" data-bs-toggle="tooltip" title="Edit Profile">
-                                <i class="fas fa-pen"></i>
-                            </a>
-
-                            <!-- Delete Button with Modal Confirmation -->
-                            @can('delete')
-                            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $staff->id }}" title="Delete Profile">
-                                <i class="fas fa-trash"></i>
-                            </button>
-
-                            <!-- Delete Confirmation Modal -->
-                            <div class="modal fade" id="deleteModal{{ $staff->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $staff->id }}" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="deleteModalLabel{{ $staff->id }}">Confirm Deletion</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Are you sure you want to delete <strong>{{ $staff->name }}</strong>?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                            <form action="{{ route('staff.delete', $staff->id) }}" method="POST" class="d-inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="d-flex justify-content-center mt-2">
+                            @can('edit')
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('staff.edit', $staff->id) }}">
+                                            <i class="fa-solid fa-user-pen"></i> Edit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        @can('delete')
+                                        <form action="{{ route('staff.delete',$staff->id) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item text-danger">
+                                                <i class="fa fa-trash"></i> Delete
+                                            </button>
+                                        </form>
+                                        @endcan
+                                    </li>
+                                </ul>
                             </div>
-                            @endcan
-                        </div>
+                        @endcan
+                    </div>
                     </div>
                 </div>
             </div>

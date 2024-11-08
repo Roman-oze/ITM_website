@@ -17,8 +17,22 @@
             @csrf
             @method('PUT')
 
+            @if (session('success'))
+            <div class=" alert alert-success">
+              {{ session('success') }}
+            </div>
+          @endif
+          @if (session('error'))
+          <div class=" alert alert-danger">
+              {{ session('error') }}
+          </div>
+          @endif
+
             <div class="mb-3">
-                <label for="image" class="form-label">Profile Picture</label>
+                <label for="image" class="form-label">Current Profile </label>
+                @if ($staff->image)
+                <img src="{{asset($staff->image)}}" alt="" width="100" >
+                @endif
                 <input type="file" class="form-control" id="imageInput" name="image" value="{{$staff->image}}" >
                <span class="text-danger">@error('image'){{$message}}@enderror</span>
               </div>

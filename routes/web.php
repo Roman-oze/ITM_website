@@ -257,9 +257,8 @@ Route::controller(StudentController::class)->group(function(){
 
 Route::controller(StaffController::class)->group(function(){
     route::get('/staff/index','index')->name('staff.index');
-    route::get('/staff/author','author')->name('staff.author');
     route::get('/staff/create','create')->name('staff.create');
-    route::post('store','store')->name('staff.store');
+    route::post('/staff/store','store')->name('staff.store');
     route::get('staff/edit/{id}','edit')->name('staff.edit');
     route::put('staff/update/{id}','update')->name('staff.update');
     route::delete('staff/delete/{id}','destroy')->name('staff.delete');

@@ -22,7 +22,7 @@
               <!-- Add Event Button -->
         <div class="row mb-4">
             <div class="col text-end">
-                <a href="{{ route('event/create') }}" class="btn btn-primary text-white"><i class="fas fa-plus-circle"></i> Add Event
+                <a href="{{ route('event/create') }}" class="btn btn-dark text-white"><i class="fas fa-plus-circle"></i> Add Event
                 </a>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm h-100">
                     <div class="card-body text-center p-3">
-                        <img src="{{ asset($event->image) }}" class="rounded mb-2" width="100" height="60" alt="Event Image">
+                        <img src="{{ asset($event->image) }}" class="rounded mb-2" width="230" height="150" alt="Event Image">
                         <h6 class="card-title mb-1">{{ $event->name }}</h6>
                         <p class="small text-muted mb-1">
                             <i class="fas fa-calendar-alt"></i> {{ $event->date }} | <i class="fas fa-clock"></i> {{ $event->time }}
@@ -45,17 +45,34 @@
 
                         <!-- Action Buttons -->
                         <div class="d-flex justify-content-center gap-2 mt-2">
-                            <a href="#" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#viewEventModal{{ $event->id }}">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                            <a href="{{ route('event_edit', $event->id) }}" class="btn btn-outline-info btn-sm">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            @can('delete')
-                            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteEventModal{{ $event->id }}">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
+                            <div class="d-flex justify-content-center mt-2">
+                                @can('edit')
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Actions
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('event_edit', $event->id) }}">
+                                                <i class="fa-solid fa-user-pen"></i> Edit
+                                            </a>
+                                        </li>
+                                        <li>
+                                            @can('delete')
+                                            <form action="{{ route('event_delete', $event->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item text-danger">
+                                                    <i class="fa fa-trash"></i> Delete
+                                                </button>
+                                            </form>
+                                            @endcan
+                                        </li>
+                                    </ul>
+                                </div>
                             @endcan
+
+                          </div>
                         </div>
                     </div>
                 </div>

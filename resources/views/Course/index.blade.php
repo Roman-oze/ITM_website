@@ -13,13 +13,13 @@
             <div class="card w-100 shadow-lg" style="max-width: 900px;">
                 <div class="card-header d-flex flex-column flex-md-row justify-content-between align-items-center">
                     <!-- Search Form -->
-                    <form action="{{ route('course.search') }}" method="GET" class="input-group mb-2 mb-md-0" style="max-width: 100%;">
+                    {{-- <form action="{{ route('course.search') }}" method="GET" class="input-group mb-2 mb-md-0" style="max-width: 100%;">
                         <input type="text" class="form-control" name="search" placeholder="Search by course code or name..." aria-label="Search" />
                         <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                    </form> --}}
                     <!-- Add New Course Button -->
-                    <a href="{{ route('Courses.create') }}" class="btn btn-primary mt-2 mt-md-0">
-                        <i class="fas fa-plus-circle"></i> Add New Course
+                    <a href="{{ route('Courses.create') }}" class="btn btn-dark">
+                        <i class="fas fa-plus-circle"></i> Add Course
                     </a>
                 </div>
 
