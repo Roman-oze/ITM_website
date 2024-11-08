@@ -33,34 +33,22 @@ class DashbaordController extends Controller
 
             // Fetch top-level menus with their children, applying permissions
             // Get the authenticated user's role
-            $roleId = Auth()->user()->role;
+            if (Auth::check()) {
+                $roleId = Auth::user()->role;
 
-
-
-            // Fetch menus where the user has at least one permission
-            $menus = Menu::with(['children' => function ($query) use ($roleId) {
-                $query->whereHas('permissions', function ($q) use ($roleId) {
-                    $q->where('role_id', $roleId)
-                    ->where(function ($q) {
-                        $q->where('can_create', true)
-                            ->orWhere('can_edit', true)
-                            ->orWhere('can_update', true)
-                            ->orWhere('can_delete', true);
-                    });
-                });
-            }])
-            ->whereNull('parent_id') // Only top-level menus
-            ->whereHas('permissions', function ($query) use ($roleId) {
-                $query->where('role_id', $roleId)
-                    ->where(function ($q) {
-                        $q->where('can_create', true)
-                            ->orWhere('can_edit', true)
-                            ->orWhere('can_update', true)
-                            ->orWhere('can_delete', true);
-                    });
-            })
-            ->orderBy('order')
-            ->get();
+                // Fetch menus where the user has at least one permission
+                $menus = Menu::with(['children' => function ($query) use ($roleId) {
+                    $query->whereHas('permissions', function ($q) use ($roleId) {
+                        $q->where('role_id', $roleId);
+                    })->orderBy('order'); // Order the children
+                }])
+                ->whereNull('parent_id') // Only top-level menus
+                ->whereHas('permissions', function ($query) use ($roleId) {
+                    $query->where('role_id', $roleId);
+                })
+                ->orderBy('order') // Order the top-level menus
+                ->get();
+            }
 
             // {{-- fixed --}}
         // // Assuming the authenticated user has a role assigned

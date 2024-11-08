@@ -13,7 +13,7 @@
     <div class="card-header">
 
         <a href="{{route('menus.create')}}" class="btn btn-dark  float-left   "> <i class="fas fa-plus-circle"></i> Create Menu</a>
-        <a href="{{route('menu-permissions.create')}}" class="btn btn-dark  float-end   "> <i class="fa-solid fa-key"></i> Assign Menu</a>
+        {{-- <a href="{{route('menu')}}" class="btn btn-dark  float-end   "> <i class="fa-solid fa-key"></i> Assign Menu</a> --}}
     </div>
  </div>
 
@@ -30,7 +30,7 @@
                                 <i class="fas fa-chevron-down"></i>
                             </button>
                             @if ($menu->permissions->where('can_delete', true)->isNotEmpty())
-                                <form action="{{ route('menu.destroy', $menu->id) }}" method="POST" onsubmit="return confirm('Are you sure?');" class="d-inline ms-2">
+                                <form action="{{ route('menus.destroy', $menu->id) }}" method="POST" onsubmit="return confirm('Are you sure?');" class="d-inline ms-2">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-link text-danger p-0" title="Delete Menu">
@@ -45,13 +45,13 @@
                             <div class="d-flex justify-content-around">
                                 <!-- Action Buttons with Permission Check -->
                                 @if ($menu->permissions->where('can_create', true)->isNotEmpty())
-                                    <a href="{{ route('menu.create', $menu->id) }}" class="btn btn-outline-success">Create <i class="fas fa-plus-circle"></i></a>
+                                    <a href="{{ route('menus.create', $menu->id) }}" class="btn btn-outline-success">Create <i class="fas fa-plus-circle"></i></a>
                                 @else
                                     <span class="text-muted">No Create Access</span>
                                 @endif
 
                                 @if ($menu->permissions->where('can_edit', true)->isNotEmpty())
-                                    <a href="{{ route('menu.edit', $menu->id) }}" class="btn btn-outline-warning">Edit <i class="fas fa-edit"></i></a>
+                                    <a href="{{ route('menus.edit', $menu->id) }}" class="btn btn-outline-warning">Edit <i class="fas fa-edit"></i></a>
                                 @else
                                     <span class="text-muted">No Edit Access</span>
                                 @endif
