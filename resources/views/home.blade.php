@@ -36,6 +36,15 @@
     <div color="#ffffff" class="sc-kgUAy♂h bIyeJp"><svg width="29" height="30" viewBox="0 0 29 30" fill="none"  xmlns="http://www.w3.org/2000/svg"><path d="M20.5002 10.1999H22.9002C24.2257 10.1999 25.3002 11.2744 25.3002 12.5999V19.7999C25.3002 21.1254 24.2257 22.1999 22.9002 22.1999H20.5002V26.9999L15.7002 22.1999H10.9002C10.2375 22.1999 9.63745 21.9313 9.20314 21.497M9.20314 21.497L13.3002 17.3999H18.1002C19.4257 17.3999 20.5002 16.3254 20.5002 14.9999V7.7999C20.5002 6.47442 19.4257 5.3999 18.1002 5.3999H6.1002C4.77471 5.3999 3.7002 6.47442 3.7002 7.7999V14.9999C3.7002 16.3254 4.77471 17.3999 6.1002 17.3999H8.5002V22.1999L9.20314 21.497Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
 </div>
 
+{{-- messenger icon --}}
+{{-- <div class="inbox-icon" id="inboxIcon">
+    <!-- Use the comment dots icon -->
+     <div color="#ffffff" class="sc-kgUAy♂h bIyeJp">
+         <i class="fa-brands fa-facebook-messenger fa-2x"></i>
+     </div>
+ </div> --}}
+
+
 <!-- Chat Container -->
 <div class="chat-container" id="chatContainer">
     <div class="chat-header">
@@ -525,6 +534,93 @@
   </section>
 
 
+
+
+
+  <div class="container-fluid bg-light py-5">
+    <!-- Expertise Section -->
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-10 col-md-12">
+            <div class="expertise-section p-5 rounded shadow-lg text-white">
+                <div class="section-title">
+                    <h2>Specialist</h2>
+                    <p class="text-dark">Nowadays, make your bright future with technology</p>
+                </div>
+                <div class="row">
+                    <!-- Web Applications -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="fas fa-desktop"></i></div>
+                            <h4 class="expertise-title">Web Development</h4>
+                            <p class="expertise-desc">Build cool websites and apps, and shape the future of the internet with in-demand tech skills!</p>
+                        </div>
+                    </div>
+                    <!-- Mobile Applications -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <h4 class="expertise-title">Mobile Applications</h4>
+                            <p class="expertise-desc">Create the next hit mobile app and change the world with your innovative ideas!</p>
+                        </div>
+                    </div>
+                    <!-- Business & Management -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="fas fa-briefcase"></i></div>
+                            <h4 class="expertise-title">Business & Management</h4>
+                            <p class="expertise-desc">Master leadership and business skills to become a future leader or entrepreneur!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-10 col-md-12">
+                        <div class="about-section p-5 bg-light rounded shadow-lg text-center text-dark">
+                            <h3 class="about-title mb-3">About Us!</h3>
+                            <p class="about-text lead">
+                                A dedicated web developer focused on building efficient, user-friendly applications.
+                                I combine modern design principles, emerging technologies, and meticulous attention
+                                to detail to create impactful solutions for clients across industries.
+                            </p>
+                            <a href="{{ route('about') }}" class="btn btn-outline-dark mt-4">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <marquee class="logos text-center mt-5">
+            <img src="{{ asset('frontend/image/Flutter-App.png') }}" alt="Flutter App">
+            <img src="{{ asset('frontend/image/java.png') }}" alt="Java">
+            <img src="{{ asset('frontend/image/fire.png') }}" alt="Firebase">
+            <img src="{{ asset('frontend/image/html.png') }}" alt="HTML">
+            <img src="{{ asset('frontend/image/css.png') }}" alt="CSS">
+            <img src="{{ asset('frontend/image/bootstrap.png') }}" alt="Bootstrap">
+            <img src="{{ asset('frontend/image/js0.png') }}" alt="JavaScript">
+            <img src="{{ asset('frontend/image/node.png') }}" alt="Node.js">
+            <img src="{{ asset('frontend/image/php.png') }}" alt="PHP">
+            <img src="{{ asset('frontend/image/laravel.png') }}" alt="Laravel">
+            <img src="{{ asset('frontend/image/database.png') }}" alt="Database">
+            <img src="{{ asset('frontend/image/powerpoint.png') }}" alt="PowerPoint">
+            <img src="{{ asset('frontend/image/bigml.png') }}" alt="BigML">
+            <img src="{{ asset('frontend/image/powerbi.png') }}" alt="Power BI">
+            <img src="{{ asset('frontend/image/excel.png') }}" alt="Excel">
+        </marquee>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 <section id="services" class="services section-bg">
     <div class="container aos-init aos-animate" data-aos="fade-up">
         <div class="section-title">
@@ -561,127 +657,6 @@
                 <div class="icon-box">
                     <div class="icon"><i class="fa-solid fa-person-rays"></i></div>
                     <h4><a href="#">Human Resource</a></h4>
-                    <p>Talent, performance, and innovation for each organization.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="container-fluid mt-5">
-    <div class="row">
-        <marquee class="logos text-center mt-5">
-            <img src="{{ asset('frontend/image/Flutter-App.png') }}" alt="Flutter App">
-            <img src="{{ asset('frontend/image/java.png') }}" alt="Java">
-            <img src="{{ asset('frontend/image/fire.png') }}" alt="Firebase">
-            <img src="{{ asset('frontend/image/html.png') }}" alt="HTML">
-            <img src="{{ asset('frontend/image/css.png') }}" alt="CSS">
-            <img src="{{ asset('frontend/image/bootstrap.png') }}" alt="Bootstrap">
-            <img src="{{ asset('frontend/image/js0.png') }}" alt="JavaScript">
-            <img src="{{ asset('frontend/image/node.png') }}" alt="Node.js">
-            <img src="{{ asset('frontend/image/php.png') }}" alt="PHP">
-            <img src="{{ asset('frontend/image/laravel.png') }}" alt="Laravel">
-            <img src="{{ asset('frontend/image/database.png') }}" alt="Database">
-            <img src="{{ asset('frontend/image/powerpoint.png') }}" alt="PowerPoint">
-            <img src="{{ asset('frontend/image/bigml.png') }}" alt="BigML">
-            <img src="{{ asset('frontend/image/powerbi.png') }}" alt="Power BI">
-            <img src="{{ asset('frontend/image/excel.png') }}" alt="Excel">
-        </marquee>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-<div class="container-fluid -bg py-5">
-    <!-- Expertise Section -->
-    <div class="row justify-content-center text-center">
-        <div class="col-lg-10 col-md-12">
-            <div class="expertise-section p-5 rounded shadow-lg text-white">
-                <div class="section-title">
-                    <h2>Specialist</h2>
-                    <p class="text-dark">Nowaday make your bright future with technology</p>
-                </div>
-                <div class="container expertise-section">
-                    <!-- Web Applications -->
-                    <div class="expertise-item">
-                        <div class="expertise-icon"><i class="fas fa-desktop"></i></div>
-                        <h4 class="expertise-title">Web Applications</h4>
-                        <p class="expertise-desc">Custom-built, responsive web applications to meet business goals.</p>
-                    </div>
-
-                    <!-- Mobile Applications -->
-                    <div class="expertise-item">
-                        <div class="expertise-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h4 class="expertise-title">Mobile Applications</h4>
-                        <p class="expertise-desc">Cross-platform mobile solutions for a seamless user experience.</p>
-                    </div>
-
-                    <!-- Business & Management -->
-                    <div class="expertise-item">
-                        <div class="expertise-icon"><i class="fas fa-briefcase"></i></div>
-                        <h4 class="expertise-title">Business & Management</h4>
-                        <p class="expertise-desc">Insightful consulting to drive efficiency and innovation.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <div class="row justify-content-center mt-5">
-        <div class="col-lg-10 col-md-12">
-            <div class="about-section p-5 bg-light rounded shadow-lg text-center text-dark">
-                <h3 class="about-title mb-3">About Me</h3>
-                <p class="about-text lead">
-                    A dedicated web developer focused on building efficient, user-friendly applications.
-                    I combine modern design principles, emerging technologies, and meticulous attention
-                    to detail to create impactful solutions for clients across industries.
-                </p>
-                <a href="#contact" class="btn btn-gradient mt-4">Get in Touch</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<section id="services" class="services section-bg">
-    <div class="container aos-init aos-animate" data-aos="fade-up">
-        <div class="row">
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h4><a href="">Web application</a></h4>
-                    <p>I know how to lead in the organizational context.</p>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                    <h4><a href="">Mobile application</a></h4>
-                    <p>When suddenly need to innovate something.</p>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa-solid fa-circle-info"></i></div>
-                    <h4><a href="">Management</a></h4>
-                    <p>Technical tools and techniques that I use on a daily basis.</p>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa-solid fa-business-time"></i></div>
-                    <h4><a href="">Business</a></h4>
                     <p>Talent, performance, and innovation for each organization.</p>
                 </div>
             </div>

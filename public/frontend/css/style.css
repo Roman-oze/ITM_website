@@ -3042,7 +3042,7 @@ a:hover {
     margin-bottom: 25px;
 }
 .expertise-item:hover .expertise-icon {
-    background: #007bff;
+    background: #000000;
     color: #fff;
 }
 .expertise-title {
