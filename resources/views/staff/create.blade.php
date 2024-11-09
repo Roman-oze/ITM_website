@@ -3,20 +3,17 @@
 @section('main')
 
 <main>
-    <div class="container p-3">
-
-        <h1 class="mt-4">Create Staff</h1>
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Staff Create</h2>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">create staff </li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Staff create</li>
         </ol>
-        <br>
-        <a href="{{route('staff.index')}}" class="btn btn-dark text-white">Back</a>
-        <br>
 
 
 
-
+<div class="d-flex justify-content-center align-items-center min-vh-85">
+    <div class="row p-3 shadow broder-1 rounded">
         <form action="{{route('staff.store')}}" enctype="multipart/form-data"  method="POST">
             @csrf
 
@@ -63,9 +60,12 @@
           </div>
 
 
-          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="submit" class="btn btn-success">Save</button>
         </form>
       </div>
+    </div>
+</div>
+
 </main>
 @endsection
 

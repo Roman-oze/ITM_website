@@ -3,7 +3,7 @@
 @section('main')
 <main>
     <div class="container-fluid px-4">
-        <h2 class="mt-4">ITM Office Staff</h2>
+        <h2 class="mt-4">Staff Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Staff List</li>
@@ -18,6 +18,17 @@
 
         <!-- Staff Cards -->
         <div class="row">
+            @if (session('success'))
+            <div class=" alert alert-success">
+              {{ session('success') }}
+            </div>
+          @endif
+          @if (session('error'))
+          <div class=" alert alert-danger">
+              {{ session('error') }}
+          </div>
+          @endif
+          
             @foreach($staffs as $staff)
             <div class="col-md-4 mb-4">
                 <div class="card shadow-sm h-100">

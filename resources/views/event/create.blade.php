@@ -3,22 +3,34 @@
 @section('main')
 
 
-<div class="container">
-
-    <h1 class="mt-4">Create Event</h1>
+<div class="container-fluid px-4">
+    <h2 class="mt-4">Event Create</h2>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Create event </li>
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">events create</li>
     </ol>
-    <br>
 
-<div class="row p-3">
+    <br>
+<div class="d-flex justify-content-center align-items-center min-vh-85">
+<div class="row p-3 shadow broder-1 rounded">
+
+    @if (session('success'))
+    <div class=" alert alert-success">
+        {{ session('success')}}
+    </div>
+    @endif
+    @if (session('error'))
+    <div class=" alert alert-danger">
+        {{ session('error')}}
+    </div>
+    @endif
+
     <form action="{{url('event_store')}}" enctype="multipart/form-data" method="POST">
         @csrf
 
         <div class="mb-3">
             <label for="nameInput" class="form-label">Event Name</label>
-            <input type="text" class="form-control" id="nameInput" name="name" >
+            <input type="text" class="form-control" id="nameInput" name="name" placeholder="Name">
             <span class="text-danger">@error('name'){{$message}}@enderror</span>
           </div>
 
@@ -56,8 +68,9 @@
 
 
 
-      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="submit" class="btn btn-success ">Save</button>
     </form>
+  </div>
   </div>
   </div>
 @endsection

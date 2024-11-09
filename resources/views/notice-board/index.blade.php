@@ -6,7 +6,7 @@
 <main>
 
     <div class="container-fluid px-4">
-        <h2 class="mt-4">Notice</h2>
+        <h2 class="mt-4">Notice Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Notice</li>
@@ -20,6 +20,17 @@
     </div>
 
 <div class="row">
+    @if (session('success'))
+    <div class=" alert alert-success">
+      {{ session('success') }}
+    </div>
+  @endif
+  @if (session('error'))
+  <div class=" alert alert-danger">
+      {{ session('error') }}
+  </div>
+  @endif
+  
     @foreach ($notices as $notice)
     <div class="col-md-6">
         <div class="card p-3 mt-3">

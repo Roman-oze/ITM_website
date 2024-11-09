@@ -17,13 +17,20 @@
             </a>
         </div>
 
-        <div class="row mt-4">
-            @if (session('status'))
-                <div class="alert alert-success">{{ session('status') }}</div>
-            @endif
-
             <!-- First Row: Dean and Head of Department -->
-            <div class="row">
+            <div class="row row d-flex justify-content-center">
+
+                @if (session('success'))
+                <div class=" alert alert-success">
+                  {{ session('success') }}
+                </div>
+              @endif
+              @if (session('error'))
+              <div class=" alert alert-danger">
+                  {{ session('error') }}
+              </div>
+              @endif
+
                 @foreach($teachers as $teacher)
                     @if($teacher->designation == 'Dean of ITM Department' || $teacher->designation == 'Head of ITM Department')
                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -32,6 +39,7 @@
                                     <img src="{{ asset($teacher->image) }}" width="120" height="120" class="rounded-circle mb-3" alt="Faculty Image">
                                     <h5 class="card-title">{{ $teacher->name }}</h5>
                                     <span class="badge badge-info mb-3">{{ $teacher->designation }}</span>
+                                    <br>
                                     <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#facultyModal{{ $teacher->teacher_id }}">Show Details</button>
                                 </div>
                             </div>
@@ -50,6 +58,7 @@
                                     <img src="{{ asset($teacher->image) }}" width="120" height="120" class="rounded-circle mb-3" alt="Faculty Image">
                                     <h5 class="card-title">{{ $teacher->name }}</h5>
                                     <span class="badge badge-info mb-3">{{ $teacher->designation }}</span>
+                                    <br>
                                     <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#facultyModal{{ $teacher->teacher_id }}">Show Details</button>
                                 </div>
                             </div>

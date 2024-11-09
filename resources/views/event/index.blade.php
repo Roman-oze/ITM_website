@@ -22,6 +22,17 @@
 
         <!-- Compact Event Cards Grid -->
         <div class="row">
+            @if (session('success'))
+            <div class=" alert alert-success">
+              {{ session('success') }}
+            </div>
+          @endif
+          @if (session('error'))
+          <div class=" alert alert-danger">
+              {{ session('error') }}
+          </div>
+          @endif
+          
             @foreach ($events as $event)
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm h-100">

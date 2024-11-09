@@ -41,7 +41,7 @@ class NoticeBoardController extends Controller
         $notice->title = $request->input('title');
         $notice->content = $request->input('content');
         $notice->save();
-        return redirect()->route('notice.index')->with('success', 'Notice Board created successfully');
+        return redirect()->back()->with('success', 'Notice Board created successfully');
 
 
 
@@ -82,7 +82,8 @@ class NoticeBoardController extends Controller
             $notice['title']=$request->title;
             $notice['content']=$request->content;
             NoticeBoard::where('id',$id)->update($notice);
-            return redirect('/notices');
+            return redirect('/dashboard/notice')->back()->with('success','Created Notice board successfully !');
+
 
     }
 
@@ -93,6 +94,6 @@ class NoticeBoardController extends Controller
     public function destroy(string $id)
     {
         $notice = NoticeBoard::where('id',$id)->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success','Deleted Successfully !');
     }
 }

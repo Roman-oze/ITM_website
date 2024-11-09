@@ -95,22 +95,30 @@ class EventController extends Controller
      * Update the specified resource in storage.
      */
     public function event_update(Request $request, string $id)
-    {
-        $fileName = time().'-itm'.$request->file('image')->getClientOriginalExtension();
+{
+    $data = [
+        'name' => $request->name,
+        'date' => $request->date,
+        'time' => $request->time,
+        'location' => $request->location,
+        'description' => $request->description,
+    ];
+
+    // Check if an image file is uploaded
+    if ($request->hasFile('image')) {
+        $fileName = time() . '-itm.' . $request->file('image')->getClientOriginalExtension();
         $request->file('image')->move('event', $fileName);
 
-
-       $data ['name']=$request->name;
-       $data ['image']= 'event/'.$fileName;
-       $data ['date']=$request->date;
-       $data ['time']=$request->time;
-       $data ['location']=$request->location;
-       $data ['description']=$request->description;
-
-      DB::table('events')->where('id',$id)->update($data);
-
-      return redirect()->route('event.index')->with('success','Event update Successfully');
+        // Add the image path to the $data array
+        $data['image'] = 'event/' . $fileName;
     }
+
+    // Update the record in the database
+    DB::table('events')->where('id', $id)->update($data);
+
+    return redirect()->route('event.index')->with('success', 'Event updated successfully!');
+}
+
 
     /**
      * Remove the specified resource from storage.

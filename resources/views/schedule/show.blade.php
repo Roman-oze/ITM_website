@@ -2,50 +2,48 @@
 @extends('layout.dashboard')
 
 @section('main')
-
-<div class="container-fluid px-4">
-    <h2 class="mt-4">Schedule Edit</h2>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Schedule edit</li>
+<div class="container px-3 py-4">
+    <h2 class="text-primary mb-3">Schedule Edit</h2>
+    <ol class="breadcrumb mb-3">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="text-decoration-none text-primary">Dashboard</a></li>
+        <li class="breadcrumb-item active text-secondary">Schedule Show</li>
     </ol>
-    <div class="card shadow-lg">
-        <div class="card-header bg-dark text-white text-center">
-            <h3 >Schedule Details</h3>
+
+    <div class="card small-card shadow-sm border-0 rounded-lg mb-3">
+        <div class="card-header bg-primary text-white text-center py-2">
+            <h5 class="mb-0"><i class="fas fa-calendar-check me-2"></i>Schedule Details</h5>
         </div>
-
-
-        <div class="card-body">
-            <div class="row mb-3">
-                <div class="col-6 font-weight-bold">Course Code:</div>
-                <div class="col-6 text-right">{{ $schedule->course->course_code }}</div>
+        <div class="card-body p-3">
+            <div class="row mb-2">
+                <div class="col-5 text-muted small">Course Code:</div>
+                <div class="col-7 text-end small">{{ $schedule->course->course_code }}</div>
             </div>
-            <div class="row mb-3">
-                <div class="col-6 font-weight-bold">Course Name:</div>
-                <div class="col-6 text-right">{{ $schedule->course->course_name }}</div>
+            <div class="row mb-2">
+                <div class="col-5 text-muted small">Course Name:</div>
+                <div class="col-7 text-end small">{{ $schedule->course->course_name }}</div>
             </div>
-            <div class="row mb-3">
-                <div class="col-6 font-weight-bold">Faculty:</div>
-                <div class="col-6 text-right">{{ $schedule->teacher->name }}</div>
+            <div class="row mb-2">
+                <div class="col-5 text-muted small">Faculty:</div>
+                <div class="col-7 text-end small">{{ $schedule->teacher->name }}</div>
             </div>
-            <div class="row mb-3">
-                <div class="col-6 font-weight-bold">Room No:</div>
-                <div class="col-6 text-right">{{ $schedule->room_no }}</div>
+            <div class="row mb-2">
+                <div class="col-5 text-muted small">Room No:</div>
+                <div class="col-7 text-end small">{{ $schedule->room_no }}</div>
             </div>
-            <div class="row mb-3">
-                <div class="col-6 font-weight-bold">Day:</div>
-                <div class="col-6 text-right">{{ $schedule->day }}</div>
+            <div class="row mb-2">
+                <div class="col-5 text-muted small">Day:</div>
+                <div class="col-7 text-end small">{{ $schedule->day }}</div>
             </div>
-            <div class="row mb-3">
-                <div class="col-6 font-weight-bold">Time:</div>
-                <div class="col-6 text-right">{{ $schedule->start_time }} - {{ $schedule->end_time }}</div>
+            <div class="row mb-2">
+                <div class="col-5 text-muted small">Time:</div>
+                <div class="col-7 text-end small">{{ $schedule->start_time }} - {{ $schedule->end_time }}</div>
             </div>
         </div>
-
-        <div class="card-footer text-center">
-            <a href="{{ route('schedules.index') }}" class="btn btn-outline-dark">Back to Schedule List</a>
+        <div class="card-footer text-center py-2 bg-light">
+            <a href="{{ route('schedules.index') }}" class="btn btn-sm btn-outline-primary">
+                <i class="fa fa-arrow-left"></i> Back
+            </a>
         </div>
     </div>
 </div>
-
 @endsection

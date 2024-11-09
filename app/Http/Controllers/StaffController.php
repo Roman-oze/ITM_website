@@ -105,24 +105,29 @@ class StaffController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        $fileName = time(). '.' . $request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move(('asset/staff'),$fileName);
+{
+    $data = [
+        'name' => $request->name,
+        'position' => $request->position,
+        'email' => $request->email,
+        'mobile' => $request->mobile,
+    ];
 
+    // Check if an image file is uploaded
+    if ($request->hasFile('image')) {
+        $fileName = time() . '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move(public_path('asset/staff'), $fileName);
 
-
-       $data ['image'] = 'asset/staff/'. $fileName;
-       $data ['name'] = $request->name;
-       $data ['position'] = $request->position;
-       $data ['email'] = $request->email;
-       $data ['mobile'] = $request->mobile;
-
-
-
-        DB::table('staffs')->where('id',$id)->update($data);
-        return redirect()->back()->with('success','Update profile Successfully !');
-
+        // Add the image path to the $data array
+        $data['image'] = 'asset/staff/' . $fileName;
     }
+
+    // Update the record in the database
+    DB::table('staffs')->where('id', $id)->update($data);
+
+    return redirect()->back()->with('success', 'Update profile successfully!');
+}
+
 
     /**
      * Remove the specified resource from storage.

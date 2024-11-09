@@ -105,7 +105,7 @@ class FacultyController extends Controller
 
 
     DB::table('teachers')->insert($data);
-    return redirect()->route('dashboard.faculty')->with('success','Faculty Added Successfully');
+    return redirect()->route('faculty.index')->with('success','Faculty Added Successfully');
 
 
     }
@@ -132,36 +132,36 @@ class FacultyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $request->validate([
-        //     'image' => 'required|mimes:png,jpg,jpeg,webp',
-        //     'name' => 'required',
-        //     'designation' => 'required',
-        //     'fb' => 'required',
-        //     'linked' => 'required',
-        //     'email' => 'required',
-        //     'phone' => 'required',
-        // ]);
+        // Initialize an empty data array
+        $data = [];
 
+        // Check if an image file is uploaded
+        if ($request->hasFile('image')) {
+            // Generate a unique file name with timestamp and extension
+            $fileName = time() . '-itm.' . $request->file('image')->getClientOriginalExtension();
 
-        $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move('faculty',$fileName);
+            // Move the uploaded file to the 'faculty' directory
+            $request->file('image')->move('faculty', $fileName);
 
+            // Set the image path in the data array
+            $data['image'] = 'faculty/' . $fileName;
+        }
 
+        // Collect the other input data
+        $data['name'] = $request->name;
+        $data['designation'] = $request->designation;
+        $data['fb'] = $request->fb;
+        $data['linked'] = $request->linked;
+        $data['email'] = $request->email;
+        $data['phone'] = $request->phone;
 
-            $data ['image'] =  'faculty/'.$fileName;
-            $data['name']=$request->name;
-            $data['designation']=$request->designation;
-            $data['fb']=$request->fb;
-            $data['linked']=$request->linked;
-            $data['email']=$request->email;
-            $data['phone']=$request->phone;
+        // Update the record in the database
+        DB::table('teachers')->where('teacher_id', $id)->update($data);
 
-
-            DB::table('teachers')->where('teacher_id',$id)->update($data);
-
-            return redirect()->route('dashboard.faculty')->with('success','Faculty update Successfully');
-
+        // Redirect back with a success message
+        return redirect()->route('faculty.index')->with('success', 'Faculty updated successfully');
     }
+
 
 
 
@@ -174,7 +174,7 @@ class FacultyController extends Controller
     public function destroy(string $id)
     {
         Teacher::where('teacher_id',$id)->delete();
-        return redirect()->route('dashboard.faculty')->with('success','Faculty delete Successfully');
+        return redirect()->route('faculty.index')->with('success','Faculty delete Successfully');
 
     }
 

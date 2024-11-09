@@ -3,16 +3,16 @@
 @section('main')
 
 <main>
-    <div class="container p-3">
-        <h2 class="mt-4">Staff Create</h2>
+<div class="container-fluid px-4">
+        <h2 class="mt-4">Staff Edit</h2>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">staff List </li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Staff edit</li>
         </ol>
         <br>
 
-
-
+<div class="d-flex justify-content-center align-items-center min-vh-85">
+    <div class="row p-3 shadow broder-1 rounded">
         <form action="{{route('staff.update',$staff->id)}}" enctype="multipart/form-data"  method="POST">
             @csrf
             @method('PUT')
@@ -29,9 +29,9 @@
           @endif
 
             <div class="mb-3">
-                <label for="image" class="form-label">Current Profile </label>
                 @if ($staff->image)
-                <img src="{{asset($staff->image)}}" alt="" width="100" >
+                <img src="{{asset($staff->image)}}" alt="" width="100" height="100" class="rounded-circle    ">
+                <label for="image" class="form-label badge badge-dark">Current Profile </label>
                 @endif
                 <input type="file" class="form-control" id="imageInput" name="image" value="{{$staff->image}}" >
                <span class="text-danger">@error('image'){{$message}}@enderror</span>
@@ -63,9 +63,12 @@
           </div>
 
 
-          <button type="submit" class="btn btn-primary">Update Profile</button>
+          <button type="submit" class="btn btn-dark">Update Profile</button>
         </form>
       </div>
+    </div>
+</div>
+
 </main>
 @endsection
 
