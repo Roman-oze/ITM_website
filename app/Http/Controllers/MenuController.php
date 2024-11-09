@@ -50,6 +50,8 @@ class MenuController extends Controller
 
             $menus = Menu::all();
 
+
+
             return view('setup-menu.menus.display',compact('menus'));
         }
 

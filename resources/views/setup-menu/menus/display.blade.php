@@ -27,29 +27,29 @@
                         <tr>
                             <td>{{ $menu->id }}</td>
                             <td>{{ $menu->name }}</td>
-                            <td class="text-center">
+                            {{-- <td class="text-center">
                                 <div class="d-flex justify-content-center flex-wrap gap-1">
-                                    @can('update permission')
+                                    @can('edit')
                                         <a href="{{ url('menus/' . $menu->id . '/edit') }}" class="btn btn-sm btn-outline-primary p-2">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     @endcan
 
-                                    @can('delete permission')
+                                    @can('delete')
                                         <button onclick="if(confirm('Are you sure?')) { window.location.href='{{ url('menus/' . $menu->id . '/delete') }}' }"
                                             class="btn btn-sm btn-outline-danger">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     @endcan
                                 </div>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-    
+
 </main>
 @endsection
 
