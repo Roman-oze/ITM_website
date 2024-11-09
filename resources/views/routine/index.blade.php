@@ -11,7 +11,7 @@
         </ol>
 
         <div class="row d-flex justify-content-evenly">
-            @can('manage-user')
+            @can('update user')
             <div class="col-12 col-md-5 card shadow-lg p-4 mb-5 bg-gradient">
                 <div class="card-body">
                     <h3 class="card-title text-center p-3 text-dark">Upload Routine File</h3>

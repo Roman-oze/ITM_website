@@ -17,8 +17,11 @@ class CustomMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check()) {
+
+            /** @var App\Models\User */
             $user = Auth::user();
             if ($user->hasRole(['super-admin', 'admin', 'faculty'])) {
+                
                 return $next($request);
             }
             abort(403, "User does not have correct roles");

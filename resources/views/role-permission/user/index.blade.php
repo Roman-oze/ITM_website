@@ -46,14 +46,14 @@
                                             <td>{{ $user->email }}</td>
                                             <td class="text-center">
                                                 <div class="d-flex justify-content-center flex-wrap">
-                                                    @can('edit')
+                                                    @can('update user')
                                                         <a href="{{ url('users/' . $user->id . '/edit') }}"
                                                            class="btn    me-2 mb-2">
                                                             <i class="fas fa-edit text-info"></i>
                                                         </a>
                                                     @endcan
 
-                                                    @can('delete')
+                                                    @can('delete user')
                                                         <button onclick="if(confirm('Are you sure?')) { window.location.href='{{ url('users/' . $user->id . '/delete') }}' }"
                                                                 class="btn mb-2">
                                                             <i class="fas fa-trash-alt text-danger"></i>
