@@ -42,23 +42,33 @@
                         <a href="{{ $service->link }}" class="btn btn-primary">{{ $service->link_name }}</a>
                         <p class="card-text">{{ $service->description }}</p>
                     </div>
-                    <div class="mt-1 p-1 d-flex justify-content-evenly" >
-
-
-                        <a href="{{route('services.edit',$service->id)}}" class="btn btn-outline-info">Edit</a>
-
-                        @can('manage-user')
-                        <form action="{{ route('services.destroy', $service->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this item?');" class="mt-3">
-                            @csrf
-                            @method('DELETE')
-                            {{-- <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">
-                                <i class="fa-solid fa-trash fa-2x"></i>
-                            </button> --}}
-                            <button type="submit"  class=" btn btn-outline-danger p-3 " onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can text-black  fa-lg "></i></button>
-
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                Actions
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                            @can('update user')
+                                <li>
+                                    <a class="dropdown-item" href="{{route('services.edit',$service->id)}}">
+                                        <i class="fa-solid fa-user-pen"></i> Edit
+                                    </a>
+                                </li>
                             @endcan
-                        </form>
-                    </div>
+                                <li>
+                            @can('delete user')
+                                    <form action="{{ route('services.destroy', $service->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item text-danger">
+                                            <i class="fa fa-trash"></i> Delete
+                                        </button>
+                                    </form>
+                            @endcan
+                                </li>
+                            </ul>
+                     </div>
+                </div>
                 </div>
             </div>
             @endforeach

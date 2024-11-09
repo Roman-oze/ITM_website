@@ -26,7 +26,8 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('manage-user', function ($user) {
             // List the permissions you want to check
-            $permissions = [ 'update user','delete user', 'update delete','edit','update', 'delete'];
+            $permissions = [ 'create user','update user', 'delete user'];
+            
 
             // Check if the user has any of these permissions
             return collect($permissions)->contains(function ($permission) use ($user) {

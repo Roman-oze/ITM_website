@@ -33,8 +33,15 @@ class RoutineController extends Controller
 
     public function index()
     {
-       $files = DB::table('routines')->get();
-       return view('routine.index',compact('files'));
+        $springs= Routine::whereIn('type',['spring'])->get();
+        $falls = Routine::whereIn('type',['fall'])->get();
+        $files = DB::table('routines')->get();
+        
+        return view('routine.index',[
+        'files' => $files,
+        'springs' => $springs,
+        'falls' => $falls
+       ]);
 
     }
 

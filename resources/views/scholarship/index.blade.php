@@ -31,19 +31,20 @@
                             </p>
 
                             <div class="d-flex justify-content-center">
-                                @can('edit')
                                     <div class="dropdown">
                                         <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
                                             Actions
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                            @can('update user')
                                             <li>
                                                 <a class="dropdown-item" href="{{ route('edit.scholarship', $scholar->id) }}">
                                                     <i class="fa-solid fa-user-pen"></i> Edit
                                                 </a>
                                             </li>
+                                            @endcan
                                             <li>
-                                                @can('delete')
+                                                @can('delete user')
                                                 <form action="{{ route('delete.scholarship', $scholar->id) }}" method="POST" class="d-inline">
                                                     @csrf
                                                     @method('DELETE')
@@ -55,7 +56,6 @@
                                             </li>
                                         </ul>
                                     </div>
-                                @endcan
                             </div>
                         </div>
                     </div>

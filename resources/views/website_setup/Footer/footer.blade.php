@@ -31,7 +31,7 @@
                         <p class="card-text">Phone: <strong>{{ $institute->phone }}</strong></p>
                         <p class="card-text">Email: <strong>{{ $institute->email }}</strong></p>
 
-                        <div class="mb-3">
+                        <div class="mb-3 d-flex justify-content-evenly">
                             <a href="{{ $institute->tuition_fees }}" class="btn btn-success btn-sm" download>Download Tuition Fees</a>
                             <a href="{{ $institute->course_download }}" class="btn btn-secondary btn-sm" download>Download Course</a>
                         </div>
@@ -47,17 +47,33 @@
                                 <i class="fab fa-linkedin-in fa-lg"></i>
                             </a>
                         </div>
-
-                        <div class="d-flex justify-content-between">
-                            <a href="{{ route('footer.edit', $institute->id) }}" class="btn btn-outline-info">Edit</a>
-                            @can('manage-user')
-                            <form action="{{ route('footer.destroy', $institute->id) }}" method="POST" enctype="multipart/form-data" class="d-inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                            </form>
-                            @endcan
-                        </div>
+                        <div class="d-flex justify-content-center mt-2">
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                @can('update user')
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('footer.edit', $institute->id) }}">
+                                            <i class="fa-solid fa-user-pen"></i> Edit
+                                        </a>
+                                    </li>
+                                @endcan
+                                    <li>
+                                @can('delete user')
+                                        <form action="{{ route('footer.destroy', $institute->id) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item text-danger">
+                                                <i class="fa fa-trash"></i> Delete
+                                            </button>
+                                        </form>
+                                @endcan
+                                    </li>
+                                </ul>
+                          </div>
+                       </div>
                     </div>
                 </div>
             </div>

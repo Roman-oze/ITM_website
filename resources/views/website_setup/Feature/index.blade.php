@@ -36,6 +36,7 @@
                                     Actions
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="actionDropdown{{ $feature->id }}">
+
                                     <li>
                                         <a class="dropdown-item" href="{{ route('feature.edit', $feature->id) }}">
                                             <i class="fas fa-edit me-2"></i>Edit
@@ -45,8 +46,8 @@
                                         <form action="{{ route('feature.delete', $feature->id) }}" method="POST" class="d-inline" style="display: inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="dropdown-item" onclick="return confirm('Are you sure you want to delete this feature?')">
-                                                <i class="fas fa-trash-alt me-2"></i>Delete
+                                            <button type="submit" class="dropdown-item text-danger" onclick="return confirm('Are you sure you want to delete this feature?')">
+                                                <i class="fas fa-trash-alt me-2 text-danger"></i>Delete
                                             </button>
                                         </form>
                                     </li>

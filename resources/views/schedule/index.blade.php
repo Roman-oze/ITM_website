@@ -59,8 +59,10 @@
                             <td>{{ $schedule->start_time }}</td>
                             <td class="d-flex">
                                 <a href="{{ route('schedules.show', $schedule->schedule_id) }}" class="btn btn-info btn-sm me-1">Show</a>
+                                @can('update user')
                                 <a href="{{ route('schedules.edit', $schedule->schedule_id) }}" class="btn btn-warning btn-sm me-1">Edit</a>
-                                @can('delete')
+                                @endcan
+                                @can('delete user')
                                 <form action="{{ route('schedules.delete', $schedule->schedule_id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')

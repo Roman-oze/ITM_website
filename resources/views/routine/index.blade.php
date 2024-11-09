@@ -61,7 +61,7 @@
                                 <th>Type</th>
                                 <th>Description</th>
                                 <th>Date</th>
-                                @can('delete')
+                                @can('delete user')
                                 <th>Actions</th>
                                 @endcan
                             </tr>
@@ -72,8 +72,8 @@
                                     <td>{{ $file->type }}</td>
                                     <td>{{ $file->name }}</td>
                                     <td>{{ $file->uploaded_at }}</td>
-                                    <td>
-                                        @can('delete')
+                                        @can('delete user')
+                                        <td>
                                         <form action="{{ route('routine.delete', $file->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
@@ -81,14 +81,92 @@
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </button>
                                         </form>
-                                        @endcan
                                     </td>
+                                    @endcan
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+
+           <!-- Container for Sections with Smooth Fade-In/Out -->
+           <div class="container-fluid">
+
+
+<!-- Container for Sections with Smooth Fade-In/Out -->
+<div class="container-fluid">
+    <!-- Button Group -->
+    <div class="card mb-3">
+        <div class="card-header text-center">
+            <button class="btn btn-gradient-primary btn-lg mx-2 p-2 advanced-btn" onclick="toggleSection('fall-section')">
+                <i class="fas fa-leaf"></i> Fall
+            </button>
+            <button class="btn btn-gradient-success btn-lg mx-2 p-2 advanced-btn" onclick="toggleSection('spring-section')">
+                <i class="fas fa-sun"></i> Spring
+            </button>
+        </div>
+    </div>
+
+    <!-- Fall Section -->
+    <div id="fall-section" class="row p-3" style="display: none; opacity: 0;">
+        <div class="col-md-8">
+            <img src="{{ asset('frontend/image/routine.png') }}" alt="Routine" class="img-fluid">
+        </div>
+
+        <div class="col-md-4 p-2 text-center">
+            @foreach($falls as $fall)
+                <div class="card text-center shadow-lg mb-4" style="border-radius: 15px; overflow: hidden;">
+                    <div class="card-header bg-primary text-white" style="font-size: 1.2rem; padding: 20px 10px;">
+                        <i class="fas fa-calendar-alt"></i> {{ $fall->type }}
+                    </div>
+                    <div class="card-body" style="background-image: url('https://example.com/background.jpg'); background-size: cover; padding: 30px;">
+                        <p class="card-text text-dark mb-4" style="font-size: 1rem;">{{ $fall->name }}</p>
+                        <a href="{{ route('routine.show', $fall->id) }}" class="btn btn-light btn-block mb-2" style="border-radius: 20px;">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="{{ route('files.download', $fall->id) }}" class="btn btn-light btn-block" style="border-radius: 20px;">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Last updated: <strong>{{ $fall->uploaded_at }}</strong>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    <!-- Spring Section -->
+    <div id="spring-section" class="row p-3" style="display: none; opacity: 0;">
+        <div class="col-md-8">
+            <img src="{{ asset('frontend/image/routine.png') }}" alt="Routine" class="img-fluid">
+        </div>
+
+        <div class="col-md-4 p-2 text-center">
+            @foreach($springs as $spring)
+                <div class="card text-center shadow-lg mb-4" style="border-radius: 15px; overflow: hidden;">
+                    <div class="card-header bg-success text-white" style="font-size: 1.2rem; padding: 20px 10px;">
+                        <i class="fas fa-calendar-alt"></i> {{ $spring->type }}
+                    </div>
+                    <div class="card-body" style="background-image: url('https://example.com/background.jpg'); background-size: cover; padding: 30px;">
+                        <p class="card-text text-dark mb-4" style="font-size: 1rem;">{{ $spring->name }}</p>
+                        <a href="{{ url('/routine/show', $spring->id) }}" class="btn btn-light btn-block mb-2" style="border-radius: 20px;">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="{{ route('files.download', $spring->id) }}" class="btn btn-light btn-block" style="border-radius: 20px;">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Last updated: <strong>{{ $spring->uploaded_at }}</strong>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
         </div>
     </div>
 </main>
@@ -97,12 +175,43 @@
 
 <style>
 /* Advanced styling for upload section */
-.bg-gradient {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    color: white;
-    border-radius: 12px;
-}
+ .section {
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .btn {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+.btn-gradient-primary {
+        background: linear-gradient(135deg, #11a9cb 0%, #2575fc 100%);
+        color: white;
+        border: none;
+    }
 
+    .btn-gradient-success {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        color: white;
+        border: none;
+    }
+
+    /* Button Hover Effects */
+    .advanced-btn {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 30px;
+    }
+
+    .advanced-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Icon Styling */
+    .advanced-btn i {
+        margin-right: 8px;
+    }
 .btn-gradient {
     background: linear-gradient(90deg, #ff8a00, #e52e71);
     color: white;
@@ -144,3 +253,30 @@
     }
 }
 </style>
+<!-- Advanced JavaScript with Smooth Transitions -->
+<!-- JavaScript for Toggling Sections -->
+<script>
+    function toggleSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.row.p-3');
+        sections.forEach(section => {
+            section.style.display = 'none';
+            section.style.opacity = '0';
+            section.style.transition = 'opacity 0.5s';
+        });
+
+        // Display the selected section and animate opacity
+        const selectedSection = document.getElementById(sectionId);
+        selectedSection.style.display = 'flex'; // or 'block' if using block elements
+        setTimeout(() => {
+            selectedSection.style.opacity = '1';
+        }, 50); // Delay to ensure the transition is noticeable
+    }
+
+    // Initialize by showing one section on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        toggleSection('fall-section'); // or 'spring-section' based on your preference
+    });
+</script>
+
+

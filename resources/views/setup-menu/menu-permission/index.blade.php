@@ -40,12 +40,12 @@
                                 <td>{{ $permission->can_update ? 'Yes' : 'No' }}</td>
                                 <td>{{ $permission->can_delete ? 'Yes' : 'No' }}</td>
                                 <td class="text-center">
-                                    @can('edit')
+                                    @can('update user')
                                         <a href="{{ route('menu-permission.edit', $permission->id) }}" class="btn btn-sm btn-outline-primary mr-1">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     @endcan
-                                    @can('delete')
+                                    @can('delete user')
                                         <form action="{{ route('menu-permissions.destroy', $permission->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this permission?');">
                                             @csrf
                                             @method('DELETE')

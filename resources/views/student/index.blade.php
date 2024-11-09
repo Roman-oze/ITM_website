@@ -35,15 +35,32 @@
                             <p class="small mb-1"><strong>ID:</strong> {{ $student->roll }}</p>
                             <p class="small mb-1"><strong>Batch:</strong> {{ $student->batch->batch_name ?? 'No Batch Assigned' }}</p>
                             <p class="small mb-1"><strong>Email:</strong> {{ $student->email }}</p>
-                            <div class="d-flex mt-2">
-                                <a href="{{ route('student.edit', $student->id) }}" class="btn btn-outline-info btn-sm me-2"><i class="fa-solid fa-pen"></i> Edit</a>
-                                @can('delete')
-                                    <form action="{{ route('delete', $student->id) }}" method="POST" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
-                                    </form>
-                                @endcan
+                            <div class="d-flex justify-content-center mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Actions
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                            @can('update user')
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('student.edit', $student->id) }}">
+                                                    <i class="fa-solid fa-user-pen"></i> Edit
+                                                </a>
+                                            </li>
+                                            @endcan
+                                            <li>
+                                                @can('delete user')
+                                                <form action="{{ route('delete', $student->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item text-danger">
+                                                        <i class="fa fa-trash"></i> Delete
+                                                    </button>
+                                                </form>
+                                                @endcan
+                                            </li>
+                                        </ul>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -51,9 +68,7 @@
             @endforeach
         </div>
 
-        <div class="d-flex justify-content-center mt-4">
-            {{ $students->links('pagination::bootstrap-5') }}
-        </div>
+            {{ $students->links('pagination::bootstrap-4') }}
     </div>
 </main>
 @endsection

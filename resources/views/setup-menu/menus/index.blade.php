@@ -29,7 +29,7 @@
                             <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#menu{{ $menu->id }}" aria-expanded="false" aria-controls="menu{{ $menu->id }}">
                                 <i class="fas fa-chevron-down"></i>
                             </button>
-                          @can('manage-user')
+                          @can('delete user')
                             <form action="{{ route('menus.destroy', $menu->id) }}" method="POST" onsubmit="return confirm('Are you sure?');" class="d-inline ms-2">
                                     @csrf
                                     @method('DELETE')
@@ -49,13 +49,12 @@
                                 @else
                                     <span class="text-muted">No Create Access</span>
                                 @endif
-
                                 @if ($menu->permissions->where('can_edit', true)->isNotEmpty())
-                                    <a href="{{ route('menus.edit', $menu->id) }}" class="btn btn-outline-info"> <i class="fas fa-edit"></i></a>
+                                <a href="{{ route('menus.edit', $menu->id) }}" class="btn btn-outline-info"> <i class="fas fa-edit"></i></a>
                                 @else
-                                    <span class="text-muted">No Edit Access</span>
+                                <span class="text-muted">No Edit Access</span>
                                 @endif
-                            </div>
+                                </div>
 
                             <!-- Submenu List -->
                             @if ($menu->children->isNotEmpty())
@@ -66,10 +65,10 @@
                                         <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                                             <span>{{ $child->name }}</span>
                                             <div class="btn-group">
-                                                @can('edit')
+                                                @can('update user')
                                                     <a href="{{ route('menus.edit', $child->id) }}" class=" btn-outline-info"><i class="fa fa-edit"></i></a>
                                                 @endcan
-                                                @can('delete')
+                                                @can('delete user')
                                                     <form action="{{ route('menus.destroy', $child->id) }}" method="POST" onsubmit="return confirm('Are you sure?');" class="d-inline">
                                                         @csrf
                                                         @method('DELETE')

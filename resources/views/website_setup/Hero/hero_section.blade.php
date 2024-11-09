@@ -36,13 +36,15 @@
                                             <i class="fas fa-cog"></i> Actions
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                            @can('update user')
                                                 <li>
                                                     <a class="dropdown-item" href="{{ route('herosection.edit', $hero->id)}}">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
                                                 </li>
+                                            @endcan
                                                 <li>
-                                                    @can('manage-user')
+                                                    @can('delete user')
                                                     <form action="{{ route('herosection.destroy', $hero->id) }}" method="POST" class="d-inline">
                                                         @csrf
                                                         @method('DELETE')
