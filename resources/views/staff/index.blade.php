@@ -9,17 +9,9 @@
             <li class="breadcrumb-item active">Staff List</li>
         </ol>
 
-        <!-- Search Bar -->
-        <form action="records" method="GET" class="input-group mb-4">
-            <input type="text" class="form-control" placeholder="Search staff by name, position..." name="search">
-            <button class="btn btn-primary" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
-
-        <!-- Add Staff Button -->
-        <div class="d-flex justify-content-end mb-3">
-            <a href="{{ route('staff.create') }}" class="btn btn-primary">
+        <!-- Add Button -->
+        <div class="d-flex  mb-3">
+            <a href="{{ route('staff.create') }}" class="btn btn-dark rounded-pill shadow">
                 <i class="fas fa-plus-circle"></i> Add Profile
             </a>
         </div>
@@ -37,19 +29,20 @@
                         <p><i class="fas fa-phone"></i> {{ $staff->mobile }}</p>
 
                         <div class="d-flex justify-content-center mt-2">
-                            @can('edit')
                             <div class="dropdown">
                                 <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
                                     Actions
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                    @can('update user')
                                     <li>
                                         <a class="dropdown-item" href="{{ route('staff.edit', $staff->id) }}">
                                             <i class="fa-solid fa-user-pen"></i> Edit
                                         </a>
                                     </li>
+                                    @endcan
                                     <li>
-                                        @can('delete')
+                                        @can('delete user')
                                         <form action="{{ route('staff.delete',$staff->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
@@ -61,7 +54,6 @@
                                     </li>
                                 </ul>
                             </div>
-                        @endcan
                     </div>
                     </div>
                 </div>

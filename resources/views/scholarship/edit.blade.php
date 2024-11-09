@@ -7,14 +7,12 @@
 
 
 
-        <!-- resources/views/students/create.blade.php -->
-<div class="container">
-    <h1 class="mt-4">Scholarship</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Scholarship Edit</li>
-    </ol>
-</div>
+ <div class="container-fluid px-4">
+    <h2 class="mt-4">Scholarship Edit</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Scholarship edit </li>
+        </ol>
 
         <div class="container  ">
             <div id="layoutAuthentication">
@@ -86,7 +84,7 @@
                                                 </div>
 
                                                 <div class="text-center">
-                                                    <button type="submit" class="btn btn-outline-danger">
+                                                    <button type="submit" class="btn btn-danger">
                                                         <i class="fas fa-paper-plane"></i> Update
                                                     </button>
                                                 </div>
@@ -99,6 +97,7 @@
                     </main>
                 </div>
             </div>
+        </div>
         </div>
         <br>
         <br>

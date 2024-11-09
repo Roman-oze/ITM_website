@@ -1,21 +1,22 @@
 @extends('layout.dashboard')
 
 @section('main')
-<main class="container mt-2">
+<main>
 
-    <h1 class="mt-4">Menu Control Panel</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Menu list </li>
-    </ol>
-    <br>
- <div class="card">
-    <div class="card-header">
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Menu Control Panel</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Menu list</li>
+        </ol>
 
-        <a href="{{route('menus.create')}}" class="btn btn-dark  float-left   "> <i class="fas fa-plus-circle"></i> Create Menu</a>
-        {{-- <a href="{{route('menu')}}" class="btn btn-dark  float-end   "> <i class="fa-solid fa-key"></i> Assign Menu</a> --}}
+        <!-- Add Button -->
+    <div class="d-flex  mb-3">
+        <a href="{{route('menus.create')}}" class="btn btn-dark rounded-pill shadow" id="upload-form">
+            <i class="fas fa-plus-circle"></i> Add Menu
+        </a>
     </div>
- </div>
+
 
     <div class="row m-2">
         @foreach ($menus as $menu)

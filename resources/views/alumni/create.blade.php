@@ -10,22 +10,20 @@
 
 
         <!-- resources/views/students/create.blade.php -->
-<div class="container">
-    <h1 class="mt-4">Alumni</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Alumni Create</li>
-    </ol>
-</div>
+    <div class="container-fluid px-4">
+            <h2 class="mt-4">Alumni Create</h2>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Alumni Create </li>
+            </ol>
 
         <div class="container bg-image ">
             <div id="layoutAuthentication">
                 <div id="layoutAuthentication_content">
-                    <main class="">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <div class="card shadow-lg border-0 rounded-lg  ">
+                                    <div class="card shadow-lg border-0 rounded-lg  p-3">
                                         <div class="card-header text-center">
                                         </div>
                                         <div class="card-body">
@@ -111,10 +109,10 @@
                                 </div>
                             </div>
                         </div>
-                    </main>
                 </div>
             </div>
         </div>
+    </div>
         <br>
         <br>
         <br>

@@ -3,13 +3,12 @@
 @extends('layout.dashboard')
 @section('main')
 
-<div class="container">
-    <h1 class="mt-4">Alumni</h1>
+<div class="container-fluid px-4">
+    <h2 class="mt-4">Alumni Edit</h2>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Alumni Edit</li>
+        <li class="breadcrumb-item active">Alumni Edit </li>
     </ol>
-</div>
 
 <div class="container">
     <div id="layoutAuthentication">
@@ -18,10 +17,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-4">
-                            <div class="card shadow-lg border-0 rounded-lg">
-                                <div class="card-header text-center">
-                                    <h2>Edit Alumni Details</h2>
-                                </div>
+                            <div class="card shadow-lg border-0 rounded p-3">
                                 <div class="card-body">
                                     <form action="{{ route('update.alumni', $alumni->id) }}" enctype="multipart/form-data" method="POST">
                                         @csrf
@@ -88,7 +84,7 @@
 
                                         <!-- Submit Button -->
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-outline-danger">
+                                            <button type="submit" class="btn btn-success ">
                                                 <i class="fas fa-paper-plane"></i> Update
                                             </button>
                                         </div>
@@ -102,4 +98,6 @@
         </div>
     </div>
 </div>
+</div>
+
 @endsection

@@ -2,16 +2,20 @@
 
 @section('main')
 <main>
-    <div class="container mt-5">
 
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Footer Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Footer</li>
+            <li class="breadcrumb-item active">Footer </li>
         </ol>
 
-        <div class="text-left mb-3">
-            <a href="{{ route('footer.create') }}" class="btn btn-dark"><i class="fas fa-plus-circle"></i> Create New Footer</a>
-        </div>
+        <!-- Add Button -->
+    <div class="d-flex  mb-3">
+        <a href="{{ route('footer.create') }}" class="btn btn-dark rounded-pill shadow">
+            <i class="fas fa-plus-circle"></i> Add Footer
+        </a>
+    </div>
 
         <div class="row mb-3">
             @foreach($footers as $institute)

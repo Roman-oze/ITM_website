@@ -2,10 +2,16 @@
 
 @section('main')
 <main>
-<div class="container my-5 d-flex justify-content-center">
-    <div class="card" style="max-width: 500px; width: 100%;">
-        <div class="card-body">
-            <h5 class="card-title">Edit Menu</h5>
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Menu Edit</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Menu edit</li>
+        </ol>
+
+        <div class="container my-5 d-flex justify-content-center">
+            <div class="card shadow rounded" style="max-width: 500px; width: 100%;">
+                <div class="card-body">
 
             <!-- Display Success and Error Messages -->
             @if (session('success'))

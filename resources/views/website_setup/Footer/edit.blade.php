@@ -2,18 +2,16 @@
 
 @section('main')
 <main>
-    <div class="container mt-5">
-
-        <h1 class="mt-4">Footer Edit </h1>
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Footer Edit</h2>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Footer Edit </li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Footer edit </li>
         </ol>
 
 
-
         <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-6 border-0 shadow rounded p-5 animated-card ">
         <form action="{{route('footer.update',$footer->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')

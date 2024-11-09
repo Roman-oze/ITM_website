@@ -3,15 +3,22 @@
 @section('main')
 
 <main>
-    <div class="container mt-5">
-        <h3 class=" text-primary mb-4">Schedules Management</h3>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Schedules List</li>
-        </ol>
+
+        <div class="container-fluid px-4">
+            <h2 class="mt-4">Schedules Management</h2>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Schedules List</li>
+            </ol>
+
+            <!-- Add Button -->
+        <div class="d-flex  mb-3">
+            <a href="{{ route('schedules.create') }}" class="btn btn-dark rounded-pill shadow">
+                <i class="fas fa-plus-circle"></i> Add Schedule</a>
+            </a>
+        </div>
 
         <div class="d-flex justify-content-between mb-3">
-            <a href="{{ route('schedules.create') }}" class="btn btn-dark rounded-pill shadow"><i class="fas fa-plus-circle"></i> Add Schedule</a>
             <form action="" method="GET" class="d-flex" style="max-width: 500px; width: 100%;">
                 <input class="form-control me-2  rounded-pill shadow border-0 animated-card " id="searchInput" type="text" name="search" placeholder="Search by don't be space after Text..." onkeyup="searchTable()" aria-label="Search">
             </form>

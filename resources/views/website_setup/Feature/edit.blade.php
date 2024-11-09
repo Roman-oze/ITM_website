@@ -1,21 +1,16 @@
 @extends('layout.dashboard')
 @section('main')
 
-<div class="container mt-5">
+<div class="container-fluid px-4">
+    <h2 class="mt-4">Features Edit</h2>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Features edit</li>
+    </ol>
 
 
-
-        <h1 class="mt-4">Features Create</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Create</li>
-        </ol>
-
-
-
-    <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-7">
+            <div class="col-7 shadow rounded p-5">
 
                 @if (session('success'))
                 <div class="alert alert-success">

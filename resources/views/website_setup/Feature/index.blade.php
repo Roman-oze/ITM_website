@@ -2,18 +2,19 @@
 @section('main')
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Features</h1>
+        <h2 class="mt-4">Features Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Feature</li>
+            <li class="breadcrumb-item active">Features List</li>
         </ol>
 
-        <div class="card mb-4">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h3 class="m-0">Manage Features</h3>
-                <a href="{{ route('feature.create') }}" class="btn btn-outline-dark"><i class="fas fa-plus-circle"></i> Create New Feature</a>
-            </div>
-        </div>
+        <!-- Add Button -->
+    <div class="d-flex  mb-3">
+        <a href="{{ route('feature.create') }}" class="btn btn-dark rounded-pill shadow">
+            <i class="fas fa-plus-circle"></i> Add Features
+        </a>
+    </div>
+
 
         <div class="row p-3">
             @foreach ($features as $feature)

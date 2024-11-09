@@ -2,21 +2,26 @@
 
 @section('main')
 <main>
-    <div class="container">
-        <h1 class="mt-4">Menu Permissions</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Menu Permissions</li>
-        </ol>
+
+        <div class="container-fluid px-4">
+            <h2 class="mt-4">Menu Permissions</h2>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Permissions list</li>
+            </ol>
+
+            <!-- Add Button -->
+        <div class="d-flex  mb-3">
+            <a href="{{ route('menus.create') }}" class="btn btn-dark rounded-pill shadow float-right" id="upload-form">
+                <i class="fas fa-plus-circle"></i> Add Menu
+            </a>
+            <a href="{{ route('menu-permissions.create') }}" class="btn btn-dark rounded-pill shadow float-end" id="upload-form">
+                <i class="fas fa-plus-circle"></i> Add Permissions
+            </a>
+        </div>
+
 
         <div class="card mt-4">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <span class="h5 mb-0">Manage Permissions</span>
-                <div>
-                    <a href="{{ route('menus.create') }}" class="btn btn-info mr-2">Create Menu</a>
-                    <a href="{{ route('menu-permissions.create') }}" class="btn btn-success">Create Menu Permission</a>
-                </div>
-            </div>
             <div class="card-body">
                 <table class="table table-striped table-bordered">
                     <thead class="thead-light">

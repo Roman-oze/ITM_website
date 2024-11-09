@@ -2,16 +2,21 @@
 
 @section('main')
 <main>
-    <div class="container-fluid px-4">
-        <h1 class="mt-4">Scholarship</h1>
+
+<div class="container-fluid px-4">
+    <h2 class="mt-4">Scholarship Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Scholarship List</li>
+            <li class="breadcrumb-item active">Scholarship List </li>
         </ol>
 
-        <div class="mb-4">
-            <a href="{{ route('create.scholarship') }}" class="btn btn-dark text-white">Add Scholars</a>
-        </div>
+        <!-- Add Button -->
+    <div class="d-flex  mb-3">
+        <a href="{{ route('create.scholarship') }}" class="btn btn-dark rounded-pill shadow">
+            <i class="fas fa-plus-circle"></i> Add Scholarship
+        </a>
+    </div>
+
 
         <div class="row">
             @foreach($scholarship as $scholar)

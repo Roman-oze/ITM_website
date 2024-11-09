@@ -2,44 +2,39 @@
 
 @section('main')
 <main>
-<div class="container">
 
-    <h1 class="">Assign Menu Permission</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Menu Permission List </li>
-    </ol>
-    <br>
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Assign Menu Permission</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active"> Menu Permissions list</li>
+        </ol>
 
-
-
-
-    @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-        </div>
-    @endif
-
-    @if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-        </div>
-    @endif
-
-    <div class="card">
-        <div class="card-header">
-
-            <a href="{{route('menu-permission.index')}}" class="btn btn-dark "> <i class="fa-solid fa-list"></i>Menu Permission List</a>
-            <a href="{{route('menu.display')}}" class="btn btn-dark  float-end   "> <i class="fa-solid fa-bars-staggered"></i> Display Menu</a>
-        </div>
-     </div>
-
-    <div class="container ">
+        <!-- Add Button -->
+    <div class="d-flex justify-content-between  mb-3 ">
+        <a href="{{route('menu-permission.index')}}" class="btn btn-dark rounded-pill shadow float-right" id="upload-form">
+            <i class="fa-solid fa-list"></i> Menu Permission List
+        </a>
+        <a href="{{route('menu.display')}}" class="btn btn-dark rounded-pill shadow float-end" id="upload-form">
+            <i class="fa-solid fa-bars-staggered"></i> Display Menu
+        </a>
+    </div>
 
 
-        <form action="{{ route('menu-permission.store') }}" method="POST" class="p-4 bg-light rounded shadow-sm">
-            @csrf
+    <form action="{{ route('menu-permission.store') }}" method="POST" class="p-4 bg-light rounded shadow-sm">
+        @csrf
 
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+            </div>
+        @endif
             <!-- Menu Multi-select Dropdown -->
             <div class="form-group mb-4">
                 <label for="menu_ids" class="font-weight-bold">Menu Name</label>

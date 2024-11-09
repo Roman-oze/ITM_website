@@ -9,14 +9,12 @@
 
 
 
-        <!-- resources/views/students/create.blade.php -->
-<div class="container">
-    <h1 class="mt-4">Scholarship</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Scholarship Create</li>
-    </ol>
-</div>
+ <div class="container-fluid px-4">
+    <h2 class="mt-4">Scholarship Create</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Scholarship create </li>
+        </ol>
 
         <div class="container bg-image ">
             <div id="layoutAuthentication">
@@ -102,6 +100,8 @@
                 </div>
             </div>
         </div>
+        </div>
+
         <br>
         <br>
         <br>

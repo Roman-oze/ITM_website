@@ -3,23 +3,18 @@
 @section('main')
 
 <main>
-    <div class="container mt-5">
-
-        <!-- Back Button -->
-        <a href="{{ route('Courses.index') }}" class="btn btn-outline-success mb-3">
-            <h5>Back</h5>
-        </a>
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Course Create</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Course create</li>
+        </ol>
 
         <!-- Card Layout -->
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
         <div class="card">
-            <div class="card-header bg-dark text-white">
-                <h4 class="text-center">Create New Course</h4>
-            </div>
-
             <div class="card-body">
-
 
                 @if(session('success'))
                 <div class="alert alert-success">
@@ -76,7 +71,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary">Add Course</button>
+                <button type="submit" class="btn btn-success">Add Course</button>
                 </form>
 
                 <!-- Form Ends -->

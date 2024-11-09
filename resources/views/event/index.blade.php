@@ -1,32 +1,24 @@
 
-
-
-
 @extends('layout.dashboard')
 
 @section('main')
 <main>
-    <div class="container px-4">
-        <h1 class="mt-4">Event Management</h1>
+
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Event Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Events</li>
         </ol>
 
-        <!-- Search Bar and Add Event Button -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <form action="events" method="GET" class="input-group w-50">
-                <input type="text" class="form-control" placeholder="Search for events..." name="search">
-                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-            </form>
-              <!-- Add Event Button -->
-        <div class="row mb-4">
-            <div class="col text-end">
-                <a href="{{ route('event/create') }}" class="btn btn-dark text-white"><i class="fas fa-plus-circle"></i> Add Event
-                </a>
-            </div>
-        </div>
-        </div>
+        <!-- Add Button -->
+    <div class="d-flex  mb-3">
+        <a href="{{ route('event/create') }}" class="btn btn-dark rounded-pill shadow">
+            <i class="fas fa-plus-circle"></i> Add Events
+        </a>
+    </div>
+
+
 
         <!-- Compact Event Cards Grid -->
         <div class="row">
@@ -46,19 +38,20 @@
                         <!-- Action Buttons -->
                         <div class="d-flex justify-content-center gap-2 mt-2">
                             <div class="d-flex justify-content-center mt-2">
-                                @can('edit')
                                 <div class="dropdown">
                                     <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
                                         Actions
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                        @can('update user')
                                         <li>
                                             <a class="dropdown-item" href="{{ route('event_edit', $event->id) }}">
                                                 <i class="fa-solid fa-user-pen"></i> Edit
                                             </a>
                                         </li>
+                                        @endcan
                                         <li>
-                                            @can('delete')
+                                            @can('delete user')
                                             <form action="{{ route('event_delete', $event->id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
@@ -70,8 +63,6 @@
                                         </li>
                                     </ul>
                                 </div>
-                            @endcan
-
                           </div>
                         </div>
                     </div>

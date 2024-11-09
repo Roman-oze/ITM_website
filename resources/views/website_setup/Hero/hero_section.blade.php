@@ -2,18 +2,20 @@
 
 @section('main')
 <main>
+
     <div class="container-fluid px-4">
-        <h1 class="mt-4 text-primary">Hero Section</h1>
+        <h2 class="mt-4">Hero Section Management</h2>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="text-secondary">Dashboard</a></li>
-            <li class="breadcrumb-item active">Hero Section</li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Hero Section </li>
         </ol>
 
-        <div class="text-end mb-4">
-            <a href="{{ route('herosection.create') }}" class="btn btn-outline-primary">
-                <i class="fas fa-plus-circle"></i> Create New Section
-            </a>
-        </div>
+        <!-- Add Button -->
+    <div class="d-flex  mb-3">
+        <a href="{{ route('herosection.create') }}" class="btn btn-dark rounded-pill shadow">
+            <i class="fas fa-plus-circle"></i> Add Section
+        </a>
+    </div>
 
         <div class="card shadow-sm border-0 bg-light">
             <div class="card-body">

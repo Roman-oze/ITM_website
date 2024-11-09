@@ -2,12 +2,13 @@
 
 @section('main')
 <main>
-    <div class="container-fluid">
-        <h1 class="mt-4">Service</h1>
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Service Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Service Edit</li>
+            <li class="breadcrumb-item active">Service List </li>
         </ol>
+
 
        <!-- Display success or error messages -->
        @if (session()->has('success'))
@@ -22,8 +23,8 @@
        </div>
        @endif
 
-        <div class="row justify-content-center">
-            <div class="col-6">
+       <div class="row justify-content-center">
+        <div class="col-6 border-0 shadow p-5">
                 <form action="{{ route('services.update',$service->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')

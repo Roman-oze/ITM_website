@@ -2,22 +2,20 @@
 
 @section('main')
 <main>
+
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Students</h1>
+        <h2 class="mt-4">Student Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Students List</li>
+            <li class="breadcrumb-item active">Student List </li>
         </ol>
 
-        <div class="row mb-4">
-            <div class="col-md-10">
-                <form action="{{ route('student.search') }}" method="GET" class="form-inline ms-auto d-flex">
-                    <input class="form-control me-2" type="text" name="search" placeholder="Search for..." aria-label="Search">
-                    <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-                </form>
-                <a href="{{ route('create') }}" class="btn btn-outline-dark ms-3">New Add</a>
-            </div>
-        </div>
+        <!-- Add Button -->
+    <div class="d-flex  mb-3">
+        <a href="{{ route('create') }}" class="btn btn-dark rounded-pill shadow">
+            <i class="fas fa-plus-circle"></i> Add Student
+        </a>
+    </div>
 
         <div class="row">
             @foreach($students as $student)

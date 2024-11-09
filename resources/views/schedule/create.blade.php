@@ -3,10 +3,30 @@
 @extends('layout.dashboard')
 
 @section('main')
-    <div class="container mt-5">
-        <h1 class="mb-4">Create Schedule</h1>
+<div class="container-fluid px-4">
+    <h2 class="mt-4">Course Create</h2>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Course create</li>
+    </ol>
 
+    <!-- Card Layout -->
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+    <div class="card">
+        <div class="card-body">
 
+            @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+            @endif
         <form action="{{ route('schedules.store') }}" method="POST">
             @csrf
             <div class="mb-3">
@@ -58,8 +78,12 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-dark">Create</button>
             </div>
         </form>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 @endsection

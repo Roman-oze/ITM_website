@@ -3,21 +3,18 @@
 @section('main')
 
 <main>
-    <div class="container mt-5">
-        <h1 class="mt-4">Faculty</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Faculty List</li>
-        </ol>
+        <div class="container-fluid px-4">
+            <h2 class="mt-4">Faculty Management</h2>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Faculty List</li>
+            </ol>
 
-        <div class="card">
-            <div class="card-header">
-                <h4>
-                    <a href="{{ route('create.faculty') }}" class="btn btn-primary">
-                        <i class="fas fa-plus-circle"></i> Add Faculty
-                    </a>
-                </h4>
-            </div>
+            <!-- Add Button -->
+        <div class="d-flex  mb-3">
+            <a href="{{ route('create.faculty') }}" class="btn btn-dark rounded-pill shadow">
+                <i class="fas fa-plus-circle"></i> Add Faculty
+            </a>
         </div>
 
         <div class="row mt-4">
@@ -89,10 +86,12 @@
                             </div>
                         </div>
                         <div class="modal-footer">
+                            @can('update user')
                             <a href="{{ route('edit.faculty', $teacher->teacher_id) }}" class="btn btn-warning">
                                 <i class="fa-solid fa-user-pen"></i> Edit
                             </a>
-                            @can('manage-user')
+                            @endcan
+                            @can('delete user')
                                 <form action="{{ route('delete.faculty', $teacher->teacher_id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')

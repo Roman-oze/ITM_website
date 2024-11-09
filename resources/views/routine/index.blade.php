@@ -3,18 +3,24 @@
 @section('main')
 
 <main>
-    <div class="container-fluid px-4">
-        <h1 class="mt-4 text-center">Routine Management</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Routine List</li>
-        </ol>
+
+        <div class="container-fluid px-4">
+            <h2 class="mt-4">Routine Management</h2>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Routine List</li>
+            </ol>
+
+     
+
+
+
+
 
         <div class="row d-flex justify-content-evenly">
             @can('update user')
             <div class="col-12 col-md-5 card shadow-lg p-4 mb-5 bg-gradient">
                 <div class="card-body">
-                    <h3 class="card-title text-center p-3 text-dark">Upload Routine File</h3>
                     <div id="drop-area" class="border rounded p-4 text-center bg-light shadow-sm">
                         <form action="{{ route('routine.store') }}" method="POST" enctype="multipart/form-data" id="upload-form">
                             @csrf

@@ -1,16 +1,22 @@
 @extends('layout.dashboard')
 
 @section('main')
-<main class="container mt-2">
 
-    <h1 class="mt-4">Menu Control Panel</h1>
+
+<div class="container-fluid px-4">
+    <h2 class="mt-4">Menu Control Panel</h2>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Menu list </li>
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Menu list</li>
     </ol>
-    <br>
 
-    <a href="{{route('menus.create')}}" class="btn btn-outline-dark  float-center   "> <i class="fas fa-plus-circle"></i> Create Menu</a>
+    <!-- Add Button -->
+    <div class="d-flex  mb-3">
+        <a href="{{route('menus.create')}}" class="btn btn-dark rounded-pill shadow">
+            <i class="fas fa-plus-circle"></i> Add Menu
+        </a>
+    </div>
+
 
     <div class="card-body p-3 p-md-4">
         <div class="table-responsive">
@@ -19,7 +25,9 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Menu</th>
+                        @can('manage-user')
                         <th scope="col" class="text-center">Actions</th>
+                        @endcan
                     </tr>
                 </thead>
                 <tbody>
@@ -27,28 +35,29 @@
                         <tr>
                             <td>{{ $menu->id }}</td>
                             <td>{{ $menu->name }}</td>
-                            {{-- <td class="text-center">
+                            <td class="text-center">
                                 <div class="d-flex justify-content-center flex-wrap gap-1">
-                                    @can('edit')
+                                    @can('update user')
                                         <a href="{{ url('menus/' . $menu->id . '/edit') }}" class="btn btn-sm btn-outline-primary p-2">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     @endcan
 
-                                    @can('delete')
+                                    @can('delete user')
                                         <button onclick="if(confirm('Are you sure?')) { window.location.href='{{ url('menus/' . $menu->id . '/delete') }}' }"
                                             class="btn btn-sm btn-outline-danger">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     @endcan
                                 </div>
-                            </td> --}}
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+</div>
 
 </main>
 @endsection

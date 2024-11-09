@@ -3,34 +3,21 @@
 
 @section('main')
 
-{{-- <form  action="records" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" >
-    <div class="input-group">
-        <input class="form-control" type="text" placeholder="Search for..." name="search" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-        <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
-
-    </div>
-
-</form> --}}
-
 <main>
 
-    <div class="container mt-5">
-        <h1 class="mt-4">Notice</h1>
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Notice</h2>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Notice </li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Notice</li>
         </ol>
-        <br>
 
-            <div class="card">
-                <div class="card-header">
-                    <h5>
-                        <a href="{{route('notice.create')}}" class="btn btn-primary float-end">Add notice</a>
-                    </h5>
-                </div>
-
-            </div>
-
+        <!-- Add Button -->
+    <div class="d-flex  mb-3">
+        <a href="{{route('notice.create')}}" class="btn btn-dark rounded-pill shadow">
+            <i class="fas fa-plus-circle"></i> Add Notice
+        </a>
+    </div>
 
 <div class="row">
     @foreach ($notices as $notice)
@@ -42,19 +29,20 @@
                         <p class="mt-2 p-3">{{ $notice->content }}</p>
 
                     <div class="d-flex justify-content-center mt-2">
-                        @can('edit')
                         <div class="dropdown">
                             <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
                                 Actions
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                @can('update user')
                                 <li>
                                     <a class="dropdown-item" href="{{ route('notice.edit', $notice->id) }}">
                                         <i class="fa-solid fa-user-pen"></i> Edit
                                     </a>
                                 </li>
+                                @endcan
                                 <li>
-                                    @can('delete')
+                                    @can('delete user')
                                     <form action="{{ route('notice.delete', $notice->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
@@ -66,7 +54,6 @@
                                 </li>
                             </ul>
                         </div>
-                    @endcan
                 </div>
             </div>
         </div>
@@ -74,7 +61,7 @@
 @endforeach
 </div>
 
-</div>
+
 </div>
 
 </main>

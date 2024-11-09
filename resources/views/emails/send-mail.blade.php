@@ -2,11 +2,23 @@
 
 @section('main')
 <main>
-    <div class="container mt-5">
-        <h2 class="text-center mb-4">Send Mail to Multiple Users</h2>
 
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+
+    <div class="container-fluid px-4">
+        <h2 class="mt-4">Mail Management</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Send Mail</li>
+        </ol>
+
+
+
+    <div class="container mt-5">
+        {{-- <h2 class="text-center mb-4">Send Mail to Multiple Users</h2> --}}
+
+        <div class="row justify-content-center ">
+            <div class="col-md-8 ">
+                <div class="card shadow rounded animated-card p-5">
                 @if (session()->has('success'))
                 <div class="alert alert-success">
                     {{ session()->get('success') }}
@@ -30,7 +42,7 @@
 
                     <div class="form-group">
                         <label for="emails">Emails (comma separated):</label>
-                        <input type="text" class="form-control" name="emails" id="emails" placeholder="Enter email addresses" value="{{ old('emails') }}">
+                        <input type="text" class="form-control" name="emails" id="emails" placeholder="Enter manual email addresses" value="{{ old('emails') }}">
                     </div>
 
                     <div class="form-group">
@@ -43,7 +55,10 @@
                         <input type="file" class="form-control-file" name="attachment">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Send Email</button>
+                    <div class="text-center ">
+                        <button type="submit"   class="btn btn-primary ">Send Email</button>
+
+                    </div>
                 </form>
 
                 <script>
@@ -68,6 +83,7 @@
                     });
                 </script>
             </div>
+          </div>
         </div>
     </div>
 </main>

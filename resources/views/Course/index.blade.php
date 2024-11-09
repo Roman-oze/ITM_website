@@ -2,27 +2,23 @@
 
 @section('main')
 <main>
-    <div class="container mt-5">
-        <h1 class="mt-4">Course Management</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Course List</li>
-        </ol>
+
+        <div class="container-fluid px-4">
+            <h2 class="mt-4">Course Management</h2>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Course List</li>
+            </ol>
+
+            <!-- Add Button -->
+        <div class="d-flex  mb-3">
+            <a href="{{ route('Courses.create') }}" class="btn btn-dark rounded-pill shadow">
+                <i class="fas fa-plus-circle"></i> Add Course
+            </a>
+        </div>
 
         <div class="d-flex justify-content-center">
             <div class="card w-100 shadow-lg" style="max-width: 900px;">
-                <div class="card-header d-flex flex-column flex-md-row justify-content-between align-items-center">
-                    <!-- Search Form -->
-                    {{-- <form action="{{ route('course.search') }}" method="GET" class="input-group mb-2 mb-md-0" style="max-width: 100%;">
-                        <input type="text" class="form-control" name="search" placeholder="Search by course code or name..." aria-label="Search" />
-                        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-                    </form> --}}
-                    <!-- Add New Course Button -->
-                    <a href="{{ route('Courses.create') }}" class="btn btn-dark">
-                        <i class="fas fa-plus-circle"></i> Add Course
-                    </a>
-                </div>
-
                 <div class="card-body">
                     <!-- Session Alerts for Success and Error Messages -->
                     @if(session('success'))
@@ -56,11 +52,13 @@
                                                     <td>{{ $course->credit }}</td>
                                                     <td class="d-flex justify-content-center">
                                                         <!-- Edit Button -->
-                                                        @can('manage-user')
-                                                            <a href="{{ route('Courses.edit', $course->course_id) }}" class="btn btn-warning btn-sm me-2">
-                                                                <i class="fas fa-edit"></i>
-                                                            </a>
-                                                            <!-- Delete Form -->
+                                                        @can('update user')
+                                                        <a href="{{ route('Courses.edit', $course->course_id) }}" class="btn btn-warning btn-sm me-2">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                        @endcan
+                                                        <!-- Delete Form -->
+                                                        @can('delete user')
                                                             <form action="{{ route('Courses.destroy', $course->course_id) }}" method="POST" style="display:inline;">
                                                                 @csrf
                                                                 @method('DELETE')
@@ -80,9 +78,7 @@
                     </div>
 
                     <!-- Pagination Links -->
-                    <div class="d-flex justify-content-center mt-4">
                         {{ $coursePage->links('pagination::bootstrap-4') }}
-                    </div>
                 </div>
             </div>
         </div>
