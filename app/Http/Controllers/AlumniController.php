@@ -43,22 +43,6 @@ class AlumniController extends Controller
         $fileName = time().'-itm.'.$request->file('image')->getClientOriginalExtension();
         $request->file('image')->move('alumni',$fileName);
 
-
-
-
-        // $alumni = new Alumni();
-        // $alumni->image = $request['alumni/'.$fileName];
-        // $alumni->name = $request['name'];
-        // $alumni->roll = $request['roll'];
-        // $alumni->batch = $request['batch'];
-        // $alumni->pass_year = $request['pass_year'];
-        // $alumni->organization = $request['organization'];
-        // $alumni->designation = $request['designation'];
-        // $alumni->phone = $request['phone'];
-        // $alumni->email = $request['email'];
-        // $alumni->address = $request['address'];
-        // $alumni->save();
-
         $data ['image'] = 'alumni/'.$fileName;
         $data ['name'] = $request->name;
         $data ['roll'] = $request->roll;
@@ -74,7 +58,7 @@ class AlumniController extends Controller
 
         // Alumni::insert($data);
         DB::table('alumnis')->insert($data);
-        return redirect('/dashboard/alumni')->with('Alumni','Card added');
+        return redirect()->route('alumni.index')->with('success',' Added Graduated Successfully !');
 
     }
 
@@ -120,7 +104,7 @@ class AlumniController extends Controller
     }
 
     Alumni::where('id', $id)->update($data);
-    return redirect()->back()->with('success, Update successfully');
+    return redirect()->route('alumni.index')->with('success',' Update Successfully !');
 }
 
     /**
@@ -129,6 +113,6 @@ class AlumniController extends Controller
     public function destroy(string $id)
     {
        Alumni::where('id',$id)->delete();
-        return redirect()->back();
+       return redirect()->route('alumni.index')->with('success',' Delete Successfully !');
     }
 }

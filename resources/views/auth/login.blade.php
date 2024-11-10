@@ -19,22 +19,8 @@
 						Login
 					</span>
 
-                    @if (session()->has('success'))
-
-                    <div class="alert alert-success">
-                        {{ session()->get('success') }}
-                        </div>
-
-                    @endif
-
-                    @if (session()->has('error'))
-
-                    <div class="alert alert-danger">
-                        {{ session()->get('error') }}
-                        </div>
-
-                    @endif
-
+                       <!-- Sweet alert -->
+                @include('include.alerts')
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="email" name="email" placeholder="Email">

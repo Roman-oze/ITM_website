@@ -1,5 +1,6 @@
 @extends('layout.dashboard')
-
+ <!-- Sweet alert -->
+ @include('include.alerts')
 @section('main')
 <main>
 
@@ -22,15 +23,6 @@
         <div class="d-flex justify-content-center">
             <div class="card w-100 shadow-lg" style="max-width: 900px;">
                 <div class="card-body">
-                    <!-- Session Alerts for Success and Error Messages -->
-                    @if(session('success'))
-                        <div class="alert alert-success">{{ session('success') }}</div>
-                    @endif
-
-                    @if(session('error'))
-                        <div class="alert alert-danger">{{ session('error') }}</div>
-                    @endif
-
                     <!-- Filtered Courses by Semester -->
                     <div id="courseContainer">
                         @foreach($courses as $semesterId => $semesterCourses)

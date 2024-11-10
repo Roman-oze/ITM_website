@@ -11,20 +11,6 @@
     </ol>
     <br>
 
-    @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-        </div>
-    @endif
-
-    @if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-        </div>
-    @endif
-
-
-
         <div class="container d-flex justify-content-center">
             <div class="card" style="width: 500px;"> <!-- Set a fixed width for a small card -->
                 <div class="card-header text-center">

@@ -1,5 +1,6 @@
 @extends('layout.dashboard')
-
+ <!-- Sweet alert -->
+ @include('include.alerts')
 @section('main')
 <main>
 
@@ -23,18 +24,6 @@
 
     <form action="{{ route('menu-permission.store') }}" method="POST" class="p-4 bg-light rounded shadow-sm">
         @csrf
-
-        @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-            </div>
-        @endif
-
-        @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-            </div>
-        @endif
             <!-- Menu Multi-select Dropdown -->
             <div class="form-group mb-4">
                 <label for="menu_ids" class="font-weight-bold">Menu Name</label>

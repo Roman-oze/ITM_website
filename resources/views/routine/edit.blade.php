@@ -15,9 +15,6 @@
                 <form action="{{route('routine.store',$routine->id)}}" method="POST" enctype="multipart/form-data" >
                     @csrf
 
-
-
-
                     <div class="form-group">
                             <label class="" for="fileElem">
                                 <i class="fa-solid fa-cloud-arrow-up  fa-5x" ></i>

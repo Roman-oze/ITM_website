@@ -13,19 +13,6 @@
             <div class="card shadow rounded" style="max-width: 500px; width: 100%;">
                 <div class="card-body">
 
-            <!-- Display Success and Error Messages -->
-            @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif
-
             <!-- Form Starts Here -->
             <form action="{{ route('menus.update', $menu->id) }}" method="POST">
                 @csrf

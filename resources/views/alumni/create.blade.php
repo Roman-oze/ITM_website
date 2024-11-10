@@ -30,23 +30,6 @@
                                             <form action="{{route('alumni.store') }}"  enctype="multipart/form-data" method="POSt" >
                                                 @csrf
 
-                                                @if (session()->has('success'))
-
-                                                <div class="alert alert-success">
-                                                    {{ session()->get('success') }}
-                                                    </div>
-
-                                                @endif
-
-                                                @if (session()->has('error'))
-
-                                                <div class="alert alert-danger">
-                                                    {{ session()->get('error') }}
-                                                    </div>
-
-                                                @endif
-
-
                                                 <div class="form-group mb-3">
 
                                                     <input type="file" class="form-control" name="image" required placeholder="image">

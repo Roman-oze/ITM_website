@@ -17,17 +17,6 @@
             @csrf
             @method('PUT')
 
-            @if (session('success'))
-            <div class=" alert alert-success">
-              {{ session('success') }}
-            </div>
-          @endif
-          @if (session('error'))
-          <div class=" alert alert-danger">
-              {{ session('error') }}
-          </div>
-          @endif
-
             <div class="mb-3">
                 @if ($staff->image)
                 <img src="{{asset($staff->image)}}" alt="" width="100" height="100" class="rounded-circle    ">

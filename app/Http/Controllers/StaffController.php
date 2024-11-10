@@ -49,17 +49,6 @@ class StaffController extends Controller
     public function store(Request $request)
     {
 
-
-        // $request->validate([
-        // 'image' => 'require',
-        // 'name'=> 'require | max:255',
-        // 'position' =>'require',
-        // 'email' =>'require | unique',
-        // 'mobile' => 'require',
-        // ]);
-
-
-
         $fileName = time(). '.' . $request->file('image')->getClientOriginalExtension();
         $request->file('image')->move(('staff'),$fileName);
 
@@ -74,7 +63,7 @@ class StaffController extends Controller
 
 
       Staff::insert($data);
-        return redirect()->back()->with('success','Staff create successfully!');
+      return redirect()->route('staff.index')->with('success','Staff create successfully!');
 
 
 
@@ -123,9 +112,9 @@ class StaffController extends Controller
     }
 
     // Update the record in the database
-    DB::table('staffs')->where('id', $id)->update($data);
+    Staff::where('id', $id)->update($data);
 
-    return redirect()->back()->with('success', 'Update profile successfully!');
+    return redirect()->route('staff.index')->with('success', 'Update profile successfully!');
 }
 
 
@@ -135,7 +124,7 @@ class StaffController extends Controller
     public function destroy(string $id)
     {
         DB::table('staffs')->where('id',$id)->delete();
-        return redirect()->back()->with('success','Delete Successfully !');
+        return redirect()->route('staff.index')->with('success','Delete Successfully !');
 
     }
 

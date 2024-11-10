@@ -36,7 +36,7 @@ class RoutineController extends Controller
         $springs= Routine::whereIn('type',['spring'])->get();
         $falls = Routine::whereIn('type',['fall'])->get();
         $files = DB::table('routines')->get();
-        
+
         return view('routine.index',[
         'files' => $files,
         'springs' => $springs,
@@ -103,7 +103,7 @@ class RoutineController extends Controller
             'uploaded_at' => now(),
         ]);
 
-        return redirect()->back()->with('success', 'File uploaded successfully.');
+        return redirect()->route('routine.index')->with('success', 'File uploaded successfully.');
     }
 
     // Handle file download

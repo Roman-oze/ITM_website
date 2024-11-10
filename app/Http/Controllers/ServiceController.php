@@ -69,28 +69,33 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         // Find the service by ID
+        $service = Service::findOrFail($id);
 
+        // Initialize the data array with other fields
+        $data = [
+            'link_name' => $request->link_name,
+            'link' => $request->link,
+            'description' => $request->description,
+        ];
 
         // Check if a new image is uploaded
-
+        if ($request->hasFile('image')) {
             // Generate a new file name and move the uploaded file
-            $fileName = time().'.'.$request->file('image')->getClientOriginalExtension();
+            $fileName = time() . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move('service', $fileName);
 
             // Update the service image path
-        $data['image'] = 'service/'.$fileName;
-        // Update other fields
-        $data['link_name'] = $request->link_name;
-        $data['link'] = $request->link;
-        $data['description'] = $request->description;
+            $data['image'] = 'service/' . $fileName;
+        }
 
         // Save the updated service
-        Service::where('id', $id)->update($data);
-
+        $service->update($data);
 
         // Redirect with a success message
         return redirect()->route('services.index')->with('success', 'Service updated successfully.');
     }
+
+
 
 
     /**

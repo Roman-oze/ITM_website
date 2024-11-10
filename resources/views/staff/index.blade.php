@@ -18,17 +18,9 @@
 
         <!-- Staff Cards -->
         <div class="row">
-            @if (session('success'))
-            <div class=" alert alert-success">
-              {{ session('success') }}
-            </div>
-          @endif
-          @if (session('error'))
-          <div class=" alert alert-danger">
-              {{ session('error') }}
-          </div>
-          @endif
-          
+            <!-- Sweet alert -->
+            @include('include.alerts')
+            
             @foreach($staffs as $staff)
             <div class="col-md-4 mb-4">
                 <div class="card shadow-sm h-100">

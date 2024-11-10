@@ -9,20 +9,6 @@
             <li class="breadcrumb-item active">Service List </li>
         </ol>
 
-
-       <!-- Display success or error messages -->
-       @if (session()->has('success'))
-       <div class="alert alert-success">
-           {{ session()->get('success') }}
-       </div>
-       @endif
-
-       @if (session()->has('error'))
-       <div class="alert alert-danger">
-           {{ session()->get('error') }}
-       </div>
-       @endif
-
        <div class="row justify-content-center">
         <div class="col-6 border-0 shadow p-5">
                 <form action="{{ route('services.update',$service->id) }}" method="POST" enctype="multipart/form-data">

@@ -16,18 +16,6 @@
             <div class="col-6 shadow rounded p-5">
                 <form action="{{ route('herosection.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
-                        @if (session()->has('success'))
-                        <div class="alert alert-success">
-                            {{ session()->get('success') }}
-                            </div>
-                        @endif
-
-                        @if (session()->has('error'))
-                        <div class="alert alert-danger">
-                            {{ session()->get('error') }}
-                            </div>
-                        @endif
                     @method('POST')
 
                     <div class="mb-3">

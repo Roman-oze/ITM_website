@@ -76,7 +76,7 @@ class MenuController extends Controller
             'order' => $request->order,        // Nullable
         ]);
         // Redirect to a specific route with a success message
-        return redirect()->back()->with('success', 'Menu item created successfully!');
+        return redirect()->route('menus.index')->with('success', 'Menu created successfully!');
 
     }
 
@@ -110,7 +110,7 @@ class MenuController extends Controller
         $menu->order = $request->input('order');
         $menu->save();
 
-        return redirect()->back()->with('success', 'Menu updated successfully!');
+        return redirect()->route('menus.index')->with('success', 'Menu updated successfully!');
     }
 
 
@@ -128,7 +128,7 @@ class MenuController extends Controller
 
             $menu->delete();
 
-            return redirect()->back()->with('success', 'Menu deleted successfully!');
+            return redirect()->route('menus.index')->with('success', 'Menu deleted successfully!');
         }
 
 }

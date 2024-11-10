@@ -78,15 +78,12 @@ $students = Student::with('batch')->paginate(10);
 
 
 
-         DB::table('students')->insert($data);
-         return redirect()->back()->with('success','Congratulations! for join Us');
-
-
-        // dd(DB::table('students')->get());
-
-
+         Student::insert($data);
+         return redirect()->route('student.index')->with('success','Congratulations! for join Us');
 
     }
+
+    
     public function show($id)
     {
         // $data['student'] =DB::table('students')->where('id',$id)->first();
@@ -99,8 +96,10 @@ $students = Student::with('batch')->paginate(10);
 
     public function edit($id)
     {
-        $student = DB::table('students')->where('id',$id)->first();
-                return view('student.edit',compact('student'));
+        $student = Student::where('id',$id)->first();
+        $batches =  Batch::all();
+
+        return view('student.edit',compact('student','batches'));
     }
 
 
@@ -119,7 +118,7 @@ $students = Student::with('batch')->paginate(10);
         DB::table('students')->where('id',$id)->update($data);
 
         // dd(DB::table('students')->get());
-        return redirect('/dashboard/students')->with('update','Successfully done!');
+        return redirect()->route('student.index')->with('success','Update Successfully done!');
 
 
     }
@@ -128,7 +127,7 @@ $students = Student::with('batch')->paginate(10);
         DB::table('students')->where('id',$id)->delete();
 
         // dd(DB::table('students')->get());
-        return redirect()->back();
+        return redirect()->route('student.index')->with('success','Delete Successfully done!');
 
     }
 

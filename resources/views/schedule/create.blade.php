@@ -15,18 +15,6 @@
         <div class="col-md-6">
     <div class="card">
         <div class="card-body">
-
-            @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-            @endif
-
-            @if(session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-            @endif
         <form action="{{ route('schedules.store') }}" method="POST">
             @csrf
             <div class="mb-3">

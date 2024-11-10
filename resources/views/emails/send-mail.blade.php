@@ -1,5 +1,8 @@
 @extends('layout.dashboard')
 
+ <!-- Sweet alert -->
+ @include('include.alerts')
+
 @section('main')
 <main>
 
@@ -19,15 +22,6 @@
         <div class="row justify-content-center ">
             <div class="col-md-8 ">
                 <div class="card shadow rounded animated-card p-5">
-                @if (session()->has('success'))
-                <div class="alert alert-success">
-                    {{ session()->get('success') }}
-                </div>
-                @elseif (session()->has('error'))
-                <div class="alert alert-danger">
-                    {{ session()->get('error') }}
-                </div>
-                @endif
 
                 <form action="{{ route('send.mail.data') }}" method="POST" enctype="multipart/form-data">
                     @csrf

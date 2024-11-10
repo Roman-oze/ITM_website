@@ -1,4 +1,6 @@
 @extends('layout.dashboard')
+ <!-- Sweet alert -->
+ @include('include.alerts')
 
 @section('main')
 
@@ -25,24 +27,6 @@
                 <input class="form-control me-2  rounded-pill shadow border-0 animated-card " id="searchInput" type="text" name="search" placeholder="Search by don't be space after Text..." onkeyup="searchTable()" aria-label="Search">
             </form>
         </div>
-
-        @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-
-        @if (session('error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ session('error') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
 
         <div class="table-responsive">
             <table class="table table-hover table-striped table-bordered shadow-sm">

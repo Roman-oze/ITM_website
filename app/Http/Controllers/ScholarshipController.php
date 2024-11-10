@@ -51,7 +51,7 @@ class ScholarshipController extends Controller
        $data['email'] = $request->email;
 
        Scholarship::insert($data);
-       return redirect('/dashboard/scholarship');
+       return redirect()->route('scholarship.index')->with('success',' Added Successfully !');
     }
 
     /**
@@ -76,23 +76,33 @@ class ScholarshipController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $fileName =time().'.'.$request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move('scholarship',$fileName);
+        // Initialize the data array with other fields
+        $data = [
+            'name' => $request->name,
+            'country' => $request->country,
+            'roll' => $request->roll,
+            'batch' => $request->batch,
+            'duration' => $request->duration,
+            'email' => $request->email,
+        ];
 
+        // Check if a new image is uploaded
+        if ($request->hasFile('image')) {
+            // Generate a new file name and move the uploaded file
+            $fileName = time() . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move('scholarship', $fileName);
 
-       $data['image'] = 'scholarship/'.$fileName;
-       $data['name'] = $request->name;
-       $data['country'] = $request->country;
-       $data['roll'] = $request->roll;
-       $data['batch'] = $request->batch;
-       $data['duration'] = $request->duration;
-       $data['email'] = $request->email;
+            // Update the image path in the data array
+            $data['image'] = 'scholarship/' . $fileName;
+        }
 
-       Scholarship::where('id',$id)->update($data);
-       return redirect('/dashboard/scholarship');
+        // Update the scholarship data in the database
+        Scholarship::where('id', $id)->update($data);
 
-
+        // Redirect with a success message
+        return redirect()->route('scholarship.index')->with('success', 'Update Successfully!');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -100,6 +110,6 @@ class ScholarshipController extends Controller
     public function destroy(string $id)
     {
         Scholarship::where('id',$id)->delete();
-        return redirect()->back();
+        return redirect()->route('scholarship.index')->with('success',' Deleted Successfully !');
     }
 }

@@ -14,19 +14,7 @@
                 <form action="{{ route('herosection.update', $herosection->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-
-                    @if (session()->has('success'))
-                        <div class="alert alert-success">
-                            {{ session()->get('success') }}
-                        </div>
-                    @endif
-
-                    @if (session()->has('error'))
-                        <div class="alert alert-danger">
-                            {{ session()->get('error') }}
-                        </div>
-                    @endif
-
+                    
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
                         <input type="text" class="form-control" id="title" name="title" value="{{ $herosection->title }}" required>

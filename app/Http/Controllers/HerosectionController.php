@@ -101,7 +101,7 @@ class HerosectionController extends Controller
         // Save the updated hero section
         $hero->save();
 
-        return redirect()->back()->with('success', 'Hero Section Updated Successfully');
+        return redirect()->route('herosection.index')->with('success', 'Hero Section Updated Successfully');
     }
 
     /**

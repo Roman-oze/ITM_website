@@ -12,18 +12,6 @@
         <div class="row justify-content-center">
             <div class="col-7 shadow rounded p-5">
 
-                @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-            @if (session('error'))
-            <div class=" alert alert-danger">
-                {{ session('error') }}
-            </div>
-
-            @endif
                 <form action="{{ route('feature.update',$feature->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')

@@ -1,4 +1,7 @@
 
+
+
+
 @extends('layout.dashboard')
 
 @section('main')
@@ -8,31 +11,20 @@
         <h2 class="mt-4">Event Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Events</li>
+            <li class="breadcrumb-item active">Event List</li>
         </ol>
 
         <!-- Add Button -->
     <div class="d-flex  mb-3">
         <a href="{{ route('event/create') }}" class="btn btn-dark rounded-pill shadow">
-            <i class="fas fa-plus-circle"></i> Add Events
+            <i class="fas fa-plus-circle"></i> Add Event
         </a>
     </div>
 
-
-
         <!-- Compact Event Cards Grid -->
         <div class="row">
-            @if (session('success'))
-            <div class=" alert alert-success">
-              {{ session('success') }}
-            </div>
-          @endif
-          @if (session('error'))
-          <div class=" alert alert-danger">
-              {{ session('error') }}
-          </div>
-          @endif
-          
+             <!-- Sweet alert -->
+             @include('include.alerts')
             @foreach ($events as $event)
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm h-100">

@@ -1,6 +1,6 @@
 @extends('layout.dashboard')
-
-
+ <!-- Sweet alert -->
+ @include('include.alerts')
 @section('main')
 <main>
 

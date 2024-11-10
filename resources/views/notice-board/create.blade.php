@@ -11,17 +11,8 @@
         </ol>
 
         <div class="card shadow border-0 rounded-3 mt-3 mx-auto" style="max-width: 600px;">
-            
-            @if (session('success'))
-            <div class=" alert alert-success">
-              {{ session('success') }}
-            </div>
-          @endif
-          @if (session('error'))
-          <div class=" alert alert-danger">
-              {{ session('error') }}
-          </div>
-          @endif
+
+           
 
             <div class="card-body p-4">
                 <form action="{{ route('notice.store') }}" method="post">

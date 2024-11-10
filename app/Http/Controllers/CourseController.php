@@ -77,7 +77,7 @@ class CourseController extends Controller
             $course->semester_id = $request->input('semester_id');
             $course->save();
 
-            return redirect()->back()->with('success', 'Course created successfully!');
+            return redirect()->route('Courses.index')->with('success', 'Course created successfully!');
 
 
 
@@ -123,7 +123,7 @@ class CourseController extends Controller
     Course::where('course_id',$id)->update($course);
 
     // Redirect back to the courses list with a success message
-    return redirect()->back()->with('success', 'Course updated successfully');
+    return redirect()->route('Courses.index')->with('success', 'Course updated successfully');
 }
 
 
@@ -132,7 +132,7 @@ class CourseController extends Controller
     public function destroy(string $id)
     {
         Course::where('course_id',$id)->delete();
-       return redirect()->back()->with('success', 'Course Deleted successfully!');
+       return redirect()->route('Courses.index')->with('success', 'Course Deleted successfully!');
 
     }
 

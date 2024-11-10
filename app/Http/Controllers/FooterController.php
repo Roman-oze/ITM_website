@@ -84,33 +84,36 @@ class FooterController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        // $validated = $request->validate([
-        //     'address' => 'nullable|required|string|max:255',
-        //     'phone' => 'nullable|required|string|max:15',
-        //     'email' => 'nullable|required|email',
-        //     'footer_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        // ]);
+{
+    // Initialize the data array with other fields
+    $data = [
+        'address' => $request->address,
+        'phone' => $request->phone,
+        'email' => $request->email,
+        'course_download' => $request->course_download,
+        'tuition_fees' => $request->tuition_fees,
+        'facebook' => $request->facebook,
+        'instagram' => $request->instagram,
+        'linkedin' => $request->linkedin,
+    ];
 
-        $fileName = time().'.'.$request->file('footer_logo')->getClientOriginalExtension();
+    // Check if a new footer logo is uploaded
+    if ($request->hasFile('footer_logo')) {
+        // Generate a new file name and move the uploaded file
+        $fileName = time() . '.' . $request->file('footer_logo')->getClientOriginalExtension();
         $request->file('footer_logo')->move('footer_logo', $fileName);
 
-        $data['footer_logo'] = 'footer_logo/'. $fileName;
-        $data['address'] = $request->address;
-        $data['phone'] = $request->phone;
-        $data['email'] = $request->email;
-        $data['course_download'] = $request->course_download;
-        $data['tuition_fees'] = $request->tuition_fees;
-        $data['facebook'] = $request->facebook;
-        $data['instagram '] = $request->instagram ;
-        $data['linkedin '] = $request->linkedin ;
-
-        Footer::where('id',$id)->update($data);
-
-
-
-        return redirect()->route('footer.index')->with('success', 'Footer Updated successfully');
+        // Update the footer logo path
+        $data['footer_logo'] = 'footer_logo/' . $fileName;
     }
+
+    // Update the footer data in the database
+    Footer::where('id', $id)->update($data);
+
+    // Redirect with a success message
+    return redirect()->route('footer.index')->with('success', 'Footer updated successfully');
+}
+
 
     /**
      * Remove the specified resource from storage.

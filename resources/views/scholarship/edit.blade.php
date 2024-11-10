@@ -29,25 +29,11 @@
                                                 @csrf
                                                 @method('PUT')
 
-                                                @if (session()->has('success'))
-
-                                                <div class="alert alert-success">
-                                                    {{ session()->get('success') }}
-                                                    </div>
-
-                                                @endif
-
-                                                @if (session()->has('error'))
-
-                                                <div class="alert alert-danger">
-                                                    {{ session()->get('error') }}
-                                                    </div>
-
-                                                @endif
-
-
                                                 <div class="form-group mb-3">
-
+                                                    <label for="name">Current image</label>
+                                                    @if ($scholars->image)
+                                                        <img src="{{asset($scholars->image)}}" alt="" width="100" height="100">
+                                                    @endif
                                                     <input type="file" class="form-control" name="image" value="{{$scholars->image}}" required placeholder="image">
                                                     <span class="text-danger">@error('image'){{ $message }}@enderror</span>
                                                 </div>

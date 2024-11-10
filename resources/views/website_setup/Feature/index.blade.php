@@ -1,4 +1,6 @@
 @extends('layout.dashboard')
+ <!-- Sweet alert -->
+ @include('include.alerts')
 @section('main')
 <main>
     <div class="container-fluid px-4">

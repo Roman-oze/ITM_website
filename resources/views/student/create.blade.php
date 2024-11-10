@@ -6,13 +6,6 @@
  @extends('club.layout.club_master')
  @section('main_content')
 
-
-
-
-        <!-- resources/views/students/create.blade.php -->
-
-
-
         <div class="container bg-image ">
             <div id="layoutAuthentication">
                 <div id="layoutAuthentication_content">

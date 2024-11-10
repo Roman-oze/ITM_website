@@ -51,9 +51,7 @@ class FeatureController extends Controller
 
         Feature::create($data);
 
-
-
-      return redirect()->back()->with('success', 'Feature created successfully');
+        return redirect()->route('feature.index')->with('success', 'Feature created successfully');
 
 
 
@@ -111,7 +109,7 @@ class FeatureController extends Controller
     $feature->save();
 
     // Redirect back with a success message
-    return redirect()->back()->with('success', 'Feature updated successfully!');
+    return redirect()->route('feature.index')->with('success', 'Feature updated successfully!');
 }
 
 
@@ -123,6 +121,6 @@ class FeatureController extends Controller
        $feature = Feature::find($id);
        $feature->delete();
 
-       return redirect()->back()->with('success', 'Feature deleted successfully');
+       return redirect()->route('feature.index')->with('success', 'Feature deleted successfully');
     }
 }

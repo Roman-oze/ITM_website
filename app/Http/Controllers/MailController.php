@@ -70,7 +70,7 @@ class MailController extends Controller
         }
     }
 
-    return back()->with('success', 'Emails sent successfully!');
+    return redirect()->back()->with('success', 'Emails sent successfully!');
 }
 
 

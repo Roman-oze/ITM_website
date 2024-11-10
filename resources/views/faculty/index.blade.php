@@ -18,18 +18,12 @@
         </div>
 
             <!-- First Row: Dean and Head of Department -->
+
+
             <div class="row row d-flex justify-content-center">
 
-                @if (session('success'))
-                <div class=" alert alert-success">
-                  {{ session('success') }}
-                </div>
-              @endif
-              @if (session('error'))
-              <div class=" alert alert-danger">
-                  {{ session('error') }}
-              </div>
-              @endif
+                <!-- Sweet alert -->
+                @include('include.alerts')
 
                 @foreach($teachers as $teacher)
                     @if($teacher->designation == 'Dean of ITM Department' || $teacher->designation == 'Head of ITM Department')

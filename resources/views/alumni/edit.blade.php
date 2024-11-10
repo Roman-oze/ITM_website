@@ -23,18 +23,6 @@
                                         @csrf
                                         @method('PUT')
 
-                                        <!-- Success and Error Messages -->
-                                        @if (session('success'))
-                                            <div class="alert alert-success">
-                                                {{ session('success') }}
-                                            </div>
-                                        @endif
-                                        @if (session('error'))
-                                            <div class="alert alert-danger">
-                                                {{ session('error') }}
-                                            </div>
-                                        @endif
-
                                         <!-- Image Upload Field -->
                                         <div class="form-group mb-3">
                                             @if ($alumni->image)

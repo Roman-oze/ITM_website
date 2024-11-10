@@ -14,19 +14,6 @@
                 <form action="{{ route('feature.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                    @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                @if (session('error'))
-                <div class=" alert alert-danger">
-                    {{ session('error') }}
-                </div>
-
-                @endif
-
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="{{ old('description') }}">

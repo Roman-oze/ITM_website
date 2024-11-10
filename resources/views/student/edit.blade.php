@@ -8,38 +8,18 @@
 @section('main')
 
 
-
-
-       <!-- resources/views/students/create.blade.php -->
-
-
-
-       <div class="container mt-5" style="width: 60%; margin: auto;">
-        <div class="card ">
+<div class="container-fluid px-4">
+    <h2 class="mt-4">Student Edit</h2>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Student edit </li>
+    </ol>
+       <div class="row d-flex justify-content-center mt-5" style="width: 60%; margin: auto;">
+        <div class="card col-8">
             <div class="card-body">
-                <h2 class="text-danger mt-3">Edit Student Information</h2>
-                <div class=" text-left">
-                    <a href="{{ route('index') }}"><button class="btn btn-outline-info">Back</button></a>
-
-                </div>
-                <br>
-                <br>
-                <form action="{{ route('student.update', $student->id) }}" method="post">
+                <form action="{{ route('student.update', $student->id) }}" method="POST">
                     @csrf
                     @method('PUT')
-
-                    @if (session()->has('sucess'))
-                    <div class="alert alert-success">
-                        {{session()->get('success')}}
-                    </div>
-                    @endif
-
-                    @if (session()->has('error'))
-                    <div class="alert alert-danger">
-                        {{session()->get('error')}}
-                    </div>
-                    @endif
-
 
                     <div class="form-group">
                         <label for="name">Name: </label>
@@ -53,7 +33,11 @@
 
                     <div class="form-group">
                         <label for="department">Batch: </label>
-                        <input type="text" class="form-control" name="batch"  value="{{ $student->batch }}"required>
+                        <select name="batch_id" id="" class="form-control p-2" >
+                            @foreach ($batches as $batch)
+                            <option value="{{$batch->batch_id}}">{{ $batch->batch_name }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -87,6 +71,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
     <br>
