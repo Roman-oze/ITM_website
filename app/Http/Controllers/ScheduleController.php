@@ -26,25 +26,25 @@ class ScheduleController extends Controller
     {
         $courses = Course::all();
         $teachers = Teacher::all();
+
         return view('schedule.create', compact('courses', 'teachers'));
     }
 
     public function store(Request $request)
     {
+        $request->validate([
+            'course_id' => 'required',
+            'teacher_id' => 'required',
+            'room_no' => 'required|string',
+            'day' => 'required|string',
+            'start_time' => 'required',
+            'end_time' => 'required',
+        ]);
 
-        $schedule = new Schedule();
-        $schedule->room_no = $request->input('room_no');
-        $schedule->day = $request->input('day');
-        $schedule->start_time =$request->input('start_time');
-        $schedule->end_time =$request->input('end_time');
-        $schedule->course_id =$request->input('course_id');
-        $schedule->teacher_id =$request->input('teacher_id');
-        $schedule->save();
-        // echo"<pre>";
-        // print_r($data);
         Schedule::create($request->all());
-        return redirect()->route('schedules.index')->with('success', 'Schedule created successfully.');
+        return redirect()->route('schedules.index')->with('success', 'Schedule created successfully!');
     }
+
 
     public function edit(string $schedule_id)
     {
@@ -63,33 +63,17 @@ class ScheduleController extends Controller
 
     public function update(Request $request, Schedule $schedule)
     {
-        // Validate the incoming request data
         $request->validate([
-            'room_no' => 'required|string|max:255',
-            'day' => 'required|string|max:255',
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i|after:start_time',
-            'course_id' => 'required|exists:courses,id',
-            'faculty_id' => 'required|exists:faculties,id',
+            'course_id' => 'required',
+            'teacher_id' => 'required',
+            'room_no' => 'required|string',
+            'day' => 'required|string',
+            'start_time' => 'required',
+            'end_time' => 'required',
         ]);
 
-
-        dd(
-            $request->all()
-        );
-
-        // Update the schedule with validated data
-        $schedule->update([
-            'room_no' => $request->input('room_no'),
-            'day' => $request->input('day'),
-            'start_time' => $request->input('start_time'),
-            'end_time' => $request->input('end_time'),
-            'course_id' => $request->input('course_id'),
-            'faculty_id' => $request->input('faculty_id'),
-        ]);
-
-        // Redirect back to the schedules index with a success message
-        return redirect()->route('schedules.index')->with('success', 'Schedule updated successfully.');
+        $schedule->update($request->all());
+        return redirect()->route('schedules.index')->with('success', 'Schedule updated successfully!');
     }
 
 

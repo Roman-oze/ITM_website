@@ -63,7 +63,7 @@
                             <td>{{ $schedule->teacher->name }}</td>
                             <td>{{ $schedule->room_no }}</td>
                             <td>{{ $schedule->day }}</td>
-                            <td>{{ $schedule->start_time }}</td>
+                            <td>{{ \Carbon\Carbon::parse($schedule->start_time)->format('h:i A') }}</td>
                             <td class="d-flex">
                                 @can('update user')
                                 <a href="{{ route('schedules.edit', $schedule->schedule_id) }}" class="btn btn-warning btn-sm me-1">Edit</a>
