@@ -11,11 +11,13 @@
             </ol>
 
             <!-- Add Button -->
+    @can('manage-user')
         <div class="d-flex  mb-3">
             <a href="{{ route('Courses.create') }}" class="btn btn-dark rounded-pill shadow">
                 <i class="fas fa-plus-circle"></i> Add Course
             </a>
         </div>
+    @endcan
 
         <div class="d-flex justify-content-center">
             <div class="card w-100 shadow-lg" style="max-width: 900px;">
@@ -41,7 +43,9 @@
                                                 <th>Course Code</th>
                                                 <th>Course Name</th>
                                                 <th>Credit</th>
+                                                @can('manage-user')
                                                 <th>Actions</th>
+                                                @endcan
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -50,6 +54,7 @@
                                                     <td>{{ $course->course_code }}</td>
                                                     <td>{{ $course->course_name }}</td>
                                                     <td>{{ $course->credit }}</td>
+                                                    @can('manage-user')
                                                     <td class="d-flex justify-content-center">
                                                         <!-- Edit Button -->
                                                         @can('update user')
@@ -68,6 +73,7 @@
                                                             </form>
                                                         @endcan
                                                     </td>
+                                                    @endcan
                                                 </tr>
                                             @endforeach
                                         </tbody>

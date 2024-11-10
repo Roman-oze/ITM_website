@@ -12,11 +12,13 @@
             </ol>
 
             <!-- Add Button -->
+    @can('manage-user')
         <div class="d-flex  mb-3">
             <a href="{{ route('schedules.create') }}" class="btn btn-dark rounded-pill shadow">
                 <i class="fas fa-plus-circle"></i> Add Schedule</a>
             </a>
         </div>
+    @endcan
 
         <div class="d-flex justify-content-between mb-3">
             <form action="" method="GET" class="d-flex" style="max-width: 500px; width: 100%;">
@@ -52,7 +54,9 @@
                         <th>Room No</th>
                         <th>Day</th>
                         <th>Start Time</th>
+                        @can('manage-user')
                         <th>Actions</th>
+                        @endcan
                     </tr>
                 </thead>
                 <tbody>
@@ -64,6 +68,7 @@
                             <td>{{ $schedule->room_no }}</td>
                             <td>{{ $schedule->day }}</td>
                             <td>{{ \Carbon\Carbon::parse($schedule->start_time)->format('h:i A') }}</td>
+                            @can('manage-user')
                             <td class="d-flex">
                                 @can('update user')
                                 <a href="{{ route('schedules.edit', $schedule->schedule_id) }}" class="btn btn-warning btn-sm me-1">Edit</a>
@@ -76,6 +81,7 @@
                                 </form>
                                 @endcan
                             </td>
+                            @endcan
                         </tr>
                     @endforeach
                 </tbody>

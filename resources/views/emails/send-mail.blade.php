@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="text-center ">
-                        <button type="submit"   class="btn btn-primary ">Send Email</button>
+                        <button type="submit"   class="btn btn-dark "><i class="fa-regular fa-paper-plane"></i> Send Email</button>
 
                     </div>
                 </form>
@@ -87,4 +87,6 @@
         </div>
     </div>
 </main>
+<br>
+<br>
 @endsection

@@ -13,11 +13,13 @@
         </ol>
 
         <!-- Add Button -->
+ @can('manage-user')
     <div class="d-flex  mb-3">
         <a href="{{route('notice.create')}}" class="btn btn-dark rounded-pill shadow">
             <i class="fas fa-plus-circle"></i> Add Notice
         </a>
     </div>
+@endcan
 
 <div class="row">
     @if (session('success'))
@@ -30,7 +32,7 @@
       {{ session('error') }}
   </div>
   @endif
-  
+
     @foreach ($notices as $notice)
     <div class="col-md-6">
         <div class="card p-3 mt-3">
@@ -39,6 +41,7 @@
                         <p class=" badge text-dark text-right">{{ $notice->created_at->format('F j, Y, g:i a') }}</p>
                         <p class="mt-2 p-3">{{ $notice->content }}</p>
 
+                @can('manage-user')
                     <div class="d-flex justify-content-center mt-2">
                         <div class="dropdown">
                             <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,7 +68,8 @@
                                 </li>
                             </ul>
                         </div>
-                </div>
+                    </div>
+                @endcan
             </div>
         </div>
     </div>

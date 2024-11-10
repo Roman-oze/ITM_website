@@ -11,7 +11,7 @@
                 <li class="breadcrumb-item active">Routine List</li>
             </ol>
 
-     
+
 
 
 
@@ -58,6 +58,7 @@
             </div>
         @endcan
 
+        @can('manage-user')
             <div class="col-12 col-md-6 p-3">
                 <h2 class="text-center mb-4">Uploaded Files</h2>
                 <div class="table-responsive bg-light shadow-lg rounded p-4">
@@ -95,9 +96,7 @@
                     </table>
                 </div>
             </div>
-
-           <!-- Container for Sections with Smooth Fade-In/Out -->
-           <div class="container-fluid">
+           @endcan
 
 
 <!-- Container for Sections with Smooth Fade-In/Out -->
@@ -173,7 +172,6 @@
     </div>
 </div>
 
-        </div>
     </div>
 </main>
 
