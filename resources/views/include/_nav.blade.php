@@ -77,11 +77,11 @@
         </div>
     </div> --}}
     <div class="profile-container" onclick="toggleMenu()">
-        <img src="frontend/image/nav_logo.jpg" alt="Profile Image" class="avatar-image">
+        <img src="{{asset('frontend/image/nav_logo.jpg')}}" alt="Profile Image" class="avatar-image">
         <div class="menu-dropdown">
           <div class="arrow-indicator"></div>
-          <div class="menu-header p">Welcome,<br>
-             {{ Auth::user()->name }}!</div>
+          <div class="menu-header p">Welcome !<br>
+             {{ Auth::user()->name }}</div>
           <div class="menu-item">
             <a href="{{ route('profile.edit') }}" class="dropdown-item logout-item">
                 {{ __('Profile') }}

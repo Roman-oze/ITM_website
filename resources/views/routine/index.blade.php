@@ -128,21 +128,60 @@
 
     <!-- Fall Section -->
     <div id="fall-section" class="row p-3 " style="display: none; opacity: 0;">
+        @foreach($falls as $fall)
         <div class="col-md-8">
-            @foreach($falls as $fall)
-              <img src="{{ asset($file->image) }}" alt="Routine" class="img-fluid">
-            @endforeach
+              <img src="{{ asset($fall->image) }}" alt="Routine" class="img-fluid">
         </div>
+        <div class="col-md-4 p-3 text-center">
+            <div class="card text-center shadow-lg mb-4" style="border-radius: 15px; overflow: hidden;">
+                <div class="card-header bg-dark text-white" style="font-size: 1.2rem; padding: 20px 10px;">
+                    <i class="fas fa-calendar-alt"></i> {{ $fall->type }}
+                </div>
+                <div class="card-body" style="background-image: url('https://example.com/background.jpg'); background-size: cover; padding: 30px;">
+                    <p class="card-text  mb-4 routine-title">{{ $fall->title }}</p>
+                    <a href="javascript:void(0);" class="btn btn-light btn-block mb-2 view-btn" data-image="{{ asset($fall->image) }}" style="border-radius: 20px;">
+                        <i class="fas fa-eye"></i> View
+                    </a>
+                    <a href="{{ route('files.download', $fall->id) }}" class="btn btn-light btn-block" style="border-radius: 20px;">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+                <div class="card-footer text-muted">
+                    Last updated: <strong>{{ $fall->uploaded_at }}</strong>
+                </div>
+            </div>
+        </div>
+        @endforeach
 
     </div>
 
     <!-- Spring Section -->
     <div id="spring-section" class="row p-3 " style="display: none; opacity: 0;">
+        @foreach($springs as $spring)
         <div class="col-md-8 ">
-            @foreach($springs as $spring)
                <img src="{{ asset($spring->image) }}" alt="Routine" class="img-fluid">
-            @endforeach
         </div>
+        <div class="col-md-4 p-3 text-center">
+            <div class="card text-center shadow-lg mb-4" style="border-radius: 15px; overflow: hidden;">
+                <div class="card-header bg-dark text-white" style="font-size: 1.2rem; padding: 20px 10px;">
+                    <i class="fas fa-calendar-alt"></i> {{ $spring->type }}
+                </div>
+                <div class="card-body" style="background-image: url('https://example.com/background.jpg'); background-size: cover; padding: 30px;">
+                    <p class="card-text text-dark mb-4" style="font-size: 1rem;">{{ $spring->title }}</p>
+                    <a href="javascript:void(0);" class="btn btn-light btn-block mb-2 view-btn" data-image="{{ asset($spring->image) }}" style="border-radius: 20px;">
+                        <i class="fas fa-eye"></i> View
+                    </a>
+                    <a href="{{ route('files.download', $spring->id) }}" class="btn btn-light btn-block" style="border-radius: 20px;">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+                <div class=" text-muted">
+                    Last updated: <strong>{{ $spring->uploaded_at }}</strong>
+
+                </div>
+            </div>
+        </div>
+        @endforeach
     </div>
 </div>
 
