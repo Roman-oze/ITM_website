@@ -23,7 +23,7 @@
         @foreach ($menus as $menu)
             <div class="col-md-6 mb-4">
                 <div class="card-penel shadow-sm animated-card ">
-                    <div class="card-header d-flex justify-content-between align-items-center p-3 menu-bg rounded">
+                    <div class="card-header d-flex justify-content-between align-items-center p-3 menu-bg rounded shadow">
                         <h5 class="mb-0">
                             <i class="{{ $menu->icon }}"></i> {{ $menu->name }}
                         </h5>
