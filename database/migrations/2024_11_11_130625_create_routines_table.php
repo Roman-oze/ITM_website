@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('routines', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('file_path');
+            $table->string('file_path')->nullable();
+            $table->string('image')->nullable();
+            $table->string('title')->nullable();
             $table->string('type');
             $table->timestamp('uploaded_at')->useCurrent();
             $table->timestamps();

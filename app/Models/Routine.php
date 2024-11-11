@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Routine extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'file_path', 'type', 'uploaded_at'];
+    protected $fillable = ['title', 'file_path','image', 'type', 'uploaded_at'];
 
 }

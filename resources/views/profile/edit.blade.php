@@ -11,42 +11,6 @@
             <li class="breadcrumb-item active">profile edit</li>
         </ol>
 
-    {{-- <div class="container mt-5 d-flex justify-content-center">
-        <div class="card shadow-lg border-0 rounded-lg" style="width: 100%; max-width: 500px;">
-            <!-- Card Header with Profile Picture and Edit Icon -->
-            <div class="card-header bg-dark text-center position-relative">
-                <!-- Profile Picture Wrapper -->
-                <div class="position-relative" style="width: 100px; height: 100px; margin: 0 auto;">
-                    <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"
-                         class="rounded-circle img-thumbnail"
-                         alt="User Image"
-                         width="100"
-                         height="100"
-                         style="object-fit: cover;">
-
-                    <!-- Edit Icon Overlay -->
-                    <label for="profile_picture" class="position-absolute bottom-0 end-0 bg-primary rounded-circle p-2" style="cursor: pointer;">
-                        <i class="fa fa-edit text-white"></i>
-                    </label>
-                    <input type="file" id="profile_picture" name="profile_picture" class="d-none" accept="image/*">
-                </div>
-
-                <h5 class="card-title text-white mt-3">{{ $user->name }}</h5>
-                <p class="text-light">{{ $user->email }}</p>
-            </div>
-
-            <!-- Card Body with Badge Spans -->
-            <div class="card-body bg-light">
-                <div class="mb-3">
-                    <span class="badge bg-secondary">Name: {{ $user->name }}</span>
-                </div>
-                <div class="mb-3">
-                    <span class="badge bg-secondary">Email: {{ $user->email }}</span>
-                </div>
-                <button type="button" class="btn btn-primary btn-block mt-4" onclick="window.location.href='{{ route('profile.edit') }}'">save</button>
-            </div>
-        </div>
-    </div> --}}
 
     {{-- <div class="profile-card">
         <div class="profile-image-container">
@@ -63,46 +27,16 @@
         <div class="profile-email ">{{ $user->email }}</div>
         <button class="edit-profile-btn">Edit Profile</button>
       </div> --}}
-<!-- resources/views/profile/edit.blade.php -->
-<form action="{{ route('profile.update') }}" method="POST" id="profileForm" enctype="multipart/form-data">
+
+{{-- <form action="{{route('profile.update')}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
-
-    <!-- Profile Picture Upload -->
-    <div class="mb-3">
-        <label for="profile_picture" class="form-label">Profile Picture</label>
-        <input type="file" name="profile_picture" id="profile_picture" class="form-control" onchange="previewImage(event)">
-        <div class="mt-2">
-            <img id="imagePreview" src="{{ asset('profile_picture/' . auth()->user()->profile_picture) }}" alt="Profile Picture" class="img-thumbnail" width="150" style="display: {{ auth()->user()->profile_picture ? 'block' : 'none' }}">
-        </div>
+    <div class="form-group">
+        <label for="profile_picture">Profile Picture</label>
+        <input type="file" class="form-control" name="profile_picture" id="profile_picture">
     </div>
-
     <button type="submit" class="btn btn-primary">Update Profile</button>
-</form>
-
-<script>
-    // Preview image before uploading
-    function previewImage(event) {
-        var reader = new FileReader();
-        reader.onload = function() {
-            var output = document.getElementById('imagePreview');
-            output.src = reader.result;
-            output.style.display = 'block';  // Show image preview
-        }
-        reader.readAsDataURL(event.target.files[0]);
-    }
-
-    // Use JavaScript to submit form data (for AJAX if needed)
-    document.getElementById('profileForm').onsubmit = function(e) {
-        e.preventDefault();
-
-        // Add JavaScript logic for AJAX submission here (if needed)
-        // For now, it'll just submit the form normally
-        this.submit();
-    };
-</script>
-
-
+</form> --}}
 
 
             <div class="container mt-5">

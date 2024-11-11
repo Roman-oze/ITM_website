@@ -87,24 +87,38 @@ class RoutineController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required|file',
+            'title' => 'nullable',
+            'file' => 'nullable|file|mimes:pdf|max:2048', // Allow PDF files up to 2MB
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Allow images up to 2MB
+            'description' => 'nullable',
             'type' => 'required|string|max:255',
+
         ]);
 
-        $file = $request->file('file');
-        $fileName = time() . '_' . $file->getClientOriginalName();
-        $filePath = $file->storeAs('uploads', $fileName, 'public');
 
-        Routine::create([
-            // 'name' => $fileName,
-            'name' => $request->name,
-            'file_path' => '/storage/' . $filePath,
-            'type' => $request->type,
-            'uploaded_at' => now(),
-        ]);
+        if($request->hasFile('image')){
+            $fileName = time().'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path('routine'), $fileName);
 
-        return redirect()->route('routine.index')->with('success', 'File uploaded successfully.');
-    }
+            $data['image'] = 'routine/'.$fileName;
+        }
+
+
+        if($request->hasFile('file')){
+            $file = $request->file('file');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('uploads', $fileName, 'public');
+
+            $data['file_path'] = 'storage/' . $filePath;
+        }
+            $data['title'] = $request->title;
+            $data['type'] = $request->type;
+            $data['uploaded_at'] = now();
+
+            Routine::create($data);
+
+            return redirect()->route('routine.index')->with('success', 'File uploaded successfully.');
+        }
 
     // Handle file download
     public function download($id)

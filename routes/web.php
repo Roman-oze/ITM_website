@@ -34,31 +34,6 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 
-// Route::get('/dashboard', [DashbaordController::class, 'index'])
-//     ->name('dashboard')
-//     ->middleware('menu.permission:view');
-
-// Route::post('/dashboard/create', [DashbaordController::class, 'create'])
-//     ->middleware('menu.permission:can_create');
-
-// // routes/web.php
-// Route::get('/access-denied', function () {
-//     return view('access_denied');
-// })->name('access.denied');
-
-// routes/web.php
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
-//     Route::get('/menus/create', [MenuController::class, 'create'])->name('menus.create')->middleware('menu.permission:can_create');
-//     Route::post('/menus', [MenuController::class, 'store'])->name('menus.store')->middleware('menu.permission:can_create');
-//     Route::get('/menus/{id}/edit', [MenuController::class, 'edit'])->name('menus.edit')->middleware('menu.permission:can_edit');
-//     Route::put('/menus/{id}', [MenuController::class, 'update'])->name('menus.update')->middleware('menu.permission:can_edit');
-//     Route::delete('/menus/{id}', [MenuController::class, 'destroy'])->name('menus.destroy')->middleware('menu.permission:can_delete');
-// });
-
-
-
-
 
 // Route::group(['middleware' => ['menu.permission']],function(){
 
@@ -123,30 +98,6 @@ Route::controller(FeatureController::class)->group(function(){
     Route::delete('/feature/delete/{id}','destroy')->name('feature.delete');
 
 });
-
-
-
-// Super Admin Routes
-// Route::group(['middleware' => ['role:super-admin']], function () {
-
-//     // Permissions Management
-//     Route::resource('permissions', PermissionController::class);
-//     Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy'])->name('permissions.delete');
-
-//     // Roles Management
-//     Route::resource('roles', RoleController::class);
-//     Route::get('roles/{roleId}/delete', [RoleController::class, 'destroy'])->name('roles.delete');
-//     Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole'])->name('roles.give-permission');
-//     Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole'])->name('roles.update-permission');
-
-//     // Users Management
-//     Route::resource('users', UserController::class);
-//     Route::get('users/{userId}/delete', [UserController::class, 'destroy'])->name('users.delete');
-//     Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
-//     route::get('/dashboard',[DashbaordController::class,'dashboard'])->name('dashboard');    // Additional faculty routes can be added here
-
-// });
-
 
 
 

@@ -8,20 +8,20 @@
             <h2 class="text-dark mt-5">Routine</h2>
         </div>
 
-        <div class="row p-3">
-            <div class="col-md-8">
-                <img src="{{ asset('frontend/image/routine.png') }}" alt="" class="img-fluid">
-            </div>
+        <div class="row p-3 d-flex justify-content-center">
+            @foreach($springs as $spring)
+            {{-- <div class="col-md-8">
+                <img src="{{ asset($spring->image) }}" alt="" class="img-fluid">
+            </div> --}}
 
-            <div class="col-md-4 p-2 text-center">
-                @foreach($springs as $spring)
+            <div class="col-md-5 p-5 text-center">
                     <div class="card text-center shadow-lg mb-4" style="border-radius: 15px; overflow: hidden;">
                         <div class="card-header bg-color text-white" style="font-size: 1.2rem; padding: 20px 10px;">
                             <i class="fas fa-calendar-alt"></i> {{ $spring->type }}
                         </div>
                         <div class="card-body" style="background-image: url('https://example.com/background.jpg'); background-size: cover; padding: 30px;">
-                            <p class="card-text text-dark mb-4" style="font-size: 1rem;">{{ $spring->name }}</p>
-                            <a href="{{ url('/routine/show', $spring->id) }}" class="btn btn-light btn-block mb-2" style="border-radius: 20px;">
+                            <p class="card-text text-dark mb-4" style="font-size: 1rem;">{{ $spring->title }}</p>
+                            <a href="javascript:void(0);" class="btn btn-light btn-block mb-2 view-btn" data-image="{{ asset($spring->image) }}" style="border-radius: 20px;">
                                 <i class="fas fa-eye"></i> View
                             </a>
                             <a href="{{ route('files.download', $spring->id) }}" class="btn btn-light btn-block" style="border-radius: 20px;">
@@ -30,12 +30,41 @@
                         </div>
                         <div class="card-footer text-muted">
                             Last updated: <strong>{{ $spring->uploaded_at }}</strong>
+
                         </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
+
+<!-- Modal for image display -->
+<div id="imageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Routine</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Routine" class="img-fluid" >
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    // JavaScript to handle the view button click
+    document.querySelectorAll('.view-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            var imageUrl = this.getAttribute('data-image');
+            document.getElementById('modalImage').src = imageUrl;
+            $('#imageModal').modal('show');
+        });
+    });
+</script>
 
 @endsection

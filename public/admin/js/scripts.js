@@ -249,3 +249,24 @@ function searchTable() {
     });
 }
 
+function toggleSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.row.p-3');
+    sections.forEach(section => {
+        section.style.display = 'none';
+        section.style.opacity = '0';
+        section.style.transition = 'opacity 0.5s';
+    });
+
+    // Display the selected section and animate opacity
+    const selectedSection = document.getElementById(sectionId);
+    selectedSection.style.display = 'flex'; // or 'block' if using block elements
+    setTimeout(() => {
+        selectedSection.style.opacity = '1';
+    }, 50); // Delay to ensure the transition is noticeable
+}
+
+// Initialize by showing one section on page load
+document.addEventListener('DOMContentLoaded', () => {
+    toggleSection('fall-section'); // or 'spring-section' based on your preference
+});

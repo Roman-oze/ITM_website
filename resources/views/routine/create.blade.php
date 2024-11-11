@@ -26,7 +26,7 @@
                   <label for="" class="text-dark"><strong>Fall</strong></label>
                 </div>
 
-            <h3 class="card-title text-center p-2">Upload Files</h3>
+            <h3 class="card-title text-center p-2">Upload PDF</h3>
             <div id="drop-area" class="border p-5 text-center shadow bg-light">
                 <form action="{{route('routine.store')}}" method="POST" enctype="multipart/form-data" id="upload-form">
                     @csrf
@@ -41,6 +41,10 @@
                     </div>
                     <br>
 
+                    <div class="form-group">
+                        <label for="title">Upload Image</label>
+                        <input type="file" id="title" name="image" required placeholder="Image">
+                    </div>
                     <div class="form-group">
                         <label for="title">Description</label>
                         <input type="text" id="title" name="name" required placeholder="Description">

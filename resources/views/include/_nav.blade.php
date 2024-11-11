@@ -77,7 +77,7 @@
         </div>
     </div> --}}
     <div class="profile-container" onclick="toggleMenu()">
-        <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="Profile Image" class="avatar-image">
+        <img src="frontend/image/nav_logo.jpg" alt="Profile Image" class="avatar-image">
         <div class="menu-dropdown">
           <div class="arrow-indicator"></div>
           <div class="menu-header p">Welcome,<br>
