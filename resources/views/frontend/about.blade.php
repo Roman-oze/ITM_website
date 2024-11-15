@@ -134,17 +134,17 @@
                     <div class="address">
                         <i class="fa-solid fa-map-location-dot"></i>
                         <h4>Location:</h4>
-                        <p>AB4-Building-Khagan, Ashulia, Dhaka</p>
+                        <p>{{$footers->address}}</p>
                     </div>
                     <div class="email">
                         <i class="fa-regular fa-envelope"></i>
                         <h4>Email:</h4>
-                        <p>itmoffice@daffodilvarsity.edu.bd</p>
+                        <p>{{$footers->email}}</p>
                     </div>
                     <div class="phone">
                         <i class="fa-solid fa-phone"></i>
                         <h4>Call:</h4>
-                        <p>01847140039</p>
+                        <p>{{$footers->phone}}</p>
                     </div>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29187.16159450864!2d90.320302!3d23.875601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23dd12bbc75%3A0x313d214552eabe56!2sDaffodil%20Smart%20City!5e0!3m2!1sen!2sbd!4v1702204472544!5m2!1sen!2sbd" style="border: 0; width: 100%; height: 290px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>

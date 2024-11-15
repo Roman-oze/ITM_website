@@ -67,10 +67,14 @@ class HomeController extends Controller
     {
          $officers = Staff::whereIn('position',['Dean and Professor of CSE','Associate Dean','Head of the Department'])->get();
          $staffs = Staff::whereIn('position',['Assistant Coordination Officer'])->get();
+        //  $officers = $officers->merge($staffs);
+        $footers = Footer::first();
+
 
         return view('frontend.about',[
             'officers' => $officers,
             'staffs' => $staffs,
+            'footers' => $footers,
         ]);
     }
     public function chart(){
