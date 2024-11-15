@@ -4,22 +4,19 @@
 
 <main>
     <div class="container-fluid px-4">
-        <h2 class="mt-4">Staff Create</h2>
+        <h2 class="mt-4">Officer & Staff Management</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Staff create</li>
+            <li class="breadcrumb-item active">Create</li>
         </ol>
 
-
-
-<div class="d-flex justify-content-center align-items-center min-vh-85">
-    <div class="row p-3 shadow broder-1 rounded">
-        <form action="{{route('staff.store')}}" enctype="multipart/form-data"  method="POST">
+    <div class="d-flex justify-content-center align-items-center min-vh-85 ">
+        <form action="{{route('staff.store')}}" enctype="multipart/form-data"  method="POST" class="border shadow rounded p-3">
             @csrf
 
             <div class="mb-3">
                 <label for="image" class="form-label">Image URL</label>
-                <input type="file" class="form-control" id="imageInput" name="image" >
+                <input type="file" class="form-control p-2" id="imageInput" name="image" >
                <span class="text-danger">@error('image'){{$message}}@enderror</span>
               </div>
 
@@ -49,12 +46,12 @@
           </div>
 
 
-          <button type="submit" class="btn btn-success">Save</button>
+          <button type="submit" class="btn btn-primary">Save</button>
         </form>
       </div>
-    </div>
 </div>
-
 </main>
+<br>
+<br>
 @endsection
 

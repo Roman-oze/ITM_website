@@ -20,7 +20,7 @@
         <div class="row">
             <!-- Sweet alert -->
             @include('include.alerts')
-            
+
             @foreach($staffs as $staff)
             <div class="col-md-4 mb-4">
                 <div class="card shadow-sm h-100">

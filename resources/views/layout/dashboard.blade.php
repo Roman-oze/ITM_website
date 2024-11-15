@@ -15,7 +15,6 @@
                 <div id="layoutSidenav_content">
                     @yield('main')
                 </div>
-
         </div>
 
 

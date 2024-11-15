@@ -65,10 +65,13 @@ class HomeController extends Controller
 
     public function about()
     {
-         $staffs = Staff::get();
-        //  $staffs = Staff::whereIn('position'['cordinate']);
+         $officers = Staff::whereIn('position',['Dean and Professor of CSE','Associate Dean','Head of the Department'])->get();
+         $staffs = Staff::whereIn('position',['Assistant Coordination Officer'])->get();
 
-        return view('frontend.about',compact('staffs'));
+        return view('frontend.about',[
+            'officers' => $officers,
+            'staffs' => $staffs,
+        ]);
     }
     public function chart(){
         return view('statistic.chart');

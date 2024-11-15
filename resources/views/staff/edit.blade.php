@@ -4,16 +4,15 @@
 
 <main>
 <div class="container-fluid px-4">
-        <h2 class="mt-4">Staff Edit</h2>
+        <h2 class="mt-4">Officer & Staff Edit</h2>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Staff edit</li>
+            <li class="breadcrumb-item active"> edit</li>
         </ol>
         <br>
 
 <div class="d-flex justify-content-center align-items-center min-vh-85">
-    <div class="row p-3 shadow broder-1 rounded">
-        <form action="{{route('staff.update',$staff->id)}}" enctype="multipart/form-data"  method="POST">
+        <form action="{{route('staff.update',$staff->id)}}" enctype="multipart/form-data"  method="POST" class="border shadow rounded p-3">
             @csrf
             @method('PUT')
 
@@ -55,7 +54,6 @@
           <button type="submit" class="btn btn-dark">Update Profile</button>
         </form>
       </div>
-    </div>
 </div>
 
 </main>

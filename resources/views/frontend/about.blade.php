@@ -52,69 +52,75 @@
 
 <br><br><br><br><br>
 
-<h2 class="p-2 text-dark text-center">Faculty of Science and Information Technology</h2>
-<div class="text-center">
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fa-solid fa-circle"></i></div>
-        <div class="divider-custom-line"></div>
+<div class="row mt-3">
+    <div class="section-title">
+        <h2 class="p-2 text-dark text-center">Faculty of Science and Information Technology</h2>
     </div>
 </div>
 
 <div class="container mt-5">
-    <div class="row text-left">
-        @foreach ($staffs as $staff)
-            <div class="col-md-4">
-                <div class="text-center p-2">
-                    <div class="mb-4">
-                        <img src="{{ asset($staff->image) }}" class="staff-image" alt="Circular Image rounded">
-                    </div>
-                    <div class="text-left">
-                        <h2 class="staff-name text-dark">{{ $staff->name }}</h2>
-                        <span class="d-block position mb-4 text-dark-50">{{ $staff->position }}</span>
-                        <a href="mailto:{{ $staff->email }}" class="text-dark">
-                            <i class="fa-solid fa-envelope text-dark fa-lg p-2"></i>
-                        </a>
-                        <a href="tel:{{ $staff->mobile }}" class="text-dark">
-                            <i class="fa-solid fa-square-phone text-dark fa-lg p-2"></i>
-                        </a>
+
+    <div class="row text-left mt-4">
+        @foreach ($officers as $officer)
+        <div class="col-md-4 col-sm-6 mb-4" data-bs-aos="fade-up" data-bs-aos-delay="500">
+            <div class="card shadow-sm rounded border-0 bg-light">
+                <!-- Profile Image -->
+                <img src="{{ asset($officer->image) }}" alt="Staff Image" class="img-fluid   rounded-circle" style="height: 200px; width: 185px; object-fit: cover; margin-top: -50px; border: 5px solid #fff; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+
+                <div class="card-body text-center">
+                    <!-- Name and Position -->
+                    <h5 class="card-title text-dark">{{ $officer->name }}</h5>
+                    <p class="card-text text-muted">{{ $officer->position }}</p>
+
+                    <!-- Contact Information -->
+                    <div class="contact-wrap mb-2 d-flex justify-content-center">
+
+                        <a class="text-muted p-3 " href="tel:{{$officer->mobile}}"> <i class="fas fa-phone-alt fa-2x"></i> </a>
+
+                        <a class="text-muted p-3 " href="mailto:{{ $officer->email }}"><i class="fas fa-envelope fa-2x"></i></a>
                     </div>
                 </div>
             </div>
+        </div>
         @endforeach
     </div>
 </div>
 
-<div class="container-fluid bg-light p-5 mt-5">
+<div class="container-fluid  mt-5">
     <div class="row mt-3">
-        <div class="col-md-12 col-sm-12">
-            <h5 class="heading_30 mb_50 h1" data-bs-aos="fade-up" data-bs-aos-delay="100">Department of Information Technology &amp; Management</h5>
+        <div class="section-title">
+            <h2 class="text-success text-center border-1">Staff of the Department</h2>
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col-md-12 col-sm-12">
-            <h5 class="text-success text_bold mb_30 h2" data-bs-aos="fade-up" data-bs-aos-delay="200">Offices of the Department</h5>
-        </div>
-    </div>
-    <div class="row">
-        <div class="contact_box mb_85 col-md-6 col-sm-12" data-bs-aos="fade-up" data-bs-aos-delay="500">
-            <p class="text_bold mb_12"><strong>Ms. Mahmuda Khatun</strong></p>
-            <p class="mb_30">Assistant Coordination Officer</p>
-            <div class="contact_wrap">
-                <i class="fas fa-phone-alt"></i>
-                <a class="text-muted" href="tel:+8801713493250">01847140039</a>
+
+    <div class="row mt-5 bg-light d-flex justify-content-center">
+        @foreach ($staffs as $staff)
+        <div class="col-md-4">
+            <div class="text-center p-2">
+                <div class="mb-4">
+                    <img src="{{ asset($staff->image) }}" class="staff-image" alt="Circular Image rounded">
+                </div>
+                <div class="text-left">
+                    <h2 class="staff-name text-dark">{{ $staff->name }}</h2>
+                    <span class="d-block position mb-4 text-dark-50">{{ $staff->position }}</span>
+                    <a href="mailto:{{ $staff->email }}" class="text-dark">
+                        <i class="fa-solid fa-envelope text-dark fa-lg p-2"></i>
+                    </a>
+                    <a href="tel:{{ $staff->mobile }}" class="text-dark">
+                        <i class="fa-solid fa-square-phone text-dark fa-lg p-2"></i>
+                    </a>
+                </div>
             </div>
-            <div class="contact_wrap">
-                <i class="fas fa-envelope"></i>
-                <a class="text-muted" href="mailto:itmoffice@daffodilvarsity.edu.bd">itmoffice@daffodilvarsity.edu.bd</a>
-            </div>
         </div>
+    @endforeach
+
     </div>
 </div>
 
+
 <br><br>
 
-<h2 class="p-2 text-dark text-center">Faculty of Science and Information Technology Staff</h2>
+{{-- <h2 class="p-2 text-dark text-center">Faculty of Science and Information Technology Staff</h2> --}}
 
 <section id="contact" class="contact">
     <div class="container aos-init aos-animate" data-aos="fade-up">
