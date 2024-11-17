@@ -32,11 +32,12 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h6 class="card-title mb-0">{{ $student->name }}</h6>
-                            @if($student->type == 'active')
-                                <span class="badge bg-success">Active</span>
+                            @if($student->type == 'inactive')
+                                 <a href="{{ route('admin.students.activate', $student->id) }}"><span class="badge bg-success" >Active</span></a>
                             @else
-                                <span class="badge bg-danger">Inactive</span>
+                             <a href="{{ route('admin.students.deactivate', $student->id) }}"><span class="badge bg-danger" >Inactive</span></a>
                             @endif
+
                         </div>
                         <p class="small mb-1"><strong>Roll:</strong> {{ $student->roll }}</p>
                         <p class="small mb-1"><strong>Batch:</strong> {{ $student->batch->batch_name ?? 'No Batch Assigned' }}</p>
