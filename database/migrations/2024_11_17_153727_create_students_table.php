@@ -1,3 +1,4 @@
+@ -1,38 +0,0 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -6,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-   
+
 
 
     public function up(): void
@@ -16,10 +17,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('roll');
             $table->string('email')->unique(); // Student's email, unique
-            $table->string('blood');
-            $table->string('address');
-            $table->string('mobile');
-            $table->string('type');
+            $table->string('blood')->nullable();
+            $table->string('address')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('type')->default('active');
             $table->unsignedBigInteger('batch_id'); // Foreign key referencing the batches table
             $table->timestamps(); // Created at and updated at timestamps
 

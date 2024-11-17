@@ -1,10 +1,13 @@
 
+@extends('layout.dashboard')
+@section('main')
 
-
- <!-- resources/views/students/create.blade.php -->
-
- @extends('club.layout.club_master')
- @section('main_content')
+<div class="container-fluid px-4">
+    <h2 class="mt-4">Student Create</h2>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Student Create </li>
+    </ol>
 
         <div class="container bg-image ">
             <div id="layoutAuthentication">
@@ -14,9 +17,6 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
                                     <div class="card shadow-lg border-0 rounded-lg  bg-black">
-                                        <div class="card-header text-center">
-                                            <h4 class=" text-white">Student Registration <i class="fa fa-user text-dangers"></i></h4>
-                                        </div>
                                         <div class="card-body">
                                             <form action="{{ route('student.store') }}"  method="POSt">
                                                 @csrf
@@ -66,17 +66,14 @@
                                                 </div>
                                                 <div class="form-group mb-3">
                                                     <input type="text" class="form-control" name="blood" required placeholder="Blood">
-                                                    <span class="text-danger">@error('blood'){{ $message }}@enderror</span>
                                                 </div>
                                                 <div class="form-group mb-3">
 
                                                     <input type="text" class="form-control" name="address" required placeholder="Address">
-                                                    <span class="text-danger">@error('address'){{ $message }}@enderror</span>
                                                 </div>
                                                 <div class="form-group mb-3">
 
                                                     <input type="text" class="form-control" name="mobile" required placeholder="Mobile">
-                                                    <span class="text-danger">@error('mobile'){{ $message }}@enderror</span>
                                                 </div>
                                                 <div class="form-group mb-4">
                                                     <label for="type" class="text-white">Status</label>
@@ -87,7 +84,7 @@
                                                     <span class="text-danger">@error('type'){{ $message }}@enderror</span>
                                                 </div>
                                                 <div class="text-center">
-                                                    <button type="submit" class="btn btn-outline-danger">
+                                                    <button type="submit" class="btn btn-dark">
                                                         <i class="fas fa-paper-plane"></i> Submit
                                                     </button>
                                                 </div>
@@ -101,6 +98,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <br>
         <br>
         <br>
