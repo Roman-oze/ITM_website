@@ -68,12 +68,20 @@ class MenuController extends Controller
             'order' => 'nullable|integer',          // Sort order is optional
         ]);
 
-        Menu::create([
+       $menuData= Menu::create([
             'name' => $request->name,
             'icon' => $request->icon,                    // Nullable
             'link' => $request->link,                    // Nullable
             'parent_id' => $request->parent_id,          // Nullable for top-level menus
             'order' => $request->order,        // Nullable
+        ]);
+        MenuPermission::create([
+            'menu_id' => $menuData->id,
+            'role_id' => 5,
+            'can_create' => $request->input('permissions.can_create', 0),
+            'can_edit' => $request->input('permissions.can_edit', 0),
+            'can_update' => $request->input('permissions.can_update', 0),
+            'can_delete' => $request->input('permissions.can_delete', 0),
         ]);
         // Redirect to a specific route with a success message
         return redirect()->route('menus.index')->with('success', 'Menu created successfully!');

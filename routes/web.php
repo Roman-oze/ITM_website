@@ -198,7 +198,7 @@ Route::get('/courses/{semester}', [CourseController::class, 'getCoursesBySemeste
 
 Route::controller(StudentController::class)->group(function(){
     Route::get('/students', 'index')->name('student.index');
-    Route::get('/student/create', 'create')->name('create');
+    Route::get('/student/create', 'create')->name('student.create');
     Route::post('/student', 'store')->name('student.store');
     Route::get('/student/show/{id}', 'show')->name('student.show');
     Route::get('/student/edit/{id}', 'edit')->name('student.edit');
@@ -206,6 +206,9 @@ Route::controller(StudentController::class)->group(function(){
     Route::delete('student/delete/{id}', 'destroy')->name('delete');
     Route::get('/student/search','search')->name('student.search');
     Route::get('student/login', 'sign_in')->name('sign_in');
+    Route::post('student/create', 'batches')->name('student.batch');
+    Route::post('/batches' , 'batches')->name('batches.store');
+
 
     Route::get('student/{studentId}/activate', [StudentController::class, 'activate'])->name('admin.students.activate');
     Route::get('student/{studentId}/deactivate', [StudentController::class, 'deactivate'])->name('admin.students.deactivate');

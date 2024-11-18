@@ -15,21 +15,23 @@ use Illuminate\Support\Facades\Auth; // This is correct
 class MenuPermissionController extends Controller
 {
 
-            public function create()
-        {
-            $user = Auth::user();
-
-            $menus = Menu::all();
-            $roles = Role::all();
-            return view('setup-menu.menu-permission.assign-permission', compact('menus', 'roles'));
-        }
-
         public function index()
         {
 
             $permissions = MenuPermission::with('menu', 'role')->get();
             return view('setup-menu.menu-permission.index', compact('permissions'));
         }
+            public function create()
+        {
+            $user = Auth::user();
+
+            $menus = Menu::all();
+            $roles = Role::all();
+
+
+            return view('setup-menu.menu-permission.assign-permission', compact('menus', 'roles'));
+        }
+
 
 
 

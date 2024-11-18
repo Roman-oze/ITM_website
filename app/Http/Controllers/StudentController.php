@@ -13,6 +13,11 @@ use PhpParser\Node\Stmt\Echo_;
 class StudentController extends Controller
 {
 
+// In StudentController
+// public function __construct()
+// {
+//     $this->middleware('super-admin');
+// }
 
 
 
@@ -22,12 +27,16 @@ class StudentController extends Controller
     {
         return view('student.login');
     }
+
+
     public function create()
     {
         $batches = Batch::all();
 
+
         return view('student.create',compact('batches'));
     }
+
 
     public function index(){
 
@@ -40,9 +49,6 @@ class StudentController extends Controller
 
 $students = Student::with('batch')->paginate(10);
 
-
-
-
     return view('student.index',compact('students','menus','batches'));
 
     //  $students = Student::paginate(10);
@@ -51,20 +57,61 @@ $students = Student::with('batch')->paginate(10);
     }
 
 
+    // Controller
+public function activate($studentId)
+{
+    $student = Student::findOrFail($studentId);
+    $student->type = 'active'; // Assuming 'active' type ID is 1
+    $student->save();
+
+    return redirect()->route('student.index')->with('success','Student activated!');
+
+}
+
+public function deactivate($studentId)
+{
+    $student = Student::findOrFail($studentId);
+    $student->type = 'inactive'; // Assuming 'inactive' type ID is 2
+    $student->save();
+
+    return redirect()->route('student.index')->with('success','Student Inactivated!');
+
+}
+
+public function batches(Request $request)
+{
+    $request->validate([
+        'batch_name' => 'required|string|max:255|unique:batches,batch_name',
+    ]);
+
+    // Save the batch
+    $batch = Batch::create([
+        'batch_name' => $request->batch_name,
+    ]);
+
+    return redirect()->route('student.create')->with('success','Add Batch Successfully !');
+
+
+}
+
+
+
 
     public function store(Request $request){
 
-        $request->validate([
-            'name' => 'required',
-            'roll' => 'required',
-            'email' => 'required', // Assuming 'users' is the table name and 'email' is the column name
-            'blood' => 'required', // Assuming 'users' is the table name and 'email' is the column name
-            'address' => 'required',
-            'mobile' => 'required', // Assuming 'users' is the table name and 'mobile' is the column name
-            'type' => 'required',
-            'batch_id' => 'required',
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'roll' => 'required|string|unique:students,roll|max:50',
+            'email' => 'required|email|unique:students,email|max:255',
+            'blood' => 'nullable|string|max:10',
+            'address' => 'nullable|string|max:255',
+            'mobile' => 'nullable|string|max:20',
+            'type' => ['required', 'in:active,inactive'], // Validating status
+            'batch_id' => 'required|exists:batches,id',
+        ]);
 
-           ]) ;
+        // Store the student
+        // Student::create($validatedData);
 
 
          $data['name']=$request->name;
@@ -83,7 +130,7 @@ $students = Student::with('batch')->paginate(10);
 
     }
 
-    
+
     public function show($id)
     {
         // $data['student'] =DB::table('students')->where('id',$id)->first();
