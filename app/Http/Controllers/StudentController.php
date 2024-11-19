@@ -97,7 +97,22 @@ public function batches(Request $request)
 
 
 
+<<<<<<< Updated upstream
     public function store(Request $request){
+=======
+public function store(Request $request)
+{
+    // Validate the incoming data
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'roll' => 'required|string|unique:students,roll|max:50',
+        'email' => 'required|email|unique:students,email|max:255',
+        'blood' => 'nullable|string|max:10',
+        'address' => 'nullable|string|max:255',
+        'mobile' => 'nullable|string|max:20',
+        'type' => ['required', 'in:active,inactive'], // Validating status
+    ]);
+>>>>>>> Stashed changes
 
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -159,7 +174,6 @@ public function batches(Request $request)
         $data['blood']=$request->blood;
         $data['address']=$request->address;
         $data['mobile']=$request->mobile;
-        $data['type']=$request->type;
 
 
         DB::table('students')->where('id',$id)->update($data);

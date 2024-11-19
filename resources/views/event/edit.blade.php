@@ -11,21 +11,9 @@
     </ol>
 
     <br>
-<div class="d-flex justify-content-center align-items-center min-vh-85">
-<div class="row p-3 shadow broder-1 rounded">
+    <div class="d-flex justify-content-center align-items-center min-vh-85">
 
-    @if (session('success'))
-    <div class=" alert alert-success">
-        {{ session('success')}}
-    </div>
-    @endif
-    @if (session('error'))
-    <div class=" alert alert-danger">
-        {{ session('error')}}
-    </div>
-    @endif
-
-    <form action="{{route('event_update',$event->id)}}" enctype="multipart/form-data" method="POST">
+    <form action="{{route('event_update',$event->id)}}" enctype="multipart/form-data" method="POST" class="p-3 shadow rounded">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -35,7 +23,7 @@
                   <img src="{{asset($event->image)}}" alt="Service Image" width="100">
               </div>
           @endif
-          <input type="file" class="form-control" id="image" name="image">
+          <input type="file" class="form-control p-2" id="image" name="image">
           <span class="text-danger">@error('image'){{$message}}@enderror</span>
       </div>
 

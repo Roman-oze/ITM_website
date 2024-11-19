@@ -53,17 +53,10 @@
                         <label for="mobile">Mobile:</label>
                         <input type="text" class="form-control" name="mobile" value="{{ $student->mobile }}" required>
                     </div>
+
                     <div class="form-group">
-                        <label for="mobile">Mobile:</label>
-                        <input type="text" class="form-control" name="address" value="{{ $student->address }}" required>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="type" class="text-white" >Status</label>
-                        <select name="type"  class="form-select">
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
-                        </select>
-                        <span class="text-danger">@error('type'){{ $message }}@enderror</span>
+                        <label for="address">Address:</label>
+                            <textarea type="text" class="form-control" name="address" > {{ $student->address }}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>
@@ -72,8 +65,6 @@
         </div>
     </div>
 </div>
-
-
     <br>
     <br>
     <br>

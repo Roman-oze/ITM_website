@@ -14,7 +14,7 @@
 
         <!-- Add Button -->
     <div class="d-flex mb-3">
-        <a href="{{ route('create') }}" class="btn btn-dark rounded-pill shadow">
+        <a href="{{ route('student.create') }}" class="btn btn-dark rounded-pill shadow">
             <i class="fas fa-plus-circle"></i> Add Student
         </a>
     </div>

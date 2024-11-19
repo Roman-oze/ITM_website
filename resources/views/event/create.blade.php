@@ -9,28 +9,16 @@
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item active">events create</li>
     </ol>
-
     <br>
+
 <div class="d-flex justify-content-center align-items-center min-vh-85">
-<div class="row p-3 shadow broder-1 rounded">
 
-    @if (session('success'))
-    <div class=" alert alert-success">
-        {{ session('success')}}
-    </div>
-    @endif
-    @if (session('error'))
-    <div class=" alert alert-danger">
-        {{ session('error')}}
-    </div>
-    @endif
-
-    <form action="{{url('event_store')}}" enctype="multipart/form-data" method="POST">
+    <form action="{{url('event_store')}}" enctype="multipart/form-data" method="POST" class="p-3 shadow rounded">
         @csrf
 
         <div class="mb-3">
             <label for="nameInput" class="form-label">Event Name</label>
-            <input type="text" class="form-control" id="nameInput" name="name" placeholder="Name">
+            <input type="text" class="form-control p-2" id="nameInput" name="name" placeholder="Name">
             <span class="text-danger">@error('name'){{$message}}@enderror</span>
           </div>
 

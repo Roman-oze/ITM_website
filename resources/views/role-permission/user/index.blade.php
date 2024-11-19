@@ -1,5 +1,5 @@
 @extends('layout.dashboard')
-
+@include('include.alerts')
 @section('main')
     @include('role-permission.nav-links')
 

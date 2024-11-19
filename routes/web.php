@@ -208,10 +208,8 @@ Route::controller(StudentController::class)->group(function(){
     Route::get('student/login', 'sign_in')->name('sign_in');
     Route::post('student/create', 'batches')->name('student.batch');
     Route::post('/batches' , 'batches')->name('batches.store');
-
-
-    Route::get('student/{studentId}/activate', [StudentController::class, 'activate'])->name('admin.students.activate');
-    Route::get('student/{studentId}/deactivate', [StudentController::class, 'deactivate'])->name('admin.students.deactivate');
+    Route::get('student/{studentId}/activate', 'activate')->name('admin.students.activate');
+    Route::get('student/{studentId}/deactivate', 'deactivate')->name('admin.students.deactivate');
  });
 
 Route::controller(StaffController::class)->group(function(){
