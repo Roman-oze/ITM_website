@@ -12,7 +12,7 @@
             </ol>
 
             <!-- Add Button -->
-        <div class="d-flex  mb-3">
+        <div class="d-flex justify-content-between  mb-3">
             <a href="{{ route('menus.create') }}" class="btn btn-dark rounded-pill shadow float-right" id="upload-form">
                 <i class="fas fa-plus-circle"></i> Add Menu
             </a>
@@ -20,7 +20,6 @@
                 <i class="fas fa-plus-circle"></i> Add Permissions
             </a>
         </div>
-
 
         <div class="card mt-4">
             <div class="card-body">

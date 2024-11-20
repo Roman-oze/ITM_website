@@ -97,9 +97,6 @@ public function batches(Request $request)
 
 
 
-<<<<<<< Updated upstream
-    public function store(Request $request){
-=======
 public function store(Request $request)
 {
     // Validate the incoming data
@@ -112,7 +109,6 @@ public function store(Request $request)
         'mobile' => 'nullable|string|max:20',
         'type' => ['required', 'in:active,inactive'], // Validating status
     ]);
->>>>>>> Stashed changes
 
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
