@@ -660,9 +660,9 @@ nav ul li a {
 
 #notificationCount {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 4px 6px;
+    top: -4px;
+    right: 0px;
+    padding: 3px 5px;
     border-radius: 50%;
     font-size: 0.75rem;
 }

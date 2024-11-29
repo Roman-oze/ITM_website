@@ -1,7 +1,7 @@
 
 {{-- @include('layout._footer', ['footers' => $footers]) --}}
 @extends('layout.app')
-
+@include('include.alerts')
 
 
 
@@ -141,39 +141,39 @@
 
 <section id="Feature" class="section-p1" style="background-color: rgb(213, 217, 234);">
     <div class="inner d-flex flex-wrap justify-content-center text-center">
-        <div class="col p-3">
-            <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide">
+        <div class="col p-3 avatar-container" onclick="toggleMenu()">
+            <img src="{{asset('frontend/image/hunderd.png')}}" alt="" class="imgslide avatar-image">
             <p class="col-btn">
                 <a href="https://daffodilvarsity.edu.bd/tuition-fee-calculator" class="text-white" target="_blank">Waiver</a>
             </p>
         </div>
-        <div class="col p-3">
-            <img src="{{asset('frontend/image/laptop.png')}}" alt="" class="imgslide">
+        <div class="col p-3 avatar-container" onclick="toggleMenu()">
+            <img src="{{asset('frontend/image/laptop.png')}}" alt="" class="imgslide avatar-image">
             <p class="col-btn">
                 <a href="https://laptop.daffodilvarsity.edu.bd/index.php/apply-and-instruction/instruction-for-laptop-receive" class="text-white" target="_blank">Free Laptop</a>
             </p>
         </div>
-        <div class="col p-3">
-            <img src="{{asset('frontend/image/hall.png')}}" alt="" class="imgslide">
+        <div class="col p-3 avatar-container" onclick="toggleMenu()">
+            <img src="{{asset('frontend/image/hall.png')}}" alt="" class="imgslide avatar-image">
             <p class="col-btn">
                 <a href="https://hall.daffodilvarsity.edu.bd/" class="text-white" target="_blank">Hall</a>
             </p>
         </div>
-        <div class="col p-3">
-            <img src="{{asset('frontend/image/buss.png')}}" alt="" class="imgslide">
+        <div class="col p-3 avatar-container" onclick="toggleMenu()">
+            <img src="{{asset('frontend/image/buss.png')}}" alt="" class="imgslide avatar-image">
             <p class="col-btn">
                 <a href="https://daffodilvarsity.edu.bd/article/transport" class="text-white" target="_blank">Transport</a>
             </p>
         </div>
-        <div class="col p-3">
-            <img src="{{asset('frontend/image/lightbulb-icon.png')}}" alt="" class="imgslide">
+        <div class="col p-3 avatar-container" onclick="toggleMenu()">
+            <img src="{{asset('frontend/image/lightbulb-icon.png')}}" alt="" class="imgslide avatar-image">
             <p class="col-btn">
                 <a href="" class="text-white" target="_blank">Innovation</a>
             </p>
 
         </div>
-        <div class="col p-3">
-            <img src="{{asset('frontend/image/clubimage.png')}}" alt="" class="imgslide">
+        <div class="col p-3 avatar-container" onclick="toggleMenu()">
+            <img src="{{asset('frontend/image/clubimage.png')}}" alt="" class="imgslide avatar-image">
             <p class="col-btn">
                 <a href="{{route('club')}}" class="text-white" target="_blank">Club</a>
             </p>
@@ -501,8 +501,8 @@
             <div class="row ">
                 @foreach ($services as $service)
                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box">
-                        <img src="{{asset($service->image)}}" class="card-img-top img-decorate " alt="Blc">
+                    <div class="icon-box avatar-container" onclick="toggleMenu()">
+                        <img src="{{asset($service->image)}}" class="card-img-top img-decorate avatar-image" alt="Blc">
                         <h4><a target="_blank" href="{{ $service->link}}" class="btn btn-outline-info text-dark mt-3">{{ $service->link_name}}</a></h4>
                     <p>{{ $service->description}}
                     </p>
@@ -557,7 +557,7 @@
                     </div>
                     <!-- Mobile Applications -->
                     <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="expertise-item">
+                        <div class="expertise-item ">
                             <div class="expertise-icon"><i class="fas fa-mobile-alt"></i></div>
                             <h4 class="expertise-title">Mobile Applications</h4>
                             <p class="expertise-desc">Create the next hit mobile app and change the world with your innovative ideas!</p>
@@ -630,32 +630,32 @@
 
         <div class="row">
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                <div class="icon-box avatar-container" onclick="toggleMenu()">
+                    <div class="icon "><i class="fa-solid fa-book-open-reader avatar-image "></i></div>
                     <h4><a href="#">Leadership</a></h4>
                     <p>I know how to lead in the organization.</p>
                 </div>
             </div>
 
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div class="icon-box avatar-container" onclick="toggleMenu()">
+                    <div class="icon"><i class="fa-solid fa-lightbulb avatar-image "></i></div>
                     <h4><a href="#">FinTech</a></h4>
                     <p>When suddenly needing to innovate something.</p>
                 </div>
             </div>
 
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa-solid fa-circle-info"></i></div>
+                <div class="icon-box avatar-container" onclick="toggleMenu()">
+                    <div class="icon"><i class="fa-solid fa-circle-info avatar-image "></i></div>
                     <h4><a href="#">IT Support</a></h4>
                     <p>Technical tools and techniques that I use on a daily basis.</p>
                 </div>
             </div>
 
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
-                <div class="icon-box">
-                    <div class="icon"><i class="fa-solid fa-person-rays"></i></div>
+                <div class="icon-box avatar-container" onclick="toggleMenu()">
+                    <div class="icon"><i class="fa-solid fa-person-rays avatar-image"></i></div>
                     <h4><a href="#">Human Resource</a></h4>
                     <p>Talent, performance, and innovation for each organization.</p>
                 </div>

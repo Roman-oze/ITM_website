@@ -1,8 +1,10 @@
 
  <!-- resources/views/students/create.blade.php -->
 
- @extends('layout.app')
- @section('content')
+@extends('layout.app')
+<!-- Sweet alert -->
+@include('include.alerts')
+@section('content')
 
      <div class="limiter">
 		<div class="container-login100">
@@ -18,9 +20,6 @@
 					<span class="login100-form-title">
 						Login
 					</span>
-
-                       <!-- Sweet alert -->
-                @include('include.alerts')
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="email" name="email" placeholder="Email">

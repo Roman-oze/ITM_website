@@ -28,7 +28,6 @@
 
         <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="notificationDropdown" style="width: auto;">
             <li class="dropdown-header h3">Notifications</li>
-
             <!-- Notification Items -->
             @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
                 <li class="notification-item">
@@ -80,7 +79,7 @@
         <img src="{{asset('frontend/image/nav_logo.jpg')}}" alt="Profile Image" class="avatar-image">
         <div class="menu-dropdown">
           <div class="arrow-indicator"></div>
-          <div class="menu-header p">Welcome !<br>
+          <div class="menu-header p">
              {{ Auth::user()->name }}</div>
           <div class="menu-item">
             <a href="{{ route('profile.edit') }}" class="dropdown-item logout-item">
