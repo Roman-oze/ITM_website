@@ -374,6 +374,8 @@
     <h2 class="text-blue highlight">Recent Scholarship</h2>
     <div>
         <span class="elementor-divider-separator"></span>
+                {{-- <div class="line mb-4 mx-auto" style="width: 80px; height: 3px; background-color: #007bff;"></div> --}}
+
     </div>
 </div>
 
@@ -503,7 +505,7 @@
                 <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate p-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box avatar-container" onclick="toggleMenu()">
                         <img src="{{asset($service->image)}}" class="card-img-top img-decorate avatar-image" alt="Blc">
-                        <h4><a target="_blank" href="{{ $service->link}}" class="btn btn-outline-info text-dark mt-3">{{ $service->link_name}}</a></h4>
+                        <h4><a target="_blank" href="{{ $service->link}}" class="btn btn-outline-dark  mt-3">{{ $service->link_name}}</a></h4>
                     <p>{{ $service->description}}
                     </p>
                     </div>
