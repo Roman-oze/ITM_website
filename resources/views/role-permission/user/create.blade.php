@@ -6,7 +6,7 @@
 <main>
      <div class="limiter mt-5">
         <h4>
-            <a href="{{url('users')}}" class="btn btn-dark m-1">Back</a>
+            <a href="{{url('users')}}" class=" m-1 p-3"><i class="fa-solid fa-arrow-left text-dark"></i></a>
         </h4>
 		<div class="container-login100">
 			<div class="wrap-login100">

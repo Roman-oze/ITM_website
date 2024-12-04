@@ -13,10 +13,10 @@
                     </div>
                 @endif
 
-                <div class="card shadow-sm border-0">
-                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                        <h3 class="text-primary mb-0">User Management</h3>
-                        <a href="{{ url('users/create') }}" class="btn btn-outline-primary d-none d-sm-inline-block">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-header bg-light d-flex flex-column flex-md-row justify-content-between align-items-center p-4">
+                        <h3 class="text-dark fw-bold mb-2 mb-md-0">User Management</h3>
+                        <a href="{{ url('users/create') }}" class="btn btn-primary btn-sm">
                             <i class="fas fa-plus-circle"></i> Add User
                         </a>
                     </div>
@@ -48,15 +48,15 @@
                                                 <div class="d-flex justify-content-center flex-wrap">
                                                     @can('update user')
                                                         <a href="{{ url('users/' . $user->id . '/edit') }}"
-                                                           class="btn    me-2 mb-2">
+                                                           class="btn btn-sm btn-outline-primary p-2 me-1">
                                                             <i class="fas fa-edit text-info"></i>
                                                         </a>
                                                     @endcan
 
                                                     @can('delete user')
                                                         <button onclick="if(confirm('Are you sure?')) { window.location.href='{{ url('users/' . $user->id . '/delete') }}' }"
-                                                                class="btn mb-2">
-                                                            <i class="fas fa-trash-alt text-danger"></i>
+                                                                class="btn btn-sm btn-outline-danger p-2 me-1">
+                                                            <i class="fas fa-trash-alt "></i>
                                                         </button>
                                                     @endcan
                                                 </div>

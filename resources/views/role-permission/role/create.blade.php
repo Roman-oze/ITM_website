@@ -9,7 +9,8 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Create Roles
-                            <a href="{{url('roles')}}" class="btn btn-danger float-end">Back</a>
+                            <a href="{{url('roles')}}" class=" m-1 p-3 float-end"><i class="fa-solid fa-arrow-left text-dark"></i></a>
+
                         </h4>
                     </div>
                     <div class="card-body">

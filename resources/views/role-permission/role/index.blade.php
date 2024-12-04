@@ -1,7 +1,7 @@
 @extends('layout.dashboard')
-
+@include('include.alerts')
 @section('main')
-    @include('role-permission.nav-links')
+@include('role-permission.nav-links')
 
     <div class="container mt-5">
         <div class="row">

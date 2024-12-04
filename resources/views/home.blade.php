@@ -11,7 +11,7 @@
 <section id="hero" class="d-flex align-items-center">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 animate__animated animate__fadeInLeft" data-aos="fade-up" data-aos-delay="200">
                 <h1 class="text-white-50 welcome">Welcome!</h1>
                 <h2>{{ $hero->title }}</h2>
                 <h1>
@@ -24,7 +24,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-6 order-1 order-lg-2 hero-img aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+            <div class="col-lg-6 order-1 order-lg-2 hero-img animate__animated animate__fadeInRight" data-aos="zoom-in" data-aos-delay="200">
                 <img src="{{ asset($hero->image) }}" class="img-fluid animated" alt="Hero Image">
             </div>
         </div>
@@ -191,7 +191,7 @@
         <h2 class="text-muted why"> Why Choose ITM</h2>
             <div class="row p-3">
                 @foreach ($features as $feature)
-                    <div class="col-md-3 p-3">
+                    <div class="col-md-3 p-3 ">
                         <div class="flip-card flip-shadow">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front flip-custom-2" style="background: #37517e;">
@@ -383,7 +383,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         @foreach ($scholars as $scholar)
-            <div class="col-md-3 p-2">
+            <div class="col-md-3 p-2 ">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front flip-custom">
