@@ -15,7 +15,7 @@
     color: #666666;
     font-size: 16px;
     pointer-events: auto;
-    font-size: 18px;
+    font-size: 15px;
 
 }
 .password-toggle:hover {
@@ -96,7 +96,7 @@
                     </div> --}}
 
                     <div class="text-end p-t-136 m-2">
-						<a class="small text-bold text-danger " href="{{route('password.request')}}">
+						<a class="small text-bold text-muted " href="{{route('password.request')}}">
                            <strong>Username / Password ?</strong>
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>

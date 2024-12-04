@@ -52,7 +52,7 @@ class RoleController extends Controller
         Role::create([
             'name' => $request->name,
         ]);
-        return redirect('roles')->with('status','Roles created successfully');
+        return redirect('roles')->with('success','Roles created successfully');
 
 
     }
@@ -90,7 +90,7 @@ class RoleController extends Controller
             'name' => $request->name,
             ]);
 
-            return redirect('roles')->with('status','role updated successfully');
+            return redirect('roles')->with('success','role updated successfully');
 
 
 
@@ -103,7 +103,7 @@ class RoleController extends Controller
     {
     $role = Role::find($roleId);
     $role->delete();
-            return redirect('roles')->with('status','Roles delete successfully');
+            return redirect('roles')->with('success','Roles delete successfully');
 
     }
 
@@ -161,7 +161,7 @@ class RoleController extends Controller
         ]);
         $role = Role::find($roleId);
         $role->syncPermissions($request->permissions);
-        return redirect('roles')->with('status','Role permission updated successfully');
+        return redirect('roles')->with('success','Role permission updated successfully');
 
 
     }

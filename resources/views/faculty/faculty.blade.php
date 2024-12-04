@@ -12,21 +12,11 @@
             <h2 class="text-dark">Faculty</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <p class="text-muted lead">
-                        Become a catalyst for transformation at Daffodil International University. As a faculty member,
-                        you'll inspire minds, foster innovation, and contribute to academic excellence. Join us in shaping
-                        the leaders of tomorrow and experiencing a fulfilling journey of professional growth and impact.
-                    </p>
+                    <strong class="text-dark ">
+                        "Empowering innovation, inspiring success – Meet the visionary faculty of the <br>Department of Information Technology & Management at Daffodil International University!"
+                    </strong>
                 </div>
             </div>
-        </div>
-
-        <!-- Faculty Features Section -->
-
-
-        <!-- Call to Action -->
-        <div class="text-center mt-5">
-            <a href="#" class="btn btn-primary btn-lg px-5 shadow">Join Our Faculty</a>
         </div>
     </div>
 </section>

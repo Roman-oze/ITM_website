@@ -270,3 +270,17 @@ function toggleSection(sectionId) {
 document.addEventListener('DOMContentLoaded', () => {
     toggleSection('fall-section'); // or 'spring-section' based on your preference
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const togglePassword = document.getElementById('toggle-password');
+    const passwordField = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function () {
+        // Toggle password visibility
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+
+        // Toggle eye icon
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+});

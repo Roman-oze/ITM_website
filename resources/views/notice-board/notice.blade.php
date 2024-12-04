@@ -7,9 +7,9 @@
 <br>
     <div class="container mt-5 ">
         <h1 class="mt-5 text-center">Notice Board</h1>
-        <div class="row mt-4  ">
+        <div class="row mt-4  d-flex justify-content-center">
             @foreach ($notices as $notice)
-                <div class="col-md-4 mb-4 shadow border-0 animated-card">
+                <div class="col-md-4 mb-4   animated-card">
                     <!-- Card design with conditional styling for new and old notices -->
                     <div class="card p-2 position-relative {{ $notice->created_at->diffInDays(now()) <= 7 ? 'new-notice' : 'old-notice' }}">
                         <!-- Badge positioned in top-left corner -->

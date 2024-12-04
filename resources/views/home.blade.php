@@ -224,8 +224,8 @@
                 <div class="col-md-6 align-items-stretch d-flex">
                     <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg');">
                         <div class=" justify-content-center">
-                            {{-- <img src="{{asset('frontend/image/why-us.png')}}" class="image1 img-fluid-custom animate__animated animate__fadeInDown"> --}}
-                            <img src="https://www.signulu.com/images/latest/it_banner_img.png" class="image1 img-fluid-custom animate__animated animate__fadeInDown">
+                            <img src="{{asset('frontend/image/why-us.png')}}" class="image1 img-fluid-custom animate__animated animate__fadeInDown">
+                            {{-- <img src="https://www.signulu.com/images/latest/it_banner_img.png" class="image1 img-fluid-custom animate__animated animate__fadeInDown"> --}}
                             <span class="ion-ios-play"></span>
                         </div>
                     </div>

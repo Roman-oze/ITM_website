@@ -23,8 +23,7 @@
 
         <div class="col-lg-8 col-md-10 align-self-baseline d-flex">
             <p class="text-dark mb-5">
-                "Embrace your course as a journey of growth. Every lesson is a step toward unlocking your potential. Stay committed, embrace challenges, and let curiosity drive your success. Transform knowledge into expertise and let the pursuit of learning be your motivation."
-            </p>
+                "Unlock your potential with our expertly designed academic courses – where knowledge meets opportunity, and learning transforms into success!"            </p>
         </div>
     </div>
 </div>

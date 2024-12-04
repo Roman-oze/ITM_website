@@ -2,7 +2,7 @@
 
 
 @extends('layout.dashboard')
-
+@include('include.alerts')
 @section('main')
 <main>
      <div class="limiter mt-5">
@@ -22,27 +22,8 @@
                     @method('PUT')
 
 
-                    @if (session()->has('success'))
-
-                    <div class="alert alert-success">
-                        {{ session()->get('success') }}
-                        </div>
-
-                    @endif
-
-                    @if (session()->has('error'))
-
-                    <div class="alert alert-danger">
-                        {{ session()->get('error') }}
-                        </div>
-
-                    @endif
-
-
-
-
 					<span class="login100-form-title text-dark">
-						Edit User
+						<h2>Edit User</h2>
 					</span>
 					<div class="wrap-input100 validate-input" >
 						<input class="input100" type="name" name="name" placeholder="Name" value="{{$user->name}}">
@@ -100,7 +81,7 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit">
-							Register
+							Update
 						</button>
 					</div>
 

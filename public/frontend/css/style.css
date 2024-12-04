@@ -1515,7 +1515,7 @@ iframe {
 
 .input100 {
   font-family: Poppins-Medium;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.5;
   color: #202020;
   border: none;
@@ -1565,7 +1565,8 @@ iframe {
 }
 
 .symbol-input100 {
-  font-size: 18px;
+  font-size: 15
+  px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -2049,9 +2050,13 @@ p {
   .alumni-custom{
     height: 160px;
     width: 150px;
-
     border-radius: 50%;
-
+    transition: transform 0.4s;
+  }
+  .scholar-custom{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
     transition: transform 0.4s;
   }
   .child-div{

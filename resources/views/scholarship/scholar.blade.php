@@ -3,15 +3,12 @@
 @section('content')
 
 <section id="services" class="services section-bg text-left mt-5">
-    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
         <div class="section-title text-center">
             <h2 class="text-dark">Scholarship</h2>
         </div>
-    </div>
-</section>
-
-<div class="container mt-5">
-    <div class="row">
         @foreach ($scholars as $scholar)
             <div class="col-md-3 p-2">
                 <div class="flip-card">
@@ -19,7 +16,7 @@
                         <div class="flip-card-front flip-custom">
                             <div class="child-div">
                                 <div class="mb-4">
-                                    <img src="{{ asset($scholar->image) }}" alt="Image" class="alumni-custom">
+                                    <img src="{{ asset($scholar->image) }}" alt="Image" class="scholar-custom">
                                 </div>
                                 <div class="text p-1">
                                     <h2 class="text-white">{{ $scholar->name }}</h2>
@@ -44,10 +41,5 @@
         @endforeach
     </div>
 </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
+</section>
 @endsection
