@@ -24,8 +24,6 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
                                     <div class="card shadow-lg border-0 rounded-lg  p-3">
-                                        <div class="card-header text-center">
-                                        </div>
                                         <div class="card-body">
                                             <form action="{{route('alumni.store') }}"  enctype="multipart/form-data" method="POSt" >
                                                 @csrf

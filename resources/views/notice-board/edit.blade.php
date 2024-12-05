@@ -12,9 +12,14 @@
         </ol>
 
         <div class="card shadow border-0 rounded-3 mt-3 mx-auto" style="max-width: 600px;">
+            <div class="card-header bg-dark text-white text-center">
+                <h5 class="mb-0">Notice Board Edit</h5>
+            </div>
+
 
             <div class="card-body">
             <form action="{{ route('notice.update', $notice->id) }}" method="post">
+
                 @csrf
                 @method('PUT')
 

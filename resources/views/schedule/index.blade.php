@@ -5,32 +5,33 @@
 @section('main')
 
 <main>
+    <div class="container-fluid px-4">
+        <h2 class="mt-4 text-dark   ">Schedules Management</h2>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="text-decoration-none text-secondary">Dashboard</a></li>
+            <li class="breadcrumb-item active">Schedules List</li>
+        </ol>
 
-        <div class="container-fluid px-4">
-            <h2 class="mt-4">Schedules Management</h2>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active">Schedules List</li>
-            </ol>
-
-            <!-- Add Button -->
-    @can('manage-user')
-        <div class="d-flex  mb-3">
+        <!-- Add Button -->
+        @can('manage-user')
+        <div class="d-flex justify-content-start mb-3">
             <a href="{{ route('schedules.create') }}" class="btn btn-dark rounded-pill shadow">
-                <i class="fas fa-plus-circle"></i> Add Schedule</a>
+                <i class="fas fa-plus-circle"></i> Add Schedule
             </a>
         </div>
-    @endcan
+        @endcan
 
+        <!-- Search Form -->
         <div class="d-flex justify-content-between mb-3">
             <form action="" method="GET" class="d-flex" style="max-width: 500px; width: 100%;">
-                <input class="form-control me-2  rounded-pill shadow border-0 animated-card " id="searchInput" type="text" name="search" placeholder="Search by don't be space after Text..." onkeyup="searchTable()" aria-label="Search">
+                <input class="form-control me-2 rounded-pill shadow-lg border-0 animated-card" id="searchInput" type="text" name="search" placeholder="Search by course name or faculty..." onkeyup="searchTable()" aria-label="Search">
             </form>
         </div>
 
+        <!-- Table -->
         <div class="table-responsive">
             <table class="table table-hover table-striped table-bordered shadow-sm">
-                <thead class="thead-light">
+                <thead class="thead-light bg-info text-white">
                     <tr>
                         <th>Course Code</th>
                         <th>Course Name</th>
@@ -53,16 +54,22 @@
                             <td>{{ $schedule->day }}</td>
                             <td>{{ \Carbon\Carbon::parse($schedule->start_time)->format('h:i A') }}</td>
                             @can('manage-user')
-                            <td class="d-flex">
+                            <td class="d-flex justify-content-center">
+                                <!-- Edit Button -->
                                 @can('update user')
-                                <a href="{{ route('schedules.edit', $schedule->schedule_id) }}" class="btn btn-warning btn-sm me-1">Edit</a>
+                                <a href="{{ route('schedules.edit', $schedule->schedule_id) }}" class="btn btn-warning btn-sm me-2">
+                                    <i class="fas fa-edit"></i>
+                                </a>
                                 @endcan
+                                <!-- Delete Form -->
                                 @can('delete user')
-                                <form action="{{ route('schedules.delete', $schedule->schedule_id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Are you sure you want to delete this schedule?')" class="btn btn-danger btn-sm">Delete</button>
-                                </form>
+                                    <form action="{{ route('schedules.delete', $schedule->schedule_id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this course?')">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
                                 @endcan
                             </td>
                             @endcan
@@ -72,9 +79,11 @@
             </table>
         </div>
 
+        <!-- Pagination -->
             {{ $schedules->links('pagination::bootstrap-4') }}
     </div>
 </main>
+
 
 <script>
     function searchTable() {
@@ -103,5 +112,6 @@
         });
     }
 </script>
+
 
 @endsection

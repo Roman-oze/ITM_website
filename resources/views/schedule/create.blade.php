@@ -4,10 +4,10 @@
 
 @section('main')
 <div class="container-fluid px-4">
-    <h2 class="mt-4">Course Create</h2>
+    <h2 class="mt-4">Schedule Create</h2>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Course create</li>
+        <li class="breadcrumb-item active">Schedule create</li>
     </ol>
 
     <!-- Card Layout -->

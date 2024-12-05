@@ -67,7 +67,7 @@
                 {{-- Email and Phone Inputs --}}
                 <div class="row g-3 mt-4">
                     <div class="col-md-6">
-                        <label for="emailInput" class="form-label fw-bold">Email Address</label>
+                        <label for="emailInput" class="form-label fw-bold">Email </label>
                         <input type="email" class="form-control" id="emailInput" name="email" value="{{ $teacher->email }}" placeholder="Enter email address">
                     </div>
                     <div class="col-md-6">
