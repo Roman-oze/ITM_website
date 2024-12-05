@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 
+use App\Models\Batch;
 use App\Models\Alumni;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
@@ -30,7 +32,12 @@ class AlumniController extends Controller
      */
     public function create()
     {
-        return view('alumni.create');
+        $batches = Batch::all();
+        $Students = Student::all();
+        return view('alumni.create',[
+            'batches' => $batches,
+            'students' => $Students,
+        ]);
     }
 
     /**
@@ -75,8 +82,14 @@ class AlumniController extends Controller
      */
     public function edit(string $id)
     {
+        $batches = Batch::all();
+        $students = Student::all();
         $alumni = Alumni::where('id', $id)->first();
-        return view('alumni.edit',compact('alumni'));
+        return view('alumni.edit',[
+            'alumni' => $alumni,
+            'batches' => $batches,
+            'students' => $students,
+        ]);
     }
 
     /**

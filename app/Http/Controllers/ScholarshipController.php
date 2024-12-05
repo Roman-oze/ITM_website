@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Menu;
 
+use App\Models\Batch;
+use App\Models\Student;
 use App\Models\Scholarship;
 use Illuminate\Http\Request;
 
@@ -29,7 +31,12 @@ class ScholarshipController extends Controller
      */
     public function create()
     {
-        return view('scholarship.create');
+        $batches = Batch::all();
+        $Students = Student::all();
+        return view('scholarship.create',[
+            'batches' => $batches,
+            'students' => $Students,
+        ]);
 
     }
 

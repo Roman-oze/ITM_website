@@ -35,19 +35,38 @@
                                                 </div>
                                                 <div class="form-group mb-3">
 
-                                                    <input type="text" class="form-control" name="name" required placeholder="Name">
-                                                    <span class="text-danger">@error('name'){{ $message }}@enderror</span>
+                                                    {{-- <input type="text" class="form-control" name="name" required placeholder="Name">
+                                                    <span class="text-danger">@error('name'){{ $message }}@enderror</span> --}}
+                                                    <select name="name" id="name" class="form-select">
+                                                        @foreach($students as $student)
+                                                            <option value="{{ $student->name }}">{{ $student->name }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
+
                                                 <div class="form-group mb-3">
 
-                                                    <input type="text" class="form-control" name="roll" required placeholder="ID">
-                                                    <span class="text-danger">@error('roll'){{ $message }}@enderror</span>
+                                                    {{-- <input type="text" class="form-control" name="roll" required placeholder="ID">
+                                                    <span class="text-danger">@error('roll'){{ $message }}@enderror</span> --}}
+                                                    <select name="roll" id="roll" class="form-select">
+                                                        @foreach($students as $student)
+                                                            <option value="{{ $student->name }}">{{ $student->roll }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
-                                                <div class="form-group mb-3">
+                                                {{-- <div class="form-group mb-3">
 
                                                     <input type="text" class="form-control" name="batch" required placeholder="Batch">
                                                     <span class="text-danger">@error('batch'){{ $message }}@enderror</span>
+                                                </div> --}}
+                                                <div class="form-group mb-3 d-flex justify-content-lg-evenly">
+                                                    <select name="batch" id="batch" class="form-select">
+                                                        @foreach($batches as $batch)
+                                                            <option value="{{ $batch->batch_id }}">{{ $batch->batch_name }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
+
                                                 <div class="form-group mb-3">
 
                                                     <input type="text" class="form-control" name="pass_year" required placeholder="passing year">
