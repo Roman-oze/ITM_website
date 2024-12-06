@@ -20,28 +20,36 @@
     @can('manage-user')
 
     <!-- Notifications Dropdown -->
-    <li class="nav-item dropdown p-3">
-        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa fa-bell"></i>
-            <span class="badge bg-danger" id="notificationCount">{{ \App\Models\Notification::where('is_read', false)->count() }}</span>
+    <li class="nav-item dropdown">
+        <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-bell fs-4"></i>
+            <span class="badge bg-danger rounded-circle position-absolute top-0 end-0 ml-2" style="font-size: 0.7rem; margin:9px">{{ \App\Models\Notification::where('is_read', false)->count() }}</span>
         </a>
 
-        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="notificationDropdown" style="width: auto;">
-            <li class="dropdown-header h3">Notifications</li>
+        <ul class="dropdown-menu dropdown-menu-end p-3 shadow-lg" aria-labelledby="notificationDropdown" style="min-width: 350px; max-width: 100%; border-radius: 10px;">
+            <li class="dropdown-header text-center text-primary fw-bold fs-5">Notifications</li>
+            <div class="dropdown-divider"></div>
+
             <!-- Notification Items -->
-            @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
-                <li class="notification-item">
-                    <a href="{{ route('notifications.index') }}" class="dropdown-item d-flex justify-content-between align-items-center">
-                        <span><strong>{{ $notification->subject }}</strong><br>{{ $notification->message }}</span>
-                        <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
+            <div class="list-group">
+                @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
+                    <a href="{{ route('notifications.index') }}" class="list-group-item list-group-item-action d-flex align-items-start gap-2">
+                        <i class="fa fa-info-circle text-primary fs-4"></i>
+                        <div class="w-100">
+                            <div class="d-flex justify-content-between">
+                                <strong class="text-dark text-truncate" style="max-width: 200px;">{{ $notification->subject }}</strong>
+                                <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
+                            </div>
+                            <small class="text-muted text-truncate d-block" style="max-width: 250px;">{{ $notification->message }}</small>
+                        </div>
                     </a>
-                </li>
-            @endforeach
+                @endforeach
+            </div>
 
             <!-- View All Notifications Button -->
-            <li class="text-center m-3">
-                <a href="{{ route('notifications.index') }}" class="btn btn-dark">View All Notifications</a>
-            </li>
+            <div class="text-center mt-2">
+                <a href="{{ route('notifications.index') }}" class="btn btn-primary btn-sm rounded-pill">View All Notifications</a>
+            </div>
         </ul>
     </li>
     @endcan
@@ -115,13 +123,58 @@
     });
   </script>
   <style>
+    /* Advanced Notification Dropdown Styling */
+.nav-link .badge {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Glow effect on badge */
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.dropdown-header {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f1f3f5; /* Soft hover effect */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item i {
+    min-width: 30px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color:#2c3e50;;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color:#2c3e50;;
+}
+
        .brand-logo {
       font-size: 24px;
       color: #ecf0f1;
       font-weight: bold;
       text-decoration: none;
     }
-
+/*
     .nav-links-wrapper {
       display: flex;
       gap: 20px;
@@ -221,5 +274,5 @@
     /* Hover Animation */
     .profile-container:hover .avatar-image {
       transform: rotate(360deg);
-    }
+    } */
   </style>

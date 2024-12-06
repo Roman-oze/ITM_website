@@ -189,9 +189,9 @@
       <div class="section-title ">
         <h3 class=" " style="color: #37517e;">Features</h3>
         <h2 class="text-muted why"> Why Choose ITM</h2>
-            <div class="row p-3">
+            <div class="row ">
                 @foreach ($features as $feature)
-                    <div class="col-md-3 p-3 ">
+                    <div class="col-md-3 mt-4">
                         <div class="flip-card flip-shadow">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front flip-custom-2" style="background: #37517e;">
@@ -200,10 +200,10 @@
                                         <h4 class="flip-text">{{ $feature->title }}</h4>
                                     </div>
                                 </div>
-                                <div class="flip-card-back p-3 text-left" style="line-height:22px;">
+                                <div class="flip-card-back  text-left" style="line-height:22px;">
                                     <h5>{{ $feature->title }}</h5>
                                     <hr>
-                                    <p style="font-size: small">{{ $feature->description }}</p>
+                                    <p style="font-size:medium">{{ $feature->description }}</p>
                                     <div class="social-links text-center">
                                         <!-- Social links can go here if needed -->
                                     </div>
@@ -224,7 +224,7 @@
                 <div class="col-md-6 align-items-stretch d-flex">
                     <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg');">
                         <div class=" justify-content-center">
-                            <img src="{{asset('frontend/image/why-us.png')}}" class="image1 img-fluid-custom animate__animated animate__fadeInDown">
+                            <img src="{{asset('frontend/image/why-us.png')}}" class="image1 img-fluid animate__animated animate__fadeInDown">
                             {{-- <img src="https://www.signulu.com/images/latest/it_banner_img.png" class="image1 img-fluid-custom animate__animated animate__fadeInDown"> --}}
                             <span class="ion-ios-play"></span>
                         </div>
