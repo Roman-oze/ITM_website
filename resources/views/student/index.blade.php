@@ -11,7 +11,6 @@
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Student List </li>
         </ol>
-
         <!-- Add Button -->
     <div class="d-flex mb-3">
         <a href="{{ route('student.create') }}" class="btn btn-dark rounded-pill shadow">

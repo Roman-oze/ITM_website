@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use App\Models\Batch;
+use App\Models\Committee;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +14,8 @@ class ClubController extends Controller
 
         public function club(){
 
-            return view('club.club');
+            $committees = Committee::whereIn('id', [ 2, 3, 4])->get();
+            return view('club.club',compact('committees'));
     }
 
         public function membership(){
@@ -26,23 +28,22 @@ class ClubController extends Controller
 
    }
 
-        public function committee(){
-            return view('club.committee.committee');
-        }
 
-        public function upcoming(){
-            $upcoming = Event::all();
-            return view('club.event.upcoming',compact('upcoming'));
-        }
+   public function upcoming(){
+       $upcoming = Event::all();
+       return view('club.event.upcoming',compact('upcoming'));
+    }
 
-     public function index(){
+    public function index(){
 
         $batches = Batch::all();
 
         $students = Student::with('Batch')->get();
 
         return view('club.member.index',compact('students','batches'));
-     }
+    }
+
+
 
 
 }

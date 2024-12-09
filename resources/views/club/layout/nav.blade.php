@@ -1,4 +1,6 @@
-<img src="{{asset('frontend/image/clubimage.png')}}" class="logo" href="#">
+<a class="navbar-brand" href="#">
+    <img src="{{asset('frontend/image/clubimage.png')}}" class="logo" alt="Club Logo">
+</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
@@ -29,3 +31,5 @@
         </li>
     </ul>
 </div>
+{{--
+

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\CommitteeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashbaordController;
 use App\Http\Controllers\EventController;
@@ -246,10 +247,19 @@ Route::controller(MailController::class)->group(function(){
 
 Route::controller(ClubController::class)->group(function(){
     Route::get('/club','club')->name('club');
-    Route::get('/committee','committee')->name('committee');
     Route::get('/upcoming','upcoming')->name('upcoming');
     Route::get('/membership','membership')->name('membership');
     Route::get('/membership/index','index')->name('membership.index');
+
+});
+Route::controller(CommitteeController::class)->group(function(){
+    Route::get('club/committee','committee')->name('committee');
+    Route::get('club/committee/index','index')->name('committee.index');
+    Route::get('club/committee/create','create')->name('committee.create');
+    Route::post('club/committee','store')->name('committee.store');
+    Route::get('club/committee/{id}','edit')->name('committee.edit');
+    Route::put('club/committee/{id}','update')->name('committee.update');
+    Route::delete('club/committee/{id}','destroy')->name('committee.delete');
 });
 
 

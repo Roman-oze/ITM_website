@@ -19,7 +19,7 @@
                     <img src="{{ asset('frontend/image/verifi.png') }}" class="verify" alt="Verification Icon">
                 </h1>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                    <a href="{{ $hero->link }}" class="btn-get-started scrollto bn5">
+                    <a href="{{ $hero->link }}" style="cursor: pointer" class="btn-get-started scrollto bn5">
                         <i class="fa-solid fa-house-circle-check "></i> ITM Club
                     </a>
                 </div>

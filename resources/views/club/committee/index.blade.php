@@ -1,288 +1,214 @@
 
-@extends('club.committee.committee_style')
-@extends('club.layout.club_master')
+@extends('layout.dashboard')
+@include('include.alerts')
+@section('main')
+<main>
 
-<br>
-<br>
-<br>
-@section('main_content')
-<br>
-<section id="Committee">
-    <div class=" headdiv" >
-      <h3 class="text-muted  animate__animated animate__bounce">Our ITM Club Committee</h3>
-    </div>
-    <br>
-    <br>
-    <div class="container">
+
+        <div class="container-fluid px-4">
+            <h2 class="mt-4">Committee Management</h2>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Committee List </li>
+            </ol>
+
+            <!-- Add Button -->
+        <div class="d-flex  mb-3">
+            <a href="{{ route('committee.create') }}" class="btn btn-dark rounded-pill shadow">
+                <i class="fas fa-plus-circle"></i> Add Committee
+            </a>
+        </div>
       <!-- First Line: Single Card at the Top -->
-      <div class="row ">
-        <div class="col-md-12">
-          <div class="faculty-card">
-            <div class="circular-image">
-              <img src="{{asset('frontend/image/teacher/nusratjahan.png')}}" class="card-img-top" alt="Circular Image">
-            </div>
-            <div class="card-body">
-              <!-- Content for the second card in the second line -->
-              <h4>Ms.Nusrat Jahan</h4>
-            <h5 class="text-info">Head of ITM </h5>
-            <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon1"></i></a>
-            <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>
-            <a href="nusrat.swe@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
-            <a href="+8801847334996"><i class="fa-solid fa-square-phone icon1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="row ">
-        <div class="col-md-12">
-          <div class="faculty-card">
-            <div class="circular-image">
-              <img src="{{asset('frontend/image/teacher/imran.png')}}" class="card-img-top" alt="Circular Image">
-            </div>
-            <div class="card-body">
-              <!-- Content for the second card in the second line -->
-              <h4>Nafees Imran</h4>
-            <h5 class="text-warning">Convener</h5>
-            <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-facebook icon1"></i></a>
-            <a href="https://www.facebook.com/momo.nusrat"><i class="fa-brands fa-linkedin icon1"></i></a>
-            <a href="nusrat.swe@diu.edu.bd"><i class="fa-solid fa-envelope icon1"></i></a>
-            <a href="+8801847334996"><i class="fa-solid fa-square-phone icon1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="row">
-        <div class="col-md-4">
-          <div class="faculty-card ">
-            <div class="circular-image">
-              <img src="/model/teacher/ashik.jpg" class="card-img-top" alt="Circular Image">          </div>
-            <div class="card-body">
-
-              <h4>Dr.Ashikur Rahman</h4>
-                  <h5>Lecturer (Senior Scale) </h5>
-                  <a href="https://www.facebook.com/ashik.rahman.370515"><i class="fa-brands fa-facebook icon"></i></a>
-                  <a href="https://www.facebook.com/ashik.rahman.370515"><i class="fa-brands fa-linkedin icon"></i></a>
-                  <a href="ashikur.itm@diu.edu.bd"><i class="fa-solid fa-envelope icon"></i></a>
-                  <a href="01312075927"><i class="fa-solid fa-square-phone icon"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="faculty-card">
-            <div class="circular-image">
-              <img src="/model/teacher/nafees.png" class="card-img-top" alt="Circular Image">
-            </div>
-            <div class="card-body">
-              <h4>Mr.Nafees Imran</h4>
-                  <h5>Lecturer </h5>
-                  <a href="https://www.facebook.com/nafees.imran.7"><i class="fa-brands fa-facebook icon"></i></a>
-            <a href="https://www.facebook.com/nafees.imran.7"><i class="fa-brands fa-linkedin icon"></i></a>
-            <a href="nafees.itm@diu.edu.bd"><i class="fa-solid fa-envelope icon"></i></a>
-            <a href="01880829404"><i class="fa-solid fa-square-phone icon"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="faculty-card">
-            <div class="circular-image">
-              <img src="/model/teacher/raisul.png" class="card-img-top" alt="Circular Image">
-            </div>
-            <div class="card-body">
-              <h4>Raisul Kabir News</h4>
-              <h5>Lecturer</h5>
-              <a href="https://www.facebook.com/raisul.kabir.31"><i class="fa-brands fa-facebook icon"></i></a>
-            <a href="https://www.facebook.com/raisul.kabir.31"><i class="fa-brands fa-linkedin icon"></i></a>
-            <a href="raisul.itm0007.c@diu.edu.bd"><i class="fa-solid fa-envelope icon"></i></a>
-            <a href="01402052440"><i class="fa-solid fa-square-phone icon"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div> -->
-
-<br>
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="student-card">
-            <img src="{{asset('frontend/image/committee/sajeed.jpg')}}"class="photo">
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="student-card">
-            <img src="{{asset('frontend/image/committee/sakib.jpg')}}"class="photo">
-
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="student-card">
-            <img src="{{asset('frontend/image/committee/roman.jpg')}}"class="photo">
-          </div>
-        </div>
-        </div>
-
-        <br>
 
 
-<div class="container-fluid">
-   <div class="row p-3">
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="{{asset('frontend/image/committee/maisha.jpg')}}"class="photo">
-          </div>
-        </div>
+<div class="row">
+    @foreach ($committeeMembers as $committee)
+        <div class="col-3 col-md-3 col-sm-12 mb-4">
+            <div class="student-card text-center border rounded">
+                <!-- Committee Image -->
+                <img src="{{ asset($committee->image) }}" class="photo img-fluid rounded" alt="Committee Member">
+                <h5>{{ $committee->name }}</h5>
+                <h6>{{ $committee->position }}</h6>
 
 
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="{{asset('frontend/image/committee/elias.jpg')}}"class="photo">
-          </div>
-        </div>
+                <!-- Actions Dropdown -->
+                <div class="dropdown mt-2">
+                    <button
+                        class="btn btn-sm btn-outline-dark dropdown-toggle"
+                        type="button"
+                        id="actionMenu{{ $committee->id }}"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Actions
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="actionMenu{{ $committee->id }}">
+                        <!-- Edit Action -->
+                        @can('update user')
+                            <li>
+                                <a class="dropdown-item" href="{{route('committee.edit',$committee->id)}}">
+                                    <i class="fa-solid fa-user-pen"></i> Edit
+                                </a>
+                            </li>
+                        @endcan
 
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="{{asset('frontend/image/committee/kawsar.jpg')}}"class="photo">
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="{{asset('frontend/image/committee/sumaiya.jpg')}}"class="photo">
-          </div>
-        </div>
-  </div>
-   <div class="row p-3">
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/efti.jpg"class="photo">
-          </div>
-        </div>
-
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/akash.jpg"class="photo">
-          </div>
-        </div>
-
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/elahi.jpg"class="photo">
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/shariful.jpg"class="photo">
-          </div>
-        </div>
-  </div>
-   <div class="row p-3">
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/tonima.jpg"class="photo">
-          </div>
-        </div>
-
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/tonne.jpg"class="photo">
-          </div>
-        </div>
-
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/nahin.jpg"class="photo">
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/mifta.jpg"class="photo">
-          </div>
-        </div>
-  </div>
-
-   <div class="row p-3">
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/roshni.jpg"class="photo">
-          </div>
-        </div>
-
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/kashfia.jpg"class="photo">
-          </div>
-        </div>
-
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/bushra.jpg"class="photo">
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/anika.jpg"class="photo">
-          </div>
-        </div>
-  </div>
-   <div class="row p-3">
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/athay.jpg"class="photo">
-          </div>
-        </div>
-
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/ashraf.jpg"class="photo">
-          </div>
-        </div>
-
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/nafiz.jpg"class="photo">
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="student-card">
-            <img src="frontend/image/committee/mong.jpg"class="photo">
-          </div>
-        </div>
-  </div>
-   <div class="row p-3">
-        <div class="col-md-6">
-                <div class="student-card">
-                  <img src="frontend/image/committee/masum.jpg"class="photo">
+                        <!-- Delete Action -->
+                        @can('delete user')
+                            <li>
+                                <form action="{{route('committee.delete',$committee->id)}}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button
+                                        type="submit"
+                                        onclick="return confirm('Are you sure?')"
+                                        class="dropdown-item text-danger">
+                                        <i class="fa fa-trash"></i> Delete
+                                    </button>
+                                </form>
+                            </li>
+                        @endcan
+                    </ul>
                 </div>
-              </div>
-        <div class="col-md-6">
-                <div class="student-card">
-                  <img src="frontend/image/committee/ovi.jpg"class="photo">
-                </div>
-              </div>
+            </div>
+        </div>
+    @endforeach
+</div>
 
-  </div>
-  </div>
-  <br>
-  <br>
-  <br>
+
+
+
+
+
 
 </section>
+</main>
 @endsection
+<style>
+    .clubhead{
+        text-align: center;
+        background-color: #000000;
+        height: 50px;
+        }
+          .clubtxt{
+      font-size: 36px;
+      color:white;
+      }
+        .card-body{
+          text-align: center;
+          width: auto;
+        }
+
+        .circular-image {
+          display: block;
+          margin: auto;
+          overflow: hidden;
+          width: auto;
+          height: 204px; /* Adjust the size as needed */
+         /* Adjust the size as needed */
+        }
+
+        .card:hover {
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transform: scale(1.05);
+        }
+
+        .bgphoto{
+          background-image:url("/model/slidebg.png");
+          background-size: cover;
+          background-position: center;
+        }
+        .bgcolor{
+          background-image:linear-gradient(rgba(226, 220, 220, 0.589),#4eced3d0);
+
+        }
+
+        .faculty-card {
+               border-radius: 24px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                max-width: 250px;
+                width: 100%;
+                transition: transform 0.3s;
+                display: block;
+                margin: auto;
+                padding: 10px;
+                border:2px double #3498db;
+                height: auto;
+            }
+
+            .faculty-card:hover {
+                transform: scale(1.05);
+            }
+
+
+            .faculty-card-content {
+                padding: 20px;
+            }
+
+            .faculty-card h2 {
+                margin-bottom: 10px;
+                color: #333;
+            }
+            .faculty-card h3{
+                margin-bottom: 10px;
+                color: #333;
+            }
+
+            .faculty-card p {
+                color: #777;
+                margin-bottom: 5px;
+            }
+
+            .faculty-card a {
+                text-decoration: none;
+                color: #3498db;
+                font-weight: bold;
+            }
+            h5{
+                color: rgb(8, 145, 54);
+            }
+            h4{
+              color: #463c3c;
+            }
+            .student-card {
+            overflow: hidden;
+            max-width: 250px;
+            width: 100%;
+            transition: transform 0.3s;
+            display: block;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .student-card:hover {
+            transform: scale(1.05);
+        }
+            .head{
+            background-color: #3498db;
+         text-align: center;
+            color: #fff;
+            font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border-radius: 10px;
+            }
+      /* Add styles for other sections as needed */
+      .photo{
+      height: auto;
+      width: 100%;
+      border-radius: 24px;
+      }
+      .back{
+      height: 50px;
+        width: 50px;
+        border-radius: 100%;
+      }
+      .icon1{
+        color: #000000;
+        font-size:x-large;
+        font-size: larger;
+
+      }
+      .icon1:hover{
+        color: blue;
+        font-size:x-large;
+      }
+    </style>
