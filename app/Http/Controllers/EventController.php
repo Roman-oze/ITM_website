@@ -130,7 +130,7 @@ class EventController extends Controller
     // Update the record in the database
     DB::table('events')->where('id', $id)->update($data);
 
-    return redirect()->route('event.index')->with('success', 'Event updated successfully!');
+    return redirect()->back()->with('success', 'Event updated successfully!');
 }
 
 
@@ -141,7 +141,7 @@ class EventController extends Controller
     public function destroy(string $id)
     {
         $event = DB::table('events')->where('id',$id)->delete();
-        return redirect()->route('event.index')->with('success','Event delete Successfully');
+        return redirect()->back()->with('success','Event delete Successfully');
     }
 
 

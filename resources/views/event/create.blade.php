@@ -64,7 +64,7 @@
                         <!-- Event Type -->
                         <div class="mb-3">
                             <label for="type" class="form-label">Event Type</label>
-                            <select class="form-control rounded-pill shadow-sm" id="type" name="type" required>
+                            <select class="form-control rounded-pill shadow-sm p-2" id="type" name="type" required>
                                 <option value="">Select Event Type</option>
                                 <option value="Departmental">Departmental</option>
                                 <option value="Club">Club</option>

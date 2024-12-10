@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
+            $table->string('image')->nullable(); // Allow nullable image
             $table->date('date');
             $table->time('time');
             $table->string('location');
-            $table->string('description');
-            $table->timestamps();
+            $table->text('description')->nullable(); // Allow nullable description
+            $table->string('type'); // This can be 'Departmental' or 'Club'
+            $table->timestamps(); // Includes created_at and updated_at
         });
     }
 

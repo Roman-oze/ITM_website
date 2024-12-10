@@ -8,7 +8,7 @@
         <div class="col-md-6 paragh col-sm-12 text-center">
             <h3 class="btnn animate__animated animate__bounce">Join Our Club</h3><br>
             <img src="{{asset('frontend/image/QR-code.png')}}" class="QR">
-            <b><p class="p-3">Department of Information Technology & Management and ITM Club Facebook page here do like, follow, and share</p></b>
+            <b><p class="p-3">"Follow, like, and share the official Facebook pages of the Department of Information Technology & Management and the ITM Club."</p></b>
 
             <div class="text-center d-flex flex-column flex-md-row justify-content-center align-items-center">
                 <a href="https://www.facebook.com/islamfull.5" class="face mb-2 mb-md-0">Facebook <i class="fa-brands fa-facebook"></i></a>

@@ -1,9 +1,9 @@
 <section id="contact" class="footer-section">
     <div class="container-fluid club-bg-color py-5">
-        <div class="row text-center">
+        <div class="row text-center text-white">
             <!-- Contact Header -->
             <div class="col-12 mb-4">
-                <h1 class="text-dark bg-light p-2 rounded">Contact Us</h1>
+                <h1 class="text-white p-2 rounded">Contact Us</h1>
             </div>
 
             <!-- Club Logo and Social Media -->
@@ -27,8 +27,8 @@
 
             <!-- Social Media Links -->
             <div class="col-12 col-md-3 text-center mb-4">
-                <h3 class="bg-light p-1 rounded">Social Media</h3>
-                <ul class="list-unstyled">
+                <h3 class=" p-1 rounded">Social Media</h3>
+                <ul class="text-white">
                     <li><a href="#" class="footer-link">Home</a></li>
                     <li><a href="#" class="footer-link">About</a></li>
                     <li><a href="#" class="footer-link">Service</a></li>
@@ -37,8 +37,8 @@
 
             <!-- Support Links -->
             <div class="col-12 col-md-2 text-center mb-4">
-                <h3 class="bg-light p-1 rounded">Support</h3>
-                <ul class="list-unstyled">
+                <h3 class=" p-1 rounded">Support</h3>
+                <ul class="list-unstyled ">
                     <li><a href="#" class="footer-link">FAQ</a></li>
                     <li><a href="#" class="footer-link">How it Works</a></li>
                     <li><a href="#" class="footer-link">Features</a></li>
@@ -47,8 +47,8 @@
 
             <!-- Contact Information -->
             <div class="col-12 col-md-4 text-center mb-4">
-                <h3 class="bg-light p-1 rounded " >Contact</h3>
-                <p class="mb-1"><i class="fa fa-phone"></i> ++0184714003955</p>
+                <h3 class=" p-1 rounded " >Contact</h3>
+                <p class="mb-1"><i class="fa fa-phone"></i><a href="++0184714003955"></a> ++0184714003955</p>
                 <p class="mb-1"><i class="fa fa-envelope" style="text-align: justify"></i> itmoffice@daffodilvarsity.edu.bd</p>
                 <p><i class="fa fa-map-marker"></i> AB-4 Building (6th Floor), Khagan,Ashulia Dhaka</p>
             </div>
@@ -56,21 +56,56 @@
     </div>
 
     <!-- Footer Bottom -->
-    <div class="text-center bg-primary text-white py-3">
-        <p class="mb-0">© Copyright by Design @RomanOze</p>
+    <div class="container footer-bottom ">
+        <div class="row bottom-copy">
+            <div class="col-md-6 text-center text-md-start">
+                <div class="copyright">
+                    © Copyright <strong><span>Roman Oze</span></strong>. All Rights Reserved
+                </div>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <div class="credits">
+                    Maintained By
+                    <a href="https://github.com/Roman-oze/resume" target="_blank">Roman Oze</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <style>
+.bottom-copy{
+}
+.footer .footer-bottom {
+    border-top: 1px solid #444; /* Thin border for separation */
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.footer .copyright {
+    font-weight: 600;
+    color: #f8f9fa;
+}
+
+.footer .credits a {
+    color: #0dcaf0; /* Bootstrap's primary color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer .credits a:hover {
+    color: #0a58ca; /* Darker blue on hover */
+    text-decoration: underline;
+}
 .footer-section {
     font-family: 'Arial', sans-serif;
     color: #333;
 }
 
-.footer-section .club-bg-color {
-    background-color: #edeff4b7;
+.club-bg-color{
+background-color: #37517E;
+/* background-image: linear-gradient(to right, rgba(205, 213, 205, 0.621) , rgba(8, 36, 121)); */
 }
-
 .footer-section h1,
 .footer-section h3 {
     font-weight: bold;
@@ -90,14 +125,14 @@
 
 .footer-section .footer-link {
     text-decoration: none;
-    color: #555;
+    color: #e0d8d8;
     font-size: 16px;
     transition: color 0.3s;
     margin: 5px;
 }
 
 .footer-section .footer-link:hover {
-    color: #007bff;
+    color: #ffffff;
 }
 
 .footer-section ul {

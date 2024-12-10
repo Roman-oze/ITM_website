@@ -17,15 +17,15 @@ body {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: bolder;
-  padding: 10px;
+  padding: 5px 10px;
 
 }
  ul li a:hover{
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(238, 230, 230);
   border: 2px solid rgb(255, 255, 255);
   border-radius: 24px;
-  padding: 10px;
+  padding: 5px 10px;
 
 }
 @media screen and (max-width: 768px) {
@@ -34,11 +34,7 @@ body {
       align-items: center;
       padding: 5px;
   }
-  ul li {
-      display: block;
-      margin: auto;
-      padding: 10px;
-  }
+
 }
 .logo{
   height: 60px;
@@ -330,10 +326,6 @@ font-size: 2rem
     }
 }
 
-.club-bg-color{
-background-color: #37517E;
-/* background-image: linear-gradient(to right, rgba(205, 213, 205, 0.621) , rgba(8, 36, 121)); */
-}
 
 @media (min-width: 320px) and (max-width: 480px) {
 
@@ -362,37 +354,99 @@ background-color: #37517E;
     border-radius: 10px;
     overflow: hidden;
     margin: 20px 0;
-  }
+}
 
-  .event-card img {
+.event-card img {
     width: 100%;
     height: 200px; /* Fixed height */
     object-fit: cover; /* Ensures the image covers the area without distortion */
-  }
+}
 
-  .event-card-body {
+.event-card-body {
     padding: 20px;
-  }
+}
 
-  .event-card-title {
+.event-card-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
-  }
+}
 
-  .event-card-text {
+.event-card-text {
     margin-bottom: 15px;
-  }
+}
 
-  .event-card-footer {
+.event-card-footer {
     background-color: #f8f9fa;
     padding: 10px 20px;
     text-align: right;
-  }
+}
 
-  .event-card-footer a {
+.event-card-footer a {
     color: #007bff;
     text-decoration: none;
-  }
+}
+
+/* Media Queries */
+@media (max-width: 1199px) {
+    .event-card-title {
+        font-size: 1.2rem;
+    }
+
+    .event-card-body {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .event-card-title {
+        font-size: 1rem;
+    }
+
+    .event-card-body {
+        padding: 10px;
+    }
+
+    .event-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 767px) {
+    .event-card {
+        margin-bottom: 30px;
+    }
+
+    .event-card img {
+        height: 150px;
+    }
+
+    .event-card-title {
+        font-size: 1.1rem;
+    }
+
+    .event-card-body {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .event-card img {
+        height: 120px;
+    }
+
+    .event-card-title {
+        font-size: 1rem;
+    }
+
+    .event-card-body {
+        padding: 8px;
+    }
+
+    .event-card-text {
+        font-size: 0.9rem;
+    }
+}
+
   .img-decorate{
     height: 150px;
     width: 150px;

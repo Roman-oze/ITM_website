@@ -3,6 +3,7 @@
 <title>Academic Club</title>
 <link rel="Website Icon" type="jpg" href="{{asset('frontend/image/url_club.jpg')}}">
 
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
