@@ -14,36 +14,53 @@
     </ol>
 
     <div class="row">
-        <!-- Form to Add Photo -->
-        <div class="col-lg-6 col-md-8 col-12 mx-auto">
-            <div class="card shadow-lg p-5 border-0 rounded-3" style="background: #f9f9f9;">
-                <h4 class="text-center mb-4">Add Photo</h4>
-                <form action="{{ route('photo.update',$photo->id) }}" enctype="multipart/form-data" method="POST">
+        <div class="col-lg-4 col-md-6 col-12 mx-auto">
+            <div class="card shadow-sm p-4 border-0 rounded-3" style="background: #f7f7f7;">
+                <h4 class="text-center mb-3 text-primary">Edit Photo</h4>
+                <form action="{{ route('photo.update', $photo->id) }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     @method('PUT')
 
-                    <div class="mb-4">
-                        @if ($photo->image)
-                        <img src="{{ asset($photo->image) }}" alt="Photo" width="100" width="100">
-                        <label for="imageInput" class="form-label fw-bold">Profile Picture</label>
-                        <input type="file" class="form-control" id="imageInput"  name="image" >
-                        @endif
-
+                    <!-- Existing Image Preview -->
+                    <div class="mb-3">
+                        <img src="{{ asset($photo->image) }}" alt="Current Photo" class="img-thumbnail w-100">
                     </div>
 
-                    <div class="mb-4">
+                    <!-- Image Input -->
+                    <div class="mb-3">
+                        <label for="imageInput" class="form-label fw-bold">Upload New Image</label>
+                        <input type="file" class="form-control" id="imageInput" name="image">
+                        <span class="text-danger small">@error('image'){{ $message }}@enderror</span>
+                    </div>
+
+                    <!-- Title Input -->
+                    <div class="mb-3">
                         <label for="title" class="form-label fw-bold">Title</label>
-                        <input type="text" class="form-control" id="title" value="{{$photo->title}}" name="title" required>
+                        <input type="text" class="form-control" id="title" name="title" value="{{ $photo->title }}">
                         <span class="text-danger small">@error('title'){{ $message }}@enderror</span>
                     </div>
 
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary w-100 py-2">Update Gallery</button>
+                    <!-- Event Type -->
+                    <div class="mb-3">
+                        <label for="type" class="form-label">Event Type</label>
+                        <select class="form-control rounded-pill shadow-sm p-2" id="type" name="type" required>
+                            <option value="Departmental" {{ $photo->type == 'Departmental' ? 'selected' : '' }}>Departmental</option>
+                            <option value="Club" {{ $photo->type == 'Club' ? 'selected' : '' }}>Club</option>
+                        </select>
+                        <span class="text-danger small">@error('type'){{ $message }}@enderror</span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success w-100 py-2 mt-3">
+                            <i class="fas fa-save"></i> Update Gallery
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
 </div>
 
 </main>

@@ -11,7 +11,7 @@
                 <img src="{{ asset('frontend/image/clubimage.png') }}" class="img-fluid mb-3" alt="Club Logo">
                 <div class="social-icons">
                     <a href="https://www.facebook.com/islamfull.5" class="social-link text-primary" target="_blank">
-                        <i class="fa-brands fa-facebook fa-2x"></i>
+                        <i class="fa-brands text-white fa-facebook fa-2x"></i>
                     </a>
                     <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="social-link text-danger" target="_blank">
                         <i class="fa-brands fa-youtube fa-2x"></i>
@@ -19,7 +19,7 @@
                     <a href="#" class="social-link text-info">
                         <i class="fa-brands fa-twitter fa-2x"></i>
                     </a>
-                    <a href="#" class="social-link text-success">
+                    <a href="#" class="social-link text-white">
                         <i class="fa-brands fa-whatsapp fa-2x"></i>
                     </a>
                 </div>
@@ -50,7 +50,8 @@
                 <h3 class=" p-1 rounded " >Contact</h3>
                 <p class="mb-1"><i class="fa fa-phone"></i><a href="++0184714003955"></a> ++0184714003955</p>
                 <p class="mb-1"><i class="fa fa-envelope" style="text-align: justify"></i> itmoffice@daffodilvarsity.edu.bd</p>
-                <p><i class="fa fa-map-marker"></i> AB-4 Building (6th Floor), Khagan,Ashulia Dhaka</p>
+                <a class="btn btn-block text-white" href="https://www.google.com/maps/place/Information+Technology+%26+Management+(ITM)+Club/@23.876693,90.3198752,47m/data=!3m1!1e3!4m6!3m5!1s0x3755c3004144093f:0x184a0902a97bafef!8m2!3d23.8766614!4d90.3198912!16s%2Fg%2F11vr5w94jr?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D"> <p><i class="fa fa-map-marker"></i> AB-4 Building (6th Floor), Khagan,Ashulia Dhaka</p></a>
+
             </div>
         </div>
     </div>
@@ -66,7 +67,7 @@
             <div class="col-md-6 text-center text-md-end">
                 <div class="credits">
                     Maintained By
-                    <a href="https://github.com/Roman-oze/resume" target="_blank">Roman Oze</a>
+                    <a href="https://github.com/Roman-oze/resume" target="_blank" >Roman Oze</a>
                 </div>
             </div>
         </div>

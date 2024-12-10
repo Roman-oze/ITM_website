@@ -1,7 +1,6 @@
 @extends('layout.app')
 
 @section('content')
-<br><br>
 
 <section id="services" class="services section-bg text-left mt-5">
     <div class="container aos-init aos-animate text-left" data-aos="fade-up">
@@ -16,41 +15,15 @@
                 </p>
             </div>
             {{-- <img src="{{ asset('frontend/image/diu_admission.jpg') }}" class="w-50 h-50"> --}}
-            <img src="{{ asset('frontend/image/event_photo/fin.jpg') }}" class="department-group-image">
+            @foreach ($photo as $photo)
+
+            <img src="{{ asset($photo->image) }}" class="department-group-image">
+            @endforeach
         </div>
     </div>
 </section>
 
 <br><br><br>
-
-<div class="container">
-    <div class="row text-left">
-        <h3 class="mt-2">Recently</h3>
-        <div class="col-12 col-sm-6 col-md-4 mb-1">
-            <div class="text-center p-2">
-                <div class="mb-4">
-                    <img src="{{ asset('frontend/image/event_photo/aymansadik.jpg') }}" class="department-single-image img-fluid" alt="Circular Image rounded">
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-1">
-            <div class="text-center p-2">
-                <div class="mb-4">
-                    <img src="{{ asset('frontend/image/event_photo/fundation.jpg') }}" class="department-single-image img-fluid" alt="Circular Image rounded">
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 mb-1">
-            <div class="text-center p-2">
-                <div class="mb-4">
-                    <img src="{{ asset('frontend/image/event_photo/itmsummit.jpg') }}" class="department-single-image img-fluid" alt="Circular Image rounded">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<br><br><br><br><br>
 
 <div class="row mt-3">
     <div class="section-title">
@@ -85,6 +58,73 @@
         @endforeach
     </div>
 </div>
+
+<div class="container">
+    <div class="row text-left mt-5">
+        <h3 class="mt-2">Recently</h3>
+        <div class="row mt-2">
+            @foreach ($gallery as $photo)
+                <div class="col-md-4 mt-4">
+                    <!-- Image Card -->
+                    <div class="card shadow-sm rounded border-0 overflow-hidden">
+                        <!-- Image Container -->
+                        <div class="image-container position-relative">
+                            <img src="{{ asset($photo->image) }}" class="img-fluid rounded" alt="Photo">
+                            <!-- Hover Text -->
+                            <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <div class="overlay-content text-white text-center p-3">
+                                    <h4 class="overlay-title">{{ $photo->title }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+<style>
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        width: 100%; /* Responsive width */
+        height: 250px; /* Fixed height for uniformity */
+    }
+
+    .image-container img {
+        transition: transform 0.5s ease;
+        width: 100%;
+        height: 100%; /* Fills the container */
+        object-fit: cover; /* Ensures proper cropping without distortion */
+        display: block;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.1);
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1;
+    }
+
+    .overlay-content {
+        color: #fff;
+    }
+
+    .overlay-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+</style>
+
 
 <div class="container-fluid  mt-5">
     <div class="row mt-3">
@@ -150,14 +190,14 @@
                 </div>
             </div>
 
-            <div class="col-lg-7">
+            <div class="col-lg-7  align-content-center">
                 <div class="item img-fluid-custom">
                     <div class="imagee">
                         <img src="{{ asset('frontend/image/campus.jpeg') }}" class="imgg">
                     </div>
                     <div class="description">
                         <p class="pp text_color">Main Campus</p>
-                        <button class="baton p-2">View</button>
+                        <a class="baton p-2" href="https://www.google.com/maps/place/Admission+Office,+Daffodil+International+University/@23.8761751,90.320949,638m/data=!3m1!1e3!4m6!3m5!1s0x3755c23c2b610299:0xa5812fe6c1cec69f!8m2!3d23.8756205!4d90.3207632!16s%2Fg%2F11c1s8f1bj?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
                     </div>
                 </div>
                 <br>
@@ -167,7 +207,7 @@
                     </div>
                     <div class="description">
                         <p class="pp text_color">AB4 Building</p>
-                        <button class="baton p-2">View</button>
+                        <a class="baton p-2" href="https://www.google.com/maps/place/Information+Technology+%26+Management+(ITM)+Club/@23.876693,90.3198752,47m/data=!3m1!1e3!4m6!3m5!1s0x3755c3004144093f:0x184a0902a97bafef!8m2!3d23.8766614!4d90.3198912!16s%2Fg%2F11vr5w94jr?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
                     </div>
                 </div>
                 <br>
@@ -177,7 +217,7 @@
                     </div>
                     <div class="description">
                         <p class="pp text_color">AB Building</p>
-                        <button class="baton p-2">View</button>
+                        <a class="baton p-2" href="https://www.google.com/maps/place/Department+of+Pharmacy/@23.8769036,90.3210446,95m/data=!3m1!1e3!4m6!3m5!1s0x3755c300370e4c9d:0xe2228c335ccd65d8!8m2!3d23.8769609!4d90.321455!16s%2Fg%2F11y341ppsp?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
                     </div>
                 </div>
             </div>
@@ -185,3 +225,6 @@
     </div>
 </section>
 @endsection
+<style>
+
+</style>

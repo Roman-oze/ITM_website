@@ -371,12 +371,7 @@
 <br>
 
 <div class="highlight mt-5">
-    <h2 class="text-blue highlight">Recent Scholarship</h2>
-    <div>
-        <span class="elementor-divider-separator"></span>
-                {{-- <div class="line mb-4 mx-auto" style="width: 80px; height: 3px; background-color: #007bff;"></div> --}}
-
-    </div>
+    <h3 class="mt-2">Recent Scholarship</h3>
 </div>
 
 

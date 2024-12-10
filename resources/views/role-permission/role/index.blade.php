@@ -9,7 +9,6 @@
             <div class="col-12">
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                @endif
 
                 <div class="card shadow-lg border-0 rounded-4">
                     <div class="card-header bg-light d-flex flex-column flex-md-row justify-content-between align-items-center">

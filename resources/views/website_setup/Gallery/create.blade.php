@@ -13,7 +13,7 @@
         <li class="breadcrumb-item active">Create</li>
     </ol>
 
-    <div class="row">
+    <div class="row ">
         <!-- Form to Add Photo -->
         <div class="col-lg-4 col-md-6 col-12 mx-auto">
             <div class="card shadow-sm p-4 border-0 rounded-3" style="background: #f7f7f7;">
@@ -59,7 +59,7 @@
         <div class="col-12 mt-5">
             <h4 class="text-center mb-4">Gallery</h4>
             <div class="row d-flex justify-content-center">
-                @foreach ($photos as $photo)
+                @foreach ($gallery as $photo)
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                         <div class="card shadow-sm">
                             <img src="{{ asset($photo->image) }}" class="img-fluid rounded" alt="Photo">

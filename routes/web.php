@@ -282,6 +282,7 @@ Route::delete('/notifications/{notification}', [NotificationController::class, '
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/','home')->name('home');
+    Route::get('/gallery','gallery')->name('gallery');
     route::get('/about','about')->name('about');
     route::get('/local_tuition','Local_tuition')->name('Local_tuition');
     route::get('/international_tuition','international_tuition')->name('international_tuition');

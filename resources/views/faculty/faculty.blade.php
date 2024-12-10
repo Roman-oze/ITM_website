@@ -132,15 +132,5 @@
 
 <br><br>
 
-<!-- Department Section -->
-<div class="container-fluid bg-light p-5 mt-5">
-    <div class="row mt-3">
-        <div class="col-md-12 col-sm-12">
-            <h5 class="heading_30 mb_50 h1" data-bs-aos="fade-up" data-bs-aos-delay="100">
-                Department of Information Technology &amp; Management
-            </h5>
-        </div>
-    </div>
-</div>
 
 @endsection

@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('club_photo', function (Blueprint $table) {
+        Schema::create('gallery', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
             $table->string('image')->nullable();
+            $table->string('type'); // This can be 'Departmental' or 'Club'
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('club_photo');
+        Schema::dropIfExists('gallery');
     }
 };
