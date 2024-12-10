@@ -108,16 +108,58 @@ class CommitteeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        // Validate incoming request
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'position' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Nullable image field
+        ]);
+
+        // Find the committee member by ID
+        $committee = Committee::findOrFail($id);  // Use findOrFail to ensure the record exists
+
+        // Initialize the data array
+        $data = [];
+
+        // Handle image upload if a file is provided
+        if ($request->hasFile('image')) {
+            // Generate a unique file name
+            $fileName = time() . '-itm.' . $request->file('image')->getClientOriginalExtension();
+
+            // Move the image to the 'committee' folder
+            $request->file('image')->move('committee', $fileName);
+
+            // Add the image path to the data array
+            $data['image'] = 'committee/' . $fileName;
+        }
+
+        // If no new image is uploaded, keep the old image
+        if (!$request->hasFile('image')) {
+            $data['image'] = $committee->image;  // Keep the current image if no new file is provided
+        }
+
+        // Add the name and position to the data array
+        $data['name'] = $request->name;
+        $data['position'] = $request->position;
+
+        // Update the committee member record
+        $committee->update($data);
+
+        return redirect()->route('committee.index')->with('success', 'Committee Member Updated Successfully');
+
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $committee = Committee::findOrFail($id);  // Use findOrFail to ensure the record exists
+        $committee->delete();
+        return redirect()->route('committee.index')->with('success', 'Committee Member Deleted Successfully');
+
     }
 }

@@ -87,6 +87,7 @@
 
 <!-- Gallery Section -->
 <section id="gellary">
+<div class="container mt-5">
     <div class="col-lg-7 text-center mx-auto">
         <div class="section-title">
             <h3>Club <span>Gallery</span></h3>
@@ -94,35 +95,113 @@
         </div>
     </div>
 
-    <div class="row mt-5">
-        <div class="col-md-4 mt-2">
-            <img src="{{asset('frontend/image/event_photo/aymansadik.jpg')}}" class="img00 rounded">
-        </div>
-        <div class="col-md-4 mt-2">
-            <img src="{{asset('frontend/image/event_photo/img0.jpg')}}" class="img00 rounded">
-        </div>
-        <div class="col-md-4 mt-2">
-            <img src="{{asset('frontend/image/event_photo/img1.jpg')}}" class="img00 rounded">
-        </div>
+    <div class="row mt-2">
+        @foreach ($photos as $photo)
+            <div class="col-md-4 mt-4">
+                <!-- Image Card -->
+                <div class="card shadow-sm rounded border-0 overflow-hidden">
+                    <!-- Image Container -->
+                    <div class="image-container position-relative">
+                        <img src="{{ asset($photo->image) }}" class="img-fluid rounded" alt="Photo">
+                        <!-- Hover Text -->
+                        <div class="overlay position-absolute top-50 start-50 translate-middle text-center">
+                            <div class="overlay-content">
+                                <h4>{{ $photo->title }}</h4> <!-- Dynamic title text -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
-
-    <div class="row mt-5">
-        <div class="col-md-4 mt-1">
-            <img src="{{asset('frontend/image/event_photo/img2.jpg')}}" class="img00 rounded">
-        </div>
-        <div class="col-md-4 mt-2">
-            <img src="{{asset('frontend/image/event_photo/img6.jpg')}}" class="img00 rounded">
-        </div>
-        <div class="col-md-4 mt-2">
-            <img src="{{asset('frontend/image/event_photo/fintech.jpg')}}" class="img00 rounded">
-        </div>
-    </div>
-</section>
+</div>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</section>
 
 @endsection
 
 <style>
+.card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px; /* Fixed height for uniformity */
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Overlay Text */
+.overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: rgba(8, 68, 136, 0.619); /* Dark transparent background */
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-content {
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .overlay {
+    opacity: 1; /* Show overlay text on hover */
+}
+
+.image-container:hover .overlay-content {
+    transform: translateY(0); /* Slide up text on hover */
+}
+
+/* Card Body */
+.card-body {
+    padding: 16px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.card-body p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #6c757d;
+}
 
 /* Ensure the carousel images are properly sized */
 .carousel-inner {

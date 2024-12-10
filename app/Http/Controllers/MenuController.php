@@ -77,7 +77,7 @@ class MenuController extends Controller
         ]);
         MenuPermission::create([
             'menu_id' => $menuData->id,
-            'role_id' => 5,
+            'role_id' => 5,6,
             'can_create' => $request->input('permissions.can_create', 0),
             'can_edit' => $request->input('permissions.can_edit', 0),
             'can_update' => $request->input('permissions.can_update', 0),

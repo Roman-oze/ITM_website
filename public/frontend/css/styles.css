@@ -77,7 +77,7 @@ body {
     height: 70vh;
   }
   .bgcolorpic{
-    background-image:linear-gradient(rgba(5, 20, 107, 0.329),#145ee78e),url('../image/orient.jpg');
+    background-image:linear-gradient(rgba(5, 20, 107, 0.329),#145ee78e),url('../image/event_photo/fundation day.jpg');
   background-size: cover;
   background-position: center;
 

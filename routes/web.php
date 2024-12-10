@@ -247,6 +247,11 @@ Route::controller(MailController::class)->group(function(){
 
 Route::controller(ClubController::class)->group(function(){
     Route::get('/club','club')->name('club');
+    Route::get('club/photo/index','create')->name('photo.create');
+    Route::post('club/photo','store')->name('photo.store');
+    Route::get('club/photo/{id}','edit')->name('photo.edit');
+    Route::put('club/photo/{id}','update')->name('photo.update');
+    Route::delete('club/photo/{id}','destroy')->name('photo.delete');
     Route::get('/upcoming','upcoming')->name('upcoming');
     Route::get('/membership','membership')->name('membership');
     Route::get('/membership/index','index')->name('membership.index');
