@@ -127,9 +127,15 @@ class ClubController extends Controller
    }
 
 
-   public function upcoming(){
+   public function event(){
        $upcoming = Event::all();
-       return view('club.event.upcoming',compact('upcoming'));
+       $events = Event::where('type', 'Club')->get();
+       return view('club.event.upcoming',compact('upcoming','events'));
+    }
+   public function event_index(){
+       $upcoming = Event::all();
+       $events = Event::where('type', 'Club')->get();
+       return view('club.event.index',compact('upcoming','events'));
     }
 
     public function index(){

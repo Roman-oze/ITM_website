@@ -1,79 +1,3 @@
-{{-- @extends('layout.dashboard')
-
-@section('main')
-
-<div class="container-fluid px-4">
-    <h2 class="mt-4">Event Management Edit</h2>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="text-decoration-none text-secondary">Dashboard</a></li>
-        <li class="breadcrumb-item active">Events</li>
-    </ol>
-
-    <br>
-    <div class="d-flex justify-content-center align-items-center min-vh-85">
-
-        <form action="{{ route('event_update', $event->id) }}" enctype="multipart/form-data" method="POST" class="p-4 shadow-lg rounded bg-light w-50">
-            @csrf
-            @method('PUT')
-
-            <!-- Image Upload -->
-            <div class="mb-3">
-                <label for="image" class="form-label fw-semibold">Event Image</label>
-                @if ($event->image)
-                    <div class="mb-2">
-                        <img src="{{ asset($event->image) }}" alt="Event Image" class="img-thumbnail" style="width: 120px; height: auto;">
-                    </div>
-                @endif
-                <input type="file" class="form-control shadow-sm" id="image" name="image">
-                <small class="text-danger">@error('image'){{ $message }}@enderror</small>
-            </div>
-
-            <!-- Event Name -->
-            <div class="mb-3">
-                <label for="nameInput" class="form-label fw-semibold">Event Name</label>
-                <input type="text" class="form-control shadow-sm" id="nameInput" name="name" value="{{ $event->name }}" required>
-                <small class="text-danger">@error('name'){{ $message }}@enderror</small>
-            </div>
-
-            <!-- Date -->
-            <div class="mb-3">
-                <label for="dateInput" class="form-label fw-semibold">Date</label>
-                <input type="date" class="form-control shadow-sm" id="dateInput" name="date" value="{{ $event->date }}" required>
-                <small class="text-danger">@error('date'){{ $message }}@enderror</small>
-            </div>
-
-            <!-- Time -->
-            <div class="mb-3">
-                <label for="timeInput" class="form-label fw-semibold">Time</label>
-                <input type="time" class="form-control shadow-sm" id="timeInput" name="time" value="{{ $event->time }}" required>
-                <small class="text-danger">@error('time'){{ $message }}@enderror</small>
-            </div>
-
-            <!-- Location -->
-            <div class="mb-3">
-                <label for="locationInput" class="form-label fw-semibold">Location</label>
-                <input type="text" class="form-control shadow-sm" id="locationInput" name="location" value="{{ $event->location }}" required>
-                <small class="text-danger">@error('location'){{ $message }}@enderror</small>
-            </div>
-
-            <!-- Description -->
-            <div class="mb-3">
-                <label for="descriptionInput" class="form-label fw-semibold">Description</label>
-                <textarea class="form-control shadow-sm" id="descriptionInput" name="description" rows="3" required>{{ $event->description }}</textarea>
-                <small class="text-danger">@error('description'){{ $message }}@enderror</small>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="text-center">
-                <button type="submit" class="btn btn-dark px-4 py-2 shadow-sm">Update Event</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-@endsection --}}
-
-
 @extends('layout.dashboard')
 
 @section('main')
@@ -82,7 +6,7 @@
     <h2 class="mt-4">Event Edit</h2>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="text-decoration-none text-secondary">Dashboard</a></li>
-        <li class="breadcrumb-item active"> Event Edit</li>
+        <li class="breadcrumb-item active">Event Edit</li>
     </ol>
 
     <!-- Compact Card Layout -->
@@ -90,13 +14,12 @@
         <div class="col-md-6">
             <div class="card shadow rounded-4 border-0">
                 <div class="card-header bg-dark text-white text-center">
-                    <h5 class="mb-0">Add New Event</h5>
+                    <h5 class="mb-0">Edit Event</h5>
                 </div>
                 <div class="card-body p-4">
                     <form action="{{route('event_update',$event->id)}}" enctype="multipart/form-data" method="POST">
                         @csrf
                         @method('PUT')
-
 
                         <!-- Image Upload -->
                         <div class="mb-4 text-center">
@@ -113,6 +36,16 @@
                             <label for="nameInput" class="form-label">Event Name</label>
                             <input type="text" class="form-control rounded-pill shadow-sm" id="nameInput" value="{{$event->name}}" name="name" placeholder="Enter event name" required>
                             <span class="text-danger small">@error('name'){{ $message }}@enderror</span>
+                        </div>
+
+                        <!-- Event Type -->
+                        <div class="mb-3">
+                            <label for="typeInput" class="form-label">Event Type</label>
+                            <select class="form-select rounded-pill shadow-sm" id="typeInput" name="type" required>
+                                <option value="Departmental" {{ $event->type == 'Departmental' ? 'selected' : '' }}>Departmental</option>
+                                <option value="Club" {{ $event->type == 'Club' ? 'selected' : '' }}>Club</option>
+                            </select>
+                            <span class="text-danger small">@error('type'){{ $message }}@enderror</span>
                         </div>
 
                         <!-- Date & Time -->

@@ -28,7 +28,7 @@ class EventController extends Controller
     // admin dashvboard event file
     public function index(){
         $menus = Menu::all();
-        $events = DB::table('events')->get();
+        $events = Event::where('type', 'Departmental')->get();
         return view('event.index',compact('events','menus'));
     }
 
@@ -52,30 +52,42 @@ class EventController extends Controller
      */
     public function event_store(Request $request)
     {
+        // Validate Input
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'date' => 'required|date',
+            'time' => 'required',
+            'location' => 'required|string|max:255',
+            'description' => 'required|string',
+            'type' => 'required|string|in:Departmental,Club',
+        ]);
 
-        $fileName = time().'-itm'.$request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move('event', $fileName);
+        // Handle Image Upload
+        $fileName = null;
+        if ($request->hasFile('image')) {
+            $fileName = time() . '-itm.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move('event', $fileName);
+        }
 
+        // Prepare Data
+        $data = [
+            'name' => $request->name,
+            'image' => $fileName ? 'event/' . $fileName : null,
+            'date' => $request->date,
+            'time' => $request->time,
+            'location' => $request->location,
+            'description' => $request->description,
+            'type' => $request->type,
+        ];
 
-       $data ['name']=$request->name;
-       $data ['image']= 'event/'.$fileName;
-       $data ['date']=$request->date;
-       $data ['time']=$request->time;
-       $data ['location']=$request->location;
-       $data ['description']=$request->description;
+        // Insert Data
+        DB::table('events')->insert($data);
 
-      DB::table('events')->insert($data);
-
-    //   return redirect()->route->back()->with('success','Event Added Successfully');
-    return redirect()->route('event.index')->with('success','Event Added Successfully');
-
-    // dd(DB::table('events')->get());
-
-
-
-
-
+        // Redirect with Success Message
+        return redirect()->back()->with('success', 'Event Added Successfully');
     }
+
 
     /**
      * Display the specified resource.
@@ -102,6 +114,7 @@ class EventController extends Controller
         'time' => $request->time,
         'location' => $request->location,
         'description' => $request->description,
+        'type' => $request->type
     ];
 
     // Check if an image file is uploaded
@@ -118,6 +131,7 @@ class EventController extends Controller
 
     return redirect()->route('event.index')->with('success', 'Event updated successfully!');
 }
+
 
 
     /**

@@ -18,7 +18,7 @@
                     <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </form>
-            <a href="{{ route('create') }}" class="btn btn-outline-dark ">New Add</a>
+            {{-- <a href="{{ route('create') }}" class="btn btn-outline-dark ">New Add</a> --}}
 
         </div>
 

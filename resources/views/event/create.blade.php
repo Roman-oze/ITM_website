@@ -62,6 +62,17 @@
                             <span class="text-danger small">@error('description'){{ $message }}@enderror</span>
                         </div>
 
+                        <!-- Event Type -->
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Event Type</label>
+                            <select class="form-control rounded-pill shadow-sm p-2" id="type" name="type" required>
+                                <option value="">Select Event Type</option>
+                                <option value="Departmental">Departmental</option>
+                                <option value="Club">Club</option>
+                            </select>
+                            <span class="text-danger small">@error('type'){{ $message }}@enderror</span>
+                        </div>
+
                         <!-- Submit Button -->
                         <div class="text-center">
                             <button type="submit" class="btn btn-dark rounded-pill shadow-sm px-4">Save Event</button>

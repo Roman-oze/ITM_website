@@ -20,7 +20,7 @@
         </li>
         <li class="nav-item">
             {{-- <a class="" href="{{route('events')}}">Upcoming Events</a> --}}
-            <a class="" href="{{route('upcoming')}}">Upcoming Events</a>
+            <a class="" href="{{route('club.event')}}">Events</a>
         </li>
         <li class="nav-item">
             <a class="" href="#contact">Contact</a>
