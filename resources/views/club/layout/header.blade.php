@@ -7,7 +7,7 @@
         </div>
         <div class="col-md-6 paragh col-sm-12 text-center">
             <h3 class="btnn animate__animated animate__bounce">Join Our Club</h3><br>
-            <img src="{{asset('frontend/image/qr.png')}}" class="QR">
+            <img src="{{asset('frontend/image/QR-code.png')}}" class="QR">
             <b><p class="p-3">Department of Information Technology & Management and ITM Club Facebook page here do like, follow, and share</p></b>
 
             <div class="text-center d-flex flex-column flex-md-row justify-content-center align-items-center">
