@@ -15,13 +15,13 @@
             <div class="row d-flex justify-content-center">
                 @foreach ($events as $event)
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="event-card box-shadow {{ $event->created_at->diffInDays(now()) <= 7 ? 'new-event' : 'old-event' }}">
+                    <div class="event-card box-shadow mt-2{{ $event->created_at->diffInDays(now()) <= 7 ? 'new-event' : 'old-event' }}">
                         <!-- Badge for New/Old Event -->
                             <!-- Badge positioned in top-left corner -->
                             @if ($event->created_at->diffInDays(now()) <= 7)
-                                <span class="badge bg-success position-absolute top-right-badge ">New Event</span>
+                                <span class="badge bg-success position-absolute top-right-badge p-2">New Event</span>
                             @else
-                                <span class="badge bg-secondary position-absolute top-right-badge ">Old Event</span>
+                                <span class="badge bg-secondary position-absolute top-right-badge p-2">Old Event</span>
                             @endif
 
                         <img src="{{asset($event->image)}}" alt="Event Image" class="img">

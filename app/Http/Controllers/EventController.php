@@ -83,7 +83,7 @@ class EventController extends Controller
         ];
 
         // Insert Data
-        DB::table('events')->insert($data);
+        Event::create($data);
 
         // Redirect with Success Message
         return redirect()->back()->with('success', 'Event Added Successfully');
