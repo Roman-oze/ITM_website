@@ -20,9 +20,9 @@ class EventController extends Controller
 //  frontend view file
     public function events(){
 
-        $upcoming =Event::whereIN('name',['empty'])->get();
-        $event = Event::whereNotIn('name',['empty'])->get();;
-        return view('event.events',compact('event','upcoming'));
+        $events = Event::where('type', 'Departmental')->get();
+
+        return view('event.events',compact('events'));
     }
 
     // admin dashvboard event file
@@ -60,7 +60,8 @@ class EventController extends Controller
             'time' => 'required',
             'location' => 'required|string|max:255',
             'description' => 'required|string',
-            'type' => 'required|string|in:Departmental,Club',
+            'type' => 'required|string|in:Departmental,Club'
+            ,
         ]);
 
         // Handle Image Upload
