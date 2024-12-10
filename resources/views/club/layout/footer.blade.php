@@ -1,42 +1,154 @@
-<section id="contact">
-    <div class="row text-center club-bg-color">
-      <div class="contact-header">
-        <h1 class="text-dark bg-light ">Contact Us</h1>
-    </div>
-        <div class="col-md-3 text-center">
-            <img src="{{asset('frontend/image/clubimage.png')}}" class="img0">
-            <div class="fb text-center">
-
-              <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
-              <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i><br>
-                 </div>
-                 <br>
+<section id="contact" class="footer-section">
+    <div class="container-fluid club-bg-color py-5">
+        <div class="row text-center">
+            <!-- Contact Header -->
+            <div class="col-12 mb-4">
+                <h1 class="text-dark bg-light p-2 rounded">Contact Us</h1>
             </div>
 
-        <div class="col-md-3 text-center  rounded">
-            <h3 class="lead bg-light p-2">Social Media</h3>
-                <p>Home</p>
-                <p>About</p>
-                <p>Service</p>
-
-        </div>
-        <div class="col-md-3 text-center  rounded ">
-          <h3 class="lead bg-light p-2">Support</h3>
-            <p>FAQ</p>
-            <p>How it</p>
-            <p>Features</p>
-        </div>
-        <div class="col-md-3 text-center rounded">
-          <h3 class="lead bg-light p-2 ">Contact</h3>
-            <p>+8801759676488</p>
-            <p>itmclub@diu.edu.bd</p>
-            <p>Ashulia,savar,Dhaka</p>
+            <!-- Club Logo and Social Media -->
+            <div class="col-12 col-md-3 text-center mb-4">
+                <img src="{{ asset('frontend/image/clubimage.png') }}" class="img-fluid mb-3" alt="Club Logo">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/islamfull.5" class="social-link text-primary" target="_blank">
+                        <i class="fa-brands fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="social-link text-danger" target="_blank">
+                        <i class="fa-brands fa-youtube fa-2x"></i>
+                    </a>
+                    <a href="#" class="social-link text-info">
+                        <i class="fa-brands fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="#" class="social-link text-success">
+                        <i class="fa-brands fa-whatsapp fa-2x"></i>
+                    </a>
                 </div>
+            </div>
 
-    </div>
-  </section>
-    <br>
+            <!-- Social Media Links -->
+            <div class="col-12 col-md-3 text-center mb-4">
+                <h3 class="bg-light p-1 rounded">Social Media</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">About</a></li>
+                    <li><a href="#" class="footer-link">Service</a></li>
+                </ul>
+            </div>
 
-    <div class="bg-light text-center">
-       <p class="lead bg-primary text-white">copyright by design @RomanOze</p>
+            <!-- Support Links -->
+            <div class="col-12 col-md-2 text-center mb-4">
+                <h3 class="bg-light p-1 rounded">Support</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="footer-link">FAQ</a></li>
+                    <li><a href="#" class="footer-link">How it Works</a></li>
+                    <li><a href="#" class="footer-link">Features</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-12 col-md-4 text-center mb-4">
+                <h3 class="bg-light p-1 rounded " >Contact</h3>
+                <p class="mb-1"><i class="fa fa-phone"></i> ++0184714003955</p>
+                <p class="mb-1"><i class="fa fa-envelope" style="text-align: justify"></i> itmoffice@daffodilvarsity.edu.bd</p>
+                <p><i class="fa fa-map-marker"></i> AB-4 Building (6th Floor), Khagan,Ashulia Dhaka</p>
+            </div>
+        </div>
     </div>
+
+    <!-- Footer Bottom -->
+    <div class="text-center bg-primary text-white py-3">
+        <p class="mb-0">© Copyright by Design @RomanOze</p>
+    </div>
+</section>
+
+<style>
+.footer-section {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.footer-section .club-bg-color {
+    background-color: #edeff4b7;
+}
+
+.footer-section h1,
+.footer-section h3 {
+    font-weight: bold;
+}
+
+.footer-section .social-link {
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 5px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.footer-section .social-link:hover {
+    color: #007bff;
+}
+
+.footer-section .footer-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    transition: color 0.3s;
+    margin: 5px;
+}
+
+.footer-section .footer-link:hover {
+    color: #007bff;
+}
+
+.footer-section ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-section p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-section img {
+    max-width: 80px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.footer-section .bg-light {
+    border-radius: 5px;
+}
+
+.bg-primary {
+    background-color: #007bff !important;
+}
+
+/* Bootstrap 5 Responsive Utility Classes */
+@media (max-width: 768px) {
+    .footer-section h1 {
+        font-size: 24px;
+    }
+    .footer-section h3 {
+        font-size: 18px;
+    }
+    .footer-section .social-link,
+    .footer-section .footer-link {
+        font-size: 14px;
+    }
+    .footer-section p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-section .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .footer-section img {
+        max-width: 60px;
+    }
+}
+</style>

@@ -25,7 +25,7 @@ class HomeController extends Controller
         $hero = Herosection::first();
         $features = Feature::all();
         $services = Service::all();
-        $footers = Footer::all();
+        $footers= Footer::all();
         $scholars = Scholarship::all();
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();

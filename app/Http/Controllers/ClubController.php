@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
 use App\Models\Batch;
+use App\Models\Event;
+use App\Models\Footer;
+use App\Models\Student;
 use App\Models\ClubPhoto;
 use App\Models\Committee;
-use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,8 +17,9 @@ class ClubController extends Controller
         public function club(){
 
             $photos = ClubPhoto::all();
+            $footers = Footer::all();
             $committees = Committee::whereIn('id', [ 2, 3, 4])->get();
-            return view('club.club',compact('committees','photos'));
+            return view('club.club',compact('committees','photos','footers'));
     }
 
     public function create(){

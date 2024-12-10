@@ -430,6 +430,10 @@ body {
   #hero .btn-get-started:hover {
     background: #209dd8;
   }
+  .btn-get-started {
+    pointer-events: auto;
+    display: inline-block;
+}
 
   #hero .btn-watch-video {
     font-size: 16px;

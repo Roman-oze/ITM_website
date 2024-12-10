@@ -2,38 +2,12 @@
 @extends('club.layout.club_master')
 
 @section('club_header')
- <div class="container-fluid ">
-<br>
-<br>
-<br>
-<br>
-        <div class="row">
-          <div class="col-md-6 col-sm-12  text-center">
-            <img src="{{asset('frontend/image/itmclub.png')}}" class="img-fluid animate__animated animate__fadeInLeft">
-          </div>
-          <div class="col-md-6 paragh col-sm-12  text-center">
-           <h3 class="btnn animate__animated animate__bounce">Join Our Club</h3><br>
+@include('club.layout.header')
 
 
-          <img src="{{asset('frontend/image/qr.png')}}" class="QR">
-          <b><p class="p-3"> Department of Information Technology & Management and ITM Club Facebook page here do like follow and share </p></b>
-
-          <div class="text-center">
-              <a href="https://www.facebook.com/islamfull.5" class="face">Facebook <i class="fa-brands fa-facebook"></i></a></i>
-              <a href="https://www.youtube.com/channel/UClBIz9HlgUBfzYvnj-xX2-w" class="tube">Youtube <i class="fa-brands fa-youtube"></i></a></i><br>
-          </div>
-       <div>
-    </div>
-        </div>
-        </div>
-      </div>
-      <br>
-@endsection
 
 @section('main_content')
-<br>
-<br>
-<br>
+
 
 
 <section id="services" class="services section-bg text-left" >
