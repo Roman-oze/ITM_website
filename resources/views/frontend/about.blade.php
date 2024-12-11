@@ -145,34 +145,34 @@
                 </div>
             </div>
 
-            <div class="col-lg-7  align-content-center">
-                <div class="item img-fluid-custom">
-                    <div class="imagee">
+            <div class="col-lg-7 align-items-center">
+                <div class="item ">
+                    <div class="item-image">
                         <img src="{{ asset('frontend/image/campus.jpeg') }}" class="imgg">
                     </div>
                     <div class="description">
                         <p class="pp text_color">Main Campus</p>
-                        <a class="baton p-2" href="https://www.google.com/maps/place/Admission+Office,+Daffodil+International+University/@23.8761751,90.320949,638m/data=!3m1!1e3!4m6!3m5!1s0x3755c23c2b610299:0xa5812fe6c1cec69f!8m2!3d23.8756205!4d90.3207632!16s%2Fg%2F11c1s8f1bj?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
+                        <a class="item-btn p-2" href="https://www.google.com/maps/place/Admission+Office,+Daffodil+International+University/@23.8761751,90.320949,638m/data=!3m1!1e3!4m6!3m5!1s0x3755c23c2b610299:0xa5812fe6c1cec69f!8m2!3d23.8756205!4d90.3207632!16s%2Fg%2F11c1s8f1bj?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
                     </div>
                 </div>
                 <br>
-                <div class="item img-fluid-custom">
-                    <div class="imagee">
+                <div class="item ">
+                    <div class="item-image">
                         <img src="{{ asset('frontend/image/ab4building.jpeg') }}" class="imgg">
                     </div>
                     <div class="description">
                         <p class="pp text_color">AB4 Building</p>
-                        <a class="baton p-2" href="https://www.google.com/maps/place/Information+Technology+%26+Management+(ITM)+Club/@23.876693,90.3198752,47m/data=!3m1!1e3!4m6!3m5!1s0x3755c3004144093f:0x184a0902a97bafef!8m2!3d23.8766614!4d90.3198912!16s%2Fg%2F11vr5w94jr?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
+                        <a class="item-btn p-2" href="https://www.google.com/maps/place/Information+Technology+%26+Management+(ITM)+Club/@23.876693,90.3198752,47m/data=!3m1!1e3!4m6!3m5!1s0x3755c3004144093f:0x184a0902a97bafef!8m2!3d23.8766614!4d90.3198912!16s%2Fg%2F11vr5w94jr?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
                     </div>
                 </div>
                 <br>
-                <div class="item img-fluid-custom">
-                    <div class="imagee">
+                <div class="item">
+                    <div class="item-image">
                         <img src="{{ asset('frontend/image/old_building.jpg') }}" class="imgg">
                     </div>
                     <div class="description">
                         <p class="pp text_color">AB Building</p>
-                        <a class="baton p-2" href="https://www.google.com/maps/place/Department+of+Pharmacy/@23.8769036,90.3210446,95m/data=!3m1!1e3!4m6!3m5!1s0x3755c300370e4c9d:0xe2228c335ccd65d8!8m2!3d23.8769609!4d90.321455!16s%2Fg%2F11y341ppsp?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
+                        <a class="item-btn p-2" href="https://www.google.com/maps/place/Department+of+Pharmacy/@23.8769036,90.3210446,95m/data=!3m1!1e3!4m6!3m5!1s0x3755c300370e4c9d:0xe2228c335ccd65d8!8m2!3d23.8769609!4d90.321455!16s%2Fg%2F11y341ppsp?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
                     </div>
                 </div>
             </div>

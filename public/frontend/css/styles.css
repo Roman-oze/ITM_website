@@ -13,21 +13,7 @@ body {
 
 /* Style for the header right side */
 
- ul li a {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-weight: bolder;
-  padding: 5px 10px;
 
-}
- ul li a:hover{
-  text-decoration: none;
-  color: rgb(238, 230, 230);
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 24px;
-  padding: 5px 10px;
-
-}
 @media screen and (max-width: 768px) {
   header {
       flex-direction: column;
@@ -44,25 +30,7 @@ body {
   height: 80px;
   width: 80px;
 }
-.link{
-  text-decoration: none;
-  border: 3px solid rgb(233, 174, 10);
-  color: #f8f9fa;
-  border-radius: 24px;
-  background-image:linear-gradient(rgba(13, 148, 153, 0.589),#0f2469fd)     ;
-  padding: 10px;
-  font-weight: bold;
 
-  }
-  .link:hover{
-  border: 3px solid rgb(253, 253, 253);
-  border-radius: 24px;
-  background-image:linear-gradient(rgba(13, 148, 153, 0.589),#0f2469fd)     ;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  color: #f8f9fa;
-  padding: 10px;
-  }
 
   .bgphoto{
     background-image:url('../image/orient.jpg');
