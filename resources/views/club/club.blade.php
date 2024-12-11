@@ -9,7 +9,12 @@
 <!-- Welcome Section -->
 <section class="welcome-section">
     <div class="container p-1">
-        <div class="jumbotron text-center bgcolorpic animate__animated animate__fadeInLeft">
+        <div class="jumbotron text-center  animate__animated animate__fadeInLeft"
+        style="
+        background-image:linear-gradient(rgba(5, 20, 107, 0.329),#145ee78e),url('{{ asset($single->image) }}');
+        background-size: cover;
+        background-position: center;
+        height: 70vh;">
             <br><br><br><br><br>
             <h1 class="text-white text-center h1border">Welcome to the Academic Club</h1><br>
             <p class="lead text-dark text-center pborder">Explore the world of knowledge with us!</p>
@@ -66,7 +71,7 @@
 <br>
 
 <!-- Gallery Section -->
-<section id="gellary">
+<section id="gallery">
 <div class="container mt-5">
     <div class="col-lg-7 text-center mx-auto">
         <div class="section-title">

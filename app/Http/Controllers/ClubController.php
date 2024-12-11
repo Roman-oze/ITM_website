@@ -18,9 +18,9 @@ class ClubController extends Controller
         public function club(){
 
             $photos = Gallery::where('type','Club')->get();
-            $footers = Footer::all();
+            $single = Gallery::where('type', 'Club')->first();
             $committees = Committee::whereIn('id', [ 2, 3, 4])->get();
-            return view('club.club',compact('committees','photos','footers'));
+            return view('club.club',compact('committees','photos','single'));
     }
 
     public function create(){

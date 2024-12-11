@@ -71,11 +71,11 @@ body {
     height: 70vh;
   }
   .bgcolorpic{
-    background-image:linear-gradient(rgba(5, 20, 107, 0.329),#145ee78e),url('../image/event_photo/fundation day.jpg');
+    /* background-image:linear-gradient(rgba(5, 20, 107, 0.329),#145ee78e),url('../image/event_photo/fundation day.jpg');
   background-size: cover;
   background-position: center;
 
-    height: 70vh;
+    height: 70vh; */
   }
   .bgcolor{
     background-image:linear-gradient(rgb(12, 98, 226),#4eced3);

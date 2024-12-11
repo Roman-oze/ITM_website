@@ -78,8 +78,7 @@ class HomeController extends Controller
         //  $officers = $officers->merge($staffs);
         $footers = Footer::first();
         $gallery = Gallery::where('type','Departmental')->get();
-        $photo = Gallery::where('id','1')->get();
-
+        $photo = Gallery::where('type', 'Departmental')->first();
 
         return view('frontend.about',[
             'officers' => $officers,

@@ -57,8 +57,8 @@
     </div>
 
     <!-- Footer Bottom -->
-    <div class="container footer-bottom ">
-        <div class="row bottom-copy">
+    <div class="container  ">
+        <div class="row d-flex justify-content-evenly">
             <div class="col-md-6 text-center text-md-start">
                 <div class="copyright">
                     © Copyright <strong><span>Roman Oze</span></strong>. All Rights Reserved
@@ -75,33 +75,6 @@
 </section>
 
 <style>
-.bottom-copy{
-}
-.footer .footer-bottom {
-    border-top: 1px solid #444; /* Thin border for separation */
-    padding-top: 15px;
-    margin-top: 15px;
-}
-
-.footer .copyright {
-    font-weight: 600;
-    color: #f8f9fa;
-}
-
-.footer .credits a {
-    color: #0dcaf0; /* Bootstrap's primary color */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.footer .credits a:hover {
-    color: #0a58ca; /* Darker blue on hover */
-    text-decoration: underline;
-}
-.footer-section {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-}
 
 .club-bg-color{
 background-color: #37517E;

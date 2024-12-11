@@ -15,10 +15,8 @@
                 </p>
             </div>
             {{-- <img src="{{ asset('frontend/image/diu_admission.jpg') }}" class="w-50 h-50"> --}}
-            @foreach ($photo as $photo)
 
             <img src="{{ asset($photo->image) }}" class="department-group-image">
-            @endforeach
         </div>
     </div>
 </section>
@@ -83,49 +81,6 @@
         </div>
     </div>
 </div>
-
-<style>
-    .image-container {
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        width: 100%; /* Responsive width */
-        height: 250px; /* Fixed height for uniformity */
-    }
-
-    .image-container img {
-        transition: transform 0.5s ease;
-        width: 100%;
-        height: 100%; /* Fills the container */
-        object-fit: cover; /* Ensures proper cropping without distortion */
-        display: block;
-    }
-
-    .image-container:hover img {
-        transform: scale(1.1);
-    }
-
-    .overlay {
-        background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .image-container:hover .overlay {
-        opacity: 1;
-    }
-
-    .overlay-content {
-        color: #fff;
-    }
-
-    .overlay-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-</style>
-
-
 <div class="container-fluid  mt-5">
     <div class="row mt-3">
         <div class="section-title">
@@ -226,5 +181,42 @@
 </section>
 @endsection
 <style>
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        width: 100%; /* Responsive width */
+        height: 250px; /* Fixed height for uniformity */
+    }
 
+    .image-container img {
+        transition: transform 0.5s ease;
+        width: 100%;
+        height: 100%; /* Fills the container */
+        object-fit: cover; /* Ensures proper cropping without distortion */
+        display: block;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.1);
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1;
+    }
+
+    .overlay-content {
+        color: #fff;
+    }
+
+    .overlay-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
 </style>
