@@ -14,6 +14,7 @@ class FeatureController extends Controller
     public function index()
     {
         $features = Feature::all();
+        $features = Feature::all(); // Fetch all features
 
         return view('website_setup.Feature.index',[
             'features' => $features

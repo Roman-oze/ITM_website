@@ -40,7 +40,7 @@ class CourseController extends Controller
         ->get()
         ->groupBy('semester_id'); // Group by semester_id
 
-        return view('course.index', [
+        return view('Course.index', [
             'coursePage' => $coursePage,
             'courses' => $courses,
         ]);

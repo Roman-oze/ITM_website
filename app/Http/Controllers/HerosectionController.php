@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\models\Herosection;
 use Illuminate\Http\Request;
 
-class HerosectionController extends Controller
+class HeroSectionController extends Controller
 {
     /**
      * Display a listing of the resource.

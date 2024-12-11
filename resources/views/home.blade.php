@@ -222,7 +222,7 @@
             </div>
         <div class="row justify-content-center mt-5">
                 <div class="col-md-6 align-items-stretch d-flex">
-                    <div class="img img-video d-flex align-items-center" style="background-image: url('/public/frontend/image/diugate.jpg');">
+                    <div class="img img-video d-flex align-items-center" >
                         <div class=" justify-content-center">
                             <img src="{{asset('frontend/image/why-us.png')}}" class="image1 img-fluid animate__animated animate__fadeInDown">
                             {{-- <img src="https://www.signulu.com/images/latest/it_banner_img.png" class="image1 img-fluid-custom animate__animated animate__fadeInDown"> --}}
@@ -296,7 +296,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <br><br><br>
 
 
@@ -629,8 +628,8 @@
             <div class="col-xl-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box avatar-container" onclick="toggleMenu()">
                     <div class="icon "><i class="fa-solid fa-book-open-reader avatar-image "></i></div>
-                    <h4><a href="#">Leadership</a></h4>
-                    <p>I know how to lead in the organization.</p>
+                    <h4><a href="#">Project Management</a></h4>
+                    <p>Master the art of planning, executing, and overseeing successful projects.</p>
                 </div>
             </div>
 
@@ -638,7 +637,7 @@
                 <div class="icon-box avatar-container" onclick="toggleMenu()">
                     <div class="icon"><i class="fa-solid fa-lightbulb avatar-image "></i></div>
                     <h4><a href="#">FinTech</a></h4>
-                    <p>When suddenly needing to innovate something.</p>
+                    <p>Explore the innovative intersection of finance and technology for a modern digital economy.</p>
                 </div>
             </div>
 
@@ -646,7 +645,7 @@
                 <div class="icon-box avatar-container" onclick="toggleMenu()">
                     <div class="icon"><i class="fa-solid fa-circle-info avatar-image "></i></div>
                     <h4><a href="#">IT Support</a></h4>
-                    <p>Technical tools and techniques that I use on a daily basis.</p>
+                    <p>Build expertise in troubleshooting, maintaining, and managing IT systems effectively.</p>
                 </div>
             </div>
 
@@ -654,7 +653,7 @@
                 <div class="icon-box avatar-container" onclick="toggleMenu()">
                     <div class="icon"><i class="fa-solid fa-person-rays avatar-image"></i></div>
                     <h4><a href="#">Human Resource</a></h4>
-                    <p>Talent, performance, and innovation for each organization.</p>
+                    <p>Develop skills to manage, recruit, and enhance organizational talent strategically.</p>
                 </div>
             </div>
         </div>
@@ -669,10 +668,7 @@
                   <div class="section-title">
                     <h2>Contact</h2>
                     <p>
-                      Ready to take your financial management to the next level? Contact
-                      us today for personalized consultation and discover how our
-                      expertise can empower your business growth. Let's navigate your
-                      financial journey together towards success.
+                        Connect with our department for inquiries, support, or collaboration opportunities. We are here to assist with academic, administrative, or program-specific concerns.
                     </p>
                   </div>
 
