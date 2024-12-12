@@ -27,6 +27,10 @@ class ClubController extends Controller
         $photos = Gallery::where('type','Club')->get();
         return view('club.create',compact('photos'));
     }
+    public function register(){
+        $batches = Batch::all();
+        return view('club.registration',compact('batches'));
+    }
 
     public function store(Request $request){
         $request->validate([

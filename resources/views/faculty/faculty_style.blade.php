@@ -2203,27 +2203,6 @@ body {
     color: #fff;
 }
 
-/* Responsive Styling */
-@media (max-width: 992px) {
-    .single-faculty {
-        height: auto; /* Adjust for medium screens */
-        margin-bottom: 20px;
-    }
-    .single-faculty img {
-        height: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .single-faculty {
-        height: auto;
-        flex: 1;
-    }
-
-    .team-slider {
-        flex-wrap: wrap;
-    }
-}
 
 @media (max-width: 576px) {
     .single-faculty {
@@ -2233,6 +2212,19 @@ body {
 
     .single-faculty-info {
         padding: 10px;
+    }
+}
+/* Hide single-faculty-info on Mobile-L and Mobile-M devices */
+@media (max-width: 768px) and (min-width: 576px) {
+    .single-faculty-info {
+        display: none; /* Hide on Mobile-L and Mobile-M */
+    }
+}
+
+/* Optional: Adjustments for extra small screens */
+@media (max-width: 576px) {
+    .single-faculty-info {
+        display: none; /* Ensure it's also hidden on Mobile-M */
     }
 }
 

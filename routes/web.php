@@ -247,6 +247,7 @@ Route::controller(MailController::class)->group(function(){
 
 Route::controller(ClubController::class)->group(function(){
     Route::get('/club','club')->name('club');
+    Route::get('club/register','register')->name('club.register');
     Route::get('/club/photo/index','create')->name('photo.create');
     Route::post('club/photo','store')->name('photo.store');
     Route::get('club/photo/{id}','edit')->name('photo.edit');

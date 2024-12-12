@@ -26,31 +26,44 @@
             <span class="badge bg-danger rounded-circle position-absolute top-0 end-0 ml-2" style="font-size: 0.7rem; margin:9px">{{ \App\Models\Notification::where('is_read', false)->count() }}</span>
         </a>
 
-        <ul class="dropdown-menu dropdown-menu-end p-3 shadow-lg" aria-labelledby="notificationDropdown" style="min-width: 350px; max-width: 100%; border-radius: 10px;">
-            <li class="dropdown-header text-center text-primary fw-bold fs-5">Notifications</li>
-            <div class="dropdown-divider"></div>
+        <div class="d-flex justify-content-center align-items-center">
+            <ul class="dropdown-menu p-3 shadow-lg text-center"
+                aria-labelledby="notificationDropdown"
+                style="min-width: 350px; max-width: 100%; border-radius: 10px;">
 
-            <!-- Notification Items -->
-            <div class="list-group">
-                @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
-                    <a href="{{ route('notifications.index') }}" class="list-group-item list-group-item-action d-flex align-items-start gap-2">
-                        <i class="fa fa-info-circle text-primary fs-4"></i>
-                        <div class="w-100">
-                            <div class="d-flex justify-content-between">
-                                <strong class="text-dark text-truncate" style="max-width: 200px;">{{ $notification->subject }}</strong>
-                                <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
+                <li class="dropdown-header text-primary fw-bold fs-5">Notifications</li>
+                <div class="dropdown-divider"></div>
+
+                <!-- Notification Items -->
+                <div class="list-group">
+                    @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
+                        <a href="{{ route('notifications.index') }}"
+                           class="list-group-item list-group-item-action d-flex align-items-start gap-2">
+                            <i class="fa fa-info-circle text-primary fs-4"></i>
+                            <div class="w-100">
+                                <div class="d-flex justify-content-between">
+                                    <strong class="text-dark text-truncate" style="max-width: 200px;">
+                                        {{ $notification->subject }}
+                                    </strong>
+                                    <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
+                                </div>
+                                <small class="text-muted text-truncate d-block" style="max-width: 250px;">
+                                    {{ $notification->message }}
+                                </small>
                             </div>
-                            <small class="text-muted text-truncate d-block" style="max-width: 250px;">{{ $notification->message }}</small>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
+                        </a>
+                    @endforeach
+                </div>
 
-            <!-- View All Notifications Button -->
-            <div class="text-center mt-2">
-                <a href="{{ route('notifications.index') }}" class="btn btn-primary btn-sm rounded-pill">View All Notifications</a>
-            </div>
-        </ul>
+                <!-- View All Notifications Button -->
+                <div class="text-center mt-2">
+                    <a href="{{ route('notifications.index') }}" class="btn btn-primary btn-sm rounded-pill">
+                        View All Notifications
+                    </a>
+                </div>
+            </ul>
+        </div>
+
     </li>
     @endcan
 
