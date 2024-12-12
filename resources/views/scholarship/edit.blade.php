@@ -34,7 +34,7 @@
                                                     @if ($scholars->image)
                                                         <img src="{{asset($scholars->image)}}" alt="" width="100" height="100">
                                                     @endif
-                                                    <input type="file" class="form-control" name="image" value="{{$scholars->image}}" required placeholder="image">
+                                                    <input type="file" class="form-control" name="image" value="{{$scholars->image}}"  placeholder="image">
                                                     <span class="text-danger">@error('image'){{ $message }}@enderror</span>
                                                 </div>
                                                 <div class="form-group mb-3">

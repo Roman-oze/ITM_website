@@ -30,7 +30,7 @@
 
             <!-- Staff Member Card 1 -->
             @foreach ($teachers_new as $teacher)
-            <div class="col-12 col-md-6 col-lg-3 single-faculty border rounded m-2">
+            <div class="col-12 col-md-6 col-lg-3 single-faculty border rounded m-2 mt-2">
                 <img class="img-fluid" src="{{asset($teacher->image)}}" alt="Doctor Image" />
                 <div class="single-faculty-info">
                     <h4>{{ $teacher->name }}</h4>
@@ -65,38 +65,6 @@
     </section>
 <!--- END Section -->
 
-<!-- First Line: Single Card at the Top -->
-{{-- <div class="container mt-5">
-    <div class="row d-flex justify-content-evenly">
-        @foreach ($teachers_new as $teacher)
-            <div class="col-md-4 p-3 animate__animated animate__fadeInDown text-center">
-                <div class="faculty-card1">
-                    <img src="{{asset($teacher->image)}}" class="faculty_profile" alt="Circular Image">
-                    <div class="faculty-card-content">
-                        <div class="head">
-                            <p>{{ $teacher->designation }}</p>
-                        </div>
-                        <h3 class="text_color">{{ $teacher->name }}</h3>
-                        <a href="{{ $teacher->fb }}">
-                            <i class="fa-brands fa-facebook icon1 p-2"></i>
-                        </a>
-                        <a href="{{ $teacher->linked }}">
-                            <i class="fa-brands fa-linkedin icon1 p-2"></i>
-                        </a>
-                        <a href="mailto:{{ $teacher->email }}">
-                            <i class="fa-solid fa-envelope icon1 p-2"></i>
-                        </a>
-                        <a href="tel:{{ $teacher->phone }}">
-                            <i class="fa-solid fa-square-phone icon1 p-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
-</div> --}}
-
-<br>
 
 <!-- Second Line: Three Cards -->
 <div class="container mt-5">

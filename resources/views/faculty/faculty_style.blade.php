@@ -2088,14 +2088,16 @@ body {
 }
 
 /* faculty Card */
+/* Faculty Card */
 .single-faculty {
     position: relative;
     border-radius: 10px;
     text-align: center;
-    height: 500px; /* Fixed total height */
+    height: 500px; /* Default height for large screens */
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures content doesn't overflow */
 }
 
 .single-faculty:hover {
@@ -2105,17 +2107,16 @@ body {
 
 .single-faculty img {
     width: 100%;
-    height: 100%; /* 60% of 600px = 360px */
+    height: auto; /* Automatically adjust height for responsiveness */
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-/* Doctor Info Section as Button */
 .single-faculty-info {
     padding: 15px;
     background-color: #fff;
-    height: 20%; /* 20% of 600px = 120px */
+    flex: 1; /* Adjust to take remaining space */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2146,23 +2147,22 @@ body {
     background-color: #0056b3;
 }
 
-/* Doctor Mask Styling */
+/* Faculty Mask Styling */
 .single-faculty-mask {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height:100%;
-    background: #37517ec3;
-    padding: ;
+    height: 100%;
+    background: rgba(55, 81, 126, 0.8);
     color: #fff;
     display: flex;
     justify-content: center;
-    border-radius: 10px;
     align-items: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    border-radius: 10px;
 }
 
 .single-faculty:hover .single-faculty-mask {
@@ -2175,32 +2175,22 @@ body {
     padding: 20px;
 }
 
-.single-faculty-mask h5 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.single-faculty-mask p {
-    font-size: 14px;
-    margin-bottom: 15px;
-    color: #ddd;
-}
-
 .single-faculty-mask ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .single-faculty-mask ul li {
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 .single-faculty-mask ul li a {
-    display: inline-block;
     padding: 8px 15px;
-    background-color:  #eff6ee;
+    background-color: #eff6ee;
     color: #2f2c2c;
     text-decoration: none;
     font-size: 14px;
@@ -2211,71 +2201,38 @@ body {
 .single-faculty-mask ul li a:hover {
     background-color: #0056b3;
     color: #fff;
-
-}
-
-/* Owl Carousel Styling */
-.owl-carousel .owl-item {
-    display: flex;
-    justify-content: center;
-}
-
-.owl-theme .owl-dots {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.owl-theme .owl-dots .owl-dot {
-    width: 10px;
-    height: 10px;
-    margin: 5px;
-    border-radius: 50%;
-    background-color: #ddd;
-    transition: background-color 0.3s ease;
-}
-
-.owl-theme .owl-dots .owl-dot.active {
-    background-color: #7bcc70;
 }
 
 /* Responsive Styling */
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
     .single-faculty {
-        height:100%; /* Adjust height for medium screens */
+        height: auto; /* Adjust for medium screens */
+        margin-bottom: 20px;
     }
-
     .single-faculty img {
-        height:100%; /* Adjust height for medium screens */
-    }
-
-    .single-faculty-info {
-        height:100%; /* Adjust height for medium screens */
+        height: auto;
     }
 }
 
 @media (max-width: 768px) {
+    .single-faculty {
+        height: auto;
+        flex: 1;
+    }
+
     .team-slider {
         flex-wrap: wrap;
-    }
-
-    .single-faculty {
-        width: 100%;
-        height: 450px; /* Adjust height for small screens */
-        margin-bottom: 20px;
-    }
-
-    .single-faculty img {
-        height:100%; /* Adjust height for medium screens */
     }
 }
 
 @media (max-width: 576px) {
     .single-faculty {
-        height: 400px; /* Further reduce height for extra small screens */
+        height: auto;
+        margin-bottom: 15px;
     }
 
-    .single-faculty img {
-        height:100%; /* Adjust height for medium screens */
+    .single-faculty-info {
+        padding: 10px;
     }
 }
 
