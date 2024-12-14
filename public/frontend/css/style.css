@@ -2073,6 +2073,11 @@ p {
     padding: 10px;
     letter-spacing: normal;
 }
+  .feature-custom{
+    height: 200px;
+    width: 200px;
+    transition: transform 0.4s;
+  }
   .alumni-custom{
     height: 160px;
     width: 150px;
@@ -2996,7 +3001,6 @@ a:hover {
     color: white;
     font-size: 1.5rem;
     text-align: center;
-    margin-top: 25px;
     padding: 10px;
 
 }
