@@ -31,9 +31,9 @@
                 <div class="card-body text-center">
                     <img src="{{ asset($teacher->image) }}" width="200" height="200" class="profile-img" alt="Faculty Image">
                     <h5 class="card-title">{{ $teacher->name }}</h5>
-                    <span class="badge badge-info mb-3 designation">{{ $teacher->designation }}</span>
+                    <span class="badge  mb-3 designation">{{ $teacher->designation }}</span>
                     <br>
-                    <button class="btn btn-bg-color" data-bs-toggle="modal" data-bs-target="#facultyModal{{ $teacher->teacher_id }}">Show Details</button>
+                    <button class="btn btn-bg-color mb-3" data-bs-toggle="modal" data-bs-target="#facultyModal{{ $teacher->teacher_id }}">Show Details</button>
                 </div>
             </div>
         </div>
@@ -78,13 +78,13 @@
                         <p><strong>Designation:</strong> {{ $teacher->designation }}</p>
                         <p><strong>Email:</strong> <a href="mailto:{{ $teacher->email }}" class="text-decoration-none">{{ $teacher->email }}</a></p>
                         <p><strong>Phone:</strong> <a href="tel:{{ $teacher->phone }}" class="text-decoration-none">{{ $teacher->phone }}</a></p>
-                        <p><strong>Facebook:</strong> <a href="{{ $teacher->fb }}" target="_blank" class="text-decoration-none">{{ $teacher->fb }}</a></p>
+                        <p><strong></strong> <a href="{{ $teacher->fb }}" target="_blank" class="text-decoration-none bi-facebook btn btn-primary">acebook</a></p>
                     </div>
                 </div>
-                <div class="mt-4">
-                    <h5>Additional Information</h5>
-                    <p>{{ $teacher->bio }}</p>
-                </div>
+                <!--<div class="mt-4">-->
+                <!--    <h5>Additional Information</h5>-->
+                <!--    <p>{{ $teacher->bio }}</p>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
@@ -108,13 +108,13 @@
                         <p><strong>Designation:</strong> {{ $teacher->designation }}</p>
                         <p><strong>Email:</strong> <a href="mailto:{{ $teacher->email }}" class="text-decoration-none">{{ $teacher->email }}</a></p>
                         <p><strong>Phone:</strong> <a href="tel:{{ $teacher->phone }}" class="text-decoration-none">{{ $teacher->phone }}</a></p>
-                        <p><strong>Facebook:</strong> <a href="{{ $teacher->fb }}" target="_blank" class="text-decoration-none">{{ $teacher->fb }}</a></p>
+                        <p><strong></strong> <a href="{{ $teacher->fb }}" target="_blank" class="text-decoration-none bi-facebook btn btn-primary">acebook</a></p>
                     </div>
                 </div>
-                <div class="mt-4">
-                    <h5>Additional Information</h5>
-                    <p>{{ $teacher->bio }}</p>
-                </div>
+                <!--<div class="mt-4">-->
+                <!--    <h5>Additional Information</h5>-->
+                <!--    <p>{{ $teacher->bio }}</p>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
@@ -144,6 +144,7 @@ function confirmDelete() {
     font-size: 1rem;
 }
 .designation {
+    font-size: 18px;
     font-weight: bold;
     color: #1e3256;
 }
@@ -288,8 +289,8 @@ img.img-fluid {
     position: relative;
     background: #fff;
     width: auto;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 14px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     overflow: hidden;
