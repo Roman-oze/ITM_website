@@ -7,66 +7,64 @@
         <i class="fa-solid fa-bars-staggered"></i>
     </button>
 
-    <!-- Navbar Search-->
-    <form action="" method="GET" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-        <div class="input-group">
-            <input class="form-control" type="text" name="search" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-            <button class="btn btn-primary" id="btnNavbarSearch" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-    </form>
+
 
     @can('manage-user')
+<!-- Notifications Dropdown -->
+<li class="nav-item dropdown  ms-auto me-0 me-md-3 my-2 my-md-0">
+    <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-bell fs-4"></i>
+        <span class="badge bg-danger rounded-circle position-absolute top-0 end-0 ml-2" style="font-size: 0.7rem; margin:9px">{{ \App\Models\Notification::where('is_read', false)->count() }}</span>
+    </a>
 
-    <!-- Notifications Dropdown -->
-    <li class="nav-item dropdown">
-        <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa fa-bell fs-4"></i>
-            <span class="badge bg-danger rounded-circle position-absolute top-0 end-0 ml-2" style="font-size: 0.7rem; margin:9px">{{ \App\Models\Notification::where('is_read', false)->count() }}</span>
-        </a>
+    <ul class="dropdown-menu  p-2  shadow text-left"
+        aria-labelledby="notificationDropdown"
+        style="min-width: 300px; max-width: 100%; border-radius: 10px; ">
 
-        <div class="d-flex justify-content-center align-items-center">
-            <ul class="dropdown-menu p-3 shadow-lg text-center"
-                aria-labelledby="notificationDropdown"
-                style="min-width: 350px; max-width: 100%; border-radius: 10px;">
+        <li class="dropdown-header text-primary fw-bold fs-5 text-center">Notifications</li>
+        <div class="dropdown-divider"></div>
 
-                <li class="dropdown-header text-primary fw-bold fs-5">Notifications</li>
-                <div class="dropdown-divider"></div>
-
-                <!-- Notification Items -->
-                <div class="list-group">
-                    @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
-                        <a href="{{ route('notifications.index') }}"
-                           class="list-group-item list-group-item-action d-flex align-items-start gap-2">
-                            <i class="fa fa-info-circle text-primary fs-4"></i>
-                            <div class="w-100">
-                                <div class="d-flex justify-content-between">
-                                    <strong class="text-dark text-truncate" style="max-width: 200px;">
-                                        {{ $notification->subject }}
-                                    </strong>
-                                    <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
-                                </div>
-                                <small class="text-muted text-truncate d-block" style="max-width: 250px;">
-                                    {{ $notification->message }}
-                                </small>
-                            </div>
-                        </a>
-                    @endforeach
-                </div>
-
-                <!-- View All Notifications Button -->
-                <div class="text-center mt-2">
-                    <a href="{{ route('notifications.index') }}" class="btn btn-primary btn-sm rounded-pill">
-                        View All Notifications
-                    </a>
-                </div>
-            </ul>
+        <!-- Notification Items -->
+        <div class="list-group">
+            @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
+                <a href="{{ route('notifications.index') }}"
+                   class="list-group-item list-group-item-action d-flex align-items-start gap-2">
+                    <i class="fa fa-info-circle text-primary fs-4"></i>
+                    <div class="w-100">
+                        <div class="d-flex justify-content-between">
+                            <strong class="text-dark text-truncate" style="max-width: 200px;">
+                                {{ $notification->subject }}
+                            </strong>
+                            <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
+                        </div>
+                        <small class="text-muted text-truncate d-block" style="max-width: 250px;">
+                            {{ $notification->message }}
+                        </small>
+                    </div>
+                </a>
+            @endforeach
         </div>
 
-    </li>
-    @endcan
+        <!-- View All Notifications Button -->
+        <div class="text-center mt-2">
+            <a href="{{ route('notifications.index') }}" class="btn btn-primary btn-sm rounded-pill">
+                View All Notifications
+            </a>
+        </div>
+    </ul>
+</li>
+@endcan
 
+
+  <!-- Navbar Search-->
+  <form action="" method="GET" class="d-none d-md-inline-block form-inline  me-md-3 my-2 my-md-0">
+    <div class="input-group">
+        <input class="form-control" type="text" name="search" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+        <button class="btn btn-primary" id="btnNavbarSearch" type="submit">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+</form>
     <!-- User Profile Dropdown -->
     {{-- <div class="d-flex align-items-center ms-sm-6">
         <div class="dropdown">
@@ -137,15 +135,63 @@
   </script>
   <style>
     /* Advanced Notification Dropdown Styling */
-.nav-link .badge {
+    .nav-link .badge {
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Glow effect on badge */
 }
 
 .dropdown-menu {
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f8f9fa;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    position: absolute !important;
+    min-width: 250px;
+    max-width: 100%;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 53px;
+    right: -14px;
+    background-color: #2c3e50;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    min-width: 180px;
+    z-index: 100;
+}
+
+.menu-dropdown.active {
+    display: block;
+}
+
+.menu-header {
+    background-color: #1abc9c;
+    color: #fff;
+    padding: 12px 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #16a085;
+}
+
+.menu-item {
+    border-bottom: 1px solid #34495e;
+    transition: background-color 0.3s;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-link:hover {
+    background-color: #1abc9c;
+    color: #ffffff;
 }
 
 .dropdown-header {
@@ -157,6 +203,9 @@
     border: none;
     border-radius: 8px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: auto;
+
 }
 
 .list-group-item:hover {
@@ -168,6 +217,7 @@
     min-width: 30px;
     text-align: center;
 }
+
 
 .btn-primary {
     background-color:#2c3e50;;
@@ -187,6 +237,7 @@
       font-weight: bold;
       text-decoration: none;
     }
+
 /*
     .nav-links-wrapper {
       display: flex;
@@ -225,52 +276,7 @@
       transform: scale(1.1);
     }
 
-    .menu-dropdown {
-      display: none;
-      position: absolute;
-      top: 53px;
-      right: -14px;
-      background-color: #2c3e50;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      min-width: 180px;
-      z-index: 100;
-    }
 
-    .menu-dropdown.active {
-      display: block;
-    }
-
-    .menu-header {
-      background-color: #1abc9c;
-      color: #fff;
-      padding: 12px 15px;
-      font-weight: bold;
-      border-bottom: 1px solid #16a085;
-    }
-
-    .menu-item {
-      border-bottom: 1px solid #34495e;
-      transition: background-color 0.3s;
-    }
-
-    .menu-item:last-child {
-      border-bottom: none;
-    }
-
-    .menu-link {
-      color: #ecf0f1;
-      text-decoration: none;
-      padding: 10px 20px;
-      display: block;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .menu-link:hover {
-      background-color: #1abc9c;
-      color: #ffffff;
-    }
 
     /* Dropdown Arrow Icon */
     .arrow-indicator {

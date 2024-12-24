@@ -2088,16 +2088,14 @@ body {
 }
 
 /* faculty Card */
-/* Faculty Card */
 .single-faculty {
     position: relative;
     border-radius: 10px;
     text-align: center;
-    height: 500px; /* Default height for large screens */
+    height: auto; /* Fixed total height */
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Ensures content doesn't overflow */
 }
 
 .single-faculty:hover {
@@ -2107,16 +2105,17 @@ body {
 
 .single-faculty img {
     width: 100%;
-    height: auto; /* Automatically adjust height for responsiveness */
+    height: 100%; /* 60% of 600px = 360px */
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
+/* Doctor Info Section as Button */
 .single-faculty-info {
-    padding: 15px;
+    padding: 10px;
     background-color: #fff;
-    flex: 1; /* Adjust to take remaining space */
+    height: 20%; /* 20% of 600px = 120px */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2147,22 +2146,23 @@ body {
     background-color: #0056b3;
 }
 
-/* Faculty Mask Styling */
+/* Doctor Mask Styling */
 .single-faculty-mask {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(55, 81, 126, 0.8);
+    height:100%;
+    background: #37517ec3;
+    padding: ;
     color: #fff;
     display: flex;
     justify-content: center;
+    border-radius: 10px;
     align-items: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    border-radius: 10px;
 }
 
 .single-faculty:hover .single-faculty-mask {
@@ -2175,22 +2175,32 @@ body {
     padding: 20px;
 }
 
+.single-faculty-mask h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.single-faculty-mask p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
 .single-faculty-mask ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
 }
 
 .single-faculty-mask ul li {
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .single-faculty-mask ul li a {
+    display: inline-block;
     padding: 8px 15px;
-    background-color: #eff6ee;
+    background-color:  #eff6ee;
     color: #2f2c2c;
     text-decoration: none;
     font-size: 14px;
@@ -2201,30 +2211,74 @@ body {
 .single-faculty-mask ul li a:hover {
     background-color: #0056b3;
     color: #fff;
+
 }
 
+/* Owl Carousel Styling */
+.owl-carousel .owl-item {
+    display: flex;
+    justify-content: center;
+}
+
+.owl-theme .owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-theme .owl-dots .owl-dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.owl-theme .owl-dots .owl-dot.active {
+    background-color: #7bcc70;
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+    .single-faculty {
+        height:100%; /* Adjust height for medium screens */
+    }
+
+    .single-faculty img {
+        height:100%; /* Adjust height for medium screens */
+    }
+
+    .single-faculty-info {
+        height:100%; /* Adjust height for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .team-slider {
+        flex-wrap: wrap;
+    }
+
+    .single-faculty {
+        width: 100%;
+        height: 450px; /* Adjust height for small screens */
+        margin-bottom: 20px;
+    }
+    .single-faculty-info h4,
+    .single-faculty-info span {
+        display: none;
+    }
+    .single-faculty img {
+        height:100%; /* Adjust height for medium screens */
+    }
+}
 
 @media (max-width: 576px) {
     .single-faculty {
-        height: auto;
-        margin-bottom: 15px;
+        height: 400px; /* Further reduce height for extra small screens */
     }
 
-    .single-faculty-info {
-        padding: 10px;
-    }
-}
-/* Hide single-faculty-info on Mobile-L and Mobile-M devices */
-@media (max-width: 768px) and (min-width: 576px) {
-    .single-faculty-info {
-        display: none; /* Hide on Mobile-L and Mobile-M */
-    }
-}
-
-/* Optional: Adjustments for extra small screens */
-@media (max-width: 576px) {
-    .single-faculty-info {
-        display: none; /* Ensure it's also hidden on Mobile-M */
+    .single-faculty img {
+        height:100%; /* Adjust height for medium screens */
     }
 }
 
