@@ -30,9 +30,10 @@ class FacultyController extends Controller
 
 
 
-        $teachers = Teacher::whereNotIn('designation', ['Dean of ITM Department','Head of ITM Department'])->get();
+        $teachers = Teacher::whereNotIn('teacher_id', [1, 2])->get();
 
-        $teachers_new = Teacher::whereIn('designation', ['Dean of ITM Department','Head of ITM Department'])->get();
+        $teachers_new = Teacher::whereIn('teacher_id', [1, 2])->get();
+
 
 
         $staffs = Staff::whereIn('position', ['Assistant Coordination Officer'])->get();
@@ -58,7 +59,16 @@ class FacultyController extends Controller
         $teachers =Teacher::paginate(10);
 
 
-        return view('faculty.index',compact('teachers','menus'));
+        $teachers_new = Teacher::whereIn('teacher_id', [1, 2])->get();
+
+
+
+        return view('faculty.index',[
+            'menus' => $menus,
+            'teachers' => $teachers,
+            'teachers_new' => $teachers_new
+            ]);
+
     }
 
     /**

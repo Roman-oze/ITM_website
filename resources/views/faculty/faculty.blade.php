@@ -52,7 +52,6 @@
                             <a href="tel:{{ $teacher->phone }}">
                                 <i class="fa-solid fa-square-phone icon1 p-2"></i>
                             </a>
-                            <br>
 
                             <li><a href="{{ $teacher->fb }}">Facebook</a></li>
                         </ul>
