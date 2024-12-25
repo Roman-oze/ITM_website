@@ -24,9 +24,9 @@ class MenuPermissionController extends Controller
             public function create()
         {
             $user = Auth::user();
-
             $menus = Menu::all();
             $roles = Role::all();
+
 
 
             return view('setup-menu.menu-permission.assign-permission', compact('menus', 'roles'));
@@ -66,9 +66,10 @@ class MenuPermissionController extends Controller
 
     public function edit($id)
     {
+        $roles = Role::all();
         $permission = MenuPermission::with('role', 'menu')->findOrFail($id);
         $menus = Menu::all();
-        return view('setup-menu.menu-permission.edit', compact('permission','menus'));
+        return view('setup-menu.menu-permission.edit', compact('permission','menus','roles'));
     }
     public function update(Request $request, $id)
     {
