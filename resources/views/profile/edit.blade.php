@@ -81,51 +81,70 @@
 
 
             {{-- @include('profile.partials.update-password-form') --}}
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="custom-card">
-                            <div class="card-header">
-                                <h4>Update Password</h4>
-                            </div>
-                            <div class="card-body">
-                                <form method="post" action="{{ route('password.update') }}">
-                                    @csrf
-                                    @method('put')
+           <!-- Include Font Awesome CSS in your <head> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-                                    <div id="alerts"></div> <!-- Placeholder for alerts -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="custom-card">
+                <div class="card-header">
+                    <h4>Update Password</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{{ route('password.update') }}">
+                        @csrf
+                        @method('put')
 
-                                    <div class="form-group">
-                                        <label for="current_password">Current Password</label>
-                                        <div class="password-wrapper">
-                                            <input type="password" id="current_password" class="form-control" name="current_password"  required>
-                                            <span class="toggle-password" onclick="togglePassword('current_password')">&#x1F441;</span>
-                                        </div>
-                                    </div>
+                        <div id="alerts"></div> <!-- Placeholder for alerts -->
 
-                                    <div class="form-group">
-                                        <label for="password">New Password</label>
-                                        <div class="password-wrapper">
-                                            <input type="password" id="password" class="form-control" name="password"  required>
-                                            <span class="toggle-password" onclick="togglePassword('password')">&#x1F441;</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="password_confirmation">Confirm Password</label>
-                                        <div class="password-wrapper">
-                                            <input type="password" id="password_confirmation" class="form-control" name="password_confirmation"  required>
-                                            <span class="toggle-password" onclick="togglePassword('password_confirmation')">&#x1F441;</span>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary btn-block mt-4">Save</button>
-                                </form>
+                        <div class="form-group">
+                            <label for="current_password">Current Password</label>
+                            <div class="password-wrapper position-relative">
+                                <input type="password" id="current_password" class="form-control" name="current_password" required>
+                                <span class="toggle-password position-absolute" style="top: 50%; right: 10px; cursor: pointer;" onclick="togglePassword('current_password')">👀</span>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="form-group">
+                            <label for="password">New Password</label>
+                            <div class="password-wrapper position-relative">
+                                <input type="password" id="password" class="form-control" name="password" required>
+                                <span class="toggle-password position-absolute" style="top: 50%; right: 10px; cursor: pointer;" onclick="togglePassword('password')">👀</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password_confirmation">Confirm Password</label>
+                            <div class="password-wrapper position-relative">
+                                <input type="password" id="password_confirmation" class="form-control" name="password_confirmation" required>
+                                <span class="toggle-password position-absolute" style="top: 50%; right: 10px; cursor: pointer;" onclick="togglePassword('password_confirmation')">👀</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block mt-4">Save</button>
+                    </form>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function togglePassword(fieldId) {
+        const passwordField = document.getElementById(fieldId);
+        const toggleIcon = passwordField.nextElementSibling;
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleIcon.textContent = "🙈"; // Change icon to "hide" (monkey covering eyes)
+        } else {
+            passwordField.type = "password";
+            toggleIcon.textContent = "👀"; // Change icon to "show" (eyes open)
+        }
+    }
+</script>
+
+
 
 <br>
 <br>

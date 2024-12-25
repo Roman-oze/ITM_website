@@ -1,122 +1,82 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark ">
-    <!-- Navbar Brand-->
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand -->
     <a class="navbar-brand ps-3" href="{{ route('dashboard') }}">ITM</a>
 
-    <!-- Sidebar Toggle-->
+    <!-- Sidebar Toggle -->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 fa-2x" id="sidebarToggle" href="#!">
         <i class="fa-solid fa-bars-staggered"></i>
     </button>
 
-
-
-    @can('manage-user')
-<!-- Notifications Dropdown -->
-<li class="nav-item dropdown  ms-auto me-0 me-md-3 my-2 my-md-0">
-    <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa fa-bell fs-4"></i>
-        <span class="badge bg-danger rounded-circle position-absolute top-0 end-0 ml-2" style="font-size: 0.7rem; margin:9px">{{ \App\Models\Notification::where('is_read', false)->count() }}</span>
-    </a>
-
-    <ul class="dropdown-menu  p-2  shadow text-left"
-        aria-labelledby="notificationDropdown"
-        style="min-width: 300px; max-width: 100%; border-radius: 10px; ">
-
-        <li class="dropdown-header text-primary fw-bold fs-5 text-center">Notifications</li>
-        <div class="dropdown-divider"></div>
-
-        <!-- Notification Items -->
-        <div class="list-group">
-            @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
-                <a href="{{ route('notifications.index') }}"
-                   class="list-group-item list-group-item-action d-flex align-items-start gap-2">
-                    <i class="fa fa-info-circle text-primary fs-4"></i>
-                    <div class="w-100">
-                        <div class="d-flex justify-content-between">
-                            <strong class="text-dark text-truncate" style="max-width: 200px;">
-                                {{ $notification->subject }}
-                            </strong>
-                            <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
-                        </div>
-                        <small class="text-muted text-truncate d-block" style="max-width: 250px;">
-                            {{ $notification->message }}
-                        </small>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-
-        <!-- View All Notifications Button -->
-        <div class="text-center mt-2">
-            <a href="{{ route('notifications.index') }}" class="btn btn-primary btn-sm rounded-pill">
-                View All Notifications
+    <div class="d-flex align-items-center ms-auto me-0 me-md-3">
+        @can('manage-user')
+        <!-- Notifications Dropdown -->
+        <li class="nav-item dropdown me-3">
+            <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-bell fs-4"></i>
+                <span class="badge bg-danger rounded-circle position-absolute top-0 end-0" style="font-size: 0.7rem; margin: 9px;">
+                    {{ \App\Models\Notification::where('is_read', false)->count() }}
+                </span>
             </a>
-        </div>
-    </ul>
-</li>
-@endcan
 
+            <ul class="dropdown-menu dropdown-menu-end p-3 shadow-lg" aria-labelledby="notificationDropdown" style="min-width: 350px; max-width: 100%; border-radius: 10px;">
+                <li class="dropdown-header text-center text-primary fw-bold fs-5">Notifications</li>
+                <div class="dropdown-divider"></div>
 
-  <!-- Navbar Search-->
-  <form action="" method="GET" class="d-none d-md-inline-block form-inline  me-md-3 my-2 my-md-0">
-    <div class="input-group">
-        <input class="form-control" type="text" name="search" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-        <button class="btn btn-primary" id="btnNavbarSearch" type="submit">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
-</form>
-    <!-- User Profile Dropdown -->
-    {{-- <div class="d-flex align-items-center ms-sm-6">
-        <div class="dropdown">
-            <!-- Profile Button -->
-            <button class="profile-btn text-dark dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="user-name">{{ Auth::user()->name }}</span>
-            </button>
+                <!-- Notification Items -->
+                <div class="list-group">
+                    @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
+                        <a href="{{ route('notifications.index') }}" class="list-group-item list-group-item-action d-flex align-items-start gap-2">
+                            <i class="fa fa-info-circle text-primary fs-4"></i>
+                            <div class="w-100">
+                                <div class="d-flex justify-content-between">
+                                    <strong class="text-dark text-truncate" style="max-width: 200px;">{{ $notification->subject }}</strong>
+                                    <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
+                                </div>
+                                <small class="text-muted text-truncate d-block" style="max-width: 250px;">{{ $notification->message }}</small>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
 
-            <!-- Dropdown Menu -->
-            <ul class="dropdown-menu dropdown-menu-end advanced-dropdown" aria-labelledby="userDropdown">
-                <!-- Profile Link -->
-                <li>
-                    <a class="dropdown-item profile-item" href="{{ route('profile.edit') }}">
-                        <i class="bi bi-person-lines-fill me-2"></i> {{ __('Profile') }}
-                    </a>
-                </li>
-
-                <!-- Logout -->
-                <li>
-                    <form method="POST" action="{{ route('logout') }}" class="logout-form">
-                        @csrf
-                        <button type="submit" class="dropdown-item logout-item" onclick="event.preventDefault(); this.closest('form').submit();">
-                            <i class="bi bi-box-arrow-right me-2"></i>{{ __('Log Out') }}
-                        </button>
-                    </form>
-                </li>
+                <!-- View All Notifications Button -->
+                <div class="text-center mt-2">
+                    <a href="{{ route('notifications.index') }}" class="btn btn-primary btn-sm rounded-pill">View All Notifications</a>
+                </div>
             </ul>
-        </div>
-    </div> --}}
+        </li>
+        @endcan
+
+        <!-- Navbar Search -->
+        <form action="" method="GET" class="d-none d-md-inline-block form-inline">
+            <div class="input-group">
+                <input class="form-control" type="text" name="search" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
     <div class="profile-container" onclick="toggleMenu()">
         <img src="{{asset('frontend/image/nav_logo.jpg')}}" alt="Profile Image" class="avatar-image">
         <div class="menu-dropdown">
-          <div class="arrow-indicator"></div>
-          <div class="menu-header p">
-             {{ Auth::user()->name }}</div>
-          <div class="menu-item">
-            <a href="{{ route('profile.edit') }}" class="dropdown-item logout-item">
-                {{ __('Profile') }}
-            </a>
-
-          </div>
-          <div class="menu-item">
-            <form method="POST" action="{{ route('logout') }}" class="logout-form">
-                @csrf
-                <button type="submit" class="dropdown-item logout-item" onclick="event.preventDefault(); this.closest('form').submit();">
-                    <i class="bi bi-box-arrow-right me-2 "></i>{{ __('Log Out') }}
-                </button>
-            </form>
-          </div>
+            <div class="arrow-indicator"></div>
+            <div class="menu-header p">{{ Auth::user()->name }}</div>
+            <div class="menu-item">
+                <a href="{{ route('profile.edit') }}" class="dropdown-item logout-item">{{ __('Profile') }}</a>
+            </div>
+            <div class="menu-item">
+                <form method="POST" action="{{ route('logout') }}" class="logout-form">
+                    @csrf
+                    <button type="submit" class="dropdown-item logout-item" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <i class="bi bi-box-arrow-right me-2"></i>{{ __('Log Out') }}
+                    </button>
+                </form>
+            </div>
         </div>
-      </div>
+    </div>
 </nav>
+
 <script>
     // JavaScript to toggle the dropdown menu
     function toggleMenu() {
