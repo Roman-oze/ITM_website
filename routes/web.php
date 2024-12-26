@@ -20,6 +20,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuPermissionController;
 use App\Http\Controllers\NoticeBoardController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -277,6 +278,13 @@ Route::post('/notifications', [NotificationController::class, 'store'])->name('n
 Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy'])->name('notifications.delete');
 
 
+
+
+Route::get('/feedback', [FeedbackController::class, 'create'])->name('feedback.create');
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+Route::patch('/feedback/{feedback}/read', [FeedbackController::class, 'markAsRead'])->name('feedback.read');
+Route::get('/feedback/list', [FeedbackController::class, 'index'])->name('feedback.index');
+Route::delete('/feedback/{feedback}', [FeedbackController::class, 'destroy'])->name('feedback.delete');
 
 
 

@@ -663,7 +663,8 @@ justify-content:space-evenly;
 
 }
 .img-fluid-custom{
-  width: 100%;
+  width: 210px;
+  height: 210px;
   aspect-ratio: 3/2;
   object-fit: contain;
   transition: transform 0.4s;

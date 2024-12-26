@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Notification;
+use App\Models\Feedback;
 
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
 class NotificationController extends Controller
@@ -12,7 +13,9 @@ class NotificationController extends Controller
     public function index()
     {
         $notifications = Notification::orderBy('created_at', 'desc')->paginate(10);
-        return view('notifications.index', compact('notifications'));
+        $feedbacks = Feedback::orderBy('created_at', 'desc')->paginate(10);
+
+        return view('notifications.index', compact('notifications','feedbacks'));
     }
 
     // Mark notification as read
