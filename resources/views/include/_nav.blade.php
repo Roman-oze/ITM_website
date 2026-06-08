@@ -1,257 +1,236 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <!-- Navbar Brand -->
-    <a class="navbar-brand ps-3" href="{{ route('dashboard') }}">ITM</a>
+<nav class="sb-topnav navbar navbar-expand navbar-dark modern-topbar px-4 border-bottom">
 
-    <!-- Sidebar Toggle -->
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 fa-2x" id="sidebarToggle" href="#!">
-        <i class="fa-solid fa-bars-staggered"></i>
-    </button>
+    <div class="d-flex align-items-center gap-3">
+        <a class="navbar-brand fw-bold tracking-wide text-white m-0" href="{{ route('dashboard') }}">
+            <i class="fas fa-terminal text-primary me-2"></i>ITM<span class="fs-xs fw-normal text-muted ms-1">v2.0</span>
+        </a>
 
-    <div class="d-flex align-items-center ms-auto me-0 me-md-3">
-        @can('manage-user')
-        <!-- Notifications Dropdown -->
-        <li class="nav-item dropdown me-3">
-            <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-bell fs-4"></i>
-                <span class="badge bg-danger rounded-circle position-absolute top-0 end-0" style="font-size: 0.7rem; margin: 9px;">
-                    {{ \App\Models\Notification::where('is_read', false)->count() }}
-                </span>
-            </a>
-
-            <ul class="dropdown-menu dropdown-menu-end p-3 shadow-lg" aria-labelledby="notificationDropdown" style="min-width: 350px; max-width: 100%; border-radius: 10px;">
-                <li class="dropdown-header text-center text-primary fw-bold fs-5">Notifications</li>
-                <div class="dropdown-divider"></div>
-
-                <!-- Notification Items -->
-                <div class="list-group">
-                    @foreach(\App\Models\Notification::latest()->take(5)->get() as $notification)
-                        <a href="{{ route('notifications.index') }}" class="list-group-item list-group-item-action d-flex align-items-start gap-2">
-                            <i class="fa fa-info-circle text-primary fs-4"></i>
-                            <div class="w-100">
-                                <div class="d-flex justify-content-between">
-                                    <strong class="text-dark text-truncate" style="max-width: 200px;">{{ $notification->subject }}</strong>
-                                    <small class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
-                                </div>
-                                <small class="text-muted text-truncate d-block" style="max-width: 250px;">{{ $notification->message }}</small>
-                            </div>
-                        </a>
-                    @endforeach
-                </div>
-
-                <!-- View All Notifications Button -->
-                <div class="text-center mt-2">
-                    <a href="{{ route('notifications.index') }}" class="btn btn-primary btn-sm rounded-pill">View All Notifications</a>
-                </div>
-            </ul>
-        </li>
-        @endcan
-
-        <!-- Navbar Search -->
-        <form action="" method="GET" class="d-none d-md-inline-block form-inline">
-            <div class="input-group">
-                <input class="form-control" type="text" name="search" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </form>
+        <button class="btn btn-icon-toggle d-flex align-items-center justify-content-center" id="sidebarToggle" href="#!">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
     </div>
 
-    <div class="profile-container" onclick="toggleMenu()">
-        <img src="{{asset('frontend/image/nav_logo.jpg')}}" alt="Profile Image" class="avatar-image">
-        <div class="menu-dropdown">
-            <div class="arrow-indicator"></div>
-            <div class="menu-header p">{{ Auth::user()->name }}</div>
-            <div class="menu-item">
-                <a href="{{ route('profile.edit') }}" class="dropdown-item logout-item">{{ __('Profile') }}</a>
+    <div class="d-flex align-items-center ms-auto gap-3">
+
+        <form action="" method="GET" class="d-none d-md-inline-block form-inline modern-search-form">
+            <div class="input-group-modern position-relative">
+                <span class="search-icon-inside position-absolute top-50 start-0 translate-middle-y ps-3 text-muted">
+                    <i class="fas fa-search fs-sm"></i>
+                </span>
+                <input class="form-control form-control-modern ps-5 pe-4 py-2" type="text" name="search" placeholder="Search resources, pull requests..." aria-label="Search" />
+                <span class="search-shortcut d-none d-lg-inline-block position-absolute top-50 end-0 translate-middle-y me-2 badge bg-dark text-muted border border-secondary border-opacity-25">⌘K</span>
             </div>
-            <div class="menu-item">
-                <form method="POST" action="{{ route('logout') }}" class="logout-form">
-                    @csrf
-                    <button type="submit" class="dropdown-item logout-item" onclick="event.preventDefault(); this.closest('form').submit();">
-                        <i class="bi bi-box-arrow-right me-2"></i>{{ __('Log Out') }}
-                    </button>
-                </form>
-            </div>
-        </div>
+        </form>
+
+        <ul class="navbar-nav align-items-center gap-2">
+            @can('manage-user')
+            <li class="nav-item dropdown">
+                <a class="nav-link notification-bell-link position-relative d-flex align-items-center justify-content-center rounded-circle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-bell fs-5 text-muted-hover"></i>
+                    @php
+                        $unreadCount = \App\Models\Notification::where('is_read', false)->count();
+                    @endphp
+                    @if($unreadCount > 0)
+                        <span class="badge-dot position-absolute top-0 end-0 bg-danger"></span>
+                    @endif
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-end p-0 shadow-xl border border-secondary border-opacity-10 modern-dropdown-panel animate-fade-in" aria-labelledby="notificationDropdown">
+                    <div class="p-3 d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-10 bg-dark-card-header">
+                        <span class="fw-semibold text-white fs-6">Notifications</span>
+                        <span class="badge bg-primary-subtle text-primary rounded-pill px-2 py-1 fs-xs">{{ $unreadCount }} Unread</span>
+                    </div>
+
+                    <div class="list-group list-group-flush overflow-auto-y" style="max-height: 320px;">
+                        @forelse(\App\Models\Notification::latest()->take(5)->get() as $notification)
+                            <a href="{{ route('notifications.index') }}" class="list-group-item list-group-item-action d-flex gap-3 px-3 py-2-5 border-bottom border-secondary border-opacity-10 bg-hover-slate">
+                                <div class="icon-avatar bg-primary-subtle rounded-circle d-flex align-items-center justify-content-center text-primary" style="width:36px; height:36px; flex-shrink: 0;">
+                                    <i class="fa-solid fa-circle-info fs-5"></i>
+                                </div>
+                                <div class="w-100 min-w-0">
+                                    <div class="d-flex justify-content-between align-items-baseline mb-1">
+                                        <h6 class="text-white text-truncate mb-0 fs-sm fw-medium" style="max-width: 160px;">{{ $notification->subject }}</h6>
+                                        <span class="text-muted fs-xs">{{ $notification->created_at->diffForHumans(null, true) }}</span>
+                                    </div>
+                                    <p class="text-muted text-truncate mb-0 fs-xs">{{ $notification->message }}</p>
+                                </div>
+                            </a>
+                        @empty
+                            <div class="p-4 text-center text-muted fs-xs">
+                                <i class="fa-regular fa-folder-open d-block fs-3 mb-2 opacity-50"></i>
+                                No active production notifications found.
+                            </div>
+                        @endforelse
+                    </div>
+
+                    <div class="p-2 text-center border-top border-secondary border-opacity-10">
+                        <a href="{{ route('notifications.index') }}" class="btn btn-link btn-sm text-primary text-decoration-none fs-xs fw-medium w-100 py-1">View cloud stream panel</a>
+                    </div>
+                </div>
+            </li>
+            @endcan
+
+            <li class="nav-item dropdown">
+                <div class="profile-avatar-trigger position-relative d-flex align-items-center" id="userProfileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{ asset('frontend/image/nav_logo.jpg') }}" alt="Profile Avatar" class="avatar-image-modern shadow-sm">
+                    <span class="status-indicator online"></span>
+                </div>
+
+                <div class="dropdown-menu dropdown-menu-end p-2 shadow-xl border border-secondary border-opacity-10 modern-dropdown-panel animate-fade-in" aria-labelledby="userProfileDropdown">
+                    <div class="px-3 py-2 border-bottom border-secondary border-opacity-10 mb-1">
+                        <p class="text-white fw-medium mb-0 fs-sm">{{ Auth::user()->name }}</p>
+                        <p class="text-muted mb-0 fs-xs text-truncate">{{ Auth::user()->email ?? 'engineer@company.com' }}</p>
+                    </div>
+
+                    <a href="{{ route('profile.edit') }}" class="dropdown-item modern-dropdown-item rounded-2 py-2 fs-sm">
+                        <i class="fa-regular fa-user me-2 opacity-70"></i>Account Setup
+                    </a>
+
+                    <div class="dropdown-divider border-secondary border-opacity-10"></div>
+
+                    <form method="POST" action="{{ route('logout') }}" class="m-0">
+                        @csrf
+                        <button type="submit" class="dropdown-item modern-dropdown-item text-danger rounded-2 py-2 fs-sm" onclick="event.preventDefault(); this.closest('form').submit();">
+                            <i class="fa-solid fa-arrow-right-from-bracket me-2 opacity-70"></i>{{ __('Sign Out') }}
+                        </button>
+                    </form>
+                </div>
+            </li>
+        </ul>
     </div>
 </nav>
 
-<script>
-    // JavaScript to toggle the dropdown menu
-    function toggleMenu() {
-      const menuDropdown = document.querySelector('.menu-dropdown');
-      menuDropdown.classList.toggle('active');
-    }
-
-    // Close the dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-      const profileContainer = document.querySelector('.profile-container');
-      const menuDropdown = document.querySelector('.menu-dropdown');
-      if (!profileContainer.contains(event.target)) {
-        menuDropdown.classList.remove('active');
-      }
-    });
-  </script>
-  <style>
-    /* Advanced Notification Dropdown Styling */
-    .nav-link .badge {
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Glow effect on badge */
+<style>
+    /* Core Layout Modern Topbar Configuration */
+.modern-topbar {
+    background-color: #0f172a !important; /* Premium dark slate background matching the updated sidebar */
+    border-color: rgba(255, 255, 255, 0.06) !important;
+    height: 64px;
 }
 
-.dropdown-menu {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    position: absolute !important;
-    min-width: 250px;
-    max-width: 100%;
+/* Helper Text/Font Utilities */
+.fs-sm { font-size: 13px !important; }
+.fs-xs { font-size: 11px !important; }
+.py-2-5 { padding-top: 0.65rem; padding-bottom: 0.65rem; }
+.text-muted-hover { color: #94a3b8; transition: color 0.15s ease; }
+.text-muted-hover:hover { color: #f8fafc; }
+
+/* Custom Sleek Input Bar Elements */
+.modern-search-form .form-control-modern {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #f8fafc !important;
+    border-radius: 8px;
+    font-size: 13px;
+    width: 260px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modern-search-form .form-control-modern:focus {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    width: 320px; /* Expands elegantly on click */
+}
+.search-shortcut {
+    font-size: 10px !important;
+    font-family: monospace;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #64748b !important;
 }
 
-.menu-dropdown {
-    display: none;
+/* Interface Toggle Element Button */
+.btn-icon-toggle {
+    background: none;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    color: #94a3b8;
+    transition: all 0.15s ease;
+}
+.btn-icon-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8fafc;
+}
+
+/* Notification Dot Marker */
+.notification-bell-link {
+    width: 36px;
+    height: 36px;
+    transition: background 0.15s;
+}
+.notification-bell-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid #0f172a;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+
+/* Floating Clean Action Dropdown Panels */
+.modern-dropdown-panel {
+    background-color: #1e293b !important; /* Soft interior container color */
+    min-width: 320px;
+    border-radius: 12px !important;
+    margin-top: 10px !important;
+}
+.bg-dark-card-header {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.bg-hover-slate {
+    background-color: transparent;
+    transition: background-color 0.15s ease;
+}
+.bg-hover-slate:hover {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Profile Picture Actions */
+.profile-avatar-trigger {
+    cursor: pointer;
+}
+.avatar-image-modern {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.15s ease;
+}
+.profile-avatar-trigger:hover .avatar-image-modern {
+    border-color: #3b82f6;
+}
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     position: absolute;
-    top: 53px;
-    right: -14px;
-    background-color: #2c3e50;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    min-width: 180px;
-    z-index: 100;
+    bottom: 0;
+    right: 0;
+    border: 2px solid #0f172a;
+}
+.status-indicator.online { background-color: #10b981; }
+
+/* Menu Standard Actions */
+.modern-dropdown-item {
+    color: #94a3b8 !important;
+    transition: all 0.15s ease;
+}
+.modern-dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    color: #f8fafc !important;
 }
 
-.menu-dropdown.active {
-    display: block;
+/* Clean Micro Animation */
+.animate-fade-in {
+    animation: dropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.menu-header {
-    background-color: #1abc9c;
-    color: #fff;
-    padding: 12px 15px;
-    font-weight: bold;
-    border-bottom: 1px solid #16a085;
+@keyframes dropdownFadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
-.menu-item {
-    border-bottom: 1px solid #34495e;
-    transition: background-color 0.3s;
-}
-
-.menu-item:last-child {
-    border-bottom: none;
-}
-
-.menu-link {
-    color: #ecf0f1;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.menu-link:hover {
-    background-color: #1abc9c;
-    color: #ffffff;
-}
-
-.dropdown-header {
-    font-size: 18px;
-    margin-bottom: 0.5rem;
-}
-
-.list-group-item {
-    border: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    display: block;
-    margin: auto;
-
-}
-
-.list-group-item:hover {
-    background-color: #f1f3f5; /* Soft hover effect */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.list-group-item i {
-    min-width: 30px;
-    text-align: center;
-}
-
-
-.btn-primary {
-    background-color:#2c3e50;;
-    border: none;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.btn-primary:hover {
-    background-color:#2c3e50;;
-}
-
-       .brand-logo {
-      font-size: 24px;
-      color: #ecf0f1;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-/*
-    .nav-links-wrapper {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-item {
-      color: #ecf0f1;
-      text-decoration: none;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
-
-    .nav-item:hover {
-      color: #1abc9c;
-    }
-
-    /* Profile Dropdown */
-    .profile-container {
-      position: relative;
-      cursor: pointer;
-      margin: 20px;
-    }
-
-    .avatar-image {
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      object-fit: cover;
-      border: 2px solid #1abc9c;
-      transition: transform 0.3s;
-    }
-
-    .avatar-image:hover {
-      transform: scale(1.1);
-    }
-
-
-
-    /* Dropdown Arrow Icon */
-    .arrow-indicator {
-      width: 0;
-      height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid #2c3e50;
-      position: absolute;
-      top: -8px;
-      right: 15px;
-    }
-
-    /* Hover Animation */
-    .profile-container:hover .avatar-image {
-      transform: rotate(360deg);
-    } */
-  </style>
+</style>
