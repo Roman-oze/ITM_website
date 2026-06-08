@@ -94,17 +94,6 @@ class FeatureController extends Controller
     $feature->title = $validated['title'];
     $feature->description = $validated['description'];
 
-    // Handle optional image upload
-    if ($request->hasFile('image')) {
-        // Delete the old image if it exists
-        if ($feature->image) {
-            Storage::disk('feature')->delete($feature->image);
-        }
-
-        // Store the new image and update the path
-        $imagePath = $request->file('image')->store('images', 'public');
-        $feature->image = $imagePath;
-    }
 
     // Save the updated feature
     $feature->save();
