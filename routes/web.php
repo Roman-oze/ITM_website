@@ -26,6 +26,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\CommitteeController;
 use App\Http\Controllers\DashbaordController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\HeroSectionController;
 use App\Http\Controllers\NoticeBoardController;
@@ -310,11 +311,13 @@ Route::get('/feedback/list', [FeedbackController::class, 'index'])->name('feedba
 Route::delete('/feedback/{feedback}', [FeedbackController::class, 'destroy'])->name('feedback.delete');
 
 
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+
 
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/','home')->name('home');
-    Route::get('/gallery','gallery')->name('gallery');
+    // Route::get('/gallery','gallery')->name('gallery');
     route::get('/about','about')->name('about');
     route::get('/local_tuition','Local_tuition')->name('Local_tuition');
     route::get('/international_tuition','international_tuition')->name('international_tuition');

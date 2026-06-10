@@ -1,13 +1,13 @@
-@extends('club.layout.club_master')
 
-<!-- Navigation -->
+@extends('layout.app')
+@include('include.alerts')
 
 
-@include('club.layout.header')
-@section('main_content')
 
+
+@section('content')
 <!-- Welcome Section -->
-<section class="welcome-section">
+<section class="welcome-section mt-5">
     <div class="container p-1">
         <div class="jumbotron text-center  animate__animated animate__fadeInLeft"
         style="
@@ -49,23 +49,7 @@
     </div>
 
     <!-- Display All Other Committees Below -->
-    <div class="row">
-        @foreach ($committees as $committee)
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
-            <div class="card-club">
-                <div class="circle small"></div>
-                <div class="circle large"></div>
-                <h1>WELCOME</h1>
-                <h2>To the Club</h2>
-                <img src="{{ asset($committee->image) }}" alt="Profile Picture" class="profile-img">
-                <h5 class="name rounded-pill shadow">{{ $committee->name }}</h5>
-                <div class="footer">
-                    <p class="position">{{ $committee->position }}</p>
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
+   
 </div>
 
 <br>

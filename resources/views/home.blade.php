@@ -80,7 +80,7 @@
         <div id="map-widgets-holder" class="my-3 my-md-0 mx-3 mx-md-0 text-center text-md-left bg-white">
             <div class="info--card-holder mt-5 mt-md-0 ">
                 <aside class="mb-3">
-                    <h4 class="h4 mb-0 font-weight-bold heading-font text-blue p-1">Information Technology & Management</h4>
+                    <h4 class="h4 mb-0 font-weight-bold heading-font text-blue p-1">Software Giant LTD</h4>
                     <div class="mb-3">
                         <div>
 
@@ -94,7 +94,7 @@
                                     <span data-purecounter-start="0" data-purecounter-end="549"
                                         data-purecounter-duration="0" class="purecounter">{{ $studentCount }}</span>
                                     <p class="pure-text">
-                                        <a href="" class="text-white-50">Student</a>
+                                        <a href="" class="text-white-50">Clients</a>
                                     </p>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $facultyCount }}"
                                         data-purecounter-duration="0" class="purecounter">{{ $facultyCount }}</span>
                                     <p class="pure-text">
-                                        <a href="{{ route('faculty.member') }}" class="text-white-50">Faculty</a>
+                                        <a href="{{ route('faculty.member') }}" class="text-white-50">Project</a>
                                     </p>
 
                                 </div>
@@ -115,7 +115,7 @@
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $alumniCount }}"
                                         data-purecounter-duration="0" class="purecounter">{{ $alumniCount }}</span>
                                     <p class="pure-text">
-                                        <a href="{{ route('alumni') }}" class="text-white-50">Alumni</a>
+                                        <a href="{{ route('alumni') }}" class="text-white-50">Running</a>
                                     </p>
 
                                 </div>
@@ -125,7 +125,7 @@
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $scholarshipCount }}"
                                         data-purecounter-duration="0" class="purecounter">{{ $scholarshipCount }}</span>
                                     <p class="pure-text">
-                                        <a href="{{ route('scholarship') }}" class="text-white-50">Scholars</a>
+                                        <a href="{{ route('scholarship') }}" class="text-white-50">Draft</a>
                                     </p>
 
                                 </div>
@@ -257,12 +257,12 @@
                         <img src="{{ asset('frontend/image/why-us.png') }}" class="img-fluid main-image">
 
                         <div class="experience-card">
-                            <h3>10+</h3>
+                            <h3>5+</h3>
                             <span>Years Experience</span>
                         </div>
 
                         <div class="project-card">
-                            <h3>500+</h3>
+                            <h3>10+</h3>
                             <span>Projects Delivered</span>
                         </div>
 
@@ -786,7 +786,6 @@
         </div>
     </section>
 
-    <br><br><br><br><br>
 
 
     <section id="contact" class="contact">

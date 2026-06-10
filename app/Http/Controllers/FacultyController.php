@@ -29,18 +29,27 @@ class FacultyController extends Controller
         // $secondRowTeachers = $teachers->diff($firstRowTeachers);
 
 
+    // team
+        $boardOfDirectors = Teacher::whereIn('designation', [
+            'Managing Director',
+            'Director'
+        ])->get();
 
-        $teachers = Teacher::whereNotIn('teacher_id', [1, 2])->get();
+        $technicalTeam = Teacher::whereNotIn('designation', [
+            'Managing Director',
+            'Director'
+        ])->get();
 
-        $teachers_new = Teacher::whereIn('teacher_id', [1, 2])->get();
+        $teachers = Teacher::all();
 
 
 
         $staffs = Staff::whereIn('position', ['Assistant Coordination Officer'])->get();
 
         return view('faculty.faculty',[
-            'teachers' => $teachers,
-            'teachers_new' => $teachers_new,
+           'boardOfDirectors' => $boardOfDirectors,
+            'technicalTeam' => $technicalTeam,
+            'teachers' => $teachers
             // 'firstRowTeachers' => $firstRowTeachers,
             // 'secondRowTeachers' => $secondRowTeachers,
 

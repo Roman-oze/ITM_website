@@ -24,6 +24,8 @@ class HomeController extends Controller
     public function home()
     {
 
+        $photos = Gallery::where('type', 'Club')->get();
+        $single = Gallery::where('type', 'Club')->first();
         $hero = Herosection::first();
         $features = Feature::all();
         $services = Service::all();
@@ -58,7 +60,9 @@ class HomeController extends Controller
             'services' => $services,
             'boardOfDirectors' => $boardOfDirectors,
             'technicalTeam' => $technicalTeam,
-            'teachers' => $teachers
+            'teachers' => $teachers,
+            'photos' => $photos,
+            'single' => $single
 
         ]);
     }
