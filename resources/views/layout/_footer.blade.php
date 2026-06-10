@@ -23,7 +23,7 @@
           <div class="row">
             @foreach ($footers as $footer)
             <div class="col-lg-3 col-md-6 footer-contact">
-              <h3>( I T M )</h3>
+              <h3>( Software Giant )</h3>
               <p>
                 {{ $footer->address }} <br><br><strong>Phone:</strong>
                 {{ $footer->phone }}
@@ -42,7 +42,7 @@
                   <i class="bx bx-chevron-right"></i> <a href="{{route('about')}}">About us</a>
                 </li>
                 <li>
-                  <i class="bx bx-chevron-right"></i> <a href="https://daffodilvarsity.edu.bd/images/prospectus/BSc-in-ITM.jpg">Services</a>
+                  <i class="bx bx-chevron-right"></i> <a href="https://softwaregiantltd.com/">Services</a>
 
                 </li>
                 <li>
@@ -76,7 +76,7 @@
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>Our Social Networks</h4>
 
-              <img src="{{ asset('frontend/image/itmclub.png')}}" class="img-fluid" >
+              <img src="{{ asset('frontend/logo/sgl-marketing-logo.png')}}" class="img-fluid" >
 
               <div class="social-links mt-3">
                 <a href="{{ $footer->facebook }}" class="facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>

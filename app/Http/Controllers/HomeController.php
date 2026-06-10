@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Staff;
 use App\Models\Alumni;
 use App\Models\Footer;
@@ -26,30 +27,46 @@ class HomeController extends Controller
         $hero = Herosection::first();
         $features = Feature::all();
         $services = Service::all();
-        $footers= Footer::all();
+        $footers = Footer::all();
         $scholars = Scholarship::all();
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();
         $alumniCount = DB::table('alumnis')->count();
         $scholarshipCount = DB::table('scholarships')->count();
+        // team
+        $boardOfDirectors = Teacher::whereIn('designation', [
+            'Managing Director',
+            'Director'
+        ])->get();
+
+        $technicalTeam = Teacher::whereNotIn('designation', [
+            'Managing Director',
+            'Director'
+        ])->get();
+
+        $teachers = Teacher::all();
 
 
-         return view('home',compact('hero','scholars','footers'),[
-        'studentCount' => $studentCount,
-        'facultyCount' => $facultyCount,
-        'alumniCount' => $alumniCount,
-        'scholarshipCount' => $scholarshipCount,
-        'features' => $features,
-        'services' => $services,
-    ]);
 
 
+        return view('home', compact('hero', 'scholars', 'footers'), [
+            'studentCount' => $studentCount,
+            'facultyCount' => $facultyCount,
+            'alumniCount' => $alumniCount,
+            'scholarshipCount' => $scholarshipCount,
+            'features' => $features,
+            'services' => $services,
+            'boardOfDirectors' => $boardOfDirectors,
+            'technicalTeam' => $technicalTeam,
+            'teachers' => $teachers
+
+        ]);
     }
 
 
     public function Local_tuition()
     {
-       return view('admission.tuition');
+        return view('admission.tuition');
     }
 
     /**
@@ -57,30 +74,31 @@ class HomeController extends Controller
      */
     public function international_tuition()
     {
-       return view('admission.international_tuiton');
+        return view('admission.international_tuiton');
     }
     public function admission_eligibility()
     {
-       return view('admission.admission_eligibility');
+        return view('admission.admission_eligibility');
     }
 
-    public function gallery(){
+    public function gallery()
+    {
 
-        $gallery = Gallery::where('type','Departmental')->get();
+        $gallery = Gallery::where('type', 'Departmental')->get();
 
-        return view('website_setup.Gallery.create',compact('gallery'));
+        return view('website_setup.Gallery.create', compact('gallery'));
     }
 
     public function about()
     {
-         $officers = Staff::whereIn('position',['Dean and Professor of CSE','Associate Dean','Head of the Department'])->get();
-         $staffs = Staff::whereIn('position',['Assistant Coordination Officer'])->get();
+        $officers = Staff::whereIn('position', ['Dean and Professor of CSE', 'Associate Dean', 'Head of the Department'])->get();
+        $staffs = Staff::whereIn('position', ['Assistant Coordination Officer'])->get();
         //  $officers = $officers->merge($staffs);
         $footers = Footer::first();
-        $gallery = Gallery::where('type','Departmental')->get();
+        $gallery = Gallery::where('type', 'Departmental')->get();
         $photo = Gallery::where('type', 'Departmental')->first();
 
-        return view('frontend.about',[
+        return view('frontend.about', [
             'officers' => $officers,
             'staffs' => $staffs,
             'footers' => $footers,
@@ -88,14 +106,13 @@ class HomeController extends Controller
             'photo' => $photo,
         ]);
     }
-    public function chart(){
+    public function chart()
+    {
         return view('statistic.chart');
     }
 
-    public function static(){
+    public function static()
+    {
         return view('statistic.static');
     }
-
-
-
 }

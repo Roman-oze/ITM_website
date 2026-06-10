@@ -1,13 +1,13 @@
 
 <meta charset="UTF-8">
 
-<link rel="Website Icon" type="jpg" href="{{asset('frontend/image/IT3.jpg')}}">
+<link rel="Website Icon" type="jpg" href="{{asset('frontend/logo/sg-logo.png')}}">
 {{-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> --}}
 
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<title>Home | ITM</title>
+<title>Software Giant</title>
 
 <meta content="" name="description" />
 <meta content="" name="keywords" />
@@ -42,7 +42,7 @@
 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/app.min.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
-<link href="{{asset('frontend/image/Itmfullogo.png')}}" rel="icon" />
+<link href="{{asset('frontend/logo/sg-logo.png')}}" rel="icon" />
 <link rel="stylesheet" href="{{asset('frontend/css/animation.css')}}">
 
 {{-- <link rel="stylesheet" href="{{asset('z')}}"> --}}
