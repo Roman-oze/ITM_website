@@ -39,20 +39,6 @@
     </div>
 </section>
 
-<!-- Committee Section -->
-<div class="container mt-5">
-    <div class="col-lg-7 text-center mx-auto">
-        <div class="section-title">
-            <h3>ITM <span>Club New Committee</span></h3>
-            <span class="line"></span>
-        </div>
-    </div>
-
-    <!-- Display All Other Committees Below -->
-   
-</div>
-
-<br>
 
 <!-- Gallery Section -->
 <section id="gallery">

@@ -409,7 +409,6 @@ body {
 
   #hero h2 {
     color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 50px;
     font-size: 24px;
   }
 
@@ -901,6 +900,12 @@ body {
   .cta {
     background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)),
       url("../image/cta-bg.jpg") fixed center center;
+    background-size: cover;
+    padding: 120px 0;
+  }
+  .team-bg {
+    background:linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)),
+      url("../image/team-bg.png") fixed center center;
     background-size: cover;
     padding: 120px 0;
   }
@@ -2083,33 +2088,6 @@ div {
     margin-bottom: 30px;
 }
 
-.feature-card{
-    background: #fff;
-    border: 1px solid #edf0f7;
-    border-radius: 16px;
-    padding: 22px 15px;
-    text-align: center;
-    transition: all .3s ease;
-    height: 100%;
-}
-
-.feature-card:hover{
-    transform: translateY(-8px);
-    border-color: var(--primary);
-    box-shadow: 0 15px 35px rgba(55,81,126,.15);
-}
-
-.feature-card i{
-    font-size: 28px;
-    color: var(--primary);
-    margin-bottom: 12px;
-}
-
-.feature-card h6{
-    margin: 0;
-    font-weight: 600;
-    color: #1f2937;
-}
 
 .modern-accordion .accordion-item{
     border: none;
@@ -2184,9 +2162,7 @@ div {
         padding: 25px;
     }
 
-    .feature-card{
-        padding: 18px 12px;
-    }
+
 }
 
 @media (max-width: 576px){
@@ -2526,4 +2502,95 @@ div {
     transition: 0.3s ease;
 }
 
+
+
+        .feature-section {
+    background: #d5d9ea;
+    padding: 15px 0;
+}
+
+.feature-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.feature-card {
+    padding: 20px 10px;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+
+    transition:
+        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+
+    /* Black & White */
+    filter: grayscale(100%);
+    opacity: 0.75;
+    transform: scale(1);
+
+    /* Smooth Animation */
+    transition:
+        filter 0.8s ease-in-out,
+        opacity 0.8s ease-in-out,
+        transform 0.8s ease-in-out;
+}
+
+.feature-card:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+/* Optional title styling if you add titles later */
+.feature-card h6 {
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+
+    transition:
+        color 0.4s ease-in-out,
+        transform 0.4s ease-in-out;
+}
+
+.feature-card:hover h6 {
+    color: #0d6efd;
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .feature-section {
+        padding: 15px 0;
+    }
+
+    .feature-card {
+        padding: 15px 8px;
+        border-radius: 14px;
+    }
+
+    .feature-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .feature-card h6 {
+        font-size: 14px;
+    }
+}
 

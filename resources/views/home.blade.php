@@ -11,12 +11,12 @@
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 animate__animated animate__fadeInLeft"
                     data-aos="fade-up" data-aos-delay="200">
-                    <h1 class="text-white-50 welcome">Welcome!</h1>
-                    <h2>{{ $hero->title }}</h2>
+                    <h1 class="text-white-50 ">Welcome!</h1>
                     <h1>
-                        {{ $hero->description }}
+                        {{ $hero->title }}
                         <img src="{{ asset('frontend/image/verifi.png') }}" class="verify" alt="Verification Icon">
                     </h1>
+                    <h2>{{ $hero->description }}</h2>
 
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img animate__animated animate__fadeInRight" data-aos="zoom-in"
@@ -143,51 +143,46 @@
 
 
 
-    <section id="Feature" class="section-p1" style="background-color: rgb(213, 217, 234);">
-        <div class="inner d-flex flex-wrap justify-content-center text-center">
-            <div class="col p-3 avatar-container" onclick="toggleMenu()">
-                <img src="{{ asset('frontend/image/hunderd.png') }}" alt="" class="imgslide avatar-image">
-                <p class="col-btn">
-                    <a href="https://daffodilvarsity.edu.bd/tuition-fee-calculator" class="text-white"
-                        target="_blank">Waiver</a>
-                </p>
-            </div>
-            <div class="col p-3 avatar-container" onclick="toggleMenu()">
-                <img src="{{ asset('frontend/image/laptop.png') }}" alt="" class="imgslide avatar-image">
-                <p class="col-btn">
-                    <a href="https://laptop.daffodilvarsity.edu.bd/index.php/apply-and-instruction/instruction-for-laptop-receive"
-                        class="text-white" target="_blank">Free Laptop</a>
-                </p>
-            </div>
-            <div class="col p-3 avatar-container" onclick="toggleMenu()">
-                <img src="{{ asset('frontend/image/hall.png') }}" alt="" class="imgslide avatar-image">
-                <p class="col-btn">
-                    <a href="https://hall.daffodilvarsity.edu.bd/" class="text-white" target="_blank">Hall</a>
-                </p>
-            </div>
-            <div class="col p-3 avatar-container" onclick="toggleMenu()">
-                <img src="{{ asset('frontend/image/buss.png') }}" alt="" class="imgslide avatar-image">
-                <p class="col-btn">
-                    <a href="https://daffodilvarsity.edu.bd/article/transport" class="text-white"
-                        target="_blank">Transport</a>
-                </p>
-            </div>
-            <div class="col p-3 avatar-container" onclick="toggleMenu()">
-                <img src="{{ asset('frontend/image/lightbulb-icon.png') }}" alt=""
-                    class="imgslide avatar-image">
-                <p class="col-btn">
-                    <a href="" class="text-white" target="_blank">Innovation</a>
-                </p>
+    <section id="Feature" class="section-p1 feature-section">
+        <div class="container">
+            <div class="row justify-content-center text-center g-4">
 
-            </div>
-            <div class="col p-3 avatar-container" onclick="toggleMenu()">
-                <img src="{{ asset('frontend/image/clubimage.png') }}" alt="" class="imgslide avatar-image">
-                <p class="col-btn">
-                    <a href="{{ route('club') }}" class="text-white" target="_blank">Club</a>
-                </p>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <a href="https://hall.daffodilvarsity.edu.bd/" target="_blank" class="feature-link">
+                        <div class="feature-card">
+                            <img src="https://edge.gov.bd/wp-content/themes/edgewebsite/images/logo.png" alt="Hall">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-6">
+                    <a href="https://daffodilvarsity.edu.bd/article/transport" target="_blank" class="feature-link">
+                        <div class="feature-card">
+                            <img src="{{ asset('frontend/client/govt.png') }}" alt="Transport">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-6">
+                    <a href="#" target="_blank" class="feature-link">
+                        <div class="feature-card">
+                            <img src="https://dphe.s3.amazonaws.com/freap/media/logo/freap_mpyWKzS.png" alt="Innovation">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-6">
+                    <a href="{{ route('club') }}" target="_blank" class="feature-link">
+                        <div class="feature-card">
+                            <img src="{{ asset('frontend/client/wecare-lged.png') }}" alt="Club">
+                        </div>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
+
 
 
 

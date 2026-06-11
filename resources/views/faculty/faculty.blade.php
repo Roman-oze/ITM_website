@@ -1,7 +1,7 @@
-<section class="cta">
+<section>
 
     <div class="section-title ">
-        <h2 class="text-white"> Team</h2>
+        <h2 class=""> Team</h2>
         <p>
             Meet our dynamic team of experts, dedicated to delivering
             innovative solutions tailored to your needs. With passion and
