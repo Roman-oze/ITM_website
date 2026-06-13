@@ -115,70 +115,7 @@
 
 <br><br>
 
-{{-- <h2 class="p-2 text-dark text-center">Faculty of Science and Information Technology Staff</h2> --}}
 
-<section id="contact" class="contact">
-    <div class="container aos-init aos-animate" data-aos="fade-up">
-        <div class="section-title">
-            <h2>Our Campus <i class="fa-solid fa-location-dot text-danger"></i></h2>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-5 d-flex align-items-stretch">
-                <div class="info">
-                    <div class="address">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <h4>Location:</h4>
-                        <p>{{$footers->address}}</p>
-                    </div>
-                    <div class="email">
-                        <i class="fa-regular fa-envelope"></i>
-                        <h4>Email:</h4>
-                        <p>{{$footers->email}}</p>
-                    </div>
-                    <div class="phone">
-                        <i class="fa-solid fa-phone"></i>
-                        <h4>Call:</h4>
-                        <p>{{$footers->phone}}</p>
-                    </div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29187.16159450864!2d90.320302!3d23.875601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23dd12bbc75%3A0x313d214552eabe56!2sDaffodil%20Smart%20City!5e0!3m2!1sen!2sbd!4v1702204472544!5m2!1sen!2sbd" style="border: 0; width: 100%; height: 290px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-
-            <div class="col-lg-7 align-items-center">
-                <div class="item ">
-                    <div class="item-image">
-                        <img src="{{ asset('frontend/image/campus.jpeg') }}" class="imgg">
-                    </div>
-                    <div class="description">
-                        <p class="pp text_color">Main Campus</p>
-                        <a class="item-btn p-2" href="https://www.google.com/maps/place/Admission+Office,+Daffodil+International+University/@23.8761751,90.320949,638m/data=!3m1!1e3!4m6!3m5!1s0x3755c23c2b610299:0xa5812fe6c1cec69f!8m2!3d23.8756205!4d90.3207632!16s%2Fg%2F11c1s8f1bj?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
-                    </div>
-                </div>
-                <br>
-                <div class="item ">
-                    <div class="item-image">
-                        <img src="{{ asset('frontend/image/ab4building.jpeg') }}" class="imgg">
-                    </div>
-                    <div class="description">
-                        <p class="pp text_color">AB4 Building</p>
-                        <a class="item-btn p-2" href="https://www.google.com/maps/place/Information+Technology+%26+Management+(ITM)+Club/@23.876693,90.3198752,47m/data=!3m1!1e3!4m6!3m5!1s0x3755c3004144093f:0x184a0902a97bafef!8m2!3d23.8766614!4d90.3198912!16s%2Fg%2F11vr5w94jr?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
-                    </div>
-                </div>
-                <br>
-                <div class="item">
-                    <div class="item-image">
-                        <img src="{{ asset('frontend/image/old_building.jpg') }}" class="imgg">
-                    </div>
-                    <div class="description">
-                        <p class="pp text_color">AB Building</p>
-                        <a class="item-btn p-2" href="https://www.google.com/maps/place/Department+of+Pharmacy/@23.8769036,90.3210446,95m/data=!3m1!1e3!4m6!3m5!1s0x3755c300370e4c9d:0xe2228c335ccd65d8!8m2!3d23.8769609!4d90.321455!16s%2Fg%2F11y341ppsp?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Visit</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 @endsection
 <style>
     .image-container {

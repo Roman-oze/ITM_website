@@ -36,7 +36,7 @@
               <li><a class="nav-link scrollto" href="{{route('faculty.member')}}">Team</a></li>
                <li>
                 <div class="dropdown rounded">
-                <a class="nav-link scrollto" href="#">Blogs</a>
+                <a class="nav-link scrollto" href="{{route('blog.index')}}">Blogs</a>
 
               </div>
             </li>

@@ -30,62 +30,58 @@
             class="fa-solid fa-arrow-right-arrow-left p-1 text-white"></i></button>
 
     <div class="calpse-bar p-2" id="myForm">
-        <div id="map-widgets-holder" class="my-3 my-md-0 mx-3 mx-md-0 text-center text-md-left bg-white">
+        <div id="map-widgets-holder" class="my-3 my-md-0 mx-3 mx-md-0 text-center text-md-left">
             <div class="info--card-holder mt-5 mt-md-0 ">
                 <aside class="mb-3">
-                    <h4 class="h4 mb-0 font-weight-bold heading-font text-blue p-1">Software Giant LTD</h4>
-                    <div class="mb-3">
-                        <div>
+                    <div class="info-dashboard-classic mt-4">
+
+                        <h2 class="dashboard-title-classic">Software Giant LTD</h2>
+
+                        <div class="kpi-grid-classic">
+
+                            <div class="kpi-box">
+                                <div class="kpi-number">
+                                    <span class="purecounter" data-purecounter-start="0"
+                                        data-purecounter-end="{{ $studentCount }}">
+                                        {{ $studentCount }}
+                                    </span>
+                                </div>
+                                <div class="kpi-label">Clients</div>
+                            </div>
+
+                            <div class="kpi-box">
+                                <div class="kpi-number">
+                                    <span class="purecounter" data-purecounter-start="0"
+                                        data-purecounter-end="{{ $facultyCount }}">
+                                        {{ $facultyCount }}
+                                    </span>
+                                </div>
+                                <div class="kpi-label">Projects</div>
+                            </div>
+
+                            <div class="kpi-box">
+                                <div class="kpi-number">
+                                    <span class="purecounter" data-purecounter-start="0"
+                                        data-purecounter-end="{{ $alumniCount }}">
+                                        {{ $alumniCount }}
+                                    </span>
+                                </div>
+                                <div class="kpi-label">Running</div>
+                            </div>
+
+                            <div class="kpi-box">
+                                <div class="kpi-number">
+                                    <span class="purecounter" data-purecounter-start="0"
+                                        data-purecounter-end="{{ $scholarshipCount }}">
+                                        {{ $scholarshipCount }}
+                                    </span>
+                                </div>
+                                <div class="kpi-label">Draft</div>
+                            </div>
 
                         </div>
+
                     </div>
-
-                    <div class="border p-1 ">
-                        <div class="row mb-3">
-                            <div class="col-12 col-md-6 mb-3 mb-md-0 ">
-                                <div class="dash-count bg-color text-center p-1">
-                                    <span data-purecounter-start="0" data-purecounter-end="549"
-                                        data-purecounter-duration="0" class="purecounter">{{ $studentCount }}</span>
-                                    <p class="pure-text">
-                                        <a href="" class="text-white-50">Clients</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 rounded">
-                                <div class="dash-count bg-color  text-center p-1 ">
-                                    <span data-purecounter-start="0" data-purecounter-end="{{ $facultyCount }}"
-                                        data-purecounter-duration="0" class="purecounter">{{ $facultyCount }}</span>
-                                    <p class="pure-text">
-                                        <a href="{{ route('faculty.member') }}" class="text-white-50">Project</a>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6 mb-3 mb-md-0">
-                                <div class="dash-count bg-color  text-center p-1">
-                                    <span data-purecounter-start="0" data-purecounter-end="{{ $alumniCount }}"
-                                        data-purecounter-duration="0" class="purecounter">{{ $alumniCount }}</span>
-                                    <p class="pure-text">
-                                        <a href="{{ route('alumni') }}" class="text-white-50">Running</a>
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 ">
-                                <div class="dash-count bg-color  text-center p-1">
-                                    <span data-purecounter-start="0" data-purecounter-end="{{ $scholarshipCount }}"
-                                        data-purecounter-duration="0" class="purecounter">{{ $scholarshipCount }}</span>
-                                    <p class="pure-text">
-                                        <a href="{{ route('scholarship') }}" class="text-white-50">Draft</a>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </aside>
             </div>
             <button type="button" class="open-button" onclick="closeForm()"><i

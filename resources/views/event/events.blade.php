@@ -1,224 +1,301 @@
-
 @extends('layout.app')
 
 @section('content')
-<br>
-<br>
-<br>
+    <section class="event-section py-5">
+        <div class="container">
 
+            <div class="text-center mb-5">
+                <span class="section-badge">
+                    <i class="fa-solid fa-calendar-days"></i> Upcoming Events
+                </span>
 
-<section id="services" class="services section-bg text-left" >
-    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
-        <div class="section-title text-left">
-            <h2 class="text-dark text-left">Upcoming</h2>
-            <span class="line"></span>
-            <div class="row d-flex justify-content-center">
-                @foreach ($events as $event)
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="event-card box-shadow mt-2{{ $event->created_at->diffInDays(now()) <= 7 ? 'new-event' : 'old-event' }}">
-                        <!-- Badge for New/Old Event -->
-                            <!-- Badge positioned in top-left corner -->
-                            @if ($event->created_at->diffInDays(now()) <= 7)
-                                <span class="badge bg-success position-absolute top-right-badge p-2">New Event</span>
-                            @else
-                                <span class="badge bg-secondary position-absolute top-right-badge p-2">Old Event</span>
-                            @endif
+                <h2 class="section-title">
+                    Join Our Latest Events &
+                    <span class="gradient-text">Workshops</span>
+                </h2>
 
-                        <img src="{{asset($event->image)}}" alt="Event Image" class="img">
-                        <marquee behavior="" direction=""><h1 class="event-card-title text-center text-success bg-light p-2">{{$event->name}}</h1></marquee>
-                        <div class="event-card-body">
-                            <p class="event-card-text text-white">{{$event->description}}</p>
-                            <p class="card-text"> <strong> <i class="fa-regular fa-clock text-light"></i> </strong>
-                                <span class="badge badge-white text-white ">{{$event->time}}</span>
-                            </p>
-                            <p class="card-text"> <i class="fa-solid fa-calendar-days text-light"></i>
-                                <span class="badge badge-success text-white ">{{$event->date}}</span>
-                            </p>
-                            <p class="card-text"> <strong> <i class="fa-solid fa-location-dot text-white"></i> </strong>
-                                <span class="badge badge-white text-white">{{$event->location}}</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
+                <p class="section-subtitle">
+                    Discover exciting events, seminars, workshops, and networking opportunities.
+                </p>
             </div>
+
+            <div class="row g-4">
+
+                @foreach ($events as $event)
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="modern-event-card">
+
+                            <!-- Event Image -->
+                            <div class="event-image">
+
+                                <img src="{{ asset($event->image) }}" alt="{{ $event->name }}">
+
+                                @if ($event->created_at->diffInDays(now()) <= 7)
+                                    <span class="event-status new">
+                                        New
+                                    </span>
+                                @else
+                                    <span class="event-status old">
+                                        Previous
+                                    </span>
+                                @endif
+
+                            </div>
+
+                            <!-- Event Content -->
+                            <div class="event-content">
+
+                                <h4 class="event-title">
+                                    {{ $event->name }}
+                                </h4>
+
+                                <p class="event-description">
+                                    {{ \Illuminate\Support\Str::limit($event->description, 120) }}
+                                </p>
+
+                                <div class="event-meta">
+
+                                    <div class="meta-item">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        <span>{{ $event->date }}</span>
+                                    </div>
+
+                                    <div class="meta-item">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <span>{{ $event->time }}</span>
+                                    </div>
+
+                                    <div class="meta-item">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>{{ $event->location }}</span>
+                                    </div>
+
+                                </div>
+
+                                <a href="#" class="event-btn" data-bs-toggle="modal"
+                                    data-bs-target="#eventModal{{ $event->id }}">
+                                    View Details
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- Event Details Modal -->
+                    <div class="modal fade" id="eventModal{{ $event->id }}" tabindex="-1"
+                        aria-labelledby="eventModalLabel{{ $event->id }}" aria-hidden="true">
+
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content border-0 shadow">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title fw-bold" id="eventModalLabel{{ $event->id }}">
+                                        {{ $event->name }}
+                                    </h5>
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+
+                                    <img src="{{ asset($event->image) }}" class="img-fluid rounded mb-4 w-100"
+                                        style="max-height:350px; object-fit:cover;" alt="{{ $event->name }}">
+
+                                    <div class="row g-3 mb-4">
+
+                                        <div class="col-md-4">
+                                            <div class="border rounded p-3 text-center">
+                                                <i class="fa-solid fa-calendar-days text-primary mb-2"></i>
+                                                <h6 class="mb-1">Date</h6>
+                                                <small>
+                                                    {{ \Carbon\Carbon::parse($event->event_date)->format('d M Y') }}
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="border rounded p-3 text-center">
+                                                <i class="fa-solid fa-clock text-success mb-2"></i>
+                                                <h6 class="mb-1">Time</h6>
+                                                <small>{{ $event->time }}</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="border rounded p-3 text-center">
+                                                <i class="fa-solid fa-location-dot text-danger mb-2"></i>
+                                                <h6 class="mb-1">Location</h6>
+                                                <small>{{ $event->location }}</small>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <h6 class="fw-bold mb-3">Event Description</h6>
+
+                                    <p class="text-muted">
+                                        {!! nl2br(e($event->description)) !!}
+                                    </p>
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+
+                                    @if (isset($event->registration_link))
+                                        <a href="{{ $event->registration_link }}" target="_blank" class="btn btn-primary">
+                                            Register Now
+                                        </a>
+                                    @endif
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                @endforeach
+
+            </div>
+
         </div>
-    </div>
+    </section>
 
-
-</section>
 
 @endsection
+
 <style>
-   /* Event Card Styles */
-.event-card {
-    background-color: #37517e;
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 20px 0;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-/* Hover Effect: Elevate the card and add shadow */
-.event-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Event Image Styling */
-.event-img-wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-.event-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: all 0.3s ease;
-}
-
-/* Hover effect for images */
-.event-card:hover .event-img {
-    transform: scale(1.1);
-}
-
-/* Event Title Styling */
-.event-title-wrapper {
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-    padding: 10px;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    right: 0;
-    z-index: 5;
-}
-
-.event-card-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* Event Description Styling */
-.event-card-body {
-    padding: 20px;
-    color: #fff;
-    text-align: left;
-}
-
-.event-card-text {
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-/* Event Info */
-.event-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.card-text {
-    font-size: 0.9rem;
-    color: #e4e4e4;
-    margin-bottom: 8px;
-}
-
-/* Badge Styling (New/Old) */
-.event-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 8px 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    border-radius: 30px;
-    text-transform: uppercase;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 10;
-}
-
-/* New event badge style */
-.new-event {
-    background-color: #28a745; /* Green for new events */
-}
-
-/* Old event badge style */
-.old-event {
-    background-color: #dc3545; /* Red for old events */
-}
-
-/* Responsive Design */
-@media (max-width: 1199px) {
-    .event-card-title {
-        font-size: 1.6rem;
+    .event-section {
+        background: #f8fafc;
     }
 
-    .event-card-body {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 991px) {
-    .event-card-title {
-        font-size: 1.4rem;
-    }
-
-    .event-card-body {
-        padding: 12px;
+    .section-badge {
+        display: inline-block;
+        background: rgba(71, 178, 228, .1);
+        color: #47B2E4;
+        padding: 8px 18px;
+        border-radius: 30px;
+        font-weight: 600;
+        margin-bottom: 15px;
     }
 
-    .event-card img {
-        height: 180px;
-    }
-}
-
-@media (max-width: 767px) {
-    .event-card {
-        margin-bottom: 30px;
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
     }
 
-    .event-card img {
-        height: 160px;
+    .gradient-text {
+        color: #47B2E4;
     }
 
-    .event-card-title {
-        font-size: 1.2rem;
+    .section-subtitle {
+        max-width: 650px;
+        margin: auto;
+        color: #6c757d;
     }
 
-    .event-card-body {
-        padding: 10px;
+    .modern-event-card {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: .4s;
+        height: 100%;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
     }
 
-    .event-card-text {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 575px) {
-    .event-card img {
-        height: 140px;
+    .modern-event-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, .12);
     }
 
-    .event-card-title {
-        font-size: 1.1rem;
+    .event-image {
+        position: relative;
+        overflow: hidden;
     }
 
-    .event-card-body {
-        padding: 8px;
+    .event-image img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        transition: .5s;
     }
 
-    .event-card-text {
-        font-size: 0.9rem;
+    .modern-event-card:hover .event-image img {
+        transform: scale(1.08);
     }
-}
 
+    .event-status {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 7px 15px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .event-status.new {
+        background: #22c55e;
+        color: white;
+    }
+
+    .event-status.old {
+        background: #64748b;
+        color: white;
+    }
+
+    .event-content {
+        padding: 25px;
+    }
+
+    .event-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #1e293b;
+    }
+
+    .event-description {
+        color: #64748b;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .event-meta {
+        margin-bottom: 25px;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        color: #475569;
+    }
+
+    .meta-item i {
+        color: #47B2E4;
+        width: 20px;
+    }
+
+    .event-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 22px;
+        border-radius: 10px;
+        background: #47B2E4;
+        color: white;
+        text-decoration: none;
+        transition: .3s;
+    }
+
+    .event-btn:hover {
+        background: #2196d3;
+        color: white;
+    }
 </style>
-
-

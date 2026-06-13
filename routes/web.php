@@ -1,41 +1,42 @@
 <?php
-use App\Models\User;
-use Faker\Guesser\Name;
-use App\Http\Middleware\Itm;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\CommitteeController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DashbaordController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\FooterController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HeroSectionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\MenuController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\StaffController;
-use App\Http\Controllers\AlumniController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\FooterController;
-use App\Http\Controllers\FacultyController;
-use App\Http\Controllers\FeatureController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RoutineController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\FeedbackController;
-use App\Http\Controllers\ScheduleController;
-use App\Http\Controllers\CommitteeController;
-use App\Http\Controllers\DashbaordController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\HeroSectionController;
-use App\Http\Controllers\NoticeBoardController;
-use App\Http\Controllers\ScholarshipController;
-use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\MenuPermissionController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\NoticeBoardController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\RoutineController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\ScholarshipController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
+use App\Http\Middleware\Itm;
+use App\Models\User;
 use App\Notifications\ComplainNotification;
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 
@@ -312,6 +313,8 @@ Route::delete('/feedback/{feedback}', [FeedbackController::class, 'destroy'])->n
 
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 
 
 
