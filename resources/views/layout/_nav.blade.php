@@ -1,5 +1,5 @@
 
-<header id="header" class="fixed-top">
+<header id="header" class="fixed-top primary-color">
 
         <div class="container d-flex align-items-center">
             {{-- <a class="navbar-brand" href="#"><img src="{{asset('frontend/image/portal.png')}}" alt="" class="brand-logo"></a> --}}

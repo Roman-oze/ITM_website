@@ -7,37 +7,6 @@
 
 @section('content')
 <!-- Welcome Section -->
-<section class="welcome-section mt-5">
-    <div class="container p-1">
-        <div class="jumbotron text-center  animate__animated animate__fadeInLeft"
-        style="
-        background-image:linear-gradient(rgba(5, 20, 107, 0.329),#145ee78e),url('{{ asset($single->image) }}');
-        background-size: cover;
-        background-position: center;
-        height: 70vh;">
-            <br><br><br><br><br>
-            <h1 class="text-white text-center h1border">Welcome to the Academic Club</h1><br>
-            <p class="lead text-dark text-center pborder">Explore the world of knowledge with us!</p>
-        </div>
-    </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="about-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 text-center mx-auto">
-                <div class="section-title">
-                    <h3>About <span>Our ITM Club</span></h3>
-                    <span class="line"></span>
-                    <p class="lead mt-4" style="text-align: justify">
-                        The ITM Club is a vibrant community dedicated to fostering innovation, technology, and management skills among its members. Through workshops, seminars, and networking events, the club provides opportunities for students to explore cutting-edge trends, collaborate on projects, and develop leadership abilities. With a focus on empowering individuals in the rapidly evolving fields of information technology and management, the ITM Club serves as a catalyst for personal and professional growth, preparing its members for success in the digital age.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 <!-- Gallery Section -->
@@ -45,7 +14,7 @@
 <div class="container mt-5">
     <div class="col-lg-7 text-center mx-auto">
         <div class="section-title">
-            <h3>Club <span>Gallery</span></h3>
+            <h3>Software Giant  <span>Gallery</span></h3>
             <span class="line"></span>
         </div>
     </div>

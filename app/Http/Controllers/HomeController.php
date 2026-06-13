@@ -30,6 +30,7 @@ class HomeController extends Controller
         $features = Feature::all();
         $services = Service::all();
         $footers = Footer::all();
+        $contact = Footer::first();
         $scholars = Scholarship::all();
         $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();
@@ -46,7 +47,7 @@ class HomeController extends Controller
             'Director'
         ])->get();
 
-        $teachers = Teacher::all();
+        $team = Teacher::all();
 
 
 
@@ -60,9 +61,10 @@ class HomeController extends Controller
             'services' => $services,
             'boardOfDirectors' => $boardOfDirectors,
             'technicalTeam' => $technicalTeam,
-            'teachers' => $teachers,
+            'teachers' => $team,
             'photos' => $photos,
-            'single' => $single
+            'single' => $single,
+            'contact' => $contact
 
         ]);
     }

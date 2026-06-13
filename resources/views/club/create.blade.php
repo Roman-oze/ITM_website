@@ -41,7 +41,7 @@
                             <select class="form-control rounded-pill shadow-sm p-2" id="type" name="type" required>
                                 <option value="">Select Event Type</option>
                                 <option value="Departmental">Departmental</option>
-                                <option value="Club">Club</option>
+                                <option value="Club">Meeting</option>
                             </select>
                             <span class="text-danger small">@error('type'){{ $message }}@enderror</span>
                         </div>

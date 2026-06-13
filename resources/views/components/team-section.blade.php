@@ -1,5 +1,3 @@
-
-
 <section class="team-bg">
 
     <div class="section-title ">
