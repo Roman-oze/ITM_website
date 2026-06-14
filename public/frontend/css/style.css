@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #0a7c87;
+    --primary-color: #060B23;
     --secondary-color: #47b2e4;
     --dark-color: #0f172a;
     --light-color: #f8fafc;
@@ -37,12 +37,12 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     padding: 8px 3px;
-    background: #0a7c87;
+    background: #060B23;
 }
 
 #header.header-scrolled,
 #header.header-inner-pages {
-    background: #0a7c87;
+    background: #060B23;
 }
 
 #header .logo {
@@ -210,7 +210,7 @@ h6 {
 }
 
 .mobile-nav-toggle.bi-x {
-    color: #0a7c87;
+    color: #060B23;
 }
 
 @media (max-width: 991px) {
@@ -273,7 +273,7 @@ h6 {
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
     margin: 15px;
-    color: #0a7c87;
+    color: #060B23;
 }
 
 .navbar-mobile .dropdown ul {
@@ -317,7 +317,7 @@ h6 {
 #hero {
     width: 100%;
     height: 80vh;
-    background: #0a7c87;
+    background: #060B23;
 }
 
 #hero .container {
@@ -502,39 +502,10 @@ background-position: left; */
 }
 #header.header-scrolled,
 #header.header-inner-pages {
-    background: #0a7c87;
+    background: #060B23;
 }
 
-/* #header.brand-logo {
-    height: 72px;
-    width: auto;
 
-
-  } */
-/* #navbarNav {
-    padding-right: 30px;
-    padding-left: 15px;
-    text-align: start;
-  }
-  .nav-link {
-    color: #b9c1bd;
-    font-size: larger;
-    font-weight: 500;
-  }
-  .nav-link:hover {
-    color: rgb(5, 206, 202);
-    font-size: larger;
-    font-weight: 500;
-    transition: transform 0.3s;
-  }
-  .link-hover:hover {
-    transform: translateY(-10px);
-  } */
-/* .nav-link:hover {
-    color: rgb(5, 206, 202);
-    font-size: medium;
-    transition: transform 0.3s;
-  } */
 .name {
     color: #8a5f10;
 }
@@ -616,21 +587,20 @@ background-position: left; */
     display: none;
     position: absolute;
     align-items: center;
-    background-color: #f1f1f1;
+    background-color: #060B23;
     width: 220px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
+    color: rgb(245, 243, 243);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #37517e;
+    background-color: #d5d7de;
 }
 
 .dropdown:hover .dropdown-content {
@@ -2396,7 +2366,7 @@ p {
 
 .card-text-area {
     height: 45%;
-    background-color: #0a7c87;
+    background-color: #060B23;
     /* Deep Navy Blue */
     display: flex;
     justify-content: center;
@@ -2416,10 +2386,10 @@ p {
                            BACK SIDE DESIGN (image_689714.png)
                         ========================================== */
 .flip-card-back {
-    background-color: #0a7c87f6;
+    background-color: #e7ecedf6;
     /* Vibrant Light Blue */
     transform: rotateY(180deg);
-    color: white;
+    color: rgb(21, 20, 20);
     padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3383,7 +3353,7 @@ a:hover {
 
 .section-tag {
     display: inline-block;
-    color: #0a7c87;
+    color: #060B23;
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 15px;
@@ -3420,7 +3390,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, #0a7c87, #3b82f6);
+    background: linear-gradient(90deg, #060B23, #3b82f6);
 }
 
 .pricing-card:hover {
@@ -3429,14 +3399,14 @@ a:hover {
 }
 
 .featured {
-    border: 2px solid #0a7c87;
+    border: 2px solid #060B23;
 }
 
 .popular-badge {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: linear-gradient(135deg, #0a7c87, #3b82f6);
+    background: linear-gradient(135deg, #060B23, #3b82f6);
     color: white;
     padding: 8px 18px;
     border-radius: 30px;
@@ -3449,7 +3419,7 @@ a:hover {
     height: 75px;
     border-radius: 20px;
     background: rgba(10, 124, 135, 0.1);
-    color: #0a7c87;
+    color: #060B23;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3487,7 +3457,7 @@ a:hover {
 }
 
 .feature-list i {
-    color: #0a7c87;
+    color: #060B23;
     margin-right: 10px;
 }
 
@@ -3498,7 +3468,7 @@ a:hover {
     text-decoration: none;
     color: #fff;
     font-weight: 600;
-    background: linear-gradient(135deg, #0a7c87, #3b82f6);
+    background: linear-gradient(135deg, #060B23, #3b82f6);
     transition: 0.3s;
 }
 
@@ -3657,5 +3627,240 @@ a:hover {
 
     .feature-card {
         padding: 15px;
+    }
+}
+
+/* TEAM */
+/* ================= TEAM SECTION ================= */
+.team-section {
+    background: #060b23;
+    padding: 100px 0;
+    position: relative;
+}
+
+.team-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+/* ================= SECTION TITLE ================= */
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: rgba(255, 255, 255, .6);
+    font-size: 14px;
+}
+
+/* ================= MODERN TEXT ================= */
+.modern-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, .7);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ================= TEAM CARD ================= */
+.team-card {
+    position: relative;
+    background: #08102d;
+    border: 1px solid rgba(67, 146, 255, .35);
+    border-radius: 8px;
+    text-align: center;
+    padding: 25px 20px;
+    overflow: hidden;
+    transition: .3s;
+    height: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(45, 165, 255, .2);
+}
+
+/* Cut corners */
+.team-card::before,
+.team-card::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+.team-card::before {
+    top: 0;
+    right: 0;
+    border-top: 2px solid #2da5ff;
+    border-right: 2px solid #2da5ff;
+}
+
+.team-card::after {
+    bottom: 0;
+    left: 0;
+    border-left: 2px solid #2da5ff;
+    border-bottom: 2px solid #2da5ff;
+}
+
+/* ================= TEAM IMAGE ================= */
+.team-image {
+    margin-bottom: 18px;
+}
+
+.team-image img {
+    width: 120px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* ================= CONTENT ================= */
+.team-content h5 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.team-content span {
+    display: block;
+    color: rgba(255, 255, 255, .55);
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+/* ================= BUTTON ================= */
+.team-btn {
+    border: 1px solid #2da5ff;
+    background: transparent;
+    color: #2da5ff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.team-btn:hover {
+    background: #2da5ff;
+    color: #fff;
+}
+
+/* ================= MODAL ================= */
+.modal-backdrop.show {
+    opacity: .85;
+}
+
+.custom-modal {
+    background: #08102d;
+    border: 1px solid rgba(58, 134, 255, .25);
+    border-radius: 15px;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+}
+
+.custom-modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #3a86ff, #00d4ff, #3a86ff);
+}
+
+.modal-profile-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid rgba(58, 134, 255, .4);
+}
+
+.member-name {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.member-role {
+    display: inline-block;
+    color: #3a86ff;
+    border: 1px solid rgba(58, 134, 255, .3);
+    padding: 6px 15px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+/* INFO BOX */
+.info-box {
+    background: #0d173f;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    color: #d6d6d6;
+}
+
+.info-box i {
+    color: #3a86ff;
+    width: 25px;
+}
+
+/* SOCIAL */
+.social-btn {
+    display: inline-flex;
+    gap: 10px;
+    background: #1877f2;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+/* BIO */
+.bio-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+.bio-section h5 {
+    color: #3a86ff;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .team-card {
+        margin-bottom: 20px;
+    }
+
+    .team-image img {
+        width: 100px;
+        height: 120px;
+    }
+
+    .modal-profile-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .member-name {
+        font-size: 22px;
     }
 }

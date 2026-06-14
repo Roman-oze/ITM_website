@@ -1498,7 +1498,7 @@ div {
 }
 
 .modern-accordion .accordion-button:not(.collapsed){
-    background: #0A7C87;
+    background: #060B23;
     color: #fff;
 }
 
@@ -1981,7 +1981,7 @@ div {
   --------------------------------------------------------------*/
   #footer {
     font-size: 14px;
-    background: #0A7C87;
+    background: #060B23;
   }
 
   #footer .footer-newsletter {
@@ -2167,3 +2167,6 @@ div {
       padding-top: 4px;
     }
   }
+
+
+  /* tEAM */

@@ -1,6 +1,6 @@
 
 
-    <section id="feature" class="section-p1 feature-section ">
+    <section id="feature" class="section-p1 team-section ">
         <div class="row ">
             @foreach ($features as $feature)
                 <div class="col-md-3 mt-4">
