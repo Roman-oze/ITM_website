@@ -34,7 +34,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #0d6efd;
+  --bs-primary: #0F172A;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -167,6 +167,10 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
+  .primary-bg {
+    background-color: #0F172A;
+  }
 
 
 abbr[title] {
@@ -11241,4 +11245,41 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
+}
+
+
+/* =================button add button==================== */
+
+.cssbuttons-io-button  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .2em;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  padding: .5em 1.5em;
+  color: #f5f6f9;
+  background: linear-gradient(0deg, rgb(14, 39, 80), rgb(14, 39, 80));
+  border: none;
+  outline: none;
+  border-bottom: 3px solid rgb(14, 39, 80);
+  box-shadow: 0 .5em .5em -.4em rgb(0, 0, 0, .5);
+  letter-spacing: 0.08em;
+  border-radius: 20em;
+  cursor: pointer;
+  transition: .5s;
+ text-decoration: none;
+}
+
+.cssbuttons-io-button:hover {
+  filter: brightness(1.2);
+  color: #0D6EFD;
+      text-decoration: none;
+
+}
+
+.cssbuttons-io-button:active {
+  transition: 0s;
+  transform: rotate(-10deg);
 }

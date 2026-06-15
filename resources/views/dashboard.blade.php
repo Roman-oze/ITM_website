@@ -69,6 +69,7 @@
         .card h3 {
             margin: 0;
             font-size: 22px;
+            color: white;
         }
 
         .card span {

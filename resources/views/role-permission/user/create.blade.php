@@ -11,7 +11,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt " data-tilt>
-                    <img src="{{asset('frontend/image/Itmfullogo.png')}}" alt="IMG"  class="loginimage">
+                    <img src="{{asset('frontend/logo/sg-logo.png')}}" alt="IMG"  class="loginimage">
 
 				</div>
 
@@ -251,7 +251,7 @@
 
 /* Checked state */
 .role-checkbox-input:checked + .role-checkbox-label {
-    background-color: #084d52;
+    background-color: 0f172a;
     color: #fff;
     border-color: #4fd1c5;
 }
