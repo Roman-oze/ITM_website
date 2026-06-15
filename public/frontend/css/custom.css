@@ -480,20 +480,14 @@ body {
   # Cta
   --------------------------------------------------------------*/
   .cta {
-    background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)),
+    background: linear-gradient(
+    rgba(6, 11, 35, 0.95),
+    rgba(6, 11, 35, 0.85)
+),
       url("../image/cta-bg.jpg") fixed center center;
     background-size: cover;
     padding: 120px 0;
   }
-.team-bg {
-    background-image: url("../team-bg-2.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 100%;
-    min-height: 100vh;
-}
 
   .cta h3 {
     color: #fff;
@@ -1670,7 +1664,7 @@ div {
     }
 }
 
-/* service section  */
+service section
 .services-section {
     background: #f8fafc;
 }

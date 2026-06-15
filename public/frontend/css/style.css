@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #060B23;
+    --primary-color: #060b23;
     --secondary-color: #47b2e4;
     --dark-color: #0f172a;
     --light-color: #f8fafc;
@@ -37,12 +37,12 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     padding: 8px 3px;
-    background: #060B23;
+    background: #060b23;
 }
 
 #header.header-scrolled,
 #header.header-inner-pages {
-    background: #060B23;
+    background: #060b23;
 }
 
 #header .logo {
@@ -210,7 +210,7 @@ h6 {
 }
 
 .mobile-nav-toggle.bi-x {
-    color: #060B23;
+    color: #060b23;
 }
 
 @media (max-width: 991px) {
@@ -273,7 +273,7 @@ h6 {
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
     margin: 15px;
-    color: #060B23;
+    color: #060b23;
 }
 
 .navbar-mobile .dropdown ul {
@@ -317,7 +317,7 @@ h6 {
 #hero {
     width: 100%;
     height: 80vh;
-    background: #060B23;
+    background: #060b23;
 }
 
 #hero .container {
@@ -502,9 +502,8 @@ background-position: left; */
 }
 #header.header-scrolled,
 #header.header-inner-pages {
-    background: #060B23;
+    background: #060b23;
 }
-
 
 .name {
     color: #8a5f10;
@@ -587,7 +586,7 @@ background-position: left; */
     display: none;
     position: absolute;
     align-items: center;
-    background-color: #060B23;
+    background-color: #060b23;
     width: 220px;
     z-index: 1;
 }
@@ -648,34 +647,74 @@ background-position: left; */
 
 /* BOX */
 .kpi-box {
-    background: #ffffff;
+    background: #0a112c;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     padding: 14px;
     text-align: center;
 
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    /* smooth entry animation */
+    opacity: 0;
+    transform: translateY(12px);
+    animation: kpiFadeUp 0.6s ease forwards;
 }
 
-/* HOVER (very subtle, classic style) */
+/* STAGGER EFFECT */
+.kpi-box:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.kpi-box:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.kpi-box:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.kpi-box:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.kpi-box:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.kpi-box:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* HOVER (clean modern classic) */
 .kpi-box:hover {
-    border-color: #cfcfcf;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border-color: #47b2e4;
+    box-shadow: 0 6px 14px rgba(71, 178, 228, 0.18);
+    transform: translateY(-4px);
 }
 
 /* NUMBER */
 .kpi-number span {
     font-size: 20px;
     font-weight: 700;
-    color: #222;
+    color: #ffffff;
 }
 
 /* LABEL */
 .kpi-label {
     margin-top: 4px;
     font-size: 12px;
-    color: #666;
+    color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.3px;
+}
+
+/* ANIMATION KEYFRAME */
+@keyframes kpiFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .img-fluid-custom {
@@ -2366,7 +2405,7 @@ p {
 
 .card-text-area {
     height: 45%;
-    background-color: #060B23;
+    background-color: #060b23;
     /* Deep Navy Blue */
     display: flex;
     justify-content: center;
@@ -2876,13 +2915,13 @@ height: auto;
 .calpse-bar {
     display: none;
     position: fixed;
-    bottom: 100px;
+    bottom: 150px;
     right: 0px;
     z-index: 9;
     text-align: right;
-    width: 300px;
-    background-color: #ecf2f3;
-    color: black;
+    width: 270px;
+    background-color: #ecf2f3ab;
+    border-radius: 24px 0 0 24px;
 }
 
 /* Add styles to the form container */
@@ -2895,7 +2934,7 @@ height: auto;
 /* Full-width textarea */
 .form-container textarea {
     width: 100%;
-    padding: 15px;
+    padding: 5px;
     margin: 5px 0 22px 0;
     border: none;
     background: #2c3e50;
@@ -3353,7 +3392,7 @@ a:hover {
 
 .section-tag {
     display: inline-block;
-    color: #060B23;
+    color: #060b23;
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 15px;
@@ -3390,7 +3429,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, #060B23, #3b82f6);
+    background: linear-gradient(90deg, #060b23, #3b82f6);
 }
 
 .pricing-card:hover {
@@ -3399,14 +3438,14 @@ a:hover {
 }
 
 .featured {
-    border: 2px solid #060B23;
+    border: 2px solid #060b23;
 }
 
 .popular-badge {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: linear-gradient(135deg, #060B23, #3b82f6);
+    background: linear-gradient(135deg, #060b23, #3b82f6);
     color: white;
     padding: 8px 18px;
     border-radius: 30px;
@@ -3419,7 +3458,7 @@ a:hover {
     height: 75px;
     border-radius: 20px;
     background: rgba(10, 124, 135, 0.1);
-    color: #060B23;
+    color: #060b23;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3457,7 +3496,7 @@ a:hover {
 }
 
 .feature-list i {
-    color: #060B23;
+    color: #060b23;
     margin-right: 10px;
 }
 
@@ -3468,7 +3507,7 @@ a:hover {
     text-decoration: none;
     color: #fff;
     font-weight: 600;
-    background: linear-gradient(135deg, #060B23, #3b82f6);
+    background: linear-gradient(135deg, #060b23, #3b82f6);
     transition: 0.3s;
 }
 
@@ -3530,13 +3569,13 @@ a:hover {
    FEATURE CARDS
 ========================= */
 .feature-card {
-    background: #ffffff;
+    background: #060b23;
     border-radius: 14px;
     padding: 18px 15px;
     display: flex;
     align-items: center;
     gap: 12px;
-
+    color: #f3f6f7;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
     border: 1px solid rgba(71, 178, 228, 0.1);
@@ -3553,7 +3592,6 @@ a:hover {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    background: rgba(71, 178, 228, 0.12);
     transition: 0.3s;
 }
 
@@ -3561,7 +3599,7 @@ a:hover {
 .feature-card h6 {
     font-size: 14px;
     font-weight: 600;
-    color: #1e2a4a;
+    color: #ebedf1;
     margin: 0;
 }
 
@@ -3643,8 +3681,8 @@ a:hover {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
 }
@@ -3663,7 +3701,7 @@ a:hover {
 }
 
 .section-heading p {
-    color: rgba(255, 255, 255, .6);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
 }
 
@@ -3671,7 +3709,7 @@ a:hover {
 .modern-text {
     font-size: 16px;
     line-height: 1.8;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, 0.7);
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
@@ -3681,18 +3719,18 @@ a:hover {
 .team-card {
     position: relative;
     background: #08102d;
-    border: 1px solid rgba(67, 146, 255, .35);
+    border: 1px solid rgba(67, 146, 255, 0.35);
     border-radius: 8px;
     text-align: center;
     padding: 25px 20px;
     overflow: hidden;
-    transition: .3s;
+    transition: 0.3s;
     height: 100%;
 }
 
 .team-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 25px rgba(45, 165, 255, .2);
+    box-shadow: 0 0 25px rgba(45, 165, 255, 0.2);
 }
 
 /* Cut corners */
@@ -3740,7 +3778,7 @@ a:hover {
 
 .team-content span {
     display: block;
-    color: rgba(255, 255, 255, .55);
+    color: rgba(255, 255, 255, 0.55);
     font-size: 12px;
     margin-bottom: 15px;
 }
@@ -3753,7 +3791,7 @@ a:hover {
     padding: 8px 18px;
     border-radius: 30px;
     font-size: 12px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .team-btn:hover {
@@ -3763,12 +3801,12 @@ a:hover {
 
 /* ================= MODAL ================= */
 .modal-backdrop.show {
-    opacity: .85;
+    opacity: 0.85;
 }
 
 .custom-modal {
     background: #08102d;
-    border: 1px solid rgba(58, 134, 255, .25);
+    border: 1px solid rgba(58, 134, 255, 0.25);
     border-radius: 15px;
     overflow: hidden;
     color: #fff;
@@ -3776,7 +3814,7 @@ a:hover {
 }
 
 .custom-modal::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -3790,7 +3828,7 @@ a:hover {
     height: 220px;
     object-fit: cover;
     border-radius: 12px;
-    border: 2px solid rgba(58, 134, 255, .4);
+    border: 2px solid rgba(58, 134, 255, 0.4);
 }
 
 .member-name {
@@ -3801,7 +3839,7 @@ a:hover {
 .member-role {
     display: inline-block;
     color: #3a86ff;
-    border: 1px solid rgba(58, 134, 255, .3);
+    border: 1px solid rgba(58, 134, 255, 0.3);
     padding: 6px 15px;
     border-radius: 30px;
     margin-bottom: 20px;
@@ -3837,7 +3875,7 @@ a:hover {
 .bio-section {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, .08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .bio-section h5 {

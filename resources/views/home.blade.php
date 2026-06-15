@@ -29,13 +29,12 @@
     <button class="open-button" onclick="openForm()"><i
             class="fa-solid fa-arrow-right-arrow-left p-1 text-white"></i></button>
 
-    <div class="calpse-bar p-2" id="myForm">
+    <div class="calpse-bar" id="myForm">
         <div id="map-widgets-holder" class="my-3 my-md-0 mx-3 mx-md-0 text-center text-md-left">
             <div class="info--card-holder mt-5 mt-md-0 ">
                 <aside class="mb-3">
                     <div class="info-dashboard-classic mt-4">
 
-                        <h2 class="dashboard-title-classic">Software Giant LTD</h2>
 
                         <div class="kpi-grid-classic">
 

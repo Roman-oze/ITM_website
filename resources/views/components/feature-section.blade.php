@@ -1,6 +1,10 @@
 
 
     <section id="feature" class="section-p1 team-section ">
+        <div class="section-title ">
+        <h3 class="text-white-50">Features</h3>
+        <h2 class="text-white"> Why Choose Software Giant</h2>
+        </div>
         <div class="row ">
             @foreach ($features as $feature)
                 <div class="col-md-3 mt-4">

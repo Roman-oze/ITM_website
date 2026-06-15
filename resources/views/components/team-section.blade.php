@@ -1,10 +1,10 @@
  <section class="team-section">
 
      <div class="section-title ">
-         <h2 class=""> Team</h2>
-         <div class="C">
+         <h2 class="text-white"> Team</h2>
+         <div class="">
              <p class="modern-text">
-                 Meet our dynamic team of experts, dedicated to delivering innovative solutions<br>
+                 Meet our dynamic team of experts, dedicated to delivering innovative solutions
                  tailored to your needs. With passion and expertise, we're here to empower your success journey.
              </p>
          </div>
