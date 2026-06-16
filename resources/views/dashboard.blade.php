@@ -9,7 +9,6 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: #060B23;
             color: #fff;
         }
 
@@ -143,7 +142,7 @@
 
         <!-- HEADER -->
         <div class="header">
-            <h2>Welcome Back 👋</h2>
+            <h2>Welcome Back</h2>
             <p>Here is your system overview dashboard</p>
         </div>
 

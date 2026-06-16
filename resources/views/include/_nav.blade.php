@@ -2,7 +2,7 @@
 
     <div class="d-flex align-items-center gap-3">
         <a class="navbar-brand fw-bold tracking-wide text-white m-0" href="{{ route('dashboard') }}">
-            <i class="fas fa-terminal text-primary me-2"></i>ITM<span class="fs-xs fw-normal text-muted ms-1">v2.0</span>
+            <i class="fas fa-terminal text-primary me-2"></i>Software Giant.
         </a>
 
         <button class="btn btn-icon-toggle d-flex align-items-center justify-content-center" id="sidebarToggle" href="#!">

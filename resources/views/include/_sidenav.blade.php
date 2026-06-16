@@ -5,9 +5,6 @@
 
             <div class="nav flex-column gap-1">
 
-                <div class="sidebar-heading px-2 pb-2 pt-1 text-uppercase text-muted fw-bold small tracking-wide">
-                    Console Navigation
-                </div>
 
                 @foreach ($menus->where('parent_id', null) as $menu)
 
@@ -50,7 +47,7 @@
 
                         </a>
 
-                        <div class="collapse mt-1" id="collapse{{ $menu->id }}" data-bs-parent="#sidenavAccordion">
+                        {{-- <div class="collapse mt-1" id="collapse{{ $menu->id }}" data-bs-parent="#sidenavAccordion">
 
                             <nav class="sb-sidenav-menu-nested nav flex-column ms-4 ps-2 border-start border-opacity-25 gap-1">
 
@@ -63,7 +60,24 @@
 
                             </nav>
 
-                        </div>
+                        </div> --}}
+                        <div class="collapse mt-1" id="collapse{{ $menu->id }}" data-bs-parent="#sidenavAccordion">
+
+    <div class="modern-submenu">
+
+        @foreach ($menu->children as $child)
+            <a href="{{ $child->link }}"
+               class="nav-link modern-sub-link d-flex align-items-center gap-2">
+
+                <span class="submenu-dot"></span>
+                <span>{{ $child->name }}</span>
+
+            </a>
+        @endforeach
+
+    </div>
+
+</div>
 
                     @endif
 
@@ -80,7 +94,7 @@
     --text: #94a3b8;
     --hover: rgba(255,255,255,0.05);
     --active: rgba(32,157,216,0.12);
-    --accent: #209DD8;
+    --accent: #209DD8;;
 
     font-family: 'Inter', system-ui, sans-serif;
 }
@@ -154,5 +168,97 @@
 .sidebar-heading {
     letter-spacing: 1px;
     font-size: 11px;
+}
+/* =========================
+   MODERN SUBMENU
+========================= */
+
+.modern-submenu {
+    margin-left: 18px;
+    padding: 8px;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.02);
+
+    border: 1px solid rgba(255,255,255,0.04);
+
+    backdrop-filter: blur(10px);
+}
+
+/* SUB MENU LINK */
+
+.modern-sub-link {
+    position: relative;
+
+    color: #94a3b8 !important;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    padding: 10px 14px !important;
+
+    border-radius: 10px;
+
+    transition: all .3s ease;
+}
+
+/* DOT */
+
+.submenu-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.25);
+
+    transition: all .3s ease;
+}
+
+/* HOVER */
+
+.modern-sub-link:hover {
+    background: rgba(32,157,216,0.12);
+
+    color: #ffffff !important;
+
+    transform: translateX(4px);
+}
+
+.modern-sub-link:hover .submenu-dot {
+    background: #209DD8;
+
+    box-shadow: 0 0 10px rgba(32,157,216,.6);
+}
+
+/* ACTIVE */
+
+.modern-sub-link.active {
+    background: rgba(32,157,216,0.16);
+
+    color: #fff !important;
+
+    border-left: 3px solid #209DD8;
+}
+
+.modern-sub-link.active .submenu-dot {
+    background: #209DD8;
+}
+
+/* COLLAPSE ANIMATION */
+
+.collapse .modern-submenu {
+    animation: submenuFade .25s ease;
+}
+
+@keyframes submenuFade {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>

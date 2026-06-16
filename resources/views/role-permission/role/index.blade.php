@@ -1,243 +1,333 @@
 @extends('layout.dashboard')
 @include('include.alerts')
+
 @section('main')
     <x-role-section-link />
 
-    <style>
-        :root {
-            --primary: #0f172a;
-            --primary-light: #1e293b;
-            --accent: #38bdf8;
-            --text-light: #e2e8f0;
-            --muted: #94a3b8;
-            --danger: #ef4444;
-            --info: #0ea5e9;
-            --warning: #f59e0b;
-            --card-bg: #111827;
-            --border: rgba(255, 255, 255, 0.08);
-        }
-
-        body {
-            background: #0b1220;
-            color: var(--text-light);
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        /* Card */
-        .modern-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Header */
-        .page-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .page-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-light);
-        }
-
-        /* Buttons */
-        .btn-modern {
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-size: 13px;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .btn-primary-modern {
-            background: var(--accent);
-            color: #0b1220;
-            font-weight: 600;
-        }
-
-        .btn-primary-modern:hover {
-            background: #0ea5e9;
-            transform: translateY(-2px);
-        }
-
-        .btn-info-modern {
-            background: rgba(14, 165, 233, 0.15);
-            color: var(--info);
-            border: 1px solid rgba(14, 165, 233, 0.3);
-        }
-
-        .btn-secondary-modern {
-            background: rgba(148, 163, 184, 0.15);
-            color: var(--muted);
-            border: 1px solid rgba(148, 163, 184, 0.3);
-        }
-
-        .btn-danger-modern {
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--danger);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-        }
-
-        .btn-danger-modern:hover {
-            background: var(--danger);
-            color: white;
-        }
-
-        /* Table */
-        .modern-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-        }
-
-        .modern-table thead {
-            background: var(--primary);
-            color: white;
-        }
-
-        .modern-table th,
-        .modern-table td {
-            padding: 14px;
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .modern-table tbody tr {
-            border-bottom: 1px solid var(--border);
-            transition: 0.3s;
-        }
-
-        .modern-table tbody tr:hover {
-            background: rgba(56, 189, 248, 0.06);
-        }
-
-        .text-muted {
-            color: var(--muted);
-        }
-
-        .fw-bold {
-            font-weight: 700;
-        }
-
-        /* Action buttons */
-        .action-group {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-    </style>
-
-    {{-- <div class="container py-4">
-
+    <div class="container py-4">
         <div class="modern-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Roles Management</h4>
 
-            <div class="page-header">
+                {{-- <a href="{{ url('roles/create')  }}" title="Add" class="cssbuttons-io-button">
+                    <svg height="25" width="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
+                    </svg>
+                    <span>Add</span>
+                </a> --}}
 
-                <div class="page-title">
-                    Roles Management
+                <button type="button" class="cssbuttons-io-button border-0" data-bs-toggle="modal"
+                    data-bs-target="#createRoleModal">
+
+                    <svg height="25" width="25" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
+                    </svg>
+
+                    <span>Add</span>
+                </button>
+
+            </div>
+            <div class="table-responsive">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Role Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($roles as $role)
+                            <tr>
+                                <td class="fw-bold">#{{ $role->id }}</td>
+                                <td>{{ $role->name }}</td>
+                                <td>
+                                    <div class="action-group">
+                                        {{-- <a href="{{ url('roles/' . $role->id . '/give-permission') }}"
+                                            class="btn-modern btn-info-modern">
+                                            <i class="fas fa-key"></i> Permissions
+                                        </a> --}}
+                                        <button class="btn-modern btn-info-modern openPermissionModal"
+                                            data-id="{{ $role->id }}" data-name="{{ $role->name }}"
+                                            data-permissions="{{ json_encode($role->permissions->pluck('name')) }}"
+                                            data-bs-toggle="modal" data-bs-target="#givePermissionModal">
+
+                                            <i class="fas fa-key"></i> Permissions
+                                        </button>
+                                        @can('update role')
+                                            <button type="button" class="btn-modern btn-secondary-modern editRoleBtn"
+                                                data-id="{{ $role->id }}" data-name="{{ $role->name }}"
+                                                data-bs-toggle="modal" data-bs-target="#editRoleModal">
+
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                        @endcan
+                                        @can('delete role')
+                                            <button
+                                                onclick="if(confirm('Are you sure you want to delete this role?')) { window.location.href='{{ url('roles/' . $role->id . '/delete') }}' }"
+                                                class="btn-modern btn-danger-modern">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        @endcan
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="3" class="text-muted">No roles available.</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Role Modal -->
+    <div class="modal fade" id="createRoleModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content modern-modal">
+
+                <div class="modal-header modern-modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-user-shield me-2"></i>
+                        Create Role
+                    </h5>
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                    </button>
                 </div>
 
-                <a href="{{ url('roles/create') }}" class="btn-modern btn-primary-modern">
-                    <i class="fas fa-plus-circle"></i> Add Role
-                </a>
+                <form action="{{ url('roles') }}" method="POST">
+                    @csrf
 
-            </div> --}}
- <div class="container py-4">
+                    <div class="modal-body">
 
-    <div class="modern-card">
+                        <div class="mb-3">
+                            <label class="modern-label">
+                                Role Name
+                            </label>
 
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="mb-0">Roles Management</h4>
-        </div>
-        <div class="table-responsive">
+                            <input type="text" name="name" class="form-control modern-input"
+                                placeholder="Enter role name" required>
+                        </div>
 
-            <table class="modern-table">
+                    </div>
 
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Role Name</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
+                    <div class="modal-footer modern-modal-footer">
 
-                <tbody>
+                        <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
 
-                    <tr>
-                        <td class="fw-bold">#1</td>
-                        <td>Super Admin</td>
-                        <td>
-                            <div class="action-group">
-                                <a href="#" class="btn-modern btn-info-modern">
-                                    <i class="fas fa-key"></i> Permissions
-                                </a>
-                                <a href="#" class="btn-modern btn-secondary-modern">
-                                    <i class="fas fa-edit"></i> Edit
-                                </a>
-                                <button onclick="if(confirm('Are you sure you want to delete this role?')) { window.location.href='#' }" class="btn-modern btn-danger-modern">
-                                    <i class="fas fa-trash"></i> Delete
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                        <button type="submit" class="btn-save">
+                            Save Role
+                        </button>
 
-                    <tr>
-                        <td class="fw-bold">#2</td>
-                        <td>Editor</td>
-                        <td>
-                            <div class="action-group">
-                                <a href="#" class="btn-modern btn-info-modern">
-                                    <i class="fas fa-key"></i> Permissions
-                                </a>
-                                <a href="#" class="btn-modern btn-secondary-modern">
-                                    <i class="fas fa-edit"></i> Edit
-                                </a>
-                                <button onclick="if(confirm('Are you sure you want to delete this role?')) { window.location.href='#' }" class="btn-modern btn-danger-modern">
-                                    <i class="fas fa-trash"></i> Delete
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                    </div>
 
-                    <tr>
-                        <td class="fw-bold">#3</td>
-                        <td>Standard User</td>
-                        <td>
-                            <div class="action-group">
-                                <a href="#" class="btn-modern btn-info-modern">
-                                    <i class="fas fa-key"></i> Permissions
-                                </a>
-                                <a href="#" class="btn-modern btn-secondary-modern">
-                                    <i class="fas fa-edit"></i> Edit
-                                </a>
-                                <button onclick="if(confirm('Are you sure you want to delete this role?')) { window.location.href='#' }" class="btn-modern btn-danger-modern">
-                                    <i class="fas fa-trash"></i> Delete
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                </form>
 
-                </tbody>
-
-            </table>
+            </div>
 
         </div>
 
     </div>
 
-</div>
+    <!-- Edit Role Modal -->
+    <div class="modal fade" id="editRoleModal" tabindex="-1">
+
+        <div class="   modal-dialog modal-dialog-centered">
+
+            <div class="modal-content modern-modal">
+
+                <div class="modal-header modern-modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-pen me-2"></i>
+                        Edit Role
+                    </h5>
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                    </button>
+                </div>
+
+                <form id="editRoleForm" method="POST">
+                    @csrf
+                    @method('PUT')
+
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <label class="modern-label">
+                                Role Name
+                            </label>
+
+                            <input type="text" id="role_name" name="name" class="form-control modern-input" required>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer modern-modal-footer">
+
+                        <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="btn-save">
+                            Update Role
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- GIVE PERMISSION MODAL -->
+    <div class="modal fade" id="givePermissionModal" tabindex="-1">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="modal-content modern-modal">
+
+                <div class="modal-header modern-modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-key me-2"></i>
+                        Assign Permissions to Role
+                    </h5>
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                    </button>
+                </div>
+
+                <form id="givePermissionForm" method="POST">
+                    @csrf
+                    @method('PUT')
+
+                    <div class="modal-body">
+
+                        <h6 class="text-white mb-3">
+                            Role: <span id="roleNameText"></span>
+                        </h6>
+
+                        @error('permission')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
+                        <div class="permission-grid">
+
+                            @foreach ($permissions as $permission)
+                                <label class="permission-item">
+
+                                    <input type="checkbox" name="permissions[]" value="{{ $permission->name }}"
+                                        class="permission-checkbox">
+
+                                    <div class="permission-content">
+                                        <span class="permission-title">
+                                            {{ $permission->name }}
+                                        </span>
+                                    </div>
+
+                                </label>
+                            @endforeach
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer modern-modal-footer">
+
+                        <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="btn-save">
+                            Update Permissions
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    {{-- Edit Modal JS --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const editButtons = document.querySelectorAll('.editRoleBtn');
+
+            editButtons.forEach(button => {
+
+                button.addEventListener('click', function() {
+
+                    let roleId = this.dataset.id;
+                    let roleName = this.dataset.name;
+
+                    document.getElementById('role_name').value = roleName;
+
+                    document.getElementById('editRoleForm').action =
+                        `/roles/${roleId}`;
+
+                });
+
+            });
+
+        });
+    </script>
+
+
+    {{-- Edit permission Modal JS --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const buttons = document.querySelectorAll('.openPermissionModal');
+
+            buttons.forEach(btn => {
+
+                btn.addEventListener('click', function() {
+
+                    let roleId = this.dataset.id;
+                    let roleName = this.dataset.name;
+                    let permissions = JSON.parse(this.dataset.permissions || "[]");
+
+                    // set form action
+                    document.getElementById('givePermissionForm').action =
+                        `/roles/${roleId}/give-permission`;
+
+                    // set role name
+                    document.getElementById('roleNameText').innerText = roleName;
+
+                    // reset all checkboxes
+                    document.querySelectorAll('.permission-checkbox').forEach(cb => {
+                        cb.checked = false;
+                    });
+
+                    // check assigned permissions
+                    document.querySelectorAll('.permission-checkbox').forEach(cb => {
+                        if (permissions.includes(cb.value)) {
+                            cb.checked = true;
+                        }
+                    });
+
+                });
+
+            });
+
+        });
+    </script>
 @endsection
+
