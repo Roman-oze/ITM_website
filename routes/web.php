@@ -30,6 +30,7 @@ use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Itm;
 use App\Models\User;
@@ -137,16 +138,29 @@ Route::get('menu-permission/sidebar', [MenuPermissionController::class, 'sidebar
 // Route::post('/assign-permission', [MenuPermissionController::class, 'assignPermission'])->name('menupermissions.assign');
 
 
-Route::controller(FacultyController::class)->group(function () {
-    Route::get('/faculty/create', 'create')->name('create.faculty');
-    Route::get('/dashboard/faculty', 'index')->name('faculty.index');
-    Route::post('/faculty/store', 'store')->name('faculty.store');
-    Route::get('/faculty/edit/{id}', 'edit')->name('edit.faculty');
-    Route::put('/faculty/update/{id}', 'update')->name('update.faculty');
-    Route::delete('/faculty/delete/{id}', 'destroy')->name('delete.faculty');
-    route::get('/faculty/search', 'search')->name('faculty.search');
-    Route::get('/teacher', 'faculty')->name('faculty.member');
+// Route::controller(FacultyController::class)->group(function () {
+//     Route::get('/faculty/create', 'create')->name('create.faculty');
+//     Route::get('/dashboard/faculty', 'index')->name('faculty.index');
+//     Route::post('/faculty/store', 'store')->name('faculty.store');
+//     Route::get('/faculty/edit/{id}', 'edit')->name('edit.faculty');
+//     Route::put('/faculty/update/{id}', 'update')->name('update.faculty');
+//     Route::delete('/faculty/delete/{id}', 'destroy')->name('delete.faculty');
+//     route::get('/faculty/search', 'search')->name('faculty.search');
+//     Route::get('/teacher', 'faculty')->name('faculty.member');
+// });
+
+Route::controller(TeamController::class)->group(function () {
+    Route::get('/team/create', 'create')->name('team.create');
+    Route::get('/team-member/index', 'index')->name('team.index');
+    Route::post('/team/store', 'store')->name('team.store');
+    Route::get('/team/edit/{id}', 'edit')->name('team.edit');
+    Route::put('/team/update/{id}', 'update')->name('team.update');
+    Route::delete('/team/delete/{id}', 'destroy')->name('team.delete');
+    route::get('/team/search', 'search')->name('team.search');
+    Route::get('/team-member', 'team')->name('team.team-member-list');
 });
+
+
 
 Route::controller(EventController::class)->group(function () {
     Route::get('/events', 'events')->name('events');

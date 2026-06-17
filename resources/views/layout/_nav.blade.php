@@ -33,7 +33,7 @@
                 </div>
               </div></li>
               <li><a class="nav-link scrollto"  href="{{route('gallery')}}">Gallery</a></li>
-              <li><a class="nav-link scrollto" href="{{route('faculty.member')}}">Team</a></li>
+              <li><a class="nav-link scrollto" href="{{route('team.team-member-list')}}">Team</a></li>
                <li>
                 <div class="dropdown rounded">
                 <a class="nav-link scrollto" href="{{route('blog.index')}}">Blogs</a>

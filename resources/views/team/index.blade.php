@@ -43,33 +43,33 @@ Team
 
                     <tbody>
 
-                        @foreach ($teachers as $teacher)
+                        @foreach ($teamMembers as $team)
                             <tr>
 
-                                <td>#{{ $teacher->teacher_id }}</td>
+                                <td>#{{ $team->teacher_id }}</td>
 
                                 <td>
-                                    <img src="{{ asset($teacher->image) }}" alt="{{ $teacher->name }}" width="50"
+                                    <img src="{{ asset($team->image) }}" alt="{{ $team->name }}" width="50"
                                         height="50" style="object-fit:cover;border-radius:50%;">
                                 </td>
 
                                 <td class="fw-medium">
-                                    {{ $teacher->name }}
+                                    {{ $team->name }}
                                 </td>
 
                                 <td>
                                     <span class="badge-modern">
-                                        {{ $teacher->designation }}
+                                        {{ $team->designation }}
                                     </span>
 
                                 </td>
 
                                 <td class="text-muted">
-                                    {{ $teacher->email }}
+                                    {{ $team->email }}
                                 </td>
 
                                 <td>
-                                    {{ $teacher->phone }}
+                                    {{ $team->phone }}
                                 </td>
 
                                 <td class="text-center">
@@ -77,25 +77,24 @@ Team
                                     <div class="action-group">
 
                                         <button type="button" class="btn-modern btn-info-modern" data-bs-toggle="modal"
-                                            data-bs-target="#facultyModal{{ $teacher->teacher_id }}">
+                                            data-bs-target="#facultyModal{{ $team->teacher_id }}">
                                             <i class="fas fa-eye"></i> View
                                         </button>
 
                                         @can('update user')
                                             <button type="button" class="btn-modern btn-secondary-modern editFacultyBtn"
-                                                data-id="{{ $teacher->teacher_id }}" data-name="{{ $teacher->name }}"
-                                                data-designation="{{ $teacher->designation }}"
-                                                data-email="{{ $teacher->email }}" data-phone="{{ $teacher->phone }}"
-                                                data-fb="{{ $teacher->fb }}" data-linked="{{ $teacher->linked }}"
-                                                data-image="{{ asset($teacher->image) }}" data-bs-toggle="modal"
-                                                data-bs-target="#editFacultyModal">
+                                                data-id="{{ $team->teacher_id }}" data-name="{{ $team->name }}"
+                                                data-designation="{{ $team->designation }}" data-email="{{ $team->email }}"
+                                                data-phone="{{ $team->phone }}" data-fb="{{ $team->fb }}"
+                                                data-linked="{{ $team->linked }}" data-image="{{ asset($team->image) }}"
+                                                data-bs-toggle="modal" data-bs-target="#editFacultyModal">
 
                                                 <i class="fa fa-edit"></i> Edit
                                             </button>
                                         @endcan
 
                                         @can('delete user')
-                                            <form action="{{ route('delete.faculty', $teacher->teacher_id) }}" method="POST"
+                                            <form action="{{ route('team.delete', $team->teacher_id) }}" method="POST"
                                                 class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
@@ -126,8 +125,8 @@ Team
 
 
     {{-- View modal --}}
-    @foreach ($teachers as $teacher)
-        <div class="modal fade" id="facultyModal{{ $teacher->teacher_id }}" tabindex="-1">
+    @foreach ($teamMembers as $team)
+        <div class="modal fade" id="facultyModal{{ $team->teacher_id }}" tabindex="-1">
 
             <div class="modal-dialog modal-lg modal-dialog-centered">
 
@@ -154,7 +153,7 @@ Team
                             <!-- IMAGE -->
                             <div class="col-md-4 text-center mb-3 mb-md-0">
 
-                                <img src="{{ asset($teacher->image) }}" alt="{{ $teacher->name }}"
+                                <img src="{{ asset($team->image) }}" alt="{{ $team->name }}"
                                     class="faculty-profile-image">
 
                             </div>
@@ -163,40 +162,40 @@ Team
                             <div class="col-md-8">
 
                                 <h4 class="text-white mb-2">
-                                    {{ $teacher->name }}
+                                    {{ $team->name }}
                                 </h4>
 
                                 <span class="faculty-designation-badge">
-                                    {{ $teacher->designation }}
+                                    {{ $team->designation }}
                                 </span>
 
                                 <div class="faculty-info-list mt-4">
 
                                     <div class="faculty-info-item">
                                         <i class="fas fa-envelope"></i>
-                                        <span>{{ $teacher->email }}</span>
+                                        <span>{{ $team->email }}</span>
                                     </div>
 
                                     <div class="faculty-info-item">
                                         <i class="fas fa-phone"></i>
-                                        <span>{{ $teacher->phone }}</span>
+                                        <span>{{ $team->phone }}</span>
                                     </div>
 
-                                    @if ($teacher->fb)
+                                    @if ($team->fb)
                                         <div class="faculty-info-item">
                                             <i class="fab fa-facebook"></i>
 
-                                            <a href="{{ $teacher->fb }}" target="_blank">
+                                            <a href="{{ $team->fb }}" target="_blank">
                                                 Facebook Profile
                                             </a>
                                         </div>
                                     @endif
 
-                                    @if ($teacher->linked)
+                                    @if ($team->linked)
                                         <div class="faculty-info-item">
                                             <i class="fab fa-linkedin"></i>
 
-                                            <a href="{{ $teacher->linked }}" target="_blank">
+                                            <a href="{{ $team->linked }}" target="_blank">
                                                 LinkedIn Profile
                                             </a>
                                         </div>
@@ -208,7 +207,7 @@ Team
 
                         </div>
 
-                        @if (!empty($teacher->bio))
+                        @if (!empty($team->bio))
                             <div class="faculty-bio-card mt-4">
 
                                 <h6 class="text-info mb-3">
@@ -216,7 +215,7 @@ Team
                                 </h6>
 
                                 <p class="mb-0">
-                                    {{ $teacher->bio }}
+                                    {{ $team->bio }}
                                 </p>
 
                             </div>
@@ -232,11 +231,11 @@ Team
                         </button>
 
                         @can('update user')
-                            <button type="button" class="btn-save editFacultyBtn" data-id="{{ $teacher->teacher_id }}"
-                                data-name="{{ $teacher->name }}" data-designation="{{ $teacher->designation }}"
-                                data-email="{{ $teacher->email }}" data-phone="{{ $teacher->phone }}"
-                                data-fb="{{ $teacher->fb }}" data-linked="{{ $teacher->linked }}"
-                                data-image="{{ asset($teacher->image) }}" data-bs-toggle="modal"
+                            <button type="button" class="btn-save editFacultyBtn" data-id="{{ $team->teacher_id }}"
+                                data-name="{{ $team->name }}" data-designation="{{ $team->designation }}"
+                                data-email="{{ $team->email }}" data-phone="{{ $team->phone }}"
+                                data-fb="{{ $team->fb }}" data-linked="{{ $team->linked }}"
+                                data-image="{{ asset($team->image) }}" data-bs-toggle="modal"
                                 data-bs-target="#editFacultyModal">
 
                                 <i class="fa fa-edit me-1"></i>
@@ -272,7 +271,7 @@ Team
                     </button>
                 </div>
 
-                <form action="{{ route('faculty.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('team.store') }}" method="POST" enctype="multipart/form-data">
 
                     @csrf
 
@@ -491,7 +490,7 @@ Team
                             this.dataset.image;
 
                         document.getElementById('editFacultyForm').action =
-                            `/faculty/update/${id}`;
+    "{{ url('/team/update') }}/" + id;
                     });
 
                 });
@@ -503,73 +502,73 @@ Team
 
 <style>
     /* Faculty Profile */
-.faculty-profile-image {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
+    .faculty-profile-image {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
 
-    border-radius: 50%;
+        border-radius: 50%;
 
-    border: 4px solid rgba(32,157,216,0.25);
+        border: 4px solid rgba(32, 157, 216, 0.25);
 
-    box-shadow: 0 0 25px rgba(32,157,216,0.15);
-}
+        box-shadow: 0 0 25px rgba(32, 157, 216, 0.15);
+    }
 
-/* Designation Badge */
-.faculty-designation-badge {
-    display: inline-block;
+    /* Designation Badge */
+    .faculty-designation-badge {
+        display: inline-block;
 
-    background: rgba(32,157,216,0.15);
+        background: rgba(32, 157, 216, 0.15);
 
-    color: #209DD8;
+        color: #209DD8;
 
-    padding: 8px 14px;
+        padding: 8px 14px;
 
-    border-radius: 30px;
+        border-radius: 30px;
 
-    font-size: 13px;
-    font-weight: 600;
-}
+        font-size: 13px;
+        font-weight: 600;
+    }
 
-/* Info List */
-.faculty-info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
+    /* Info List */
+    .faculty-info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
 
-.faculty-info-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    .faculty-info-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
 
-    color: #CBD5E1;
-}
+        color: #CBD5E1;
+    }
 
-.faculty-info-item i {
-    width: 20px;
-    color: #209DD8;
-}
+    .faculty-info-item i {
+        width: 20px;
+        color: #209DD8;
+    }
 
-.faculty-info-item a {
-    color: #CBD5E1;
-    text-decoration: none;
-}
+    .faculty-info-item a {
+        color: #CBD5E1;
+        text-decoration: none;
+    }
 
-.faculty-info-item a:hover {
-    color: #209DD8;
-}
+    .faculty-info-item a:hover {
+        color: #209DD8;
+    }
 
-/* Bio Card */
-.faculty-bio-card {
-    background: rgba(255,255,255,0.03);
+    /* Bio Card */
+    .faculty-bio-card {
+        background: rgba(255, 255, 255, 0.03);
 
-    border: 1px solid rgba(255,255,255,0.06);
+        border: 1px solid rgba(255, 255, 255, 0.06);
 
-    border-radius: 12px;
+        border-radius: 12px;
 
-    padding: 18px;
+        padding: 18px;
 
-    color: #CBD5E1;
-}
+        color: #CBD5E1;
+    }
 </style>
