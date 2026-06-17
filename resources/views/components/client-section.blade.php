@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-6">
-                    <a href="{{ route('club') }}" target="_blank" class="client-link">
+                    <a href="#" target="_blank" class="client-link">
                         <div class="client-card">
                             <img src="{{ asset('frontend/client/wecare-lged.png') }}" alt="Club">
                         </div>

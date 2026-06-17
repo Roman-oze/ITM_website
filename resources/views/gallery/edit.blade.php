@@ -7,17 +7,25 @@
 <main>
 
 <div class="container-fluid px-4">
-    <h2 class="mt-4">Committee Create</h2>
-    <ol class="breadcrumb mb-4">
+        <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mt-4 mb-3">
+        <div>
+            <h3 class="text-white mb-1">Gallery</h3>
+            <small class="text-muted">Upload and manage photos</small>
+        </div>
+    </div>
+
+    <!-- BREADCRUMB -->
+    <ol class="breadcrumb modern-breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Create</li>
+        <li class="breadcrumb-item active text-white">Gallery</li>
     </ol>
 
     <div class="row">
         <div class="col-lg-4 col-md-6 col-12 mx-auto">
             <div class="card shadow-sm p-4 border-0 rounded-3" style="background: #f7f7f7;">
                 <h4 class="text-center mb-3 text-primary">Edit Photo</h4>
-                <form action="{{ route('photo.update', $photo->id) }}" enctype="multipart/form-data" method="POST">
+                <form action="{{ route('gallery.update', $photo->id) }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     @method('PUT')
 

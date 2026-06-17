@@ -32,7 +32,7 @@
                   <a target="_blank" href="{{route('notice')}}" class="nav-link text-info">Notice Board</a>
                 </div>
               </div></li>
-              <li><a class="nav-link scrollto"  href="{{route('gallery.index')}}">Gallery</a></li>
+              <li><a class="nav-link scrollto"  href="{{route('gallery')}}">Gallery</a></li>
               <li><a class="nav-link scrollto" href="{{route('faculty.member')}}">Team</a></li>
                <li>
                 <div class="dropdown rounded">
