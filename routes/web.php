@@ -165,8 +165,8 @@ Route::controller(TeamController::class)->group(function () {
 Route::controller(EventController::class)->group(function () {
     Route::get('/events', 'events')->name('events');
     Route::get('/dashboard/event', 'index')->name('event.index');
-    Route::get('event/create', 'create')->name('event/create');
-    route::post('event_store', 'event_store')->name('event_store');
+    Route::get('event/create', 'create')->name('event.create');
+    route::post('event_store', 'event_store')->name('event.store');
     route::get('event_show/{id}', 'show')->name('event_show');
     route::get('/event_edit/{id}', 'edit')->name('event_edit');
     route::put('event_update/{id}', 'event_update')->name('event_update');

@@ -5,12 +5,6 @@
 
 @section('main')
 
-    <div class="container-fluid">
-        <h2 class="mt-4">Gallery</h2>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Gallery Section </li>
-        </ol>
 
 
         <div class="container py-4">
@@ -19,10 +13,10 @@
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
 
-                     <div>
-                    <h4 class="mb-0">Gallery Section Management</h4>
-                    <small class="text-muted">Manage homepage hero content</small>
-                </div>
+                    <div>
+                        <h4 class="mb-0">Gallery Section Management</h4>
+                        <small class="text-muted">Manage homepage hero content</small>
+                    </div>
 
                     <button type="button" class="cssbuttons-io-button border-0" data-bs-toggle="modal"
                         data-bs-target="#createGalleryModal">
@@ -156,13 +150,25 @@
                                 <input type="text" name="title" class="form-control modern-input" required>
                             </div>
 
-                            <div class="mb-3">
-                                <label class="modern-label">Event Type</label>
-                                <select name="type" class="form-control modern-input" required>
-                                    <option value="">Select</option>
-                                    <option value="Departmental">Departmental</option>
-                                    <option value="Meeting">Meeting</option>
-                                </select>
+                            <div class="mb-4">
+                                <label class="modern-label">
+                                    <i class="fa-solid fa-calendar-days me-2"></i>
+                                    Event Type
+                                </label>
+
+                                <div class="modern-select-wrapper">
+
+                                    <span class="modern-select-icon">
+                                        <i class="fa-solid fa-list"></i>
+                                    </span>
+
+                                    <select name="type" class="modern-select" required>
+                                        <option value="">Select Event Type</option>
+                                        <option value="Departmental">Departmental</option>
+                                        <option value="Meeting">Meeting</option>
+                                    </select>
+
+                                </div>
                             </div>
 
                         </div>
@@ -222,12 +228,26 @@
                                 <input type="text" name="title" id="editTitle" class="form-control modern-input">
                             </div>
 
-                            <div class="mb-3">
-                                <label class="modern-label">Event Type</label>
-                                <select name="type" id="editType" class="form-control modern-input">
-                                    <option value="Departmental">Departmental</option>
-                                    <option value="Club">Club</option>
-                                </select>
+
+                            <div class="mb-4">
+                                <label class="modern-label">
+                                    <i class="fa-solid fa-calendar-days me-2"></i>
+                                    Event Type
+                                </label>
+
+                                <div class="modern-select-wrapper">
+
+                                    <span class="modern-select-icon">
+                                        <i class="fa-solid fa-list"></i>
+                                    </span>
+
+                                    <select name="type" class="modern-select" required>
+                                        <option value="">Select Event Type</option>
+                                        <option value="Departmental">Departmental</option>
+                                        <option value="Meeting">Meeting</option>
+                                    </select>
+
+                                </div>
                             </div>
 
                         </div>
@@ -253,96 +273,182 @@
         </div>
 
     </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
 
-                const editButtons = document.querySelectorAll('.openGalleryEditModal');
+            const editButtons = document.querySelectorAll('.openGalleryEditModal');
 
-                editButtons.forEach(btn => {
+            editButtons.forEach(btn => {
 
-                    btn.addEventListener('click', function() {
+                btn.addEventListener('click', function() {
 
-                        let id = this.dataset.id;
-                        let title = this.dataset.title;
-                        let type = this.dataset.type;
-                        let image = this.dataset.image;
+                    let id = this.dataset.id;
+                    let title = this.dataset.title;
+                    let type = this.dataset.type;
+                    let image = this.dataset.image;
 
-                        document.getElementById('editTitle').value = title;
-                        document.getElementById('editType').value = type;
-                        document.getElementById('previewImage').src = image;
+                    document.getElementById('editTitle').value = title;
+                    document.getElementById('editType').value = type;
+                    document.getElementById('previewImage').src = image;
 
-                        document.getElementById('editGalleryForm').action =
-                            `/gallery/${id}`;
-
-                    });
+                    document.getElementById('editGalleryForm').action =
+                        `/gallery/${id}`;
 
                 });
 
             });
-        </script>
-    @endsection
+
+        });
+    </script>
+@endsection
 
 
-    <style>
-        /* =========================
+<style>
+    /* =========================
    FIXED GALLERY IMAGE SIZE
 ========================= */
 
-        .gallery-image-box {
-            width: 100%;
-            height: 200px;
-            /* SAME HEIGHT FOR ALL */
-            overflow: hidden;
-            border-radius: 12px;
-            background: #0B1220;
-        }
+    .gallery-image-box {
+        width: 100%;
+        height: 200px;
+        /* SAME HEIGHT FOR ALL */
+        overflow: hidden;
+        border-radius: 12px;
+        background: #0B1220;
+    }
 
-        .gallery-image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* KEY FOR SAME LOOK */
-            transition: transform 0.3s ease;
-        }
+    .gallery-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* KEY FOR SAME LOOK */
+        transition: transform 0.3s ease;
+    }
 
-        /* hover zoom effect */
-        .gallery-image-box:hover img {
-            transform: scale(1.05);
-        }
+    /* hover zoom effect */
+    .gallery-image-box:hover img {
+        transform: scale(1.05);
+    }
 
-        /* =========================
+    /* =========================
    MODERN TABLE (DARK ADMIN)
 ========================= */
 
-        .modern-table {
-            width: 100%;
-            color: #CBD5E1;
-            border-collapse: separate;
-            border-spacing: 0 10px;
-        }
+    .modern-table {
+        width: 100%;
+        color: #CBD5E1;
+        border-collapse: separate;
+        border-spacing: 0 10px;
+    }
 
-        .modern-table thead th {
-            color: #94A3B8;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
+    .modern-table thead th {
+        color: #94A3B8;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-        .modern-table tbody tr {
-            background: #0B1220;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: 0.3s;
-        }
+    .modern-table tbody tr {
+        background: #0B1220;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: 0.3s;
+    }
 
-        .modern-table tbody tr:hover {
-            transform: translateY(-2px);
-            background: rgba(32, 157, 216, 0.06);
-        }
+    .modern-table tbody tr:hover {
+        transform: translateY(-2px);
+        background: rgba(32, 157, 216, 0.06);
+    }
 
-        .modern-table td {
-            padding: 12px;
-            vertical-align: middle;
-            border: none;
-        }
-    </style>
+    .modern-table td {
+        padding: 12px;
+        vertical-align: middle;
+        border: none;
+    }
+
+    /* ===========================
+   Modern Select Design
+=========================== */
+
+    .modern-label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #e2e8f0;
+        font-size: 15px;
+    }
+
+    .modern-select-wrapper {
+        position: relative;
+    }
+
+    .modern-select-icon {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: rgba(56, 189, 248, .08);
+        border: 1px solid rgba(56, 189, 248, .20);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #38bdf8;
+        z-index: 2;
+    }
+
+    .modern-select {
+        width: 100%;
+        height: 58px;
+        padding: 0 55px 0 72px;
+
+        color: #38bdf8;
+
+        border: 1px solid #38bdf8;
+        border-radius: 14px;
+        background: rgba(56, 189, 248, .08);
+        font-size: 15px;
+        font-weight: 500;
+
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        transition: .3s ease;
+
+        cursor: pointer;
+    }
+
+    /* Custom Arrow */
+
+    .modern-select-wrapper::after {
+        content: "\f078";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        color: #64748b;
+        pointer-events: none;
+        transition: .3s;
+    }
+
+    .modern-select:hover {
+        border-color: #38bdf8;
+    }
+
+    .modern-select:focus {
+        outline: none;
+        border-color: #38bdf8;
+        box-shadow: 0 0 0 4px rgba(56, 189, 248, .12);
+    }
+
+    .modern-select:focus+.modern-select-icon {
+        border-color: #38bdf8;
+    }
+</style>

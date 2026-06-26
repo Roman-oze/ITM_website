@@ -96,7 +96,7 @@ class MenuController extends Controller
         $menu = Menu::findOrFail($id); // Find the menu by ID
         $menus = Menu::whereNull('parent_id')->get(); // Get top-level menus for the parent dropdown
 
-        return view('setup-menu.menus.edit', compact('menu', 'menus'));
+        return view('setup-menu.menus.display', compact('menu', 'menus'));
     }
 
     public function update(Request $request, $id)

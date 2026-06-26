@@ -28,7 +28,7 @@ class EventController extends Controller
     // admin dashvboard event file
     public function index(){
         $menus = Menu::all();
-        $events = Event::where('type', 'Departmental')->get();
+        $events = Event::all();
         return view('event.index',compact('events','menus'));
     }
 
@@ -60,7 +60,7 @@ class EventController extends Controller
             'time' => 'required',
             'location' => 'required|string|max:255',
             'description' => 'required|string',
-            'type' => 'required|string|in:Departmental,Club'
+            'type' => 'required|string|in:Departmental,Meeting'
             ,
         ]);
 
