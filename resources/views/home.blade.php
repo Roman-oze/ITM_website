@@ -41,8 +41,8 @@
                             <div class="kpi-box">
                                 <div class="kpi-number">
                                     <span class="purecounter" data-purecounter-start="0"
-                                        data-purecounter-end="{{ $studentCount }}">
-                                        {{ $studentCount }}
+                                        data-purecounter-end="">
+10
                                     </span>
                                 </div>
                                 <div class="kpi-label">Clients</div>
@@ -61,8 +61,8 @@
                             <div class="kpi-box">
                                 <div class="kpi-number">
                                     <span class="purecounter" data-purecounter-start="0"
-                                        data-purecounter-end="{{ $alumniCount }}">
-                                        {{ $alumniCount }}
+                                        data-purecounter-end="">
+                                       6
                                     </span>
                                 </div>
                                 <div class="kpi-label">Running</div>
@@ -71,8 +71,8 @@
                             <div class="kpi-box">
                                 <div class="kpi-number">
                                     <span class="purecounter" data-purecounter-start="0"
-                                        data-purecounter-end="{{ $scholarshipCount }}">
-                                        {{ $scholarshipCount }}
+                                        data-purecounter-end="">
+                                       3
                                     </span>
                                 </div>
                                 <div class="kpi-label">Draft</div>

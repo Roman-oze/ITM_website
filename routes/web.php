@@ -8,6 +8,7 @@ use App\Http\Controllers\ClubController;
 use App\Http\Controllers\CommitteeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashbaordController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\FeatureController;
@@ -66,7 +67,7 @@ Route::get('/send-notification', function () {
 
 // Route::group(['middleware' => ['menu.permission']],function(){
 
-route::get('/dashboard', [DashbaordController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 // Menu
 Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
 Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
@@ -162,24 +163,6 @@ Route::controller(EventController::class)->group(function () {
     route::put('event_update/{id}', 'event_update')->name('event_update');
     route::delete('event_delete/{id}', 'destroy')->name('event_delete');
 });
-
-
-
-route::resource('schedules', ScheduleController::class);
-Route::delete('/schedules/{schedule_id}', [ScheduleController::class, 'destroy'])->name('schedules.delete');
-// Route::get('/schedules/edit/{id}', [ScheduleController::class, 'edit'])->name('schedules.edit');
-// Route::get('/schedules/show/{id}', [ScheduleController::class, 'show'])->name('schedules.show');
-route::get('schedules/search', [ScheduleController::class, 'search'])->name('schedule.search');
-
-
-
-
-route::resource('Courses', CourseController::class);
-route::get('/search', [CourseController::class, 'search'])->name('course.search');
-// route::get('/course/index',[CourseController::class,'index'])->name('index');
-route::get('/course', [CourseController::class, 'program'])->name('program');
-Route::get('/courses', [CourseController::class, 'showCourseList'])->name('courses.list');
-Route::get('/courses/{semester}', [CourseController::class, 'getCoursesBySemester']);
 
 
 

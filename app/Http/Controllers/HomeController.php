@@ -23,22 +23,30 @@ class HomeController extends Controller
     public function home()
     {
 
+     // team
+        $boardOfDirectors = Teacher::whereIn('designation', [
+            'Managing Director',
+            'Director'
+        ])->get();
+
+        $technicalTeam = Teacher::whereNotIn('designation', [
+            'Managing Director',
+            'Director'
+        ])->get();
+
+        $teachers = Teacher::all();
+
         $hero = Herosection::first();
         $features = Feature::all();
         $services = Service::all();
+        $contact = Footer::first();
         $footers= Footer::all();
-        $scholars = Scholarship::all();
-        $studentCount = DB::table('users')->count();
         $facultyCount = DB::table('teachers')->count();
-        $alumniCount = DB::table('alumnis')->count();
         $scholarshipCount = DB::table('scholarships')->count();
 
 
-         return view('home',compact('hero','scholars','footers'),[
-        'studentCount' => $studentCount,
+         return view('home',compact('hero','contact','footers','boardOfDirectors','technicalTeam','teachers'),[
         'facultyCount' => $facultyCount,
-        'alumniCount' => $alumniCount,
-        'scholarshipCount' => $scholarshipCount,
         'features' => $features,
         'services' => $services,
     ]);

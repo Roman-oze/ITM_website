@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Session;
 
 
 
-class DashbaordController extends Controller
+class DashboardController extends Controller
 {
 
 
