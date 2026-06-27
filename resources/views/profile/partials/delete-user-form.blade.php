@@ -1,7 +1,6 @@
-<div class="card danger-card mt-4">
 
     <div class="card-header d-flex align-items-center">
-        <i class="fas fa-exclamation-triangle me-2 fs-5"></i>
+        <i class="fas fa-exclamation-triangle me-2 fs-5 text-danger"></i>
         <div>
             <h5 class="mb-0 text-white">Danger Zone</h5>
             <small class="text-light">

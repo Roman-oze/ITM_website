@@ -134,8 +134,38 @@
                         </div>
                     </div>
 
-                    <div class="mt-2">
-                        @include('profile.partials.delete-user-form')
+
+                    <!-- Danger Zone -->
+                    <div class="card ">
+                        <div class="card-header ">
+                            <button class="btn w-100 d-flex justify-content-between align-items-center px-4 py-3 text-start"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#deleteAccountCollapse"
+                                aria-expanded="false" aria-controls="deleteAccountCollapse">
+
+                                <div class="d-flex align-items-center">
+                                    <div class="danger-icon me-3">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </div>
+
+                                    <div>
+                                        <h6 class="mb-0 fw-bold text-danger">
+                                            Danger Zone
+                                        </h6>
+                                        <small class="text-muted">
+                                            Permanently delete your account
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <i class="fas fa-chevron-down fs-5 text-danger"></i>
+                            </button>
+                        </div>
+
+                        <div class="collapse" id="deleteAccountCollapse">
+                            <div class="card-body ">
+                                @include('profile.partials.delete-user-form')
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -190,9 +220,9 @@
 ========================== */
 
     .card-header {
-        background: #050505 !important;
-        border-bottom: 1px solid rgba(59, 130, 246, .4) !important;
+        background: #0b1220 !important;
     }
+
 
     .card-header h5 {
         color: #fff;
@@ -304,23 +334,46 @@
         font-weight: bold;
     }
 
-    /* ==========================
-      DELETE CARD
-========================== */
 
-    .danger-card {
-        border: 2px solid #dc3545 !important;
-    }
-
-    .danger-card .card-header {
-        background: #b91c1c !important;
-    }
-
-    /* ==========================
       TEXT COLORS
-========================== */
+/* ========================== */
 
     .text-muted {
         color: #b9d5f0 !important;
+    }
+
+    /* Danger Zone */
+
+    .danger-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(220, 53, 69, .12);
+        color: #dc3545;
+        font-size: 20px;
+        transition: .35s;
+    }
+
+    .card-header button {
+        transition: .3s;
+    }
+
+
+
+    .card-header button:hover .danger-icon {
+        transform: rotate(-10deg) scale(1.08);
+        background: #dc3545;
+        color: #fff;
+    }
+
+    .card-header button .fa-chevron-down {
+        transition: .35s;
+    }
+
+    .card-header button[aria-expanded="true"] .fa-chevron-down {
+        transform: rotate(180deg);
     }
 </style>
