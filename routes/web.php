@@ -138,16 +138,6 @@ Route::get('menu-permission/sidebar', [MenuPermissionController::class, 'sidebar
 // Route::post('/assign-permission', [MenuPermissionController::class, 'assignPermission'])->name('menupermissions.assign');
 
 
-// Route::controller(FacultyController::class)->group(function () {
-//     Route::get('/faculty/create', 'create')->name('create.faculty');
-//     Route::get('/dashboard/faculty', 'index')->name('faculty.index');
-//     Route::post('/faculty/store', 'store')->name('faculty.store');
-//     Route::get('/faculty/edit/{id}', 'edit')->name('edit.faculty');
-//     Route::put('/faculty/update/{id}', 'update')->name('update.faculty');
-//     Route::delete('/faculty/delete/{id}', 'destroy')->name('delete.faculty');
-//     route::get('/faculty/search', 'search')->name('faculty.search');
-//     Route::get('/teacher', 'faculty')->name('faculty.member');
-// });
 
 Route::controller(TeamController::class)->group(function () {
     Route::get('/team/create', 'create')->name('team.create');
@@ -173,28 +163,6 @@ Route::controller(EventController::class)->group(function () {
     route::delete('event_delete/{id}', 'destroy')->name('event_delete');
 });
 
-Route::controller(RoutineController::class)->group(function () {
-    route::get('/semester/spring', 'spring')->name('spring.routines');
-    route::get('/semester/fall', 'fall')->name('fall.routines');
-    route::get('/dashboard/routine', 'index')->name('routine.index');
-    // route::get('/routine/create','create')->name('routine.create');
-    route::post('/routine/store', 'store')->name('routine.store');
-    route::get('/routine/show/{id}', 'show')->name('routine.show');
-    route::get('/routine/edit/{id}', 'edit')->name('routine.edit');
-    route::put('/routine/update/{id}', 'update')->name('routine.update');
-    route::delete('/routine/delete/{id}', 'destroy')->name('routine.delete');
-    Route::get('/files/download/{id}',  'download')->name('files.download');
-});
-
-// Route::controller(AdminController::class)->group(function(){
-
-//     Route::get('user', 'user')->name('admin.user');
-//     Route::get('admin/show/{id}', 'show')->name('show');
-//     Route::get('admin/edit/{id}', 'edit')->name('admin.edit');
-//     Route::put('admin/update/{id}','update')->name('admin.update');
-//     Route::delete('admin/delete/{id}', 'destroy')->name('admin.delete');
-
-// });
 
 
 route::resource('schedules', ScheduleController::class);
@@ -214,43 +182,6 @@ Route::get('/courses', [CourseController::class, 'showCourseList'])->name('cours
 Route::get('/courses/{semester}', [CourseController::class, 'getCoursesBySemester']);
 
 
-
-
-Route::controller(AlumniController::class)->group(function () {
-    Route::get('Admission/alumni', 'alumni')->name('alumni');
-    Route::get('/dashboard/alumni', 'index')->name('alumni.index');
-    Route::get('/alumni/create', 'create')->name('create.alumni');
-    Route::post('/alumni/store', 'store')->name('alumni.store');
-    Route::get('/alumni/edit/{id}', 'edit')->name('edit.alumni');
-    Route::put('/alumni/update/{id}', 'update')->name('update.alumni');
-    Route::delete('/alumni/delete/{id}', 'destroy')->name('delete.alumni');
-});
-
-Route::controller(ScholarshipController::class)->group(function () {
-    Route::get('/admission/scholarship', 'scholar')->name('scholarship');
-    Route::get('/dashboard/scholarship', 'index')->name('scholarship.index');
-    Route::get('/scholarship/create', 'create')->name('create.scholarship');
-    Route::post('/scholarship/store', 'store')->name('store.scholarship');
-    Route::get('/scholarship/edit/{id}', 'edit')->name('edit.scholarship');
-    Route::put('/scholarship/update/{id}', 'update')->name('update.scholarship');
-    Route::delete('/scholarship/delete/{id}', 'destroy')->name('delete.scholarship');
-});
-
-Route::controller(StudentController::class)->group(function () {
-    Route::get('/students', 'index')->name('student.index');
-    Route::get('/student/create', 'create')->name('student.create');
-    Route::post('/student', 'store')->name('student.store');
-    Route::get('/student/show/{id}', 'show')->name('student.show');
-    Route::get('/student/edit/{id}', 'edit')->name('student.edit');
-    Route::put('/student/update/{id}', 'update')->name('student.update');
-    Route::delete('student/delete/{id}', 'destroy')->name('delete');
-    Route::get('/student/search', 'search')->name('student.search');
-    Route::get('student/login', 'sign_in')->name('sign_in');
-    Route::post('student/create', 'batches')->name('student.batch');
-    Route::post('/batches', 'batches')->name('batches.store');
-    Route::get('student/{studentId}/activate', 'activate')->name('admin.students.activate');
-    Route::get('student/{studentId}/deactivate', 'deactivate')->name('admin.students.deactivate');
-});
 
 Route::controller(StaffController::class)->group(function () {
     route::get('/staff/index', 'index')->name('staff.index');
@@ -282,29 +213,6 @@ Route::controller(MailController::class)->group(function () {
 });
 
 
-// Route::controller(ClubController::class)->group(function () {
-//     Route::get('/club', 'club')->name('club');
-//     Route::get('club/register', 'register')->name('club.register');
-//     Route::get('/club/photo/index', 'create')->name('photo.create');
-//     Route::post('club/photo', 'store')->name('photo.store');
-//     Route::get('club/photo/{id}', 'edit')->name('photo.edit');
-//     Route::put('club/photo/{id}', 'update')->name('photo.update');
-//     Route::delete('club/photo/{id}', 'destroy')->name('photo.delete');
-//     Route::get('/club/event', 'event')->name('club.event');
-//     Route::get('/club/index', 'event_index')->name('event.index');
-//     Route::get('/membership', 'membership')->name('membership');
-//     Route::get('/membership/index', 'index')->name('membership.index');
-// });
-
-Route::controller(CommitteeController::class)->group(function () {
-    Route::get('club/committee', 'committee')->name('committee');
-    Route::get('club/committee/index', 'index')->name('committee.index');
-    Route::get('club/committee/create', 'create')->name('committee.create');
-    Route::post('club/committee', 'store')->name('committee.store');
-    Route::get('club/committee/{id}', 'edit')->name('committee.edit');
-    Route::put('club/committee/{id}', 'update')->name('committee.update');
-    Route::delete('club/committee/{id}', 'destroy')->name('committee.delete');
-});
 
 
 Route::get('/notifications', [NotificationController::class, 'store'])->name('notifications.store');
