@@ -1,188 +1,452 @@
-<section id="services" class="services-classic py-5">
+<section id="services" class="team-section">
+
     <div class="container">
 
-        <!-- Header -->
         <div class="section-title text-center mb-5">
-            <h2>Specialist</h2>
-            <p>
+
+            <span class="section-badge">
+                <i class="fa-solid fa-layer-group"></i>
+                Our Expertise
+            </span>
+
+            <h2 >
+                Specialist
+            </h2>
+
+            <p class="text-white">
                 Build your future with modern technology and professional software solutions.
             </p>
+
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4 align-items-stretch">
 
-            <!-- LEFT FEATURE COLUMN -->
-            <div class="col-lg-6">
+            <!-- Left -->
 
-                <div class="feature-item">
-                    <div class="icon-box">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h5>Web Development</h5>
-                        <p>Responsive, scalable and modern web applications using latest technologies.</p>
-                    </div>
-                </div>
+            <div class="col-lg-7">
 
-                <div class="feature-item">
-                    <div class="icon-box">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h5>Mobile Applications</h5>
-                        <p>Android & iOS apps with smooth UX and high performance.</p>
-                    </div>
-                </div>
+                <div class="specialist-card">
 
-                <div class="feature-item">
-                    <div class="icon-box">
-                        <i class="fas fa-briefcase"></i>
+                    <div class="feature-item">
+
+                        <div class="icon-box">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+
+                        <div class="feature-content">
+                            <h5>Web Development</h5>
+                            <p>
+                                Responsive, scalable and secure web applications using modern technologies.
+                            </p>
+                        </div>
+
                     </div>
-                    <div class="feature-content">
-                        <h5>Business Solutions</h5>
-                        <p>Smart systems for productivity, management and decision making.</p>
+
+                    <div class="feature-item">
+
+                        <div class="icon-box">
+                            <i class="fas fa-mobile-screen-button"></i>
+                        </div>
+
+                        <div class="feature-content">
+                            <h5>Mobile Applications</h5>
+                            <p>
+                                High-performance Android & iOS applications with excellent user experience.
+                            </p>
+                        </div>
+
                     </div>
+
+                    <div class="feature-item">
+
+                        <div class="icon-box">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+
+                        <div class="feature-content">
+                            <h5>Business Solutions</h5>
+                            <p>
+                                ERP, CRM and customized management software for every organization.
+                            </p>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
 
-            <!-- RIGHT ABOUT PANEL -->
-            <div class="col-lg-6">
+            <!-- Right -->
+
+            <div class="col-lg-5">
+
                 <div class="about-panel">
-                    <h3>About Us</h3>
+
+                    <span class="about-tag">
+                        About Our Team
+                    </span>
+
+                    <h3>
+                        Digital Solutions That Drive Success
+                    </h3>
+
                     <p>
-                        We are a dedicated software development team focused on delivering efficient,
-                        scalable, and user-friendly applications. We transform ideas into real digital solutions.
+                        We develop reliable, scalable and user-friendly software solutions for businesses,
+                        educational institutions and organizations using the latest technologies and
+                        industry best practices.
                     </p>
 
+                    <ul class="about-list">
+
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Modern UI/UX Design
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Secure & Scalable Architecture
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Professional Support
+                        </li>
+
+                    </ul>
+
                     <a href="{{ route('about') }}" class="about-btn">
-                        Get in Touch
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
                     </a>
+
                 </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 <style>
-.services-classic {
-    background: #f6f7fb;
+/*=========================
+    SPECIALIST SECTION
+=========================*/
+
+.specialist-section{
+    background:transparent;
 }
 
-/* SECTION TITLE */
-.section-title h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1b1f2a;
+.section-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 18px;
+    border:2px solid #47B2E4;
+    border-radius:40px;
+    color:#47B2E4;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:15px;
 }
 
-.section-title p {
-    color: #6b7280;
-    max-width: 600px;
-    margin: 10px auto 0;
+.section-badge i{
+    font-size:15px;
 }
 
-/* FEATURE ITEM */
-.feature-item {
-    display: flex;
-    gap: 15px;
-    padding: 18px 20px;
-    background: #060b23;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transition: 0.3s ease;
+.specialist-card{
+
+    border:2px solid #47B2E4;
+    border-radius:20px;
+    padding:15px;
+    height:100%;
 }
 
-/* hover card */
-.feature-item:hover {
-    transform: translateX(6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.feature-item{
+
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    transition:.35s;
+
 }
 
-/* ICON BOX (DEFAULT STATE) */
-.icon-box {
-    width: 50px;
-    height: 50px;
-    background: #f1f5f9;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: #47B2E4;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
+.feature-item:not(:last-child){
+
+    margin-bottom:18px;
+
+    border-bottom:1px solid rgba(71,178,228,.20);
+
 }
 
-/* HOVER STATE (YOUR REQUIREMENT) */
-.feature-item:hover .icon-box {
-    background: #47B2E4;
-    color: #ffffff;
+.feature-item:hover{
+
+    background:rgba(71,178,228,.06);
+
 }
 
-/* TEXT */
-.feature-content h5 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
+.icon-box{
+
+    width:70px;
+    min-width:70px;
+    height:70px;
+
+    border:2px solid #47B2E4;
+
+    border-radius:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:.35s;
+
 }
 
-.feature-content p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: rgba(255,255,255,0.7);
+.icon-box i{
+
+    color:#47B2E4;
+
+    font-size:28px;
+
 }
 
-/* ABOUT PANEL */
-.about-panel {
-    background: #060b23;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 40px;
-    height: 100%;
+.feature-item:hover .icon-box{
+
+    background:#47B2E4;
+
 }
 
-.about-panel h3 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #f2f3f6;
+.feature-item:hover .icon-box i{
+
+    color:#fff;
+
 }
 
-.about-panel p {
-    font-size: 15px;
-    color: #eaecf0;
-    line-height: 1.8;
-    margin-bottom: 20px;
+.feature-content h5{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    color:#e3e6eb;
+
 }
 
-/* BUTTON */
-.about-btn {
-    display: inline-block;
-    padding: 10px 22px;
-    border: 1px solid #cfd5e1;
-    color: #eaedf1;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: 0.3s;
+.feature-content p{
+
+    margin:0;
+
+    color:#ece6e6;
+
+    line-height:1.8;
+
 }
 
-.about-btn:hover {
-    background: #111827;
-    color: #fff;
+
+
+/*=========================
+      ABOUT PANEL
+=========================*/
+
+.about-panel{
+
+    border:2px solid #47B2E4;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .about-panel {
-        padding: 25px;
+.about-tag{
+
+    display:inline-block;
+
+    color:#47B2E4;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.about-panel h3{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    color:#d0d4dc;
+
+}
+
+.about-panel p{
+
+    color:#eae5e5;
+
+    line-height:1.9;
+
+    margin-bottom:25px;
+
+}
+
+.about-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0 0 30px;
+
+}
+
+.about-list li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:16px;
+
+    color:#e8e2e2;
+
+    font-weight:500;
+
+}
+
+.about-list i{
+
+    color:#47B2E4;
+
+    font-size:18px;
+
+}
+
+.about-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    width:fit-content;
+
+    padding:14px 28px;
+
+    border-radius:12px;
+
+    background:#0B1220;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    border:2px solid #47B2E4;
+
+    transition:.35s;
+
+}
+
+.about-btn:hover{
+
+    background:#47B2E4;
+
+    color:#fff;
+
+}
+
+.about-btn i{
+
+    transition:.35s;
+
+}
+
+.about-btn:hover i{
+
+    transform:translateX(5px);
+
+}
+
+
+
+/*=========================
+      RESPONSIVE
+=========================*/
+
+@media(max-width:991px){
+
+    .about-panel{
+
+        margin-top:10px;
+
+        padding:30px;
+
     }
 
-    .feature-item {
-        flex-direction: row;
+    .about-panel h3{
+
+        font-size:28px;
+
     }
+
+}
+
+@media(max-width:576px){
+
+    .feature-item{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        align-items:center;
+
+    }
+
+    .about-panel{
+
+        text-align:center;
+
+    }
+
+    .about-list li{
+
+        justify-content:center;
+
+    }
+
+    .about-btn{
+
+        width:100%;
+
+    }
+
 }
 </style>

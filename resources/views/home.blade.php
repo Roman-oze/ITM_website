@@ -106,7 +106,7 @@
 
 
     {{-- client list section --}}
-    <section class="stats-section py-5">
+    <section class="team-section ">
         <div id="cta" class="cta">
             <div class=" mt-5">
                 <h1 class="fac_text text-center">Our Client</h1>

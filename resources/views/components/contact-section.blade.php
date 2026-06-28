@@ -1,4 +1,4 @@
- <section id="contact" class="contact">
+ <section id="contact" class="contact ">
      <div class="container aos-init aos-animate" data-aos="fade-up">
          <div class="section-title">
              <h2>Contact</h2>

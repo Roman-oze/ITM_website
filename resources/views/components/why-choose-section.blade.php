@@ -1,4 +1,4 @@
- <section class="why-choose-section py-5">
+ <section class="team-section">
         <div class="container">
 
             <div class="text-center mb-5">
@@ -6,7 +6,7 @@
                     <i class="fa-solid fa-star"></i> Why Choose SoftwareGiant
                 </span>
 
-                <h2 class="display-5 fw-bold mt-3">
+                <h2 class="display-5 fw-bold mt-3 text-white">
                     Transforming Ideas Into
                     <span class="gradient-text">Digital Excellence</span>
                 </h2>
