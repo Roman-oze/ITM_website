@@ -32,6 +32,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TeamMemberController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Itm;
 use App\Models\User;
@@ -140,7 +141,7 @@ Route::get('menu-permission/sidebar', [MenuPermissionController::class, 'sidebar
 
 
 
-Route::controller(TeamController::class)->group(function () {
+Route::controller(TeamMemberController::class)->group(function () {
     Route::get('/team/create', 'create')->name('team.create');
     Route::get('/team-member/index', 'index')->name('team.index');
     Route::post('/team/store', 'store')->name('team.store');

@@ -40,7 +40,7 @@
                                 </span>
 
                                 <button class="team-btn" data-bs-toggle="modal"
-                                    data-bs-target="#facultyModal{{ $teacher->teacher_id }}">
+                                    data-bs-target="#facultyModal{{ $teacher->teammember_id }}">
                                     View Profile
                                 </button>
 
@@ -77,7 +77,7 @@
                                 </span>
 
                                 <button class="team-btn" data-bs-toggle="modal"
-                                    data-bs-target="#facultyModal{{ $teacher->teacher_id }}">
+                                    data-bs-target="#facultyModal{{ $teacher->teammember_id }}">
                                     View Profile
                                 </button>
 
@@ -88,8 +88,8 @@
                     </div>
                 @endforeach
                 @foreach ($teachers as $teacher)
-                    <div class="modal fade team-modal" id="facultyModal{{ $teacher->teacher_id }}" tabindex="-1"
-                        aria-labelledby="facultyModalLabel{{ $teacher->teacher_id }}" aria-hidden="true">
+                    <div class="modal fade team-modal" id="facultyModal{{ $teacher->teammember_id }}" tabindex="-1"
+                        aria-labelledby="facultyModalLabel{{ $teacher->teammember_id }}" aria-hidden="true">
 
                         <div class="modal-dialog modal-lg modal-dialog-centered">
 
@@ -97,7 +97,7 @@
 
                                 <div class="modal-header border-0">
 
-                                    <h5 class="modal-title" id="facultyModalLabel{{ $teacher->teacher_id }}">
+                                    <h5 class="modal-title" id="facultyModalLabel{{ $teacher->teammember_id }}">
                                         Team Member Profile
                                     </h5>
 

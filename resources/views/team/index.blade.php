@@ -46,7 +46,7 @@ Team
                         @foreach ($teamMembers as $team)
                             <tr>
 
-                                <td>#{{ $team->teacher_id }}</td>
+                                <td>#{{ $team->teammember_id }}</td>
 
                                 <td>
                                     <img src="{{ asset($team->image) }}" alt="{{ $team->name }}" width="50"
@@ -77,13 +77,13 @@ Team
                                     <div class="action-group">
 
                                         <button type="button" class="btn-modern btn-info-modern" data-bs-toggle="modal"
-                                            data-bs-target="#facultyModal{{ $team->teacher_id }}">
+                                            data-bs-target="#facultyModal{{ $team->teammember_id }}">
                                             <i class="fas fa-eye"></i> View
                                         </button>
 
                                         @can('update user')
                                             <button type="button" class="btn-modern btn-secondary-modern editFacultyBtn"
-                                                data-id="{{ $team->teacher_id }}" data-name="{{ $team->name }}"
+                                                data-id="{{ $team->teammember_id }}" data-name="{{ $team->name }}"
                                                 data-designation="{{ $team->designation }}" data-email="{{ $team->email }}"
                                                 data-phone="{{ $team->phone }}" data-fb="{{ $team->fb }}"
                                                 data-linked="{{ $team->linked }}" data-image="{{ asset($team->image) }}"
@@ -94,7 +94,7 @@ Team
                                         @endcan
 
                                         @can('delete user')
-                                            <form action="{{ route('team.delete', $team->teacher_id) }}" method="POST"
+                                            <form action="{{ route('team.delete', $team->teammember_id) }}" method="POST"
                                                 class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
@@ -126,7 +126,7 @@ Team
 
     {{-- View modal --}}
     @foreach ($teamMembers as $team)
-        <div class="modal fade" id="facultyModal{{ $team->teacher_id }}" tabindex="-1">
+        <div class="modal fade" id="facultyModal{{ $team->teammember_id }}" tabindex="-1">
 
             <div class="modal-dialog modal-lg modal-dialog-centered">
 
@@ -231,7 +231,7 @@ Team
                         </button>
 
                         @can('update user')
-                            <button type="button" class="btn-save editFacultyBtn" data-id="{{ $team->teacher_id }}"
+                            <button type="button" class="btn-save editFacultyBtn" data-id="{{ $team->teammember_id }}"
                                 data-name="{{ $team->name }}" data-designation="{{ $team->designation }}"
                                 data-email="{{ $team->email }}" data-phone="{{ $team->phone }}"
                                 data-fb="{{ $team->fb }}" data-linked="{{ $team->linked }}"

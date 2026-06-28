@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Teacher;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class TeamController extends Controller
+class TeamMemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,17 +17,17 @@ class TeamController extends Controller
 
 
         // team
-        $boardOfDirectors = Teacher::whereIn('designation', [
+        $boardOfDirectors = TeamMember::whereIn('designation', [
             'Managing Director',
             'Director'
         ])->get();
 
-        $technicalTeam = Teacher::whereNotIn('designation', [
+        $technicalTeam = TeamMember::whereNotIn('designation', [
             'Managing Director',
             'Director'
         ])->get();
 
-        $teachers = Teacher::all();
+        $teachers = TeamMember::all();
 
 
 
@@ -43,7 +44,7 @@ class TeamController extends Controller
     public function index()
     {
 
-        $teamMembers = Teacher::all();
+        $teamMembers = TeamMember::all();
 
         return view('team.index', [
             'teamMembers' => $teamMembers
@@ -73,15 +74,15 @@ class TeamController extends Controller
             'phone' => 'required',
         ]);
 
-        $fileName = time() . '-itm.' . $request->file('image')->getClientOriginalExtension();
-        $request->file('image')->move('faculty', $fileName);
+        $fileName = time() . '-sg.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move('teammember', $fileName);
 
 
 
 
 
 
-        $data['image'] =  'faculty/' . $fileName;
+        $data['image'] =  'teammember/' . $fileName;
         $data['name'] = $request->name;
         $data['designation'] = $request->designation;
         $data['fb'] = $request->fb;
@@ -90,8 +91,8 @@ class TeamController extends Controller
         $data['phone'] = $request->phone;
 
 
-        DB::table('teachers')->insert($data);
-        return redirect()->route('team.index')->with('success', 'Faculty Added Successfully');
+        DB::table('team_members')->insert($data);
+        return redirect()->route('team.index')->with('success', 'Team Member Added Successfully');
     }
 
 
@@ -100,7 +101,7 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-        $teacher = DB::table('teachers')->where('teacher_id', $id)->first();
+        $teacher = DB::table('team_members')->where('teammember_id', $id)->first();
         return view('team.index', compact('teacher'));
     }
 
@@ -127,30 +128,30 @@ class TeamController extends Controller
 
         if ($request->hasFile('image')) {
 
-            $fileName = time() . '-itm.' .
+            $fileName = time() . '-sg.' .
                 $request->file('image')->getClientOriginalExtension();
 
-            $request->file('image')->move('faculty', $fileName);
+            $request->file('image')->move('teammember', $fileName);
 
-            $data['image'] = 'faculty/' . $fileName;
+            $data['image'] = 'teammember/' . $fileName;
         }
 
-        Teacher::where('teacher_id', $id)->update($data);
+        TeamMember::where('teammember_id', $id)->update($data);
 
         return redirect()
             ->route('team.index')
-            ->with('success', 'Faculty Updated Successfully');
+            ->with('success', 'Team Member Updated Successfully');
     }
 
 
 
     public function destroy($id)
     {
-        Teacher::where('teacher_id', $id)->delete();
+        TeamMember::where('teammember_id', $id)->delete();
 
         return redirect()
             ->route('team.index')
-            ->with('success', 'Faculty Deleted Successfully');
+            ->with('success', 'Team Member Deleted Successfully');
     }
 
 
@@ -162,12 +163,5 @@ class TeamController extends Controller
 
 
 
-    public function search(Request $request)
-    {
 
-
-        $data = $request->input('search');
-        $teachers = DB::table('teachers')->where('name', 'like', '%' . $data . '%')->orWhere('email', 'like', '%' . $data . '%')->paginate(10);
-        return view('faculty.index', compact('teachers'));
-    }
 }
