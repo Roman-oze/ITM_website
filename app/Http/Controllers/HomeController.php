@@ -12,6 +12,7 @@ use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Herosection;
 use App\Models\Scholarship;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,17 +25,17 @@ class HomeController extends Controller
     {
 
      // team
-        $boardOfDirectors = Teacher::whereIn('designation', [
+        $boardOfDirectors = TeamMember::whereIn('designation', [
             'Managing Director',
             'Director'
         ])->get();
 
-        $technicalTeam = Teacher::whereNotIn('designation', [
+        $technicalTeam = TeamMember::whereNotIn('designation', [
             'Managing Director',
             'Director'
         ])->get();
 
-        $teachers = Teacher::all();
+        $teammembers = TeamMember::all();
 
         $hero = Herosection::first();
         $features = Feature::all();
@@ -45,7 +46,7 @@ class HomeController extends Controller
         $scholarshipCount = DB::table('scholarships')->count();
 
 
-         return view('home',compact('hero','contact','footers','boardOfDirectors','technicalTeam','teachers'),[
+         return view('home',compact('hero','contact','footers','boardOfDirectors','technicalTeam','teammembers'),[
         'facultyCount' => $facultyCount,
         'features' => $features,
         'services' => $services,
@@ -81,15 +82,14 @@ class HomeController extends Controller
 
     public function about()
     {
-         $officers = Staff::whereIn('position',['Dean and Professor of CSE','Associate Dean','Head of the Department'])->get();
-         $staffs = Staff::whereIn('position',['Assistant Coordination Officer'])->get();
+        //  $officers = Staff::whereIn('position',['Dean and Professor of CSE','Associate Dean','Head of the Department'])->get();
+         $staffs = Staff::all();
         //  $officers = $officers->merge($staffs);
         $footers = Footer::first();
         $gallery = Gallery::where('type','Departmental')->get();
         $photo = Gallery::where('type', 'Departmental')->first();
 
         return view('frontend.about',[
-            'officers' => $officers,
             'staffs' => $staffs,
             'footers' => $footers,
             'gallery' => $gallery,

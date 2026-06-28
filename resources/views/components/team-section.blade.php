@@ -19,25 +19,25 @@
 
 
          <div class="row justify-content-center">
-             @foreach ($boardOfDirectors as $teacher)
+             @foreach ($boardOfDirectors as $teammember)
                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
 
                      <div class="team-card">
 
                          <div class="team-image">
-                             <img src="{{ asset($teacher->image) }}" alt="{{ $teacher->name }}">
+                             <img src="{{ asset($teammember->image) }}" alt="{{ $teammember->name }}">
                          </div>
 
                          <div class="team-content">
 
-                             <h5>{{ $teacher->name }}</h5>
+                             <h5>{{ $teammember->name }}</h5>
 
                              <span>
-                                 {{ $teacher->designation }}
+                                 {{ $teammember->designation }}
                              </span>
 
                              <button class="team-btn" data-bs-toggle="modal"
-                                 data-bs-target="#facultyModal{{ $teacher->teacher_id }}">
+                                 data-bs-target="#facultyModal{{ $teammember->teammember_id }}">
                                  View Profile
                              </button>
 
@@ -56,25 +56,25 @@
          </div>
 
          <div class="row justify-content-center">
-             @foreach ($technicalTeam as $teacher)
+             @foreach ($technicalTeam as $teammember)
                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
 
                      <div class="team-card">
 
                          <div class="team-image">
-                             <img src="{{ asset($teacher->image) }}" alt="{{ $teacher->name }}">
+                             <img src="{{ asset($teammember->image) }}" alt="{{ $teammember->name }}">
                          </div>
 
                          <div class="team-content">
 
-                             <h5>{{ $teacher->name }}</h5>
+                             <h5>{{ $teammember->name }}</h5>
 
                              <span>
-                                 {{ $teacher->designation }}
+                                 {{ $teammember->designation }}
                              </span>
 
                              <button class="team-btn" data-bs-toggle="modal"
-                                 data-bs-target="#facultyModal{{ $teacher->teacher_id }}">
+                                 data-bs-target="#facultyModal{{ $teammember->teammember_id }}">
                                  View Profile
                              </button>
 
@@ -85,9 +85,9 @@
                  </div>
              @endforeach
 
-             @foreach ($teachers as $teacher)
-                 <div class="modal fade team-modal" id="facultyModal{{ $teacher->teacher_id }}" tabindex="-1"
-                     aria-labelledby="facultyModalLabel{{ $teacher->teacher_id }}" aria-hidden="true">
+             @foreach ($teammembers as $teammember)
+                 <div class="modal fade team-modal" id="facultyModal{{ $teammember->teammember_id }}" tabindex="-1"
+                     aria-labelledby="facultyModalLabel{{ $teammember->teammember_id }}" aria-hidden="true">
 
                      <div class="modal-dialog modal-lg modal-dialog-centered">
 
@@ -95,7 +95,7 @@
 
                              <div class="modal-header border-0">
 
-                                 <h5 class="modal-title" id="facultyModalLabel{{ $teacher->teacher_id }}">
+                                 <h5 class="modal-title" id="facultyModalLabel{{ $teammember->teammember_id }}">
                                      Team Member Profile
                                  </h5>
 
@@ -111,7 +111,7 @@
                                      <div class="col-md-4 text-center">
 
                                          <div class="modal-profile-wrapper">
-                                             <img src="{{ asset($teacher->image) }}" alt="{{ $teacher->name }}"
+                                             <img src="{{ asset($teammember->image) }}" alt="{{ $teammember->name }}"
                                                  class="modal-profile-img">
                                          </div>
 
@@ -120,25 +120,25 @@
                                      <div class="col-md-8">
 
                                          <h3 class="member-name">
-                                             {{ $teacher->name }}
+                                             {{ $teammember->name }}
                                          </h3>
 
                                          <div class="member-role">
-                                             {{ $teacher->designation }}
+                                             {{ $teammember->designation }}
                                          </div>
 
                                          <div class="info-box">
                                              <i class="fa-solid fa-envelope"></i>
-                                             <span>{{ $teacher->email }}</span>
+                                             <span>{{ $teammember->email }}</span>
                                          </div>
 
                                          <div class="info-box">
                                              <i class="fa-solid fa-phone"></i>
-                                             <span>{{ $teacher->phone }}</span>
+                                             <span>{{ $teammember->phone }}</span>
                                          </div>
 
-                                         @if ($teacher->fb)
-                                             <a href="{{ $teacher->fb }}" target="_blank" class="social-btn">
+                                         @if ($teammember->fb)
+                                             <a href="{{ $teammember->fb }}" target="_blank" class="social-btn">
                                                  <i class="fa-brands fa-facebook-f"></i>
                                                  Visit Facebook
                                              </a>
@@ -148,13 +148,13 @@
 
                                  </div>
 
-                                 @if (!empty($teacher->bio))
+                                 @if (!empty($teammember->bio))
                                      <div class="bio-section">
 
                                          <h5>About</h5>
 
                                          <p>
-                                             {{ $teacher->bio }}
+                                             {{ $teammember->bio }}
                                          </p>
 
                                      </div>

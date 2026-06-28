@@ -4,295 +4,293 @@
 @include('include.alerts')
 
 @section('main')
+    <div class="container py-4">
 
+        <div class="modern-card">
 
+            <div class="d-flex justify-content-between align-items-center mb-3">
 
-        <div class="container py-4">
-
-            <div class="modern-card">
-
-                <div class="d-flex justify-content-between align-items-center mb-3">
-
-                    <div>
-                        <h4 class="mb-0">Gallery Section Management</h4>
-                        <small class="text-muted">Manage homepage hero content</small>
-                    </div>
-
-                    <button type="button" class="cssbuttons-io-button border-0" data-bs-toggle="modal"
-                        data-bs-target="#createGalleryModal">
-
-                        <svg height="25" width="25" viewBox="0 0 24 24">
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
-                        </svg>
-
-                        <span>Add</span>
-
-                    </button>
-
+                <div>
+                    <h4 class="mb-0">Gallery Section Management</h4>
+                    <small class="text-muted">Manage homepage hero content</small>
                 </div>
 
-                <div class="table-responsive">
+                <button type="button" class="cssbuttons-io-button border-0" data-bs-toggle="modal"
+                    data-bs-target="#createGalleryModal">
 
-                    <table class="modern-table">
+                    <svg height="25" width="25" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
+                    </svg>
 
-                        <thead>
+                    <span>Add</span>
+
+                </button>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="modern-table">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach ($photos as $photo)
                             <tr>
-                                <th>ID</th>
-                                <th>Image</th>
-                                <th>Title</th>
-                                <th>Type</th>
-                                <th class="text-center">Actions</th>
-                            </tr>
-                        </thead>
 
-                        <tbody>
+                                <td>#{{ $photo->id }}</td>
 
-                            @foreach ($photos as $photo)
-                                <tr>
+                                <td>
+                                    <img src="{{ asset($photo->image) }}"
+                                        style="width:60px;height:60px;object-fit:cover;border-radius:10px;">
+                                </td>
 
-                                    <td>#{{ $photo->id }}</td>
+                                <td class="fw-medium">
+                                    {{ $photo->title }}
+                                </td>
 
-                                    <td>
-                                        <img src="{{ asset($photo->image) }}"
-                                            style="width:60px;height:60px;object-fit:cover;border-radius:10px;">
-                                    </td>
+                                <td>
+                                    <span class="badge-modern">
+                                        {{ $photo->type }}
+                                    </span>
+                                </td>
 
-                                    <td class="fw-medium">
-                                        {{ $photo->title }}
-                                    </td>
+                                <td class="text-center">
 
-                                    <td>
-                                        <span class="badge-modern">
-                                            {{ $photo->type }}
-                                        </span>
-                                    </td>
+                                    <div class="action-group">
 
-                                    <td class="text-center">
+                                        @can('update user')
+                                            <button type="button" class="btn-modern btn-secondary-modern openGalleryEditModal"
+                                                data-id="{{ $photo->id }}" data-title="{{ $photo->title }}"
+                                                data-type="{{ $photo->type }}" data-image="{{ asset($photo->image) }}"
+                                                data-bs-toggle="modal" data-bs-target="#editGalleryModal">
 
-                                        <div class="action-group">
+                                                <i class="fa fa-edit"></i>
+                                                Edit
 
-                                            @can('update user')
-                                                <button type="button"
-                                                    class="btn-modern btn-secondary-modern openGalleryEditModal"
-                                                    data-id="{{ $photo->id }}" data-title="{{ $photo->title }}"
-                                                    data-type="{{ $photo->type }}" data-image="{{ asset($photo->image) }}"
-                                                    data-bs-toggle="modal" data-bs-target="#editGalleryModal">
+                                            </button>
+                                        @endcan
 
-                                                    <i class="fa fa-edit"></i>
-                                                    Edit
+                                        @can('delete user')
+                                            <form action="{{ route('gallery.delete', $photo->id) }}" method="POST"
+                                                class="d-inline">
+
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <button type="submit" class="btn-modern btn-danger-modern"
+                                                    onclick="return confirm('Are you sure?')">
+
+                                                    <i class="fas fa-trash"></i>
+                                                    Delete
 
                                                 </button>
-                                            @endcan
 
-                                            @can('delete user')
-                                                <form action="{{ route('gallery.delete', $photo->id) }}" method="POST"
-                                                    class="d-inline">
+                                            </form>
+                                        @endcan
 
-                                                    @csrf
-                                                    @method('DELETE')
+                                    </div>
 
-                                                    <button type="submit" class="btn-modern btn-danger-modern"
-                                                        onclick="return confirm('Are you sure?')">
+                                </td>
 
-                                                        <i class="fas fa-trash"></i>
-                                                        Delete
+                            </tr>
+                        @endforeach
 
-                                                    </button>
+                    </tbody>
 
-                                                </form>
-                                            @endcan
-
-                                        </div>
-
-                                    </td>
-
-                                </tr>
-                            @endforeach
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        {{-- Gallery create modal --}}
-        <div class="modal fade" id="createGalleryModal" tabindex="-1">
-
-            <div class="modal-dialog modal-dialog-centered">
-
-                <div class="modal-content modern-modal">
-
-                    <div class="modal-header modern-modal-header">
-                        <h5 class="modal-title text-white">
-                            <i class="fas fa-image me-2"></i> Add Photo
-                        </h5>
-
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-
-                        <div class="modal-body">
-
-                            <div class="mb-3">
-                                <label class="modern-label">Upload Image</label>
-                                <input type="file" name="image" class="form-control modern-input" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="modern-label">Title</label>
-                                <input type="text" name="title" class="form-control modern-input" required>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="modern-label">
-                                    <i class="fa-solid fa-calendar-days me-2"></i>
-                                    Event Type
-                                </label>
-
-                                <div class="modern-select-wrapper">
-
-                                    <span class="modern-select-icon">
-                                        <i class="fa-solid fa-list"></i>
-                                    </span>
-
-                                    <select name="type" class="modern-select" required>
-                                        <option value="">Select Event Type</option>
-                                        <option value="Departmental">Departmental</option>
-                                        <option value="Meeting">Meeting</option>
-                                    </select>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="modal-footer modern-modal-footer">
-
-                            <button type="button" class="btn-cancel" data-bs-dismiss="modal">
-                                Cancel
-                            </button>
-
-                            <button type="submit" class="btn-save">
-                                Save Photo
-                            </button>
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        {{-- Gallery Update  modal --}}
-        <div class="modal fade" id="editGalleryModal" tabindex="-1">
-
-            <div class="modal-dialog modal-dialog-centered">
-
-                <div class="modal-content modern-modal">
-
-                    <div class="modal-header modern-modal-header">
-                        <h5 class="modal-title text-white">
-                            <i class="fas fa-edit me-2"></i> Edit Photo
-                        </h5>
-
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <form id="editGalleryForm" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-
-                        <div class="modal-body">
-
-                            <div class="mb-3">
-                                <img id="previewImage" class="img-fluid rounded mb-2" style="max-height: 180px;">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="modern-label">Upload New Image</label>
-                                <input type="file" name="image" class="form-control modern-input">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="modern-label">Title</label>
-                                <input type="text" name="title" id="editTitle" class="form-control modern-input">
-                            </div>
-
-
-                            <div class="mb-4">
-                                <label class="modern-label">
-                                    <i class="fa-solid fa-calendar-days me-2"></i>
-                                    Event Type
-                                </label>
-
-                                <div class="modern-select-wrapper">
-
-                                    <span class="modern-select-icon">
-                                        <i class="fa-solid fa-list"></i>
-                                    </span>
-
-                                    <select name="type" class="modern-select" required>
-                                        <option value="">Select Event Type</option>
-                                        <option value="Departmental">Departmental</option>
-                                        <option value="Meeting">Meeting</option>
-                                    </select>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="modal-footer modern-modal-footer">
-
-                            <button type="button" class="btn-cancel" data-bs-dismiss="modal">
-                                Cancel
-                            </button>
-
-                            <button type="submit" class="btn-save">
-                                Update Photo
-                            </button>
-
-                        </div>
-
-                    </form>
-
-                </div>
+                </table>
 
             </div>
 
         </div>
 
     </div>
+
+    {{-- Gallery create modal --}}
+    <div class="modal fade" id="createGalleryModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content modern-modal">
+
+                <div class="modal-header modern-modal-header">
+                    <h5 class="modal-title text-white">
+                        <i class="fas fa-image me-2"></i> Add Photo
+                    </h5>
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <label class="modern-label">Upload Image</label>
+                            <input type="file" name="image" class="form-control modern-input" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="modern-label">Title</label>
+                            <input type="text" name="title" class="form-control modern-input" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="modern-label">
+                                <i class="fa-solid fa-calendar-days me-2"></i>
+                                Event Type
+                            </label>
+
+                            <div class="modern-select-wrapper">
+
+                                <span class="modern-select-icon">
+                                    <i class="fa-solid fa-list"></i>
+                                </span>
+
+                                <select name="type" class="modern-select" required>
+                                    <option value="">Select Event Type</option>
+                                    <option value="Departmental">Departmental</option>
+                                    <option value="Meeting">Meeting</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer modern-modal-footer">
+
+                        <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="btn-save">
+                            Save Photo
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {{-- Gallery Update  modal --}}
+    <div class="modal fade" id="editGalleryModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content modern-modal">
+
+                <div class="modal-header modern-modal-header">
+                    <h5 class="modal-title text-white">
+                        <i class="fas fa-edit me-2"></i> Edit Photo
+                    </h5>
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <form id="editGalleryForm" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <img id="previewImage" class="img-fluid rounded mb-2" style="max-height: 180px;">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="modern-label">Upload New Image</label>
+                            <input type="file" name="image" class="form-control modern-input">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="modern-label">Title</label>
+                            <input type="text" name="title" id="editTitle" class="form-control modern-input">
+                        </div>
+
+
+                        <div class="mb-4">
+                            <label class="modern-label">
+                                <i class="fa-solid fa-calendar-days me-2"></i>
+                                Event Type
+                            </label>
+
+                            <div class="modern-select-wrapper">
+
+                                <span class="modern-select-icon">
+                                    <i class="fa-solid fa-list"></i>
+                                </span>
+
+                                <select id="editType" name="type" class="modern-select" required>
+
+                                    <option value="">Select Event Type</option>
+                                    <option value="Departmental">Departmental</option>
+                                    <option value="Meeting">Meeting</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer modern-modal-footer">
+
+                        <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="btn-save">
+                            Update Photo
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            const editButtons = document.querySelectorAll('.openGalleryEditModal');
-
-            editButtons.forEach(btn => {
+            document.querySelectorAll('.openGalleryEditModal').forEach(btn => {
 
                 btn.addEventListener('click', function() {
 
                     let id = this.dataset.id;
-                    let title = this.dataset.title;
-                    let type = this.dataset.type;
-                    let image = this.dataset.image;
 
-                    document.getElementById('editTitle').value = title;
-                    document.getElementById('editType').value = type;
-                    document.getElementById('previewImage').src = image;
+                    document.getElementById('editTitle').value =
+                        this.dataset.title;
+
+                    document.getElementById('editType').value =
+                        this.dataset.type;
+
+                    document.getElementById('previewImage').src =
+                        this.dataset.image;
 
                     document.getElementById('editGalleryForm').action =
-                        `/gallery/${id}`;
+                        "{{ url('gallery/update') }}/" + id;
 
                 });
 

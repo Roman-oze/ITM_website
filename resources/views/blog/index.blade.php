@@ -1,208 +1,589 @@
-@extends('layout.app')
+@extends('layout.dashboard')
 
-@section('content')
-    <section class="video-blog-section py-5 mt-5">
-        <div class="container">
+@section('main')
+    <div class="container py-4">
 
-            <div class="text-center mb-5">
-                <span class="video-badge">
-                    <i class="fa-solid fa-video"></i>
-                    Video Blogs
-                </span>
+        <div class="modern-card">
 
-                <h2 class="video-title">
-                    Learn Through <span>Expert Videos</span>
-                </h2>
+            {{-- Header --}}
+            <div class="d-flex justify-content-between align-items-center mb-3">
 
-                <p class="video-subtitle">
-                    Watch tutorials, insights, and technology discussions from our experts.
-                </p>
+                <h4 class="mb-0">
+                    Video Blog Management
+                </h4>
+
+                <button type="button" class="cssbuttons-io-button border-0" data-bs-toggle="modal"
+                    data-bs-target="#createVideoModal">
+
+                    <svg height="25" width="25" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
+                    </svg>
+
+                    <span>Add</span>
+
+                </button>
+
             </div>
 
-            <div class="row g-4">
+            {{-- Table --}}
+            <div class="table-responsive">
 
-                <!-- Video 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="video-card">
+                <table class="modern-table">
 
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/1Rs2ND1ryYc/maxresdefault.jpg" alt="Video">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Thumbnail</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Video</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
 
-                            <a href="https://www.youtube.com/watch?v=1Rs2ND1ryYc" target="_blank" class="play-btn">
-                                <i class="fa-solid fa-play"></i>
-                            </a>
+                    <tbody>
 
-                            <span class="video-tag">Laravel Tutorial</span>
-                        </div>
+                        @forelse($videos as $video)
+                            <tr>
 
-                        <div class="video-content">
-                            <h4>Laravel CRUD Full Project</h4>
-                            <p>Learn how to build a complete CRUD system in Laravel step by </p>
-                        </div>
+                                <td>#{{ $video->id }}</td>
 
-                    </div>
+                                <td>
+                                    <img src="{{ asset('storage/' . $video->thumbnail) }}" alt="Thumbnail"
+                                        style="width:70px;height:45px;object-fit:cover;border-radius:8px;">
+                                </td>
+
+                                <td class="fw-medium">
+                                    {{ $video->title }}
+                                </td>
+
+                                <td>
+                                    <span class="badge-modern">
+                                        {{ $video->category }}
+                                    </span>
+                                </td>
+
+                                <td class="text-muted">
+                                    {{ Str::limit($video->description, 60) }}
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn-modern btn-info-modern" data-bs-toggle="modal"
+                                        data-bs-target="#viewVideoModal{{ $video->id }}">
+                                        <i class="fa-solid fa-play"></i>
+                                        Watch
+                                    </button>
+
+
+                                </td>
+
+                                <td>
+
+                                    <div class="action-group">
+                                        <!-- Edit -->
+                                        <button type="button" class="btn-modern btn-secondary-modern editVideoBtn"
+                                            data-id="{{ $video->id }}" data-title="{{ $video->title }}"
+                                            data-category="{{ $video->category }}"
+                                            data-description="{{ $video->description }}"
+                                            data-thumbnail="{{ asset('storage/' . $video->thumbnail) }}"
+                                            data-video="{{ asset('storage/' . $video->video) }}" data-bs-toggle="modal"
+                                            data-bs-target="#editVideoModal">
+
+                                            <i class="fa fa-edit"></i>
+                                            Edit
+
+                                        </button>
+
+                                        <!-- Delete -->
+
+                                        <form action="{{ route('blog.destroy', $video->id) }}" method="POST">
+
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button class="btn-modern btn-danger-modern">
+
+                                                <i class="fa fa-trash"></i>
+
+                                                Delete
+
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        @empty
+
+                            <tr>
+
+                                <td colspan="7" class="text-center text-muted py-4">
+
+                                    No videos found.
+
+                                </td>
+
+                            </tr>
+                        @endforelse
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {{-- Create modal --}}
+    <div class="modal fade" id="createVideoModal" tabindex="-1">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="modal-content modern-modal">
+
+                <div class="modal-header modern-modal-header">
+
+                    <h5 class="modal-title">
+
+                        <i class="fas fa-video me-2"></i>
+
+                        Create Video Blog
+
+                    </h5>
+
+                    <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+
                 </div>
 
-                <!-- Video 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="video-card">
+                <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
 
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/3PHXvlpOkf4/maxresdefault.jpg" alt="Video">
+                    @csrf
 
-                            <a href="https://www.youtube.com/watch?v=3PHXvlpOkf4" target="_blank" class="play-btn">
-                                <i class="fa-solid fa-play"></i>
-                            </a>
+                    <div class="modal-body">
 
-                            <span class="video-tag">Web Design</span>
-                        </div>
+                        <div class="row">
 
-                        <div class="video-content">
-                            <h4>Modern UI Design Tips</h4>
-                            <p>Improve your frontend skills with modern UI/UX design techniques.</p>
+                            <div class="col-md-6 mb-3">
+
+                                <label class="modern-label">
+
+                                    Thumbnail
+
+                                </label>
+
+                                <input type="file" class="form-control modern-input" name="thumbnail" accept="image/*">
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="modern-label">
+
+                                    Video File
+
+                                </label>
+
+                                <input type="file" class="form-control modern-input" name="video" accept="video/*"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="modern-label">
+
+                                    Title
+
+                                </label>
+
+                                <input type="text" class="form-control modern-input" name="title" required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="modern-label">
+
+                                    Category
+
+                                </label>
+
+                                <input type="text" class="form-control modern-input" name="category" required>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <label class="modern-label">
+
+                                    Description
+
+                                </label>
+
+                                <textarea name="description" rows="5" class="form-control modern-input" required></textarea>
+
+                            </div>
+
                         </div>
 
                     </div>
+
+                    <div class="modal-footer modern-modal-footer">
+
+                        <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+
+                            Cancel
+
+                        </button>
+
+                        <button class="btn-save">
+
+                            Save Video
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {{-- Update Modal --}}
+    <!-- ===========================
+                                    Edit Video Modal
+                            ============================ -->
+    <div class="modal fade" id="editVideoModal" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="modal-content modern-modal">
+
+                <!-- Header -->
+                <div class="modal-header modern-modal-header">
+
+                    <h5 class="modal-title">
+                        <i class="fas fa-edit me-2"></i>
+                        Edit Video Blog
+                    </h5>
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                    </button>
+
                 </div>
 
-                <!-- Video 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="video-card">
+                <!-- Form -->
+                <form id="editVideoForm" method="POST" enctype="multipart/form-data">
 
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/pQN-pnXPaVg/maxresdefault.jpg" alt="Video">
+                    @csrf
+                    @method('PUT')
 
-                            <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank" class="play-btn">
-                                <i class="fa-solid fa-play"></i>
-                            </a>
+                    <div class="modal-body">
 
-                            <span class="video-tag">Programming</span>
-                        </div>
+                        <div class="row">
 
-                        <div class="video-content">
-                            <h4>HTML & CSS Complete Guide</h4>
-                            <p>Start your web development journey with HTML and CSS basics.</p>
+                            <!-- Current Thumbnail -->
+                            <div class="col-md-4 mb-4 text-center">
+
+                                <label class="modern-label d-block mb-2">
+                                    Current Thumbnail
+                                </label>
+
+                                <img id="edit_thumbnail_preview" src="" class="img-fluid rounded-4 shadow"
+                                    style="height:180px;object-fit:cover;">
+
+                            </div>
+
+                            <!-- Current Video -->
+                            <div class="col-md-8 mb-4">
+
+                                <label class="modern-label d-block mb-2">
+                                    Current Video
+                                </label>
+
+                                <video id="edit_video_preview" controls class="w-100 rounded-4 shadow"
+                                    style="max-height:180px;">
+
+                                    <source id="edit_video_source">
+
+                                </video>
+
+                            </div>
+
+                            <!-- Upload Thumbnail -->
+                            <div class="col-md-6 mb-3">
+
+                                <label class="modern-label">
+                                    Change Thumbnail
+                                </label>
+
+                                <input type="file" name="thumbnail" class="form-control modern-input"
+                                    accept="image/*">
+
+                                <img src="{{ asset('storage/' . $video->thumbnail) }}" alt="Thumbnail"
+                                    style="width:70px;height:45px;object-fit:cover;border-radius:8px;">
+
+                                <small class="text-muted">
+                                    Leave empty to keep the current thumbnail.
+                                </small>
+
+                            </div>
+
+                            <!-- Upload Video -->
+                            <div class="col-md-6 mb-3">
+
+                                <label class="modern-label">
+                                    Change Video
+                                </label>
+
+                                <input type="file" name="video" class="form-control modern-input" accept="video/*">
+
+                                <small class="text-muted">
+                                    Leave empty to keep the current video.
+                                </small>
+
+                            </div>
+
+                            <!-- Title -->
+                            <div class="col-md-6 mb-3">
+
+                                <label class="modern-label">
+                                    Video Title
+                                </label>
+
+                                <input type="text" id="edit_title" name="title" class="form-control modern-input"
+                                    required>
+
+                            </div>
+
+                            <!-- Category -->
+                            <div class="col-md-6 mb-3">
+
+                                <label class="modern-label">
+                                    Category
+                                </label>
+
+                                <input type="text" id="edit_category" name="category"
+                                    class="form-control modern-input" required>
+
+                            </div>
+
+                            <!-- Description -->
+                            <div class="col-12">
+
+                                <label class="modern-label">
+                                    Description
+                                </label>
+
+                                <textarea id="edit_description" name="description" rows="6" class="form-control modern-input" required></textarea>
+
+                            </div>
+
                         </div>
 
                     </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer modern-modal-footer">
+
+                        <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+
+                            Cancel
+
+                        </button>
+
+                        <button type="submit" class="btn-save">
+
+                            <i class="fas fa-save me-2"></i>
+
+                            Update Video
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================
+                    View Video Modal
+            ===================================== -->
+    @foreach ($videos as $video)
+        <div class="modal fade" id="viewVideoModal{{ $video->id }}" tabindex="-1" aria-hidden="true">
+
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+
+                <div class="modal-content modern-modal">
+
+                    <!-- Header -->
+                    <div class="modal-header modern-modal-header">
+
+                        <h5 class="modal-title">
+                            <i class="fas fa-video me-2"></i>
+                            Video Details
+                        </h5>
+
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                        </button>
+
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+
+                        <div class="row align-items-center">
+
+                            <!-- Medium Video -->
+                            <div class="col-md-7 text-center">
+
+                                <video controls class="rounded-4 shadow"
+                                    style="width:100%;max-height:260px;object-fit:cover;">
+
+                                    <source src="{{ asset('storage/' . $video->video) }}" type="video/mp4">
+
+                                    Your browser does not support the video tag.
+
+                                </video>
+
+                            </div>
+
+                            <!-- Details -->
+                            <div class="col-md-5">
+
+                                <div class="mb-3">
+
+                                    <label class="modern-label">
+                                        Title
+                                    </label>
+
+                                    <div class="modern-view-box">
+                                        {{ $video->title }}
+                                    </div>
+
+                                </div>
+
+                                <div class="mb-3">
+
+                                    <label class="modern-label">
+                                        Category
+                                    </label>
+
+                                    <div>
+
+                                        <span class="badge-modern">
+
+                                            {{ $video->category }}
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                                <div>
+
+                                    <label class="modern-label">
+                                        Description
+                                    </label>
+
+                                    <div class="modern-view-box">
+
+                                        {{ $video->description }}
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer modern-modal-footer">
+
+                        <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+
+                            Close
+
+                        </button>
+
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
-    </section>
+    @endforeach
+
+    <script>
+        document.querySelectorAll(".editVideoBtn").forEach(button => {
+
+            button.addEventListener("click", function() {
+
+                document.getElementById("editVideoForm").action =
+                    "/blog/" + this.dataset.id;
+
+                document.getElementById("edit_title").value =
+                    this.dataset.title;
+
+                document.getElementById("edit_category").value =
+                    this.dataset.category;
+
+                document.getElementById("edit_description").value =
+                    this.dataset.description;
+
+                // Thumbnail Preview
+                const thumbnail = document.getElementById("edit_thumbnail_preview");
+                thumbnail.src = this.dataset.thumbnail;
+
+                // Video Preview
+                const source = document.getElementById("edit_video_source");
+                source.src = this.dataset.video;
+
+                document.getElementById("edit_video_preview").load();
+
+            });
+
+        });
+    </script>
+    <style>
+        /* View Modal Box */
+        .modern-view-box {
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: #fff;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .modern-label {
+            color: #9CA3AF;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            letter-spacing: .3px;
+        }
+    </style>
 @endsection
-
-<style>
-    .video-blog-section {
-        background: #f8fbff;
-    }
-
-    .video-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: #fff;
-        padding: 10px 20px;
-        border-radius: 50px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
-        color: #47B2E4;
-        font-weight: 600;
-    }
-
-    .video-title {
-        font-size: 3rem;
-        font-weight: 800;
-        margin-top: 20px;
-    }
-
-    .video-title span {
-        color: #47B2E4;
-    }
-
-    .video-subtitle {
-        max-width: 650px;
-        margin: auto;
-        color: #6c757d;
-    }
-
-    .video-card {
-        background: #fff;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
-        transition: .4s;
-    }
-
-    .video-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .video-thumb {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .video-thumb img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        transition: .5s;
-    }
-
-    .video-card:hover img {
-        transform: scale(1.1);
-    }
-
-    /* Play Button */
-    .play-btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        background: #47B2E4;
-        color: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        text-decoration: none;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
-        transition: .3s;
-    }
-
-    .play-btn:hover {
-        background: #37517E;
-        transform: translate(-50%, -50%) scale(1.1);
-    }
-
-    /* Tag */
-    .video-tag {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        background: rgba(0, 0, 0, .6);
-        color: #fff;
-        padding: 6px 12px;
-        font-size: 12px;
-        border-radius: 20px;
-    }
-
-    .video-content {
-        padding: 20px;
-    }
-
-    .video-content h4 {
-        font-size: 1.2rem;
-        font-weight: 700;
-    }
-
-    .video-content p {
-        color: #6c757d;
-        margin-top: 10px;
-    }
-</style>
-

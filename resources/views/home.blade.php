@@ -40,9 +40,8 @@
 
                             <div class="kpi-box">
                                 <div class="kpi-number">
-                                    <span class="purecounter" data-purecounter-start="0"
-                                        data-purecounter-end="">
-10
+                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="">
+                                        10
                                     </span>
                                 </div>
                                 <div class="kpi-label">Clients</div>
@@ -60,9 +59,8 @@
 
                             <div class="kpi-box">
                                 <div class="kpi-number">
-                                    <span class="purecounter" data-purecounter-start="0"
-                                        data-purecounter-end="">
-                                       6
+                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="">
+                                        6
                                     </span>
                                 </div>
                                 <div class="kpi-label">Running</div>
@@ -70,9 +68,8 @@
 
                             <div class="kpi-box">
                                 <div class="kpi-number">
-                                    <span class="purecounter" data-purecounter-start="0"
-                                        data-purecounter-end="">
-                                       3
+                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="">
+                                        3
                                     </span>
                                 </div>
                                 <div class="kpi-label">Draft</div>
@@ -102,7 +99,7 @@
 
 
     {{-- Team Member section --}}
-    <x-team-section :board-of-directors="$boardOfDirectors" :technical-team="$technicalTeam" :teachers="$teachers" />
+    <x-team-section :board-of-directors="$boardOfDirectors" :technical-team="$technicalTeam" :teammembers="$teammembers" />
 
     {{-- price section --}}
     <x-pricing-section />
@@ -176,4 +173,7 @@
 
     {{-- Contact and location section --}}
     <x-contact-section :contact="$contact" />
+
+    {{-- newsletter Section --}}
+    {{-- <x-newsletter-section /> --}}
 @endsection

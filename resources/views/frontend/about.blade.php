@@ -1,136 +1,144 @@
 @extends('layout.app')
 
 @section('content')
+    <section class="team-section">
 
-<section id="services" class="services section-bg text-left mt-5">
-    <div class="container aos-init aos-animate text-left" data-aos="fade-up">
-        <div class="section-title">
-            <h2 class="text-primary">Our Department</h2>
-        </div>
-
-        <div class="row gx-4 gx-lg-5 align-items-center justify-content-center text-center">
-            <div class="col-lg-8 align-self-baseline d-flex">
-                <p class="text-dark-50 mb-5 heading_section">
-                    "Daffodil International University, situated in the vibrant heart of Dhaka, Bangladesh, offers a dynamic learning environment. Nestled in the midst of cultural richness and urban energy, our campus provides students with an inspiring backdrop to pursue their academic endeavors. Explore the fusion of education and culture as you navigate your learning journey at Daffodil International University."
+        <div class="section-title mt-5">
+            <h2 class=""> Our Department</h2>
+            <div class="C">
+                <p class="modern-text">
+                    Ready to take your financial management to the next level? Contact us today for personalized
+                    consultation and discover how our expertise can empower your business growth. Let's navigate your
+                    financial journey together towards success.
                 </p>
             </div>
-            {{-- <img src="{{ asset('frontend/image/diu_admission.jpg') }}" class="w-50 h-50"> --}}
 
-            <img src="{{ asset($photo->image) }}" class="department-group-image">
+            <img src="{{ asset($photo->image) }}" class="department-group-image mt-1">
         </div>
-    </div>
-</section>
 
-<br><br><br>
-
-<div class="row mt-3">
-    <div class="section-title">
-        <h2 class="p-2 text-dark text-center">Faculty of Science and Information Technology</h2>
-    </div>
-</div>
-
-<div class="container mt-5">
-
-    <div class="row text-left mt-4">
-        @foreach ($officers as $officer)
-        <div class="col-md-4 col-sm-6 mb-4" data-bs-aos="fade-up" data-bs-aos-delay="500">
-            <div class="card shadow-sm rounded border-0 bg-light">
-                <!-- Profile Image -->
-                <img src="{{ asset($officer->image) }}" alt="Staff Image" class="img-fluid   rounded-circle" style="height: 200px; width: 185px; object-fit: cover; margin-top: -50px; border: 5px solid #fff; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
-
-                <div class="card-body text-center">
-                    <!-- Name and Position -->
-                    <h5 class="card-title text-dark">{{ $officer->name }}</h5>
-                    <p class="card-text text-muted">{{ $officer->position }}</p>
-
-                    <!-- Contact Information -->
-                    <div class="contact-wrap mb-2 d-flex justify-content-center">
-
-                        <a class="text-muted p-3 " href="tel:{{$officer->mobile}}"> <i class="fas fa-phone-alt fa-2x"></i> </a>
-
-                        <a class="text-muted p-3 " href="mailto:{{ $officer->email }}"><i class="fas fa-envelope fa-2x"></i></a>
-                    </div>
-                </div>
+        <div class="container">
+            <div class="section-heading mt-5">
+                <h2>Software Giant company staff</h2>
+                <p>Meet Our staff</p>
             </div>
-        </div>
-        @endforeach
-    </div>
-</div>
 
-<div class="container">
-    <div class="row text-left mt-5">
-        <h3 class="mt-2">Recently</h3>
-        <div class="row mt-2">
-            @foreach ($gallery as $photo)
-                <div class="col-md-4 mt-4">
-                    <!-- Image Card -->
-                    <div class="card shadow-sm rounded border-0 overflow-hidden">
-                        <!-- Image Container -->
-                        <div class="image-container position-relative">
-                            <img src="{{ asset($photo->image) }}" class="img-fluid rounded" alt="Photo">
-                            <!-- Hover Text -->
-                            <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <div class="overlay-content text-white text-center p-3">
-                                    <h4 class="overlay-title">{{ $photo->title }}</h4>
+            <div class="row justify-content-center">
+                @foreach ($staffs as $officer)
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-bs-aos="fade-up">
+
+                        <div class="team-card staff-card">
+
+                            <div class="team-image">
+
+                                <img src="{{ asset($officer->image) }}" alt="{{ $officer->name }}">
+
+                            </div>
+
+                            <div class="team-content">
+
+                                <h5>{{ $officer->name }}</h5>
+
+                                <span>
+                                    <div class="position-badge">
+                                        <i class="fa-solid fa-user-tie me-1"></i>
+                                        {{ $officer->position }}
+                                    </div>
+                                </span>
+
+                                <div class="staff-contact mt-3">
+
+                                    @if ($officer->mobile)
+                                        <a href="tel:{{ $officer->mobile }}" class="staff-icon">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </a>
+                                    @endif
+
+                                    @if ($officer->email)
+                                        <a href="mailto:{{ $officer->email }}" class="staff-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </a>
+                                    @endif
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                @endforeach
+
+            </div>
+            <div class="section-heading mt-3">
+                <h2>Gallery</h2>
+                <p>
+                    EXPLORE OUR MEMORIES
+                </p>
+            </div>
+            <div class="row justify-content-center">
+                @foreach ($gallery as $photo)
+                    <div class="col-md-4 mt-4">
+                        <!-- Image Card -->
+                        <div class="card shadow-sm rounded border-0 overflow-hidden">
+                            <!-- Image Container -->
+                            <div class="image-container position-relative">
+                                <img src="{{ asset($photo->image) }}" class="img-fluid rounded" alt="Photo">
+                                <!-- Hover Text -->
+                                <div
+                                    class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                    <div class="overlay-content text-white text-center p-3">
+                                        <h4 class="overlay-title">{{ $photo->title }}</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-<div class="container-fluid  mt-5">
-    <div class="row mt-3">
-        <div class="section-title">
-            <h2 class="text-success text-center border-1">Staff of the Department</h2>
-        </div>
-    </div>
-
-    <div class="row mt-5 bg-light d-flex justify-content-center">
-        @foreach ($staffs as $staff)
-        <div class="col-md-4">
-            <div class="text-center p-2">
-                <div class="mb-4">
-                    <img src="{{ asset($staff->image) }}" class="staff-image" alt="Circular Image rounded">
-                </div>
-                <div class="text-left">
-                    <h2 class="staff-name text-dark">{{ $staff->name }}</h2>
-                    <span class="d-block position mb-4 text-dark-50">{{ $staff->position }}</span>
-                    <a href="mailto:{{ $staff->email }}" class="text-dark">
-                        <i class="fa-solid fa-envelope text-dark fa-lg p-2"></i>
-                    </a>
-                    <a href="tel:{{ $staff->mobile }}" class="text-dark">
-                        <i class="fa-solid fa-square-phone text-dark fa-lg p-2"></i>
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
-    @endforeach
-
-    </div>
-</div>
-
-
-<br><br>
-
-
+    </section>
 @endsection
 <style>
+    /* Position Badge */
+.position-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    margin:12px auto 18px;
+    padding:8px 18px;
+    background:linear-gradient(135deg,#209DD8,#167cb0);
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+    border-radius:30px;
+    transition:all .35s ease;
+}
+
+.team-card:hover .position-badge{
+    transform:translateY(-2px);
+}
+
+.position-badge i{
+    font-size:12px;
+}
     .image-container {
         position: relative;
         overflow: hidden;
         border-radius: 8px;
-        width: 100%; /* Responsive width */
-        height: 250px; /* Fixed height for uniformity */
+        width: 100%;
+        /* Responsive width */
+        height: 250px;
+        /* Fixed height for uniformity */
     }
 
     .image-container img {
         transition: transform 0.5s ease;
         width: 100%;
-        height: 100%; /* Fills the container */
-        object-fit: cover; /* Ensures proper cropping without distortion */
+        height: 100%;
+        /* Fills the container */
+        object-fit: cover;
+        /* Ensures proper cropping without distortion */
         display: block;
     }
 
@@ -139,7 +147,8 @@
     }
 
     .overlay {
-        background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+        background: rgba(0, 0, 0, 0.7);
+        /* Semi-transparent black overlay */
         opacity: 0;
         transition: opacity 0.5s ease;
     }

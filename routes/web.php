@@ -216,16 +216,20 @@ Route::delete('/feedback/{feedback}', [FeedbackController::class, 'destroy'])->n
 
 
 Route::controller(GalleryController::class)->group(function () {
-Route::get('/gallery', 'gallery')->name('gallery');
-Route::get('/gallery/index', 'index')->name('gallery.index');
-Route::get('/gallery/create', 'create')->name('gallery.create');
-Route::post('/gallery/store', 'store')->name('gallery.store');
-Route::get('/gallery/edit/{id}', 'edit')->name('gallery.edit');
-Route::put('/gallery/update/{id}', 'update')->name('gallery.update');
-Route::delete('/gallery/{id}', 'destroy')->name('gallery.delete');
+    Route::get('/gallery', 'gallery')->name('gallery');
+    Route::get('/gallery/index', 'index')->name('gallery.index');
+    Route::get('/gallery/create', 'create')->name('gallery.create');
+    Route::post('/gallery/store', 'store')->name('gallery.store');
+    Route::get('/gallery/edit/{id}', 'edit')->name('gallery.edit');
+    Route::put('/gallery/update/{id}', 'update')->name('gallery.update');
+    Route::delete('/gallery/{id}', 'destroy')->name('gallery.delete');
 });
 
-Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/index', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
+Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
+Route::put('/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
+Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
 
 
 

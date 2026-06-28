@@ -12,13 +12,13 @@ class TeamSection extends Component
 {
     public $boardOfDirectors;
     public $technicalTeam;
-    public $teachers;
+    public $teammembers;
 
-    public function __construct($boardOfDirectors, $technicalTeam, $teachers)
+    public function __construct($boardOfDirectors, $technicalTeam, $teammembers)
     {
         $this->boardOfDirectors = $boardOfDirectors;
         $this->technicalTeam = $technicalTeam;
-        $this->teachers = $teachers;
+        $this->teammembers = $teammembers;
     }
 
     public function render()

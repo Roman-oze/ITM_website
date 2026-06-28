@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
-       public function gallery()
+    public function gallery()
     {
 
         $photos = Gallery::where('type', 'Club')->get();
@@ -16,16 +16,18 @@ class GalleryController extends Controller
         return view('gallery.gallery', compact('photos', 'single'));
     }
 
-        public function index(){
-        $photos = Gallery::where('type','Club')->get();
-        return view('gallery.index',compact('photos'));
+    public function index()
+    {
+        $photos = Gallery::all();
+        return view('gallery.index', compact('photos'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'title' => 'nullable | required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Nullable image field
-            'type' => 'required|string|in:Departmental,Club'
+            'type' => 'required|string|in:Departmental,Meeting'
 
         ]);
 
@@ -49,38 +51,40 @@ class GalleryController extends Controller
         return redirect()->back()->with('success', 'Club created successfully');
     }
 
-    public function edit($id){
 
-            $photo = Gallery::find($id);
-            return view('gallery.edit',compact('photo'));
-        }
 
-        public function update(Request $request, $id)
-        {
-            $photo = Gallery::findOrFail($id);
+    public function update(Request $request, $id)
+    {
+        $photo = Gallery::findOrFail($id);
 
-            $request->validate([
-                'title' => 'nullable|string|max:255',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'type' => 'required|string|in:Departmental,Club',
-            ]);
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'type' => 'required|string|in:Departmental,Meeting',
+        ]);
 
-            if ($request->hasFile('image')) {
-                if ($photo->image && file_exists(public_path($photo->image))) {
-                    unlink(public_path($photo->image));
-                }
+        // Upload new image
+        if ($request->hasFile('image')) {
 
-                $fileName = time() . '-itm.' . $request->file('image')->getClientOriginalExtension();
-                $request->file('image')->move('committee', $fileName);
-                $photo->image = 'committee/' . $fileName;
+            // Delete old image
+            if (!empty($photo->image) && file_exists(public_path($photo->image))) {
+                unlink(public_path($photo->image));
             }
 
-            $photo->title = $request->title;
-            $photo->type = $request->type;
-            $photo->save();
+            $fileName = time() . '-itm.' . $request->file('image')->getClientOriginalExtension();
 
-            return redirect()->back()->with('success', 'Gallery updated successfully');
+            $request->file('image')->move(public_path('committee'), $fileName);
+
+            $photo->image = 'committee/' . $fileName;
         }
+
+        $photo->title = $request->title;
+        $photo->type = $request->type;
+
+        $photo->save();
+
+        return redirect()->back()->with('success', 'Gallery updated successfully.');
+    }
 
 
 
@@ -94,5 +98,4 @@ class GalleryController extends Controller
         // Redirect back with a success message
         return redirect()->back()->with('success', 'Photo deleted successfully!');
     }
-
 }
