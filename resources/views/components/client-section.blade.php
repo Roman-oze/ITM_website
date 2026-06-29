@@ -41,6 +41,12 @@
 
 
     <style>
+
+#client{
+    background-color: #ffffff;
+
+}
+
         .client-card {
     border-radius: 10px;
     padding: 20px;
@@ -48,7 +54,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     transition: all 0.3s ease;
 
     /* animation base */

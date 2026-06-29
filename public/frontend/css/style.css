@@ -3726,3 +3726,46 @@ a:hover {
         font-size: 22px;
     }
 }
+/* Modern Select */
+.modern-input.form-select,
+.form-select.modern-input{
+
+    background-color:#1e293b !important;
+    color:#ffffff !important;
+    border:1px solid #0ea5e9;
+    border-radius:12px;
+
+}
+
+.modern-input.form-select:focus,
+.form-select.modern-input:focus{
+
+    background-color:#1e293b !important;
+    color:#ffffff !important;
+    border-color:#38bdf8;
+    box-shadow:0 0 0 .2rem rgba(56,189,248,.2);
+
+}
+
+/* Dropdown Items */
+.modern-input option,
+.form-select option{
+
+    background:#1e293b !important;
+    color:#ffffff !important;
+
+}
+
+/* Placeholder option */
+.modern-input option:first-child{
+
+    color:#cbd5e1;
+
+}
+
+/* Disabled placeholder */
+.modern-input option:disabled{
+
+    color:#94a3b8;
+
+}

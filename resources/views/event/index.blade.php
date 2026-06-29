@@ -3,8 +3,8 @@
 @section('main')
     <style>
         /*==============================
-                                            EVENT VIEW MODAL
-                                    ===============================*/
+                                                EVENT VIEW MODAL
+                                        ===============================*/
 
         .event-view-image {
 
@@ -90,151 +90,367 @@
     <main>
 
 
-            <div class="container py-4">
+        <div class="container py-4">
 
-                <div class="modern-card">
+            <div class="modern-card">
 
-                    {{-- Header --}}
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="mb-0">Event Management</h4>
+                {{-- Header --}}
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Event Management</h4>
 
-                        <button type="button" class="cssbuttons-io-button border-0" data-bs-toggle="modal"
-                            data-bs-target="#createEventModal">
+                    <button type="button" class="cssbuttons-io-button border-0" data-bs-toggle="modal"
+                        data-bs-target="#createEventModal">
 
-                            <svg height="25" width="25" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none" />
-                                <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor" />
-                            </svg>
+                        <svg height="25" width="25" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor" />
+                        </svg>
 
-                            <span>Add</span>
+                        <span>Add</span>
 
-                        </button>
-                    </div>
+                    </button>
+                </div>
 
-                    {{-- Table --}}
-                    <div class="table-responsive">
+                {{-- Table --}}
+                <div class="table-responsive">
 
-                        <table class="modern-table">
+                    <table class="modern-table">
 
-                            <thead>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Image</th>
+                                <th>Event Name</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Type</th>
+                                <th>Location</th>
+                                <th>Description</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach ($events as $event)
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Image</th>
-                                    <th>Event Name</th>
-                                    <th>Date</th>
-                                    <th>Time</th>
-                                    <th>Type</th>
-                                    <th>Location</th>
-                                    <th>Description</th>
-                                    <th class="text-center">Actions</th>
-                                </tr>
-                            </thead>
 
-                            <tbody>
+                                    <td>#{{ $event->id }}</td>
 
-                                @foreach ($events as $event)
-                                    <tr>
+                                    <td>
+                                        <img src="{{ asset($event->image) }}" alt="{{ $event->name }}"
+                                            style="width:60px;height:60px;object-fit:cover;border-radius:10px;">
+                                    </td>
 
-                                        <td>#{{ $event->id }}</td>
+                                    <td class="fw-medium">
+                                        {{ $event->name }}
+                                    </td>
 
-                                        <td>
-                                            <img src="{{ asset($event->image) }}" alt="{{ $event->name }}"
-                                                style="width:60px;height:60px;object-fit:cover;border-radius:10px;">
-                                        </td>
+                                    <td>
+                                        {{ $event->date }}
+                                    </td>
 
-                                        <td class="fw-medium">
-                                            {{ $event->name }}
-                                        </td>
+                                    <td>
+                                        {{ $event->time }}
+                                    </td>
+                                    <td>
+                                        <span class="badge-modern">
+                                            {{ $event->type }}
+                                        </span>
+                                    </td>
 
-                                        <td>
-                                            {{ $event->date }}
-                                        </td>
+                                    <td>
+                                        {{ $event->location }}
+                                    </td>
 
-                                        <td>
-                                            {{ $event->time }}
-                                        </td>
-                                        <td>
-                                            <span class="badge-modern">
-                                                {{ $event->type }}
-                                            </span>
-                                        </td>
+                                    <td class="text-muted">
+                                        {{ Str::limit($event->description, 60) }}
+                                    </td>
 
-                                        <td>
-                                            {{ $event->location }}
-                                        </td>
+                                    <td class="text-center">
 
-                                        <td class="text-muted">
-                                            {{ Str::limit($event->description, 60) }}
-                                        </td>
+                                        <div class="action-group">
 
-                                        <td class="text-center">
+                                            {{-- View --}}
+                                            <button class="btn-modern btn-info-modern" data-bs-toggle="modal"
+                                                data-bs-target="#viewEventModal{{ $event->id }}">
+                                                <i class="fas fa-eye"></i> View
+                                            </button>
 
-                                            <div class="action-group">
+                                            @can('update user')
+                                                <button type="button" class="btn-modern btn-secondary-modern editEventBtn"
+                                                    data-id="{{ $event->id }}" data-name="{{ $event->name }}"
+                                                    data-date="{{ $event->date }}" data-time="{{ $event->time }}"
+                                                    data-location="{{ $event->location }}" data-type="{{ $event->type }}"
+                                                    data-description="{{ $event->description }}"
+                                                    data-image="{{ asset($event->image) }}" data-bs-toggle="modal"
+                                                    data-bs-target="#editEventModal">
 
-                                                {{-- View --}}
-                                                <button class="btn-modern btn-info-modern" data-bs-toggle="modal"
-                                                    data-bs-target="#viewEventModal{{ $event->id }}">
-                                                    <i class="fas fa-eye"></i> View
+                                                    <i class="fa fa-edit"></i> Edit
+
                                                 </button>
+                                            @endcan
 
-                                                @can('update user')
-                                                    <button type="button" class="btn-modern btn-secondary-modern editEventBtn"
-                                                        data-id="{{ $event->id }}" data-name="{{ $event->name }}"
-                                                        data-date="{{ $event->date }}" data-time="{{ $event->time }}"
-                                                        data-location="{{ $event->location }}" data-type="{{ $event->type }}"
-                                                        data-description="{{ $event->description }}"
-                                                        data-image="{{ asset($event->image) }}" data-bs-toggle="modal"
-                                                        data-bs-target="#editEventModal">
+                                            @can('delete user')
+                                                <form action="{{ route('event_delete', $event->id) }}" method="POST"
+                                                    onsubmit="return confirm('Are you sure?')">
 
-                                                        <i class="fa fa-edit"></i> Edit
+                                                    @csrf
+                                                    @method('DELETE')
 
+                                                    <button type="submit" class="btn-modern btn-danger-modern">
+                                                        <i class="fas fa-trash"></i> Delete
                                                     </button>
-                                                @endcan
 
-                                                @can('delete user')
-                                                    <form action="{{ route('event_delete', $event->id) }}" method="POST"
-                                                        onsubmit="return confirm('Are you sure?')">
+                                                </form>
+                                            @endcan
 
-                                                        @csrf
-                                                        @method('DELETE')
+                                        </div>
 
-                                                        <button type="submit" class="btn-modern btn-danger-modern">
-                                                            <i class="fas fa-trash"></i> Delete
-                                                        </button>
+                                    </td>
+                                </tr>
+                            @endforeach
 
-                                                    </form>
-                                                @endcan
+                        </tbody>
 
-                                            </div>
-
-                                        </td>
-                                    </tr>
-                                @endforeach
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
+                    </table>
 
                 </div>
 
             </div>
 
+        </div>
 
-            <!-- Create Event Modal -->
-            <div class="modal fade" id="createEventModal" tabindex="-1">
 
-                <div class="modal-dialog modal-lg modal-dialog-centered">
+        <!-- Create Event Modal -->
+        <div class="modal fade" id="createEventModal" tabindex="-1">
 
-                    <div class="modal-content modern-modal">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+
+                <div class="modal-content modern-modal">
+
+                    <!-- Header -->
+                    <div class="modal-header modern-modal-header">
+
+                        <h5 class="modal-title">
+                            <i class="fas fa-calendar-plus me-2"></i>
+                            Create Event
+                        </h5>
+
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                        </button>
+
+                    </div>
+
+                    <!-- Form -->
+                    <form action="{{ url('event_store') }}" method="POST" enctype="multipart/form-data">
+
+                        @csrf
+
+                        <div class="modal-body">
+
+                            {{-- Validation Errors --}}
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+
+                                    <ul class="mb-0">
+
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+
+                                    </ul>
+
+                                </div>
+                            @endif
+
+                            <div class="row">
+
+                                <!-- Event Name -->
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="modern-label">
+                                        Event Name
+                                    </label>
+
+                                    <input type="text" name="name" class="form-control modern-input"
+                                        value="{{ old('name') }}" required>
+
+                                    <small class="text-danger">
+                                        @error('name')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
+
+                                </div>
+
+                                <!-- Image -->
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="modern-label">
+                                        Event Image
+                                    </label>
+
+                                    <input type="file" name="image" class="form-control modern-input">
+
+                                    <small class="text-danger">
+                                        @error('image')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
+
+                                </div>
+
+                                <!-- Date -->
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="modern-label">
+                                        Date
+                                    </label>
+
+                                    <input type="date" name="date" class="form-control modern-input"
+                                        value="{{ old('date') }}" required>
+
+                                    <small class="text-danger">
+                                        @error('date')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
+
+                                </div>
+
+                                <!-- Time -->
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="modern-label">
+                                        Time
+                                    </label>
+
+                                    <input type="time" name="time" class="form-control modern-input"
+                                        value="{{ old('time') }}" required>
+
+                                    <small class="text-danger">
+                                        @error('time')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
+
+                                </div>
+
+                                <!-- Location -->
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="modern-label">
+                                        Location
+                                    </label>
+
+                                    <input type="text" name="location" class="form-control modern-input"
+                                        value="{{ old('location') }}" required>
+
+                                    <small class="text-danger">
+                                        @error('location')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
+
+                                </div>
+
+                                <!-- Event Type -->
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="modern-label ">
+                                        Event Type
+                                    </label>
+
+                                    <select name="type" class="form-control modern-input" required>
+
+                                        <option value="" class="text-dark">Select Event Type</option>
+
+                                        <option value="Departmental" class="text-dark"
+                                            {{ old('type') == 'Departmental' ? 'selected' : '' }}>
+                                            Departmental
+                                        </option>
+
+                                        <option value="Meeting" class="text-dark"
+                                            {{ old('type') == 'Meeting' ? 'selected' : '' }}>
+                                            Meeting
+                                        </option>
+
+                                    </select>
+
+                                    <small class="text-danger">
+                                        @error('type')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
+
+                                </div>
+
+                                <!-- Description -->
+                                <div class="col-12 mb-3">
+
+                                    <label class="modern-label">
+                                        Description
+                                    </label>
+
+                                    <textarea name="description" rows="5" class="form-control modern-input" required>{{ old('description') }}</textarea>
+
+                                    <small class="text-danger">
+                                        @error('description')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="modal-footer modern-modal-footer">
+
+                            <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+
+                                Cancel
+
+                            </button>
+
+                            <button type="submit" class="btn-save">
+
+                                <i class="fas fa-save me-2"></i>
+                                Save Event
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Edit Event Modal -->
+        <div class="modal fade" id="editEventModal" tabindex="-1">
+
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+
+                <div class="modal-content modern-modal">
+
+                    <form id="editEventForm" method="POST" enctype="multipart/form-data">
+
+                        @csrf
+                        @method('PUT')
 
                         <!-- Header -->
                         <div class="modal-header modern-modal-header">
 
                             <h5 class="modal-title">
-                                <i class="fas fa-calendar-plus me-2"></i>
-                                Create Event
+                                <i class="fas fa-edit me-2"></i>
+                                Edit Event
                             </h5>
 
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
@@ -242,490 +458,274 @@
 
                         </div>
 
-                        <!-- Form -->
-                        <form action="{{ url('event_store') }}" method="POST" enctype="multipart/form-data">
+                        <!-- Body -->
+                        <div class="modal-body">
 
-                            @csrf
+                            <!-- Current Image -->
+                            <div class="text-center mb-4">
 
-                            <div class="modal-body">
+                                <img id="eventPreview" src="" width="180" height="120"
+                                    class="rounded shadow" style="object-fit:cover;">
 
-                                {{-- Validation Errors --}}
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
+                                <small class="d-block text-muted mt-2">
+                                    Current Event Image
+                                </small>
 
-                                        <ul class="mb-0">
+                            </div>
 
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
+                            <div class="row">
 
-                                        </ul>
+                                <!-- Image -->
+                                <div class="col-md-6 mb-3">
 
-                                    </div>
-                                @endif
+                                    <label class="modern-label">
+                                        Upload New Image
+                                    </label>
 
-                                <div class="row">
+                                    <input type="file" name="image" class="form-control modern-input">
 
-                                    <!-- Event Name -->
-                                    <div class="col-md-6 mb-3">
+                                    @error('image')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
 
-                                        <label class="modern-label">
-                                            Event Name
-                                        </label>
+                                </div>
 
-                                        <input type="text" name="name" class="form-control modern-input"
-                                            value="{{ old('name') }}" required>
+                                <!-- Name -->
+                                <div class="col-md-6 mb-3">
 
-                                        <small class="text-danger">
-                                            @error('name')
-                                                {{ $message }}
-                                            @enderror
-                                        </small>
+                                    <label class="modern-label">
+                                        Event Name
+                                    </label>
 
-                                    </div>
+                                    <input type="text" id="edit_name" name="name"
+                                        class="form-control modern-input" required>
 
-                                    <!-- Image -->
-                                    <div class="col-md-6 mb-3">
+                                    @error('name')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
 
-                                        <label class="modern-label">
-                                            Event Image
-                                        </label>
+                                </div>
 
-                                        <input type="file" name="image" class="form-control modern-input">
+                                <!-- Type -->
+                                <div class="col-md-6 mb-3">
 
-                                        <small class="text-danger">
-                                            @error('image')
-                                                {{ $message }}
-                                            @enderror
-                                        </small>
+                                    <label class="modern-label">
+                                        Event Type
+                                    </label>
 
-                                    </div>
+                                    <select id="edit_type" name="type" class="form-control modern-input" required>
 
-                                    <!-- Date -->
-                                    <div class="col-md-6 mb-3">
+                                        <option value="Departmental" class="text-dark">
+                                            Departmental
+                                        </option>
 
-                                        <label class="modern-label">
-                                            Date
-                                        </label>
+                                        <option value="Meeting" class="text-dark">
+                                            Meeting
+                                        </option>
 
-                                        <input type="date" name="date" class="form-control modern-input"
-                                            value="{{ old('date') }}" required>
+                                    </select>
 
-                                        <small class="text-danger">
-                                            @error('date')
-                                                {{ $message }}
-                                            @enderror
-                                        </small>
+                                    @error('type')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
 
-                                    </div>
+                                </div>
 
-                                    <!-- Time -->
-                                    <div class="col-md-6 mb-3">
+                                <!-- Date -->
+                                <div class="col-md-6 mb-3">
 
-                                        <label class="modern-label">
-                                            Time
-                                        </label>
+                                    <label class="modern-label">
+                                        Date
+                                    </label>
 
-                                        <input type="time" name="time" class="form-control modern-input"
-                                            value="{{ old('time') }}" required>
+                                    <input type="date" id="edit_date" name="date"
+                                        class="form-control modern-input" required>
 
-                                        <small class="text-danger">
-                                            @error('time')
-                                                {{ $message }}
-                                            @enderror
-                                        </small>
+                                    @error('date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
 
-                                    </div>
+                                </div>
 
-                                    <!-- Location -->
-                                    <div class="col-md-6 mb-3">
+                                <!-- Time -->
+                                <div class="col-md-6 mb-3">
 
-                                        <label class="modern-label">
-                                            Location
-                                        </label>
+                                    <label class="modern-label">
+                                        Time
+                                    </label>
 
-                                        <input type="text" name="location" class="form-control modern-input"
-                                            value="{{ old('location') }}" required>
+                                    <input type="time" id="edit_time" name="time"
+                                        class="form-control modern-input" required>
 
-                                        <small class="text-danger">
-                                            @error('location')
-                                                {{ $message }}
-                                            @enderror
-                                        </small>
+                                    @error('time')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
 
-                                    </div>
+                                </div>
 
-                                    <!-- Event Type -->
-                                    <div class="col-md-6 mb-3">
+                                <!-- Location -->
+                                <div class="col-md-6 mb-3">
 
-                                        <label class="modern-label ">
-                                            Event Type
-                                        </label>
+                                    <label class="modern-label">
+                                        Location
+                                    </label>
 
-                                        <select name="type" class="form-control modern-input" required>
+                                    <input type="text" id="edit_location" name="location"
+                                        class="form-control modern-input" required>
 
-                                            <option value="" class="text-dark">Select Event Type</option>
+                                    @error('location')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
 
-                                            <option value="Departmental" class="text-dark"
-                                                {{ old('type') == 'Departmental' ? 'selected' : '' }}>
-                                                Departmental
-                                            </option>
+                                </div>
 
-                                            <option value="Meeting" class="text-dark"
-                                                {{ old('type') == 'Meeting' ? 'selected' : '' }}>
-                                                Meeting
-                                            </option>
+                                <!-- Description -->
+                                <div class="col-12">
 
-                                        </select>
+                                    <label class="modern-label">
+                                        Description
+                                    </label>
 
-                                        <small class="text-danger">
-                                            @error('type')
-                                                {{ $message }}
-                                            @enderror
-                                        </small>
+                                    <textarea id="edit_description" name="description" rows="5" class="form-control modern-input" required></textarea>
 
-                                    </div>
-
-                                    <!-- Description -->
-                                    <div class="col-12 mb-3">
-
-                                        <label class="modern-label">
-                                            Description
-                                        </label>
-
-                                        <textarea name="description" rows="5" class="form-control modern-input" required>{{ old('description') }}</textarea>
-
-                                        <small class="text-danger">
-                                            @error('description')
-                                                {{ $message }}
-                                            @enderror
-                                        </small>
-
-                                    </div>
+                                    @error('description')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
 
                                 </div>
 
                             </div>
 
-                            <!-- Footer -->
-                            <div class="modal-footer modern-modal-footer">
+                        </div>
 
-                                <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+                        <!-- Footer -->
+                        <div class="modal-footer modern-modal-footer">
 
-                                    Cancel
+                            <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+                                Cancel
+                            </button>
 
-                                </button>
+                            <button type="submit" class="btn-save">
+                                <i class="fas fa-save me-2"></i>
+                                Update Event
+                            </button>
 
-                                <button type="submit" class="btn-save">
+                        </div>
 
-                                    <i class="fas fa-save me-2"></i>
-                                    Save Event
-
-                                </button>
-
-                            </div>
-
-                        </form>
-
-                    </div>
+                    </form>
 
                 </div>
 
             </div>
 
-            <!-- Edit Event Modal -->
-            <div class="modal fade" id="editEventModal" tabindex="-1">
+        </div>
 
-                <div class="modal-dialog modal-lg modal-dialog-centered">
+        {{-- View modal --}}
+        @foreach ($events as $event)
+            <div class="modal fade" id="viewEventModal{{ $event->id }}" tabindex="-1" aria-hidden="true">
+
+                <div class="modal-dialog modal-xl modal-dialog-centered">
 
                     <div class="modal-content modern-modal">
 
-                        <form id="editEventForm" method="POST" enctype="multipart/form-data">
+                        <!-- Header -->
+                        <div class="modal-header modern-modal-header">
 
-                            @csrf
-                            @method('PUT')
+                            <h5 class="modal-title">
+                                <i class="fas fa-calendar-alt me-2"></i>
+                                Event Details
+                            </h5>
 
-                            <!-- Header -->
-                            <div class="modal-header modern-modal-header">
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                            </button>
 
-                                <h5 class="modal-title">
+                        </div>
+
+                        <!-- Body -->
+                        <div class="modal-body">
+
+                            <div class="row">
+
+                                <!-- Event Image -->
+                                <div class="col-lg-5">
+
+                                    <img src="{{ asset($event->image) }}" class="event-view-image"
+                                        alt="{{ $event->name }}">
+
+                                </div>
+
+                                <!-- Event Information -->
+                                <div class="col-lg-7">
+
+                                    <h3 class="text-white mb-2">
+                                        {{ $event->name }}
+                                    </h3>
+
+                                    <div class="event-info-list">
+
+                                        <div class="event-info-item">
+                                            <i class="fas fa-calendar-day"></i>
+                                            <span>{{ $event->date }}</span>
+                                        </div>
+
+                                        <div class="event-info-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>{{ $event->time }}</span>
+                                        </div>
+
+                                        <div class="event-info-item">
+                                            <i class="fas fa-location-dot"></i>
+                                            <span>{{ $event->location }}</span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="event-description mt-4">
+
+                                        <h6 class="text-info mb-3">
+                                            Event Description
+                                        </h6>
+
+                                        <p>
+                                            {{ $event->description }}
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="modal-footer modern-modal-footer">
+
+                            <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+                                Close
+                            </button>
+
+                            @can('update user')
+                                <button type="button" class="btn-save editEventBtn" data-id="{{ $event->id }}"
+                                    data-name="{{ $event->name }}" data-date="{{ $event->date }}"
+                                    data-time="{{ $event->time }}" data-location="{{ $event->location }}"
+                                    data-description="{{ $event->description }}" data-image="{{ asset($event->image) }}"
+                                    data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#editEventModal">
+
                                     <i class="fas fa-edit me-2"></i>
                                     Edit Event
-                                </h5>
 
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
                                 </button>
-
-                            </div>
-
-                            <!-- Body -->
-                            <div class="modal-body">
-
-                                <!-- Current Image -->
-                                <div class="text-center mb-4">
-
-                                    <img id="eventPreview" src="" width="180" height="120"
-                                        class="rounded shadow" style="object-fit:cover;">
-
-                                    <small class="d-block text-muted mt-2">
-                                        Current Event Image
-                                    </small>
-
-                                </div>
-
-                                <div class="row">
-
-                                    <!-- Image -->
-                                    <div class="col-md-6 mb-3">
-
-                                        <label class="modern-label">
-                                            Upload New Image
-                                        </label>
-
-                                        <input type="file" name="image" class="form-control modern-input">
-
-                                        @error('image')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-
-                                    </div>
-
-                                    <!-- Name -->
-                                    <div class="col-md-6 mb-3">
-
-                                        <label class="modern-label">
-                                            Event Name
-                                        </label>
-
-                                        <input type="text" id="edit_name" name="name"
-                                            class="form-control modern-input" required>
-
-                                        @error('name')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-
-                                    </div>
-
-                                    <!-- Type -->
-                                    <div class="col-md-6 mb-3">
-
-                                        <label class="modern-label">
-                                            Event Type
-                                        </label>
-
-                                        <select id="edit_type" name="type" class="form-control modern-input" required>
-
-                                            <option value="Departmental" class="text-dark">
-                                                Departmental
-                                            </option>
-
-                                            <option value="Meeting" class="text-dark">
-                                                Meeting
-                                            </option>
-
-                                        </select>
-
-                                        @error('type')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-
-                                    </div>
-
-                                    <!-- Date -->
-                                    <div class="col-md-6 mb-3">
-
-                                        <label class="modern-label">
-                                            Date
-                                        </label>
-
-                                        <input type="date" id="edit_date" name="date"
-                                            class="form-control modern-input" required>
-
-                                        @error('date')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-
-                                    </div>
-
-                                    <!-- Time -->
-                                    <div class="col-md-6 mb-3">
-
-                                        <label class="modern-label">
-                                            Time
-                                        </label>
-
-                                        <input type="time" id="edit_time" name="time"
-                                            class="form-control modern-input" required>
-
-                                        @error('time')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-
-                                    </div>
-
-                                    <!-- Location -->
-                                    <div class="col-md-6 mb-3">
-
-                                        <label class="modern-label">
-                                            Location
-                                        </label>
-
-                                        <input type="text" id="edit_location" name="location"
-                                            class="form-control modern-input" required>
-
-                                        @error('location')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-
-                                    </div>
-
-                                    <!-- Description -->
-                                    <div class="col-12">
-
-                                        <label class="modern-label">
-                                            Description
-                                        </label>
-
-                                        <textarea id="edit_description" name="description" rows="5" class="form-control modern-input" required></textarea>
-
-                                        @error('description')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <!-- Footer -->
-                            <div class="modal-footer modern-modal-footer">
-
-                                <button type="button" class="btn-cancel" data-bs-dismiss="modal">
-                                    Cancel
-                                </button>
-
-                                <button type="submit" class="btn-save">
-                                    <i class="fas fa-save me-2"></i>
-                                    Update Event
-                                </button>
-
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            {{-- View modal --}}
-            @foreach ($events as $event)
-                <div class="modal fade" id="viewEventModal{{ $event->id }}" tabindex="-1" aria-hidden="true">
-
-                    <div class="modal-dialog modal-xl modal-dialog-centered">
-
-                        <div class="modal-content modern-modal">
-
-                            <!-- Header -->
-                            <div class="modal-header modern-modal-header">
-
-                                <h5 class="modal-title">
-                                    <i class="fas fa-calendar-alt me-2"></i>
-                                    Event Details
-                                </h5>
-
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
-                                </button>
-
-                            </div>
-
-                            <!-- Body -->
-                            <div class="modal-body">
-
-                                <div class="row">
-
-                                    <!-- Event Image -->
-                                    <div class="col-lg-5">
-
-                                        <img src="{{ asset($event->image) }}" class="event-view-image"
-                                            alt="{{ $event->name }}">
-
-                                    </div>
-
-                                    <!-- Event Information -->
-                                    <div class="col-lg-7">
-
-                                        <h3 class="text-white mb-2">
-                                            {{ $event->name }}
-                                        </h3>
-
-                                        <div class="event-info-list">
-
-                                            <div class="event-info-item">
-                                                <i class="fas fa-calendar-day"></i>
-                                                <span>{{ $event->date }}</span>
-                                            </div>
-
-                                            <div class="event-info-item">
-                                                <i class="fas fa-clock"></i>
-                                                <span>{{ $event->time }}</span>
-                                            </div>
-
-                                            <div class="event-info-item">
-                                                <i class="fas fa-location-dot"></i>
-                                                <span>{{ $event->location }}</span>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="event-description mt-4">
-
-                                            <h6 class="text-info mb-3">
-                                                Event Description
-                                            </h6>
-
-                                            <p>
-                                                {{ $event->description }}
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <!-- Footer -->
-                            <div class="modal-footer modern-modal-footer">
-
-                                <button type="button" class="btn-cancel" data-bs-dismiss="modal">
-                                    Close
-                                </button>
-
-                                @can('update user')
-                                    <button type="button" class="btn-save editEventBtn" data-id="{{ $event->id }}"
-                                        data-name="{{ $event->name }}" data-date="{{ $event->date }}"
-                                        data-time="{{ $event->time }}" data-location="{{ $event->location }}"
-                                        data-description="{{ $event->description }}" data-image="{{ asset($event->image) }}"
-                                        data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#editEventModal">
-
-                                        <i class="fas fa-edit me-2"></i>
-                                        Edit Event
-
-                                    </button>
-                                @endcan
-
-                            </div>
+                            @endcan
 
                         </div>
 
                     </div>
 
                 </div>
-            @endforeach
+
+            </div>
+        @endforeach
         </div>
 
     </main>
@@ -755,3 +755,4 @@
         });
     </script>
 @endsection
+

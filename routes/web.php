@@ -28,6 +28,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RoutineController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\ScholarshipController;
+use App\Http\Controllers\ServiceCategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StudentController;
@@ -230,6 +231,16 @@ Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
 Route::put('/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
 Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
+
+
+Route::controller(ServiceCategoryController::class)->group(function () {
+    Route::get('/service-category', [ServiceCategoryController::class, 'serviceCategories'])->name('service-category');
+    Route::get('/service-category/index', [ServiceCategoryController::class, 'index'])->name('service-category.index');
+    Route::post('/service-category', [ServiceCategoryController::class, 'store'])->name('service-category.store');
+    Route::put('/service-category/update/{id}', [ServiceCategoryController::class, 'update'])->name('service-category.update');
+    Route::delete('/service-category/{id}/delete', [ServiceCategoryController::class, 'destroy'])->name('service-category.delete');
+});
+
 
 
 

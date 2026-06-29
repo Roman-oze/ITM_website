@@ -11,6 +11,7 @@ use App\Models\Teacher;
 use App\Models\Scholarship;
 use Illuminate\Http\Request;
 use App\Models\MenuPermission;
+use App\Models\TeamMember;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
@@ -54,7 +55,7 @@ class DashboardController extends Controller
 
 
 
-        $facultyCount = Teacher::count();
+        $facultyCount = TeamMember::count();
 
 
        return view('dashboard',[
