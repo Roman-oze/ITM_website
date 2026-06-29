@@ -238,7 +238,7 @@ Route::controller(ServiceCategoryController::class)->group(function () {
     Route::get('/service-category/index', [ServiceCategoryController::class, 'index'])->name('service-category.index');
     Route::post('/service-category', [ServiceCategoryController::class, 'store'])->name('service-category.store');
     Route::put('/service-category/update/{id}', [ServiceCategoryController::class, 'update'])->name('service-category.update');
-    Route::delete('/service-category/{id}/delete', [ServiceCategoryController::class, 'destroy'])->name('service-category.delete');
+    Route::get('/service-category/{id}/delete',[ServiceCategoryController::class, 'destroy'])->name('service-category.delete');
 });
 
 

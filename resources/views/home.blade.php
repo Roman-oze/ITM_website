@@ -50,11 +50,11 @@
                             <div class="kpi-box">
                                 <div class="kpi-number">
                                     <span class="purecounter" data-purecounter-start="0"
-                                        data-purecounter-end="{{ $facultyCount }}">
-                                        {{ $facultyCount }}
+                                        data-purecounter-end="{{ $serviceCategory }}">
+                                        {{ $serviceCategory }}
                                     </span>
                                 </div>
-                                <div class="kpi-label">Projects</div>
+                                <div class="kpi-label">Project</div>
                             </div>
 
                             <div class="kpi-box">

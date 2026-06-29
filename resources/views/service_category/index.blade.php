@@ -174,12 +174,15 @@
 
 
                                         <button
-                                            onclick="if(confirm('Are you sure?')){window.location.href='{{ route('service-category.delete', $service->id) }}'}"
+                                            onclick="if(confirm('Are you sure?')){
+                                                    window.location.href='{{ route('service-category.delete', $service->id) }}'
+                                                }"
                                             class="btn-modern btn-danger-modern">
+
                                             <i class="fa fa-trash"></i>
                                             Delete
-                                        </button>
 
+                                        </button>
                                     </div>
 
                                 </td>
@@ -187,8 +190,8 @@
                             </tr>
 
                             <!-- ===========================
-                 View Service Modal
-            =========================== -->
+                             View Service Modal
+                        =========================== -->
                             <div class="modal fade" id="serviceModal{{ $service->id }}" tabindex="-1" aria-hidden="true">
 
                                 <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -945,55 +948,55 @@
     </div>
 
     <script>
-       document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
 
-    document.querySelectorAll('.editServiceBtn').forEach(button => {
+            document.querySelectorAll('.editServiceBtn').forEach(button => {
 
-        button.addEventListener('click', function () {
+                button.addEventListener('click', function() {
 
-            const form = document.getElementById('editServiceForm');
+                    const form = document.getElementById('editServiceForm');
 
-            form.action =
-                "{{ url('service-category/update') }}/" + this.dataset.id;
+                    form.action =
+                        "{{ url('service-category/update') }}/" + this.dataset.id;
 
-            document.getElementById('editOrganization').value =
-                this.dataset.organization;
+                    document.getElementById('editOrganization').value =
+                        this.dataset.organization;
 
-            document.getElementById('editCategory').value =
-                this.dataset.category;
+                    document.getElementById('editCategory').value =
+                        this.dataset.category;
 
-            document.getElementById('editServiceType').value =
-                this.dataset.serviceType || this.dataset.service_type;
+                    document.getElementById('editServiceType').value =
+                        this.dataset.serviceType || this.dataset.service_type;
 
-            document.getElementById('editSoftware').value =
-                this.dataset.software;
+                    document.getElementById('editSoftware').value =
+                        this.dataset.software;
 
-            document.getElementById('editWebsite').value =
-                this.dataset.website;
+                    document.getElementById('editWebsite').value =
+                        this.dataset.website;
 
-            document.getElementById('editCountry').value =
-                this.dataset.country;
+                    document.getElementById('editCountry').value =
+                        this.dataset.country;
 
-            document.getElementById('editStatus').value =
-                this.dataset.status;
+                    document.getElementById('editStatus').value =
+                        this.dataset.status;
 
-            document.getElementById('editDescription').value =
-                this.dataset.description;
+                    document.getElementById('editDescription').value =
+                        this.dataset.description;
 
-            const preview = document.getElementById('editLogoPreview');
+                    const preview = document.getElementById('editLogoPreview');
 
-            if (this.dataset.logo) {
-                preview.src = this.dataset.logo;
-                preview.style.display = "block";
-            } else {
-                preview.style.display = "none";
-            }
+                    if (this.dataset.logo) {
+                        preview.src = this.dataset.logo;
+                        preview.style.display = "block";
+                    } else {
+                        preview.style.display = "none";
+                    }
+
+                });
+
+            });
 
         });
-
-    });
-
-});
     </script>
 @endsection
 <style>
