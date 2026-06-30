@@ -60,7 +60,7 @@
                         <a class="nav-link scrollto" href="#">Achievement</a>
                         <div class="dropdown-content ms-auto rounded">
                             <a target="_blank" href="{{ route('events') }}" class="nav-link text-info">Events</a>
-                            <a target="_blank" href="" class="nav-link text-info">Awards</a>
+                            <a target="_blank" href="{{route('achievement')}}" class="nav-link text-info">Achievements</a>
                             <a target="_blank" href="{{ route('notice') }}" class="nav-link text-info">Notice Board</a>
                         </div>
                     </div>

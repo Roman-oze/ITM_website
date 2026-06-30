@@ -49,11 +49,17 @@
                                     <span class="input-prefix-icon"><i class="fas fa-users text-blue-muted"></i></span>
                                     <select name="batch_id" id="batchSelect" class="form-select custom-dark-input ps-5">
                                         <option value="">Choose Group</option>
-                                        @foreach ($batches as $batch)
+                                            <option value="">
+                                                Board director
+                                            </option>
+                                            <option value="">
+                                                Technical
+                                            </option>
+                                        {{-- @foreach ($batches as $batch)
                                             <option value="{{ $batch->batch_id }}">
                                                 {{ $batch->batch_name }}
                                             </option>
-                                        @endforeach
+                                        @endforeach --}}
                                     </select>
                                 </div>
                                 <div class="custom-field-desc mt-2">
@@ -151,7 +157,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content custom-dark-modal">

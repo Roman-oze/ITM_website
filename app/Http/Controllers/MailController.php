@@ -19,9 +19,9 @@ class MailController extends Controller
 {
     public function create()
     {
-        $batches = Batch::get();
+        // $batches = Batch::get();
 
-        return view('emails.send-mail',compact('batches'));
+        return view('emails.send-mail');
 
     }
 
