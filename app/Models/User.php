@@ -11,15 +11,25 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable;
+
+      use HasRoles;
+
+    protected $guard_name = 'web';
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable =
-    ['name', 'email','email_verified_at','password','role','profile_picture'];
+    // protected $fillable =
+    // ['name', 'email','email_verified_at','password','role','profile_picture'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -61,3 +71,5 @@ class User extends Authenticatable
     //     return $userRole === $roles;
     // }
 }
+
+
