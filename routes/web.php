@@ -90,30 +90,27 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::middleware(['auth'])->group(function(){
+// Route::middleware('auth')->group(function () {
+//     Route::resource('users', UserController::class);
+//     Route::resource('roles', RoleController::class);
+//     Route::resource('permissions', PermissionController::class);
 
-    Route::resource('roles', RoleController::class);
-
-    Route::resource('permissions', PermissionController::class);
-
-    Route::resource('users', UserController::class);
-
-});
-
-// Route::group(['middleware' => ['isAdmin']], function () {
-
-//     route::resource('permissions', App\Http\Controllers\PermissionController::class);
-//     route::get('permissions/{id}/delete', [App\Http\Controllers\PermissionController::class, 'destroy']);
-
-//     route::resource('roles', App\Http\Controllers\RoleController::class);
-//     route::get('roles/{roleId}/delete', [App\Http\Controllers\RoleController::class, 'destroy']);
-
-//     route::get('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'addPermissionToRole']);
-//     route::put('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'updatePermissionToRole']);
-
-//     route::resource('users', UserController::class);
-//     route::get('users/{userId}/delete', [App\Http\Controllers\UserController::class, 'destroy']);
 // });
+
+Route::middleware('auth')->group(function () {
+
+    route::resource('permissions', App\Http\Controllers\PermissionController::class);
+    route::get('permissions/{id}/delete', [App\Http\Controllers\PermissionController::class, 'destroy']);
+
+    route::resource('roles', App\Http\Controllers\RoleController::class);
+    route::get('roles/{roleId}/delete', [App\Http\Controllers\RoleController::class, 'destroy']);
+
+    route::get('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'addPermissionToRole']);
+    route::put('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'updatePermissionToRole']);
+
+    route::resource('users', UserController::class);
+    route::get('users/{userId}/delete', [App\Http\Controllers\UserController::class, 'destroy']);
+});
 // Middleware End
 
 // website setup
