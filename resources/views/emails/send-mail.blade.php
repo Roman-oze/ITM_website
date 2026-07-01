@@ -47,19 +47,30 @@
                                 <label for="batchSelect" class="custom-field-label">Select Batch</label>
                                 <div class="input-field-container">
                                     <span class="input-prefix-icon"><i class="fas fa-users text-blue-muted"></i></span>
-                                    <select name="batch_id" id="batchSelect" class="form-select custom-dark-input ps-5">
-                                        <option value="">Choose Group</option>
-                                            <option value="">
-                                                Board director
+                                    <select name="recipient" id="recipientSelect"
+                                        class="form-select custom-dark-input ps-5">
+
+
+                                        <option value="">Select Recipient</option>
+
+                                        <option disabled>──────── Send to Team ────────</option>
+                                        <option value="board_all">📧 All Board of Directors</option>
+                                        <option value="technical_all">💻 All Technical Team</option>
+
+                                        <option disabled>──────── Board of Directors ────────</option>
+                                        @foreach ($boardOfDirectors as $member)
+                                            <option value="member_{{ $member->id }}">
+                                                {{ $member->name }} - {{ $member->designation }}
                                             </option>
-                                            <option value="">
-                                                Technical
+                                        @endforeach
+
+                                        <option disabled>──────── Technical Team ────────</option>
+                                        @foreach ($technicalTeam as $member)
+                                            <option value="member_{{ $member->id }}">
+                                                {{ $member->name }} - {{ $member->designation }}
                                             </option>
-                                        {{-- @foreach ($batches as $batch)
-                                            <option value="{{ $batch->batch_id }}">
-                                                {{ $batch->batch_name }}
-                                            </option>
-                                        @endforeach --}}
+                                        @endforeach
+
                                     </select>
                                 </div>
                                 <div class="custom-field-desc mt-2">
@@ -555,6 +566,11 @@
 
         .custom-dark-input-text::placeholder {
             color: #4b6584;
+        }
+
+        .modern-select optgroup {
+            color: #000 !important;
+            background: #fff !important;
         }
     </style>
 

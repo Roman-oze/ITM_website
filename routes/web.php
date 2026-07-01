@@ -69,7 +69,6 @@ Route::get('/send-notification', function () {
 
 
 // Route::group(['middleware' => ['menu.permission']],function(){
-
 route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 // Menu
 Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
@@ -91,23 +90,30 @@ Route::middleware('auth')->group(function () {
 
 });
 
+Route::middleware(['auth'])->group(function(){
 
+    Route::resource('roles', RoleController::class);
 
-Route::group(['middleware' => ['isAdmin']], function () {
+    Route::resource('permissions', PermissionController::class);
 
-    route::resource('permissions', App\Http\Controllers\PermissionController::class);
-    route::get('permissions/{id}/delete', [App\Http\Controllers\PermissionController::class, 'destroy']);
+    Route::resource('users', UserController::class);
 
-    route::resource('roles', App\Http\Controllers\RoleController::class);
-    route::get('roles/{roleId}/delete', [App\Http\Controllers\RoleController::class, 'destroy']);
-    // ->middleware('permission:delete role');
-
-    route::get('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'addPermissionToRole']);
-    route::put('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'updatePermissionToRole']);
-
-    route::resource('users', UserController::class);
-    route::get('users/{userId}/delete', [App\Http\Controllers\UserController::class, 'destroy']);
 });
+
+// Route::group(['middleware' => ['isAdmin']], function () {
+
+//     route::resource('permissions', App\Http\Controllers\PermissionController::class);
+//     route::get('permissions/{id}/delete', [App\Http\Controllers\PermissionController::class, 'destroy']);
+
+//     route::resource('roles', App\Http\Controllers\RoleController::class);
+//     route::get('roles/{roleId}/delete', [App\Http\Controllers\RoleController::class, 'destroy']);
+
+//     route::get('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'addPermissionToRole']);
+//     route::put('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'updatePermissionToRole']);
+
+//     route::resource('users', UserController::class);
+//     route::get('users/{userId}/delete', [App\Http\Controllers\UserController::class, 'destroy']);
+// });
 // Middleware End
 
 // website setup

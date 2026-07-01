@@ -1,14 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Exception;
-
 use App\Jobs\SendEmailJob;
-// use App\Mail\SendMail;
 use App\Mail\AdminSendMail;
+use App\Models\TeamMember;
+use Exception;
 use Illuminate\Http\Request;
-use App\models\Batch;
-use App\models\Student;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -19,9 +16,18 @@ class MailController extends Controller
 {
     public function create()
     {
-        // $batches = Batch::get();
+        // team
+        $boardOfDirectors = TeamMember::whereIn('designation', [
+            'Managing Director',
+            'Director'
+        ])->get();
 
-        return view('emails.send-mail');
+        $technicalTeam = TeamMember::whereNotIn('designation', [
+            'Managing Director',
+            'Director'
+        ])->get();
+
+        return view('emails.send-mail',compact('boardOfDirectors','technicalTeam'));
 
     }
 
