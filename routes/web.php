@@ -184,7 +184,7 @@ Route::controller(TeamMemberController::class)->group(function () {
 
 Route::controller(EventController::class)->group(function () {
     Route::get('/events', 'events')->name('events');
-    Route::get('/dashboard/event', 'index')->name('event.index');
+    Route::get('/event/index', 'index')->name('event.index');
     Route::get('event/create', 'create')->name('event.create');
     route::post('event_store', 'event_store')->name('event.store');
     route::get('event_show/{id}', 'show')->name('event_show');

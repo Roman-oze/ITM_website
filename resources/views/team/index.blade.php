@@ -1,5 +1,3 @@
-Team
-
 @extends('layout.dashboard')
 @include('include.alerts')
 @section('main')

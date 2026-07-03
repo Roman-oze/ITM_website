@@ -5,12 +5,12 @@
     @include('include._head')
 </head>
 
-<body class="sb-nav-fixed">
+<body>
 
+    {{-- Top Navbar --}}
+    @include('include._nav')
     <div id="layout-wrapper">
 
-        {{-- Top Navbar --}}
-        @include('include._nav')
 
         <div id="layoutSidenav">
 
@@ -26,14 +26,14 @@
                     </div>
                 </main>
 
-                {{-- Footer --}}
-                @include('include._footer')
 
             </div>
 
         </div>
 
     </div>
+    {{-- Footer --}}
+    @include('include._footer')
 
     {{-- JavaScript Files --}}
     @include('include._script')
