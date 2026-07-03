@@ -129,7 +129,7 @@
         margin-top: 12px;
         font-size: 14px;
         font-weight: 500;
-        color: var(--text-muted);
+        color: white;
         transition: color 0.3s ease, font-weight 0.3s ease;
     }
 
@@ -168,7 +168,7 @@
     }
 
     .step-item.step-complete .step-label {
-        color: var(--text-main);
+        color: white;
     }
 
     /* Color line if the step ahead is complete or active */
@@ -282,7 +282,7 @@
         margin-top: 10px;
         font-size: 14px;
         font-weight: 500;
-        color: #475569;
+        color: #e3e7ed;
         transition: .3s ease;
     }
 

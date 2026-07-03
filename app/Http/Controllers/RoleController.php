@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-
+use Illuminate\Validation\Rule;
 
 class RoleController extends Controller
 {
@@ -14,19 +14,31 @@ class RoleController extends Controller
      * Display a listing of the resource.
      */
 
-    public function __construct()
-    {
-        $this->middleware('permission:view role', ['only' => ['index']]);
-        $this->middleware('permission:create role', ['only' => ['create', 'store', 'addPermissionToRole', 'updatePermissionToRole']]);
-        $this->middleware('permission:update role', ['only' => ['update', 'edit']]);
-        $this->middleware('permission:delete role', ['only' => ['destroy']]);
-    }
+public function __construct()
+{
+    $this->middleware('permission:view role')->only('index');
 
+    $this->middleware('permission:create role')->only([
+        'create',
+        'store',
+        'addPermissionToRole',
+        'updatePermissionToRole'
+    ]);
+
+    $this->middleware('permission:update role')->only([
+        'edit',
+        'update'
+    ]);
+
+    $this->middleware('permission:delete role')->only('destroy');
+}
     public function index()
     {
         $roles = Role::all();
+        $permissions =Permission::all();
         return view('role-permission.role.index', [
-            'roles' => $roles
+            'roles' => $roles,
+            'permissions'=>$permissions
         ]);
     }
 
@@ -75,18 +87,22 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Role $role)
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'unique:roles,name'],
-        ]);
+public function update(Request $request, Role $role)
+{
+    $request->validate([
+        'name' => [
+            'required',
+            Rule::unique('roles')->ignore($role->id),
+        ]
+    ]);
 
-        $role->update([
-            'name' => $request->name,
-        ]);
+    $role->update([
+        'name'=>$request->name,
+    ]);
 
-        return redirect('roles')->with('success', 'role updated successfully');
-    }
+    return redirect()->route('roles.index')
+            ->with('success','Role updated successfully');
+}
 
     /**
      * Remove the specified resource from storage.

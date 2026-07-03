@@ -76,8 +76,6 @@
     </div>
 
 
-
-
     <!-- Create Permission Modal -->
     <div class="modal fade" id="createPermissionModal" tabindex="-1">
 

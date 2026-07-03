@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,17 +17,8 @@ class CustomMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check()) {
-
-            /** @var App\Models\User */
-            $user = Auth::user();
-            if ($user->hasRole(['super-admin', 'admin', 'faculty'])) {
-
-                return $next($request);
-            }
-            abort(403, "User does not have correct roles");
-        }
-
-        abort(401, "Unauthorized");
+        $user = User::find(5); // replace 7 with your super-admin ID
+        $user->getRoleNames();
+        $user->getAllPermissions()->pluck('name');
     }
 }

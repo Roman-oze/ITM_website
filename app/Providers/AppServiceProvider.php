@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Models\Footer;
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Pagination\Paginator;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Auth;
@@ -50,6 +50,15 @@ class AppServiceProvider extends ServiceProvider
             $view->with('menus', $menus);
         }
     });
+
+     Gate::before(function ($user, $ability) {
+
+            if ($user->hasRole('super-admin')) {
+                return true;
+            }
+
+            return null;
+        });
 
     // Share $footers with all views that include '_footer'
     View::composer('layout._footer', function ($view) {

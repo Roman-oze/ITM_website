@@ -45,34 +45,38 @@
                         <div class="row align-items-start mb-4">
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <label for="batchSelect" class="custom-field-label">Select Batch</label>
-                                <div class="input-field-container">
-                                    <span class="input-prefix-icon"><i class="fas fa-users text-blue-muted"></i></span>
-                                    <select name="recipient" id="recipientSelect"
-                                        class="form-select custom-dark-input ps-5">
+                               <div class="input-select-wrapper">
+    <i class="fas fa-users input-prefix-icon"></i>
 
+    <select name="recipient"
+            id="recipientSelect"
+            class="form-select classic-select ps-5">
 
-                                        <option value="">Select Recipient</option>
+        <option value="">Select Recipient</option>
 
-                                        <option disabled>──────── Send to Team ────────</option>
-                                        <option value="board_all">📧 All Board of Directors</option>
-                                        <option value="technical_all">💻 All Technical Team</option>
+        <optgroup label="Send to Team">
+            <option value="board_all">All Board of Directors</option>
+            <option value="technical_all">All Technical Team</option>
+        </optgroup>
 
-                                        <option disabled>──────── Board of Directors ────────</option>
-                                        @foreach ($boardOfDirectors as $member)
-                                            <option value="member_{{ $member->id }}">
-                                                {{ $member->name }} - {{ $member->designation }}
-                                            </option>
-                                        @endforeach
+        <optgroup label="Board of Directors">
+            @foreach ($boardOfDirectors as $member)
+                <option value="member_{{ $member->id }}">
+                    {{ $member->name }} - {{ $member->designation }}
+                </option>
+            @endforeach
+        </optgroup>
 
-                                        <option disabled>──────── Technical Team ────────</option>
-                                        @foreach ($technicalTeam as $member)
-                                            <option value="member_{{ $member->id }}">
-                                                {{ $member->name }} - {{ $member->designation }}
-                                            </option>
-                                        @endforeach
+        <optgroup label="Technical Team">
+            @foreach ($technicalTeam as $member)
+                <option value="member_{{ $member->id }}">
+                    {{ $member->name }} - {{ $member->designation }}
+                </option>
+            @endforeach
+        </optgroup>
 
-                                    </select>
-                                </div>
+    </select>
+</div>
                                 <div class="custom-field-desc mt-2">
                                     Select a batch to send emails to all users in that batch.
                                 </div>
@@ -423,44 +427,104 @@
         }
 
         /* Inner Select Field Dropdown Settings */
-        .custom-dark-input {
-            background-color: transparent !important;
-            border: none !important;
-            color: #cbd5e1 !important;
-            height: 100% !important;
-            width: 100% !important;
-            font-size: 0.95rem;
-            padding: 0 16px 0 45px !important;
-            /* Matches position icon footprint */
-            box-shadow: none !important;
-        }
+/* ==========================
+   Classic Corporate Select
+========================== */
 
-        .custom-dark-input:focus {
-            box-shadow: none !important;
-        }
+.input-select-wrapper{
+    position:relative;
+}
 
-        /* Icon Alignment Rules */
-        .input-prefix-icon {
-            position: absolute;
-            left: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 4;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-        }
+.classic-select{
 
-        .text-blue-muted {
-            color: #3b5270;
-        }
+    height:52px;
 
-        /* File Attachment Content Layout */
-        .input-file-display {
-            color: #cbd5e1;
-            font-size: 0.95rem;
-            height: 100%;
-        }
+    background:#0f172a !important;
+
+    color:#f8fafc !important;
+
+    border:1px solid #334155 !important;
+
+    border-radius:10px !important;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.25s ease;
+
+    padding-left:48px !important;
+
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5L8 12l6.5-6.5' stroke='%2394a3b8' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 18px center;
+
+    background-size:16px;
+}
+
+.classic-select:hover{
+
+    border-color:#3b82f6 !important;
+}
+
+.classic-select:focus{
+
+    border-color:#3b82f6 !important;
+
+    box-shadow:0 0 0 .18rem rgba(59,130,246,.20) !important;
+
+    outline:none;
+}
+
+.classic-select option{
+
+    background:#ffffff;
+
+    color:#1e293b;
+
+    padding:12px;
+}
+
+.classic-select optgroup{
+
+    background:#e2e8f0;
+
+    color:#0f172a;
+
+    font-weight:700;
+
+    font-size:14px;
+}
+
+.classic-select option:hover{
+
+    background:#dbeafe;
+}
+
+.input-prefix-icon{
+
+    position:absolute;
+
+    top:50%;
+
+    left:16px;
+
+    transform:translateY(-50%);
+
+    color:#60a5fa;
+
+    z-index:5;
+
+    pointer-events:none;
+}
 
         .text-muted-placeholder {
             color: #4b6584;

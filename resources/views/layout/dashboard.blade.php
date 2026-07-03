@@ -1,29 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
 
-@include('include._head')
+<head>
+    @include('include._head')
+</head>
 
-<body>
+<body class="sb-nav-fixed">
 
     <div id="layout-wrapper">
 
-
-
+        {{-- Top Navbar --}}
         @include('include._nav')
 
-
         <div id="layoutSidenav">
+
+            {{-- Sidebar --}}
             @include('include._sidenav')
-                <div id="layoutSidenav_content">
-                    @yield('main')
-                </div>
+
+            {{-- Main Content --}}
+            <div id="layoutSidenav_content">
+
+                <main class="container-fluid px-4 py-4">
+                    <div class="row justify-content-center">
+                        @yield('main')
+                    </div>
+                </main>
+
+                {{-- Footer --}}
+                @include('include._footer')
+
+            </div>
+
         </div>
-
-
-        @include('include._footer')
-
-        <script src="{{asset('admin/js/scripts.js')}}">
-            @include('include._script')
-        </script>
 
     </div>
 
+    {{-- JavaScript Files --}}
+    @include('include._script')
+
+    <script src="{{ asset('admin/js/scripts.js') }}"></script>
+
 </body>
+
+</html>

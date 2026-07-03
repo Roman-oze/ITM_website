@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
-
+use Illuminate\Validation\Rule;
 
 class PermissionController extends Controller
 {
@@ -75,21 +75,23 @@ class PermissionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Permission $permission)
-    {
-        $request->validate([
-            'name' => ['required','string','unique:permissions,name'],
-        ]);
 
-        $permission->update([
-            'name' => $request->name,
-            ]);
+public function update(Request $request, Permission $permission)
+{
+    $request->validate([
+        'name'=>[
+            'required',
+            Rule::unique('permissions')->ignore($permission->id),
+        ]
+    ]);
 
-            return redirect('permissions')->with('success','Permission updated successfully');
+    $permission->update([
+        'name'=>$request->name
+    ]);
 
-
-
-    }
+    return redirect()->route('permissions.index')
+            ->with('success','Permission updated successfully');
+}
 
     /**
      * Remove the specified resource from storage.

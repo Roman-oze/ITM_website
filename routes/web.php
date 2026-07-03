@@ -100,6 +100,26 @@ Route::middleware(['auth'])->group(function(){
 
 });
 
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::resource('permissions', PermissionController::class);
+
+    Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy']);
+
+    Route::resource('roles', RoleController::class);
+
+    Route::get('roles/{roleId}/delete', [RoleController::class, 'destroy']);
+
+    Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole']);
+
+    Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole']);
+
+    Route::resource('users', UserController::class);
+
+    Route::get('users/{userId}/delete', [UserController::class, 'destroy']);
+
+});
 // Route::group(['middleware' => ['isAdmin']], function () {
 
 //     route::resource('permissions', App\Http\Controllers\PermissionController::class);
