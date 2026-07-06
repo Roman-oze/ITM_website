@@ -10,7 +10,7 @@
                 <h4 class="mb-0">Team Management</h4>
 
                 <button type="button" class="cssbuttons-io-button border-0" data-bs-toggle="modal"
-                    data-bs-target="#createFacultyModal">
+                    data-bs-target="#createTeamModal">
 
                     <svg height="25" width="25" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0z" fill="none"></path>
@@ -75,17 +75,17 @@
                                     <div class="action-group">
 
                                         <button type="button" class="btn-modern btn-info-modern" data-bs-toggle="modal"
-                                            data-bs-target="#facultyModal{{ $team->teammember_id }}">
+                                            data-bs-target="#teamModal{{ $team->teammember_id }}">
                                             <i class="fas fa-eye"></i> View
                                         </button>
 
                                         @can('update user')
-                                            <button type="button" class="btn-modern btn-secondary-modern editFacultyBtn"
+                                            <button type="button" class="btn-modern btn-secondary-modern editTeamBtn"
                                                 data-id="{{ $team->teammember_id }}" data-name="{{ $team->name }}"
                                                 data-designation="{{ $team->designation }}" data-email="{{ $team->email }}"
                                                 data-phone="{{ $team->phone }}" data-fb="{{ $team->fb }}"
                                                 data-linked="{{ $team->linked }}" data-image="{{ asset($team->image) }}"
-                                                data-bs-toggle="modal" data-bs-target="#editFacultyModal">
+                                                data-bs-toggle="modal" data-bs-target="#editTeamModal">
 
                                                 <i class="fa fa-edit"></i> Edit
                                             </button>
@@ -124,7 +124,7 @@
 
     {{-- View modal --}}
     @foreach ($teamMembers as $team)
-        <div class="modal fade" id="facultyModal{{ $team->teammember_id }}" tabindex="-1">
+        <div class="modal fade" id="teamModal{{ $team->teammember_id }}" tabindex="-1">
 
             <div class="modal-dialog modal-lg modal-dialog-centered">
 
@@ -135,7 +135,7 @@
 
                         <h5 class="modal-title">
                             <i class="fas fa-user-circle me-2"></i>
-                            Faculty Details
+                            Team Details
                         </h5>
 
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
@@ -152,7 +152,7 @@
                             <div class="col-md-4 text-center mb-3 mb-md-0">
 
                                 <img src="{{ asset($team->image) }}" alt="{{ $team->name }}"
-                                    class="faculty-profile-image">
+                                    class="team-profile-image">
 
                             </div>
 
@@ -163,24 +163,24 @@
                                     {{ $team->name }}
                                 </h4>
 
-                                <span class="faculty-designation-badge">
+                                <span class="team-designation-badge">
                                     {{ $team->designation }}
                                 </span>
 
-                                <div class="faculty-info-list mt-4">
+                                <div class="team-info-list mt-4">
 
-                                    <div class="faculty-info-item">
+                                    <div class="team-info-item">
                                         <i class="fas fa-envelope"></i>
                                         <span>{{ $team->email }}</span>
                                     </div>
 
-                                    <div class="faculty-info-item">
+                                    <div class="team-info-item">
                                         <i class="fas fa-phone"></i>
                                         <span>{{ $team->phone }}</span>
                                     </div>
 
                                     @if ($team->fb)
-                                        <div class="faculty-info-item">
+                                        <div class="team-info-item">
                                             <i class="fab fa-facebook"></i>
 
                                             <a href="{{ $team->fb }}" target="_blank">
@@ -190,7 +190,7 @@
                                     @endif
 
                                     @if ($team->linked)
-                                        <div class="faculty-info-item">
+                                        <div class="team-info-item">
                                             <i class="fab fa-linkedin"></i>
 
                                             <a href="{{ $team->linked }}" target="_blank">
@@ -206,10 +206,10 @@
                         </div>
 
                         @if (!empty($team->bio))
-                            <div class="faculty-bio-card mt-4">
+                            <div class="team-bio-card mt-4">
 
                                 <h6 class="text-info mb-3">
-                                    About Faculty
+                                    About Team
                                 </h6>
 
                                 <p class="mb-0">
@@ -229,12 +229,12 @@
                         </button>
 
                         @can('update user')
-                            <button type="button" class="btn-save editFacultyBtn" data-id="{{ $team->teammember_id }}"
+                            <button type="button" class="btn-save editTeamBtn" data-id="{{ $team->teammember_id }}"
                                 data-name="{{ $team->name }}" data-designation="{{ $team->designation }}"
                                 data-email="{{ $team->email }}" data-phone="{{ $team->phone }}"
                                 data-fb="{{ $team->fb }}" data-linked="{{ $team->linked }}"
                                 data-image="{{ asset($team->image) }}" data-bs-toggle="modal"
-                                data-bs-target="#editFacultyModal">
+                                data-bs-target="#editTeamModal">
 
                                 <i class="fa fa-edit me-1"></i>
                                 Edit
@@ -253,7 +253,7 @@
 
 
     <!-- CREATE FACULTY MODAL -->
-    <div class="modal fade" id="createFacultyModal" tabindex="-1">
+    <div class="modal fade" id="createTeamModal" tabindex="-1">
 
         <div class="modal-dialog  modal-dialog-centered">
 
@@ -262,7 +262,7 @@
                 <div class="modal-header modern-modal-header">
                     <h5 class="modal-title">
                         <i class="fas fa-user-plus me-2"></i>
-                        Add New Faculty
+                        Add New Team
                     </h5>
 
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
@@ -327,7 +327,7 @@
                         </button>
 
                         <button type="submit" class="btn-save">
-                            Save Faculty
+                            Save Team
                         </button>
 
                     </div>
@@ -341,7 +341,7 @@
     </div>
 
     <!-- EDIT FACULTY MODAL -->
-    <div class="modal fade" id="editFacultyModal" tabindex="-1">
+    <div class="modal fade" id="editTeamModal" tabindex="-1">
 
         <div class="modal-dialog  modal-dialog-centered">
 
@@ -350,14 +350,14 @@
                 <div class="modal-header modern-modal-header">
                     <h5 class="modal-title">
                         <i class="fas fa-user-edit me-2"></i>
-                        Edit Faculty
+                        Edit Team
                     </h5>
 
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
                     </button>
                 </div>
 
-                <form id="editFacultyForm" method="POST" enctype="multipart/form-data">
+                <form id="editTeamForm" method="POST" enctype="multipart/form-data">
 
                     @csrf
                     @method('PUT')
@@ -365,7 +365,7 @@
                     <div class="modal-body">
 
                         <div class="text-center mb-4">
-                            <img id="editFacultyImage" src="" width="100" height="100"
+                            <img id="editTeamImage" src="" width="100" height="100"
                                 class="rounded-circle shadow" style="object-fit:cover;">
                         </div>
 
@@ -443,7 +443,7 @@
                         </button>
 
                         <button type="submit" class="btn-save">
-                            Update Faculty
+                            Update Team
                         </button>
 
                     </div>
@@ -459,7 +459,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            document.querySelectorAll('.editFacultyBtn')
+            document.querySelectorAll('.editTeamBtn')
                 .forEach(button => {
 
                     button.addEventListener('click', function() {
@@ -484,10 +484,10 @@
                         document.getElementById('edit_linked').value =
                             this.dataset.linked;
 
-                        document.getElementById('editFacultyImage').src =
+                        document.getElementById('editTeamImage').src =
                             this.dataset.image;
 
-                        document.getElementById('editFacultyForm').action =
+                        document.getElementById('editTeamForm').action =
     "{{ url('/team/update') }}/" + id;
                     });
 
@@ -499,8 +499,8 @@
 
 
 <style>
-    /* Faculty Profile */
-    .faculty-profile-image {
+    /* Team Profile */
+    .team-profile-image {
         width: 180px;
         height: 180px;
         object-fit: cover;
@@ -513,7 +513,7 @@
     }
 
     /* Designation Badge */
-    .faculty-designation-badge {
+    .team-designation-badge {
         display: inline-block;
 
         background: rgba(32, 157, 216, 0.15);
@@ -529,13 +529,13 @@
     }
 
     /* Info List */
-    .faculty-info-list {
+    .team-info-list {
         display: flex;
         flex-direction: column;
         gap: 14px;
     }
 
-    .faculty-info-item {
+    .team-info-item {
         display: flex;
         align-items: center;
         gap: 12px;
@@ -543,22 +543,22 @@
         color: #CBD5E1;
     }
 
-    .faculty-info-item i {
+    .team-info-item i {
         width: 20px;
         color: #209DD8;
     }
 
-    .faculty-info-item a {
+    .team-info-item a {
         color: #CBD5E1;
         text-decoration: none;
     }
 
-    .faculty-info-item a:hover {
+    .team-info-item a:hover {
         color: #209DD8;
     }
 
     /* Bio Card */
-    .faculty-bio-card {
+    .team-bio-card {
         background: rgba(255, 255, 255, 0.03);
 
         border: 1px solid rgba(255, 255, 255, 0.06);

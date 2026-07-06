@@ -1,16 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Menu;
 // use App\Models\auth;
 use App\Models\User;
 use App\Models\Alumni;
+use App\Models\Client;
 use App\Models\Message;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Scholarship;
 use Illuminate\Http\Request;
 use App\Models\MenuPermission;
+use App\Models\ServiceCategory;
 use App\Models\TeamMember;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
@@ -25,47 +28,66 @@ class DashboardController extends Controller
 
 
 
-       public function dashboard()
+    public function dashboard()
     {
-            // Get the current user's role
+        // Get the current user's role
 
 
 
 
-            // Fetch top-level menus with their children, applying permissions
-            // Get the authenticated user's role
-            if (Auth::check()) {
-                $roleId = Auth::user()->role;
+        // Fetch top-level menus with their children, applying permissions
+        // Get the authenticated user's role
+        if (Auth::check()) {
+            $roleId = Auth::user()->role;
 
-                // Fetch menus where the user has at least one permission
-                $menus = Menu::with(['children' => function ($query) use ($roleId) {
-                    $query->whereHas('permissions', function ($q) use ($roleId) {
-                        $q->where('role_id', $roleId);
-                    })->orderBy('order'); // Order the children
-                }])
+            // Fetch menus where the user has at least one permission
+            $menus = Menu::with(['children' => function ($query) use ($roleId) {
+                $query->whereHas('permissions', function ($q) use ($roleId) {
+                    $q->where('role_id', $roleId);
+                })->orderBy('order'); // Order the children
+            }])
                 ->whereNull('parent_id') // Only top-level menus
                 ->whereHas('permissions', function ($query) use ($roleId) {
                     $query->where('role_id', $roleId);
                 })
                 ->orderBy('order') // Order the top-level menus
                 ->get();
-            }
+        }
 
 
 
 
+        // Board of Directors
+        $boardOfDirectors = TeamMember::whereIn('designation', [
+            'Managing Director',
+            'Director'
+        ])->get();
 
-        $facultyCount = TeamMember::count();
 
 
-       return view('dashboard',[
-        'facultyCount' => $facultyCount,
+        // Technical Team
+        $technicalTeam = TeamMember::whereNotIn('designation', [
+            'Managing Director',
+            'Director'
+            ])->get();
 
-        'menus' => $menus,
+        $boardOfDirectorsCount = $boardOfDirectors->count();
+        $technicalTeamCount = $technicalTeam->count();
+        $teamMemberCount = TeamMember::count();
+        $serviceCount = ServiceCategory::count();
+        $ClientCount = Client::count();
+
+
+        return view('dashboard', [
+            'boardOfDirectorsCount' => $boardOfDirectorsCount,
+            'technicalTeamCount' => $technicalTeamCount,
+            'teamMemberCount' => $teamMemberCount,
+            'serviceCount' => $serviceCount,
+            'ClientCount' => $ClientCount,
+
+            'menus' => $menus,
             // 'menu_permissions' => $menu_permission,
 
-    ]);
+        ]);
     }
-
-
 }

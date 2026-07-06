@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumni;
+use App\Models\Client;
 use App\Models\Feature;
 use App\Models\Footer;
 use App\Models\Gallery;
@@ -40,18 +41,22 @@ class HomeController extends Controller
         $teammembers = TeamMember::all();
 
         $hero = Herosection::first();
+        $clients = Client::all();
+        $clientsCount = Client::count();
         $features = Feature::all();
         $services = Service::all();
         $contact = Footer::first();
         $footers = Footer::all();
-        // $teamMembersCount = DB::table('team_members')->count();
+        $teamMembersCount = TeamMember::count();
         $serviceCategory = ServiceCategory::count();
 
 
 
-        return view('home', compact('hero', 'contact', 'footers', 'boardOfDirectors', 'technicalTeam', 'serviceCategory', 'teammembers'), [
+        return view('home', compact('hero', 'contact', 'footers', 'boardOfDirectors', 'technicalTeam', 'serviceCategory', 'teammembers','clients'), [
             'features' => $features,
             'services' => $services,
+            'teamMembersCount' => $teamMembersCount,
+            'clientsCount' => $clientsCount
         ]);
     }
 

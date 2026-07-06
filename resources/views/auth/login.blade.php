@@ -259,7 +259,7 @@
             <div class="link-box">Operational Bulletins <span>›</span></div>
             <div class="link-box">System User Manual <span>↗</span></div>
             <div class="link-box">Common FAQ Matrix <span>↗</span></div>
-            <div class="link-box">Support Center <span>+8801XXXXXXX</span></div>
+            <div class="link-box">Support Center <span>+8801629627303</span></div>
         </div>
     </div>
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\CommitteeController;
 use App\Http\Controllers\CourseController;
@@ -47,22 +48,10 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 Route::get('/send-notification', function () {
-    // First system
-    // $user = User::first();
-    // $user->notify(new ComplainNotification());
-    // second system
-    // $user = User::first();
-    // Notification::send($user, new ComplainNotification());
-    // third system
-
     $users = User::all();
-
     foreach ($users as $user) {
         Notification::send($user, new ComplainNotification('Roman Oze', 'Software developer'));
     }
-
-
-
     return 'success';
 });
 
@@ -75,7 +64,6 @@ Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
 Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
 
 //  Menu Permission
-
 route::resource('menu-permissions', MenuPermissionController::class);
 route::get('MenuPermissionController/{id}/delete', [MenuPermissionController::class, 'destroy']);
 // });
@@ -90,53 +78,24 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::middleware(['auth'])->group(function(){
-
+Route::middleware(['auth'])->group(function () {
     Route::resource('roles', RoleController::class);
-
     Route::resource('permissions', PermissionController::class);
-
     Route::resource('users', UserController::class);
-
 });
 
 
 Route::middleware(['auth'])->group(function () {
-
     Route::resource('permissions', PermissionController::class);
-
     Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy']);
-
     Route::resource('roles', RoleController::class);
-
     Route::get('roles/{roleId}/delete', [RoleController::class, 'destroy']);
-
     Route::get('roles/{roleId}/give-permission', [RoleController::class, 'addPermissionToRole']);
-
     Route::put('roles/{roleId}/give-permission', [RoleController::class, 'updatePermissionToRole']);
-
     Route::resource('users', UserController::class);
-
     Route::get('users/{userId}/delete', [UserController::class, 'destroy']);
-
 });
-// Route::group(['middleware' => ['isAdmin']], function () {
 
-//     route::resource('permissions', App\Http\Controllers\PermissionController::class);
-//     route::get('permissions/{id}/delete', [App\Http\Controllers\PermissionController::class, 'destroy']);
-
-//     route::resource('roles', App\Http\Controllers\RoleController::class);
-//     route::get('roles/{roleId}/delete', [App\Http\Controllers\RoleController::class, 'destroy']);
-
-//     route::get('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'addPermissionToRole']);
-//     route::put('roles/{roleId}/give-permission', [App\Http\Controllers\RoleController::class, 'updatePermissionToRole']);
-
-//     route::resource('users', UserController::class);
-//     route::get('users/{userId}/delete', [App\Http\Controllers\UserController::class, 'destroy']);
-// });
-// Middleware End
-
-// website setup
 
 route::resource('/herosection', HerosectionController::class);
 Route::delete('/herosection/{id}', [HerosectionController::class, 'destroy'])->name('herosection.delete');
@@ -146,6 +105,17 @@ Route::delete('/service/{id}', [ServiceController::class, 'destroy'])->name('ser
 
 route::resource('/footer', FooterController::class);
 Route::delete('/footer/{id}', [FooterController::class, 'destroy'])->name('footer.delete');
+
+Route::controller(ClientController::class)->group(function () {
+
+    Route::get('/clients/index', 'index')->name('clients.index');
+    Route::get('/clients/create', 'create')->name('clients.create');
+    Route::post('/clients', 'store')->name('clients.store');
+    Route::get('/clients/{client}', 'show')->name('clients.show');
+    Route::get('/clients/{client}/edit', 'edit')->name('clients.edit');
+    Route::put('/clients/update/{id}', 'update')->name('clients.update');
+    Route::get('/clients/{id}/delete', 'destroy')->name('clients.destroy');
+});
 
 Route::controller(FeatureController::class)->group(function () {
     Route::get('/feature/index', 'index')->name('feature.index');
@@ -219,7 +189,6 @@ Route::get('/pdf_generate', [App\Http\Controllers\PdfController::class, 'pdf_gen
 
 
 Route::controller(MailController::class)->group(function () {
-
     Route::post('/send-mail', 'store')->name('send.mail.data');
     Route::get('/send-mail-form', 'create')->name('send-mail-form.create');
 });
@@ -274,8 +243,7 @@ Route::controller(AchievementController::class)->group(function () {
     Route::post('/achievement', [AchievementController::class, 'store'])->name('achievement.store');
     Route::put('/achievement/update/{id}', [AchievementController::class, 'update'])->name('achievement.update');
     Route::get('/achievement/{id}/delete', [AchievementController::class, 'destroy'])->name('achievement.delete');
-        Route::get('/achievement/{id}/delete', 'destroy')->name('achievement.delete');
-
+    Route::get('/achievement/{id}/delete', 'destroy')->name('achievement.delete');
 });
 
 
@@ -292,4 +260,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/static', 'static')->name('static');
     Route::get('/contact', 'contact')->name('contact');
 });
+
+
+
 require __DIR__ . '/auth.php';

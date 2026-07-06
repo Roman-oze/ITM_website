@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ClientSection extends Component
+class ClientFeatures extends Component
 {
     public $clients;
 
@@ -17,6 +17,6 @@ class ClientSection extends Component
 
     public function render()
     {
-        return view('components.client-section');
+        return view('components.client-features');
     }
 }

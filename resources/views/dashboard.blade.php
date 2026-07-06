@@ -374,27 +374,28 @@
 
                 <div class="card">
                     <i class="fa fa-users"></i>
-                    <h3>120</h3>
+                    <h3>{{$ClientCount}}</h3>
                     <span>Clients</span>
                 </div>
 
                 <div class="card">
                     <i class="fa fa-diagram-project"></i>
-                    <h3>45</h3>
+                    <h3>18</h3>
                     <span>Projects</span>
                 </div>
 
                 <div class="card">
-                    <i class="fa fa-spinner"></i>
-                    <h3>18</h3>
-                    <span>Running</span>
+                    <i class="fa fa-file-pen"></i>
+                    <h3>{{$teamMemberCount}}</h3>
+                    <span>Team Member</span>
                 </div>
 
                 <div class="card">
-                    <i class="fa fa-file-pen"></i>
-                    <h3>9</h3>
-                    <span>Draft</span>
+                    <i class="fa fa-spinner"></i>
+                    <h3>{{$serviceCount}}</h3>
+                    <span>Service Category</span>
                 </div>
+
 
             </div>
 
@@ -497,22 +498,22 @@
 
                     <div class="list">
                         <span>Developers</span>
-                        <b>18</b>
+                        <b>{{$technicalTeamCount}}</b>
                     </div>
 
                     <div class="list">
                         <span>Designers</span>
-                        <b>6</b>
+                        <b>{{$boardOfDirectorsCount}}</b>
                     </div>
 
                     <div class="list">
                         <span>QA Engineers</span>
-                        <b>5</b>
+                        <b>{{$boardOfDirectorsCount}}</b>
                     </div>
 
                     <div class="list">
                         <span>Total Members</span>
-                        <b>41</b>
+                        <b>{{$teamMemberCount}}</b>
                     </div>
 
                 </div>

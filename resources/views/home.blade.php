@@ -1,10 +1,5 @@
-{{-- @include('layout._footer', ['footers' => $footers]) --}}
 @extends('layout.app')
 @include('include.alerts')
-
-
-
-
 @section('content')
     <x-hero-section :hero="$hero" />
 
@@ -18,7 +13,6 @@
             </svg>
         </div>
     </div>
-
 
 
     <!-- Chat Container -->
@@ -40,8 +34,9 @@
 
                             <div class="kpi-box">
                                 <div class="kpi-number">
-                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="">
-                                        10
+                                    <span class="purecounter" data-purecounter-start="0"
+                                        data-purecounter-end="{{ $clientsCount }}">
+                                        {{ $clientsCount }}
                                     </span>
                                 </div>
                                 <div class="kpi-label">Clients</div>
@@ -54,25 +49,26 @@
                                         {{ $serviceCategory }}
                                     </span>
                                 </div>
+                                <div class="kpi-label">Service Type</div>
+                            </div>
+
+                            <div class="kpi-box">
+                                <div class="kpi-number">
+                                    <span class="purecounter" data-purecounter-start="0"
+                                        data-purecounter-end="{{ $teamMembersCount }}">
+                                        {{ $teamMembersCount }}
+                                    </span>
+                                </div>
+                                <div class="kpi-label">Team Member</div>
+                            </div>
+
+                            <div class="kpi-box">
+                                <div class="kpi-number">
+                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="18">
+                                        18
+                                    </span>
+                                </div>
                                 <div class="kpi-label">Project</div>
-                            </div>
-
-                            <div class="kpi-box">
-                                <div class="kpi-number">
-                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="">
-                                        6
-                                    </span>
-                                </div>
-                                <div class="kpi-label">Running</div>
-                            </div>
-
-                            <div class="kpi-box">
-                                <div class="kpi-number">
-                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="">
-                                        3
-                                    </span>
-                                </div>
-                                <div class="kpi-label">Draft</div>
                             </div>
 
                         </div>
@@ -88,7 +84,7 @@
 
 
     {{-- Clients Section --}}
-    <x-client-section />
+    <x-client-features :clients="$clients" />
 
     {{-- Feature section --}}
     <x-feature-section :features="$features" />
@@ -106,40 +102,8 @@
 
 
     {{-- client list section --}}
-    <section class="team-section ">
-        <div id="cta" class="cta">
-            <div class=" mt-5">
-                <h1 class="fac_text text-center">Our Client</h1>
+    <x-client-section :clients="$clients" />
 
-            </div>
-            <div class="container aos-init aos-animate" data-aos="zoom-in">
-                <div class="row">
-                    <div class="col-lg-12 text-center text-lg-start">
-                        {{-- grid-bg --}}
-                        <div class="grid-container  mt-5">
-                            <div class="grid-item ">
-                                <img src="https://edge.gov.bd/wp-content/themes/edgewebsite/images/logo.png" alt="Waiver">
-                                <span>EDGE Govt</span>
-                            </div>
-                            <div class="grid-item">
-                                <img src="https://lgcrrpmis.lged.gov.bd/images/bdgovtlogo.png" alt="Free Laptop">
-                                <span>LGCRRP</span>
-                            </div>
-                            <div class="grid-item">
-                                <img src="https://dphe.s3.amazonaws.com/freap/media/logo/freap_mpyWKzS.png" alt="Hall">
-                                <span>Freap</span>
-                            </div>
-                            <div class="grid-item">
-                                <img src="{{ asset('frontend\client\wecare-lged.png') }}" alt="Latest Curriculum">
-                                <span>WeCARE Phase-I LGED</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     {{-- Service Section --}}
