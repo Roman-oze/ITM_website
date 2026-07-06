@@ -373,7 +373,7 @@
             <div class="grid grid-4">
 
                 <div class="card">
-                    <i class="fa fa-users"></i>
+                    <i class="fa-solid fa-hands-holding-circle"></i>
                     <h3>{{$ClientCount}}</h3>
                     <span>Clients</span>
                 </div>
@@ -385,7 +385,7 @@
                 </div>
 
                 <div class="card">
-                    <i class="fa fa-file-pen"></i>
+                    <i class="fa fa-users"></i>
                     <h3>{{$teamMemberCount}}</h3>
                     <span>Team Member</span>
                 </div>
